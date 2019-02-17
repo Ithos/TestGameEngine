@@ -1,6 +1,3 @@
-# Prerequisites
-*.d
-
 # Compiled Object files
 *.slo
 *.lo
@@ -30,3 +27,19 @@
 *.exe
 *.out
 *.app
+
+# VisualStudio files
+*.pdb
+*.ilk
+*.tlog
+*.lastbuildstate
+*.log
+*.db
+*.user
+*.suo
+*.idb
+*.cache
+*.VC*
+
+# Qt Generated files
+moc_*
