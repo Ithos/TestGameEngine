@@ -36,6 +36,7 @@ void GeometryEngine::DirectionalLight::setProgramParameters(const LightingTransf
 		mpProgram->setUniformValue("mPositionMap", gBuffTexInfo.PositionTexture);
 		mpProgram->setUniformValue("mColorMap", gBuffTexInfo.DiffuseTexture);
 		mpProgram->setUniformValue("mNormalMap", gBuffTexInfo.NormalTexture);
+		mpProgram->setUniformValue("mTextureMap", gBuffTexInfo.TexcoordTexture);
 
 		mpProgram->setUniformValue("mTextureSize", gBuffTexInfo.TextureSize);
 
@@ -59,16 +60,6 @@ void GeometryEngine::DirectionalLight::calculateContribution(QOpenGLBuffer * arr
 	int vertexLocation = mpProgram->attributeLocation("posAttr");
 	mpProgram->enableAttributeArray(vertexLocation);
 	mpProgram->setAttributeBuffer(vertexLocation, GL_FLOAT, VertexData::POSITION_OFFSET, 3, sizeof(VertexData));
-
-	// Tell OpenGL programmable pipeline how to locate texture coordinates
-	/*int textureCoordinate = mpProgram->attributeLocation("TexCoord");
-	mpProgram->enableAttributeArray(textureCoordinate);
-	mpProgram->setAttributeBuffer(textureCoordinate, GL_FLOAT, VertexData::TEXTURE_COORDINATES_OFFSET, 3, sizeof(VertexData));*/
-
-	// Tell OpenGL programmable pipeline how to locate vertex position data
-	/*int normalVector = mpProgram->attributeLocation("aNormal");
-	mpProgram->enableAttributeArray(normalVector);
-	mpProgram->setAttributeBuffer(normalVector, GL_FLOAT, VertexData::NORMALS_OFFSET, 3, sizeof(VertexData));*/
 
 	// Draw light
 	glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);

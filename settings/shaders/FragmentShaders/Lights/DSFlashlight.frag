@@ -69,4 +69,5 @@ void main() {
         
     vec3 result = ambient + diffuse + specular;
     FragColor = vec4(Color, 1.0) * vec4(result * lightAtt, 1.0);
+    
 }

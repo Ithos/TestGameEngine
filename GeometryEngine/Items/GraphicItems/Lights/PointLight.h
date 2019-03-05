@@ -3,11 +3,11 @@
 #ifndef GEOMETRYPOINTLIGHT_H
 #define GEOMETRYPOINTLIGHT_H
 
-#include "../DeferredShadingLight.h"
+#include "../StencilTestLight.h"
 
 namespace GeometryEngine
 {
-	class PointLight : public DeferredShadingLight
+	class PointLight : public StencilTestLight
 	{
 	public:
 		PointLight(const QVector3D& attParam, GeometryItem* boundingBox = nullptr, const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& ambient = QVector3D(1.0f, 1.0f, 1.0f),

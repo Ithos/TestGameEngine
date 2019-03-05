@@ -69,6 +69,9 @@ namespace GeometryEngine
 		static const std::string DIRECTIONAL_LIGHT_FRAGMENT_SHADER_DS;
 		static const std::string POINT_LIGHT_FRAGMENT_SHADER_DS;
 		static const std::string FLASHLIGHT_FRAGMENT_SHADER_DS;
+
+		static const std::string NULL_FRAGMENT_SHADER;
+		static const std::string POSITION_VERTEX_SHADER;
 	};
 
 	class Light : public WorldItem
@@ -86,7 +89,11 @@ namespace GeometryEngine
 		virtual void LightFromBoundignGeometry(const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix, const GBufferTextureInfo& gBuffTexInfo, const QVector3D& viewPos)
 		{ assert(GetBoundingGeometry() != nullptr && "Bounding geometry not found"); } 
 
+		virtual void CalculateStencil(const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix)
+		{ assert(GetStencilTest() && "Stencil test not found"); }
+
 		virtual WorldItem* const GetBoundingGeometry() { return nullptr; }
+		virtual bool GetStencilTest() { return false; }
 	protected:
 		QVector3D mColorDiffuse; // Vec3 color  + float intensity
 		QVector3D mColorAmbient;

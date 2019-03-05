@@ -3,11 +3,11 @@
 #ifndef GEOMETRYSPOTLIGHT_H
 #define GEOMETRYSPOTLIGHT_H
 
-#include "../DeferredShadingLight.h"
+#include "../StencilTestLight.h"
 
 namespace GeometryEngine
 {
-	class Spotlight : public DeferredShadingLight
+	class Spotlight : public StencilTestLight
 	{
 	public:
 		Spotlight(float maxLightAngle, const QVector3D& attParams, const QVector3D& direction, GeometryItem* boundingBox = nullptr, const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& ambient = QVector3D(1.0f, 1.0f, 1.0f),

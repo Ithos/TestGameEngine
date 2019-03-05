@@ -41,6 +41,6 @@ void GeometryEngine::DeferredShadingLight::ScaleBoundingBox(const QVector3D & at
 			/
 			(2 * attenuation.z());
 
-		mpBoundingBox->Scale(/*ret*/10 * QVector3D(1.0f, 1.0f, 1.0f));
+		mpBoundingBox->Scale(ret * QVector3D(1.0f, 1.0f, 1.0f));
 	}
 }

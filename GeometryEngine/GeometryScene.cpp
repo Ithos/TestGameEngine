@@ -34,33 +34,55 @@ void GeometryEngine::GeometryScene::DrawItem(Camera * cam, GeometryItem * item)
 
 void GeometryEngine::GeometryScene::ApplyLight(Camera * cam)
 {
-	GBufferTextureInfo gbuff(GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_DIFFUSE,
+	GBufferTextureInfo gbuff(
+		GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_DIFFUSE,
 		GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_POSITION,
 		GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_NORMAL,
 		GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_TEXCOORD, 
 		cam->GetGBuffer()->GetTextureSize());
 
+	cam->GetGBuffer()->BindForLightPass();
+
 	for (auto iter = mLights.begin(); iter != mLights.end(); ++iter)
 	{
-	Light* l = (*iter);
+		Light* l = (*iter);
 
-	if (l->GetBoundingGeometry() != nullptr)
-	{
-		l->LightFromBoundignGeometry(cam->GetProjectionMatrix(), cam->GetViewMatrix(), gbuff, cam->GetPosition());
-	}
-	else
-	{
-		for (auto it = mItemList.begin(); it != mItemList.end(); ++it)
+		
+		if (l->GetStencilTest())
 		{
-			GeometryItem* item = (*it);
-			Material* mat = item->GetMaterialPtr();
-			LightingTransformationData ltd(cam->GetProjectionMatrix(), cam->GetViewMatrix(), item->GetModelMatrix(), item->GetRotation());
-			MaterialLightingParameters mlp(mat->GetAmbient(), mat->GetDiffuse(), mat->GetSpecular(), mat->GetShininess());
-			
-			l->CalculateLighting(item->GetArrayBuffer(), item->GetIndexBuffer(), ltd, mlp, gbuff, cam->GetPosition(), item->GetVertexNumber(), item->GetIndexNumber());
+			PrepareStencilPass(cam);
+			StencilPass(l, cam);
+			cam->GetGBuffer()->BindForLightPass();
+			StencilLight();
 		}
-	}
-	
+
+		PrepareLightPass();
+
+		
+
+		if (l->GetBoundingGeometry() != nullptr)
+		{
+			l->LightFromBoundignGeometry(cam->GetProjectionMatrix(), cam->GetViewMatrix(), gbuff, cam->GetPosition());
+		}
+		else
+		{
+			for (auto it = mItemList.begin(); it != mItemList.end(); ++it)
+			{
+				GeometryItem* item = (*it);
+				Material* mat = item->GetMaterialPtr();
+				LightingTransformationData ltd(cam->GetProjectionMatrix(), cam->GetViewMatrix(), item->GetModelMatrix(), item->GetRotation());
+				MaterialLightingParameters mlp(mat->GetAmbient(), mat->GetDiffuse(), mat->GetSpecular(), mat->GetShininess());
+			
+				l->CalculateLighting(item->GetArrayBuffer(), item->GetIndexBuffer(), ltd, mlp, gbuff, cam->GetPosition(), item->GetVertexNumber(), item->GetIndexNumber());
+			}
+		}
+		
+		if (l->GetStencilTest())
+		{
+			FinishStencilPass();
+		}
+
+		FinishLightPass();
 	}
 }
 
@@ -132,7 +154,8 @@ void GeometryEngine::GeometryScene::GeometryPass()
 
 		if (cam->GetGBuffer() != nullptr)
 		{
-			cam->GetGBuffer()->BindForWriting(); // Bind GBuffer
+			cam->GetGBuffer()->StartFrame();
+			cam->GetGBuffer()->BindForGeomPass(); // Bind GBuffer
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clear GBuffer
 
 			QVector4D viewport = cam->GetViewportSize();
@@ -158,8 +181,8 @@ void GeometryEngine::GeometryScene::LightPass()
 
 		if (cam->GetGBuffer() != nullptr)
 		{
-			cam->GetGBuffer()->BindForReading(); // Bind GBuffer
-			glClear(GL_COLOR_BUFFER_BIT);
+			//cam->GetGBuffer()->BindForLightPass(); // Bind GBuffer
+			//glClear(GL_COLOR_BUFFER_BIT);
 
 			QVector4D viewport = cam->GetViewportSize();
 			if (viewport.z() > 0 && viewport.w())
@@ -173,14 +196,76 @@ void GeometryEngine::GeometryScene::LightPass()
 	
 }
 
+void GeometryEngine::GeometryScene::PrepareStencilPass(Camera* cam)
+{
+	glEnable(GL_STENCIL_TEST);
+	cam->GetGBuffer()->BindForStencilPass();
+	glEnable(GL_DEPTH_TEST);
+	glDisable(GL_CULL_FACE);
+
+	glClear(GL_STENCIL_BUFFER_BIT);
+
+	// We need the stencil test to be enabled but we want it
+	// to succeed always. Only the depth test matters.
+	glStencilFunc(GL_ALWAYS, 0, 0);
+
+	glStencilOpSeparate(GL_BACK, GL_KEEP, GL_INCR_WRAP, GL_KEEP);
+	glStencilOpSeparate(GL_FRONT, GL_KEEP, GL_DECR_WRAP, GL_KEEP);
+}
+
+void GeometryEngine::GeometryScene::StencilPass(Light * light, Camera* cam)
+{
+	if(light->GetStencilTest())
+		light->CalculateStencil(cam->GetProjectionMatrix(), cam->GetViewMatrix());
+}
+
+void GeometryEngine::GeometryScene::StencilLight()
+{
+	glStencilFunc(GL_NOTEQUAL, 0, 0xFF);
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_FRONT);
+	DisableDepth();
+}
+
+void GeometryEngine::GeometryScene::FinishStencilPass()
+{
+	glCullFace(GL_BACK);
+	glDisable(GL_STENCIL_TEST);
+}
+
+void GeometryEngine::GeometryScene::FinishLightPass()
+{
+	glDisable(GL_BLEND);
+}
+
+void GeometryEngine::GeometryScene::FinalPass()
+{
+	for (auto iter = mCameras.begin(); iter != mCameras.end(); ++iter)
+	{
+		Camera* cam = (*iter);
+		if (cam->GetGBuffer() != nullptr)
+		{
+			cam->GetGBuffer()->BindForFinalPass();
+			QVector2D texSize = cam->GetGBuffer()->GetTextureSize();
+			QVector4D viewport = cam->GetViewportSize();
+			glBlitFramebuffer(  
+				0, 0, texSize.x(), texSize.y(), 
+				viewport.x(), viewport.y(), viewport.z(), viewport.w(), 
+				GL_COLOR_BUFFER_BIT, GL_LINEAR
+			);
+		}
+	}
+}
+
 void GeometryEngine::GeometryScene::Draw()
 {
 	PrepareGeomPass();
 	GeometryPass();
-	DisableDepth();
-
-	PrepareLightPass();
+	//DisableDepth();
+	glDisable(GL_DEPTH_TEST);
+	
 	LightPass();
+	FinalPass();
 
 
 	////////////////////////////////////////////////////////////////

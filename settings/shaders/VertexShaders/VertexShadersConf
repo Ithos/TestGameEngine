@@ -10,3 +10,4 @@ AMBIENT_LIGHT_VERTEX_SHADER_DS = Lights\DSAmbientLight.vert
 DIRECTIONAL_LIGHT_VERTEX_SHADER_DS = Lights\DSDirectionalLight.vert
 POINT_LIGHT_VERTEX_SHADER_DS = Lights\DSPointLight.vert
 FLASHLIGHT_VERTEX_SHADER_DS = Lights\DSFlashlight.vert
+POSITION_VERTEX_SHADER = PositionShader.vert

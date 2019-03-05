@@ -19,6 +19,9 @@ const std::string GeometryEngine::LightShaderConstants::DIRECTIONAL_LIGHT_FRAGME
 const std::string GeometryEngine::LightShaderConstants::POINT_LIGHT_FRAGMENT_SHADER_DS = "POINT_LIGHT_FRAGMENT_SHADER_DS";
 const std::string GeometryEngine::LightShaderConstants::FLASHLIGHT_FRAGMENT_SHADER_DS = "FLASHLIGHT_FRAGMENT_SHADER_DS";
 
+const std::string GeometryEngine::LightShaderConstants::NULL_FRAGMENT_SHADER = "NULL_FRAGMENT_SHADER";
+const std::string GeometryEngine::LightShaderConstants::POSITION_VERTEX_SHADER = "POSITION_VERTEX_SHADER";
+
 GeometryEngine::Light::Light(const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, 
 	const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : WorldItem(pos, rot, scale, parent), mColorDiffuse(diffuse), 
 	mColorAmbient(ambient), mColorSpecular(specular), mpProgram(nullptr), mVertexShaderKey(""), mFragmentShaderKey("")

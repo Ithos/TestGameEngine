@@ -50,6 +50,14 @@ namespace GeometryEngine
 		virtual void DisableDepth();
 		virtual void PrepareLightPass();
 		virtual void LightPass();
+		virtual void PrepareStencilPass(Camera* cam);
+		virtual void StencilPass(Light* light, Camera* cam);
+		virtual void StencilLight();
+		virtual void FinishStencilPass();
+		virtual void FinishLightPass();
+		virtual void OpenStencilTest() { glEnable(GL_STENCIL_TEST); }
+		virtual void CloseStencilTest() { glDisable(GL_STENCIL_TEST); }
+		virtual void FinalPass();
 
 		////////////////////////////////////////////////////////////////
 		// GEOMETRY BUFFER DEBUG

@@ -2,7 +2,7 @@
 
 GeometryEngine::PointLight::PointLight(const QVector3D & attParam, GeometryItem* boundingBox, const QVector3D & diffuse, const QVector3D & ambient,
 	const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent) :
-	DeferredShadingLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, parent), mAttenuationParameters(attParam)
+	StencilTestLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, parent), mAttenuationParameters(attParam)
 {
 	initLight();
 }

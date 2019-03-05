@@ -117,7 +117,7 @@ namespace Application
 		GeometryEngine::TextureMaterial tMat(tmpList);
 		/*GeometryEngine::Cube**/ testCube = new GeometryEngine::Cube( tMat, 4.0f,QVector3D(-5.0f, 0.0f, -15.0f), QVector3D(30.0f, -30.0f, 0.0f));
 		/*GeometryEngine::Cube**/ testCube2 = new GeometryEngine::Sphere(mat, 1.0f, 6, 12, QVector3D(5.0f, 0.0f, -15.0f));//new GeometryEngine::Cube(mat, 2.0f, QVector3D(5.0f, 0.0f, -15.0f), QVector3D(-30.0f, 30.0f, 0.0f));
-		/*GeometryEngine::PerspectiveCamera**/ cam = new GeometryEngine::PerspectiveCamera( QVector4D(0, 0, this->width(), this->height()), 45.0f, 1.0f, true, 0.1f, 30.0f, 
+		/*GeometryEngine::PerspectiveCamera**/ cam = new GeometryEngine::PerspectiveCamera( QVector4D(0, 0, this->width(), this->height()), 45.0f, 1.0f, true, 0.1f, 1000.0f, 
 																			QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f) );
 
 		GeometryEngine::Sphere lightSphere(mat);

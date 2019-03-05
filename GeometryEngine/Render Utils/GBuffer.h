@@ -30,14 +30,22 @@ namespace GeometryEngine
 		void BindForWriting();
 		void BindForReading();
 		void SetReadBuffer(GBUFFER_TEXTURE_TYPE TextureType);
+		void StartFrame();
+		void BindForGeomPass();
+		void BindForStencilPass();
+		void BindForLightPass();
+		void BindForFinalPass();
 		const QVector2D& GetTextureSize() const { return mTextureSize; }
+		const QVector2D& GetMaxTextureSize() const { return mMaxTextureSize; }
 		unsigned int GetTexture(GBUFFER_TEXTURE_TYPE texture) const { return mTextures[texture]; }
 
 	protected:
 		unsigned int mFbo;
 		unsigned int mTextures[GBUFFER_NUM_TEXTURES];
 		unsigned int mDepthTexture;
+		unsigned int mFinalTexture;
 		QVector2D mTextureSize;
+		QVector2D mMaxTextureSize;
 	};
 }
 
