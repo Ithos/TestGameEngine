@@ -181,9 +181,6 @@ void GeometryEngine::GeometryScene::LightPass()
 
 		if (cam->GetGBuffer() != nullptr)
 		{
-			//cam->GetGBuffer()->BindForLightPass(); // Bind GBuffer
-			//glClear(GL_COLOR_BUFFER_BIT);
-
 			QVector4D viewport = cam->GetViewportSize();
 			if (viewport.z() > 0 && viewport.w())
 			{

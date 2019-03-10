@@ -23,15 +23,7 @@ void GeometryEngine::DirectionalLight::setProgramParameters(const LightingTransf
 	assert( mpProgram != nullptr && "Shading program not found");
 	{
 		// Set matrices
-		mpProgram->setUniformValue("modelViewProjectionMatrix", /*transformData.ProjectionMatrix * transformData.ViewMatrix */ transformData.ModelMatrix);
-		//mpProgram->setUniformValue("modelViewMatrix", transformData.ViewMatrix * transformData.ModelMatrix);
-		//mpProgram->setUniformValue("modelMatrix", transformData.ModelMatrix);
-
-		//Set material properties
-		//mpProgram->setUniformValue("mMaterial.ambient", matParam.Ambient);
-		//mpProgram->setUniformValue("mMaterial.diffuse", matParam.Diffuse);
-		//mpProgram->setUniformValue("mMaterial.specular", matParam.Specular);
-		//mpProgram->setUniformValue("mMaterial.shininess", matParam.Shininess);
+		mpProgram->setUniformValue("modelViewProjectionMatrix", transformData.ModelMatrix);
 
 		mpProgram->setUniformValue("mPositionMap", gBuffTexInfo.PositionTexture);
 		mpProgram->setUniformValue("mColorMap", gBuffTexInfo.DiffuseTexture);

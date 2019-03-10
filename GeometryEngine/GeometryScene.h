@@ -36,7 +36,6 @@ namespace GeometryEngine
 
 	protected:
 		std::unordered_set< GeometryItem* > mItemList;// DO NOT DELETE
-		QMatrix4x4 mProjection;
 		SceneManager* mpParentManager; // DO NOT DELETE
 		QVector4D mClearColor;
 		std::unordered_set< Camera* > mCameras;// DO NOT DELETE
