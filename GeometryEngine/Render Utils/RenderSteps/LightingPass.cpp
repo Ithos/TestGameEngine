@@ -2,9 +2,8 @@
 
 void GeometryEngine::LightingPass::Render(Camera * cam, std::unordered_set<GeometryItem*>* items, std::unordered_set<Light*>* lights)
 {
-	assert(cam == nullptr && "LightingPass --> No camera found");
-	assert(items != nullptr && "LightingPass --> No items required for this pass");
-	assert(lights == nullptr && "LightingPass --> No lights list found");
+	assert(cam != nullptr && "LightingPass --> No camera found");
+	assert(lights != nullptr && "LightingPass --> No lights list found");
 
 	initStep();
 	renderLights(cam, lights);
@@ -13,7 +12,7 @@ void GeometryEngine::LightingPass::Render(Camera * cam, std::unordered_set<Geome
 
 void GeometryEngine::LightingPass::renderLights(Camera * cam, std::unordered_set<Light*>* lights)
 {
-	assert(cam->GetGBuffer() == nullptr && "LightingPass --> No geometry buffer found");
+	assert(cam->GetGBuffer() != nullptr && "LightingPass --> No geometry buffer found");
 
 	QVector4D viewport = cam->GetViewportSize();
 	if (viewport.z() > 0 && viewport.w())
@@ -38,7 +37,7 @@ void GeometryEngine::LightingPass::applyLight(Camera * cam, std::unordered_set<L
 	{
 		Light* l = (*iter);
 
-		assert(l->GetBoundingGeometry() == nullptr && "LightingPass --> Light without bounding geometry");
+		assert(l->GetBoundingGeometry() != nullptr && "LightingPass --> Light without bounding geometry");
 
 		if (l->GetStencilTest())
 		{
@@ -94,7 +93,7 @@ void GeometryEngine::LightingPass::prepareStencilPass(Camera * cam)
 
 void GeometryEngine::LightingPass::stencilPass(Light * light, Camera * cam)
 {
-	assert(!light->GetStencilTest() && "LightingPass --> No stencil test found diring stencil pass");
+	assert(light->GetStencilTest() && "LightingPass --> No stencil test found diring stencil pass");
 	light->CalculateStencil(cam->GetProjectionMatrix(), cam->GetViewMatrix());
 }
 

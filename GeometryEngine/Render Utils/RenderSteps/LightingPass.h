@@ -7,14 +7,16 @@
 
 namespace GeometryEngine
 {
-	class LightingPass : RenderStep
+	class LightingPass : public RenderStep
 	{
 	public:
 
 		LightingPass() : RenderStep() {}
+		LightingPass(const LightingPass& ref) { copy(ref); }
 		virtual ~LightingPass() {}
 
 		virtual void Render(Camera* cam = nullptr, std::unordered_set<GeometryItem*> * items = nullptr, std::unordered_set<Light*> * lights = nullptr) override;
+		virtual RenderStep* Clone() const override { return new LightingPass(*this); }
 
 	protected:
 		void initStep();
@@ -28,6 +30,8 @@ namespace GeometryEngine
 		void prepareLightPass();
 		void finishLightPass();
 		void finishStencilPass();
+
+		virtual void copy(const LightingPass& ref) { RenderStep::copy(ref); }
 	};
 }
 

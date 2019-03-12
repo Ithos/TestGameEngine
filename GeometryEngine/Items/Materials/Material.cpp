@@ -33,15 +33,13 @@ void GeometryEngine::Material::Draw(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * in
 		// Link shader pipeline
 		if (!mpProgram->link())
 		{
-			/// TODO -- log error -- ///
-			return;
+			assert(false && "Material --> Program failed to link");
 		}
 
 		// Bind shader pipeline for use
 		if (!mpProgram->bind())
 		{
-			/// TODO -- log error -- ///
-			return;
+			assert(false && "Material --> Program failed to bind");
 		}
 
 		setProgramParameters(projection, view, parent);
@@ -74,8 +72,7 @@ void GeometryEngine::Material::initProgram()
 		// Compile vertex shader
 		if (!mpProgram->addShaderFromSourceCode(QOpenGLShader::Vertex, mpShaderManager->GetLoadedShaderContent(mVertexShaderKey).c_str()))
 		{
-			/// TODO -- log error -- ///
-			return;
+			assert(false && "Material --> VertexShader failed to compile");
 		}
 	}
 
@@ -89,8 +86,7 @@ void GeometryEngine::Material::initProgram()
 		// Compile fragment shader
 		if (!mpProgram->addShaderFromSourceCode(QOpenGLShader::Fragment, mpShaderManager->GetLoadedShaderContent(mFragmentShaderKey).c_str()))
 		{
-			/// TODO -- log error -- ///
-			return;
+			assert(false && "Material --> FragmentShader failed to compile");
 		}
 	}
 }

@@ -4,11 +4,14 @@
 #define SCENEMANAGER_H
 
 #include <list>
+#include <type_traits>
 #include "GeometryScene.h"
+
 
 namespace GeometryEngine
 {
 	class GeometryScene;
+	class DeferredShadingScene;
 
 	class SceneManager
 	{
@@ -17,6 +20,7 @@ namespace GeometryEngine
 		~SceneManager();
 
 		GeometryScene* CreateScene();
+		template <typename T > GeometryScene* CreateScene() { return new T(this); }
 		bool AddScene(GeometryScene* scene);
 		bool RemoveScene(GeometryScene* scene);
 		bool RemoveScene(unsigned int sceneId);

@@ -3,13 +3,14 @@
 #ifndef GEOMETRYSCENE_H
 #define GEOMETRYSCENE_H
 
-#include <QOpenGLFunctions>
-#include <QOpenGLExtraFunctions>
 #include <unordered_set>
+#include <list>
 #include "Items/WorldItem.h"
 #include "Items\GeometryItem.h"
 #include "Items/GraphicItems/Camera.h"
 #include "Items\GraphicItems\Light.h"
+#include "Render Utils\RenderStep.h"
+#include "Render Utils\GlSetup.h"
 #include "SceneManager.h"
 
 
@@ -17,8 +18,12 @@ namespace GeometryEngine
 {
 	class SceneManager;
 	class WorldItem;
+	class Light;
+	class Camera;
+	class RenderStep;
+	class GlSetup;
 
-	class GeometryScene: protected QOpenGLExtraFunctions
+	class GeometryScene
 	{
 	public:
 		GeometryScene(SceneManager* manager, GLdouble fovy = 45.0, GLdouble zNear = 0.1, GLdouble zFar = 30.0, QVector4D clearColor = QVector4D(0.0f, 0.0f, 0.0f, 1.0f));
@@ -33,6 +38,10 @@ namespace GeometryEngine
 		virtual bool AddLight(Light* item);
 		virtual bool RemoveLight(Light* item);
 		virtual void InitializeGL();
+		virtual void SetInitialSetup(const GlSetup& setup) { mpInitialSetup = setup.Clone(); }
+		virtual bool AddRenderStep(const RenderStep& step);
+		virtual bool RemoveRenderStep(int pos);
+		virtual bool InsertRenderStep(const RenderStep& step, unsigned int pos);
 
 	protected:
 		std::unordered_set< GeometryItem* > mItemList;// DO NOT DELETE
@@ -40,29 +49,8 @@ namespace GeometryEngine
 		QVector4D mClearColor;
 		std::unordered_set< Camera* > mCameras;// DO NOT DELETE
 		std::unordered_set< Light* > mLights;// DO NOT DELETE
-		
-
-		virtual void DrawItem(Camera* cam, GeometryItem* item);
-		virtual void ApplyLight(Camera* cam);
-		virtual void GeometryPass();
-		virtual void PrepareGeomPass();
-		virtual void DisableDepth();
-		virtual void PrepareLightPass();
-		virtual void LightPass();
-		virtual void PrepareStencilPass(Camera* cam);
-		virtual void StencilPass(Light* light, Camera* cam);
-		virtual void StencilLight();
-		virtual void FinishStencilPass();
-		virtual void FinishLightPass();
-		virtual void OpenStencilTest() { glEnable(GL_STENCIL_TEST); }
-		virtual void CloseStencilTest() { glDisable(GL_STENCIL_TEST); }
-		virtual void FinalPass();
-
-		////////////////////////////////////////////////////////////////
-		// GEOMETRY BUFFER DEBUG
-		///////////////////////////////////////////////////////////////
-
-		void gBufferDebug(Camera* cam);
+		std::list<RenderStep * > mRenderSteps;
+		GlSetup* mpInitialSetup;
 	};
 }
 

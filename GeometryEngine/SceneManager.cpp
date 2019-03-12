@@ -1,4 +1,5 @@
 #include "SceneManager.h"
+#include "Scenes/DeferredShadingScene.h"
 
 GeometryEngine::SceneManager::SceneManager() : mpActiveScene(nullptr)
 {

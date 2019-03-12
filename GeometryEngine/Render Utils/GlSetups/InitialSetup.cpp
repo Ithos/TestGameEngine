@@ -20,3 +20,12 @@ void GeometryEngine::InitialSetup::FinishSetup()
 	glDisable(GL_DEPTH_TEST);
 	glDisable(GL_CULL_FACE);
 }
+
+void GeometryEngine::InitialSetup::copy(const InitialSetup & ref)
+{
+	GlSetup::copy(ref); 
+	this->mClearColor.setX(ref.mClearColor.x()); 
+	this->mClearColor.setY(ref.mClearColor.y()); 
+	this->mClearColor.setZ(ref.mClearColor.z()); 
+	this->mClearColor.setW(ref.mClearColor.w());
+}

@@ -16,6 +16,7 @@
 #include <Items\GraphicItems\Lights\DirectionalLight.h>
 #include <Items\GraphicItems\Lights\PointLight.h>
 #include <Items\GraphicItems\Lights\Spotlight.h>
+#include <Scenes/DeferredShadingScene.h>
 
 namespace Application
 {
@@ -100,7 +101,7 @@ namespace Application
 	}
 	void CWindowApplication::initGeometry(GeometryEngine::GeometryEngine* engine)
 	{
-		GeometryEngine::GeometryScene* scene = engine->GetSceneManager()->CreateScene();
+		GeometryEngine::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::DeferredShadingScene>();
 		GeometryEngine::ColorMaterial mat( QVector3D(1.0f, 0.4f, 0.3f) );
 
 		std::list< GeometryEngine::TextureParameters* > tmpList;

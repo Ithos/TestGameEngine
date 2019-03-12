@@ -2,16 +2,14 @@
 
 void GeometryEngine::FinalPass::Render(Camera * cam, std::unordered_set<GeometryItem*>* items, std::unordered_set<Light*>* lights)
 {
-	assert(cam == nullptr && "FinalPass -> Camera not found");
-	assert(items != nullptr && "FinalPass -> Items not needed");
-	assert(lights != nullptr && "FinalPass -> lights not needed");
+	assert(cam != nullptr && "FinalPass -> Camera not found");
 
 	renderToScreen(cam);
 }
 
 void GeometryEngine::FinalPass::renderToScreen(Camera * cam)
 {
-	assert(cam->GetGBuffer() == nullptr && "FinalPass --> Geometry buffer not found");
+	assert(cam->GetGBuffer() != nullptr && "FinalPass --> Geometry buffer not found");
 
 	cam->GetGBuffer()->BindForFinalPass();
 	QVector2D texSize = cam->GetGBuffer()->GetTextureSize();

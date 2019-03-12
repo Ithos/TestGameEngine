@@ -13,11 +13,6 @@
 #include <QOpenGLShaderProgram>
 #include <GeometryEngine.h>
 
-/// JUST for testing  -- DELETE -- ///
-
-#include <ConfigurationManager.h>
-#include <ShaderManager.h>
-
 namespace GeometryEngine {
 	class GeometryEngine;
 	class Cube;
