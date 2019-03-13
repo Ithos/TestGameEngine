@@ -105,33 +105,6 @@ bool GeometryEngine::GBuffer::Resize(unsigned int WindowWidth, unsigned int Wind
 	return true;
 }
 
-void GeometryEngine::GBuffer::BindForWriting()
-{
-	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, mFbo);
-
-	/*for (unsigned int i = 0; i < GBUFFER_NUM_TEXTURES; i++) {
-		glActiveTexture(GL_TEXTURE0 + i);
-		glBindTexture(GL_TEXTURE_2D, mTextures[GBUFFER_TEXTURE_TYPE_DIFFUSE + i]);
-	}*/
-}
-
-void GeometryEngine::GBuffer::BindForReading()
-{
-	//glBindFramebuffer(GL_READ_FRAMEBUFFER, mFbo);
-
-	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
-
-	for (unsigned int i = 0; i < GBUFFER_NUM_TEXTURES; i++) {
-		glActiveTexture(GL_TEXTURE0 + i);
-		glBindTexture(GL_TEXTURE_2D, mTextures[GBUFFER_TEXTURE_TYPE_DIFFUSE + i]);
-	}
-}
-
-void GeometryEngine::GBuffer::SetReadBuffer(GBUFFER_TEXTURE_TYPE TextureType)
-{
-	glReadBuffer(GL_COLOR_ATTACHMENT0 + TextureType);
-}
-
 void GeometryEngine::GBuffer::StartFrame()
 {
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, mFbo);

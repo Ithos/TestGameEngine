@@ -185,8 +185,6 @@ void GeometryEngine::WorldItem::SetScale(const QVector3D & scale, bool delayUpda
 
 void GeometryEngine::WorldItem::init(const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent)
 {
-	initializeOpenGLFunctions();
-
 	SetPosition(pos, true);
 	SetRotation(rot, true);
 	SetScale(scale, true);

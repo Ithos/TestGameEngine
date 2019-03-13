@@ -3,11 +3,17 @@
 #ifndef GEOMETRYCAMERA_H
 #define GEOMETRYCAMERA_H
 
+#include <list>
+
 #include "../WorldItem.h"
 #include "Render Utils\GBuffer.h"
 
+
 namespace GeometryEngine
 {
+	class RenderStep;
+	class GBuffer;
+
 	class Camera : public WorldItem
 	{
 	public:
@@ -27,6 +33,12 @@ namespace GeometryEngine
 		bool IsAutoResize() { return mAutoResize; }
 		virtual GBuffer* GetGBuffer() { return mpGBuffer; }
 
+		virtual bool AddCustomRenderStep(const RenderStep& step);
+		virtual bool RemoveCustomRenderStep(int pos);
+		virtual bool InsertCustomRenderStep(const RenderStep& step, unsigned int pos);
+		virtual void ClearCustomRenderSteps();
+		virtual const std::list< RenderStep* >& GetCustomRenderSteps() { return mCustomRenderSteps; }
+
 	protected:
 		GLdouble mZNear;
 		GLdouble mZFar;
@@ -35,6 +47,7 @@ namespace GeometryEngine
 		QMatrix4x4 mViewProjection;
 		bool mAutoResize;
 		GBuffer* mpGBuffer;
+		std::list< RenderStep* > mCustomRenderSteps;
 		virtual void ResetCameraBeforeCalculation();
 		virtual void ApplyCameraModelMatrix() { mViewProjection = mProjection * mModelMatrix; };
 	};

@@ -9,14 +9,7 @@ GeometryEngine::GeometryScene::GeometryScene(SceneManager* manager, GLdouble fov
 GeometryEngine::GeometryScene::~GeometryScene()
 {
 	delete(mpInitialSetup);
-
-	for (auto iter = mRenderSteps.begin(); iter != mRenderSteps.end(); ++iter)
-	{
-		RenderStep* step = (*iter);
-		delete(step);
-	}
-
-	mRenderSteps.clear();
+	ClearRenderSteps();
 }
 
 void GeometryEngine::GeometryScene::InitializeGL()
@@ -46,11 +39,8 @@ void GeometryEngine::GeometryScene::Draw()
 	for (auto iter = mCameras.begin(); iter != mCameras.end(); ++iter)
 	{
 		Camera* cam = (*iter);
-		for (auto it = mRenderSteps.begin(); it != mRenderSteps.end(); ++it)
-		{
-			RenderStep* current = (*it);
-			current->Render(cam, &mItemList, &mLights);
-		}
+		// If the camera has a custom render pipeline we go with that if it doesn't we use the scene pipeline
+		renderCamera(cam, cam->GetCustomRenderSteps().size() > 0 ? cam->GetCustomRenderSteps() : mRenderSteps);
 	}
 }
 
@@ -116,8 +106,6 @@ bool GeometryEngine::GeometryScene::AddRenderStep(const RenderStep& step)
 
 bool GeometryEngine::GeometryScene::RemoveRenderStep(int pos)
 {
-
-
 	if( mRenderSteps.size() >= pos)
 		return false;
 
@@ -136,6 +124,26 @@ bool GeometryEngine::GeometryScene::InsertRenderStep(const RenderStep& step, uns
 	std::advance(it, pos);
 	mRenderSteps.emplace(it, step.Clone() );
 	return true;
+}
+
+void GeometryEngine::GeometryScene::ClearRenderSteps()
+{
+	for (auto iter = mRenderSteps.begin(); iter != mRenderSteps.end(); ++iter)
+	{
+		RenderStep* step = (*iter);
+		delete(step);
+	}
+
+	mRenderSteps.clear();
+}
+
+void GeometryEngine::GeometryScene::renderCamera(Camera * cam, const std::list<RenderStep*>& renderSteps)
+{
+	for (auto it = renderSteps.begin(); it != renderSteps.end(); ++it)
+	{
+		RenderStep* current = (*it);
+		current->Render(cam, &mItemList, &mLights);
+	}
 }
 
 

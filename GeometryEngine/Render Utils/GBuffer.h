@@ -27,9 +27,6 @@ namespace GeometryEngine
 
 		bool Init(unsigned int MaxWindowWidth, unsigned int MaxWindowHeight);
 		bool Resize(unsigned int WindowWidth, unsigned int WindowHeight);
-		void BindForWriting();
-		void BindForReading();
-		void SetReadBuffer(GBUFFER_TEXTURE_TYPE TextureType);
 		void StartFrame();
 		void BindForGeomPass();
 		void BindForStencilPass();

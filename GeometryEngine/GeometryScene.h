@@ -42,6 +42,7 @@ namespace GeometryEngine
 		virtual bool AddRenderStep(const RenderStep& step);
 		virtual bool RemoveRenderStep(int pos);
 		virtual bool InsertRenderStep(const RenderStep& step, unsigned int pos);
+		virtual void ClearRenderSteps();
 
 	protected:
 		std::unordered_set< GeometryItem* > mItemList;// DO NOT DELETE
@@ -51,6 +52,8 @@ namespace GeometryEngine
 		std::unordered_set< Light* > mLights;// DO NOT DELETE
 		std::list<RenderStep * > mRenderSteps;
 		GlSetup* mpInitialSetup;
+
+		virtual void renderCamera(Camera * cam, const std::list<RenderStep * >& renderSteps);
 	};
 }
 

@@ -3,7 +3,6 @@
 #ifndef WORLDITEM_H
 #define WORLDITEM_H
 
-#include <QOpenGLFunctions>
 #include <QVector3D>
 #include <QVector2D>
 #include <QQuaternion>
@@ -25,7 +24,7 @@ namespace GeometryEngine
 		static const unsigned int NORMALS_OFFSET = sizeof(QVector3D) + sizeof(QVector3D) + sizeof(QVector2D);
 	};
 
-	class WorldItem : protected QOpenGLFunctions
+	class WorldItem
 	{
 	public:
 		WorldItem(const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f), 
