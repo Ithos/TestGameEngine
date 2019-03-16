@@ -15,10 +15,25 @@
 
 namespace GeometryEngine {
 	class GeometryEngine;
-	class Cube;
-	class PerspectiveCamera;
-	class Light;
-	class Sphere;
+
+	namespace GeometryWorldItem
+	{
+		namespace GeometryItem
+		{
+			class Cube;
+			class Sphere;
+		}
+
+		namespace GeometryCamera
+		{
+			class PerspectiveCamera;
+		}
+
+		namespace GeometryLight
+		{
+			class Light;
+		}
+	}
 }
 
 namespace Application
@@ -43,17 +58,17 @@ namespace Application
 
 	private:
 
-		void initGeometry(GeometryEngine::GeometryEngine* engine); /// TODO -- this should be done somewhere else
+		void initGeometry(GeometryEngine::GeometryEngine* engine);
 
 		QBasicTimer timer;
 		GeometryEngine::GeometryEngine *mpGeomInstance;
 		QVector2D mWindowSize;
 
 		/// Items shouldnt be created here its just for testing purposes
-		GeometryEngine::Cube* testCube;
-		GeometryEngine::Sphere* testCube2;
-		GeometryEngine::PerspectiveCamera* cam;
-		GeometryEngine::Light* mainLight;
+		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* testCube;
+		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere* testCube2;
+		GeometryEngine::GeometryWorldItem::GeometryCamera::PerspectiveCamera* cam;
+		GeometryEngine::GeometryWorldItem::GeometryLight::Light* mainLight;
 
 	};
 }

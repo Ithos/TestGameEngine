@@ -1,18 +1,18 @@
 #include "GeometryItem.h"
 
-GeometryEngine::GeometryItem::GeometryItem(const Material& mat, const QVector3D& pos, const QVector3D & rot,	const QVector3D & scale, WorldItem* parent):
+GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::GeometryItem(const GeometryMaterial::Material& mat, const QVector3D& pos, const QVector3D & rot,	const QVector3D & scale, WorldItem* parent):
 	WorldItem(pos, rot, scale, parent), mpArrayBuf(nullptr), mpIndexBuf(nullptr), mpMaterial(nullptr), mpConfInstance(nullptr), mVertexShaderKey(""), mFragmentShaderKey(""), 
 	mTotalVertexNumber(0), mTotalIndexNumber(0)
 {
 	mpMaterial = mat.Clone();
 }
 
-GeometryEngine::GeometryItem::GeometryItem(const GeometryItem & ref)
+GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::GeometryItem(const GeometryItem & ref)
 {
 	this->Copy(ref);
 }
 
-GeometryEngine::GeometryItem::~GeometryItem()
+GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::~GeometryItem()
 {
 	if (mpArrayBuf != nullptr)
 	{
@@ -35,7 +35,7 @@ GeometryEngine::GeometryItem::~GeometryItem()
 	}
 }
 
-void GeometryEngine::GeometryItem::DrawItem(const QMatrix4x4& projection, const QMatrix4x4& view)
+void GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::DrawItem(const QMatrix4x4& projection, const QMatrix4x4& view)
 {
 	if (mpMaterial != nullptr)
 	{
@@ -43,7 +43,7 @@ void GeometryEngine::GeometryItem::DrawItem(const QMatrix4x4& projection, const 
 	}
 }
 
-void GeometryEngine::GeometryItem::SetMaterial(Material * mat)
+void GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::SetMaterial(GeometryMaterial::Material * mat)
 {
 	if (mpMaterial != nullptr)
 	{
@@ -52,7 +52,7 @@ void GeometryEngine::GeometryItem::SetMaterial(Material * mat)
 	mpMaterial = mat->Clone();
 }
 
-void GeometryEngine::GeometryItem::Copy(const GeometryItem & ref)
+void GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::Copy(const GeometryItem & ref)
 {
 	this->WorldItem::Copy(ref);
 
@@ -68,7 +68,7 @@ void GeometryEngine::GeometryItem::Copy(const GeometryItem & ref)
 
 }
 
-void GeometryEngine::GeometryItem::initItem()
+void GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::initItem()
 {
 	mpConfInstance = Configuration::ConfigurationManager::GetInstance();
 	mpShaderManager = ShaderFiles::ShaderManager::GetInstance(mpConfInstance->getVertexShaderFolder(), mpConfInstance->getFragmentShaderFolder(),

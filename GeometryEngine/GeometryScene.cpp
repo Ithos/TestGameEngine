@@ -1,25 +1,25 @@
 #include "GeometryScene.h"
 
-GeometryEngine::GeometryScene::GeometryScene(SceneManager* manager, GLdouble fovy, GLdouble zNear, GLdouble zFar, QVector4D clearColor) : mClearColor(clearColor), mpInitialSetup(nullptr)
+GeometryEngine::GeometryScene::GeometryScene::GeometryScene(SceneManager* manager, GLdouble fovy, GLdouble zNear, GLdouble zFar, QVector4D clearColor) : mClearColor(clearColor), mpInitialSetup(nullptr)
 {
 	mpParentManager = manager;
 	mpParentManager->AddScene(this);
 }
 
-GeometryEngine::GeometryScene::~GeometryScene()
+GeometryEngine::GeometryScene::GeometryScene::~GeometryScene()
 {
 	delete(mpInitialSetup);
 	ClearRenderSteps();
 }
 
-void GeometryEngine::GeometryScene::InitializeGL()
+void GeometryEngine::GeometryScene::GeometryScene::InitializeGL()
 {
 	assert(mpInitialSetup != nullptr && "GeometryScene --> no intial setup found");
 	mpInitialSetup->SetColor(mClearColor);
 	mpInitialSetup->StartSetup();
 }
 
-void GeometryEngine::GeometryScene::ResizeScene(int w, int h, int formerW, int formerH)
+void GeometryEngine::GeometryScene::GeometryScene::ResizeScene(int w, int h, int formerW, int formerH)
 {
 	for (auto iter = mCameras.begin(); iter != mCameras.end(); ++iter)
 	{
@@ -34,17 +34,17 @@ void GeometryEngine::GeometryScene::ResizeScene(int w, int h, int formerW, int f
 	}
 }
 
-void GeometryEngine::GeometryScene::Draw()
+void GeometryEngine::GeometryScene::GeometryScene::Draw()
 {
 	for (auto iter = mCameras.begin(); iter != mCameras.end(); ++iter)
 	{
-		Camera* cam = (*iter);
+		GeometryWorldItem::GeometryCamera::Camera* cam = (*iter);
 		// If the camera has a custom render pipeline we go with that if it doesn't we use the scene pipeline
 		renderCamera(cam, cam->GetCustomRenderSteps().size() > 0 ? cam->GetCustomRenderSteps() : mRenderSteps);
 	}
 }
 
-bool GeometryEngine::GeometryScene::AddItem(GeometryItem* item)
+bool GeometryEngine::GeometryScene::GeometryScene::AddItem(GeometryWorldItem::GeometryItem::GeometryItem* item)
 {
 	if (mItemList.find(item) != mItemList.end())
 		return false;
@@ -53,7 +53,7 @@ bool GeometryEngine::GeometryScene::AddItem(GeometryItem* item)
 	return true;
 }
 
-bool GeometryEngine::GeometryScene::RemoveItem(GeometryItem* item)
+bool GeometryEngine::GeometryScene::GeometryScene::RemoveItem(GeometryWorldItem::GeometryItem::GeometryItem* item)
 {
 	if(mItemList.find(item) == mItemList.end())
 		return false;
@@ -62,7 +62,7 @@ bool GeometryEngine::GeometryScene::RemoveItem(GeometryItem* item)
 	return true;
 }
 
-bool GeometryEngine::GeometryScene::AddCamera(Camera * item)
+bool GeometryEngine::GeometryScene::GeometryScene::AddCamera(GeometryWorldItem::GeometryCamera::Camera * item)
 {
 	if (mCameras.find(item) != mCameras.end())
 		return false;
@@ -71,7 +71,7 @@ bool GeometryEngine::GeometryScene::AddCamera(Camera * item)
 	return true;
 }
 
-bool GeometryEngine::GeometryScene::RemoveCamera(Camera * item)
+bool GeometryEngine::GeometryScene::GeometryScene::RemoveCamera(GeometryWorldItem::GeometryCamera::Camera * item)
 {
 	if (mCameras.find(item) == mCameras.end())
 		return false;
@@ -80,7 +80,7 @@ bool GeometryEngine::GeometryScene::RemoveCamera(Camera * item)
 	return true;
 }
 
-bool GeometryEngine::GeometryScene::AddLight(Light * item)
+bool GeometryEngine::GeometryScene::GeometryScene::AddLight(GeometryWorldItem::GeometryLight::Light * item)
 {
 	if(mLights.find(item) != mLights.end())
 		return false;
@@ -89,7 +89,7 @@ bool GeometryEngine::GeometryScene::AddLight(Light * item)
 	return true;
 }
 
-bool GeometryEngine::GeometryScene::RemoveLight(Light * item)
+bool GeometryEngine::GeometryScene::GeometryScene::RemoveLight(GeometryWorldItem::GeometryLight::Light * item)
 {
 	if(mLights.find(item) == mLights.end())
 		return false;
@@ -98,50 +98,50 @@ bool GeometryEngine::GeometryScene::RemoveLight(Light * item)
 	return true;
 }
 
-bool GeometryEngine::GeometryScene::AddRenderStep(const RenderStep& step)
+bool GeometryEngine::GeometryScene::GeometryScene::AddRenderStep(const GeometryRenderStep::RenderStep& step)
 {
 	mRenderSteps.push_back( step.Clone() );
 	return true;
 }
 
-bool GeometryEngine::GeometryScene::RemoveRenderStep(int pos)
+bool GeometryEngine::GeometryScene::GeometryScene::RemoveRenderStep(int pos)
 {
 	if( mRenderSteps.size() >= pos)
 		return false;
 
-	std::list<RenderStep* >::iterator it = mRenderSteps.begin();
+	std::list<GeometryRenderStep::RenderStep* >::iterator it = mRenderSteps.begin();
 	std::advance(it, pos);
 	mRenderSteps.remove((*it));
 	return true;
 }
 
-bool GeometryEngine::GeometryScene::InsertRenderStep(const RenderStep& step, unsigned int pos)
+bool GeometryEngine::GeometryScene::GeometryScene::InsertRenderStep(const GeometryRenderStep::RenderStep& step, unsigned int pos)
 {
 	if (pos >= mRenderSteps.size())
 		return false;
 
-	std::list<RenderStep* >::iterator it = mRenderSteps.begin();
+	std::list<GeometryRenderStep::RenderStep* >::iterator it = mRenderSteps.begin();
 	std::advance(it, pos);
 	mRenderSteps.emplace(it, step.Clone() );
 	return true;
 }
 
-void GeometryEngine::GeometryScene::ClearRenderSteps()
+void GeometryEngine::GeometryScene::GeometryScene::ClearRenderSteps()
 {
 	for (auto iter = mRenderSteps.begin(); iter != mRenderSteps.end(); ++iter)
 	{
-		RenderStep* step = (*iter);
+		GeometryRenderStep::RenderStep* step = (*iter);
 		delete(step);
 	}
 
 	mRenderSteps.clear();
 }
 
-void GeometryEngine::GeometryScene::renderCamera(Camera * cam, const std::list<RenderStep*>& renderSteps)
+void GeometryEngine::GeometryScene::GeometryScene::renderCamera(GeometryWorldItem::GeometryCamera::Camera * cam, const std::list<GeometryRenderStep::RenderStep*>& renderSteps)
 {
 	for (auto it = renderSteps.begin(); it != renderSteps.end(); ++it)
 	{
-		RenderStep* current = (*it);
+		GeometryRenderStep::RenderStep* current = (*it);
 		current->Render(cam, &mItemList, &mLights);
 	}
 }

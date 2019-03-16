@@ -7,32 +7,36 @@
 
 namespace GeometryEngine
 {
-	class LightingPass : public RenderStep
+	namespace GeometryRenderStep
 	{
-	public:
+		class LightingPass : public RenderStep
+		{
+		public:
 
-		LightingPass() : RenderStep() {}
-		LightingPass(const LightingPass& ref) { copy(ref); }
-		virtual ~LightingPass() {}
+			LightingPass() : RenderStep() {}
+			LightingPass(const LightingPass& ref) { copy(ref); }
+			virtual ~LightingPass() {}
 
-		virtual void Render(Camera* cam = nullptr, std::unordered_set<GeometryItem*> * items = nullptr, std::unordered_set<Light*> * lights = nullptr) override;
-		virtual RenderStep* Clone() const override { return new LightingPass(*this); }
+			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*> * items = nullptr, 
+				std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights = nullptr) override;
+			virtual RenderStep* Clone() const override { return new LightingPass(*this); }
 
-	protected:
-		void initStep();
-		void renderLights(Camera* cam, std::unordered_set<Light*> * lights);
-		void applyLight(Camera* cam, std::unordered_set<Light*> * lights);
-		void finishStep();
+		protected:
+			void initStep();
+			void renderLights(GeometryWorldItem::GeometryCamera::Camera* cam, std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights);
+			void applyLight(GeometryWorldItem::GeometryCamera::Camera* cam, std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights);
+			void finishStep();
 
-		void prepareStencilPass(Camera* cam);
-		void stencilPass(Light* light, Camera* cam);
-		void setStencilLight();
-		void prepareLightPass();
-		void finishLightPass();
-		void finishStencilPass();
+			void prepareStencilPass(GeometryWorldItem::GeometryCamera::Camera* cam);
+			void stencilPass(GeometryWorldItem::GeometryLight::Light* light, GeometryWorldItem::GeometryCamera::Camera* cam);
+			void setStencilLight();
+			void prepareLightPass();
+			void finishLightPass();
+			void finishStencilPass();
 
-		virtual void copy(const LightingPass& ref) { RenderStep::copy(ref); }
-	};
+			virtual void copy(const LightingPass& ref) { RenderStep::copy(ref); }
+		};
+	}
 }
 
 #endif

@@ -1,6 +1,7 @@
 #include "Spotlight.h"
 
-GeometryEngine::Spotlight::Spotlight(float maxLightAngle, const QVector3D & attParams, const QVector3D & direction, GeometryItem* boundingBox, const QVector3D & diffuse,
+GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::Spotlight(float maxLightAngle, const QVector3D & attParams, 
+	const QVector3D & direction, GeometryItem::GeometryItem* boundingBox, const QVector3D & diffuse,
 	const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, const QVector3D & rot,
 	const QVector3D & scale, WorldItem * parent) : StencilTestLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, parent), mAttenuationParameters(attParams), mDirection(direction),
 	mMaxLightAngle(maxLightAngle)
@@ -8,17 +9,17 @@ GeometryEngine::Spotlight::Spotlight(float maxLightAngle, const QVector3D & attP
 	initLight();
 }
 
-GeometryEngine::Spotlight::~Spotlight()
+GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::~Spotlight()
 {
 }
 
-void GeometryEngine::Spotlight::initLightShaders()
+void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::initLightShaders()
 {
 	mVertexShaderKey = LightShaderConstants::DEFERRED_SHADING_VERTEX_SHADER;
 	mFragmentShaderKey = LightShaderConstants::FLASHLIGHT_FRAGMENT_SHADER_DS;
 }
 
-void GeometryEngine::Spotlight::setProgramParameters(const LightingTransformationData & transformData, const MaterialLightingParameters & matParam, const GBufferTextureInfo& gBuffTexInfo, 
+void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::setProgramParameters(const LightingTransformationData & transformData, const MaterialLightingParameters & matParam, const GBufferTextureInfo& gBuffTexInfo,
 	const QVector3D & viewPos)
 {
 	assert( mpProgram != nullptr && "Shading program not found");
@@ -48,7 +49,7 @@ void GeometryEngine::Spotlight::setProgramParameters(const LightingTransformatio
 	}
 }
 
-void GeometryEngine::Spotlight::calculateContribution(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
+void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::calculateContribution(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	// Tell OpenGL which VBOs to use
 	arrayBuf->bind();
@@ -63,9 +64,9 @@ void GeometryEngine::Spotlight::calculateContribution(QOpenGLBuffer * arrayBuf, 
 	glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);
 }
 
-void GeometryEngine::Spotlight::initLight()
+void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::initLight()
 {
-	Light::initLight();
+	GeometryWorldItem::GeometryLight::Light::initLight();
 	if (mpBoundingBox != nullptr)
 	{
 		ScaleBoundingBox(mAttenuationParameters);

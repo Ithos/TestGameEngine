@@ -16,12 +16,12 @@ GeometryEngine::SceneManager::~SceneManager()
 	mpActiveScene = nullptr;
 }
 
-GeometryEngine::GeometryScene * GeometryEngine::SceneManager::CreateScene()
+GeometryEngine::GeometryScene::GeometryScene * GeometryEngine::SceneManager::CreateScene()
 {
-	return new GeometryScene(this);
+	return new GeometryScene::GeometryScene(this);
 }
 
-bool GeometryEngine::SceneManager::AddScene(GeometryScene * scene)
+bool GeometryEngine::SceneManager::AddScene(GeometryScene::GeometryScene * scene)
 {
 	for (auto it = mSceneList.begin(); it != mSceneList.end(); ++it)
 	{
@@ -35,7 +35,7 @@ bool GeometryEngine::SceneManager::AddScene(GeometryScene * scene)
 	return true;
 }
 
-bool GeometryEngine::SceneManager::RemoveScene(GeometryScene * scene)
+bool GeometryEngine::SceneManager::RemoveScene(GeometryScene::GeometryScene * scene)
 {
 	bool found = false;
 
@@ -78,7 +78,7 @@ bool GeometryEngine::SceneManager::RemoveScene(unsigned int sceneId)
 	
 }
 
-bool GeometryEngine::SceneManager::SetActiveScene(GeometryScene * scene)
+bool GeometryEngine::SceneManager::SetActiveScene(GeometryScene::GeometryScene * scene)
 {
 	bool found = false;
 

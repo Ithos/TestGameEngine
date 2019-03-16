@@ -1,13 +1,14 @@
 #include "FinalPass.h"
 
-void GeometryEngine::FinalPass::Render(Camera * cam, std::unordered_set<GeometryItem*>* items, std::unordered_set<Light*>* lights)
+void GeometryEngine::GeometryRenderStep::FinalPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, 
+	std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)
 {
 	assert(cam != nullptr && "FinalPass -> Camera not found");
 
 	renderToScreen(cam);
 }
 
-void GeometryEngine::FinalPass::renderToScreen(Camera * cam)
+void GeometryEngine::GeometryRenderStep::FinalPass::renderToScreen(GeometryWorldItem::GeometryCamera::Camera * cam)
 {
 	assert(cam->GetGBuffer() != nullptr && "FinalPass --> Geometry buffer not found");
 

@@ -6,17 +6,21 @@
 
 namespace GeometryEngine
 {
-	class FinalPass : public RenderStep
+	namespace GeometryRenderStep
 	{
-	public:
-		FinalPass() : RenderStep() {}
-		FinalPass(const FinalPass& ref) { copy(ref); }
-		virtual ~FinalPass(){}
-		virtual void Render(Camera* cam = nullptr, std::unordered_set<GeometryItem*> * items = nullptr, std::unordered_set<Light*> * lights = nullptr) override;
-		virtual RenderStep* Clone() const override { return new FinalPass(*this); }
-	protected:
-		void renderToScreen(Camera* cam);
-		virtual void copy(const FinalPass& ref) { RenderStep::copy(ref); }
-	};
+		class FinalPass : public RenderStep
+		{
+		public:
+			FinalPass() : RenderStep() {}
+			FinalPass(const FinalPass& ref) { copy(ref); }
+			virtual ~FinalPass() {}
+			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*> * items = nullptr, 
+				std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights = nullptr) override;
+			virtual RenderStep* Clone() const override { return new FinalPass(*this); }
+		protected:
+			void renderToScreen(GeometryWorldItem::GeometryCamera::Camera* cam);
+			virtual void copy(const FinalPass& ref) { RenderStep::copy(ref); }
+		};
+	}
 }
 #endif

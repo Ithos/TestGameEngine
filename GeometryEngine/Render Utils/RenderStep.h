@@ -12,16 +12,20 @@
 
 namespace GeometryEngine
 {
-	class RenderStep : protected QOpenGLExtraFunctions
+	namespace GeometryRenderStep
 	{
-	public:
-		RenderStep();
-		RenderStep(const RenderStep& ref) { copy(ref); };
-		virtual ~RenderStep() {};
-		virtual void Render(Camera* cam = nullptr, std::unordered_set<GeometryItem*> * items = nullptr, std::unordered_set<Light*> * lights = nullptr) = 0;
-		virtual RenderStep* Clone() const = 0;
-	protected:
-		virtual void copy(const RenderStep& ref) {}
-	};
+		class RenderStep : protected QOpenGLExtraFunctions
+		{
+		public:
+			RenderStep();
+			RenderStep(const RenderStep& ref) { copy(ref); };
+			virtual ~RenderStep() {};
+			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*> * items = nullptr, 
+				std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights = nullptr) = 0;
+			virtual RenderStep* Clone() const = 0;
+		protected:
+			virtual void copy(const RenderStep& ref) {}
+		};
+	}
 }
 #endif

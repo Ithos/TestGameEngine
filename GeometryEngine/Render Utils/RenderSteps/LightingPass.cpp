@@ -1,6 +1,7 @@
 #include "LightingPass.h"
 
-void GeometryEngine::LightingPass::Render(Camera * cam, std::unordered_set<GeometryItem*>* items, std::unordered_set<Light*>* lights)
+void GeometryEngine::GeometryRenderStep::LightingPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, 
+	std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)
 {
 	assert(cam != nullptr && "LightingPass --> No camera found");
 	assert(lights != nullptr && "LightingPass --> No lights list found");
@@ -10,7 +11,7 @@ void GeometryEngine::LightingPass::Render(Camera * cam, std::unordered_set<Geome
 	finishStep();
 }
 
-void GeometryEngine::LightingPass::renderLights(Camera * cam, std::unordered_set<Light*>* lights)
+void GeometryEngine::GeometryRenderStep::LightingPass::renderLights(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)
 {
 	assert(cam->GetGBuffer() != nullptr && "LightingPass --> No geometry buffer found");
 
@@ -22,20 +23,20 @@ void GeometryEngine::LightingPass::renderLights(Camera * cam, std::unordered_set
 	}
 }
 
-void GeometryEngine::LightingPass::applyLight(Camera * cam, std::unordered_set<Light*> * lights)
+void GeometryEngine::GeometryRenderStep::LightingPass::applyLight(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights)
 {
 	GBufferTextureInfo gbuff(
-		GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_DIFFUSE,
-		GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_POSITION,
-		GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_NORMAL,
-		GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_TEXCOORD,
+		GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_DIFFUSE,
+		GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_POSITION,
+		GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_NORMAL,
+		GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_TEXCOORD,
 		cam->GetGBuffer()->GetTextureSize());
 
 	cam->GetGBuffer()->BindForLightPass();
 
 	for (auto iter = lights->begin(); iter != lights->end(); ++iter)
 	{
-		Light* l = (*iter);
+		GeometryWorldItem::GeometryLight::Light* l = (*iter);
 
 		assert(l->GetBoundingGeometry() != nullptr && "LightingPass --> Light without bounding geometry");
 
@@ -61,19 +62,19 @@ void GeometryEngine::LightingPass::applyLight(Camera * cam, std::unordered_set<L
 	}
 }
 
-void GeometryEngine::LightingPass::initStep()
+void GeometryEngine::GeometryRenderStep::LightingPass::initStep()
 {
 	glDisable(GL_DEPTH_TEST);
 	glDepthMask(GL_FALSE);
 }
 
-void GeometryEngine::LightingPass::finishStep()
+void GeometryEngine::GeometryRenderStep::LightingPass::finishStep()
 {
 	glEnable(GL_DEPTH_TEST);
 	glDepthMask(GL_TRUE);
 }
 
-void GeometryEngine::LightingPass::prepareStencilPass(Camera * cam)
+void GeometryEngine::GeometryRenderStep::LightingPass::prepareStencilPass(GeometryWorldItem::GeometryCamera::Camera * cam)
 {
 	cam->GetGBuffer()->BindForStencilPass();
 	glEnable(GL_STENCIL_TEST);
@@ -91,13 +92,13 @@ void GeometryEngine::LightingPass::prepareStencilPass(Camera * cam)
 	glStencilOpSeparate(GL_FRONT, GL_KEEP, GL_DECR_WRAP, GL_KEEP);
 }
 
-void GeometryEngine::LightingPass::stencilPass(Light * light, Camera * cam)
+void GeometryEngine::GeometryRenderStep::LightingPass::stencilPass(GeometryWorldItem::GeometryLight::Light * light, GeometryWorldItem::GeometryCamera::Camera * cam)
 {
 	assert(light->GetStencilTest() && "LightingPass --> No stencil test found diring stencil pass");
 	light->CalculateStencil(cam->GetProjectionMatrix(), cam->GetViewMatrix());
 }
 
-void GeometryEngine::LightingPass::setStencilLight()
+void GeometryEngine::GeometryRenderStep::LightingPass::setStencilLight()
 {
 	glStencilFunc(GL_NOTEQUAL, 0, 0xFF);
 	glEnable(GL_CULL_FACE);
@@ -105,19 +106,19 @@ void GeometryEngine::LightingPass::setStencilLight()
 	glDisable(GL_DEPTH_TEST);
 }
 
-void GeometryEngine::LightingPass::prepareLightPass()
+void GeometryEngine::GeometryRenderStep::LightingPass::prepareLightPass()
 {
 	glEnable(GL_BLEND);
 	glBlendEquation(GL_FUNC_ADD);
 	glBlendFunc(GL_ONE, GL_ONE);
 }
 
-void GeometryEngine::LightingPass::finishLightPass()
+void GeometryEngine::GeometryRenderStep::LightingPass::finishLightPass()
 {
 	glDisable(GL_BLEND);
 }
 
-void GeometryEngine::LightingPass::finishStencilPass()
+void GeometryEngine::GeometryRenderStep::LightingPass::finishStencilPass()
 {
 	glCullFace(GL_BACK);
 	glDisable(GL_STENCIL_TEST);

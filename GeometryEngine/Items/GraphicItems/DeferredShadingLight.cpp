@@ -1,6 +1,6 @@
 #include "DeferredShadingLight.h"
 
-GeometryEngine::DeferredShadingLight::DeferredShadingLight(GeometryItem * boundingBox, const QVector3D & diffuse, const QVector3D & ambient, 
+GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::DeferredShadingLight(GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, const QVector3D & ambient,
 	const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : Light(diffuse, ambient, specular, pos, rot, scale, parent),
 	mpBoundingBox(boundingBox)
 {
@@ -10,7 +10,7 @@ GeometryEngine::DeferredShadingLight::DeferredShadingLight(GeometryItem * boundi
 	}
 }
 
-GeometryEngine::DeferredShadingLight::~DeferredShadingLight()
+GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::~DeferredShadingLight()
 {
 	if (mpBoundingBox != nullptr)
 	{
@@ -19,7 +19,8 @@ GeometryEngine::DeferredShadingLight::~DeferredShadingLight()
 	}
 }
 
-void GeometryEngine::DeferredShadingLight::LightFromBoundignGeometry(const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix, const GBufferTextureInfo& gBuffTexInfo, const QVector3D & viewPos)
+void GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::LightFromBoundignGeometry(const QMatrix4x4& projectionMatrix, 
+	const QMatrix4x4& viewMatrix, const GBufferTextureInfo& gBuffTexInfo, const QVector3D & viewPos)
 {
 	assert(GetBoundingGeometry() != nullptr && "Bounding geometry not found");
 	mpBoundingBox->CalculateModelMatrix();
@@ -29,7 +30,7 @@ void GeometryEngine::DeferredShadingLight::LightFromBoundignGeometry(const QMatr
 	CalculateLighting(mpBoundingBox->GetArrayBuffer(), mpBoundingBox->GetIndexBuffer(), ltd, mlp, gBuffTexInfo, viewPos, mpBoundingBox->GetVertexNumber(), mpBoundingBox->GetIndexNumber());
 }
 
-void GeometryEngine::DeferredShadingLight::ScaleBoundingBox(const QVector3D & attenuation)
+void GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::ScaleBoundingBox(const QVector3D & attenuation)
 {
 	if (this->mpBoundingBox != nullptr)
 	{

@@ -12,96 +12,101 @@
 
 namespace GeometryEngine
 {
-	struct TextureConstant
+	namespace GeometryMaterial
 	{
-		static const std::string ERROR_TEXTURE;
-		static const std::string TEST_BLUE_CHIP_TEXTURE;
-		static const std::string TEST_DOWN_TEXTURE;
-		static const std::string TEST_UP_TEXTURE;
-		static const std::string TEST_FORWARD_TEXTURE;
-		static const std::string TEST_BACK_TEXTURE;
-		static const std::string TEST_LEFT_TEXTURE;
-		static const std::string TEST_RIGHT_TEXTURE;
-	};
-
-	class TextureParameters
-	{
-	public:
-		TextureParameters(const std::string& texDir, int vertex, bool getFromConf = false) : Texture(nullptr), mpConfInstance(nullptr), mpTexDirManager(nullptr)
+		struct TextureConstant
 		{
-			initManagers();
-			TextureDir = getFromConf ? mpTexDirManager->GetTextureDir(texDir) : texDir;
-			VertexNumber = vertex;
-		}
+			static const std::string ERROR_TEXTURE;
+			static const std::string TEST_BLUE_CHIP_TEXTURE;
+			static const std::string TEST_DOWN_TEXTURE;
+			static const std::string TEST_UP_TEXTURE;
+			static const std::string TEST_FORWARD_TEXTURE;
+			static const std::string TEST_BACK_TEXTURE;
+			static const std::string TEST_LEFT_TEXTURE;
+			static const std::string TEST_RIGHT_TEXTURE;
+		};
 
-		TextureParameters(const TextureParameters& ori)
+		class TextureParameters
 		{
-			initManagers();
-			TextureDir = ori.TextureDir;
-			VertexNumber = ori.VertexNumber;
-			ori.Texture == nullptr ? this->Texture = nullptr : Build();
-		}
+		public:
+			TextureParameters(const std::string& texDir, int vertex, bool getFromConf = false) : Texture(nullptr), mpConfInstance(nullptr), mpTexDirManager(nullptr)
+			{
+				initManagers();
+				TextureDir = getFromConf ? mpTexDirManager->GetTextureDir(texDir) : texDir;
+				VertexNumber = vertex;
+			}
 
-		virtual ~TextureParameters()
-		{
-			delete Texture;
-		}
+			TextureParameters(const TextureParameters& ori)
+			{
+				initManagers();
+				TextureDir = ori.TextureDir;
+				VertexNumber = ori.VertexNumber;
+				ori.Texture == nullptr ? this->Texture = nullptr : Build();
+			}
 
-	private:
-		std::string TextureDir;
-		int VertexNumber;
-		QOpenGLTexture* Texture;
-		Configuration::ConfigurationManager* mpConfInstance;
-		TexturesFiles::Textures * mpTexDirManager;
+			virtual ~TextureParameters()
+			{
+				delete Texture;
+			}
 
-		friend class TextureMaterial;
+		private:
+			std::string TextureDir;
+			int VertexNumber;
+			QOpenGLTexture* Texture;
+			Configuration::ConfigurationManager* mpConfInstance;
+			TexturesFiles::Textures * mpTexDirManager;
 
-		void initManagers()
-		{
-			mpConfInstance = Configuration::ConfigurationManager::GetInstance();
-			mpTexDirManager = TexturesFiles::Textures::InitInstance(mpConfInstance->getTexturesFolder(), mpConfInstance->getTexturesConfig());
-		}
+			friend class TextureMaterial;
 
-		void Build();
+			void initManagers()
+			{
+				mpConfInstance = Configuration::ConfigurationManager::GetInstance();
+				mpTexDirManager = TexturesFiles::Textures::InitInstance(mpConfInstance->getTexturesFolder(), mpConfInstance->getTexturesConfig());
+			}
+
+			void Build();
 		
-	};
+		};
 
-	class TextureMaterial : public Material
-	{
-	public:
-		TextureMaterial(const std::string& texDir, const QVector3D& ambient = QVector3D(1.0f, 1.0, 1.0f), const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f),
-			const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f), float shininess = 10.0f, bool isLit = true, bool customLight = false);
+	
 
-		TextureMaterial(const std::list< TextureParameters* > & textureDirs, const QVector3D& ambient = QVector3D(1.0f, 1.0, 1.0f), const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f),
-			const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f), float shininess = 10.0f, bool isLit = true, bool customLight = false);
+		class TextureMaterial : public Material
+		{
+		public:
+			TextureMaterial(const std::string& texDir, const QVector3D& ambient = QVector3D(1.0f, 1.0, 1.0f), const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f),
+				const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f), float shininess = 10.0f, bool isLit = true, bool customLight = false);
 
-		TextureMaterial(const TextureMaterial& mat);
+			TextureMaterial(const std::list< TextureParameters* > & textureDirs, const QVector3D& ambient = QVector3D(1.0f, 1.0, 1.0f), const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f),
+				const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f), float shininess = 10.0f, bool isLit = true, bool customLight = false);
 
-		virtual Material* Clone() const override;
+			TextureMaterial(const TextureMaterial& mat);
 
-		virtual ~TextureMaterial();
-		virtual void AddTexture(const TextureParameters& texDir);
-		virtual void AddTextures(std::list< TextureParameters*> textureDirs);
-		virtual void InsertTexture(const TextureParameters& texDir, int index);
-		virtual void DeleteTexture(int index);
-		virtual void DeleteAllTextures();
-		
-	protected:
-		static const int TEXTURE_UNIT = 0;
+			virtual Material* Clone() const override;
 
-		std::list<TextureParameters *> mTexturesList;
+			virtual ~TextureMaterial();
+			virtual void AddTexture(const TextureParameters& texDir);
+			virtual void AddTextures(std::list< TextureParameters*> textureDirs);
+			virtual void InsertTexture(const TextureParameters& texDir, int index);
+			virtual void DeleteTexture(int index);
+			virtual void DeleteAllTextures();
 
-		TexturesFiles::Textures * mpTexDirManager;
+		protected:
+			static const int TEXTURE_UNIT = 0;
 
-		virtual void initTextures(const std::list<TextureParameters* > & textureDirs);
-		virtual void initMaterial(const std::list<TextureParameters* >& textureDirs);
-		virtual void initShaders() override;
-		virtual TextureParameters* buildTexture(const TextureParameters& texDir);
+			std::list<TextureParameters *> mTexturesList;
 
-		virtual void setProgramParameters(const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryItem& parent) override;
-		virtual void drawMaterial(QOpenGLBuffer* arrayBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) override;
-		virtual void copy(const TextureMaterial& mat);
-	};
+			TexturesFiles::Textures * mpTexDirManager;
+
+			virtual void initTextures(const std::list<TextureParameters* > & textureDirs);
+			virtual void initMaterial(const std::list<TextureParameters* >& textureDirs);
+			virtual void initShaders() override;
+			virtual TextureParameters* buildTexture(const TextureParameters& texDir);
+
+			virtual void setProgramParameters(const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryWorldItem::GeometryItem::GeometryItem& parent) override;
+			virtual void drawMaterial(QOpenGLBuffer* arrayBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) override;
+			virtual void copy(const TextureMaterial& mat);
+		};
+	}
 }
 
 #endif

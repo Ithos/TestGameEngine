@@ -10,8 +10,12 @@
 
 namespace GeometryEngine
 {
-	class GeometryScene;
-	class DeferredShadingScene;
+	namespace GeometryScene
+	{
+		class GeometryScene;
+		class DeferredShadingScene;
+	}
+	
 
 	class SceneManager
 	{
@@ -19,20 +23,20 @@ namespace GeometryEngine
 		SceneManager();
 		~SceneManager();
 
-		GeometryScene* CreateScene();
-		template <typename T > GeometryScene* CreateScene() { return new T(this); }
-		bool AddScene(GeometryScene* scene);
-		bool RemoveScene(GeometryScene* scene);
+		GeometryScene::GeometryScene* CreateScene();
+		template <typename T > GeometryScene::GeometryScene* CreateScene() { return new T(this); }
+		bool AddScene(GeometryScene::GeometryScene* scene);
+		bool RemoveScene(GeometryScene::GeometryScene* scene);
 		bool RemoveScene(unsigned int sceneId);
 		int GetSceneCount() { return mSceneList.size(); }
-		bool SetActiveScene(GeometryScene* scene);
+		bool SetActiveScene(GeometryScene::GeometryScene* scene);
 		bool SetActiveScene(unsigned int sceneID);
-		GeometryScene* GetActiveScene() { return mpActiveScene; }
+		GeometryScene::GeometryScene* GetActiveScene() { return mpActiveScene; }
 		void ClearScenes();
 
 	protected:
-		std::list<GeometryScene*> mSceneList;
-		GeometryScene* mpActiveScene;
+		std::list<GeometryScene::GeometryScene*> mSceneList;
+		GeometryScene::GeometryScene* mpActiveScene;
 	};
 }
 

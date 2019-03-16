@@ -1,6 +1,6 @@
 #include "GlSetup.h"
 
-GeometryEngine::GlSetup::GlSetup()
+GeometryEngine::GeometryGlSetup::GlSetup::GlSetup()
 {
 	initializeOpenGLFunctions();
 }

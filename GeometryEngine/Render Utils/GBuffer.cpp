@@ -1,6 +1,6 @@
 #include "GBuffer.h"
 
-GeometryEngine::GBuffer::GBuffer() : mFbo(0), mDepthTexture(0), mFinalTexture(0)
+GeometryEngine::GeometryBuffer::GBuffer::GBuffer() : mFbo(0), mDepthTexture(0), mFinalTexture(0)
 {
 	for (int i = 0; i < GBUFFER_NUM_TEXTURES; ++i)
 	{
@@ -10,7 +10,7 @@ GeometryEngine::GBuffer::GBuffer() : mFbo(0), mDepthTexture(0), mFinalTexture(0)
 	initializeOpenGLFunctions();
 }
 
-GeometryEngine::GBuffer::~GBuffer()
+GeometryEngine::GeometryBuffer::GBuffer::~GBuffer()
 {
 	if (mFbo != 0) {
 		glDeleteFramebuffers(1, &mFbo);
@@ -30,7 +30,7 @@ GeometryEngine::GBuffer::~GBuffer()
 	}
 }
 
-bool GeometryEngine::GBuffer::Init(unsigned int MaxWindowWidth, unsigned int MaxWindowHeight)
+bool GeometryEngine::GeometryBuffer::GBuffer::Init(unsigned int MaxWindowWidth, unsigned int MaxWindowHeight)
 {
 	mMaxTextureSize.setX(MaxWindowWidth); mMaxTextureSize.setY(MaxWindowHeight);
 	// Create the FBO
@@ -79,7 +79,7 @@ bool GeometryEngine::GBuffer::Init(unsigned int MaxWindowWidth, unsigned int Max
 	return true;
 }
 
-bool GeometryEngine::GBuffer::Resize(unsigned int WindowWidth, unsigned int WindowHeight)
+bool GeometryEngine::GeometryBuffer::GBuffer::Resize(unsigned int WindowWidth, unsigned int WindowHeight)
 {
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, mFbo);
 
@@ -105,14 +105,14 @@ bool GeometryEngine::GBuffer::Resize(unsigned int WindowWidth, unsigned int Wind
 	return true;
 }
 
-void GeometryEngine::GBuffer::StartFrame()
+void GeometryEngine::GeometryBuffer::GBuffer::StartFrame()
 {
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, mFbo);
 	glDrawBuffer(GL_COLOR_ATTACHMENT4);
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void GeometryEngine::GBuffer::BindForGeomPass()
+void GeometryEngine::GeometryBuffer::GBuffer::BindForGeomPass()
 {
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, mFbo);
 
@@ -125,13 +125,13 @@ void GeometryEngine::GBuffer::BindForGeomPass()
 	glDrawBuffers(GBUFFER_NUM_TEXTURES, DrawBuffers);
 }
 
-void GeometryEngine::GBuffer::BindForStencilPass()
+void GeometryEngine::GeometryBuffer::GBuffer::BindForStencilPass()
 {
 	// must disable the draw buffers 
 	glDrawBuffer(GL_NONE);
 }
 
-void GeometryEngine::GBuffer::BindForLightPass()
+void GeometryEngine::GeometryBuffer::GBuffer::BindForLightPass()
 {
 	glDrawBuffer(GL_COLOR_ATTACHMENT4);
 
@@ -141,7 +141,7 @@ void GeometryEngine::GBuffer::BindForLightPass()
 	}
 }
 
-void GeometryEngine::GBuffer::BindForFinalPass()
+void GeometryEngine::GeometryBuffer::GBuffer::BindForFinalPass()
 {
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
 	glBindFramebuffer(GL_READ_FRAMEBUFFER, mFbo);

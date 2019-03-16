@@ -1,22 +1,22 @@
 #include "AmbientLight.h"
 
-GeometryEngine::AmbientLight::AmbientLight(GeometryItem* boundingBox, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular,
+GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight::AmbientLight(GeometryItem::GeometryItem* boundingBox, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular,
 	const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : DeferredShadingLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, parent)
 {
 	initLight();
 }
 
-GeometryEngine::AmbientLight::~AmbientLight()
+GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight::~AmbientLight()
 {
 }
 
-void GeometryEngine::AmbientLight::initLightShaders()
+void GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight::initLightShaders()
 {
-	mVertexShaderKey = LightShaderConstants::DEFERRED_SHADING_VERTEX_SHADER;
-	mFragmentShaderKey = LightShaderConstants::AMBIENT_LIGHT_FRAGMENT_SHADER_DS;
+	mVertexShaderKey = GeometryWorldItem::GeometryLight::LightShaderConstants::DEFERRED_SHADING_VERTEX_SHADER;
+	mFragmentShaderKey = GeometryWorldItem::GeometryLight::LightShaderConstants::AMBIENT_LIGHT_FRAGMENT_SHADER_DS;
 }
 
-void GeometryEngine::AmbientLight::setProgramParameters(const LightingTransformationData & transformData, const MaterialLightingParameters & matParam,
+void GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight::setProgramParameters(const LightingTransformationData & transformData, const MaterialLightingParameters & matParam,
 	const GBufferTextureInfo& gBuffTexInfo, const QVector3D & viewPos)
 {
 	assert(mpProgram != nullptr && "Shading program not found");
@@ -40,7 +40,7 @@ void GeometryEngine::AmbientLight::setProgramParameters(const LightingTransforma
 	}
 }
 
-void GeometryEngine::AmbientLight::calculateContribution(QOpenGLBuffer* arrayBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
+void GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight::calculateContribution(QOpenGLBuffer* arrayBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	// Tell OpenGL which VBOs to use
 	arrayBuf->bind();

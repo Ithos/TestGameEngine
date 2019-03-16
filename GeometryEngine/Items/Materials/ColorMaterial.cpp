@@ -1,32 +1,32 @@
 #include "ColorMaterial.h"
 
-GeometryEngine::ColorMaterial::ColorMaterial(const QVector3D & emissive, const QVector3D & ambient, const QVector3D & diffuse, 
+GeometryEngine::GeometryMaterial::ColorMaterial::ColorMaterial(const QVector3D & emissive, const QVector3D & ambient, const QVector3D & diffuse,
 	const QVector3D & specular, float shininess, bool isLit, bool customLight) : Material(ambient, diffuse, specular, shininess, isLit, customLight), mEmissive(emissive)
 {
 	initMaterial();
 }
 
-GeometryEngine::ColorMaterial::ColorMaterial(const ColorMaterial & mat)
+GeometryEngine::GeometryMaterial::ColorMaterial::ColorMaterial(const ColorMaterial & mat)
 {
 	copy(mat);
 }
 
-GeometryEngine::ColorMaterial::~ColorMaterial()
+GeometryEngine::GeometryMaterial::ColorMaterial::~ColorMaterial()
 {
 }
 
-GeometryEngine::Material * GeometryEngine::ColorMaterial::Clone() const
+GeometryEngine::GeometryMaterial::Material * GeometryEngine::GeometryMaterial::ColorMaterial::Clone() const
 {
 	return new ColorMaterial( *this );
 }
 
-void GeometryEngine::ColorMaterial::initShaders()
+void GeometryEngine::GeometryMaterial::ColorMaterial::initShaders()
 {
-	mVertexShaderKey = MaterialConstants::COLOR_MATERIAL_VERTEX_SHADER;
-	mFragmentShaderKey = MaterialConstants::COLOR_MATERIAL_FRAGMENT_SHADER;
+	mVertexShaderKey = GeometryMaterial::MaterialConstants::COLOR_MATERIAL_VERTEX_SHADER;
+	mFragmentShaderKey = GeometryMaterial::MaterialConstants::COLOR_MATERIAL_FRAGMENT_SHADER;
 }
 
-void GeometryEngine::ColorMaterial::setProgramParameters(const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryItem& parent)
+void GeometryEngine::GeometryMaterial::ColorMaterial::setProgramParameters(const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryWorldItem::GeometryItem::GeometryItem& parent)
 {
 	if (mpProgram != nullptr)
 	{
@@ -37,7 +37,7 @@ void GeometryEngine::ColorMaterial::setProgramParameters(const QMatrix4x4& proje
 	}
 }
 
-void GeometryEngine::ColorMaterial::drawMaterial(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber)
+void GeometryEngine::GeometryMaterial::ColorMaterial::drawMaterial(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber)
 {
 	// Tell OpenGL which VBOs to use
 	arrayBuf->bind();
@@ -67,7 +67,7 @@ void GeometryEngine::ColorMaterial::drawMaterial(QOpenGLBuffer * arrayBuf, QOpen
 	glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
 }
 
-void GeometryEngine::ColorMaterial::copy(const ColorMaterial & mat)
+void GeometryEngine::GeometryMaterial::ColorMaterial::copy(const ColorMaterial & mat)
 {
 	Material::copy(mat);
 	this->mEmissive = mat.mEmissive;

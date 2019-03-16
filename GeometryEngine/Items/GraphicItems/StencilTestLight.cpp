@@ -1,12 +1,13 @@
 #include "StencilTestLight.h"
 
-GeometryEngine::StencilTestLight::StencilTestLight(GeometryItem * boundingBox, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent):
+GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::StencilTestLight(GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, 
+	const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent):
 	DeferredShadingLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, parent), mpStencilProgram(nullptr)
 {
 	initStencilShaders();
 }
 
-GeometryEngine::StencilTestLight::~StencilTestLight()
+GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::~StencilTestLight()
 {
 	if (mpStencilProgram != nullptr)
 	{
@@ -15,7 +16,7 @@ GeometryEngine::StencilTestLight::~StencilTestLight()
 	}
 }
 
-void GeometryEngine::StencilTestLight::CalculateStencil (const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix)
+void GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::CalculateStencil (const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix)
 {
 	assert(GetBoundingGeometry() != nullptr && "Bounding geometry not found");
 	assert(mpStencilProgram != nullptr && "Shading program not found");
@@ -25,15 +26,13 @@ void GeometryEngine::StencilTestLight::CalculateStencil (const QMatrix4x4& proje
 		// Link shader pipeline
 		if (!mpStencilProgram->link())
 		{
-			/// TODO -- log error -- ///
-			return;
+			assert(false && "StencilTestLight --> Shader program failed to link");
 		}
 
 		// Bind shader pipeline for use
 		if (!mpStencilProgram->bind())
 		{
-			/// TODO -- log error -- ///
-			return;
+			assert(false && "StencilTestLight --> Shader program failed to bind");
 		}
 
 		mpStencilProgram->setUniformValue("mModelViewProjectionMatrix", projectionMatrix * viewMatrix * mpBoundingBox->GetModelMatrix());
@@ -42,21 +41,21 @@ void GeometryEngine::StencilTestLight::CalculateStencil (const QMatrix4x4& proje
 	}
 }
 
-void GeometryEngine::StencilTestLight::initStencilShaders()
+void GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::initStencilShaders()
 {
 	mpConfInstance = Configuration::ConfigurationManager::GetInstance();
 	mpShaderManager = ShaderFiles::ShaderManager::GetInstance(mpConfInstance->getVertexShaderFolder(), mpConfInstance->getFragmentShaderFolder(),
 		mpConfInstance->getVertexShaderConfig(), mpConfInstance->getFragmentShaderConfig());
 
-	mStencilVertexShaderKey = GeometryEngine::LightShaderConstants::POSITION_VERTEX_SHADER;
-	mStencilFragmentShaderKey = GeometryEngine::LightShaderConstants::NULL_FRAGMENT_SHADER;
+	mStencilVertexShaderKey = GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::POSITION_VERTEX_SHADER;
+	mStencilFragmentShaderKey = GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::NULL_FRAGMENT_SHADER;
 
 	mpStencilProgram = new QOpenGLShaderProgram();
 
 	initStencilProgram();
 }
 
-void GeometryEngine::StencilTestLight::initStencilProgram()
+void GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::initStencilProgram()
 {
 	if (mStencilVertexShaderKey != "")
 	{
@@ -68,8 +67,7 @@ void GeometryEngine::StencilTestLight::initStencilProgram()
 		// Compile vertex shader
 		if (!mpStencilProgram->addShaderFromSourceCode(QOpenGLShader::Vertex, mpShaderManager->GetLoadedShaderContent(mStencilVertexShaderKey).c_str()))
 		{
-			/// TODO -- log error -- ///
-			return;
+			assert(false && "StencilTestLight --> Failed to load vertex shader");
 		}
 	}
 
@@ -83,13 +81,12 @@ void GeometryEngine::StencilTestLight::initStencilProgram()
 		// Compile fragment shader
 		if (!mpStencilProgram->addShaderFromSourceCode(QOpenGLShader::Fragment, mpShaderManager->GetLoadedShaderContent(mStencilFragmentShaderKey).c_str()))
 		{
-			/// TODO -- log error -- ///
-			return;
+			assert(false && "StencilTestLight --> Failed to load fragment shader");
 		}
 	}
 }
 
-void GeometryEngine::StencilTestLight::runStencilProgram(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
+void GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::runStencilProgram(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	// Tell OpenGL which VBOs to use
 	arrayBuf->bind();

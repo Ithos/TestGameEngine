@@ -1,6 +1,7 @@
 #include "GeometryPass.h"
 
-void GeometryEngine::GeometryPass::Render(Camera * cam, std::unordered_set<GeometryItem*>* items, std::unordered_set<Light*>* lights)
+void GeometryEngine::GeometryRenderStep::GeometryPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, 
+	std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)
 {
 	assert(cam != nullptr && "GeometryPass --> No camera found");
 	assert(items != nullptr && "GeometryPass --> No items list found");
@@ -10,7 +11,7 @@ void GeometryEngine::GeometryPass::Render(Camera * cam, std::unordered_set<Geome
 
 }
 
-void GeometryEngine::GeometryPass::initStep()
+void GeometryEngine::GeometryRenderStep::GeometryPass::initStep()
 {
 	glEnable(GL_DEPTH_TEST);
 	glDepthMask(GL_TRUE);
@@ -20,7 +21,7 @@ void GeometryEngine::GeometryPass::initStep()
 	
 	
 
-void GeometryEngine::GeometryPass::renderGeometry(Camera * cam, std::unordered_set<GeometryItem*>* items)
+void GeometryEngine::GeometryRenderStep::GeometryPass::renderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items)
 {
 	assert(cam->GetGBuffer() != nullptr && "GeometryPass --> No geometry buffer found");
 
@@ -40,7 +41,7 @@ void GeometryEngine::GeometryPass::renderGeometry(Camera * cam, std::unordered_s
 	}
 }
 
-void GeometryEngine::GeometryPass::drawItem(Camera * cam, GeometryItem * item)
+void GeometryEngine::GeometryRenderStep::GeometryPass::drawItem(GeometryWorldItem::GeometryCamera::Camera * cam, GeometryWorldItem::GeometryItem::GeometryItem * item)
 {
 	assert(item != nullptr && "GeometryPass --> item null");
 	item->DrawItem(cam->GetProjectionMatrix(), cam->GetViewMatrix());

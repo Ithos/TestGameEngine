@@ -1,6 +1,6 @@
 #include "InitialSetup.h"
 
-void GeometryEngine::InitialSetup::StartSetup()
+void GeometryEngine::GeometryGlSetup::InitialSetup::StartSetup()
 {
 	glClearColor(mClearColor.x(), mClearColor.y(), mClearColor.z(), mClearColor.w());
 	glMatrixMode(GL_PROJECTION);
@@ -15,15 +15,15 @@ void GeometryEngine::InitialSetup::StartSetup()
 	glEnable(GL_CULL_FACE);
 }
 
-void GeometryEngine::InitialSetup::FinishSetup()
+void GeometryEngine::GeometryGlSetup::InitialSetup::FinishSetup()
 {
 	glDisable(GL_DEPTH_TEST);
 	glDisable(GL_CULL_FACE);
 }
 
-void GeometryEngine::InitialSetup::copy(const InitialSetup & ref)
+void GeometryEngine::GeometryGlSetup::InitialSetup::copy(const InitialSetup & ref)
 {
-	GlSetup::copy(ref); 
+	GeometryGlSetup::GlSetup::copy(ref);
 	this->mClearColor.setX(ref.mClearColor.x()); 
 	this->mClearColor.setY(ref.mClearColor.y()); 
 	this->mClearColor.setZ(ref.mClearColor.z()); 

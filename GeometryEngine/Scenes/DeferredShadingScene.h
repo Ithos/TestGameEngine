@@ -11,16 +11,20 @@
 
 namespace GeometryEngine
 {
-	class GeometryScene;
 	class SceneManager;
 
-	class DeferredShadingScene : public GeometryScene
+	namespace GeometryScene
 	{
-	public:
-		DeferredShadingScene(SceneManager* manager, GLdouble fovy = 45.0, GLdouble zNear = 0.1, GLdouble zFar = 30.0, QVector4D clearColor = QVector4D(0.0f, 0.0f, 0.0f, 1.0f));
-		virtual ~DeferredShadingScene() {};
-	protected:
-	};
+		class GeometryScene;
+
+		class DeferredShadingScene : public GeometryScene
+		{
+		public:
+			DeferredShadingScene(SceneManager* manager, GLdouble fovy = 45.0, GLdouble zNear = 0.1, GLdouble zFar = 30.0, QVector4D clearColor = QVector4D(0.0f, 0.0f, 0.0f, 1.0f));
+			virtual ~DeferredShadingScene() {};
+		protected:
+		};
+	}
 }
 
 #endif

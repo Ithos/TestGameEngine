@@ -1,34 +1,34 @@
 #include "Light.h"
 
-const std::string GeometryEngine::LightShaderConstants::AMBIENT_LIGHT_VERTEX_SHADER = "AMBIENT_LIGHT_VERTEX_SHADER";
-const std::string GeometryEngine::LightShaderConstants::AMBIENT_LIGHT_FRAGMENT_SHADER = "AMBIENT_LIGHT_FRAGMENT_SHADER";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::AMBIENT_LIGHT_VERTEX_SHADER = "AMBIENT_LIGHT_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::AMBIENT_LIGHT_FRAGMENT_SHADER = "AMBIENT_LIGHT_FRAGMENT_SHADER";
 
-const std::string GeometryEngine::LightShaderConstants::DIRECTIONAL_LIGHT_VERTEX_SHADER = "DIRECTIONAL_LIGHT_VERTEX_SHADER";
-const std::string GeometryEngine::LightShaderConstants::DIRECTIONAL_LIGHT_FRAGMENT_SHADER = "DIRECTIONAL_LIGHT_FRAGMENT_SHADER";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::DIRECTIONAL_LIGHT_VERTEX_SHADER = "DIRECTIONAL_LIGHT_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::DIRECTIONAL_LIGHT_FRAGMENT_SHADER = "DIRECTIONAL_LIGHT_FRAGMENT_SHADER";
 
-const std::string GeometryEngine::LightShaderConstants::POINT_LIGHT_VERTEX_SHADER = "POINT_LIGHT_VERTEX_SHADER";
-const std::string GeometryEngine::LightShaderConstants::POINT_LIGHT_FRAGMENT_SHADER = "POINT_LIGHT_FRAGMENT_SHADER";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::POINT_LIGHT_VERTEX_SHADER = "POINT_LIGHT_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::POINT_LIGHT_FRAGMENT_SHADER = "POINT_LIGHT_FRAGMENT_SHADER";
 
-const std::string GeometryEngine::LightShaderConstants::FLASHLIGHT_VERTEX_SHADER = "FLASHLIGHT_VERTEX_SHADER";
-const std::string GeometryEngine::LightShaderConstants::FLASHLIGHT_FRAGMENT_SHADER = "FLASHLIGHT_FRAGMENT_SHADER";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::FLASHLIGHT_VERTEX_SHADER = "FLASHLIGHT_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::FLASHLIGHT_FRAGMENT_SHADER = "FLASHLIGHT_FRAGMENT_SHADER";
 
-const std::string GeometryEngine::LightShaderConstants::DEFERRED_SHADING_VERTEX_SHADER = "DEFERRED_SHADING_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::DEFERRED_SHADING_VERTEX_SHADER = "DEFERRED_SHADING_VERTEX_SHADER";
 
-const std::string GeometryEngine::LightShaderConstants::AMBIENT_LIGHT_FRAGMENT_SHADER_DS = "AMBIENT_LIGHT_FRAGMENT_SHADER_DS";
-const std::string GeometryEngine::LightShaderConstants::DIRECTIONAL_LIGHT_FRAGMENT_SHADER_DS = "DIRECTIONAL_LIGHT_FRAGMENT_SHADER_DS";
-const std::string GeometryEngine::LightShaderConstants::POINT_LIGHT_FRAGMENT_SHADER_DS = "POINT_LIGHT_FRAGMENT_SHADER_DS";
-const std::string GeometryEngine::LightShaderConstants::FLASHLIGHT_FRAGMENT_SHADER_DS = "FLASHLIGHT_FRAGMENT_SHADER_DS";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::AMBIENT_LIGHT_FRAGMENT_SHADER_DS = "AMBIENT_LIGHT_FRAGMENT_SHADER_DS";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::DIRECTIONAL_LIGHT_FRAGMENT_SHADER_DS = "DIRECTIONAL_LIGHT_FRAGMENT_SHADER_DS";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::POINT_LIGHT_FRAGMENT_SHADER_DS = "POINT_LIGHT_FRAGMENT_SHADER_DS";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::FLASHLIGHT_FRAGMENT_SHADER_DS = "FLASHLIGHT_FRAGMENT_SHADER_DS";
 
-const std::string GeometryEngine::LightShaderConstants::NULL_FRAGMENT_SHADER = "NULL_FRAGMENT_SHADER";
-const std::string GeometryEngine::LightShaderConstants::POSITION_VERTEX_SHADER = "POSITION_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::NULL_FRAGMENT_SHADER = "NULL_FRAGMENT_SHADER";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::POSITION_VERTEX_SHADER = "POSITION_VERTEX_SHADER";
 
-GeometryEngine::Light::Light(const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, 
+GeometryEngine::GeometryWorldItem::GeometryLight::Light::Light(const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos,
 	const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : WorldItem(pos, rot, scale, parent), mColorDiffuse(diffuse), 
 	mColorAmbient(ambient), mColorSpecular(specular), mpProgram(nullptr), mVertexShaderKey(""), mFragmentShaderKey("")
 {
 }
 
-GeometryEngine::Light::~Light()
+GeometryEngine::GeometryWorldItem::GeometryLight::Light::~Light()
 {
 	if (mpProgram != nullptr)
 	{
@@ -37,7 +37,7 @@ GeometryEngine::Light::~Light()
 	}
 }
 
-void GeometryEngine::Light::CalculateLighting(QOpenGLBuffer* arrayBuf, QOpenGLBuffer* indexBuf, const LightingTransformationData& transformData,
+void GeometryEngine::GeometryWorldItem::GeometryLight::Light::CalculateLighting(QOpenGLBuffer* arrayBuf, QOpenGLBuffer* indexBuf, const LightingTransformationData& transformData,
 	const MaterialLightingParameters& matParam, const GBufferTextureInfo& gBuffTexInfo, const QVector3D& viewPos, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	if (mpProgram != nullptr)
@@ -62,7 +62,7 @@ void GeometryEngine::Light::CalculateLighting(QOpenGLBuffer* arrayBuf, QOpenGLBu
 	}
 }
 
-void GeometryEngine::Light::initLight()
+void GeometryEngine::GeometryWorldItem::GeometryLight::Light::initLight()
 {
 	mpConfInstance = Configuration::ConfigurationManager::GetInstance();
 	mpShaderManager = ShaderFiles::ShaderManager::GetInstance(mpConfInstance->getVertexShaderFolder(), mpConfInstance->getFragmentShaderFolder(),
@@ -74,7 +74,7 @@ void GeometryEngine::Light::initLight()
 	this->initLightProgram();
 }
 
-void GeometryEngine::Light::initLightProgram()
+void GeometryEngine::GeometryWorldItem::GeometryLight::Light::initLightProgram()
 {
 	if (mVertexShaderKey != "")
 	{

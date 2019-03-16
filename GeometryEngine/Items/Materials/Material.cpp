@@ -1,23 +1,23 @@
 #include "Material.h"
 
-const std::string GeometryEngine::MaterialConstants::TEXTURE_MATERIAL_VERTEX_SHADER = "TEXTURE_MATERIAL_VERTEX_SHADER";
-const std::string GeometryEngine::MaterialConstants::TEXTURE_MATERIAL_FRAGMENT_SHADER = "TEXTURE_MATERIAL_FRAGMENT_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::TEXTURE_MATERIAL_VERTEX_SHADER = "TEXTURE_MATERIAL_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::TEXTURE_MATERIAL_FRAGMENT_SHADER = "TEXTURE_MATERIAL_FRAGMENT_SHADER";
 
-const std::string GeometryEngine::MaterialConstants::COLOR_MATERIAL_VERTEX_SHADER = "COLOR_MATERIAL_VERTEX_SHADER";
-const std::string GeometryEngine::MaterialConstants::COLOR_MATERIAL_FRAGMENT_SHADER = "COLOR_MATERIAL_FRAGMENT_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::COLOR_MATERIAL_VERTEX_SHADER = "COLOR_MATERIAL_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::COLOR_MATERIAL_FRAGMENT_SHADER = "COLOR_MATERIAL_FRAGMENT_SHADER";
 
-GeometryEngine::Material::Material(const QVector3D & ambient, const QVector3D & diffuse, const QVector3D & specular, 
+GeometryEngine::GeometryMaterial::Material::Material(const QVector3D & ambient, const QVector3D & diffuse, const QVector3D & specular,
 	float shininess, bool isLit , bool customLight) : mpProgram(nullptr),
 	mAmbient(ambient), mDiffuse(diffuse), mSpecular(specular), mShininess(shininess), mpShaderManager(nullptr), mpConfInstance(nullptr)
 {
 }
 
-GeometryEngine::Material::Material(const Material & mat)
+GeometryEngine::GeometryMaterial::Material::Material(const Material & mat)
 {
 	copy(mat);
 }
 
-GeometryEngine::Material::~Material()
+GeometryEngine::GeometryMaterial::Material::~Material()
 {
 	if (mpProgram != nullptr)
 	{
@@ -26,7 +26,8 @@ GeometryEngine::Material::~Material()
 	}
 }
 
-void GeometryEngine::Material::Draw(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber, const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryItem & parent)
+void GeometryEngine::GeometryMaterial::Material::Draw(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, 
+	unsigned int totalVertexNumber, unsigned int totalIndexNumber, const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryWorldItem::GeometryItem::GeometryItem & parent)
 {
 	if (mpProgram != nullptr)
 	{
@@ -48,7 +49,7 @@ void GeometryEngine::Material::Draw(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * in
 	}
 }
 
-void GeometryEngine::Material::initMaterial()
+void GeometryEngine::GeometryMaterial::Material::initMaterial()
 {
 	mpConfInstance = Configuration::ConfigurationManager::GetInstance();
 	mpShaderManager = ShaderFiles::ShaderManager::GetInstance(mpConfInstance->getVertexShaderFolder(), mpConfInstance->getFragmentShaderFolder(),
@@ -60,7 +61,7 @@ void GeometryEngine::Material::initMaterial()
 	this->initProgram();
 }
 
-void GeometryEngine::Material::initProgram()
+void GeometryEngine::GeometryMaterial::Material::initProgram()
 {
 	if (mVertexShaderKey != "")
 	{
@@ -91,14 +92,13 @@ void GeometryEngine::Material::initProgram()
 	}
 }
 
-void GeometryEngine::Material::copy(const Material & mat)
+void GeometryEngine::GeometryMaterial::Material::copy(const Material & mat)
 {
 	this->mAmbient = mat.mAmbient;
 	this->mDiffuse = mat.mDiffuse;
 	this->mSpecular = mat.mSpecular;
 	this->mShininess = mat.mShininess;
 	this->mLit = mat.mLit;
-	this->mCustomLight = mat.mCustomLight;
 	this->mpConfInstance = mat.mpConfInstance;
 	this->mFragmentShaderKey = mat.mFragmentShaderKey;
 	this->mpProgram = nullptr;

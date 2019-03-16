@@ -1,33 +1,33 @@
 #include "Cube.h"
 
-GeometryEngine::Cube::Cube( const Material& mat, float size, const QVector3D& pos, const QVector3D & rot,	const QVector3D & scale, WorldItem* parent):
+GeometryEngine::GeometryWorldItem::GeometryItem::Cube::Cube( const GeometryMaterial::Material& mat, float size, const QVector3D& pos, const QVector3D & rot,	const QVector3D & scale, WorldItem* parent):
 	GeometryItem(mat, pos, rot, scale, parent), mSize(size)
 {
 	initItem();
 }
 
-GeometryEngine::Cube::Cube(const Cube & ref) : GeometryItem( (const GeometryItem&)ref )
+GeometryEngine::GeometryWorldItem::GeometryItem::Cube::Cube(const Cube & ref) : GeometryItem( (const GeometryItem&)ref )
 {
 	this->Copy(ref);
 }
 
-GeometryEngine::Cube::~Cube()
+GeometryEngine::GeometryWorldItem::GeometryItem::Cube::~Cube()
 {
 }
 
-void GeometryEngine::Cube::Copy(const Cube & ref)
+void GeometryEngine::GeometryWorldItem::GeometryItem::Cube::Copy(const Cube & ref)
 {
 	this->GeometryItem::Copy(ref);
 	this->mSize = ref.mSize;
 	initItem();
 }
 
-GeometryEngine::GeometryItem * GeometryEngine::Cube::Clone() const
+GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem * GeometryEngine::GeometryWorldItem::GeometryItem::Cube::Clone() const
 {
 	return new Cube((*this));
 }
 
-void GeometryEngine::Cube::initGeometry()
+void GeometryEngine::GeometryWorldItem::GeometryItem::Cube::initGeometry()
 {
 	float pos = mSize / 2.0f;
 	// For cube we would need only 8 vertices but we have to

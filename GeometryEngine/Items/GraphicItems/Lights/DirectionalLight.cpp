@@ -1,23 +1,24 @@
 #include "DirectionalLight.h"
 
-GeometryEngine::DirectionalLight::DirectionalLight(const QVector3D & direction, GeometryItem* boundingBox, const QVector3D & diffuse, const QVector3D & ambient,
+GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight::DirectionalLight(const QVector3D & direction, GeometryItem::GeometryItem* boundingBox, 
+	const QVector3D & diffuse, const QVector3D & ambient,
 	const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent) :
 	DeferredShadingLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, parent), mDirection(direction)
 {
 	initLight();
 }
 
-GeometryEngine::DirectionalLight::~DirectionalLight()
+GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight::~DirectionalLight()
 {
 }
 
-void GeometryEngine::DirectionalLight::initLightShaders()
+void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight::initLightShaders()
 {
 	mVertexShaderKey = LightShaderConstants::DEFERRED_SHADING_VERTEX_SHADER;
 	mFragmentShaderKey = LightShaderConstants::DIRECTIONAL_LIGHT_FRAGMENT_SHADER_DS; 
 }
 
-void GeometryEngine::DirectionalLight::setProgramParameters(const LightingTransformationData & transformData, const MaterialLightingParameters & matParam,
+void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight::setProgramParameters(const LightingTransformationData & transformData, const MaterialLightingParameters & matParam,
 	const GBufferTextureInfo& gBuffTexInfo, const QVector3D & viewPos)
 {
 	assert( mpProgram != nullptr && "Shading program not found");
@@ -42,7 +43,7 @@ void GeometryEngine::DirectionalLight::setProgramParameters(const LightingTransf
 	}
 }
 
-void GeometryEngine::DirectionalLight::calculateContribution(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
+void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight::calculateContribution(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	// Tell OpenGL which VBOs to use
 	arrayBuf->bind();

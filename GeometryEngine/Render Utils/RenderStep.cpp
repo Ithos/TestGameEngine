@@ -1,6 +1,6 @@
 #include "RenderStep.h"
 
-GeometryEngine::RenderStep::RenderStep()
+GeometryEngine::GeometryRenderStep::RenderStep::RenderStep()
 {
 	initializeOpenGLFunctions();
 }

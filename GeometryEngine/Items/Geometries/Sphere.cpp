@@ -1,17 +1,18 @@
 #include "Sphere.h"
 
-GeometryEngine::Sphere::Sphere(const Material & mat, float size, int verticalResolution , int horizontalResolution,  const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent) :
+GeometryEngine::GeometryWorldItem::GeometryItem::Sphere::Sphere(const GeometryMaterial::Material & mat, float size, int verticalResolution , int horizontalResolution,  
+	const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent) :
 	GeometryItem(mat, pos, rot, scale, parent), mSize(size), mNumPsiStep(verticalResolution), mNumPhiStep(horizontalResolution), mVertices(nullptr), mIndices(nullptr)
 {
 	initItem();
 }
 
-GeometryEngine::Sphere::Sphere(const Sphere & const ref) : GeometryItem((const GeometryItem&) ref)
+GeometryEngine::GeometryWorldItem::GeometryItem::Sphere::Sphere(const Sphere & const ref) : GeometryItem((const GeometryItem&) ref)
 {
 	this->Copy(ref);
 }
 
-GeometryEngine::Sphere::~Sphere()
+GeometryEngine::GeometryWorldItem::GeometryItem::Sphere::~Sphere()
 {
 	if (mVertices != nullptr)
 	{
@@ -26,7 +27,7 @@ GeometryEngine::Sphere::~Sphere()
 	}
 }
 
-void GeometryEngine::Sphere::Copy(const Sphere & ref)
+void GeometryEngine::GeometryWorldItem::GeometryItem::Sphere::Copy(const Sphere & ref)
 {
 	this->GeometryItem::Copy(ref);
 
@@ -39,12 +40,12 @@ void GeometryEngine::Sphere::Copy(const Sphere & ref)
 	initItem();
 }
 
-GeometryEngine::GeometryItem * GeometryEngine::Sphere::Clone() const
+GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem * GeometryEngine::GeometryWorldItem::GeometryItem::Sphere::Clone() const
 {
 	return new Sphere((*this));
 }
 
-void GeometryEngine::Sphere::initGeometry()
+void GeometryEngine::GeometryWorldItem::GeometryItem::Sphere::initGeometry()
 {
 	int totalVertexNum = (mNumPsiStep + 1) * (mNumPhiStep + 1);
 	

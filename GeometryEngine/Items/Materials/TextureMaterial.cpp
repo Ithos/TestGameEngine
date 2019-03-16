@@ -1,15 +1,15 @@
 #include "TextureMaterial.h"
 
-const std::string GeometryEngine::TextureConstant::ERROR_TEXTURE = "ERROR_TEXTURE";
-const std::string GeometryEngine::TextureConstant::TEST_BLUE_CHIP_TEXTURE = "TEST_BLUE_CHIP_TEXTURE";
-const std::string GeometryEngine::TextureConstant::TEST_UP_TEXTURE = "TEST_UP_TEXTURE";
-const std::string GeometryEngine::TextureConstant::TEST_DOWN_TEXTURE = "TEST_DOWN_TEXTURE";
-const std::string GeometryEngine::TextureConstant::TEST_FORWARD_TEXTURE = "TEST_FORWARD_TEXTURE";
-const std::string GeometryEngine::TextureConstant::TEST_BACK_TEXTURE = "TEST_BACK_TEXTURE";
-const std::string GeometryEngine::TextureConstant::TEST_LEFT_TEXTURE = "TEST_LEFT_TEXTURE";
-const std::string GeometryEngine::TextureConstant::TEST_RIGHT_TEXTURE = "TEST_RIGHT_TEXTURE";
+const std::string GeometryEngine::GeometryMaterial::TextureConstant::ERROR_TEXTURE = "ERROR_TEXTURE";
+const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE = "TEST_BLUE_CHIP_TEXTURE";
+const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_UP_TEXTURE = "TEST_UP_TEXTURE";
+const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_DOWN_TEXTURE = "TEST_DOWN_TEXTURE";
+const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_FORWARD_TEXTURE = "TEST_FORWARD_TEXTURE";
+const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE = "TEST_BACK_TEXTURE";
+const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_LEFT_TEXTURE = "TEST_LEFT_TEXTURE";
+const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_RIGHT_TEXTURE = "TEST_RIGHT_TEXTURE";
 
-GeometryEngine::TextureMaterial::TextureMaterial(const std::string& texDir, const QVector3D & ambient, const QVector3D & diffuse, const QVector3D & specular,
+GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::string& texDir, const QVector3D & ambient, const QVector3D & diffuse, const QVector3D & specular,
 	float shininess, bool isLit, bool customLight) : Material(ambient, diffuse, specular, shininess, isLit, customLight), mpTexDirManager(nullptr)
 {
 	std::list<TextureParameters*> tmpList;
@@ -18,33 +18,33 @@ GeometryEngine::TextureMaterial::TextureMaterial(const std::string& texDir, cons
 	initMaterial(tmpList);
 }
 
-GeometryEngine::TextureMaterial::TextureMaterial(const std::list<TextureParameters* >& textureDirs, const QVector3D & ambient, const QVector3D & diffuse,
+GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::list<TextureParameters* >& textureDirs, const QVector3D & ambient, const QVector3D & diffuse,
 	const QVector3D & specular, float shininess, bool isLit, bool customLight) : Material(ambient, diffuse, specular, shininess, isLit, customLight), mpTexDirManager(nullptr)
 {
 	initMaterial( textureDirs );
 }
 
-GeometryEngine::TextureMaterial::TextureMaterial(const TextureMaterial & mat)
+GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const TextureMaterial & mat)
 {
 	copy(mat);
 }
 
-GeometryEngine::Material * GeometryEngine::TextureMaterial::Clone() const
+GeometryEngine::GeometryMaterial::Material * GeometryEngine::GeometryMaterial::TextureMaterial::Clone() const
 {
 	return new TextureMaterial(*this);
 }
 
-GeometryEngine::TextureMaterial::~TextureMaterial()
+GeometryEngine::GeometryMaterial::TextureMaterial::~TextureMaterial()
 {
 	DeleteAllTextures();
 }
 
-void GeometryEngine::TextureMaterial::AddTexture(const TextureParameters& texDir)
+void GeometryEngine::GeometryMaterial::TextureMaterial::AddTexture(const TextureParameters& texDir)
 {
 	mTexturesList.push_back(buildTexture(texDir));
 }
 
-void GeometryEngine::TextureMaterial::AddTextures(std::list<TextureParameters*> textureDirs)
+void GeometryEngine::GeometryMaterial::TextureMaterial::AddTextures(std::list<TextureParameters*> textureDirs)
 {
 	for (auto it = textureDirs.begin(); it != textureDirs.end(); ++it)
 	{
@@ -52,14 +52,14 @@ void GeometryEngine::TextureMaterial::AddTextures(std::list<TextureParameters*> 
 	}
 }
 
-void GeometryEngine::TextureMaterial::InsertTexture(const TextureParameters& texDir, int index)
+void GeometryEngine::GeometryMaterial::TextureMaterial::InsertTexture(const TextureParameters& texDir, int index)
 {
 	auto iter = mTexturesList.begin();
 	std::advance(iter, index);
 	mTexturesList.insert(iter, buildTexture(texDir));
 }
 
-void GeometryEngine::TextureMaterial::DeleteTexture(int index)
+void GeometryEngine::GeometryMaterial::TextureMaterial::DeleteTexture(int index)
 {
 	auto iter = mTexturesList.begin();
 	std::advance(iter, index);
@@ -68,7 +68,7 @@ void GeometryEngine::TextureMaterial::DeleteTexture(int index)
 	mTexturesList.erase(iter);
 }
 
-void GeometryEngine::TextureMaterial::DeleteAllTextures()
+void GeometryEngine::GeometryMaterial::TextureMaterial::DeleteAllTextures()
 {
 	for (auto it = mTexturesList.begin(); it != mTexturesList.end(); ++it)
 	{
@@ -79,7 +79,7 @@ void GeometryEngine::TextureMaterial::DeleteAllTextures()
 	mTexturesList.clear();
 }
 
-void GeometryEngine::TextureMaterial::setProgramParameters(const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryItem & parent)
+void GeometryEngine::GeometryMaterial::TextureMaterial::setProgramParameters(const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryWorldItem::GeometryItem::GeometryItem & parent)
 {
 	if (mpProgram != nullptr)
 	{
@@ -92,7 +92,7 @@ void GeometryEngine::TextureMaterial::setProgramParameters(const QMatrix4x4& pro
 	}
 }
 
-void GeometryEngine::TextureMaterial::drawMaterial(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber)
+void GeometryEngine::GeometryMaterial::TextureMaterial::drawMaterial(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber)
 {
 	// Tell OpenGL which VBOs to use
 	arrayBuf->bind();
@@ -138,38 +138,38 @@ void GeometryEngine::TextureMaterial::drawMaterial(QOpenGLBuffer * arrayBuf, QOp
 	}
 }
 
-void GeometryEngine::TextureMaterial::copy(const TextureMaterial & mat)
+void GeometryEngine::GeometryMaterial::TextureMaterial::copy(const TextureMaterial & mat)
 {
 	Material::copy(mat);
 	initMaterial(mat.mTexturesList);
 }
 
-void GeometryEngine::TextureMaterial::initTextures(const std::list<TextureParameters*  >& textureDirs)
+void GeometryEngine::GeometryMaterial::TextureMaterial::initTextures(const std::list<TextureParameters*  >& textureDirs)
 {
 	AddTextures(textureDirs);
 }
 
-void GeometryEngine::TextureMaterial::initMaterial(const std::list<TextureParameters* >& textureDirs)
+void GeometryEngine::GeometryMaterial::TextureMaterial::initMaterial(const std::list<TextureParameters* >& textureDirs)
 {
 	Material::initMaterial();
 	initTextures(textureDirs);
 	mpTexDirManager = TexturesFiles::Textures::InitInstance(mpConfInstance->getTexturesFolder(), mpConfInstance->getTexturesConfig());
 }
 
-void GeometryEngine::TextureMaterial::initShaders()
+void GeometryEngine::GeometryMaterial::TextureMaterial::initShaders()
 {
-	mVertexShaderKey = GeometryEngine::MaterialConstants::TEXTURE_MATERIAL_VERTEX_SHADER;
-	mFragmentShaderKey = GeometryEngine::MaterialConstants::TEXTURE_MATERIAL_FRAGMENT_SHADER;
+	mVertexShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::TEXTURE_MATERIAL_VERTEX_SHADER;
+	mFragmentShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::TEXTURE_MATERIAL_FRAGMENT_SHADER;
 }
 
-GeometryEngine::TextureParameters * GeometryEngine::TextureMaterial::buildTexture(const TextureParameters & texDir)
+GeometryEngine::GeometryMaterial::TextureParameters * GeometryEngine::GeometryMaterial::TextureMaterial::buildTexture(const TextureParameters & texDir)
 {
 	TextureParameters* tmp = new TextureParameters(texDir);
 	if (tmp->Texture == nullptr) tmp->Build();
 	return tmp;
 }
 
-void GeometryEngine::TextureParameters::Build()
+void GeometryEngine::GeometryMaterial::TextureParameters::Build()
 {
 	QImage img = QImage(QString(TextureDir.c_str()));
 	

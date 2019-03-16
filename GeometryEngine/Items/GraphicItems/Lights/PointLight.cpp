@@ -1,23 +1,23 @@
 #include "PointLight.h"
 
-GeometryEngine::PointLight::PointLight(const QVector3D & attParam, GeometryItem* boundingBox, const QVector3D & diffuse, const QVector3D & ambient,
+GeometryEngine::GeometryWorldItem::GeometryLight::PointLight::PointLight(const QVector3D & attParam, GeometryItem::GeometryItem* boundingBox, const QVector3D & diffuse, const QVector3D & ambient,
 	const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent) :
 	StencilTestLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, parent), mAttenuationParameters(attParam)
 {
 	initLight();
 }
 
-GeometryEngine::PointLight::~PointLight()
+GeometryEngine::GeometryWorldItem::GeometryLight::PointLight::~PointLight()
 {
 }
 
-void GeometryEngine::PointLight::initLightShaders()
+void GeometryEngine::GeometryWorldItem::GeometryLight::PointLight::initLightShaders()
 {
 	mVertexShaderKey = LightShaderConstants::DEFERRED_SHADING_VERTEX_SHADER;
 	mFragmentShaderKey = LightShaderConstants::POINT_LIGHT_FRAGMENT_SHADER_DS;
 }
 
-void GeometryEngine::PointLight::setProgramParameters(const LightingTransformationData & transformData, const MaterialLightingParameters & matParam, 
+void GeometryEngine::GeometryWorldItem::GeometryLight::PointLight::setProgramParameters(const LightingTransformationData & transformData, const MaterialLightingParameters & matParam,
 	const GBufferTextureInfo& gBuffTexInfo, const QVector3D & viewPos)
 {
 	assert(mpProgram != nullptr && "Shading program not found");
@@ -45,7 +45,7 @@ void GeometryEngine::PointLight::setProgramParameters(const LightingTransformati
 	}
 }
 
-void GeometryEngine::PointLight::calculateContribution(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
+void GeometryEngine::GeometryWorldItem::GeometryLight::PointLight::calculateContribution(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	// Tell OpenGL which VBOs to use
 	arrayBuf->bind();
@@ -60,7 +60,7 @@ void GeometryEngine::PointLight::calculateContribution(QOpenGLBuffer * arrayBuf,
 	glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);
 }
 
-void GeometryEngine::PointLight::initLight()
+void GeometryEngine::GeometryWorldItem::GeometryLight::PointLight::initLight()
 {
 	Light::initLight();
 	if (mpBoundingBox != nullptr)

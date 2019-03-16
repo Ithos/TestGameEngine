@@ -1,11 +1,11 @@
 #include "DeferredShadingScene.h"
 
-GeometryEngine::DeferredShadingScene::DeferredShadingScene(SceneManager * manager, GLdouble fovy, GLdouble zNear, GLdouble zFar, QVector4D clearColor) : 
+GeometryEngine::GeometryScene::DeferredShadingScene::DeferredShadingScene(SceneManager * manager, GLdouble fovy, GLdouble zNear, GLdouble zFar, QVector4D clearColor) :
 	GeometryScene(manager, fovy, zNear, zFar, clearColor)
 {
-	mpInitialSetup = new InitialSetup();
+	mpInitialSetup = new GeometryGlSetup::InitialSetup();
 
-	mRenderSteps.push_back( new GeometryEngine::GeometryPass() );
-	mRenderSteps.push_back( new GeometryEngine::LightingPass() );
-	mRenderSteps.push_back( new GeometryEngine::FinalPass() );
+	mRenderSteps.push_back( new GeometryEngine::GeometryRenderStep::GeometryPass() );
+	mRenderSteps.push_back( new GeometryEngine::GeometryRenderStep::LightingPass() );
+	mRenderSteps.push_back( new GeometryEngine::GeometryRenderStep::FinalPass() );
 }

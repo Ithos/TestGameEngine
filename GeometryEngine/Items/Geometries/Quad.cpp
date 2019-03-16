@@ -1,17 +1,18 @@
 #include "Quad.h"
 
-GeometryEngine::Quad::Quad(const Material & mat, float width, float height, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent):
+GeometryEngine::GeometryWorldItem::GeometryItem::Quad::Quad(const GeometryMaterial::Material & mat, float width, float height, const QVector3D & pos, const QVector3D & rot, 
+	const QVector3D & scale, WorldItem * parent):
 	GeometryItem(mat, pos, rot, scale, parent), mWidth(width), mHeight(height)
 {
 	initItem();
 }
 
-GeometryEngine::Quad::Quad(const Quad & ref) : GeometryItem( (const GeometryItem&)ref )
+GeometryEngine::GeometryWorldItem::GeometryItem::Quad::Quad(const Quad & ref) : GeometryItem( (const GeometryItem&)ref )
 {
 	this->Copy(ref);
 }
 
-void GeometryEngine::Quad::Copy(const Quad & ref)
+void GeometryEngine::GeometryWorldItem::GeometryItem::Quad::Copy(const Quad & ref)
 {
 	this->GeometryItem::Copy(ref);
 
@@ -21,12 +22,12 @@ void GeometryEngine::Quad::Copy(const Quad & ref)
 	initItem();
 }
 
-GeometryEngine::GeometryItem * GeometryEngine::Quad::Clone() const
+GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem * GeometryEngine::GeometryWorldItem::GeometryItem::Quad::Clone() const
 {
 	return new Quad((*this));
 }
 
-void GeometryEngine::Quad::initGeometry()
+void GeometryEngine::GeometryWorldItem::GeometryItem::Quad::initGeometry()
 {
 	float xPos = mWidth / 2;
 	float yPos = mHeight / 2;

@@ -1,17 +1,17 @@
 #include "WorldItem.h"
 
-GeometryEngine::WorldItem::WorldItem(const QVector3D& pos, const QVector3D & rot, const QVector3D & scale, WorldItem* parent) : mpParent(parent)
+GeometryEngine::GeometryWorldItem::WorldItem::WorldItem(const QVector3D& pos, const QVector3D & rot, const QVector3D & scale, WorldItem* parent) : mpParent(parent)
 {
 	init(pos, rot, scale, parent);
 }
 
-GeometryEngine::WorldItem::WorldItem(const WorldItem & ref)
+GeometryEngine::GeometryWorldItem::WorldItem::WorldItem(const WorldItem & ref)
 {
 	Copy(ref);
 }
 
 
-GeometryEngine::WorldItem::~WorldItem()
+GeometryEngine::GeometryWorldItem::WorldItem::~WorldItem()
 {
 	for (auto iter = mpChildren.begin(); iter != mpChildren.end(); iter++)
 	{
@@ -21,7 +21,7 @@ GeometryEngine::WorldItem::~WorldItem()
 	this->RemoveParent();
 }
 
-bool GeometryEngine::WorldItem::AddChild( WorldItem* child)
+bool GeometryEngine::GeometryWorldItem::WorldItem::AddChild( WorldItem* child)
 {
 	if (child->GetParent() == nullptr && 
 		mpChildren.find(child) == mpChildren.end()
@@ -34,7 +34,7 @@ bool GeometryEngine::WorldItem::AddChild( WorldItem* child)
 	return false;
 }
 
-bool GeometryEngine::WorldItem::SetParent( WorldItem* parent)
+bool GeometryEngine::GeometryWorldItem::WorldItem::SetParent( WorldItem* parent)
 {
 	if (mpParent == nullptr && mpChildren.find(parent) ==mpChildren.end())
 	{
@@ -45,7 +45,7 @@ bool GeometryEngine::WorldItem::SetParent( WorldItem* parent)
 	return false;
 }
 
-bool GeometryEngine::WorldItem::RemoveChild( WorldItem* child)
+bool GeometryEngine::GeometryWorldItem::WorldItem::RemoveChild( WorldItem* child)
 {
 	if (child->GetParent() == this &&
 		mpChildren.find(child) != mpChildren.end())
@@ -58,7 +58,7 @@ bool GeometryEngine::WorldItem::RemoveChild( WorldItem* child)
 	return false;
 }
 
-bool GeometryEngine::WorldItem::RemoveParent()
+bool GeometryEngine::GeometryWorldItem::WorldItem::RemoveParent()
 {
 	if (mpParent != nullptr)
 	{
@@ -70,12 +70,12 @@ bool GeometryEngine::WorldItem::RemoveParent()
 	return false;
 }
 
-bool GeometryEngine::WorldItem::FindChild(WorldItem* child) const
+bool GeometryEngine::GeometryWorldItem::WorldItem::FindChild(WorldItem* child) const
 {
 	return mpChildren.find(child) != mpChildren.end();
 }
 
-QVector3D GeometryEngine::WorldItem::GetPosition() const
+QVector3D GeometryEngine::GeometryWorldItem::WorldItem::GetPosition() const
 {
 	if (mpParent == nullptr)
 	{
@@ -87,14 +87,14 @@ QVector3D GeometryEngine::WorldItem::GetPosition() const
 	}
 }
 
-void GeometryEngine::WorldItem::Move(const QVector3D & vector, bool updateChildren)
+void GeometryEngine::GeometryWorldItem::WorldItem::Move(const QVector3D & vector, bool updateChildren)
 {
 	mPosition += vector;
 
 	UpdateModelMatrix(updateChildren);
 }
 
-void GeometryEngine::WorldItem::Rotate(const QVector3D & rot, bool updateChildren)
+void GeometryEngine::GeometryWorldItem::WorldItem::Rotate(const QVector3D & rot, bool updateChildren)
 {
 	QQuaternion tmpQuat ;
 	tmpQuat = tmpQuat.fromEulerAngles(rot.x(), rot.y(), rot.z());
@@ -111,7 +111,7 @@ void GeometryEngine::WorldItem::Rotate(const QVector3D & rot, bool updateChildre
 	}
 }
 
-void GeometryEngine::WorldItem::Rotate(const QQuaternion & rot, bool updateChildren)
+void GeometryEngine::GeometryWorldItem::WorldItem::Rotate(const QQuaternion & rot, bool updateChildren)
 {
 	mRotation *= rot;
 
@@ -124,7 +124,7 @@ void GeometryEngine::WorldItem::Rotate(const QQuaternion & rot, bool updateChild
 	}
 }
 
-void GeometryEngine::WorldItem::Scale(const QVector3D & scale, bool updateChildren)
+void GeometryEngine::GeometryWorldItem::WorldItem::Scale(const QVector3D & scale, bool updateChildren)
 {
 	mScale *= scale;
 
@@ -139,7 +139,7 @@ void GeometryEngine::WorldItem::Scale(const QVector3D & scale, bool updateChildr
 	}
 }
 
-void GeometryEngine::WorldItem::SetPosition(const QVector3D & pos, bool delayUpdate)
+void GeometryEngine::GeometryWorldItem::WorldItem::SetPosition(const QVector3D & pos, bool delayUpdate)
 {
 	mPosition.setX(pos.x());
 	mPosition.setY(pos.y());
@@ -151,7 +151,7 @@ void GeometryEngine::WorldItem::SetPosition(const QVector3D & pos, bool delayUpd
 	}
 }
 
-void GeometryEngine::WorldItem::SetRotation(const QQuaternion & rot, bool delayUpdate)
+void GeometryEngine::GeometryWorldItem::WorldItem::SetRotation(const QQuaternion & rot, bool delayUpdate)
 {
 	mRotation.setScalar(rot.scalar());
 	mRotation.setVector(rot.vector());
@@ -161,7 +161,7 @@ void GeometryEngine::WorldItem::SetRotation(const QQuaternion & rot, bool delayU
 	}
 }
 
-void GeometryEngine::WorldItem::SetRotation(const QVector3D & rot, bool delayUpdate)
+void GeometryEngine::GeometryWorldItem::WorldItem::SetRotation(const QVector3D & rot, bool delayUpdate)
 {
 	mRotation = mRotation.fromEulerAngles(rot);
 
@@ -171,7 +171,7 @@ void GeometryEngine::WorldItem::SetRotation(const QVector3D & rot, bool delayUpd
 	}
 }
 
-void GeometryEngine::WorldItem::SetScale(const QVector3D & scale, bool delayUpdate)
+void GeometryEngine::GeometryWorldItem::WorldItem::SetScale(const QVector3D & scale, bool delayUpdate)
 {
 	mScale.setX(scale.x());
 	mScale.setY(scale.y());
@@ -183,7 +183,7 @@ void GeometryEngine::WorldItem::SetScale(const QVector3D & scale, bool delayUpda
 	}
 }
 
-void GeometryEngine::WorldItem::init(const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent)
+void GeometryEngine::GeometryWorldItem::WorldItem::init(const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent)
 {
 	SetPosition(pos, true);
 	SetRotation(rot, true);
@@ -194,7 +194,7 @@ void GeometryEngine::WorldItem::init(const QVector3D & pos, const QVector3D & ro
 	SetParent(parent);
 }
 
-void GeometryEngine::WorldItem::CalculateModelMatrix(bool calculateChildren)
+void GeometryEngine::GeometryWorldItem::WorldItem::CalculateModelMatrix(bool calculateChildren)
 {
 	UpdateModelMatrix();
 
@@ -207,7 +207,7 @@ void GeometryEngine::WorldItem::CalculateModelMatrix(bool calculateChildren)
 	}
 }
 
-void GeometryEngine::WorldItem::UpdateModelMatrix(bool updateChildren)
+void GeometryEngine::GeometryWorldItem::WorldItem::UpdateModelMatrix(bool updateChildren)
 {
 	QVector3D tmp(GetPosition());
 
@@ -225,17 +225,17 @@ void GeometryEngine::WorldItem::UpdateModelMatrix(bool updateChildren)
 	}
 }
 
-QVector3D GeometryEngine::WorldItem::ToModelCoordSystem(const QVector3D & vector)
+QVector3D GeometryEngine::GeometryWorldItem::WorldItem::ToModelCoordSystem(const QVector3D & vector)
 {
 	return mRotation.inverted() * vector;
 }
 
-QVector3D GeometryEngine::WorldItem::ToGlobalCoordSystem(const QVector3D & vector)
+QVector3D GeometryEngine::GeometryWorldItem::WorldItem::ToGlobalCoordSystem(const QVector3D & vector)
 {
 	return mRotation * vector;
 }
 
-void GeometryEngine::WorldItem::Copy(const WorldItem & ref)
+void GeometryEngine::GeometryWorldItem::WorldItem::Copy(const WorldItem & ref)
 {
 	this->mpParent = ref.mpParent;
 	init(ref.mPosition, ref.mRotation.toEulerAngles(), ref.mScale, ref.mpParent);
