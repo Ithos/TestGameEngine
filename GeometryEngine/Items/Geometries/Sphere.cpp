@@ -7,7 +7,7 @@ GeometryEngine::GeometryWorldItem::GeometryItem::Sphere::Sphere(const GeometryMa
 	initItem();
 }
 
-GeometryEngine::GeometryWorldItem::GeometryItem::Sphere::Sphere(const Sphere & const ref) : GeometryItem((const GeometryItem&) ref)
+GeometryEngine::GeometryWorldItem::GeometryItem::Sphere::Sphere(const Sphere & ref) : GeometryItem((const GeometryItem&) ref)
 {
 	this->Copy(ref);
 }

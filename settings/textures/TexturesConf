@@ -6,3 +6,6 @@ TEST_FORWARD_TEXTURE = FrontTest.bmp
 TEST_BACK_TEXTURE = BackTest.bmp
 TEST_LEFT_TEXTURE = LeftTest.bmp
 TEST_RIGHT_TEXTURE = RightTest.bmp
+TEST_UNIFIED_CUBE = UnifiedCube.png
+TEST_TEXTURE = TestTexture.bmp
+TEST_BLACK_TEXTURE = Black.bmp

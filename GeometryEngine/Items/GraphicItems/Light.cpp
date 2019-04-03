@@ -14,11 +14,6 @@ const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderC
 
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::DEFERRED_SHADING_VERTEX_SHADER = "DEFERRED_SHADING_VERTEX_SHADER";
 
-const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::AMBIENT_LIGHT_FRAGMENT_SHADER_DS = "AMBIENT_LIGHT_FRAGMENT_SHADER_DS";
-const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::DIRECTIONAL_LIGHT_FRAGMENT_SHADER_DS = "DIRECTIONAL_LIGHT_FRAGMENT_SHADER_DS";
-const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::POINT_LIGHT_FRAGMENT_SHADER_DS = "POINT_LIGHT_FRAGMENT_SHADER_DS";
-const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::FLASHLIGHT_FRAGMENT_SHADER_DS = "FLASHLIGHT_FRAGMENT_SHADER_DS";
-
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::NULL_FRAGMENT_SHADER = "NULL_FRAGMENT_SHADER";
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::POSITION_VERTEX_SHADER = "POSITION_VERTEX_SHADER";
 
@@ -38,25 +33,23 @@ GeometryEngine::GeometryWorldItem::GeometryLight::Light::~Light()
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::Light::CalculateLighting(QOpenGLBuffer* arrayBuf, QOpenGLBuffer* indexBuf, const LightingTransformationData& transformData,
-	const MaterialLightingParameters& matParam, const GBufferTextureInfo& gBuffTexInfo, const QVector3D& viewPos, unsigned int totalVertexNum, unsigned int totalIndexNum)
+	const GBufferTextureInfo& gBuffTexInfo, const QVector3D& viewPos, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	if (mpProgram != nullptr)
 	{
 		// Link shader pipeline
 		if (!mpProgram->link())
 		{
-			/// TODO -- log error -- ///
-			return;
+			assert(false && "Lighting shader failed to link");
 		}
 
 		// Bind shader pipeline for use
 		if (!mpProgram->bind())
 		{
-			/// TODO -- log error -- ///
-			return;
+			assert(false && "Lighting shader failed to bind");
 		}
 
-		setProgramParameters(transformData, matParam, gBuffTexInfo, viewPos);
+		setProgramParameters(transformData, gBuffTexInfo, viewPos);
 
 		calculateContribution(arrayBuf, indexBuf, totalVertexNum, totalIndexNum);
 	}
@@ -86,8 +79,7 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::Light::initLightProgram()
 		// Compile vertex shader
 		if (!mpProgram->addShaderFromSourceCode(QOpenGLShader::Vertex, mpShaderManager->GetLoadedShaderContent(mVertexShaderKey).c_str()))
 		{
-			/// TODO -- log error -- ///
-			return;
+			assert(false && "Lighting vertex shader failed to compile");
 		}
 	}
 
@@ -101,8 +93,7 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::Light::initLightProgram()
 		// Compile fragment shader
 		if (!mpProgram->addShaderFromSourceCode(QOpenGLShader::Fragment, mpShaderManager->GetLoadedShaderContent(mFragmentShaderKey).c_str()))
 		{
-			/// TODO -- log error -- ///
-			return;
+			assert(false && "Lighting fragment shader failed to compile");
 		}
 	}
 }

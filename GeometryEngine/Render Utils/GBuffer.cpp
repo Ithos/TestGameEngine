@@ -10,6 +10,11 @@ GeometryEngine::GeometryBuffer::GBuffer::GBuffer() : mFbo(0), mDepthTexture(0), 
 	initializeOpenGLFunctions();
 }
 
+GeometryEngine::GeometryBuffer::GBuffer::GBuffer(const GBuffer & ref)
+{
+	copy(ref);
+}
+
 GeometryEngine::GeometryBuffer::GBuffer::~GBuffer()
 {
 	if (mFbo != 0) {
@@ -43,11 +48,9 @@ bool GeometryEngine::GeometryBuffer::GBuffer::Init(unsigned int MaxWindowWidth, 
 	glGenTextures(1, &mFinalTexture);
 
 	for (unsigned int i = 0; i < GBUFFER_NUM_TEXTURES; i++) {
-		glBindTexture(GL_TEXTURE_2D, mTextures[i]);
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB32F, MaxWindowWidth, MaxWindowHeight, 0, GL_RGB, GL_FLOAT, NULL);
-		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + i, GL_TEXTURE_2D, mTextures[i], 0);
+		mActiveTextures.find((GBUFFER_TEXTURE_TYPE)i) != mActiveTextures.end() ? 
+			generateTexture(i, MaxWindowWidth, MaxWindowHeight) : 
+			generateNullTexture(i);
 	}
 	
 	// depth
@@ -58,11 +61,8 @@ bool GeometryEngine::GeometryBuffer::GBuffer::Init(unsigned int MaxWindowWidth, 
 	// final
 	glBindTexture(GL_TEXTURE_2D, mFinalTexture);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, MaxWindowWidth, MaxWindowHeight, 0, GL_RGB, GL_FLOAT, NULL);
-	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT4, GL_TEXTURE_2D, mFinalTexture, 0);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT7, GL_TEXTURE_2D, mFinalTexture, 0);
 
-
-	GLenum DrawBuffers[] = { GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1, GL_COLOR_ATTACHMENT2, GL_COLOR_ATTACHMENT3 };
-	glDrawBuffers(GBUFFER_NUM_TEXTURES, DrawBuffers);
 
 	mTextureSize.setX(MaxWindowWidth); mTextureSize.setY(MaxWindowHeight);
 
@@ -85,8 +85,11 @@ bool GeometryEngine::GeometryBuffer::GBuffer::Resize(unsigned int WindowWidth, u
 
 
 	for (unsigned int i = 0; i < GBUFFER_NUM_TEXTURES; i++) {
-		glBindTexture(GL_TEXTURE_2D, mTextures[i]);
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB32F, WindowWidth, WindowHeight, 0, GL_RGB, GL_FLOAT, NULL);
+		if (mActiveTextures.find((GBUFFER_TEXTURE_TYPE)i) != mActiveTextures.end())
+		{
+			glBindTexture(GL_TEXTURE_2D, mTextures[i]);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB32F, WindowWidth, WindowHeight, 0, GL_RGB, GL_FLOAT, NULL);
+		}
 	}
 
 	// depth
@@ -108,7 +111,7 @@ bool GeometryEngine::GeometryBuffer::GBuffer::Resize(unsigned int WindowWidth, u
 void GeometryEngine::GeometryBuffer::GBuffer::StartFrame()
 {
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, mFbo);
-	glDrawBuffer(GL_COLOR_ATTACHMENT4);
+	glDrawBuffer(GL_COLOR_ATTACHMENT7);
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
@@ -120,7 +123,11 @@ void GeometryEngine::GeometryBuffer::GBuffer::BindForGeomPass()
 		GL_COLOR_ATTACHMENT0,
 		GL_COLOR_ATTACHMENT1,
 		GL_COLOR_ATTACHMENT2, 
-		GL_COLOR_ATTACHMENT3};
+		GL_COLOR_ATTACHMENT3,
+		GL_COLOR_ATTACHMENT4,
+		GL_COLOR_ATTACHMENT5,
+		GL_COLOR_ATTACHMENT6
+	};
 
 	glDrawBuffers(GBUFFER_NUM_TEXTURES, DrawBuffers);
 }
@@ -133,11 +140,11 @@ void GeometryEngine::GeometryBuffer::GBuffer::BindForStencilPass()
 
 void GeometryEngine::GeometryBuffer::GBuffer::BindForLightPass()
 {
-	glDrawBuffer(GL_COLOR_ATTACHMENT4);
+	glDrawBuffer(GL_COLOR_ATTACHMENT7);
 
 	for (unsigned int i = 0; i < GBUFFER_NUM_TEXTURES; i++) {
 		glActiveTexture(GL_TEXTURE0 + i);
-		glBindTexture(GL_TEXTURE_2D, mTextures[GBUFFER_TEXTURE_TYPE_DIFFUSE + i]);
+		glBindTexture(GL_TEXTURE_2D, mTextures[i]);
 	}
 }
 
@@ -145,5 +152,45 @@ void GeometryEngine::GeometryBuffer::GBuffer::BindForFinalPass()
 {
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
 	glBindFramebuffer(GL_READ_FRAMEBUFFER, mFbo);
-	glReadBuffer(GL_COLOR_ATTACHMENT4);
+	glReadBuffer(GL_COLOR_ATTACHMENT7);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::generateTexture(unsigned int arrayIndex, unsigned int maxWindowWidth, unsigned int maxWindowHeight)
+{
+	glBindTexture(GL_TEXTURE_2D, mTextures[arrayIndex]);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB32F, maxWindowWidth, maxWindowHeight, 0, GL_RGB, GL_FLOAT, NULL);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + arrayIndex, GL_TEXTURE_2D, mTextures[arrayIndex], 0);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::generateNullTexture(unsigned int arrayIndex)
+{
+	glBindTexture(GL_TEXTURE_2D, mTextures[arrayIndex]);
+	GLubyte data[] = { 255, 255, 255, 255 };
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + arrayIndex, GL_TEXTURE_2D, mTextures[arrayIndex], 0);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::copy(const GBuffer & ref)
+{
+	this->mFbo = 0;
+	this->mDepthTexture = 0;
+	this->mFinalTexture = 0;
+	this->mTextureSize.setX(ref.mTextureSize.x());
+	this->mTextureSize.setY(ref.mTextureSize.y());
+	this->mMaxTextureSize.setX(ref.mMaxTextureSize.x());
+	this->mMaxTextureSize.setY(ref.mMaxTextureSize.y());
+
+	for (int i = 0; i < GBUFFER_NUM_TEXTURES; ++i)
+	{
+		this->mTextures[i] = 0;
+	}
+
+	for (auto it = ref.mActiveTextures.begin(); it != ref.mActiveTextures.end(); ++it)
+	{
+		this->mActiveTextures.insert((*it));
+	}
 }

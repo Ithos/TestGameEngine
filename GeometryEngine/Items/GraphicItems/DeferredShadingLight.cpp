@@ -25,9 +25,8 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::Lig
 	assert(GetBoundingGeometry() != nullptr && "Bounding geometry not found");
 	mpBoundingBox->CalculateModelMatrix();
 	LightingTransformationData ltd(projectionMatrix, viewMatrix, GetBoundingGeometry()->GetModelMatrix(), GetBoundingGeometry()->GetRotation());
-	MaterialLightingParameters mlp(QVector3D(), QVector3D(), QVector3D(), 0);
 
-	CalculateLighting(mpBoundingBox->GetArrayBuffer(), mpBoundingBox->GetIndexBuffer(), ltd, mlp, gBuffTexInfo, viewPos, mpBoundingBox->GetVertexNumber(), mpBoundingBox->GetIndexNumber());
+	CalculateLighting(mpBoundingBox->GetArrayBuffer(), mpBoundingBox->GetIndexBuffer(), ltd, gBuffTexInfo, viewPos, mpBoundingBox->GetVertexNumber(), mpBoundingBox->GetIndexNumber());
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::ScaleBoundingBox(const QVector3D & attenuation)

@@ -12,6 +12,8 @@
 #include <QBasicTimer>
 #include <QOpenGLShaderProgram>
 #include <GeometryEngine.h>
+#include <qmouseevent.h>
+#include <qkeyevent.h>
 
 namespace GeometryEngine {
 	class GeometryEngine;
@@ -69,6 +71,8 @@ namespace Application
 		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere* testCube2;
 		GeometryEngine::GeometryWorldItem::GeometryCamera::PerspectiveCamera* cam;
 		GeometryEngine::GeometryWorldItem::GeometryLight::Light* mainLight;
+
+		bool* mpMovementArray;
 
 	};
 }

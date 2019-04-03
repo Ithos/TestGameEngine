@@ -15,10 +15,10 @@ GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight::~Directional
 void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight::initLightShaders()
 {
 	mVertexShaderKey = LightShaderConstants::DEFERRED_SHADING_VERTEX_SHADER;
-	mFragmentShaderKey = LightShaderConstants::DIRECTIONAL_LIGHT_FRAGMENT_SHADER_DS; 
+	mFragmentShaderKey = LightShaderConstants::DIRECTIONAL_LIGHT_FRAGMENT_SHADER; 
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight::setProgramParameters(const LightingTransformationData & transformData, const MaterialLightingParameters & matParam,
+void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight::setProgramParameters(const LightingTransformationData & transformData,
 	const GBufferTextureInfo& gBuffTexInfo, const QVector3D & viewPos)
 {
 	assert( mpProgram != nullptr && "Shading program not found");
@@ -26,8 +26,16 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight::setProg
 		// Set matrices
 		mpProgram->setUniformValue("modelViewProjectionMatrix", transformData.ModelMatrix);
 
+		mpProgram->setUniformValue("mUseDiffuse", gBuffTexInfo.PositionTexture);
+		mpProgram->setUniformValue("mUseAmbient", gBuffTexInfo.PositionTexture);
+		mpProgram->setUniformValue("mUseReflective", gBuffTexInfo.PositionTexture);
+		mpProgram->setUniformValue("mUseEmissive", gBuffTexInfo.PositionTexture);
+
 		mpProgram->setUniformValue("mPositionMap", gBuffTexInfo.PositionTexture);
-		mpProgram->setUniformValue("mColorMap", gBuffTexInfo.DiffuseTexture);
+		mpProgram->setUniformValue("mDiffuseColorMap", gBuffTexInfo.DiffuseTexture);
+		mpProgram->setUniformValue("mAmbientColorMap", gBuffTexInfo.AmbientTexture);
+		mpProgram->setUniformValue("mReflectiveColorMap", gBuffTexInfo.ReflectiveTexture);
+		mpProgram->setUniformValue("mEmissiveColorMap", gBuffTexInfo.EmissiveTexture);
 		mpProgram->setUniformValue("mNormalMap", gBuffTexInfo.NormalTexture);
 		mpProgram->setUniformValue("mTextureMap", gBuffTexInfo.TexcoordTexture);
 

@@ -1,16 +1,7 @@
 #include "TextureMaterial.h"
 
-const std::string GeometryEngine::GeometryMaterial::TextureConstant::ERROR_TEXTURE = "ERROR_TEXTURE";
-const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE = "TEST_BLUE_CHIP_TEXTURE";
-const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_UP_TEXTURE = "TEST_UP_TEXTURE";
-const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_DOWN_TEXTURE = "TEST_DOWN_TEXTURE";
-const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_FORWARD_TEXTURE = "TEST_FORWARD_TEXTURE";
-const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE = "TEST_BACK_TEXTURE";
-const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_LEFT_TEXTURE = "TEST_LEFT_TEXTURE";
-const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_RIGHT_TEXTURE = "TEST_RIGHT_TEXTURE";
-
-GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::string& texDir, const QVector3D & ambient, const QVector3D & diffuse, const QVector3D & specular,
-	float shininess, bool isLit, bool customLight) : Material(ambient, diffuse, specular, shininess, isLit, customLight), mpTexDirManager(nullptr)
+GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::string& texDir, float shininess) : 
+	Material(QVector3D(0.0f,0.0f,0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), shininess), mpTexDirManager(nullptr)
 {
 	std::list<TextureParameters*> tmpList;
 	TextureParameters tmpParam = TextureParameters(texDir, -1);
@@ -18,8 +9,8 @@ GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::st
 	initMaterial(tmpList);
 }
 
-GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::list<TextureParameters* >& textureDirs, const QVector3D & ambient, const QVector3D & diffuse,
-	const QVector3D & specular, float shininess, bool isLit, bool customLight) : Material(ambient, diffuse, specular, shininess, isLit, customLight), mpTexDirManager(nullptr)
+GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::list<TextureParameters* >& textureDirs, float shininess) : 
+	Material(QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), shininess), mpTexDirManager(nullptr)
 {
 	initMaterial( textureDirs );
 }
@@ -27,6 +18,7 @@ GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::li
 GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const TextureMaterial & mat)
 {
 	copy(mat);
+	buildTextures(this->mTexturesList);
 }
 
 GeometryEngine::GeometryMaterial::Material * GeometryEngine::GeometryMaterial::TextureMaterial::Clone() const
@@ -41,7 +33,7 @@ GeometryEngine::GeometryMaterial::TextureMaterial::~TextureMaterial()
 
 void GeometryEngine::GeometryMaterial::TextureMaterial::AddTexture(const TextureParameters& texDir)
 {
-	mTexturesList.push_back(buildTexture(texDir));
+	mTexturesList.push_back(new TextureParameters(texDir) );
 }
 
 void GeometryEngine::GeometryMaterial::TextureMaterial::AddTextures(std::list<TextureParameters*> textureDirs)
@@ -56,7 +48,7 @@ void GeometryEngine::GeometryMaterial::TextureMaterial::InsertTexture(const Text
 {
 	auto iter = mTexturesList.begin();
 	std::advance(iter, index);
-	mTexturesList.insert(iter, buildTexture(texDir));
+	mTexturesList.insert(iter, new TextureParameters(texDir));
 }
 
 void GeometryEngine::GeometryMaterial::TextureMaterial::DeleteTexture(int index)
@@ -81,7 +73,8 @@ void GeometryEngine::GeometryMaterial::TextureMaterial::DeleteAllTextures()
 
 void GeometryEngine::GeometryMaterial::TextureMaterial::setProgramParameters(const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryWorldItem::GeometryItem::GeometryItem & parent)
 {
-	if (mpProgram != nullptr)
+	assert(mpProgram != nullptr && "Texture Material --> Shader Program Null");
+	if(mpProgram != nullptr)
 	{
 		// Set matrices
 		mpProgram->setUniformValue("modelViewProjectionMatrix", projection * view * parent.GetModelMatrix());
@@ -94,47 +87,57 @@ void GeometryEngine::GeometryMaterial::TextureMaterial::setProgramParameters(con
 
 void GeometryEngine::GeometryMaterial::TextureMaterial::drawMaterial(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber)
 {
-	// Tell OpenGL which VBOs to use
-	arrayBuf->bind();
-	indexBuf->bind();
-
-	// Tell OpenGL programmable pipeline how to locate vertex position data
-	int vertexLocation = mpProgram->attributeLocation("posAttr");
-	mpProgram->enableAttributeArray(vertexLocation);
-	mpProgram->setAttributeBuffer(vertexLocation, GL_FLOAT, VertexData::POSITION_OFFSET, 3, sizeof(VertexData));
-
-	// Tell OpenGL programmable pipeline how to locate texture coordinates
-	int textureCoordinate = mpProgram->attributeLocation("TexCoord");
-	mpProgram->enableAttributeArray(textureCoordinate);
-	mpProgram->setAttributeBuffer(textureCoordinate, GL_FLOAT, VertexData::TEXTURE_COORDINATES_OFFSET, 2, sizeof(VertexData));
-
-	// Tell OpenGL programmable pipeline how to locate normals
-	int normalVector = mpProgram->attributeLocation("aNormal");
-	mpProgram->enableAttributeArray(normalVector);
-	mpProgram->setAttributeBuffer(normalVector, GL_FLOAT, VertexData::NORMALS_OFFSET, 3, sizeof(VertexData));
-
-	int vertexCount = 0;
-
-	if (mTexturesList.size() == 1)
+	assert(mpProgram != nullptr && "Texture Material --> Shader Program Null");
+	if(mpProgram != nullptr)
 	{
-		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
-		return;
-	}
+		// Tell OpenGL which VBOs to use
+		arrayBuf->bind();
+		indexBuf->bind();
 
-	for (int i = 0; i < mTexturesList.size(); ++i)
-	{
-		auto it = mTexturesList.begin();
-		std::advance(it, i);
+		// Tell OpenGL programmable pipeline how to locate vertex position data
+		int vertexLocation = mpProgram->attributeLocation("posAttr");
+		mpProgram->enableAttributeArray(vertexLocation);
+		mpProgram->setAttributeBuffer(vertexLocation, GL_FLOAT, VertexData::POSITION_OFFSET, 3, sizeof(VertexData));
 
-		if ((*it)->Texture != nullptr)
-			(*it)->Texture->bind(TEXTURE_UNIT);
+		// Tell OpenGL programmable pipeline how to locate texture coordinates
+		int textureCoordinate = mpProgram->attributeLocation("TexCoord");
+		mpProgram->enableAttributeArray(textureCoordinate);
+		mpProgram->setAttributeBuffer(textureCoordinate, GL_FLOAT, VertexData::TEXTURE_COORDINATES_OFFSET, 2, sizeof(VertexData));
 
-		int vertexNum = (*it)->VertexNumber > 0 ? (*it)->VertexNumber : totalVertexNumber;
+		// Tell OpenGL programmable pipeline how to locate normals
+		int normalVector = mpProgram->attributeLocation("aNormal");
+		mpProgram->enableAttributeArray(normalVector);
+		mpProgram->setAttributeBuffer(normalVector, GL_FLOAT, VertexData::NORMALS_OFFSET, 3, sizeof(VertexData));
 
-		/// Maybe do the same, but with indices?
-		glDrawArrays(GL_TRIANGLE_STRIP, vertexCount, vertexNum); /// Draw sets of 3 vertex you can also go for sets of 4 by swapping 3s for 4s in the call to the method
+		int vertexCount = 0;
 
-		vertexCount += (*it)->VertexNumber;
+		if (mTexturesList.size() == 1)
+		{
+			auto it = mTexturesList.begin();
+			std::advance(it, 0);
+
+			if ((*it)->Texture != nullptr)
+				(*it)->Texture->bind(TEXTURE_UNIT);
+
+			glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
+			return;
+		}
+
+		for (int i = 0; i < mTexturesList.size(); ++i)
+		{
+			auto it = mTexturesList.begin();
+			std::advance(it, i);
+
+			if ((*it)->Texture != nullptr)
+				(*it)->Texture->bind(TEXTURE_UNIT);
+
+			int vertexNum = (*it)->VertexNumber > 0 ? (*it)->VertexNumber : totalVertexNumber;
+
+			/// Maybe do the same, but with indices?
+			glDrawArrays(GL_TRIANGLE_STRIP, vertexCount, vertexNum); /// Draw sets of 3 vertex you can also go for sets of 4 by swapping 3s for 4s in the call to the method
+
+			vertexCount += (*it)->VertexNumber;
+		}
 	}
 }
 
@@ -162,21 +165,11 @@ void GeometryEngine::GeometryMaterial::TextureMaterial::initShaders()
 	mFragmentShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::TEXTURE_MATERIAL_FRAGMENT_SHADER;
 }
 
-GeometryEngine::GeometryMaterial::TextureParameters * GeometryEngine::GeometryMaterial::TextureMaterial::buildTexture(const TextureParameters & texDir)
+void GeometryEngine::GeometryMaterial::TextureMaterial::buildTextures(const std::list<TextureParameters* >& textureDirs)
 {
-	TextureParameters* tmp = new TextureParameters(texDir);
-	if (tmp->Texture == nullptr) tmp->Build();
-	return tmp;
-}
-
-void GeometryEngine::GeometryMaterial::TextureParameters::Build()
-{
-	QImage img = QImage(QString(TextureDir.c_str()));
-	
-	if (img.isNull())
+	for (auto it = textureDirs.begin(); it != textureDirs.end(); ++it)
 	{
-		img = QImage(QString(mpTexDirManager->GetTextureDir(TextureConstant::ERROR_TEXTURE).c_str()));
+		if ((*it)->Texture == nullptr) (*it)->Build();
 	}
-
-	Texture = new QOpenGLTexture(img.mirrored());
 }
+

@@ -11,12 +11,15 @@
 #include <Items/GraphicItems/Cameras/DeferredShading/PerspectiveCamera.h>
 #include <Items/Materials/ColorMaterial.h>
 #include <Items/Materials/TextureMaterial.h>
+#include <Items/Materials/MultiTextureMaterial.h>
 #include <Textures.h>
 #include <Items\GraphicItems\Lights\AmbientLight.h>
 #include <Items\GraphicItems\Lights\DirectionalLight.h>
 #include <Items\GraphicItems\Lights\PointLight.h>
 #include <Items\GraphicItems\Lights\Spotlight.h>
 #include <Scenes/DeferredShadingScene.h>
+#include <Render Utils\Gbuffers\CompleteColorBuffer.h>
+#include <Render Utils\Gbuffers\SingleColorTextureBuffer.h>
 
 namespace Application
 {
@@ -25,6 +28,8 @@ namespace Application
 		mpGeomInstance(nullptr)
 	{
 		mWindowSize = QVector2D(this->width(), this->height());
+		mpMovementArray = new bool[6]{ false, false, false, false, false, false };
+
 	}
 
 	CWindowApplication::~CWindowApplication()
@@ -49,11 +54,59 @@ namespace Application
 	void CWindowApplication::keyPressEvent(QKeyEvent * e)
 	{
 		/// TODO -- get key pressed and sent it to an input manager -- ///
+		if (e->key() == Qt::Key_W)
+		{
+			mpMovementArray[0] = true;
+		}
+		if (e->key() == Qt::Key_S)
+		{
+			mpMovementArray[1] = true;
+		}
+		if (e->key() == Qt::Key_A)
+		{
+			mpMovementArray[2] = true;
+		}
+		if (e->key() == Qt::Key_D)
+		{
+			mpMovementArray[3] = true;
+		}
+		if (e->key() == Qt::Key_Q)
+		{
+			mpMovementArray[4] = true;
+		}
+		if (e->key() == Qt::Key_E)
+		{
+			mpMovementArray[5] = true;
+		}
 	}
 
 	void CWindowApplication::keyReleaseEvent(QKeyEvent * e)
 	{
 		/// TODO -- get key released and sent it to an input manager -- ///
+		if (e->key() == Qt::Key_W)
+		{
+			mpMovementArray[0] = false;
+		}
+		if (e->key() == Qt::Key_S)
+		{
+			mpMovementArray[1] = false;
+		}
+		if (e->key() == Qt::Key_A)
+		{
+			mpMovementArray[2] = false;
+		}
+		if (e->key() == Qt::Key_D)
+		{
+			mpMovementArray[3] = false;
+		}
+		if (e->key() == Qt::Key_Q)
+		{
+			mpMovementArray[4] = false;
+		}
+		if (e->key() == Qt::Key_E)
+		{
+			mpMovementArray[5] = false;
+		}
 	}
 
 	void CWindowApplication::timerEvent(QTimerEvent * e)
@@ -92,6 +145,31 @@ namespace Application
 		testCube->Rotate(testCube->ToModelCoordSystem(rotation));
 		testCube2->Rotate(testCube2->ToModelCoordSystem(rotation));
 
+		if (mpMovementArray[0])
+		{
+			cam->Move(QVector3D(0.0, 0.0, -0.2));
+		}
+		if (mpMovementArray[1])
+		{
+			cam->Move(QVector3D(0.0, 0.0, 0.2));
+		}
+		if (mpMovementArray[2])
+		{
+			cam->Move(QVector3D(-0.2, 0.0, 0.0));
+		}
+		if (mpMovementArray[3])
+		{
+			cam->Move(QVector3D(0.2, 0.0, 0.0));
+		}
+		if (mpMovementArray[4])
+		{
+			cam->Rotate(QVector3D(0.0, 0.6, 0.0));
+		}
+		if (mpMovementArray[5])
+		{
+			cam->Rotate(QVector3D(0.0, -0.6, 0.0));;
+		}
+
 		//cam->Rotate(rotation);
 
 		if (scene != nullptr)
@@ -102,7 +180,7 @@ namespace Application
 	void CWindowApplication::initGeometry(GeometryEngine::GeometryEngine* engine)
 	{
 		GeometryEngine::GeometryScene::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::GeometryScene::DeferredShadingScene>();
-		GeometryEngine::GeometryMaterial::ColorMaterial mat( QVector3D(1.0f, 0.4f, 0.3f) );
+		GeometryEngine::GeometryMaterial::ColorMaterial mat( QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f)); // QVector3D(1.0f, 0.4f, 0.3f)
 
 		std::list< GeometryEngine::GeometryMaterial::TextureParameters* > tmpList;
 
@@ -116,9 +194,13 @@ namespace Application
 		tmpList.push_back(&back); tmpList.push_back(&right); tmpList.push_back(&front); tmpList.push_back(&left); tmpList.push_back(&down); tmpList.push_back(&up);
 
 		GeometryEngine::GeometryMaterial::TextureMaterial tMat(tmpList);
-		/*GeometryEngine::Cube**/ testCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube( tMat, 4.0f,QVector3D(-5.0f, 0.0f, -15.0f), QVector3D(30.0f, -30.0f, 0.0f));
+		GeometryEngine::GeometryMaterial::MultiTextureMaterial mtMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_RIGHT_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE,
+			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE);
+		/*GeometryEngine::Cube**/ testCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mtMat, 4.0f,QVector3D(-5.0f, 0.0f, -15.0f), QVector3D(30.0f, -30.0f, 0.0f));
 		/*GeometryEngine::Cube**/ testCube2 = new GeometryEngine::GeometryWorldItem::GeometryItem::Sphere(mat, 1.0f, 6, 12, QVector3D(5.0f, 0.0f, -15.0f));//new GeometryEngine::Cube(mat, 2.0f, QVector3D(5.0f, 0.0f, -15.0f), QVector3D(-30.0f, 30.0f, 0.0f));
-		/*GeometryEngine::PerspectiveCamera**/ cam = new GeometryEngine::GeometryWorldItem::GeometryCamera::PerspectiveCamera( QVector4D(0, 0, this->width(), this->height()), 
+		/*GeometryEngine::PerspectiveCamera**/ cam = new GeometryEngine::GeometryWorldItem::GeometryCamera::PerspectiveCamera(
+																			GeometryEngine::GeometryBuffer::CompleteColorBuffer(), 
+																			QVector4D(0, 0, this->width(), this->height()),
 																			45.0f, 1.0f, true, 0.1f, 1000.0f, 
 																			QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f) );
 

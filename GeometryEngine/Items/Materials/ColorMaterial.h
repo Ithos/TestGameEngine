@@ -12,18 +12,14 @@ namespace GeometryEngine
 		class ColorMaterial : public Material
 		{
 		public:
-			ColorMaterial(const QVector3D& emissive = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& ambient = QVector3D(1.0f, 1.0, 1.0f), const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f),
-				const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f), float shininess = 10.0f, bool isLit = true, bool customLight = false);
+			ColorMaterial(const QVector3D& ambient = QVector3D(0.0f, 0.0, 0.0f), const QVector3D& diffuse = QVector3D(0.0f, 0.0f, 0.0f), 
+				const QVector3D& specular = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D& emissive = QVector3D(0.0f, 0.0f, 0.0f), float shininess = 10.0f);
 			ColorMaterial(const ColorMaterial& mat);
 			virtual ~ColorMaterial();
-			const QVector3D& GetEmissive() const { return mEmissive; }
-			void SetEmissive(const QVector3D& emissive) { mEmissive.setX(emissive.x()); mEmissive.setY(emissive.y()); mEmissive.setZ(emissive.z()); }
 			virtual Material* Clone() const override;
 
 
 		protected:
-			QVector3D mEmissive;
-
 			virtual void initShaders();
 
 			virtual void setProgramParameters(const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryWorldItem::GeometryItem::GeometryItem& parent) override;

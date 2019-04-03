@@ -16,10 +16,10 @@ GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::~Spotlight()
 void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::initLightShaders()
 {
 	mVertexShaderKey = LightShaderConstants::DEFERRED_SHADING_VERTEX_SHADER;
-	mFragmentShaderKey = LightShaderConstants::FLASHLIGHT_FRAGMENT_SHADER_DS;
+	mFragmentShaderKey = LightShaderConstants::FLASHLIGHT_FRAGMENT_SHADER;
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::setProgramParameters(const LightingTransformationData & transformData, const MaterialLightingParameters & matParam, const GBufferTextureInfo& gBuffTexInfo,
+void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::setProgramParameters(const LightingTransformationData & transformData, const GBufferTextureInfo& gBuffTexInfo,
 	const QVector3D & viewPos)
 {
 	assert( mpProgram != nullptr && "Shading program not found");
@@ -27,8 +27,17 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::setProgramPara
 		// Set matrices
 		mpProgram->setUniformValue("modelViewProjectionMatrix", transformData.ProjectionMatrix * transformData.ViewMatrix * transformData.ModelMatrix);
 
+
+		mpProgram->setUniformValue("mUseDiffuse", gBuffTexInfo.UseDiffuseTexture);
+		mpProgram->setUniformValue("mUseAmbient", gBuffTexInfo.UseAmbientTexture);
+		mpProgram->setUniformValue("mUseReflective", gBuffTexInfo.UseReflectiveTexture);
+		mpProgram->setUniformValue("mUseEmissive", gBuffTexInfo.UseEmissiveTexture);
+
 		mpProgram->setUniformValue("mPositionMap", gBuffTexInfo.PositionTexture);
-		mpProgram->setUniformValue("mColorMap", gBuffTexInfo.DiffuseTexture);
+		mpProgram->setUniformValue("mDiffuseColorMap", gBuffTexInfo.DiffuseTexture);
+		mpProgram->setUniformValue("mAmbientColorMap", gBuffTexInfo.AmbientTexture);
+		mpProgram->setUniformValue("mReflectiveColorMap", gBuffTexInfo.ReflectiveTexture);
+		mpProgram->setUniformValue("mEmissiveColorMap", gBuffTexInfo.EmissiveTexture);
 		mpProgram->setUniformValue("mNormalMap", gBuffTexInfo.NormalTexture);
 
 		mpProgram->setUniformValue("mTextureSize", gBuffTexInfo.TextureSize);

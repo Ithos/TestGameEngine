@@ -21,7 +21,7 @@ namespace GeometryEngine
 				~AmbientLight();
 			protected:
 				virtual void initLightShaders();
-				virtual void setProgramParameters(const LightingTransformationData & transformData, const MaterialLightingParameters & matParam,
+				virtual void setProgramParameters(const LightingTransformationData & transformData,
 					const GBufferTextureInfo& gBuffTexInfo, const QVector3D & viewPos);
 				virtual void calculateContribution(QOpenGLBuffer* arrayBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum);
 			};
