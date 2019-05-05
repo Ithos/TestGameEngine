@@ -7,6 +7,7 @@
 
 #include "../WorldItem.h"
 #include "Render Utils\GBuffer.h"
+#include "../PostProcess/PostProcess.h"
 
 
 namespace GeometryEngine
@@ -19,6 +20,11 @@ namespace GeometryEngine
 	namespace GeometryBuffer
 	{
 		class GBuffer;
+	}
+
+	namespace GeometryPostProcess
+	{
+		class PostProcess;
 	}
 
 	namespace GeometryWorldItem
@@ -50,6 +56,12 @@ namespace GeometryEngine
 				virtual void ClearCustomRenderSteps();
 				virtual const std::list< GeometryRenderStep::RenderStep* >& GetCustomRenderSteps() { return mCustomRenderSteps; }
 
+				virtual bool AddPostProcess(const GeometryPostProcess::PostProcess& process);
+				virtual bool RemovePostProcess(int pos);
+				virtual bool InsertPostProcess(const GeometryPostProcess::PostProcess& process, unsigned int pos);
+				virtual void ClearPostProcess();
+				virtual const std::list< GeometryPostProcess::PostProcess* >& GetPostProcess() { return mPostProcess; }
+
 			protected:
 				GLdouble mZNear;
 				GLdouble mZFar;
@@ -59,6 +71,7 @@ namespace GeometryEngine
 				bool mAutoResize;
 				GeometryBuffer::GBuffer* mpGBuffer;
 				std::list< GeometryRenderStep::RenderStep* > mCustomRenderSteps;
+				std::list< GeometryPostProcess::PostProcess*> mPostProcess;
 				virtual void ResetCameraBeforeCalculation();
 				virtual void ApplyCameraModelMatrix() { mViewProjection = mProjection * mModelMatrix; };
 			};

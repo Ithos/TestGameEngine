@@ -18,8 +18,13 @@
 #include <Items\GraphicItems\Lights\PointLight.h>
 #include <Items\GraphicItems\Lights\Spotlight.h>
 #include <Scenes/DeferredShadingScene.h>
+#include <Scenes\PostProcessScene.h>
 #include <Render Utils\Gbuffers\CompleteColorBuffer.h>
 #include <Render Utils\Gbuffers\SingleColorTextureBuffer.h>
+#include <Render Utils\Gbuffers\CompleteColorPostProcessBuffer.h>
+#include <Items\PostProcess\DoublePassPostProcess\BlurPostProcess.h>
+#include <Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.h>
+#include <Items\PostProcess\PostProcess.h>
 
 namespace Application
 {
@@ -163,11 +168,11 @@ namespace Application
 		}
 		if (mpMovementArray[4])
 		{
-			cam->Rotate(QVector3D(0.0, 0.6, 0.0));
+			cam->Rotate(cam->ToModelCoordSystem(QVector3D(0.0, 0.6, 0.0)));
 		}
 		if (mpMovementArray[5])
 		{
-			cam->Rotate(QVector3D(0.0, -0.6, 0.0));;
+			cam->Rotate(cam->ToModelCoordSystem(QVector3D(0.0, -0.6, 0.0)));
 		}
 
 		//cam->Rotate(rotation);
@@ -179,7 +184,7 @@ namespace Application
 	}
 	void CWindowApplication::initGeometry(GeometryEngine::GeometryEngine* engine)
 	{
-		GeometryEngine::GeometryScene::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::GeometryScene::DeferredShadingScene>();
+		GeometryEngine::GeometryScene::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::GeometryScene::PostProcessScene>();
 		GeometryEngine::GeometryMaterial::ColorMaterial mat( QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f)); // QVector3D(1.0f, 0.4f, 0.3f)
 
 		std::list< GeometryEngine::GeometryMaterial::TextureParameters* > tmpList;
@@ -196,16 +201,19 @@ namespace Application
 		GeometryEngine::GeometryMaterial::TextureMaterial tMat(tmpList);
 		GeometryEngine::GeometryMaterial::MultiTextureMaterial mtMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_RIGHT_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE);
-		/*GeometryEngine::Cube**/ testCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mtMat, 4.0f,QVector3D(-5.0f, 0.0f, -15.0f), QVector3D(30.0f, -30.0f, 0.0f));
+		/*GeometryEngine::Cube**/ testCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(tMat, 4.0f,QVector3D(-5.0f, 0.0f, -15.0f), QVector3D(30.0f, -30.0f, 0.0f));
 		/*GeometryEngine::Cube**/ testCube2 = new GeometryEngine::GeometryWorldItem::GeometryItem::Sphere(mat, 1.0f, 6, 12, QVector3D(5.0f, 0.0f, -15.0f));//new GeometryEngine::Cube(mat, 2.0f, QVector3D(5.0f, 0.0f, -15.0f), QVector3D(-30.0f, 30.0f, 0.0f));
 		/*GeometryEngine::PerspectiveCamera**/ cam = new GeometryEngine::GeometryWorldItem::GeometryCamera::PerspectiveCamera(
-																			GeometryEngine::GeometryBuffer::CompleteColorBuffer(), 
+																			GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer(),
 																			QVector4D(0, 0, this->width(), this->height()),
 																			45.0f, 1.0f, true, 0.1f, 1000.0f, 
 																			QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f) );
+		GeometryEngine::GeometryWorldItem::GeometryItem::Quad lightQuad(mat, 3.0f, 3.0f);
+		
+		cam->AddPostProcess(GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess(lightQuad));
+		cam->AddPostProcess( GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess(lightQuad) );
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere lightSphere(mat);
-		//GeometryEngine::Quad lightQuad(mat, 3.0f, 3.0f);
 
 		mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight(45.0f, QVector3D(0.5f, 0.3f, 0.1f), QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(0.7f, 0.7f, 0.7f),
 			QVector3D(0.4f, 0.4f, 0.4f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(0.0f, 5.0f, -15.0f));

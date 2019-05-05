@@ -1,6 +1,6 @@
-#include "CompleteColorBuffer.h"
+#include "CompleteColorPostProcessBuffer.h"
 
-GeometryEngine::GeometryBuffer::CompleteColorBuffer::CompleteColorBuffer()
+GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer::CompleteColorPostProcessBuffer()
 {
 	mActiveTextures.insert(GBUFFER_TEXTURE_TYPE_AMBIENT);
 	mActiveTextures.insert(GBUFFER_TEXTURE_TYPE_DIFFUSE);
@@ -11,12 +11,12 @@ GeometryEngine::GeometryBuffer::CompleteColorBuffer::CompleteColorBuffer()
 	mActiveTextures.insert(GBUFFER_TEXTURE_TYPE_TEXCOORD);
 }
 
-GeometryEngine::GeometryBuffer::CompleteColorBuffer::CompleteColorBuffer(const CompleteColorBuffer & ref)
+GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer::CompleteColorPostProcessBuffer(const CompleteColorPostProcessBuffer & ref)
 {
 	copy(ref);
 }
 
-void GeometryEngine::GeometryBuffer::CompleteColorBuffer::copy(const GBuffer & ref)
+void GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer::copy(const GBuffer & ref)
 {
 	GBuffer::copy(ref);
 }

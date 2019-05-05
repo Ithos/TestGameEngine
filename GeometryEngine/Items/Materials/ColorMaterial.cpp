@@ -9,6 +9,7 @@ GeometryEngine::GeometryMaterial::ColorMaterial::ColorMaterial(const QVector3D &
 GeometryEngine::GeometryMaterial::ColorMaterial::ColorMaterial(const ColorMaterial & mat)
 {
 	copy(mat);
+	initMaterial();
 }
 
 GeometryEngine::GeometryMaterial::ColorMaterial::~ColorMaterial()
@@ -75,5 +76,4 @@ void GeometryEngine::GeometryMaterial::ColorMaterial::copy(const ColorMaterial &
 {
 	Material::copy(mat);
 	this->mEmissive = mat.mEmissive;
-	initMaterial();
 }

@@ -18,6 +18,7 @@ GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::~Camera()
 	}
 
 	ClearCustomRenderSteps();
+	ClearPostProcess();
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::UpdateModelMatrix(bool updateChildren)
@@ -79,4 +80,42 @@ void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::ClearCustomRende
 		delete(step);
 	}
 	mCustomRenderSteps.clear();
+}
+
+bool GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::AddPostProcess(const GeometryPostProcess::PostProcess & process)
+{
+	mPostProcess.push_back(process.Clone());
+	return true;
+}
+
+bool GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::RemovePostProcess(int pos)
+{
+	if (mPostProcess.size() >= pos)
+		return false;
+
+	std::list<GeometryPostProcess::PostProcess* >::iterator it = mPostProcess.begin();
+	std::advance(it, pos);
+	mPostProcess.remove((*it));
+	return true;
+}
+
+bool GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::InsertPostProcess(const GeometryPostProcess::PostProcess & process, unsigned int pos)
+{
+	if (pos >= mPostProcess.size())
+		return false;
+
+	std::list<GeometryPostProcess::PostProcess* >::iterator it = mPostProcess.begin();
+	std::advance(it, pos);
+	mPostProcess.emplace(it, process.Clone());
+	return true;
+}
+
+void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::ClearPostProcess()
+{
+	for (auto iter = mPostProcess.begin(); iter != mPostProcess.end(); ++iter)
+	{
+		GeometryPostProcess::PostProcess* process = (*iter);
+		delete(process);
+	}
+	mPostProcess.clear();
 }

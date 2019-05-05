@@ -45,7 +45,7 @@ namespace GeometryEngine
 
 			Material(const Material& mat);
 
-			~Material();
+			virtual ~Material();
 
 			const QVector3D& GetAmbient() const { return mAmbient; }
 			const QVector3D& GetDiffuse() const { return mDiffuse; }

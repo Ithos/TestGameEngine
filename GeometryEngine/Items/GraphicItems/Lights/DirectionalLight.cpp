@@ -26,10 +26,10 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight::setProg
 		// Set matrices
 		mpProgram->setUniformValue("modelViewProjectionMatrix", transformData.ModelMatrix);
 
-		mpProgram->setUniformValue("mUseDiffuse", gBuffTexInfo.PositionTexture);
-		mpProgram->setUniformValue("mUseAmbient", gBuffTexInfo.PositionTexture);
-		mpProgram->setUniformValue("mUseReflective", gBuffTexInfo.PositionTexture);
-		mpProgram->setUniformValue("mUseEmissive", gBuffTexInfo.PositionTexture);
+		mpProgram->setUniformValue("mUseDiffuse", gBuffTexInfo.UseDiffuseTexture);
+		mpProgram->setUniformValue("mUseAmbient", gBuffTexInfo.UseAmbientTexture);
+		mpProgram->setUniformValue("mUseReflective", gBuffTexInfo.UseReflectiveTexture);
+		mpProgram->setUniformValue("mUseEmissive", gBuffTexInfo.UseEmissiveTexture);
 
 		mpProgram->setUniformValue("mPositionMap", gBuffTexInfo.PositionTexture);
 		mpProgram->setUniformValue("mDiffuseColorMap", gBuffTexInfo.DiffuseTexture);
@@ -37,7 +37,6 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight::setProg
 		mpProgram->setUniformValue("mReflectiveColorMap", gBuffTexInfo.ReflectiveTexture);
 		mpProgram->setUniformValue("mEmissiveColorMap", gBuffTexInfo.EmissiveTexture);
 		mpProgram->setUniformValue("mNormalMap", gBuffTexInfo.NormalTexture);
-		mpProgram->setUniformValue("mTextureMap", gBuffTexInfo.TexcoordTexture);
 
 		mpProgram->setUniformValue("mTextureSize", gBuffTexInfo.TextureSize);
 

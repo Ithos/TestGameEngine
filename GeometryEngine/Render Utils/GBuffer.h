@@ -8,6 +8,8 @@
 #include <qvector2d.h>
 #include <unordered_set>
 
+#include "../Items/CommonItemParameters.h"
+
 namespace GeometryEngine
 {
 	namespace GeometryBuffer
@@ -39,21 +41,34 @@ namespace GeometryEngine
 			void BindForStencilPass();
 			void BindForLightPass();
 			void BindForFinalPass();
+			void BindForPostProcess();
+			void BindForFinishPostProcess();
+			void BindBuffer();
+			void BindFinalTexture(GBUFFER_TEXTURE_TYPE location);
+			void BindFinalTexture(GBUFFER_TEXTURE_TYPE location, GBufferTextureInfo& bufferInfo);
+			void ResetBindings();
+			void UnbindBuffer();
+			void UnbindFinalTexture();
+			void BindTexture(GBUFFER_TEXTURE_TYPE tex);
+			void UnbindTexture(GBUFFER_TEXTURE_TYPE tex);
 			const QVector2D& GetTextureSize() const { return mTextureSize; }
 			const QVector2D& GetMaxTextureSize() const { return mMaxTextureSize; }
 			unsigned int GetTexture(GBUFFER_TEXTURE_TYPE texture) const { return mTextures[texture]; }
 			bool IsTextureActive(GBUFFER_TEXTURE_TYPE texture) const { return mActiveTextures.find(texture) != mActiveTextures.end(); }
 			virtual GBuffer* Clone() const { return new GBuffer(*this); };
 
+			void FillGBufferInfo(GBufferTextureInfo& bufferInfo);
 
 		protected:
 			unsigned int mFbo;
 			unsigned int mTextures[GBUFFER_NUM_TEXTURES];
 			unsigned int mDepthTexture;
 			unsigned int mFinalTexture;
+			unsigned int mFinalTextureLocation;
 			QVector2D mTextureSize;
 			QVector2D mMaxTextureSize;
 			std::unordered_set<GBUFFER_TEXTURE_TYPE> mActiveTextures;
+			
 
 			void generateTexture(unsigned int arrayIndex, unsigned int maxWindowWidth, unsigned int maxWindowHeight);
 			void generateNullTexture(unsigned int arrayIndex);
