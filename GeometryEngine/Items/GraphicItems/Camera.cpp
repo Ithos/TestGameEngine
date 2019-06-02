@@ -119,3 +119,19 @@ void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::ClearPostProcess
 	}
 	mPostProcess.clear();
 }
+
+bool GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::AddRenderGroup(int group)
+{
+	if (mRenderGroups.find(group) != mRenderGroups.end())
+		return false;
+	mRenderGroups.insert(group);
+	return true;
+}
+
+bool GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::RemoveRenderGroup(int group)
+{
+	if (mRenderGroups.find(group) == mRenderGroups.end())
+		return false;
+	mRenderGroups.erase(group);
+	return true;
+}

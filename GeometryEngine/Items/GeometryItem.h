@@ -44,6 +44,10 @@ namespace GeometryEngine
 				virtual void SetMaterial(GeometryMaterial::Material* mat);
 				virtual void Copy(const GeometryItem& ref);
 				virtual GeometryItem* Clone() const = 0;
+				virtual bool AddRenderGroup(int group);
+				virtual bool RemoveRenderGroup(int group);
+				virtual const std::unordered_set<int>& GetRenderGroups() { return mRenderGroups; }
+				virtual void ClearRenderGroups() { mRenderGroups.clear(); }
 
 			protected:
 				virtual void initGeometry() = 0;
@@ -59,6 +63,7 @@ namespace GeometryEngine
 				ShaderFiles::ShaderManager* mpShaderManager;
 				unsigned int mTotalVertexNumber;
 				unsigned int mTotalIndexNumber;
+				std::unordered_set<int> mRenderGroups;
 
 
 			};

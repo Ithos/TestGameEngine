@@ -68,6 +68,24 @@ void GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::Copy(const G
 
 }
 
+bool GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::AddRenderGroup(int group)
+{
+	if(mRenderGroups.find(group) != mRenderGroups.end())
+		return false;
+
+	mRenderGroups.insert(group);
+	return true;
+}
+
+bool GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::RemoveRenderGroup(int group)
+{
+	if (mRenderGroups.find(group) == mRenderGroups.end())
+		return false;
+
+	mRenderGroups.erase(group);
+	return true;
+}
+
 void GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::initItem()
 {
 	mpConfInstance = Configuration::ConfigurationManager::GetInstance();

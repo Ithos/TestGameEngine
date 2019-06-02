@@ -208,6 +208,7 @@ namespace Application
 																			QVector4D(0, 0, this->width(), this->height()),
 																			45.0f, 1.0f, true, 0.1f, 1000.0f, 
 																			QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f) );
+
 		GeometryEngine::GeometryWorldItem::GeometryItem::Quad lightQuad(mat, 3.0f, 3.0f);
 		
 		cam->AddPostProcess(GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess(lightQuad));

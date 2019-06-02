@@ -24,6 +24,7 @@ namespace GeometryEngine
 			void initStep();
 			void renderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items);
 			void drawItem(GeometryWorldItem::GeometryCamera::Camera* cam, GeometryWorldItem::GeometryItem::GeometryItem* item);
+			bool checkRenderGroups(GeometryWorldItem::GeometryCamera::Camera* cam, GeometryWorldItem::GeometryItem::GeometryItem* item);
 			virtual void copy(const GeometryPass& ref) { RenderStep::copy(ref); }
 		};
 	}

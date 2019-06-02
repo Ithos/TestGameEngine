@@ -62,6 +62,11 @@ namespace GeometryEngine
 				virtual void ClearPostProcess();
 				virtual const std::list< GeometryPostProcess::PostProcess* >& GetPostProcess() { return mPostProcess; }
 
+				virtual bool AddRenderGroup(int group);
+				virtual bool RemoveRenderGroup(int group);
+				virtual const std::unordered_set<int>& GetRenderGroups() { return mRenderGroups; }
+				virtual void ClearRenderGroups() { mRenderGroups.clear(); }
+
 			protected:
 				GLdouble mZNear;
 				GLdouble mZFar;
@@ -74,6 +79,7 @@ namespace GeometryEngine
 				std::list< GeometryPostProcess::PostProcess*> mPostProcess;
 				virtual void ResetCameraBeforeCalculation();
 				virtual void ApplyCameraModelMatrix() { mViewProjection = mProjection * mModelMatrix; };
+				std::unordered_set<int> mRenderGroups;
 			};
 		}
 	}
