@@ -1,0 +1,134 @@
+\hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{}\section{Geometry\+Engine\+::Geometry\+Render\+Step\+::Lighting\+Pass Class Reference}
+\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}\index{GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}}
+
+
+Appplies lighting to already rendered geometry.  
+
+
+
+
+{\ttfamily \#include $<$Lighting\+Pass.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Render\+Step\+::Lighting\+Pass\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a5fb6ea8b19fe0067bfa89ef446934fc3}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a5fb6ea8b19fe0067bfa89ef446934fc3}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a5fb6ea8b19fe0067bfa89ef446934fc3}{Lighting\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_ab25f4db452340113c3ace2ab6994bd9f}{Lighting\+Pass}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{Lighting\+Pass}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a1170635cec58a539398cd93024974870}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a1170635cec58a539398cd93024974870}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a1170635cec58a539398cd93024974870}{$\sim$\+Lighting\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_ae6d9fa99f67e659839ca310947787f52}{Render}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$lights=nullptr) override
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4f1cb36c7bf6a90d0aa3b8e8feba5e5e}{Clone}} () const override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_aaab2ea74a9710f22887c266af1985490}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_aaab2ea74a9710f22887c266af1985490}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_aaab2ea74a9710f22887c266af1985490}{init\+Step}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the Open\+Gl pipeline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a437ff10a7ef9e7529a4852389a5cf871}{render\+Lights}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$lights)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a9d0a0f3b9d52036b9d4f9fbee353cd10}{apply\+Light}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$lights)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a980473c9d2e2e77ebdce9e56454f3d3f}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a980473c9d2e2e77ebdce9e56454f3d3f}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a980473c9d2e2e77ebdce9e56454f3d3f}{finish\+Step}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Open\+Gl pipeline to its original state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a1a3280c28b0750c7cad03f01d37374c7}{prepare\+Stencil\+Pass}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a42b7f335d4bebdbdd06c3bef142844c0}{stencil\+Pass}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$light, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a576001cdaa8f2a377b926d9bcd7b2444}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a576001cdaa8f2a377b926d9bcd7b2444}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a576001cdaa8f2a377b926d9bcd7b2444}{set\+Stencil\+Light}} ()
+\begin{DoxyCompactList}\small\item\em Sets the Open\+Gl pipeline after performing the stencil test. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_aab66c6267b48f6ddb6c867303bd5dab1}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_aab66c6267b48f6ddb6c867303bd5dab1}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_aab66c6267b48f6ddb6c867303bd5dab1}{prepare\+Light\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Prepares the Open\+Gl pipeline for the actual lighting pass after the stencil test. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a6d5e908865443b942b83362bf2d8a081}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a6d5e908865443b942b83362bf2d8a081}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a6d5e908865443b942b83362bf2d8a081}{finish\+Light\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Restores the state of Open\+Gl pipeline afther the lighting pass. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_aa809dc069c363993224df44cf44842bb}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_aa809dc069c363993224df44cf44842bb}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_aa809dc069c363993224df44cf44842bb}{finish\+Stencil\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Restores the state of the Open\+Gl pipeline after the stencil pass is performed. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4865616b03a872033a6f9abc5c370374}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{Lighting\+Pass}} \&ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Appplies lighting to already rendered geometry. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_ab25f4db452340113c3ace2ab6994bd9f}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_ab25f4db452340113c3ace2ab6994bd9f}} 
+\index{GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}!LightingPass@{LightingPass}}
+\index{LightingPass@{LightingPass}!GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}}
+\subsubsection{\texorpdfstring{LightingPass()}{LightingPass()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass\+::\+Lighting\+Pass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{Lighting\+Pass}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{Lighting\+Pass}} to be copied 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a9d0a0f3b9d52036b9d4f9fbee353cd10}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a9d0a0f3b9d52036b9d4f9fbee353cd10}} 
+\index{GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}!applyLight@{applyLight}}
+\index{applyLight@{applyLight}!GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}}
+\subsubsection{\texorpdfstring{applyLight()}{applyLight()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass\+::apply\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{lights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Applies stencil test and renders every light in the set param cam Pointer to Camera to be rendered param lights Set of lights in the scene \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4f1cb36c7bf6a90d0aa3b8e8feba5e5e}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4f1cb36c7bf6a90d0aa3b8e8feba5e5e}} 
+\index{GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}}$\ast$ Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Returns a copy of this object. return A copy of this object. 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe33ea9d82c5be11f55af7d39691d44b}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Render\+Step}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4865616b03a872033a6f9abc5c370374}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4865616b03a872033a6f9abc5c370374}} 
+\index{GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{Lighting\+Pass}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{Lighting\+Pass}} into this object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{Lighting\+Pass}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a1a3280c28b0750c7cad03f01d37374c7}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a1a3280c28b0750c7cad03f01d37374c7}} 
+\index{GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}!prepareStencilPass@{prepareStencilPass}}
+\index{prepareStencilPass@{prepareStencilPass}!GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}}
+\subsubsection{\texorpdfstring{prepareStencilPass()}{prepareStencilPass()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass\+::prepare\+Stencil\+Pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Prepares the Open\+Gl pipeline to apply the light stencil test param cam Camera being rendered. It contains a pointer to the geometric buffer \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_ae6d9fa99f67e659839ca310947787f52}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_ae6d9fa99f67e659839ca310947787f52}} 
+\index{GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}!Render@{Render}}
+\index{Render@{Render}!GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}}
+\subsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass\+::\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{lights = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes the render step param cam Pointer to camera to be rendered param items Set of items to be rendered. Items will no be used in this step, we will use the information stored in the geometry buffer instead. param lights Set of lights in the scene. 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a9b054ee8f38304319a9d03ba3e173dcd}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Render\+Step}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a437ff10a7ef9e7529a4852389a5cf871}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a437ff10a7ef9e7529a4852389a5cf871}} 
+\index{GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}!renderLights@{renderLights}}
+\index{renderLights@{renderLights}!GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}}
+\subsubsection{\texorpdfstring{renderLights()}{renderLights()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass\+::render\+Lights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{lights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Updates the camera and calls apply\+Light param cam Pointer to Camera to be rendered param lights Set of lights in the scene \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a42b7f335d4bebdbdd06c3bef142844c0}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a42b7f335d4bebdbdd06c3bef142844c0}} 
+\index{GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}!stencilPass@{stencilPass}}
+\index{stencilPass@{stencilPass}!GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}}
+\subsubsection{\texorpdfstring{stencilPass()}{stencilPass()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass\+::stencil\+Pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{light,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Calls to the light calculate\+Stencil param light being rendered param cam Pointer to Camera to be rendered 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Render\+Steps/Lighting\+Pass.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Render\+Steps/Lighting\+Pass.\+cpp\end{DoxyCompactItemize}

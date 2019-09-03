@@ -1,0 +1,186 @@
+\hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material}{}\section{Geometry\+Engine\+::Geometry\+Material\+::Material Class Reference}
+\label{class_geometry_engine_1_1_geometry_material_1_1_material}\index{GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}}
+
+
+Base class for all materials for world objects.  
+
+
+
+
+{\ttfamily \#include $<$Material.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Material\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.823529cm]{class_geometry_engine_1_1_geometry_material_1_1_material}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_aeae49a84f5f5b5e0c6ded1ba61e43f76}{Material}} (const Q\+Vector3D \&ambient=Q\+Vector3D(0.\+0f, 0.\+0, 0.\+0f), const Q\+Vector3\+D \&diffuse=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&emissive=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), float shininess=10.\+0f)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a18c3bbd40d6c410c9c8ca9dfc36f15ee}{Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} \&mat)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a55a707060a08e18b45c7ea3f0ec64704}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a55a707060a08e18b45c7ea3f0ec64704}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a55a707060a08e18b45c7ea3f0ec64704}{$\sim$\+Material}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a6cb19eb225885da17e61405dcfe89a03}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a6cb19eb225885da17e61405dcfe89a03}} 
+const Q\+Vector3D \& {\bfseries Get\+Ambient} () const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a5bbc1f5a1d5716e941135e74eec25206}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a5bbc1f5a1d5716e941135e74eec25206}} 
+const Q\+Vector3D \& {\bfseries Get\+Diffuse} () const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a978070bbc15e7d0b258c8ee7560eba13}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a978070bbc15e7d0b258c8ee7560eba13}} 
+const Q\+Vector3D \& {\bfseries Get\+Specular} () const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a86fc076373c6583f016022ccd56acf62}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a86fc076373c6583f016022ccd56acf62}} 
+const Q\+Vector3D \& {\bfseries Get\+Emissive} () const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a517bf55d5113251b7e8988763a75f410}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a517bf55d5113251b7e8988763a75f410}} 
+float {\bfseries Get\+Shininess} () const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_ab3ccb917f001a72ea1ec89f172bf6ea2}\label{class_geometry_engine_1_1_geometry_material_1_1_material_ab3ccb917f001a72ea1ec89f172bf6ea2}} 
+void {\bfseries Set\+Ambient} (const Q\+Vector3D \&ambient)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_aac88cfef061887999b06c1c26bfaa55e}\label{class_geometry_engine_1_1_geometry_material_1_1_material_aac88cfef061887999b06c1c26bfaa55e}} 
+void {\bfseries Set\+Diffuse} (const Q\+Vector3D \&diffuse)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a94d9c789909849bfcb007fabbfb4a589}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a94d9c789909849bfcb007fabbfb4a589}} 
+void {\bfseries Set\+Specular} (const Q\+Vector3D \&specular)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_adf53020aa72682ba01834105f7129b93}\label{class_geometry_engine_1_1_geometry_material_1_1_material_adf53020aa72682ba01834105f7129b93}} 
+void {\bfseries Set\+Emissive} (const Q\+Vector3D \&emissive)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a2b3269750da169f6228f78beac202bac}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a2b3269750da169f6228f78beac202bac}} 
+void {\bfseries Set\+Shininess} (float shininess)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_ae337c74e4f500d0a881779c2c3495908}{Draw}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Number, unsigned int total\+Index\+Number, const Q\+Matrix4x4 \&projection, const Q\+Matrix4x4 \&view, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&parent)
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_ae5513ff06d536365e18ddc5e07e79784}{Clone}} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a31bb308f53741c015066ee112b497fcd}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a31bb308f53741c015066ee112b497fcd}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a31bb308f53741c015066ee112b497fcd}{init\+Material}} ()
+\begin{DoxyCompactList}\small\item\em Initializes managers and shaders. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a06a1c603599a2c2b5488e6fdcbce00eb}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a06a1c603599a2c2b5488e6fdcbce00eb}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a06a1c603599a2c2b5488e6fdcbce00eb}{init\+Shaders}} ()=0
+\begin{DoxyCompactList}\small\item\em Abstract method. Sets the shaders that should be loaded. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a86cda85f55e61b5d66910e94ec4b1ff6}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a86cda85f55e61b5d66910e94ec4b1ff6}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a86cda85f55e61b5d66910e94ec4b1ff6}{init\+Program}} ()
+\begin{DoxyCompactList}\small\item\em Loads and compiles light shader programs. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a632cdbe72ea955bc591a3902f63b6061}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} \&mat)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a68310797df53062f237d0005fbcfce7e}{set\+Program\+Parameters}} (const Q\+Matrix4x4 \&projection, const Q\+Matrix4x4 \&view, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&parent)=0
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a0070eab6e5fe86dc05dc69f2e37b9072}{draw\+Material}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Number, unsigned int total\+Index\+Number)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a32fae4e5de90aaa73061bb692add9cc0}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a32fae4e5de90aaa73061bb692add9cc0}} 
+Q\+Vector3D {\bfseries m\+Ambient}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a11e0bfccad5c005835c573c639c254df}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a11e0bfccad5c005835c573c639c254df}} 
+Q\+Vector3D {\bfseries m\+Diffuse}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_ab5a2ebc9f2ba044a9d13e807ff896d5f}\label{class_geometry_engine_1_1_geometry_material_1_1_material_ab5a2ebc9f2ba044a9d13e807ff896d5f}} 
+Q\+Vector3D {\bfseries m\+Specular}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a58b2915653775cb7c6034ac69c32e39a}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a58b2915653775cb7c6034ac69c32e39a}} 
+Q\+Vector3D {\bfseries m\+Emissive}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a71b9f036956944e10344100a232a5e4a}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a71b9f036956944e10344100a232a5e4a}} 
+float {\bfseries m\+Shininess}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_ab9078bbc4f870dd4159a54db8e5ad2cf}\label{class_geometry_engine_1_1_geometry_material_1_1_material_ab9078bbc4f870dd4159a54db8e5ad2cf}} 
+bool {\bfseries m\+Lit}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a375ac5c2f46969085212c45874b36554}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a375ac5c2f46969085212c45874b36554}} 
+Q\+Open\+G\+L\+Shader\+Program $\ast$ {\bfseries mp\+Program}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_afb2005604a32b7476318d4026771adbf}\label{class_geometry_engine_1_1_geometry_material_1_1_material_afb2005604a32b7476318d4026771adbf}} 
+\mbox{\hyperlink{class_shader_files_1_1_shader_manager}{Shader\+Files\+::\+Shader\+Manager}} $\ast$ {\bfseries mp\+Shader\+Manager}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a734ca9fb3bd1d82c54d1475c7ea43c11}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a734ca9fb3bd1d82c54d1475c7ea43c11}} 
+\mbox{\hyperlink{class_configuration_1_1_configuration_manager}{Configuration\+::\+Configuration\+Manager}} $\ast$ {\bfseries mp\+Conf\+Instance}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a648069f204424e495149dbfadf4ede40}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a648069f204424e495149dbfadf4ede40}} 
+std\+::string {\bfseries m\+Vertex\+Shader\+Key}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_ab92ad73bbce983d9fcd7ac41c4dce59d}\label{class_geometry_engine_1_1_geometry_material_1_1_material_ab92ad73bbce983d9fcd7ac41c4dce59d}} 
+std\+::string {\bfseries m\+Fragment\+Shader\+Key}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for all materials for world objects. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_aeae49a84f5f5b5e0c6ded1ba61e43f76}\label{class_geometry_engine_1_1_geometry_material_1_1_material_aeae49a84f5f5b5e0c6ded1ba61e43f76}} 
+\index{GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}!Material@{Material}}
+\index{Material@{Material}!GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}}
+\subsubsection{\texorpdfstring{Material()}{Material()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Material\+::\+Material (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(0.0f,~0.0,~0.0f)},  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{emissive = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})}
+
+Constructor param ambient Ambient rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 param diffuse Diffuse rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 param specular Specular rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 param emissive Emissive rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 param shininess Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a18c3bbd40d6c410c9c8ca9dfc36f15ee}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a18c3bbd40d6c410c9c8ca9dfc36f15ee}} 
+\index{GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}!Material@{Material}}
+\index{Material@{Material}!GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}}
+\subsubsection{\texorpdfstring{Material()}{Material()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Material\+::\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} \&}]{mat }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_ae5513ff06d536365e18ddc5e07e79784}\label{class_geometry_engine_1_1_geometry_material_1_1_material_ae5513ff06d536365e18ddc5e07e79784}} 
+\index{GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}}$\ast$ Geometry\+Engine\+::\+Geometry\+Material\+::\+Material\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract method. Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a66cef99b68270e1399830bc1b8bc8502}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ace905cf02deb41ad8aa422ef2fb9070f}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_color_material_a29dbf04e76b75fcc86f184d072bba0a5}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Color\+Material}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_aecf808e45985f2a39662937fc18a21d0}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Vertex\+Color\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a632cdbe72ea955bc591a3902f63b6061}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a632cdbe72ea955bc591a3902f63b6061}} 
+\index{GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Material\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} object to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_ae337c74e4f500d0a881779c2c3495908}\label{class_geometry_engine_1_1_geometry_material_1_1_material_ae337c74e4f500d0a881779c2c3495908}} 
+\index{GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}!Draw@{Draw}}
+\index{Draw@{Draw}!GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Material\+::\+Draw (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Number,  }\item[{unsigned int}]{total\+Index\+Number,  }\item[{const Q\+Matrix4x4 \&}]{projection,  }\item[{const Q\+Matrix4x4 \&}]{view,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Render material shaders param vertex\+Buf Pointer to the vertex buffer param index\+Buffer Pointer to the index buffer param total\+Vertex\+Number Total amount of vertices param total\+Index\+Number\+Total amount of indices param projection Projection Matrix param view View matrix param parent Parent geometry item \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a0070eab6e5fe86dc05dc69f2e37b9072}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a0070eab6e5fe86dc05dc69f2e37b9072}} 
+\index{GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}!drawMaterial@{drawMaterial}}
+\index{drawMaterial@{drawMaterial}!GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}}
+\subsubsection{\texorpdfstring{drawMaterial()}{drawMaterial()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Material\+::\+Material\+::draw\+Material (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Number,  }\item[{unsigned int}]{total\+Index\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Abstract method. Binds shaders and draws. param vertex\+Buf Vertex buffer param index\+Buf Index\+Buffer param total\+Vertex\+Num Number of vetices param tital\+Index\+Num Number of indices 
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a7bb3c956fa64e47b251d882890c931f9}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_af6edaa5960d07b6abee870760e869189}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_color_material_abaf6f7ed79dad79253ea469c4c7460eb}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Color\+Material}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_af03191da84c84c45af91405f3cba3b5d}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Vertex\+Color\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a68310797df53062f237d0005fbcfce7e}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a68310797df53062f237d0005fbcfce7e}} 
+\index{GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}!setProgramParameters@{setProgramParameters}}
+\index{setProgramParameters@{setProgramParameters}!GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}}
+\subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Material\+::\+Material\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection,  }\item[{const Q\+Matrix4x4 \&}]{view,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Abstract method. Sends parameters to the shaders. param projection Projection matrix param view View matrix
+
+param parent geometry item 
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a985cdde7240f2acb18cd2944c5ca6193}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a5f07e3b2b0867d3905f912159ef2f67b}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_color_material_afc9bcbd2091f6592dfb8a6ace1d4adfb}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Color\+Material}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_a11bf01fb1d5ef41fb1a9cf4080c98b8c}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Vertex\+Color\+Material}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Material.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Material.\+cpp\end{DoxyCompactItemize}

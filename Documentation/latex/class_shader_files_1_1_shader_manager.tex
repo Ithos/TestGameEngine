@@ -1,0 +1,91 @@
+\hypertarget{class_shader_files_1_1_shader_manager}{}\section{Shader\+Files\+::Shader\+Manager Class Reference}
+\label{class_shader_files_1_1_shader_manager}\index{ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}}
+
+
+Singleon that manages shader files.  
+
+
+
+
+{\ttfamily \#include $<$Shader\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_shader_files_1_1_shader_manager_abcee9b4822ed9c362c0266d61ed99be6}{Load\+Shader}} (const std\+::string \&shader)
+\item 
+void \mbox{\hyperlink{class_shader_files_1_1_shader_manager_a58fa6395429ed76613b1c70dec844c09}{Unload\+Shader}} (const std\+::string \&shader)
+\item 
+\mbox{\Hypertarget{class_shader_files_1_1_shader_manager_a956576d9fabc0bb2be01fc23287cc942}\label{class_shader_files_1_1_shader_manager_a956576d9fabc0bb2be01fc23287cc942}} 
+void \mbox{\hyperlink{class_shader_files_1_1_shader_manager_a956576d9fabc0bb2be01fc23287cc942}{Unload\+All}} ()
+\begin{DoxyCompactList}\small\item\em Unloads all shaders from the singleton map. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_shader_files_1_1_shader_manager_a4f0f22c76362af7b485116517a38415f}{Is\+Loaded}} (const std\+::string \&shader)
+\item 
+const std\+::string \& \mbox{\hyperlink{class_shader_files_1_1_shader_manager_a82aa01b675a8ef29aa1283f86574166e}{Get\+Loaded\+Shader\+Content}} (const std\+::string \&shader)
+\item 
+\mbox{\hyperlink{class_shader_files_1_1_shader}{Shader}} \& \mbox{\hyperlink{class_shader_files_1_1_shader_manager_a96cd9397c9e932cd69fac3ce4363dabe}{Get\+Loaded\+Shader}} (const std\+::string \&shader)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_shader_files_1_1_shader_manager}{Shader\+Manager}} $\ast$ \mbox{\hyperlink{class_shader_files_1_1_shader_manager_a968056a24117c1f7ff3bed5fc1384e83}{Get\+Active\+Instance}} ()
+\item 
+static \mbox{\hyperlink{class_shader_files_1_1_shader_manager}{Shader\+Manager}} $\ast$ \mbox{\hyperlink{class_shader_files_1_1_shader_manager_a805da1d794532dd7dbc148795ec54d28}{Get\+Instance}} (const std\+::string \&vertex\+Folder, const std\+::string \&fragment\+Folder, const std\+::string \&vertex\+Conf, const std\+::string \&fragment\+Conf)
+\item 
+\mbox{\Hypertarget{class_shader_files_1_1_shader_manager_a910fddbe61fae50a7bf956d4d5c2a813}\label{class_shader_files_1_1_shader_manager_a910fddbe61fae50a7bf956d4d5c2a813}} 
+static void \mbox{\hyperlink{class_shader_files_1_1_shader_manager_a910fddbe61fae50a7bf956d4d5c2a813}{Destroy\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the singleton instance if it has been initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Singleon that manages shader files. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_shader_files_1_1_shader_manager_a968056a24117c1f7ff3bed5fc1384e83}\label{class_shader_files_1_1_shader_manager_a968056a24117c1f7ff3bed5fc1384e83}} 
+\index{ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}!GetActiveInstance@{GetActiveInstance}}
+\index{GetActiveInstance@{GetActiveInstance}!ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}}
+\subsubsection{\texorpdfstring{GetActiveInstance()}{GetActiveInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_shader_files_1_1_shader_manager}{Shader\+Manager}}$\ast$ Shader\+Files\+::\+Shader\+Manager\+::\+Get\+Active\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns the singleton instance if null the singleton has not been initialized return singleton instance \mbox{\Hypertarget{class_shader_files_1_1_shader_manager_a805da1d794532dd7dbc148795ec54d28}\label{class_shader_files_1_1_shader_manager_a805da1d794532dd7dbc148795ec54d28}} 
+\index{ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}}
+\subsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_shader_files_1_1_shader_manager}{Shader\+Manager}} $\ast$ Shader\+Files\+::\+Shader\+Manager\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Folder,  }\item[{const std\+::string \&}]{fragment\+Folder,  }\item[{const std\+::string \&}]{vertex\+Conf,  }\item[{const std\+::string \&}]{fragment\+Conf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes the singleton instance if it has not been initialized and returns the singleton instance param vertex\+Folder path of the folder that contains vertex shader files param fragment\+Folder path of the folder that contains fragment shader files param vertex\+Conf name of the vertex shader conf file in which the keys for the vertex shader files are defined param fragment\+Conf name of the fragment shader conf file in which the keys for the fragment shader files are defined return singleton instance \mbox{\Hypertarget{class_shader_files_1_1_shader_manager_a96cd9397c9e932cd69fac3ce4363dabe}\label{class_shader_files_1_1_shader_manager_a96cd9397c9e932cd69fac3ce4363dabe}} 
+\index{ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}!GetLoadedShader@{GetLoadedShader}}
+\index{GetLoadedShader@{GetLoadedShader}!ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}}
+\subsubsection{\texorpdfstring{GetLoadedShader()}{GetLoadedShader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_shader_files_1_1_shader}{Shader}} \& Shader\+Files\+::\+Shader\+Manager\+::\+Get\+Loaded\+Shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{shader }\end{DoxyParamCaption})}
+
+Gets a shader loaded into the singleton map. An assert will be triggered if the shader key has not been loaded. param shader shader key return shader object \mbox{\Hypertarget{class_shader_files_1_1_shader_manager_a82aa01b675a8ef29aa1283f86574166e}\label{class_shader_files_1_1_shader_manager_a82aa01b675a8ef29aa1283f86574166e}} 
+\index{ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}!GetLoadedShaderContent@{GetLoadedShaderContent}}
+\index{GetLoadedShaderContent@{GetLoadedShaderContent}!ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}}
+\subsubsection{\texorpdfstring{GetLoadedShaderContent()}{GetLoadedShaderContent()}}
+{\footnotesize\ttfamily const std\+::string \& Shader\+Files\+::\+Shader\+Manager\+::\+Get\+Loaded\+Shader\+Content (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{shader }\end{DoxyParamCaption})}
+
+Gets the code of a shader already present in the singleton map. An assert will be triggered if the shader key has not been loaded. param shader shader key return shader code \mbox{\Hypertarget{class_shader_files_1_1_shader_manager_a4f0f22c76362af7b485116517a38415f}\label{class_shader_files_1_1_shader_manager_a4f0f22c76362af7b485116517a38415f}} 
+\index{ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}!IsLoaded@{IsLoaded}}
+\index{IsLoaded@{IsLoaded}!ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}}
+\subsubsection{\texorpdfstring{IsLoaded()}{IsLoaded()}}
+{\footnotesize\ttfamily bool Shader\+Files\+::\+Shader\+Manager\+::\+Is\+Loaded (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{shader }\end{DoxyParamCaption})}
+
+Checks if a key has been loaded into the singleton map. It doesn\textquotesingle{}t check if the key has beed defined or not. param shader shader key return true if the key has beed loaded into the map \mbox{\Hypertarget{class_shader_files_1_1_shader_manager_abcee9b4822ed9c362c0266d61ed99be6}\label{class_shader_files_1_1_shader_manager_abcee9b4822ed9c362c0266d61ed99be6}} 
+\index{ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}!LoadShader@{LoadShader}}
+\index{LoadShader@{LoadShader}!ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}}
+\subsubsection{\texorpdfstring{LoadShader()}{LoadShader()}}
+{\footnotesize\ttfamily void Shader\+Files\+::\+Shader\+Manager\+::\+Load\+Shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{shader }\end{DoxyParamCaption})}
+
+Loads a shader from a shader key into the singleton map. An assert will be triggered if the shader has been added already or if the shader key has not been defined param shader shader key \mbox{\Hypertarget{class_shader_files_1_1_shader_manager_a58fa6395429ed76613b1c70dec844c09}\label{class_shader_files_1_1_shader_manager_a58fa6395429ed76613b1c70dec844c09}} 
+\index{ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}!UnloadShader@{UnloadShader}}
+\index{UnloadShader@{UnloadShader}!ShaderFiles::ShaderManager@{ShaderFiles::ShaderManager}}
+\subsubsection{\texorpdfstring{UnloadShader()}{UnloadShader()}}
+{\footnotesize\ttfamily void Shader\+Files\+::\+Shader\+Manager\+::\+Unload\+Shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{shader }\end{DoxyParamCaption})}
+
+Removes a shader from the singleton map. an assert will be triggered if the shader has not been loaded previously. param shader shader key 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Common/Shader\+Manager.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Common/Shader\+Manager.\+cpp\end{DoxyCompactItemize}

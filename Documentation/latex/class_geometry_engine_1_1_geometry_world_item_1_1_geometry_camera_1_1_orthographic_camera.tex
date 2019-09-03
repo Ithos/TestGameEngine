@@ -1,0 +1,56 @@
+\hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera}{}\section{Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Camera\+::Orthographic\+Camera Class Reference}
+\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera}\index{GeometryEngine::GeometryWorldItem::GeometryCamera::OrthographicCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::OrthographicCamera}}
+
+
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Camera}} that applies an ortographic projection to the scene.  
+
+
+
+
+{\ttfamily \#include $<$Orthographic\+Camera.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Camera\+::Orthographic\+Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_ac5fa7a59a777876bba9725944adcaaf3}{Orthographic\+Camera}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} \&gbuffer, const Q\+Vector4D \&viewport\+Size, const Q\+Rect \&ortho\+Size, bool auto\+Resize=true, G\+Ldouble z\+Near=0.\+1, G\+Ldouble z\+Far=30.\+0, const Q\+Vector3D \&pos=Q\+Vector3D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), World\+Item $\ast$parent=nullptr)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_a71d2d206d04a1d8169e4dd861c306c5d}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_a71d2d206d04a1d8169e4dd861c306c5d}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_a71d2d206d04a1d8169e4dd861c306c5d}{$\sim$\+Orthographic\+Camera}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_a123a6673acd7a3ceb0ae32b31be4eaaf}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_a123a6673acd7a3ceb0ae32b31be4eaaf}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_a123a6673acd7a3ceb0ae32b31be4eaaf}{Calculate\+Projection\+Matrix}} () override
+\begin{DoxyCompactList}\small\item\em Calculates the projection matrix for the camera as an orthographic projection matrix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_a64f264486365cb44043d0dfd5d2772c5}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_a64f264486365cb44043d0dfd5d2772c5}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_a64f264486365cb44043d0dfd5d2772c5}{Set\+Ortho\+Size}} (const Q\+Rect \&ortho\+Size)
+\begin{DoxyCompactList}\small\item\em Sets the size of the orthographic prism used to render the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_add4eebbbb3216d230ccea7a730647b64}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_add4eebbbb3216d230ccea7a730647b64}} 
+Q\+Rect {\bfseries m\+Ortho\+Size}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Camera}} that applies an ortographic projection to the scene. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_ac5fa7a59a777876bba9725944adcaaf3}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera_ac5fa7a59a777876bba9725944adcaaf3}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryCamera::OrthographicCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::OrthographicCamera}!OrthographicCamera@{OrthographicCamera}}
+\index{OrthographicCamera@{OrthographicCamera}!GeometryEngine::GeometryWorldItem::GeometryCamera::OrthographicCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::OrthographicCamera}}
+\subsubsection{\texorpdfstring{OrthographicCamera()}{OrthographicCamera()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Orthographic\+Camera\+::\+Orthographic\+Camera (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} \&}]{gbuffer,  }\item[{const Q\+Vector4D \&}]{viewport\+Size,  }\item[{const Q\+Rect \&}]{ortho\+Size,  }\item[{bool}]{auto\+Resize = {\ttfamily true},  }\item[{G\+Ldouble}]{z\+Near = {\ttfamily 0.1},  }\item[{G\+Ldouble}]{z\+Far = {\ttfamily 30.0},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Constructor. F\+AQ\+: Scaling the camera scales the whole coordinate system, be careful with it param gbuffer Geometric buffer to be copied into the camera param viewport\+Size Size of the viewport. The values indicate in order x position, yposition, width, height. param auto\+Resize Indicates if the viewport should be resized when the window\textquotesingle{}s size changes param z\+Near Nearest z coordinate to be rendered param z\+Far Farthest z coordinate to be rendered param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Cameras/\+Deferred\+Shading/Orthographic\+Camera.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Cameras/\+Deferred\+Shading/Orthographic\+Camera.\+cpp\end{DoxyCompactItemize}

@@ -176,6 +176,7 @@ namespace Application
 		}
 
 		//cam->Rotate(rotation);
+		//mainLight->Rotate(mainLight->ToModelCoordSystem(QVector3D(0.3f, 0.0f, 0.0f)));
 
 		if (scene != nullptr)
 		{
@@ -211,7 +212,7 @@ namespace Application
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Quad lightQuad(mat, 3.0f, 3.0f);
 		
-		cam->AddPostProcess(GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess(lightQuad));
+		//cam->AddPostProcess(GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess(lightQuad));
 		cam->AddPostProcess( GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess(lightQuad) );
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere lightSphere(mat);

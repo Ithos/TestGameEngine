@@ -86,10 +86,10 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::initSte
 	}
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::runStencilProgram(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
+void GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::runStencilProgram(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	// Tell OpenGL which VBOs to use
-	arrayBuf->bind();
+	vertexBuf->bind();
 	indexBuf->bind();
 
 	// Tell OpenGL programmable pipeline how to locate vertex position data

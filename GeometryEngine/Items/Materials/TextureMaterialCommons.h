@@ -14,6 +14,7 @@ namespace GeometryEngine
 {
 	namespace GeometryMaterial
 	{
+		/// Struct that contains keys for texture directions as constant strings
 		struct TextureConstant
 		{
 			static const std::string ERROR_TEXTURE;
@@ -29,9 +30,14 @@ namespace GeometryEngine
 			static const std::string TEST_BLACK_TEXTURE;
 		};
 
+		/// Class that holds texture data
 		class TextureParameters
 		{
 		public:
+			/// Constructor
+			/// param texDir A texture direction or a key for a texture direction
+			/// param vertex Number of vertices that this texture will be applied to
+			/// param getFromConf If true the texDir parameter will be treated as a key for the conf files, else it will be treated as a direction for a texture. 
 			TextureParameters(const std::string& texDir, int vertex, bool getFromConf = false) : Texture(nullptr), mpConfInstance(nullptr), mpTexDirManager(nullptr)
 			{
 				initManagers();
@@ -39,6 +45,8 @@ namespace GeometryEngine
 				VertexNumber = vertex;
 			}
 
+			/// Copy constructor
+			/// param ori TextureParameters to be copied
 			TextureParameters(const TextureParameters& ori)
 			{
 				initManagers();
@@ -47,6 +55,7 @@ namespace GeometryEngine
 				ori.Texture == nullptr ? this->Texture = nullptr : Build();
 			}
 
+			///Destructor
 			virtual ~TextureParameters()
 			{
 				delete Texture;
@@ -62,12 +71,14 @@ namespace GeometryEngine
 			friend class TextureMaterial;
 			friend class MultiTextureMaterial;
 
+			/// Get instances to configuration and texture managers
 			void initManagers()
 			{
 				mpConfInstance = Configuration::ConfigurationManager::GetInstance();
 				mpTexDirManager = TexturesFiles::Textures::InitInstance(mpConfInstance->getTexturesFolder(), mpConfInstance->getTexturesConfig());
 			}
 
+			/// Loads the texture as an image and builds the texture
 			void Build();
 
 		};

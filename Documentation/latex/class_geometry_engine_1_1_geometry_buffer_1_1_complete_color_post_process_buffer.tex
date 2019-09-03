@@ -1,0 +1,72 @@
+\hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer}{}\section{Geometry\+Engine\+::Geometry\+Buffer\+::Complete\+Color\+Post\+Process\+Buffer Class Reference}
+\label{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer}\index{GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer@{GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer}}
+
+
+{\ttfamily \#include $<$Complete\+Color\+Post\+Process\+Buffer.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Buffer\+::Complete\+Color\+Post\+Process\+Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_a7389da9d8218edf267649b7a10d29ce0}\label{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_a7389da9d8218edf267649b7a10d29ce0}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_a7389da9d8218edf267649b7a10d29ce0}{Complete\+Color\+Post\+Process\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_a7cce9b235baaf2d45b0a6e23c80a46e8}{Complete\+Color\+Post\+Process\+Buffer}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer}{Complete\+Color\+Post\+Process\+Buffer}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_a17565c4189eb41f7d1ef0193bbeb9d53}\label{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_a17565c4189eb41f7d1ef0193bbeb9d53}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_a17565c4189eb41f7d1ef0193bbeb9d53}{$\sim$\+Complete\+Color\+Post\+Process\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_a8a484d5196bba7b92f31e500229743bc}{Clone}} () const override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_ac7d1a90658b1a2f59674b76685e8b052}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} \&ref) override
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Specialization of \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} that only includes specific textures, in this case all color textures (diffuse, ambient, reflective, emmissive), normal, position and tmp. Functionally identical to Complete color buffer, but intended to be used with the post process scene. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_a7cce9b235baaf2d45b0a6e23c80a46e8}\label{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_a7cce9b235baaf2d45b0a6e23c80a46e8}} 
+\index{GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer@{GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer}!CompleteColorPostProcessBuffer@{CompleteColorPostProcessBuffer}}
+\index{CompleteColorPostProcessBuffer@{CompleteColorPostProcessBuffer}!GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer@{GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer}}
+\subsubsection{\texorpdfstring{CompleteColorPostProcessBuffer()}{CompleteColorPostProcessBuffer()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Complete\+Color\+Post\+Process\+Buffer\+::\+Complete\+Color\+Post\+Process\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer}{Complete\+Color\+Post\+Process\+Buffer}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer}{Complete\+Color\+Post\+Process\+Buffer}} to be copied 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_a8a484d5196bba7b92f31e500229743bc}\label{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_a8a484d5196bba7b92f31e500229743bc}} 
+\index{GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer@{GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer@{GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}}$\ast$ Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Complete\+Color\+Post\+Process\+Buffer\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_af993f8c23f7e78051f3071be4873af9d}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_ac7d1a90658b1a2f59674b76685e8b052}\label{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_ac7d1a90658b1a2f59674b76685e8b052}} 
+\index{GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer@{GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer@{GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Complete\+Color\+Post\+Process\+Buffer\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} into this object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} to be copied 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9f20eb78703ef048d59a54f90ee09f25}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Gbuffers/Complete\+Color\+Post\+Process\+Buffer.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Gbuffers/Complete\+Color\+Post\+Process\+Buffer.\+cpp\end{DoxyCompactItemize}

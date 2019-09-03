@@ -36,7 +36,7 @@ void GeometryEngine::GeometryRenderStep::GeometryPass::renderGeometry(GeometryWo
 
 		for (auto it = items->begin(); it != items->end(); ++it)
 		{
-			if(checkRenderGroups(cam, (*it)))
+			if((*it)->IsVisible() && checkRenderGroups(cam, (*it)))
 				drawItem(cam, (*it));
 		}
 	}

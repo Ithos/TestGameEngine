@@ -31,7 +31,7 @@ GeometryEngine::GeometryMaterial::Material::~Material()
 	}
 }
 
-void GeometryEngine::GeometryMaterial::Material::Draw(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, 
+void GeometryEngine::GeometryMaterial::Material::Draw(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf,
 	unsigned int totalVertexNumber, unsigned int totalIndexNumber, const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryWorldItem::GeometryItem::GeometryItem & parent)
 {
 	if (mpProgram != nullptr)
@@ -50,7 +50,7 @@ void GeometryEngine::GeometryMaterial::Material::Draw(QOpenGLBuffer * arrayBuf, 
 
 		setProgramParameters(projection, view, parent);
 
-		drawMaterial(arrayBuf, indexBuf, totalVertexNumber, totalIndexNumber);
+		drawMaterial(vertexBuf, indexBuf, totalVertexNumber, totalIndexNumber);
 	}
 }
 

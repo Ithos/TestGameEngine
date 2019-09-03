@@ -1,0 +1,77 @@
+\hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer}{}\section{Geometry\+Engine\+::Geometry\+Buffer\+::Single\+Color\+Text\+Buffer Class Reference}
+\label{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer}\index{GeometryEngine::GeometryBuffer::SingleColorTextBuffer@{GeometryEngine::GeometryBuffer::SingleColorTextBuffer}}
+
+
+Specialization of \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} that only includes the smallest functional amount of textures (diffuse color, positions, normal vectors, and tmp)  
+
+
+
+
+{\ttfamily \#include $<$Single\+Color\+Texture\+Buffer.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Buffer\+::Single\+Color\+Text\+Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_a5c0841f56cbf2f652cfbf0d64c7abbce}\label{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_a5c0841f56cbf2f652cfbf0d64c7abbce}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_a5c0841f56cbf2f652cfbf0d64c7abbce}{Single\+Color\+Text\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_ad0e30e16f3630ecf9ca654688b964067}{Single\+Color\+Text\+Buffer}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer}{Single\+Color\+Text\+Buffer}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_a1e75b34afff12fbfd4a4058580a1bcd7}\label{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_a1e75b34afff12fbfd4a4058580a1bcd7}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_a1e75b34afff12fbfd4a4058580a1bcd7}{$\sim$\+Single\+Color\+Text\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_add00c2857f9d425600ef83d50a9c8019}{Clone}} () const override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_a6e266272638dd67cec7b6d57f172eae2}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} \&ref) override
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Specialization of \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} that only includes the smallest functional amount of textures (diffuse color, positions, normal vectors, and tmp) 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_ad0e30e16f3630ecf9ca654688b964067}\label{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_ad0e30e16f3630ecf9ca654688b964067}} 
+\index{GeometryEngine::GeometryBuffer::SingleColorTextBuffer@{GeometryEngine::GeometryBuffer::SingleColorTextBuffer}!SingleColorTextBuffer@{SingleColorTextBuffer}}
+\index{SingleColorTextBuffer@{SingleColorTextBuffer}!GeometryEngine::GeometryBuffer::SingleColorTextBuffer@{GeometryEngine::GeometryBuffer::SingleColorTextBuffer}}
+\subsubsection{\texorpdfstring{SingleColorTextBuffer()}{SingleColorTextBuffer()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Single\+Color\+Text\+Buffer\+::\+Single\+Color\+Text\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer}{Single\+Color\+Text\+Buffer}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer}{Single\+Color\+Text\+Buffer}} to be copied 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_add00c2857f9d425600ef83d50a9c8019}\label{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_add00c2857f9d425600ef83d50a9c8019}} 
+\index{GeometryEngine::GeometryBuffer::SingleColorTextBuffer@{GeometryEngine::GeometryBuffer::SingleColorTextBuffer}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryBuffer::SingleColorTextBuffer@{GeometryEngine::GeometryBuffer::SingleColorTextBuffer}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}}$\ast$ Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Single\+Color\+Text\+Buffer\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_af993f8c23f7e78051f3071be4873af9d}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_a6e266272638dd67cec7b6d57f172eae2}\label{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_a6e266272638dd67cec7b6d57f172eae2}} 
+\index{GeometryEngine::GeometryBuffer::SingleColorTextBuffer@{GeometryEngine::GeometryBuffer::SingleColorTextBuffer}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryBuffer::SingleColorTextBuffer@{GeometryEngine::GeometryBuffer::SingleColorTextBuffer}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Single\+Color\+Text\+Buffer\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} into this object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} to be copied 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9f20eb78703ef048d59a54f90ee09f25}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Gbuffers/Single\+Color\+Texture\+Buffer.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Gbuffers/Single\+Color\+Texture\+Buffer.\+cpp\end{DoxyCompactItemize}

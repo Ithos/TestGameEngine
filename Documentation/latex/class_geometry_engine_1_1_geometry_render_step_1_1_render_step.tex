@@ -1,0 +1,79 @@
+\hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{}\section{Geometry\+Engine\+::Geometry\+Render\+Step\+::Render\+Step Class Reference}
+\label{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}\index{GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}}
+
+
+{\ttfamily \#include $<$Render\+Step.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Render\+Step\+::Render\+Step\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.879581cm]{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a29106dd29348ba75cee5cbe8b9679b78}\label{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a29106dd29348ba75cee5cbe8b9679b78}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a29106dd29348ba75cee5cbe8b9679b78}{Render\+Step}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. Just calls to initiallize\+Open\+G\+L\+Functions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a0a1c36303ca0342f1bf9afcecb35e513}{Render\+Step}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a3dcb308f27e22b11e3145d61d24676b3}\label{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a3dcb308f27e22b11e3145d61d24676b3}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a3dcb308f27e22b11e3145d61d24676b3}{$\sim$\+Render\+Step}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a9b054ee8f38304319a9d03ba3e173dcd}{Render}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$lights=nullptr)=0
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe33ea9d82c5be11f55af7d39691d44b}{Clone}} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe0321446beeb4093dba701424ec1e8c}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} \&ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class that acts as an interface for all Render\+Steps. Each render step performs all operations corresponding to a certain render phase. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a0a1c36303ca0342f1bf9afcecb35e513}\label{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a0a1c36303ca0342f1bf9afcecb35e513}} 
+\index{GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}!RenderStep@{RenderStep}}
+\index{RenderStep@{RenderStep}!GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}}
+\subsubsection{\texorpdfstring{RenderStep()}{RenderStep()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Render\+Step\+::\+Render\+Step (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy Constructor parameter ref Constant reference to the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} to be copied 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe33ea9d82c5be11f55af7d39691d44b}\label{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe33ea9d82c5be11f55af7d39691d44b}} 
+\index{GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}}$\ast$ Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Render\+Step\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Factory method that creates a copy of the object return Pointer to a copy of the object 
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_double_post_process_pass_a080175b6caf11b9b0e84b5c41c87d39a}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Double\+Post\+Process\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a12e85a0169cb7b92cb8bd7b7fe100b33}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4f1cb36c7bf6a90d0aa3b8e8feba5e5e}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_single_post_process_pass_adbbe0bb9d41386ced4080877f030407a}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Single\+Post\+Process\+Pass}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_final_pass_a6633ed9c32944cc390d2b0ab32225845}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Final\+Pass}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe0321446beeb4093dba701424ec1e8c}\label{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe0321446beeb4093dba701424ec1e8c}} 
+\index{GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Render\+Step\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the values of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} to this object param ref Constant reference to a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} whose values should be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a9b054ee8f38304319a9d03ba3e173dcd}\label{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a9b054ee8f38304319a9d03ba3e173dcd}} 
+\index{GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}!Render@{Render}}
+\index{Render@{Render}!GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}}
+\subsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Render\+Step\+::\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{lights = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Executes the render step operations param cam Pointer to the camera is being rendered param items Set of items to be rendered param lights Set of lights to be rendered 
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_double_post_process_pass_a45e346852e7c86c257af98f85ddba9f9}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Double\+Post\+Process\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_ac3bfd0a3915cd8a8cd7e1bf81157f6ad}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_ae6d9fa99f67e659839ca310947787f52}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_single_post_process_pass_abb6e6e69af639e0c1bd8b1ec7c73a44c}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Single\+Post\+Process\+Pass}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_final_pass_ad078d0e9d394754dbbd3cff871d72b9f}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Final\+Pass}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/Render\+Step.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/Render\+Step.\+cpp\end{DoxyCompactItemize}

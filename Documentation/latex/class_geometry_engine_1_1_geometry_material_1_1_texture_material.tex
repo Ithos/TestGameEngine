@@ -1,0 +1,165 @@
+\hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material}{}\section{Geometry\+Engine\+::Geometry\+Material\+::Texture\+Material Class Reference}
+\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material}\index{GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}}
+
+
+{\ttfamily \#include $<$Texture\+Material.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Texture\+Material\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_geometry_engine_1_1_geometry_material_1_1_texture_material}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a90a61577a2d5b13b91809bcaea97dae7}{Texture\+Material}} (const std\+::string \&tex\+Dir, float shininess=10.\+0f)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_af6c96a0f976b0ed3d558d7d395ec35b2}{Texture\+Material}} (const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ $>$ \&texture\+Dirs, float shininess=10.\+0f)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a60678cd8338eeae2996e72b1d96a2364}{Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material}{Texture\+Material}} \&mat)
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ace905cf02deb41ad8aa422ef2fb9070f}{Clone}} () const override
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a9c7189b0ae8bd8c5325b527d31492bf7}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a9c7189b0ae8bd8c5325b527d31492bf7}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a9c7189b0ae8bd8c5325b527d31492bf7}{$\sim$\+Texture\+Material}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a8e8feb88aebfe46bbf5a9cb14222236e}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a8e8feb88aebfe46bbf5a9cb14222236e}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a8e8feb88aebfe46bbf5a9cb14222236e}{Add\+Texture}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} \&tex\+Dir)
+\begin{DoxyCompactList}\small\item\em Adds a texture to the material list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_acd13e76d7d89fa8b1fb605b99333736c}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_acd13e76d7d89fa8b1fb605b99333736c}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_acd13e76d7d89fa8b1fb605b99333736c}{Add\+Textures}} (std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ $>$ texture\+Dirs)
+\begin{DoxyCompactList}\small\item\em Adds multiple textures to the materials list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a1ce43913d0980e1e888b7100dae2eac1}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a1ce43913d0980e1e888b7100dae2eac1}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a1ce43913d0980e1e888b7100dae2eac1}{Insert\+Texture}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} \&tex\+Dir, int index)
+\begin{DoxyCompactList}\small\item\em Adds a texture in a certain position in the material list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a5ea386637b7cf98fcd7bacba90c3a459}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a5ea386637b7cf98fcd7bacba90c3a459}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a5ea386637b7cf98fcd7bacba90c3a459}{Delete\+Texture}} (int index)
+\begin{DoxyCompactList}\small\item\em Deletes a texture in a certain position in the material list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ae4d935c624892c7bba5ce82c7c78b3ba}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ae4d935c624892c7bba5ce82c7c78b3ba}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ae4d935c624892c7bba5ce82c7c78b3ba}{Delete\+All\+Textures}} ()
+\begin{DoxyCompactList}\small\item\em Deletes all textures from the material. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ae2a34b3c00d6aecd9bdc686042cdf892}{init\+Textures}} (const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ $>$ \&texture\+Dirs)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_afbf7007e9d869b23dfbc173841ba5b34}{init\+Material}} (const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ $>$ \&texture\+Dirs)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a3c7934e5895c1abc1216e0c700626263}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a3c7934e5895c1abc1216e0c700626263}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a3c7934e5895c1abc1216e0c700626263}{init\+Shaders}} () override
+\begin{DoxyCompactList}\small\item\em Sets the keys for the shaders to be used. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a39212e653a556734e261ef610ab0ad9f}{build\+Textures}} (const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ $>$ \&texture\+Dirs)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a985cdde7240f2acb18cd2944c5ca6193}{set\+Program\+Parameters}} (const Q\+Matrix4x4 \&projection, const Q\+Matrix4x4 \&view, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&parent) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a7bb3c956fa64e47b251d882890c931f9}{draw\+Material}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Number, unsigned int total\+Index\+Number) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a946658ad56ad140e6e5ec5d12a15affc}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material}{Texture\+Material}} \&mat)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ae2480940b9ea9c623ce3b68e5ccb28fe}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ae2480940b9ea9c623ce3b68e5ccb28fe}} 
+std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ $>$ {\bfseries m\+Textures\+List}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ae5437f3c43d11457400ea462809d5e33}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ae5437f3c43d11457400ea462809d5e33}} 
+\mbox{\hyperlink{class_textures_files_1_1_textures}{Textures\+Files\+::\+Textures}} $\ast$ {\bfseries mp\+Tex\+Dir\+Manager}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a5728fe450875f732ce65025cba6dacb0}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a5728fe450875f732ce65025cba6dacb0}} 
+static const int \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a5728fe450875f732ce65025cba6dacb0}{T\+E\+X\+T\+U\+R\+E\+\_\+\+U\+N\+IT}} = 0
+\begin{DoxyCompactList}\small\item\em Texture unit that the textures in the material will be binded to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that loads a color texture. Alternatively multiple textures can be loaded indicating to how many vertices it should be applied. The textures will be applied to the vertices in the order they are drawn and in the order the textures are included in the textures list. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a90a61577a2d5b13b91809bcaea97dae7}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a90a61577a2d5b13b91809bcaea97dae7}} 
+\index{GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}!TextureMaterial@{TextureMaterial}}
+\index{TextureMaterial@{TextureMaterial}!GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}}
+\subsubsection{\texorpdfstring{TextureMaterial()}{TextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material\+::\+Texture\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Dir,  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})}
+
+Constructor param tex\+Dir Key of the texture to be loaded param shininess parameter. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_af6c96a0f976b0ed3d558d7d395ec35b2}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_af6c96a0f976b0ed3d558d7d395ec35b2}} 
+\index{GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}!TextureMaterial@{TextureMaterial}}
+\index{TextureMaterial@{TextureMaterial}!GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}}
+\subsubsection{\texorpdfstring{TextureMaterial()}{TextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material\+::\+Texture\+Material (\begin{DoxyParamCaption}\item[{const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ $>$ \&}]{texture\+Dirs,  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})}
+
+Constructor param texture\+Dirs List of textures to be loaded param shininess parameter. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a60678cd8338eeae2996e72b1d96a2364}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a60678cd8338eeae2996e72b1d96a2364}} 
+\index{GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}!TextureMaterial@{TextureMaterial}}
+\index{TextureMaterial@{TextureMaterial}!GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}}
+\subsubsection{\texorpdfstring{TextureMaterial()}{TextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material\+::\+Texture\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material}{Texture\+Material}} \&}]{mat }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a39212e653a556734e261ef610ab0ad9f}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a39212e653a556734e261ef610ab0ad9f}} 
+\index{GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}!buildTextures@{buildTextures}}
+\index{buildTextures@{buildTextures}!GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}}
+\subsubsection{\texorpdfstring{buildTextures()}{buildTextures()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material\+::build\+Textures (\begin{DoxyParamCaption}\item[{const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ $>$ \&}]{texture\+Dirs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Builds the textures param texture\+Dirs list of material textures to be built \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ace905cf02deb41ad8aa422ef2fb9070f}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ace905cf02deb41ad8aa422ef2fb9070f}} 
+\index{GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_ae5513ff06d536365e18ddc5e07e79784}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a946658ad56ad140e6e5ec5d12a15affc}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a946658ad56ad140e6e5ec5d12a15affc}} 
+\index{GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material}{Texture\+Material}} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} object to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a7bb3c956fa64e47b251d882890c931f9}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a7bb3c956fa64e47b251d882890c931f9}} 
+\index{GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}!drawMaterial@{drawMaterial}}
+\index{drawMaterial@{drawMaterial}!GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}}
+\subsubsection{\texorpdfstring{drawMaterial()}{drawMaterial()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material\+::draw\+Material (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Number,  }\item[{unsigned int}]{total\+Index\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Binds shaders and draws. param vertex\+Buf Vertex buffer param index\+Buf Index\+Buffer param total\+Vertex\+Num Number of vetices param total\+Index\+Number Number of indices Maybe do the same, but with indices?
+
+Draw sets of 3 vertex you can also go for sets of 4 by swapping 3s for 4s in the call to the method 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a0070eab6e5fe86dc05dc69f2e37b9072}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_afbf7007e9d869b23dfbc173841ba5b34}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_afbf7007e9d869b23dfbc173841ba5b34}} 
+\index{GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}!initMaterial@{initMaterial}}
+\index{initMaterial@{initMaterial}!GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}}
+\subsubsection{\texorpdfstring{initMaterial()}{initMaterial()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material\+::init\+Material (\begin{DoxyParamCaption}\item[{const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ $>$ \&}]{texture\+Dirs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Inits the material and the textures and gets/initializes an instance of the texture manager param texture\+Dirs list of pointers to texture data to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ae2a34b3c00d6aecd9bdc686042cdf892}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ae2a34b3c00d6aecd9bdc686042cdf892}} 
+\index{GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}!initTextures@{initTextures}}
+\index{initTextures@{initTextures}!GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}}
+\subsubsection{\texorpdfstring{initTextures()}{initTextures()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material\+::init\+Textures (\begin{DoxyParamCaption}\item[{const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ $>$ \&}]{texture\+Dirs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the list of textures param texture\+Dirs list of pointers to texture data to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a985cdde7240f2acb18cd2944c5ca6193}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a985cdde7240f2acb18cd2944c5ca6193}} 
+\index{GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}!setProgramParameters@{setProgramParameters}}
+\index{setProgramParameters@{setProgramParameters}!GeometryEngine::GeometryMaterial::TextureMaterial@{GeometryEngine::GeometryMaterial::TextureMaterial}}
+\subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection,  }\item[{const Q\+Matrix4x4 \&}]{view,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sends parameters to the shaders. param projection Projection matrix param view View matrix
+
+param parent geometry item 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a68310797df53062f237d0005fbcfce7e}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Texture\+Material.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Texture\+Material.\+cpp\end{DoxyCompactItemize}

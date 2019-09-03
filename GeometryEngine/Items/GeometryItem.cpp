@@ -2,7 +2,7 @@
 
 GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::GeometryItem(const GeometryMaterial::Material& mat, const QVector3D& pos, const QVector3D & rot,	const QVector3D & scale, WorldItem* parent):
 	WorldItem(pos, rot, scale, parent), mpArrayBuf(nullptr), mpIndexBuf(nullptr), mpMaterial(nullptr), mpConfInstance(nullptr), mVertexShaderKey(""), mFragmentShaderKey(""), 
-	mTotalVertexNumber(0), mTotalIndexNumber(0)
+	mTotalVertexNumber(0), mTotalIndexNumber(0), mVisible(true)
 {
 	mpMaterial = mat.Clone();
 }

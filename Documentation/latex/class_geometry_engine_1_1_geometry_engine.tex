@@ -1,0 +1,62 @@
+\hypertarget{class_geometry_engine_1_1_geometry_engine}{}\section{Geometry\+Engine\+::Geometry\+Engine Class Reference}
+\label{class_geometry_engine_1_1_geometry_engine}\index{GeometryEngine::GeometryEngine@{GeometryEngine::GeometryEngine}}
+
+
+Singleton that gives acces to the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine}{Geometry\+Engine}}.  
+
+
+
+
+{\ttfamily \#include $<$Geometry\+Engine.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_engine_a05ef74c582d54368b8df90b84a889f73}\label{class_geometry_engine_1_1_geometry_engine_a05ef74c582d54368b8df90b84a889f73}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_scene_manager}{Scene\+Manager}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine_a05ef74c582d54368b8df90b84a889f73}{Get\+Scene\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the scene manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_engine_ad3db079180166e79c3f37d8d487f2c29}\label{class_geometry_engine_1_1_geometry_engine_ad3db079180166e79c3f37d8d487f2c29}} 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine}{Geometry\+Engine}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine_ad3db079180166e79c3f37d8d487f2c29}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Returns the pointer to the singleton. It builds the object if the singleton hasn\textquotesingle{}t been built before. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_engine_a2c2e044075bfe61e6e18a07061072172}\label{class_geometry_engine_1_1_geometry_engine_a2c2e044075bfe61e6e18a07061072172}} 
+static void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine_a2c2e044075bfe61e6e18a07061072172}{Release}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the pointer to the singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_engine_a4afeab20b0589de673e1a054eb697b33}\label{class_geometry_engine_1_1_geometry_engine_a4afeab20b0589de673e1a054eb697b33}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine_a4afeab20b0589de673e1a054eb697b33}{Geometry\+Engine}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. Calls \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine_ac88f257e206bc135b7eb1e14c4497809}{init()}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_engine_ac1a101b4d29b8577f2c4da65181e517e}\label{class_geometry_engine_1_1_geometry_engine_ac1a101b4d29b8577f2c4da65181e517e}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine_ac1a101b4d29b8577f2c4da65181e517e}{$\sim$\+Geometry\+Engine}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Destroys the object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_engine_ad91cb15665b5ee4f82c407d2e240a266}\label{class_geometry_engine_1_1_geometry_engine_ad91cb15665b5ee4f82c407d2e240a266}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine_ad91cb15665b5ee4f82c407d2e240a266}{close}} ()
+\begin{DoxyCompactList}\small\item\em Deinitializes the object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_engine_ac88f257e206bc135b7eb1e14c4497809}\label{class_geometry_engine_1_1_geometry_engine_ac88f257e206bc135b7eb1e14c4497809}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine_ac88f257e206bc135b7eb1e14c4497809}{init}} ()
+\begin{DoxyCompactList}\small\item\em Builds the scene manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_engine_a6cd62e22c42522ad7c49f50d8d383ca3}\label{class_geometry_engine_1_1_geometry_engine_a6cd62e22c42522ad7c49f50d8d383ca3}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_scene_manager}{Scene\+Manager}} $\ast$ {\bfseries mp\+Scene\+Manager}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_engine_a313d47008b8ce30f251eb50d44cf1830}\label{class_geometry_engine_1_1_geometry_engine_a313d47008b8ce30f251eb50d44cf1830}} 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine}{Geometry\+Engine}} $\ast$ {\bfseries mp\+Instance} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Singleton that gives acces to the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine}{Geometry\+Engine}}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/Geometry\+Engine.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/Geometry\+Engine.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,168 @@
+\hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material}{}\section{Geometry\+Engine\+::Geometry\+Material\+::Multi\+Texture\+Material Class Reference}
+\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material}\index{GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}}
+
+
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} tha uses different textures for the different components of the light (ambient, diffuse, specular, emissive). Used to create complex light effects for certain materials like skin.  
+
+
+
+
+{\ttfamily \#include $<$Multi\+Texture\+Material.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Multi\+Texture\+Material\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a2d6f8773c523bc6ddab05b9d76db9020}{Multi\+Texture\+Material}} (const std\+::string \&ambient\+Tex\+Dir, const std\+::string \&diffuse\+Tex\+Dir, const std\+::string \&specular\+Tex\+Dir, const std\+::string \&emissive\+Tex\+Dir, float shininess=10.\+0f)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a1319543319c75f7a06d037a536f9844a}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a1319543319c75f7a06d037a536f9844a}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a1319543319c75f7a06d037a536f9844a}{$\sim$\+Multi\+Texture\+Material}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a78e60d57bd2dcbab07b96fd86426f453}{Multi\+Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material}{Multi\+Texture\+Material}} \&mat)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a2679c169c654bb65728ef21db60d5637}{Set\+Ambient\+Texture}} (const std\+::string \&ambient\+Tex\+Dir)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a51249ca0c845bfd39ea3ddc90254092d}{Set\+Diffuse\+Texture}} (const std\+::string \&diffuse\+Tex\+Dir)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a0b4cf7c8265e633210bc39b5e7d31f1d}{Set\+Specular\+Texture}} (const std\+::string \&specular\+Tex\+Dir)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_ad0ca544526e65dcd519cd0e82fc4bc7f}{Set\+Emissive\+Texture}} (const std\+::string \&emissive\+Tex\+Dir)
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a66cef99b68270e1399830bc1b8bc8502}{Clone}} () const override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a8b14ccf51c5360824575544a56eeac39}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a8b14ccf51c5360824575544a56eeac39}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a8b14ccf51c5360824575544a56eeac39}{init\+Material}} () override
+\begin{DoxyCompactList}\small\item\em Calls parent init\+Material and dets a pointer to the material manager singelton. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_aa5dd9c755aa814d4655355227aa68d1d}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_aa5dd9c755aa814d4655355227aa68d1d}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_aa5dd9c755aa814d4655355227aa68d1d}{init\+Shaders}} () override
+\begin{DoxyCompactList}\small\item\em Sets the keys of the shaders to be used. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a236d4a16f756444e8a3ed5997efabb2e}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a236d4a16f756444e8a3ed5997efabb2e}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a236d4a16f756444e8a3ed5997efabb2e}{init\+Textures}} ()
+\begin{DoxyCompactList}\small\item\em Builds all the textures. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a5f07e3b2b0867d3905f912159ef2f67b}{set\+Program\+Parameters}} (const Q\+Matrix4x4 \&projection, const Q\+Matrix4x4 \&view, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&parent) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_af6edaa5960d07b6abee870760e869189}{draw\+Material}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Number, unsigned int total\+Index\+Number) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_add208366ae882ad1bd9c6029969902b4}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material}{Multi\+Texture\+Material}} \&mat)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a4b0dabb3092d3d116d7f3b8d4fb3ddd1}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a4b0dabb3092d3d116d7f3b8d4fb3ddd1}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ {\bfseries mp\+Ambient\+Texture}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a13f23348dddc26dbf2470abd890f1fbe}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a13f23348dddc26dbf2470abd890f1fbe}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ {\bfseries mp\+Diffuse\+Texture}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_ad395a5b8d93093fbbc5cff61cf73e57e}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_ad395a5b8d93093fbbc5cff61cf73e57e}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ {\bfseries mp\+Specular\+Texture}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a7ccad13c06e24303ac569e27b2ebb23a}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a7ccad13c06e24303ac569e27b2ebb23a}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ {\bfseries mp\+Emissive\+Texture}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a65c010985839ed21612ccde50231b4bd}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a65c010985839ed21612ccde50231b4bd}} 
+\mbox{\hyperlink{class_textures_files_1_1_textures}{Textures\+Files\+::\+Textures}} $\ast$ {\bfseries mp\+Tex\+Dir\+Manager}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a200a3e365c31d93a6566d52b7e84c0f9}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a200a3e365c31d93a6566d52b7e84c0f9}} 
+static const int \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a200a3e365c31d93a6566d52b7e84c0f9}{T\+E\+X\+T\+U\+R\+E\+\_\+\+U\+N\+IT}} = 0
+\begin{DoxyCompactList}\small\item\em Texture unit to be used by the textures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} tha uses different textures for the different components of the light (ambient, diffuse, specular, emissive). Used to create complex light effects for certain materials like skin. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a2d6f8773c523bc6ddab05b9d76db9020}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a2d6f8773c523bc6ddab05b9d76db9020}} 
+\index{GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}!MultiTextureMaterial@{MultiTextureMaterial}}
+\index{MultiTextureMaterial@{MultiTextureMaterial}!GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}}
+\subsubsection{\texorpdfstring{MultiTextureMaterial()}{MultiTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material\+::\+Multi\+Texture\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ambient\+Tex\+Dir,  }\item[{const std\+::string \&}]{diffuse\+Tex\+Dir,  }\item[{const std\+::string \&}]{specular\+Tex\+Dir,  }\item[{const std\+::string \&}]{emissive\+Tex\+Dir,  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})}
+
+Constructor param ambient\+Tex\+Dir Key to a texture that will be used as ambient color param diffuse\+Tex\+Dir Key to a texture that will be used as diffuse color param specular\+Tex\+Dir Key to a texture that will be used as specular color param emissive\+Tex\+Dir Key to a texture that will be used as emissive color param shininess Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a78e60d57bd2dcbab07b96fd86426f453}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a78e60d57bd2dcbab07b96fd86426f453}} 
+\index{GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}!MultiTextureMaterial@{MultiTextureMaterial}}
+\index{MultiTextureMaterial@{MultiTextureMaterial}!GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}}
+\subsubsection{\texorpdfstring{MultiTextureMaterial()}{MultiTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material\+::\+Multi\+Texture\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material}{Multi\+Texture\+Material}} \&}]{mat }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a66cef99b68270e1399830bc1b8bc8502}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a66cef99b68270e1399830bc1b8bc8502}} 
+\index{GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}}$\ast$ Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Copy constructor param ref Object to be copied. 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_ae5513ff06d536365e18ddc5e07e79784}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_add208366ae882ad1bd9c6029969902b4}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_add208366ae882ad1bd9c6029969902b4}} 
+\index{GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material}{Multi\+Texture\+Material}} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} object to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_af6edaa5960d07b6abee870760e869189}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_af6edaa5960d07b6abee870760e869189}} 
+\index{GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}!drawMaterial@{drawMaterial}}
+\index{drawMaterial@{drawMaterial}!GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}}
+\subsubsection{\texorpdfstring{drawMaterial()}{drawMaterial()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material\+::draw\+Material (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Number,  }\item[{unsigned int}]{total\+Index\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Binds shaders and draws. param vertex\+Buf Vertex buffer param index\+Buf Index\+Buffer param total\+Vertex\+Num Number of vetices param total\+Index\+Number Number of indices 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a0070eab6e5fe86dc05dc69f2e37b9072}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a2679c169c654bb65728ef21db60d5637}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a2679c169c654bb65728ef21db60d5637}} 
+\index{GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}!SetAmbientTexture@{SetAmbientTexture}}
+\index{SetAmbientTexture@{SetAmbientTexture}!GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}}
+\subsubsection{\texorpdfstring{SetAmbientTexture()}{SetAmbientTexture()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material\+::\+Set\+Ambient\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ambient\+Tex\+Dir }\end{DoxyParamCaption})}
+
+Sets the ambient texture param ambient\+Tex\+Dir Key to a texture that will be used as ambient color \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a51249ca0c845bfd39ea3ddc90254092d}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a51249ca0c845bfd39ea3ddc90254092d}} 
+\index{GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}!SetDiffuseTexture@{SetDiffuseTexture}}
+\index{SetDiffuseTexture@{SetDiffuseTexture}!GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}}
+\subsubsection{\texorpdfstring{SetDiffuseTexture()}{SetDiffuseTexture()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material\+::\+Set\+Diffuse\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{diffuse\+Tex\+Dir }\end{DoxyParamCaption})}
+
+Sets the diffuse texture param diffuse\+Tex\+Dir Key to a texture that will be used as diffuse color \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_ad0ca544526e65dcd519cd0e82fc4bc7f}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_ad0ca544526e65dcd519cd0e82fc4bc7f}} 
+\index{GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}!SetEmissiveTexture@{SetEmissiveTexture}}
+\index{SetEmissiveTexture@{SetEmissiveTexture}!GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}}
+\subsubsection{\texorpdfstring{SetEmissiveTexture()}{SetEmissiveTexture()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material\+::\+Set\+Emissive\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{emissive\+Tex\+Dir }\end{DoxyParamCaption})}
+
+Sets the emissive texture param emissive\+Tex\+Dir Key to a texture that will be used as emissive color \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a5f07e3b2b0867d3905f912159ef2f67b}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a5f07e3b2b0867d3905f912159ef2f67b}} 
+\index{GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}!setProgramParameters@{setProgramParameters}}
+\index{setProgramParameters@{setProgramParameters}!GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}}
+\subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection,  }\item[{const Q\+Matrix4x4 \&}]{view,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sends parameters to the shaders. param projection Projection matrix param view View matrix
+
+param parent geometry item to be drawn 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a68310797df53062f237d0005fbcfce7e}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a0b4cf7c8265e633210bc39b5e7d31f1d}\label{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a0b4cf7c8265e633210bc39b5e7d31f1d}} 
+\index{GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}!SetSpecularTexture@{SetSpecularTexture}}
+\index{SetSpecularTexture@{SetSpecularTexture}!GeometryEngine::GeometryMaterial::MultiTextureMaterial@{GeometryEngine::GeometryMaterial::MultiTextureMaterial}}
+\subsubsection{\texorpdfstring{SetSpecularTexture()}{SetSpecularTexture()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material\+::\+Set\+Specular\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{specular\+Tex\+Dir }\end{DoxyParamCaption})}
+
+Sets the specular texture param specular\+Tex\+Dir Key to a texture that will be used as specular color 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Multi\+Texture\+Material.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Multi\+Texture\+Material.\+cpp\end{DoxyCompactItemize}

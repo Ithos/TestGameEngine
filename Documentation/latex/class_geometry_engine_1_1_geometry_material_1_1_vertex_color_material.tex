@@ -1,0 +1,102 @@
+\hypertarget{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material}{}\section{Geometry\+Engine\+::Geometry\+Material\+::Vertex\+Color\+Material Class Reference}
+\label{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material}\index{GeometryEngine::GeometryMaterial::VertexColorMaterial@{GeometryEngine::GeometryMaterial::VertexColorMaterial}}
+
+
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that defines color by vertex. Only used in very simple objects.  
+
+
+
+
+{\ttfamily \#include $<$Vertex\+Color\+Material.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Vertex\+Color\+Material\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_ac187a64f7611b1c835180e48573a44f3}\label{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_ac187a64f7611b1c835180e48573a44f3}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_ac187a64f7611b1c835180e48573a44f3}{Vertex\+Color\+Material}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. Calls init material. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_a34c914dc6b12a60e92116b5810d438a4}{Vertex\+Color\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material}{Vertex\+Color\+Material}} \&mat)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_aa34ff05271ac73009e44ecc3100e5f40}\label{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_aa34ff05271ac73009e44ecc3100e5f40}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_aa34ff05271ac73009e44ecc3100e5f40}{$\sim$\+Vertex\+Color\+Material}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_aecf808e45985f2a39662937fc18a21d0}{Clone}} () const override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_af390fb31e1017e64b7eeaaee36f29395}\label{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_af390fb31e1017e64b7eeaaee36f29395}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_af390fb31e1017e64b7eeaaee36f29395}{init\+Shaders}} ()
+\begin{DoxyCompactList}\small\item\em Sets the shaders that should be loaded. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_a11bf01fb1d5ef41fb1a9cf4080c98b8c}{set\+Program\+Parameters}} (const Q\+Matrix4x4 \&projection, const Q\+Matrix4x4 \&view, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&parent) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_af03191da84c84c45af91405f3cba3b5d}{draw\+Material}} (Q\+Open\+G\+L\+Buffer $\ast$array\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Number, unsigned int total\+Index\+Number) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_ab1a686f175b2e4e0f581a8535450f112}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material}{Vertex\+Color\+Material}} \&mat)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that defines color by vertex. Only used in very simple objects. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_a34c914dc6b12a60e92116b5810d438a4}\label{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_a34c914dc6b12a60e92116b5810d438a4}} 
+\index{GeometryEngine::GeometryMaterial::VertexColorMaterial@{GeometryEngine::GeometryMaterial::VertexColorMaterial}!VertexColorMaterial@{VertexColorMaterial}}
+\index{VertexColorMaterial@{VertexColorMaterial}!GeometryEngine::GeometryMaterial::VertexColorMaterial@{GeometryEngine::GeometryMaterial::VertexColorMaterial}}
+\subsubsection{\texorpdfstring{VertexColorMaterial()}{VertexColorMaterial()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Vertex\+Color\+Material\+::\+Vertex\+Color\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material}{Vertex\+Color\+Material}} \&}]{mat }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_aecf808e45985f2a39662937fc18a21d0}\label{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_aecf808e45985f2a39662937fc18a21d0}} 
+\index{GeometryEngine::GeometryMaterial::VertexColorMaterial@{GeometryEngine::GeometryMaterial::VertexColorMaterial}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryMaterial::VertexColorMaterial@{GeometryEngine::GeometryMaterial::VertexColorMaterial}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}}$\ast$ Geometry\+Engine\+::\+Geometry\+Material\+::\+Vertex\+Color\+Material\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_ae5513ff06d536365e18ddc5e07e79784}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_ab1a686f175b2e4e0f581a8535450f112}\label{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_ab1a686f175b2e4e0f581a8535450f112}} 
+\index{GeometryEngine::GeometryMaterial::VertexColorMaterial@{GeometryEngine::GeometryMaterial::VertexColorMaterial}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryMaterial::VertexColorMaterial@{GeometryEngine::GeometryMaterial::VertexColorMaterial}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Vertex\+Color\+Material\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material}{Vertex\+Color\+Material}} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} object to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_af03191da84c84c45af91405f3cba3b5d}\label{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_af03191da84c84c45af91405f3cba3b5d}} 
+\index{GeometryEngine::GeometryMaterial::VertexColorMaterial@{GeometryEngine::GeometryMaterial::VertexColorMaterial}!drawMaterial@{drawMaterial}}
+\index{drawMaterial@{drawMaterial}!GeometryEngine::GeometryMaterial::VertexColorMaterial@{GeometryEngine::GeometryMaterial::VertexColorMaterial}}
+\subsubsection{\texorpdfstring{drawMaterial()}{drawMaterial()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Vertex\+Color\+Material\+::draw\+Material (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{array\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Number,  }\item[{unsigned int}]{total\+Index\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Binds shaders and draws. param vertex\+Buf Vertex buffer param index\+Buf Index\+Buffer param total\+Vertex\+Num Number of vetices param tital\+Index\+Num Number of indices 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a0070eab6e5fe86dc05dc69f2e37b9072}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_a11bf01fb1d5ef41fb1a9cf4080c98b8c}\label{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material_a11bf01fb1d5ef41fb1a9cf4080c98b8c}} 
+\index{GeometryEngine::GeometryMaterial::VertexColorMaterial@{GeometryEngine::GeometryMaterial::VertexColorMaterial}!setProgramParameters@{setProgramParameters}}
+\index{setProgramParameters@{setProgramParameters}!GeometryEngine::GeometryMaterial::VertexColorMaterial@{GeometryEngine::GeometryMaterial::VertexColorMaterial}}
+\subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Vertex\+Color\+Material\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection,  }\item[{const Q\+Matrix4x4 \&}]{view,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sends parameters to the shaders. param projection Projection matrix param view View matrix
+
+param parent geometry item 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a68310797df53062f237d0005fbcfce7e}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Vertex\+Color\+Material.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Vertex\+Color\+Material.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,232 @@
+\hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{}\section{Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Item\+::Geometry\+Item Class Reference}
+\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+
+
+Base class for every object in the scene that has a visual model.  
+
+
+
+
+{\ttfamily \#include $<$Geometry\+Item.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Item\+::Geometry\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.428571cm]{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a4e952dc4d555e736786b78a79e9f5ad4}{Geometry\+Item}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} \&mat, const Q\+Vector3D \&pos=Q\+Vector3D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), World\+Item $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_abf5badf6ed7138295b6a2b635ff1cf53}{Geometry\+Item}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_abdff890df2d9228d8e0164e6406e82b2}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_abdff890df2d9228d8e0164e6406e82b2}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_abdff890df2d9228d8e0164e6406e82b2}{$\sim$\+Geometry\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a263a106b8c225c7e30f2788fb4a3e4bc}{Draw\+Item}} (const Q\+Matrix4x4 \&projection, const Q\+Matrix4x4 \&view)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_aa07c13861cf4aef269442071e4150389}{Update}} (const Q\+Matrix4x4 \&projection, const Q\+Matrix4x4 \&view) override
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a2987613e4509c7748b72a76ccfe9babe}{Get\+Material\+Ptr}} ()
+\item 
+virtual Q\+Open\+G\+L\+Buffer $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a31eb19087cd7b37904df64fa5d01b754}{Get\+Array\+Buffer}} ()
+\item 
+virtual Q\+Open\+G\+L\+Buffer $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_af2d4cda419c8047f37643d88187da62f}{Get\+Index\+Buffer}} ()
+\item 
+virtual unsigned int \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ae9d76b83de2b2dec2b19c77fdf49f853}{Get\+Vertex\+Number}} ()
+\item 
+virtual unsigned int \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a3c9f379b23e9066340295056a6b4ca35}{Get\+Index\+Number}} ()
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_addd7b6651de0583209ec45ff1a813dd1}{Set\+Material}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$mat)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a13a2a225acb39c559601c2151b4322bf}{Copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item}} \&ref)
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a1db8f97339ba49f746b3e0b4c4b02748}{Clone}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_adff9d0c0188f96abdbbec182ac1901d8}{Add\+Render\+Group}} (int group)
+\item 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a7c2f338d13cf238060c10da51ee6dd14}{Remove\+Render\+Group}} (int group)
+\item 
+virtual const std\+::unordered\+\_\+set$<$ int $>$ \& \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a573713d59a768141304466cce5ecf26e}{Get\+Render\+Groups}} ()
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a1dc7f2bbe7fc049344b055dfa21414b8}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a1dc7f2bbe7fc049344b055dfa21414b8}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a1dc7f2bbe7fc049344b055dfa21414b8}{Clear\+Render\+Groups}} ()
+\begin{DoxyCompactList}\small\item\em Removes the item from all render groups. An object is not contained in any render group it\textquotesingle{}s considered to be contained in the null render group. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ab2ed6e137c09bd08335452fa4bb7742a}{Set\+Visible}} (bool visible)
+\item 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a7fece5cb2992278b918286e3aeb9b561}{Is\+Visible}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a714b6742a99f60faddf9e486f5a5d71d}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a714b6742a99f60faddf9e486f5a5d71d}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a714b6742a99f60faddf9e486f5a5d71d}{init\+Geometry}} ()=0
+\begin{DoxyCompactList}\small\item\em Abstract method. Initializes vertices an indices buffers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a9ccef8be90d38736e82f0d9666938b8a}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a9ccef8be90d38736e82f0d9666938b8a}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a9ccef8be90d38736e82f0d9666938b8a}{init\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Gets managers and creates buffers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a15dd56cefa01278fb6406249607e0e87}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a15dd56cefa01278fb6406249607e0e87}} 
+Q\+Open\+G\+L\+Buffer $\ast$ {\bfseries mp\+Array\+Buf}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ad87ae2ea021fdc5bf351797c939b93a0}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ad87ae2ea021fdc5bf351797c939b93a0}} 
+Q\+Open\+G\+L\+Buffer $\ast$ {\bfseries mp\+Index\+Buf}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ad0b1a4147fa692c1a31938c9d791dba1}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ad0b1a4147fa692c1a31938c9d791dba1}} 
+bool {\bfseries m\+Visible}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a7e726a5c2ced32ee542d897d8e8c70eb}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a7e726a5c2ced32ee542d897d8e8c70eb}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$ {\bfseries mp\+Material}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a717574a07d51e5008b26197a534d47bb}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a717574a07d51e5008b26197a534d47bb}} 
+\mbox{\hyperlink{class_configuration_1_1_configuration_manager}{Configuration\+::\+Configuration\+Manager}} $\ast$ {\bfseries mp\+Conf\+Instance}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_af07660288bf1a19fe7ed2a5ba3677c0b}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_af07660288bf1a19fe7ed2a5ba3677c0b}} 
+std\+::string {\bfseries m\+Vertex\+Shader\+Key}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ae29f06e4500932eeee49c751abcc21e6}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ae29f06e4500932eeee49c751abcc21e6}} 
+std\+::string {\bfseries m\+Fragment\+Shader\+Key}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a3061167ac14626431dc2939e27ca057d}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a3061167ac14626431dc2939e27ca057d}} 
+\mbox{\hyperlink{class_shader_files_1_1_shader_manager}{Shader\+Files\+::\+Shader\+Manager}} $\ast$ {\bfseries mp\+Shader\+Manager}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ab0d9901b32b79e25d96cc916739af523}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ab0d9901b32b79e25d96cc916739af523}} 
+unsigned int {\bfseries m\+Total\+Vertex\+Number}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a2aaff93904a831edbf34fa8cffe4e248}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a2aaff93904a831edbf34fa8cffe4e248}} 
+unsigned int {\bfseries m\+Total\+Index\+Number}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ab435d1849fb6bbe6b03a51520e0c2ee6}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ab435d1849fb6bbe6b03a51520e0c2ee6}} 
+std\+::unordered\+\_\+set$<$ int $>$ {\bfseries m\+Render\+Groups}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for every object in the scene that has a visual model. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a4e952dc4d555e736786b78a79e9f5ad4}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a4e952dc4d555e736786b78a79e9f5ad4}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!GeometryItem@{GeometryItem}}
+\index{GeometryItem@{GeometryItem}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{GeometryItem()}{GeometryItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} \&}]{mat,  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Constructor param mat Material to be used for rendering param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_abf5badf6ed7138295b6a2b635ff1cf53}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_abf5badf6ed7138295b6a2b635ff1cf53}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!GeometryItem@{GeometryItem}}
+\index{GeometryItem@{GeometryItem}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{GeometryItem()}{GeometryItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_adff9d0c0188f96abdbbec182ac1901d8}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_adff9d0c0188f96abdbbec182ac1901d8}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!AddRenderGroup@{AddRenderGroup}}
+\index{AddRenderGroup@{AddRenderGroup}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{AddRenderGroup()}{AddRenderGroup()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Add\+Render\+Group (\begin{DoxyParamCaption}\item[{int}]{group }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Adds this item to a render group. Cameras only render objects contained in the same render groups that they are. All objects start in the null render group. param group Identifier of the render group return bool true if the object was not already contained in the render group \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a1db8f97339ba49f746b3e0b4c4b02748}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a1db8f97339ba49f746b3e0b4c4b02748}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item}}$\ast$ Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract method. Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere_aaf5b7221c60ac1feefaacff14a20c1f3}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Sphere}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_ab151cd962c45bc06d21e9e26c2d1c4aa}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Cube}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_quad_ad3a6d04a38253d1f26735a87a53a5446}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Quad}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a13a2a225acb39c559601c2151b4322bf}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a13a2a225acb39c559601c2151b4322bf}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!Copy@{Copy}}
+\index{Copy@{Copy}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{Copy()}{Copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item}} into this object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a263a106b8c225c7e30f2788fb4a3e4bc}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a263a106b8c225c7e30f2788fb4a3e4bc}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!DrawItem@{DrawItem}}
+\index{DrawItem@{DrawItem}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{DrawItem()}{DrawItem()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Draw\+Item (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection,  }\item[{const Q\+Matrix4x4 \&}]{view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Draws the geometry using the material param projection Projection matrix provided by the camera param view View matrix, provided by the camera \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a31eb19087cd7b37904df64fa5d01b754}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a31eb19087cd7b37904df64fa5d01b754}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!GetArrayBuffer@{GetArrayBuffer}}
+\index{GetArrayBuffer@{GetArrayBuffer}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{GetArrayBuffer()}{GetArrayBuffer()}}
+{\footnotesize\ttfamily virtual Q\+Open\+G\+L\+Buffer$\ast$ Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Get\+Array\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets a pointer to the array buffer of the item return pointer to the array buffer of the item \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_af2d4cda419c8047f37643d88187da62f}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_af2d4cda419c8047f37643d88187da62f}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!GetIndexBuffer@{GetIndexBuffer}}
+\index{GetIndexBuffer@{GetIndexBuffer}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{GetIndexBuffer()}{GetIndexBuffer()}}
+{\footnotesize\ttfamily virtual Q\+Open\+G\+L\+Buffer$\ast$ Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Get\+Index\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets a pointer to the index buffer of the item return pointer to the index buffer of the item \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a3c9f379b23e9066340295056a6b4ca35}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a3c9f379b23e9066340295056a6b4ca35}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!GetIndexNumber@{GetIndexNumber}}
+\index{GetIndexNumber@{GetIndexNumber}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{GetIndexNumber()}{GetIndexNumber()}}
+{\footnotesize\ttfamily virtual unsigned int Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Get\+Index\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the number of indices of the model return number of indices of the model \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a2987613e4509c7748b72a76ccfe9babe}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a2987613e4509c7748b72a76ccfe9babe}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!GetMaterialPtr@{GetMaterialPtr}}
+\index{GetMaterialPtr@{GetMaterialPtr}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{GetMaterialPtr()}{GetMaterialPtr()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}}$\ast$ Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Get\+Material\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets a pointer to the item material return pointer to the item Material \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a573713d59a768141304466cce5ecf26e}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a573713d59a768141304466cce5ecf26e}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!GetRenderGroups@{GetRenderGroups}}
+\index{GetRenderGroups@{GetRenderGroups}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{GetRenderGroups()}{GetRenderGroups()}}
+{\footnotesize\ttfamily virtual const std\+::unordered\+\_\+set$<$int$>$\& Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Get\+Render\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the set of render groups this object is contained in return set of render groups this object is contained in \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ae9d76b83de2b2dec2b19c77fdf49f853}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ae9d76b83de2b2dec2b19c77fdf49f853}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!GetVertexNumber@{GetVertexNumber}}
+\index{GetVertexNumber@{GetVertexNumber}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{GetVertexNumber()}{GetVertexNumber()}}
+{\footnotesize\ttfamily virtual unsigned int Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Get\+Vertex\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the number of vertices of the model return number of vertices of the model \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a7fece5cb2992278b918286e3aeb9b561}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a7fece5cb2992278b918286e3aeb9b561}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!IsVisible@{IsVisible}}
+\index{IsVisible@{IsVisible}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{IsVisible()}{IsVisible()}}
+{\footnotesize\ttfamily virtual bool Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Is\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the visibility state for this item return the visibility state for this item \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a7c2f338d13cf238060c10da51ee6dd14}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a7c2f338d13cf238060c10da51ee6dd14}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!RemoveRenderGroup@{RemoveRenderGroup}}
+\index{RemoveRenderGroup@{RemoveRenderGroup}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{RemoveRenderGroup()}{RemoveRenderGroup()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Remove\+Render\+Group (\begin{DoxyParamCaption}\item[{int}]{group }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes this item from a render group. Cameras only render objects contained in the same render groups that they are. All objects start in the null render group. An object cannot be removed from the null render group, if an object is not contained in any render group it\textquotesingle{}s considered to be contained in the null render group. param group Identifier of the render group return bool true if the object was contained in the render group \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_addd7b6651de0583209ec45ff1a813dd1}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_addd7b6651de0583209ec45ff1a813dd1}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!SetMaterial@{SetMaterial}}
+\index{SetMaterial@{SetMaterial}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{SetMaterial()}{SetMaterial()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Set\+Material (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the material of the item param mat new material for the item \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ab2ed6e137c09bd08335452fa4bb7742a}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ab2ed6e137c09bd08335452fa4bb7742a}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!SetVisible@{SetVisible}}
+\index{SetVisible@{SetVisible}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{SetVisible()}{SetVisible()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Set\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets the visibility for this item param visible New visibility state \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_aa07c13861cf4aef269442071e4150389}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_aa07c13861cf4aef269442071e4150389}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!Update@{Update}}
+\index{Update@{Update}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Update (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection,  }\item[{const Q\+Matrix4x4 \&}]{view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Calls Draw\+Item
+
+param projection Projection matrix provided by the camera param view View matrix, provided by the camera 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aa6e82e5d95ae34d0addb991cd84aca6f}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/Geometry\+Item.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/Geometry\+Item.\+cpp\end{DoxyCompactItemize}

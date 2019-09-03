@@ -122,13 +122,13 @@ void GeometryEngine::GeometryMaterial::MultiTextureMaterial::setProgramParameter
 	}
 }
 
-void GeometryEngine::GeometryMaterial::MultiTextureMaterial::drawMaterial(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber)
+void GeometryEngine::GeometryMaterial::MultiTextureMaterial::drawMaterial(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber)
 {
 	assert(mpProgram != nullptr && "Multi Texture Material --> Shader Program Null");
 	if (mpProgram != nullptr)
 	{
 		// Tell OpenGL which VBOs to use
-		arrayBuf->bind();
+		vertexBuf->bind();
 		indexBuf->bind();
 
 		// Tell OpenGL programmable pipeline how to locate vertex position data

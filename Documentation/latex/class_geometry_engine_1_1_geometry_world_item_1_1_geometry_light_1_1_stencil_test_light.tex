@@ -1,0 +1,90 @@
+\hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light}{}\section{Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Light\+::Stencil\+Test\+Light Class Reference}
+\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light}\index{GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight@{GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight}}
+
+
+Deferred shading light that adds a stencil test to ensure that light defined in enclosed geometries doesn\textquotesingle{}t light amything else on the scene.  
+
+
+
+
+{\ttfamily \#include $<$Stencil\+Test\+Light.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Light\+::Stencil\+Test\+Light\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.146068cm]{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_af2846d81fd5ca495ad936e6ebafd4772}{Stencil\+Test\+Light}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$bounding\+Box=nullptr, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&pos=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), World\+Item $\ast$parent=nullptr)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_add9ad2daf1dd851b0a473ce3d63f11d3}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_add9ad2daf1dd851b0a473ce3d63f11d3}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_add9ad2daf1dd851b0a473ce3d63f11d3}{$\sim$\+Stencil\+Test\+Light}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_aa1d9d4bf4f47e6e55dbb1706a7e28697}{Calculate\+Stencil}} (const Q\+Matrix4x4 \&projection\+Matrix, const Q\+Matrix4x4 \&view\+Matrix) override
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_ab25dbb6bfdeba423fcacfbae68effcdb}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_ab25dbb6bfdeba423fcacfbae68effcdb}} 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_ab25dbb6bfdeba423fcacfbae68effcdb}{Get\+Stencil\+Test}} () override
+\begin{DoxyCompactList}\small\item\em Method used to check if the light performs a stencil test step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_a15f8732a28984856a59ab5d416920897}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_a15f8732a28984856a59ab5d416920897}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_a15f8732a28984856a59ab5d416920897}{init\+Stencil\+Shaders}} ()
+\begin{DoxyCompactList}\small\item\em Gets managers and initializes the stencil shaders. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_abf2cc5f924b94fd20dcfc36d4edad495}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_abf2cc5f924b94fd20dcfc36d4edad495}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_abf2cc5f924b94fd20dcfc36d4edad495}{init\+Stencil\+Program}} ()
+\begin{DoxyCompactList}\small\item\em Load stencil shaders. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_a619546f72b149132ea11a28796d307ff}{run\+Stencil\+Program}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Num, unsigned int total\+Index\+Num)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_af03b50a79e930d4377d09a039df44326}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_af03b50a79e930d4377d09a039df44326}} 
+std\+::string {\bfseries m\+Stencil\+Vertex\+Shader\+Key}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_a285152fe65ddc2649a886175d63d9163}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_a285152fe65ddc2649a886175d63d9163}} 
+std\+::string {\bfseries m\+Stencil\+Fragment\+Shader\+Key}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_a320b6418a7c0275039ba7604e95fd9f3}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_a320b6418a7c0275039ba7604e95fd9f3}} 
+Q\+Open\+G\+L\+Shader\+Program $\ast$ {\bfseries mp\+Stencil\+Program}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Deferred shading light that adds a stencil test to ensure that light defined in enclosed geometries doesn\textquotesingle{}t light amything else on the scene. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_af2846d81fd5ca495ad936e6ebafd4772}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_af2846d81fd5ca495ad936e6ebafd4772}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight@{GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight}!StencilTestLight@{StencilTestLight}}
+\index{StencilTestLight@{StencilTestLight}!GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight@{GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight}}
+\subsubsection{\texorpdfstring{StencilTestLight()}{StencilTestLight()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Stencil\+Test\+Light\+::\+Stencil\+Test\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{bounding\+Box = {\ttfamily nullptr},  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Constructor param bounding\+Box Geomtry used to render the light. \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} will be applied to every part of the scene that the geometry is drawn on top of. param diffuse Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 param ambient Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 param specular Specular component of the light. Each color goes from 0.\+0 to 1.\+0 param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_aa1d9d4bf4f47e6e55dbb1706a7e28697}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_aa1d9d4bf4f47e6e55dbb1706a7e28697}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight@{GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight}!CalculateStencil@{CalculateStencil}}
+\index{CalculateStencil@{CalculateStencil}!GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight@{GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight}}
+\subsubsection{\texorpdfstring{CalculateStencil()}{CalculateStencil()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Stencil\+Test\+Light\+::\+Calculate\+Stencil (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection\+Matrix,  }\item[{const Q\+Matrix4x4 \&}]{view\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Updates the stencil buffer which indicates where the light calculations will be applied param projection\+Matrix Camera projection matrix param view\+Matrix View matrix of the camera 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_ae50fab4782158671041ac986dfead7fc}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_a619546f72b149132ea11a28796d307ff}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_a619546f72b149132ea11a28796d307ff}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight@{GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight}!runStencilProgram@{runStencilProgram}}
+\index{runStencilProgram@{runStencilProgram}!GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight@{GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight}}
+\subsubsection{\texorpdfstring{runStencilProgram()}{runStencilProgram()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Stencil\+Test\+Light\+::run\+Stencil\+Program (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Num,  }\item[{unsigned int}]{total\+Index\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Binds stencil shaders, sends vertex data and renders the scene param index\+Buf Index\+Buffer param array\+Buf Array buffer param total\+Vertex\+Num Number of vetices param tital\+Index\+Num Number of indices 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/Stencil\+Test\+Light.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/Stencil\+Test\+Light.\+cpp\end{DoxyCompactItemize}

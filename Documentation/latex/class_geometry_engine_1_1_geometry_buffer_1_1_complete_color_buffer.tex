@@ -1,0 +1,77 @@
+\hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer}{}\section{Geometry\+Engine\+::Geometry\+Buffer\+::Complete\+Color\+Buffer Class Reference}
+\label{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer}\index{GeometryEngine::GeometryBuffer::CompleteColorBuffer@{GeometryEngine::GeometryBuffer::CompleteColorBuffer}}
+
+
+Specialization of \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} that only includes specific textures, in this case all color textures (diffuse, ambient, reflective, emmissive), normal, position and tmp.  
+
+
+
+
+{\ttfamily \#include $<$Complete\+Color\+Buffer.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Buffer\+::Complete\+Color\+Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a82f095f182124cf3044333cdb738a4c1}\label{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a82f095f182124cf3044333cdb738a4c1}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a82f095f182124cf3044333cdb738a4c1}{Complete\+Color\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_ad1b8c2aed3b0c6154836275c91964a5a}{Complete\+Color\+Buffer}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer}{Complete\+Color\+Buffer}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a1bcffff866586ba2f7088257917f617c}\label{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a1bcffff866586ba2f7088257917f617c}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a1bcffff866586ba2f7088257917f617c}{$\sim$\+Complete\+Color\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a56aee74c7523f0b16fd8b97c8c44f84f}{Clone}} () const override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a0630be352a9267083d42802fb22ae36b}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} \&ref) override
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Specialization of \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} that only includes specific textures, in this case all color textures (diffuse, ambient, reflective, emmissive), normal, position and tmp. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_ad1b8c2aed3b0c6154836275c91964a5a}\label{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_ad1b8c2aed3b0c6154836275c91964a5a}} 
+\index{GeometryEngine::GeometryBuffer::CompleteColorBuffer@{GeometryEngine::GeometryBuffer::CompleteColorBuffer}!CompleteColorBuffer@{CompleteColorBuffer}}
+\index{CompleteColorBuffer@{CompleteColorBuffer}!GeometryEngine::GeometryBuffer::CompleteColorBuffer@{GeometryEngine::GeometryBuffer::CompleteColorBuffer}}
+\subsubsection{\texorpdfstring{CompleteColorBuffer()}{CompleteColorBuffer()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Complete\+Color\+Buffer\+::\+Complete\+Color\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer}{Complete\+Color\+Buffer}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer}{Complete\+Color\+Buffer}} to be copied 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a56aee74c7523f0b16fd8b97c8c44f84f}\label{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a56aee74c7523f0b16fd8b97c8c44f84f}} 
+\index{GeometryEngine::GeometryBuffer::CompleteColorBuffer@{GeometryEngine::GeometryBuffer::CompleteColorBuffer}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryBuffer::CompleteColorBuffer@{GeometryEngine::GeometryBuffer::CompleteColorBuffer}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}}$\ast$ Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Complete\+Color\+Buffer\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_af993f8c23f7e78051f3071be4873af9d}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a0630be352a9267083d42802fb22ae36b}\label{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a0630be352a9267083d42802fb22ae36b}} 
+\index{GeometryEngine::GeometryBuffer::CompleteColorBuffer@{GeometryEngine::GeometryBuffer::CompleteColorBuffer}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryBuffer::CompleteColorBuffer@{GeometryEngine::GeometryBuffer::CompleteColorBuffer}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Complete\+Color\+Buffer\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} into this object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} to be copied 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9f20eb78703ef048d59a54f90ee09f25}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Gbuffers/Complete\+Color\+Buffer.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Gbuffers/Complete\+Color\+Buffer.\+cpp\end{DoxyCompactItemize}

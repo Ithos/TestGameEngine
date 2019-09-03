@@ -1,0 +1,49 @@
+\hypertarget{struct_geometry_engine_1_1_vertex_data}{}\section{Geometry\+Engine\+::Vertex\+Data Struct Reference}
+\label{struct_geometry_engine_1_1_vertex_data}\index{GeometryEngine::VertexData@{GeometryEngine::VertexData}}
+
+
+Struct that holds the vertex data to be passed to Open\+Gl and the memory offset for each varible.  
+
+
+
+
+{\ttfamily \#include $<$World\+Item.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_geometry_engine_1_1_vertex_data_ac7ccad23d01361ea3ae3311189e2318b}\label{struct_geometry_engine_1_1_vertex_data_ac7ccad23d01361ea3ae3311189e2318b}} 
+Q\+Vector3D {\bfseries position}
+\item 
+\mbox{\Hypertarget{struct_geometry_engine_1_1_vertex_data_a8151945091e751e05ab756f7969264c4}\label{struct_geometry_engine_1_1_vertex_data_a8151945091e751e05ab756f7969264c4}} 
+Q\+Vector3D {\bfseries color}
+\item 
+\mbox{\Hypertarget{struct_geometry_engine_1_1_vertex_data_a19913645695e877cbdf9a0865b39ace0}\label{struct_geometry_engine_1_1_vertex_data_a19913645695e877cbdf9a0865b39ace0}} 
+Q\+Vector2D {\bfseries tex\+Coord}
+\item 
+\mbox{\Hypertarget{struct_geometry_engine_1_1_vertex_data_a8487ac2c94913526c98b99d61b5e7c57}\label{struct_geometry_engine_1_1_vertex_data_a8487ac2c94913526c98b99d61b5e7c57}} 
+Q\+Vector3D {\bfseries normal}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_geometry_engine_1_1_vertex_data_ad3b4e1276bf54a0079daac5d269d0dc0}\label{struct_geometry_engine_1_1_vertex_data_ad3b4e1276bf54a0079daac5d269d0dc0}} 
+static const unsigned int {\bfseries P\+O\+S\+I\+T\+I\+O\+N\+\_\+\+O\+F\+F\+S\+ET} = 0
+\item 
+\mbox{\Hypertarget{struct_geometry_engine_1_1_vertex_data_a1de97b7fd1099d5d61b655262cb317d5}\label{struct_geometry_engine_1_1_vertex_data_a1de97b7fd1099d5d61b655262cb317d5}} 
+static const unsigned int {\bfseries C\+O\+L\+O\+R\+\_\+\+O\+F\+F\+S\+ET} = sizeof(Q\+Vector3D)
+\item 
+\mbox{\Hypertarget{struct_geometry_engine_1_1_vertex_data_a83b0e44fe7fc29c6ca38b0e734bba5ed}\label{struct_geometry_engine_1_1_vertex_data_a83b0e44fe7fc29c6ca38b0e734bba5ed}} 
+static const unsigned int {\bfseries T\+E\+X\+T\+U\+R\+E\+\_\+\+C\+O\+O\+R\+D\+I\+N\+A\+T\+E\+S\+\_\+\+O\+F\+F\+S\+ET} = sizeof(Q\+Vector3D) + sizeof(Q\+Vector3D)
+\item 
+\mbox{\Hypertarget{struct_geometry_engine_1_1_vertex_data_abf1cdc4fd3dc177c1323d861784b9723}\label{struct_geometry_engine_1_1_vertex_data_abf1cdc4fd3dc177c1323d861784b9723}} 
+static const unsigned int {\bfseries N\+O\+R\+M\+A\+L\+S\+\_\+\+O\+F\+F\+S\+ET} = sizeof(Q\+Vector3D) + sizeof(Q\+Vector3D) + sizeof(Q\+Vector2D)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Struct that holds the vertex data to be passed to Open\+Gl and the memory offset for each varible. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/World\+Item.\+h\end{DoxyCompactItemize}

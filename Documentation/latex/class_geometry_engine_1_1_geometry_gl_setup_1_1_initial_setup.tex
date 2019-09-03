@@ -1,0 +1,96 @@
+\hypertarget{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup}{}\section{Geometry\+Engine\+::Geometry\+Gl\+Setup\+::Initial\+Setup Class Reference}
+\label{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup}\index{GeometryEngine::GeometryGlSetup::InitialSetup@{GeometryEngine::GeometryGlSetup::InitialSetup}}
+
+
+Class that stablishes the initial state of the Open\+Gl pipeline.  
+
+
+
+
+{\ttfamily \#include $<$Initial\+Setup.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Gl\+Setup\+::Initial\+Setup\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a30668779828976e667e8899d519a5fae}\label{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a30668779828976e667e8899d519a5fae}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a30668779828976e667e8899d519a5fae}{Initial\+Setup}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_ad6ddb23c7317917d38d9f2510394ee11}{Initial\+Setup}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup}{Initial\+Setup}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a2a617bbc27b701bfb720b69b9e27a531}\label{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a2a617bbc27b701bfb720b69b9e27a531}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a2a617bbc27b701bfb720b69b9e27a531}{$\sim$\+Initial\+Setup}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a304b9d9172d688a340175dfabb10e8e7}\label{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a304b9d9172d688a340175dfabb10e8e7}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a304b9d9172d688a340175dfabb10e8e7}{Start\+Setup}} () override
+\begin{DoxyCompactList}\small\item\em Initialize the Open\+Gl pipeline. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a4ba4e34bcc09a800ab98dbe3181f1263}\label{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a4ba4e34bcc09a800ab98dbe3181f1263}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a4ba4e34bcc09a800ab98dbe3181f1263}{Finish\+Setup}} () override
+\begin{DoxyCompactList}\small\item\em Return the Open\+Gl pipeline to its initial state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a403192af4493ada23671bf1d95f2da89}{Set\+Color}} (const Q\+Vector4D \&color) override
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup}{Gl\+Setup}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_ade45cd909edd6ff3cae7323d5e1c53d0}{Clone}} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a2140bf33e9792369fc60853c58fdc789}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup}{Initial\+Setup}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a57a43dd347299730694682cc4d747109}\label{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a57a43dd347299730694682cc4d747109}} 
+Q\+Vector4D {\bfseries m\+Clear\+Color}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that stablishes the initial state of the Open\+Gl pipeline. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_ad6ddb23c7317917d38d9f2510394ee11}\label{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_ad6ddb23c7317917d38d9f2510394ee11}} 
+\index{GeometryEngine::GeometryGlSetup::InitialSetup@{GeometryEngine::GeometryGlSetup::InitialSetup}!InitialSetup@{InitialSetup}}
+\index{InitialSetup@{InitialSetup}!GeometryEngine::GeometryGlSetup::InitialSetup@{GeometryEngine::GeometryGlSetup::InitialSetup}}
+\subsubsection{\texorpdfstring{InitialSetup()}{InitialSetup()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Gl\+Setup\+::\+Initial\+Setup\+::\+Initial\+Setup (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup}{Initial\+Setup}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy Constructor param ref Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup}{Initial\+Setup}} to be copied 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_ade45cd909edd6ff3cae7323d5e1c53d0}\label{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_ade45cd909edd6ff3cae7323d5e1c53d0}} 
+\index{GeometryEngine::GeometryGlSetup::InitialSetup@{GeometryEngine::GeometryGlSetup::InitialSetup}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryGlSetup::InitialSetup@{GeometryEngine::GeometryGlSetup::InitialSetup}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup}{Gl\+Setup}}$\ast$ Geometry\+Engine\+::\+Geometry\+Gl\+Setup\+::\+Initial\+Setup\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup_adf97b18fd8af32c63a189983ab35d5ae}{Geometry\+Engine\+::\+Geometry\+Gl\+Setup\+::\+Gl\+Setup}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a2140bf33e9792369fc60853c58fdc789}\label{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a2140bf33e9792369fc60853c58fdc789}} 
+\index{GeometryEngine::GeometryGlSetup::InitialSetup@{GeometryEngine::GeometryGlSetup::InitialSetup}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryGlSetup::InitialSetup@{GeometryEngine::GeometryGlSetup::InitialSetup}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Gl\+Setup\+::\+Initial\+Setup\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup}{Initial\+Setup}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of an \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup}{Initial\+Setup}} to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup}{Initial\+Setup}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a403192af4493ada23671bf1d95f2da89}\label{class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup_a403192af4493ada23671bf1d95f2da89}} 
+\index{GeometryEngine::GeometryGlSetup::InitialSetup@{GeometryEngine::GeometryGlSetup::InitialSetup}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!GeometryEngine::GeometryGlSetup::InitialSetup@{GeometryEngine::GeometryGlSetup::InitialSetup}}
+\subsubsection{\texorpdfstring{SetColor()}{SetColor()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Gl\+Setup\+::\+Initial\+Setup\+::\+Set\+Color (\begin{DoxyParamCaption}\item[{const Q\+Vector4D \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the Open\+Gl clear color the will be used param color Qvector4D color+alpha in the form of a 4D vector 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup_acd5b3b2525d11f103f1d3cf298d4af94}{Geometry\+Engine\+::\+Geometry\+Gl\+Setup\+::\+Gl\+Setup}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Gl\+Setups/Initial\+Setup.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Gl\+Setups/Initial\+Setup.\+cpp\end{DoxyCompactItemize}

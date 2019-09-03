@@ -1,0 +1,75 @@
+\hypertarget{class_application_1_1_c_window_application}{}\section{Application\+::C\+Window\+Application Class Reference}
+\label{class_application_1_1_c_window_application}\index{Application::CWindowApplication@{Application::CWindowApplication}}
+Inheritance diagram for Application\+::C\+Window\+Application\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_application_1_1_c_window_application}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_application_1_1_c_window_application_a775481d2b9afc278497148dae98ba44c}\label{class_application_1_1_c_window_application_a775481d2b9afc278497148dae98ba44c}} 
+{\bfseries C\+Window\+Application} (Q\+Widget $\ast$parent=0)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_application_1_1_c_window_application_aef3f8b560cf3193a189c144835f2d587}{mouse\+Press\+Event}} (Q\+Mouse\+Event $\ast$e) override
+\item 
+void \mbox{\hyperlink{class_application_1_1_c_window_application_a83bbf972b387045d653452d7d141b9d6}{mouse\+Release\+Event}} (Q\+Mouse\+Event $\ast$e) override
+\item 
+void \mbox{\hyperlink{class_application_1_1_c_window_application_af1af209c30d9f7b591da4aedcd4a03df}{key\+Press\+Event}} (Q\+Key\+Event $\ast$e) override
+\item 
+void \mbox{\hyperlink{class_application_1_1_c_window_application_accb1924fd48cf14b2fe467f65766b52e}{key\+Release\+Event}} (Q\+Key\+Event $\ast$e) override
+\item 
+void \mbox{\hyperlink{class_application_1_1_c_window_application_ab591f7f6a68b752a4df2ecffebf22c04}{timer\+Event}} (Q\+Timer\+Event $\ast$e) override
+\item 
+\mbox{\Hypertarget{class_application_1_1_c_window_application_ab6f0e2b97311923b75018f95fdb9f530}\label{class_application_1_1_c_window_application_ab6f0e2b97311923b75018f95fdb9f530}} 
+void {\bfseries initialize\+GL} () override
+\item 
+\mbox{\Hypertarget{class_application_1_1_c_window_application_a800ed87ab31e543abb36254ea89e873e}\label{class_application_1_1_c_window_application_a800ed87ab31e543abb36254ea89e873e}} 
+void {\bfseries resize\+GL} (int w, int h) override
+\item 
+\mbox{\Hypertarget{class_application_1_1_c_window_application_a988cd6144cfeec0b0dd2513c56d4b226}\label{class_application_1_1_c_window_application_a988cd6144cfeec0b0dd2513c56d4b226}} 
+void {\bfseries paint\+GL} () override
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_application_1_1_c_window_application_af1af209c30d9f7b591da4aedcd4a03df}\label{class_application_1_1_c_window_application_af1af209c30d9f7b591da4aedcd4a03df}} 
+\index{Application::CWindowApplication@{Application::CWindowApplication}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!Application::CWindowApplication@{Application::CWindowApplication}}
+\subsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily void Application\+::\+C\+Window\+Application\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{Q\+Key\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+T\+O\+DO -- get key pressed and sent it to an input manager -- /// \mbox{\Hypertarget{class_application_1_1_c_window_application_accb1924fd48cf14b2fe467f65766b52e}\label{class_application_1_1_c_window_application_accb1924fd48cf14b2fe467f65766b52e}} 
+\index{Application::CWindowApplication@{Application::CWindowApplication}!keyReleaseEvent@{keyReleaseEvent}}
+\index{keyReleaseEvent@{keyReleaseEvent}!Application::CWindowApplication@{Application::CWindowApplication}}
+\subsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
+{\footnotesize\ttfamily void Application\+::\+C\+Window\+Application\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{Q\+Key\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+T\+O\+DO -- get key released and sent it to an input manager -- /// \mbox{\Hypertarget{class_application_1_1_c_window_application_aef3f8b560cf3193a189c144835f2d587}\label{class_application_1_1_c_window_application_aef3f8b560cf3193a189c144835f2d587}} 
+\index{Application::CWindowApplication@{Application::CWindowApplication}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!Application::CWindowApplication@{Application::CWindowApplication}}
+\subsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void Application\+::\+C\+Window\+Application\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+T\+O\+DO -- get the mouse pressed position and send it to an input manager -- /// \mbox{\Hypertarget{class_application_1_1_c_window_application_a83bbf972b387045d653452d7d141b9d6}\label{class_application_1_1_c_window_application_a83bbf972b387045d653452d7d141b9d6}} 
+\index{Application::CWindowApplication@{Application::CWindowApplication}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!Application::CWindowApplication@{Application::CWindowApplication}}
+\subsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void Application\+::\+C\+Window\+Application\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{Q\+Mouse\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+T\+O\+DO -- get the mouse released position and send it to an input manager -- /// \mbox{\Hypertarget{class_application_1_1_c_window_application_ab591f7f6a68b752a4df2ecffebf22c04}\label{class_application_1_1_c_window_application_ab591f7f6a68b752a4df2ecffebf22c04}} 
+\index{Application::CWindowApplication@{Application::CWindowApplication}!timerEvent@{timerEvent}}
+\index{timerEvent@{timerEvent}!Application::CWindowApplication@{Application::CWindowApplication}}
+\subsubsection{\texorpdfstring{timerEvent()}{timerEvent()}}
+{\footnotesize\ttfamily void Application\+::\+C\+Window\+Application\+::timer\+Event (\begin{DoxyParamCaption}\item[{Q\+Timer\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+T\+O\+DO -- send tick -- /// 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Test\+Game\+Engine/Window\+Application.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Test\+Game\+Engine/Window\+Application.\+cpp\end{DoxyCompactItemize}

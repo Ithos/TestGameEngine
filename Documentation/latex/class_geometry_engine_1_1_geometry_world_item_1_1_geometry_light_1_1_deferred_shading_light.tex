@@ -1,0 +1,87 @@
+\hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light}{}\section{Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Light\+::Deferred\+Shading\+Light Class Reference}
+\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light}\index{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight}}
+
+
+Class for lights that are applied to a defined geometry on a separate rendering step.  
+
+
+
+
+{\ttfamily \#include $<$Deferred\+Shading\+Light.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Light\+::Deferred\+Shading\+Light\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.573034cm]{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_ac5d6155ce4539820a6e93a733a67fb3f}{Deferred\+Shading\+Light}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$bounding\+Box=nullptr, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&pos=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), World\+Item $\ast$parent=nullptr)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_ae192a09794050997ecdd669bbd2888ba}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_ae192a09794050997ecdd669bbd2888ba}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_ae192a09794050997ecdd669bbd2888ba}{$\sim$\+Deferred\+Shading\+Light}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_a2071d92505a56dfb846b87c2aca9b94b}{Light\+From\+Boundign\+Geometry}} (const Q\+Matrix4x4 \&projection\+Matrix, const Q\+Matrix4x4 \&view\+Matrix, const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info, const Q\+Vector3D \&view\+Pos) override
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_a742416954d3b05484799e4c1235567b1}{Get\+Bounding\+Geometry}} () override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_afeb4ce0c059042c837cc853701811be9}{Scale\+Bounding\+Box}} (const Q\+Vector3D \&attenuation)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_a2cdd3044d2eb7ea056031b2a54070976}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_a2cdd3044d2eb7ea056031b2a54070976}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$ {\bfseries mp\+Bounding\+Box}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for lights that are applied to a defined geometry on a separate rendering step. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_ac5d6155ce4539820a6e93a733a67fb3f}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_ac5d6155ce4539820a6e93a733a67fb3f}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight}!DeferredShadingLight@{DeferredShadingLight}}
+\index{DeferredShadingLight@{DeferredShadingLight}!GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight}}
+\subsubsection{\texorpdfstring{DeferredShadingLight()}{DeferredShadingLight()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Deferred\+Shading\+Light\+::\+Deferred\+Shading\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{bounding\+Box = {\ttfamily nullptr},  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Constructor param bounding\+Box Geomtry used to render the light. \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} will be applied to every part of the scene that the geometry is drawn on top of. param diffuse Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 param ambient Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 param specular Specular component of the light. Each color goes from 0.\+0 to 1.\+0 param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_a742416954d3b05484799e4c1235567b1}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_a742416954d3b05484799e4c1235567b1}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight}!GetBoundingGeometry@{GetBoundingGeometry}}
+\index{GetBoundingGeometry@{GetBoundingGeometry}!GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight}}
+\subsubsection{\texorpdfstring{GetBoundingGeometry()}{GetBoundingGeometry()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}}$\ast$ const Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Deferred\+Shading\+Light\+::\+Get\+Bounding\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets a pointer to the light bounding geometry return pointer to the light bounding geometry 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a53cc9a8e7ab6eab9d34f1655ef33eaef}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_a2071d92505a56dfb846b87c2aca9b94b}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_a2071d92505a56dfb846b87c2aca9b94b}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight}!LightFromBoundignGeometry@{LightFromBoundignGeometry}}
+\index{LightFromBoundignGeometry@{LightFromBoundignGeometry}!GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight}}
+\subsubsection{\texorpdfstring{LightFromBoundignGeometry()}{LightFromBoundignGeometry()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Deferred\+Shading\+Light\+::\+Light\+From\+Boundign\+Geometry (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection\+Matrix,  }\item[{const Q\+Matrix4x4 \&}]{view\+Matrix,  }\item[{const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info,  }\item[{const Q\+Vector3D \&}]{view\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Renders the light param projection\+Matrix Camera projection matrix param view\+Matrix Camera view matrix param g\+Buff\+Info Textures from the geometry buffer of the camera param view\+Pos Position of the camera 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a4dfee4fc27c75493f992a84c2ea3ff95}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_afeb4ce0c059042c837cc853701811be9}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_afeb4ce0c059042c837cc853701811be9}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight}!ScaleBoundingBox@{ScaleBoundingBox}}
+\index{ScaleBoundingBox@{ScaleBoundingBox}!GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight}}
+\subsubsection{\texorpdfstring{ScaleBoundingBox()}{ScaleBoundingBox()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Deferred\+Shading\+Light\+::\+Scale\+Bounding\+Box (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{attenuation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Scales the bounding box of the light following the light attenuation function. param light attenuation polynomial 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/Deferred\+Shading\+Light.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/Deferred\+Shading\+Light.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,256 @@
+\hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{}\section{Geometry\+Engine\+::Geometry\+Buffer\+::G\+Buffer Class Reference}
+\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+
+
+Class that manages the geometric buffer.  
+
+
+
+
+{\ttfamily \#include $<$G\+Buffer.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Buffer\+::G\+Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.393035cm]{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}} 
+enum \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} \{ \newline
+{\bfseries G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+I\+F\+F\+U\+SE}, 
+{\bfseries G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+M\+B\+I\+E\+NT}, 
+{\bfseries G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+R\+E\+F\+L\+E\+C\+T\+I\+VE}, 
+{\bfseries G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+M\+M\+I\+S\+S\+I\+VE}, 
+\newline
+{\bfseries G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+P\+O\+S\+I\+T\+I\+ON}, 
+{\bfseries G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+N\+O\+R\+M\+AL}, 
+{\bfseries G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+E\+X\+C\+O\+O\+RD}, 
+{\bfseries G\+B\+U\+F\+F\+E\+R\+\_\+\+N\+U\+M\+\_\+\+T\+E\+X\+T\+U\+R\+ES}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum used to locate every texture used to store different information in the geometry buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a183f95dfe1f25ca8be80c7cb81d3f068}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a183f95dfe1f25ca8be80c7cb81d3f068}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a183f95dfe1f25ca8be80c7cb81d3f068}{G\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9b44aaba6f5e1ef02cdc8ab821d560bb}{G\+Buffer}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ae08b52fa3acd40b81a7de73ec8dcd03a}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ae08b52fa3acd40b81a7de73ec8dcd03a}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ae08b52fa3acd40b81a7de73ec8dcd03a}{$\sim$\+G\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Clears framebuffers and textures. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad4d5684575aa5819a91097a1b6a0e8df}{Init}} (unsigned int Max\+Window\+Width, unsigned int Max\+Window\+Height)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a487fb4fb346b34e5fa4a994e97211bab}{Resize}} (unsigned int Window\+Width, unsigned int Window\+Height)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_adda275d5380f81e48c41114b52eaaa5f}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_adda275d5380f81e48c41114b52eaaa5f}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_adda275d5380f81e48c41114b52eaaa5f}{Start\+Frame}} ()
+\begin{DoxyCompactList}\small\item\em Clears textures color. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ae64ee0860824a077b2fab97440a0bb9e}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ae64ee0860824a077b2fab97440a0bb9e}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ae64ee0860824a077b2fab97440a0bb9e}{Bind\+For\+Geom\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Binds framebuffers and draw buffers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad95cdd645bd506eac9b2dfb1dee3fa7e}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad95cdd645bd506eac9b2dfb1dee3fa7e}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad95cdd645bd506eac9b2dfb1dee3fa7e}{Bind\+For\+Stencil\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Disables draw buffers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ac5949998af55b92bdb753e055c49f26d}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ac5949998af55b92bdb753e055c49f26d}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ac5949998af55b92bdb753e055c49f26d}{Bind\+For\+Light\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Binds the final texture for writing and all others for reading. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ae35be249f45427e6425dfdaf2c67e61c}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ae35be249f45427e6425dfdaf2c67e61c}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ae35be249f45427e6425dfdaf2c67e61c}{Bind\+For\+Final\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Binds final texture and the framebuffer for reading and the window for writing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ac11c8a78abc4221466afd2d73f40b97b}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ac11c8a78abc4221466afd2d73f40b97b}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ac11c8a78abc4221466afd2d73f40b97b}{Bind\+For\+Post\+Process}} ()
+\begin{DoxyCompactList}\small\item\em Binds final texture for reading and tmp\+Texture for writing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ae91d4ef60d2adacc2ccc8c49310610ae}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ae91d4ef60d2adacc2ccc8c49310610ae}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ae91d4ef60d2adacc2ccc8c49310610ae}{Bind\+For\+Finish\+Post\+Process}} ()
+\begin{DoxyCompactList}\small\item\em Binds tmp\+Texture texture for reading and final for writing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9bcec235e3592cec2c51563b3e8984c4}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9bcec235e3592cec2c51563b3e8984c4}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9bcec235e3592cec2c51563b3e8984c4}{Bind\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Binds all textures. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad64fb7191a7dc256b1282a7f1deab756}{Bind\+Final\+Texture}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} location)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a710627a05fa69f6aa98ee6d90ab57e85}{Bind\+Final\+Texture}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} location, \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&buffer\+Info)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a1ef28cc887dbd56d20ae4df0617b8eb1}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a1ef28cc887dbd56d20ae4df0617b8eb1}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a1ef28cc887dbd56d20ae4df0617b8eb1}{Reset\+Bindings}} ()
+\begin{DoxyCompactList}\small\item\em Unbind all texture locations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a2c24808c13f616bcc3ca6ed321277e95}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a2c24808c13f616bcc3ca6ed321277e95}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a2c24808c13f616bcc3ca6ed321277e95}{Unbind\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Unbind all buffer textures. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a954286e665d76dc77f352923a3c0b191}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a954286e665d76dc77f352923a3c0b191}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a954286e665d76dc77f352923a3c0b191}{Unbind\+Final\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Unbinds the final texture from its location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6a2469afe0c79b97d35ba5d2b6a1ae52}{Bind\+Texture}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} tex)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a15ffb63e72295abb6a10b2481fb878e4}{Unbind\+Texture}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} tex)
+\item 
+const Q\+Vector2D \& \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a2b829115597fc587cd6f4ddb52b875cc}{Get\+Texture\+Size}} () const
+\item 
+const Q\+Vector2D \& \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a47bda4849000d2728538de4e2f27f11a}{Get\+Max\+Texture\+Size}} () const
+\item 
+unsigned int \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a2ea57f74fe7c40ea19d120ee271daeca}{Get\+Texture}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} texture) const
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a66ccde86e455532b2eac771163570f04}{Is\+Texture\+Active}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} texture) const
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_af993f8c23f7e78051f3071be4873af9d}{Clone}} () const
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad1242e69d277b69b58497f7d489e176c}{Fill\+G\+Buffer\+Info}} (\mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&buffer\+Info)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6194e72290d3fe4eafa565f57befabb2}{generate\+Texture}} (unsigned int array\+Index, unsigned int max\+Window\+Width, unsigned int max\+Window\+Height)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_aac01b2527d2b501e1f923ae6558469e5}{generate\+Null\+Texture}} (unsigned int array\+Index)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9f20eb78703ef048d59a54f90ee09f25}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_afa5700526d827e83d0b6915c40cdbde8}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_afa5700526d827e83d0b6915c40cdbde8}} 
+unsigned int {\bfseries m\+Fbo}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a485e15e91bc847fcf66d79be6dfbdc99}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a485e15e91bc847fcf66d79be6dfbdc99}} 
+unsigned int {\bfseries m\+Textures} \mbox{[}G\+B\+U\+F\+F\+E\+R\+\_\+\+N\+U\+M\+\_\+\+T\+E\+X\+T\+U\+R\+ES\mbox{]}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a7923c84d57522ea62a748db16ceafff6}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a7923c84d57522ea62a748db16ceafff6}} 
+unsigned int {\bfseries m\+Depth\+Texture}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad5d3493f8b8c0e2044b1cfc0484c3c3c}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad5d3493f8b8c0e2044b1cfc0484c3c3c}} 
+unsigned int {\bfseries m\+Final\+Texture}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6fc8627c8538eb232c21f0f23e0375d1}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6fc8627c8538eb232c21f0f23e0375d1}} 
+unsigned int {\bfseries m\+Final\+Texture\+Location}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a14ab02ce110b16e44ade0d2cec0a1bfe}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a14ab02ce110b16e44ade0d2cec0a1bfe}} 
+Q\+Vector2D {\bfseries m\+Texture\+Size}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a5dab69ea8f4510c241ccda6817b4af32}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a5dab69ea8f4510c241ccda6817b4af32}} 
+Q\+Vector2D {\bfseries m\+Max\+Texture\+Size}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad9b17162f29ea4d0600d665bd3f7f0e3}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad9b17162f29ea4d0600d665bd3f7f0e3}} 
+std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} $>$ {\bfseries m\+Active\+Textures}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that manages the geometric buffer. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9b44aaba6f5e1ef02cdc8ab821d560bb}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9b44aaba6f5e1ef02cdc8ab821d560bb}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!GBuffer@{GBuffer}}
+\index{GBuffer@{GBuffer}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{GBuffer()}{GBuffer()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+G\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} to be copied 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad64fb7191a7dc256b1282a7f1deab756}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad64fb7191a7dc256b1282a7f1deab756}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!BindFinalTexture@{BindFinalTexture}}
+\index{BindFinalTexture@{BindFinalTexture}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{BindFinalTexture()}{BindFinalTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Bind\+Final\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}}}]{location }\end{DoxyParamCaption})}
+
+Binds the final texture to the selected texture location param texture location to be bound \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a710627a05fa69f6aa98ee6d90ab57e85}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a710627a05fa69f6aa98ee6d90ab57e85}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!BindFinalTexture@{BindFinalTexture}}
+\index{BindFinalTexture@{BindFinalTexture}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{BindFinalTexture()}{BindFinalTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Bind\+Final\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}}}]{location,  }\item[{\mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{buffer\+Info }\end{DoxyParamCaption})}
+
+Binds the final texture to the selected texture location and updates buffer\+Info final texture param texture location to be bound param \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} reference to be updated \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6a2469afe0c79b97d35ba5d2b6a1ae52}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6a2469afe0c79b97d35ba5d2b6a1ae52}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!BindTexture@{BindTexture}}
+\index{BindTexture@{BindTexture}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{BindTexture()}{BindTexture()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Bind\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}}}]{tex }\end{DoxyParamCaption})}
+
+Binds selected texture to its location param tex texture to bind \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_af993f8c23f7e78051f3071be4873af9d}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_af993f8c23f7e78051f3071be4873af9d}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}}$\ast$ Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_a8a484d5196bba7b92f31e500229743bc}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Complete\+Color\+Post\+Process\+Buffer}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a56aee74c7523f0b16fd8b97c8c44f84f}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Complete\+Color\+Buffer}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_add00c2857f9d425600ef83d50a9c8019}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Single\+Color\+Text\+Buffer}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9f20eb78703ef048d59a54f90ee09f25}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9f20eb78703ef048d59a54f90ee09f25}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies a data \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} to be copied 
+
+Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer_ac7d1a90658b1a2f59674b76685e8b052}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Complete\+Color\+Post\+Process\+Buffer}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer_a0630be352a9267083d42802fb22ae36b}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Complete\+Color\+Buffer}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer_a6e266272638dd67cec7b6d57f172eae2}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Single\+Color\+Text\+Buffer}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad1242e69d277b69b58497f7d489e176c}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad1242e69d277b69b58497f7d489e176c}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!FillGBufferInfo@{FillGBufferInfo}}
+\index{FillGBufferInfo@{FillGBufferInfo}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{FillGBufferInfo()}{FillGBufferInfo()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Fill\+G\+Buffer\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{buffer\+Info }\end{DoxyParamCaption})}
+
+Sets the data of a \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} param buffer\+Info \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} to be updated \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_aac01b2527d2b501e1f923ae6558469e5}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_aac01b2527d2b501e1f923ae6558469e5}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!generateNullTexture@{generateNullTexture}}
+\index{generateNullTexture@{generateNullTexture}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{generateNullTexture()}{generateNullTexture()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::generate\+Null\+Texture (\begin{DoxyParamCaption}\item[{unsigned int}]{array\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Creates a null texture and adds it to the framebuffer. This is done so shaders do not fail when a texture is not present param array\+Index Position of the texture in the array \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6194e72290d3fe4eafa565f57befabb2}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6194e72290d3fe4eafa565f57befabb2}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!generateTexture@{generateTexture}}
+\index{generateTexture@{generateTexture}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{generateTexture()}{generateTexture()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::generate\+Texture (\begin{DoxyParamCaption}\item[{unsigned int}]{array\+Index,  }\item[{unsigned int}]{max\+Window\+Width,  }\item[{unsigned int}]{max\+Window\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Creates a texture and adds it to the framebuffer param array\+Index Position of the texture in the array param Max\+Window\+Width Max texture width param Max\+Window\+Height Max texture height \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a47bda4849000d2728538de4e2f27f11a}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a47bda4849000d2728538de4e2f27f11a}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!GetMaxTextureSize@{GetMaxTextureSize}}
+\index{GetMaxTextureSize@{GetMaxTextureSize}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{GetMaxTextureSize()}{GetMaxTextureSize()}}
+{\footnotesize\ttfamily const Q\+Vector2D\& Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Get\+Max\+Texture\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the max texture size return Max texture siza \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a2ea57f74fe7c40ea19d120ee271daeca}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a2ea57f74fe7c40ea19d120ee271daeca}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!GetTexture@{GetTexture}}
+\index{GetTexture@{GetTexture}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{GetTexture()}{GetTexture()}}
+{\footnotesize\ttfamily unsigned int Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Get\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}}}]{texture }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the Open\+Gl id of a texture param texture Texture enum element return Open\+Gl id of the texture \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a2b829115597fc587cd6f4ddb52b875cc}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a2b829115597fc587cd6f4ddb52b875cc}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!GetTextureSize@{GetTextureSize}}
+\index{GetTextureSize@{GetTextureSize}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{GetTextureSize()}{GetTextureSize()}}
+{\footnotesize\ttfamily const Q\+Vector2D\& Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Get\+Texture\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets current texture size return Current texture size \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad4d5684575aa5819a91097a1b6a0e8df}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad4d5684575aa5819a91097a1b6a0e8df}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!Init@{Init}}
+\index{Init@{Init}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Init (\begin{DoxyParamCaption}\item[{unsigned int}]{Max\+Window\+Width,  }\item[{unsigned int}]{Max\+Window\+Height }\end{DoxyParamCaption})}
+
+Creates framebuffers and textures param Max\+Window\+Width Max texture width param Max\+Window\+Height Max texture height return true if ok false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a66ccde86e455532b2eac771163570f04}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a66ccde86e455532b2eac771163570f04}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!IsTextureActive@{IsTextureActive}}
+\index{IsTextureActive@{IsTextureActive}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{IsTextureActive()}{IsTextureActive()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Is\+Texture\+Active (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}}}]{texture }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if the texture is active param texture Texture to check return true if active false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a487fb4fb346b34e5fa4a994e97211bab}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a487fb4fb346b34e5fa4a994e97211bab}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!Resize@{Resize}}
+\index{Resize@{Resize}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{Resize()}{Resize()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Resize (\begin{DoxyParamCaption}\item[{unsigned int}]{Window\+Width,  }\item[{unsigned int}]{Window\+Height }\end{DoxyParamCaption})}
+
+Resizes textures param Window\+Width New texture width param Window\+Height New texture height return true if ok false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a15ffb63e72295abb6a10b2481fb878e4}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a15ffb63e72295abb6a10b2481fb878e4}} 
+\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!UnbindTexture@{UnbindTexture}}
+\index{UnbindTexture@{UnbindTexture}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
+\subsubsection{\texorpdfstring{UnbindTexture()}{UnbindTexture()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Unbind\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}}}]{tex }\end{DoxyParamCaption})}
+
+Unbinds texture param tex texture to unbind 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/G\+Buffer.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/G\+Buffer.\+cpp\end{DoxyCompactItemize}

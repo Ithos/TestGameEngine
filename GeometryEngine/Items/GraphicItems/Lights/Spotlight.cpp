@@ -58,10 +58,10 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::setProgramPara
 	}
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::calculateContribution(QOpenGLBuffer * arrayBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
+void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::calculateContribution(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	// Tell OpenGL which VBOs to use
-	arrayBuf->bind();
+	vertexBuf->bind();
 	indexBuf->bind();
 
 	// Tell OpenGL programmable pipeline how to locate vertex position data

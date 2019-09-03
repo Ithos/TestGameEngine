@@ -32,7 +32,7 @@ GeometryEngine::GeometryWorldItem::GeometryLight::Light::~Light()
 	}
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::Light::CalculateLighting(QOpenGLBuffer* arrayBuf, QOpenGLBuffer* indexBuf, const LightingTransformationData& transformData,
+void GeometryEngine::GeometryWorldItem::GeometryLight::Light::CalculateLighting(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const LightingTransformationData& transformData,
 	const GBufferTextureInfo& gBuffTexInfo, const QVector3D& viewPos, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	if (mpProgram != nullptr)
@@ -51,7 +51,7 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::Light::CalculateLighting(
 
 		setProgramParameters(transformData, gBuffTexInfo, viewPos);
 
-		calculateContribution(arrayBuf, indexBuf, totalVertexNum, totalIndexNum);
+		calculateContribution(vertexBuf, indexBuf, totalVertexNum, totalIndexNum);
 	}
 }
 

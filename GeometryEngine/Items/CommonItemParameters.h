@@ -7,6 +7,7 @@
 
 namespace GeometryEngine
 {
+	/// Class that holds inofrmation about the light to be passed to the shader
 	struct LightingTransformationData
 	{
 		const QMatrix4x4& ProjectionMatrix;
@@ -20,6 +21,7 @@ namespace GeometryEngine
 		QMatrix3x3 GetNormalMatrix() const { return (ViewMatrix * ModelMatrix).normalMatrix(); }
 	};
 
+	/// Class that holds information about the geometric buffer textures to be passed to the shader
 	struct GBufferTextureInfo
 	{
 		unsigned int AmbientTexture;

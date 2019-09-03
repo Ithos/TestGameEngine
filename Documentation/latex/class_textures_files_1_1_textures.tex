@@ -1,0 +1,56 @@
+\hypertarget{class_textures_files_1_1_textures}{}\section{Textures\+Files\+::Textures Class Reference}
+\label{class_textures_files_1_1_textures}\index{TexturesFiles::Textures@{TexturesFiles::Textures}}
+
+
+Singleton that manages texture files and texture configuration files.  
+
+
+
+
+{\ttfamily \#include $<$Textures.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{class_textures_files_1_1_textures_ae484783c9a26a493e649cc5ccff166de}{Get\+Texture\+Dir}} (const std\+::string \&key)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_textures_files_1_1_textures}{Textures}} $\ast$ \mbox{\hyperlink{class_textures_files_1_1_textures_a32625c0cb26cc63df0b62b2be30994fd}{Get\+Active\+Instance}} ()
+\item 
+static \mbox{\hyperlink{class_textures_files_1_1_textures}{Textures}} $\ast$ \mbox{\hyperlink{class_textures_files_1_1_textures_a76d7462b113235e27422e143bde5e527}{Init\+Instance}} (const std\+::string \&tex\+Folder, const std\+::string \&tex\+Conf\+File)
+\item 
+\mbox{\Hypertarget{class_textures_files_1_1_textures_ae8f1f1437f738c403764c12e36b694df}\label{class_textures_files_1_1_textures_ae8f1f1437f738c403764c12e36b694df}} 
+static void \mbox{\hyperlink{class_textures_files_1_1_textures_ae8f1f1437f738c403764c12e36b694df}{Destroy\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the singleton instance if it has been initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Singleton that manages texture files and texture configuration files. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_textures_files_1_1_textures_a32625c0cb26cc63df0b62b2be30994fd}\label{class_textures_files_1_1_textures_a32625c0cb26cc63df0b62b2be30994fd}} 
+\index{TexturesFiles::Textures@{TexturesFiles::Textures}!GetActiveInstance@{GetActiveInstance}}
+\index{GetActiveInstance@{GetActiveInstance}!TexturesFiles::Textures@{TexturesFiles::Textures}}
+\subsubsection{\texorpdfstring{GetActiveInstance()}{GetActiveInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_textures_files_1_1_textures}{Textures}}$\ast$ Textures\+Files\+::\+Textures\+::\+Get\+Active\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns the singleton instance if null the singleton has not been initialized return singleton instance \mbox{\Hypertarget{class_textures_files_1_1_textures_ae484783c9a26a493e649cc5ccff166de}\label{class_textures_files_1_1_textures_ae484783c9a26a493e649cc5ccff166de}} 
+\index{TexturesFiles::Textures@{TexturesFiles::Textures}!GetTextureDir@{GetTextureDir}}
+\index{GetTextureDir@{GetTextureDir}!TexturesFiles::Textures@{TexturesFiles::Textures}}
+\subsubsection{\texorpdfstring{GetTextureDir()}{GetTextureDir()}}
+{\footnotesize\ttfamily const std\+::string \& Textures\+Files\+::\+Textures\+::\+Get\+Texture\+Dir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+Gets the path to a loaded texture. If the texture key has not been defined an assert will trigger param key texture key return path to the texture \mbox{\Hypertarget{class_textures_files_1_1_textures_a76d7462b113235e27422e143bde5e527}\label{class_textures_files_1_1_textures_a76d7462b113235e27422e143bde5e527}} 
+\index{TexturesFiles::Textures@{TexturesFiles::Textures}!InitInstance@{InitInstance}}
+\index{InitInstance@{InitInstance}!TexturesFiles::Textures@{TexturesFiles::Textures}}
+\subsubsection{\texorpdfstring{InitInstance()}{InitInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_textures_files_1_1_textures}{Textures\+Files\+::\+Textures}} $\ast$ Textures\+Files\+::\+Textures\+::\+Init\+Instance (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Folder,  }\item[{const std\+::string \&}]{tex\+Conf\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes the singleton instance if it has not been initialized and returns the singleton instance param tex\+Folder path to the textures folder param tex\+Conf\+File name of the textures conf file return singleton instance 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Common/Textures.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Common/Textures.\+cpp\end{DoxyCompactItemize}
