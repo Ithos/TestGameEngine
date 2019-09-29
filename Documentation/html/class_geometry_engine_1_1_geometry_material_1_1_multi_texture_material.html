@@ -88,7 +88,8 @@ Inheritance diagram for GeometryEngine::GeometryMaterial::MultiTextureMaterial:<
  <div class="center">
   <img src="class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material.png" usemap="#GeometryEngine::GeometryMaterial::MultiTextureMaterial_map" alt=""/>
   <map id="GeometryEngine::GeometryMaterial::MultiTextureMaterial_map" name="GeometryEngine::GeometryMaterial::MultiTextureMaterial_map">
-<area href="class_geometry_engine_1_1_geometry_material_1_1_material.html" title="Base class for all materials for world objects." alt="GeometryEngine::GeometryMaterial::Material" shape="rect" coords="0,0,332,24"/>
+<area href="class_geometry_engine_1_1_geometry_material_1_1_material.html" title="Base class for all materials for world objects." alt="GeometryEngine::GeometryMaterial::Material" shape="rect" coords="0,0,397,24"/>
+<area href="class_geometry_engine_1_1_geometry_material_1_1_normal_map_multi_texture_material.html" title="Material tha uses different textures for the different components of the light (ambient,..." alt="GeometryEngine::GeometryMaterial::NormalMapMultiTextureMaterial" shape="rect" coords="0,112,397,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -156,6 +157,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetShininess</b> (flo
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a7876cf2b9f032b7fb0509415cb37a40c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material.html#a7876cf2b9f032b7fb0509415cb37a40c">MultiTextureMaterial</a> ()</td></tr>
+<tr class="separator:a7876cf2b9f032b7fb0509415cb37a40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b14ccf51c5360824575544a56eeac39"><td class="memItemLeft" align="right" valign="top"><a id="a8b14ccf51c5360824575544a56eeac39"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material.html#a8b14ccf51c5360824575544a56eeac39">initMaterial</a> () override</td></tr>
 <tr class="memdesc:a8b14ccf51c5360824575544a56eeac39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls parent initMaterial and dets a pointer to the material manager singelton. <br /></td></tr>
@@ -172,6 +175,10 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="separator:a5f07e3b2b0867d3905f912159ef2f67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6edaa5960d07b6abee870760e869189"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material.html#af6edaa5960d07b6abee870760e869189">drawMaterial</a> (QOpenGLBuffer *vertexBuf, QOpenGLBuffer *indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) override</td></tr>
 <tr class="separator:af6edaa5960d07b6abee870760e869189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a084e546d070abd90983f33414642219b"><td class="memItemLeft" align="right" valign="top"><a id="a084e546d070abd90983f33414642219b"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material.html#a084e546d070abd90983f33414642219b">bindTextures</a> ()</td></tr>
+<tr class="memdesc:a084e546d070abd90983f33414642219b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds textures to specific texture units. Used before drawing the object. <br /></td></tr>
+<tr class="separator:a084e546d070abd90983f33414642219b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add208366ae882ad1bd9c6029969902b4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material.html#add208366ae882ad1bd9c6029969902b4">copy</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material.html">MultiTextureMaterial</a> &amp;mat)</td></tr>
 <tr class="separator:add208366ae882ad1bd9c6029969902b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_geometry_engine_1_1_geometry_material_1_1_material"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_geometry_engine_1_1_geometry_material_1_1_material')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html">GeometryEngine::GeometryMaterial::Material</a></td></tr>
@@ -245,7 +252,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <div class="textblock"><p><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html" title="Base class for all materials for world objects.">Material</a> tha uses different textures for the different components of the light (ambient, diffuse, specular, emissive). Used to create complex light effects for certain materials like skin. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2d6f8773c523bc6ddab05b9d76db9020"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d6f8773c523bc6ddab05b9d76db9020">&#9670;&nbsp;</a></span>MultiTextureMaterial() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d6f8773c523bc6ddab05b9d76db9020">&#9670;&nbsp;</a></span>MultiTextureMaterial() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,7 +299,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div>
 </div>
 <a id="a78e60d57bd2dcbab07b96fd86426f453"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78e60d57bd2dcbab07b96fd86426f453">&#9670;&nbsp;</a></span>MultiTextureMaterial() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a78e60d57bd2dcbab07b96fd86426f453">&#9670;&nbsp;</a></span>MultiTextureMaterial() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,6 +314,32 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
 </div><div class="memdoc">
 <p>Copy constructor param ref Object to be copied. </p>
+
+</div>
+</div>
+<a id="a7876cf2b9f032b7fb0509415cb37a40c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7876cf2b9f032b7fb0509415cb37a40c">&#9670;&nbsp;</a></span>MultiTextureMaterial() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeometryEngine::GeometryMaterial::MultiTextureMaterial::MultiTextureMaterial </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Empty constructor Called from child objects copy constructor to avoid double initialization </p>
 
 </div>
 </div>
@@ -336,6 +369,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>Copy constructor param ref Object to be copied. </p>
 
 <p>Implements <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html#ae5513ff06d536365e18ddc5e07e79784">GeometryEngine::GeometryMaterial::Material</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_normal_map_multi_texture_material.html#a38df455f7369f68ea2fc6abf31488c40">GeometryEngine::GeometryMaterial::NormalMapMultiTextureMaterial</a>.</p>
 
 </div>
 </div>

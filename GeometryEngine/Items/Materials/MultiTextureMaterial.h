@@ -55,6 +55,10 @@ namespace GeometryEngine
 			TextureParameters* mpEmissiveTexture;
 			TexturesFiles::Textures * mpTexDirManager;
 
+			///Empty constructor
+			///Called from child objects copy constructor to avoid double initialization 
+			MultiTextureMaterial() {};
+
 			/// Calls parent initMaterial and dets a pointer to the material manager singelton
 			virtual void initMaterial() override;
 			/// Sets the keys of the shaders to be used
@@ -73,6 +77,8 @@ namespace GeometryEngine
 			/// param totalVertexNum Number of vetices
 			/// param totalIndexNumber Number of indices
 			virtual void drawMaterial(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) override;
+			/// Binds textures to specific texture units. Used before drawing the object
+			virtual void bindTextures();
 			/// Copies the data of a Material object to the current object
 			/// param ref Material to be copied
 			virtual void copy(const MultiTextureMaterial& mat);

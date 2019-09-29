@@ -28,6 +28,7 @@ namespace GeometryEngine
 			static const std::string TEST_UNIFIED_CUBE;
 			static const std::string TEST_TEXTURE;
 			static const std::string TEST_BLACK_TEXTURE;
+			static const std::string NORMALMAP_TEST_BLUE_CHIP;
 		};
 
 		/// Class that holds texture data
@@ -36,9 +37,9 @@ namespace GeometryEngine
 		public:
 			/// Constructor
 			/// param texDir A texture direction or a key for a texture direction
-			/// param vertex Number of vertices that this texture will be applied to
-			/// param getFromConf If true the texDir parameter will be treated as a key for the conf files, else it will be treated as a direction for a texture. 
-			TextureParameters(const std::string& texDir, int vertex, bool getFromConf = false) : Texture(nullptr), mpConfInstance(nullptr), mpTexDirManager(nullptr)
+			/// param vertex Number of vertices that this texture will be applied to, its only used when many textures will be applied to the same object
+			/// param getFromConf If true the texDir parameter will be treated as a key for the conf files, else it will be treated as a path for a texture. 
+			TextureParameters(const std::string& texDir, int vertex = -1, bool getFromConf = true) : Texture(nullptr), mpConfInstance(nullptr), mpTexDirManager(nullptr)
 			{
 				initManagers();
 				TextureDir = getFromConf ? mpTexDirManager->GetTextureDir(texDir) : texDir;
@@ -70,6 +71,8 @@ namespace GeometryEngine
 
 			friend class TextureMaterial;
 			friend class MultiTextureMaterial;
+			friend class NormalMapTextureMaterial;
+			friend class NormalMapMultiTextureMaterial;
 
 			/// Get instances to configuration and texture managers
 			void initManagers()

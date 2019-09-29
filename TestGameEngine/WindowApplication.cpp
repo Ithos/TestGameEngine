@@ -1,6 +1,6 @@
 #include "WindowApplication.h"
 
-/// TODO remove
+// TODO remove
 #include <Items/Geometries/Cube.h>
 #include <Items/Geometries/Sphere.h>
 #include <Items/Geometries/Quad.h>
@@ -12,6 +12,8 @@
 #include <Items/Materials/ColorMaterial.h>
 #include <Items/Materials/TextureMaterial.h>
 #include <Items/Materials/MultiTextureMaterial.h>
+#include <Items/Materials/NormalMapTextureMaterial.h>
+#include <Items/Materials/NormalMapMultiTextureMaterial.h>
 #include <Textures.h>
 #include <Items\GraphicItems\Lights\AmbientLight.h>
 #include <Items\GraphicItems\Lights\DirectionalLight.h>
@@ -199,7 +201,13 @@ namespace Application
 
 		tmpList.push_back(&back); tmpList.push_back(&right); tmpList.push_back(&front); tmpList.push_back(&left); tmpList.push_back(&down); tmpList.push_back(&up);
 
-		GeometryEngine::GeometryMaterial::TextureMaterial tMat(tmpList);
+		GeometryEngine::GeometryMaterial::NormalMapMultiTextureMaterial tMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
+																				GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
+																				GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
+																				GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE,
+																				GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP);
+																	
+
 		GeometryEngine::GeometryMaterial::MultiTextureMaterial mtMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_RIGHT_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE);
 		/*GeometryEngine::Cube**/ testCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(tMat, 4.0f,QVector3D(-5.0f, 0.0f, -15.0f), QVector3D(30.0f, -30.0f, 0.0f));
@@ -213,12 +221,12 @@ namespace Application
 		GeometryEngine::GeometryWorldItem::GeometryItem::Quad lightQuad(mat, 3.0f, 3.0f);
 		
 		//cam->AddPostProcess(GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess(lightQuad));
-		cam->AddPostProcess( GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess(lightQuad) );
+		//cam->AddPostProcess( GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess(lightQuad) );
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere lightSphere(mat);
 
-		mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight(45.0f, QVector3D(0.5f, 0.3f, 0.1f), QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(0.7f, 0.7f, 0.7f),
-			QVector3D(0.4f, 0.4f, 0.4f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(0.0f, 5.0f, -15.0f));
+		mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight(45.0f, QVector3D(0.5f, 0.3f, 0.1f), QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
+			QVector3D(1.0f, 1.0f, 1.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(0.0f, 4.0f, -15.0f));
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* lightCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 0.2f, QVector3D(0.0f, 5.0f, -15.0f), QVector3D(0.1f, 0.1f, 0.1f), QVector3D(1.0f, 1.0f, 1.0f));
 

@@ -146,18 +146,23 @@ void GeometryEngine::GeometryMaterial::MultiTextureMaterial::drawMaterial(QOpenG
 		mpProgram->enableAttributeArray(normalVector);
 		mpProgram->setAttributeBuffer(normalVector, GL_FLOAT, VertexData::NORMALS_OFFSET, 3, sizeof(VertexData));
 
-		if(mpAmbientTexture->Texture != nullptr)
-			mpAmbientTexture->Texture->bind(TEXTURE_UNIT);
-		if (mpDiffuseTexture->Texture != nullptr)
-			mpDiffuseTexture->Texture->bind(TEXTURE_UNIT + 1);
-		if (mpSpecularTexture->Texture != nullptr)
-			mpSpecularTexture->Texture->bind(TEXTURE_UNIT + 2);
-		if (mpEmissiveTexture->Texture != nullptr)
-			mpEmissiveTexture->Texture->bind(TEXTURE_UNIT + 3);
+		bindTextures();
 
 		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
 		
 	}
+}
+
+void GeometryEngine::GeometryMaterial::MultiTextureMaterial::bindTextures()
+{
+	if (mpAmbientTexture->Texture != nullptr)
+		mpAmbientTexture->Texture->bind(TEXTURE_UNIT);
+	if (mpDiffuseTexture->Texture != nullptr)
+		mpDiffuseTexture->Texture->bind(TEXTURE_UNIT + 1);
+	if (mpSpecularTexture->Texture != nullptr)
+		mpSpecularTexture->Texture->bind(TEXTURE_UNIT + 2);
+	if (mpEmissiveTexture->Texture != nullptr)
+		mpEmissiveTexture->Texture->bind(TEXTURE_UNIT + 3);
 }
 
 void GeometryEngine::GeometryMaterial::MultiTextureMaterial::copy(const MultiTextureMaterial & mat)

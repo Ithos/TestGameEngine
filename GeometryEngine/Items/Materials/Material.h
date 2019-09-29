@@ -36,6 +36,9 @@ namespace GeometryEngine
 			static const std::string VERTEX_COLOR_MATERIAL_VERTEX_SHADER;
 			static const std::string VERTEX_COLOR_MATERIAL_FRAGMENT_SHADER;
 			static const std::string MULTI_TEXTURE_MATERIAL_FRAGMENT_SHADER;
+			static const std::string TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER;
+			static const std::string MULTI_TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER;
+			static const std::string NORMALMAP_TEXTURE_MATERIAL_VERTEX_SHADER;
 		};
 
 		/// Base class for all materials for world objects. 

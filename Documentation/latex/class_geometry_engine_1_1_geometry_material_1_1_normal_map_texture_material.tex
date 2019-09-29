@@ -1,0 +1,77 @@
+\hypertarget{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material}{}\section{Geometry\+Engine\+::Geometry\+Material\+::Normal\+Map\+Texture\+Material Class Reference}
+\label{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material}\index{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial}}
+
+
+{\ttfamily \#include $<$Normal\+Map\+Texture\+Material.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Normal\+Map\+Texture\+Material\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_a40bc97d75e88354b1bbe58bb5d804a3d}{Normal\+Map\+Texture\+Material}} (const std\+::string \&tex\+Dir, const std\+::string \&mormal\+Map\+Dir, float shininess=10.\+0f)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_ad2ab5dd8a66c2cb63a23f6d8766cab98}{Normal\+Map\+Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material}{Normal\+Map\+Texture\+Material}} \&mat)
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_a3a3d1f16cf175f084bc3eeab56f6e42f}{Clone}} () const override
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_acd715bac31e62bc845f7417b452f2f95}\label{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_acd715bac31e62bc845f7417b452f2f95}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_acd715bac31e62bc845f7417b452f2f95}{$\sim$\+Normal\+Map\+Texture\+Material}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_a42321fbd382c20de406f80d44849c183}{build\+Textures}} (const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ $>$ \&texture\+Dirs)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that loads a color texture and a normal map texture. Normal map textures are used to simulate small protrusions and holes in objects by modifying the light reflection. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_a40bc97d75e88354b1bbe58bb5d804a3d}\label{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_a40bc97d75e88354b1bbe58bb5d804a3d}} 
+\index{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial}!NormalMapTextureMaterial@{NormalMapTextureMaterial}}
+\index{NormalMapTextureMaterial@{NormalMapTextureMaterial}!GeometryEngine::GeometryMaterial::NormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial}}
+\subsubsection{\texorpdfstring{NormalMapTextureMaterial()}{NormalMapTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Normal\+Map\+Texture\+Material\+::\+Normal\+Map\+Texture\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Dir,  }\item[{const std\+::string \&}]{mormal\+Map\+Dir,  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})}
+
+Constructor param tex\+Dir Key of the texture to be loaded param mormal\+Map\+Dir Key of the normal map texture to be used param shininess parameter. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_ad2ab5dd8a66c2cb63a23f6d8766cab98}\label{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_ad2ab5dd8a66c2cb63a23f6d8766cab98}} 
+\index{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial}!NormalMapTextureMaterial@{NormalMapTextureMaterial}}
+\index{NormalMapTextureMaterial@{NormalMapTextureMaterial}!GeometryEngine::GeometryMaterial::NormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial}}
+\subsubsection{\texorpdfstring{NormalMapTextureMaterial()}{NormalMapTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Normal\+Map\+Texture\+Material\+::\+Normal\+Map\+Texture\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material}{Normal\+Map\+Texture\+Material}} \&}]{mat }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_a42321fbd382c20de406f80d44849c183}\label{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_a42321fbd382c20de406f80d44849c183}} 
+\index{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial}!buildTextures@{buildTextures}}
+\index{buildTextures@{buildTextures}!GeometryEngine::GeometryMaterial::NormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial}}
+\subsubsection{\texorpdfstring{buildTextures()}{buildTextures()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Normal\+Map\+Texture\+Material\+::build\+Textures (\begin{DoxyParamCaption}\item[{const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ $>$ \&}]{texture\+Dirs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Builds the textures param texture\+Dirs list of material textures to be built 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_a39212e653a556734e261ef610ab0ad9f}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_a3a3d1f16cf175f084bc3eeab56f6e42f}\label{class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material_a3a3d1f16cf175f084bc3eeab56f6e42f}} 
+\index{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryMaterial::NormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::NormalMapTextureMaterial}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Material\+::\+Normal\+Map\+Texture\+Material\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_material_ace905cf02deb41ad8aa422ef2fb9070f}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Material}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Normal\+Map\+Texture\+Material.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Normal\+Map\+Texture\+Material.\+cpp\end{DoxyCompactItemize}

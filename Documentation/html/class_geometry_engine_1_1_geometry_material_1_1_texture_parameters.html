@@ -83,8 +83,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1be8bba083e1de636196e4520312cc86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_parameters.html#a1be8bba083e1de636196e4520312cc86">TextureParameters</a> (const std::string &amp;texDir, int vertex, bool getFromConf=false)</td></tr>
-<tr class="separator:a1be8bba083e1de636196e4520312cc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adad5f57ac5e9fc474ba2d5fa82439758"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_parameters.html#adad5f57ac5e9fc474ba2d5fa82439758">TextureParameters</a> (const std::string &amp;texDir, int vertex=-1, bool getFromConf=true)</td></tr>
+<tr class="separator:adad5f57ac5e9fc474ba2d5fa82439758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbda2d6bc0bfc273cd8454acc8b326b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_parameters.html#abbda2d6bc0bfc273cd8454acc8b326b7">TextureParameters</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_parameters.html">TextureParameters</a> &amp;ori)</td></tr>
 <tr class="separator:abbda2d6bc0bfc273cd8454acc8b326b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ef598f10049c0d1a0c5aa2f2a56ffa3"><td class="memItemLeft" align="right" valign="top"><a id="a2ef598f10049c0d1a0c5aa2f2a56ffa3"></a>
@@ -100,12 +100,18 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>TextureMaterial</b><
 <tr class="memitem:af2582dec448771a683290c8491dce49a"><td class="memItemLeft" align="right" valign="top"><a id="af2582dec448771a683290c8491dce49a"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>MultiTextureMaterial</b></td></tr>
 <tr class="separator:af2582dec448771a683290c8491dce49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae420d1b0cc0356513c6ec391f962b6b"><td class="memItemLeft" align="right" valign="top"><a id="aae420d1b0cc0356513c6ec391f962b6b"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>NormalMapTextureMaterial</b></td></tr>
+<tr class="separator:aae420d1b0cc0356513c6ec391f962b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20b07e5593ce95d048c94a73156ecf91"><td class="memItemLeft" align="right" valign="top"><a id="a20b07e5593ce95d048c94a73156ecf91"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>NormalMapMultiTextureMaterial</b></td></tr>
+<tr class="separator:a20b07e5593ce95d048c94a73156ecf91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that holds texture data. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a1be8bba083e1de636196e4520312cc86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1be8bba083e1de636196e4520312cc86">&#9670;&nbsp;</a></span>TextureParameters() <span class="overload">[1/2]</span></h2>
+<a id="adad5f57ac5e9fc474ba2d5fa82439758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adad5f57ac5e9fc474ba2d5fa82439758">&#9670;&nbsp;</a></span>TextureParameters() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -123,13 +129,13 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>MultiTextureMaterial
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>vertex</em>, </td>
+          <td class="paramname"><em>vertex</em> = <code>-1</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>getFromConf</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>getFromConf</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -143,7 +149,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>MultiTextureMaterial
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Constructor param texDir A texture direction or a key for a texture direction param vertex Number of vertices that this texture will be applied to param getFromConf If true the texDir parameter will be treated as a key for the conf files, else it will be treated as a direction for a texture. </p>
+<p>Constructor param texDir A texture direction or a key for a texture direction param vertex Number of vertices that this texture will be applied to, its only used when many textures will be applied to the same object param getFromConf If true the texDir parameter will be treated as a key for the conf files, else it will be treated as a path for a texture. </p>
 
 </div>
 </div>

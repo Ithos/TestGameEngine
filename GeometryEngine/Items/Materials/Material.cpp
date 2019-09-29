@@ -10,6 +10,10 @@ const std::string GeometryEngine::GeometryMaterial::MaterialConstants::VERTEX_CO
 const std::string GeometryEngine::GeometryMaterial::MaterialConstants::VERTEX_COLOR_MATERIAL_FRAGMENT_SHADER = "VERTEX_COLOR_MATERIAL_FRAGMENT_SHADER";
 const std::string GeometryEngine::GeometryMaterial::MaterialConstants::MULTI_TEXTURE_MATERIAL_FRAGMENT_SHADER = "MULTI_TEXTURE_MATERIAL_FRAGMENT_SHADER";
 
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::NORMALMAP_TEXTURE_MATERIAL_VERTEX_SHADER = "NORMALMAP_TEXTURE_MATERIAL_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER = "TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::MULTI_TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER = "MULTI_TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER";
+
 
 GeometryEngine::GeometryMaterial::Material::Material(const QVector3D & ambient, const QVector3D & diffuse, const QVector3D & specular, const QVector3D& emissive,
 	float shininess) : mpProgram(nullptr),

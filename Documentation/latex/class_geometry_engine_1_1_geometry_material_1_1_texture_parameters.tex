@@ -12,7 +12,7 @@ Class that holds texture data.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_a1be8bba083e1de636196e4520312cc86}{Texture\+Parameters}} (const std\+::string \&tex\+Dir, int vertex, bool get\+From\+Conf=false)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_adad5f57ac5e9fc474ba2d5fa82439758}{Texture\+Parameters}} (const std\+::string \&tex\+Dir, int vertex=-\/1, bool get\+From\+Conf=true)
 \item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_abbda2d6bc0bfc273cd8454acc8b326b7}{Texture\+Parameters}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} \&ori)
 \item 
@@ -27,6 +27,12 @@ class {\bfseries Texture\+Material}
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_af2582dec448771a683290c8491dce49a}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_af2582dec448771a683290c8491dce49a}} 
 class {\bfseries Multi\+Texture\+Material}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_aae420d1b0cc0356513c6ec391f962b6b}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_aae420d1b0cc0356513c6ec391f962b6b}} 
+class {\bfseries Normal\+Map\+Texture\+Material}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_a20b07e5593ce95d048c94a73156ecf91}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_a20b07e5593ce95d048c94a73156ecf91}} 
+class {\bfseries Normal\+Map\+Multi\+Texture\+Material}
 \end{DoxyCompactItemize}
 
 
@@ -34,13 +40,13 @@ class {\bfseries Multi\+Texture\+Material}
 Class that holds texture data. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_a1be8bba083e1de636196e4520312cc86}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_a1be8bba083e1de636196e4520312cc86}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_adad5f57ac5e9fc474ba2d5fa82439758}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_adad5f57ac5e9fc474ba2d5fa82439758}} 
 \index{GeometryEngine::GeometryMaterial::TextureParameters@{GeometryEngine::GeometryMaterial::TextureParameters}!TextureParameters@{TextureParameters}}
 \index{TextureParameters@{TextureParameters}!GeometryEngine::GeometryMaterial::TextureParameters@{GeometryEngine::GeometryMaterial::TextureParameters}}
 \subsubsection{\texorpdfstring{TextureParameters()}{TextureParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Parameters\+::\+Texture\+Parameters (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Dir,  }\item[{int}]{vertex,  }\item[{bool}]{get\+From\+Conf = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Parameters\+::\+Texture\+Parameters (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Dir,  }\item[{int}]{vertex = {\ttfamily -\/1},  }\item[{bool}]{get\+From\+Conf = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Constructor param tex\+Dir A texture direction or a key for a texture direction param vertex Number of vertices that this texture will be applied to param get\+From\+Conf If true the tex\+Dir parameter will be treated as a key for the conf files, else it will be treated as a direction for a texture. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_abbda2d6bc0bfc273cd8454acc8b326b7}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_abbda2d6bc0bfc273cd8454acc8b326b7}} 
+Constructor param tex\+Dir A texture direction or a key for a texture direction param vertex Number of vertices that this texture will be applied to, its only used when many textures will be applied to the same object param get\+From\+Conf If true the tex\+Dir parameter will be treated as a key for the conf files, else it will be treated as a path for a texture. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_abbda2d6bc0bfc273cd8454acc8b326b7}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_abbda2d6bc0bfc273cd8454acc8b326b7}} 
 \index{GeometryEngine::GeometryMaterial::TextureParameters@{GeometryEngine::GeometryMaterial::TextureParameters}!TextureParameters@{TextureParameters}}
 \index{TextureParameters@{TextureParameters}!GeometryEngine::GeometryMaterial::TextureParameters@{GeometryEngine::GeometryMaterial::TextureParameters}}
 \subsubsection{\texorpdfstring{TextureParameters()}{TextureParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}

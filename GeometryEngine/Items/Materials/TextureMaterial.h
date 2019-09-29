@@ -15,7 +15,7 @@ namespace GeometryEngine
 {
 	namespace GeometryMaterial
 	{
-		/// Material that loads a color texture. 
+		///Material that loads a color texture. 
 		///Alternatively multiple textures can be loaded indicating to how many vertices it should be applied. The textures will be applied to the vertices in the order they are drawn 
 		///and in the order the textures are included in the textures list.
 		class TextureMaterial : public Material
@@ -24,7 +24,8 @@ namespace GeometryEngine
 			/// Constructor
 			/// param texDir Key of the texture to be loaded
 			/// param shininess parameter. Equation: spec contribution = cos(alpha) ^ shininess
-			TextureMaterial(const std::string& texDir, float shininess = 10.0f);
+			/// param getFromConf if false texDir is treated as a path to the texture if true its considered a key for the internal texture map
+			TextureMaterial(const std::string& texDir, float shininess = 10.0f, bool getFromConf = true);
 			/// Constructor
 			/// param textureDirs List of textures to be loaded
 			/// param shininess parameter. Equation: spec contribution = cos(alpha) ^ shininess
@@ -57,6 +58,10 @@ namespace GeometryEngine
 
 			TexturesFiles::Textures * mpTexDirManager;
 
+			///Empty constructor
+			///Called from child objects copy constructor to avoid double initialization 
+			TextureMaterial() {}
+
 			/// Copies the list of textures
 			/// param textureDirs list of pointers to texture data to be copied
 			virtual void initTextures(const std::list<TextureParameters* > & textureDirs);
@@ -80,6 +85,8 @@ namespace GeometryEngine
 			/// param totalVertexNum Number of vetices
 			/// param totalIndexNumber Number of indices
 			virtual void drawMaterial(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) override;
+			/// Binds textures to specific texture units. Used before drawing the object
+			virtual void bindTextures();
 			/// Copies the data of a Material object to the current object
 			/// param ref Material to be copied
 			virtual void copy(const TextureMaterial& mat);

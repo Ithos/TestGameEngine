@@ -1,10 +1,10 @@
 #include "TextureMaterial.h"
 
-GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::string& texDir, float shininess) : 
+GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::string& texDir, float shininess, bool getFromConf ) :
 	Material(QVector3D(0.0f,0.0f,0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), shininess), mpTexDirManager(nullptr)
 {
 	std::list<TextureParameters*> tmpList;
-	TextureParameters tmpParam = TextureParameters(texDir, -1);
+	TextureParameters tmpParam = TextureParameters(texDir, -1, getFromConf);
 	tmpList.push_back(&tmpParam);
 	initMaterial(tmpList);
 }
@@ -113,12 +113,7 @@ void GeometryEngine::GeometryMaterial::TextureMaterial::drawMaterial(QOpenGLBuff
 
 		if (mTexturesList.size() == 1)
 		{
-			auto it = mTexturesList.begin();
-			std::advance(it, 0);
-
-			if ((*it)->Texture != nullptr)
-				(*it)->Texture->bind(TEXTURE_UNIT);
-
+			bindTextures();
 			glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
 			return;
 		}
@@ -127,6 +122,8 @@ void GeometryEngine::GeometryMaterial::TextureMaterial::drawMaterial(QOpenGLBuff
 		{
 			auto it = mTexturesList.begin();
 			std::advance(it, i);
+
+			assert((*it)->Texture != nullptr && "TextureMaterial -> Texture not built");
 
 			if ((*it)->Texture != nullptr)
 				(*it)->Texture->bind(TEXTURE_UNIT);
@@ -139,6 +136,17 @@ void GeometryEngine::GeometryMaterial::TextureMaterial::drawMaterial(QOpenGLBuff
 			vertexCount += (*it)->VertexNumber;
 		}
 	}
+}
+
+void GeometryEngine::GeometryMaterial::TextureMaterial::bindTextures()
+{
+	auto it = mTexturesList.begin();
+	std::advance(it, 0);
+
+	assert((*it)->Texture != nullptr && "TextureMaterial -> Texture not built");
+
+	if ((*it)->Texture != nullptr)
+		(*it)->Texture->bind(TEXTURE_UNIT);
 }
 
 void GeometryEngine::GeometryMaterial::TextureMaterial::copy(const TextureMaterial & mat)

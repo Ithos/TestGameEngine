@@ -85,14 +85,15 @@ Inheritance diagram for GeometryEngine::GeometryMaterial::TextureMaterial:</div>
  <div class="center">
   <img src="class_geometry_engine_1_1_geometry_material_1_1_texture_material.png" usemap="#GeometryEngine::GeometryMaterial::TextureMaterial_map" alt=""/>
   <map id="GeometryEngine::GeometryMaterial::TextureMaterial_map" name="GeometryEngine::GeometryMaterial::TextureMaterial_map">
-<area href="class_geometry_engine_1_1_geometry_material_1_1_material.html" title="Base class for all materials for world objects." alt="GeometryEngine::GeometryMaterial::Material" shape="rect" coords="0,0,305,24"/>
+<area href="class_geometry_engine_1_1_geometry_material_1_1_material.html" title="Base class for all materials for world objects." alt="GeometryEngine::GeometryMaterial::Material" shape="rect" coords="0,0,370,24"/>
+<area href="class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material.html" alt="GeometryEngine::GeometryMaterial::NormalMapTextureMaterial" shape="rect" coords="0,112,370,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a90a61577a2d5b13b91809bcaea97dae7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html#a90a61577a2d5b13b91809bcaea97dae7">TextureMaterial</a> (const std::string &amp;texDir, float shininess=10.0f)</td></tr>
-<tr class="separator:a90a61577a2d5b13b91809bcaea97dae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c928f93c8538111fba4e5985e9ce43e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html#a3c928f93c8538111fba4e5985e9ce43e">TextureMaterial</a> (const std::string &amp;texDir, float shininess=10.0f, bool getFromConf=true)</td></tr>
+<tr class="separator:a3c928f93c8538111fba4e5985e9ce43e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6c96a0f976b0ed3d558d7d395ec35b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html#af6c96a0f976b0ed3d558d7d395ec35b2">TextureMaterial</a> (const std::list&lt; <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_parameters.html">TextureParameters</a> * &gt; &amp;textureDirs, float shininess=10.0f)</td></tr>
 <tr class="separator:af6c96a0f976b0ed3d558d7d395ec35b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60678cd8338eeae2996e72b1d96a2364"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html#a60678cd8338eeae2996e72b1d96a2364">TextureMaterial</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html">TextureMaterial</a> &amp;mat)</td></tr>
@@ -167,6 +168,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetShininess</b> (flo
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a4aee4ff76a14519eac61ebc14d8ca998"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html#a4aee4ff76a14519eac61ebc14d8ca998">TextureMaterial</a> ()</td></tr>
+<tr class="separator:a4aee4ff76a14519eac61ebc14d8ca998"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2a34b3c00d6aecd9bdc686042cdf892"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html#ae2a34b3c00d6aecd9bdc686042cdf892">initTextures</a> (const std::list&lt; <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_parameters.html">TextureParameters</a> * &gt; &amp;textureDirs)</td></tr>
 <tr class="separator:ae2a34b3c00d6aecd9bdc686042cdf892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbf7007e9d869b23dfbc173841ba5b34"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html#afbf7007e9d869b23dfbc173841ba5b34">initMaterial</a> (const std::list&lt; <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_parameters.html">TextureParameters</a> * &gt; &amp;textureDirs)</td></tr>
@@ -181,6 +184,10 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="separator:a985cdde7240f2acb18cd2944c5ca6193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bb3c956fa64e47b251d882890c931f9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html#a7bb3c956fa64e47b251d882890c931f9">drawMaterial</a> (QOpenGLBuffer *vertexBuf, QOpenGLBuffer *indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) override</td></tr>
 <tr class="separator:a7bb3c956fa64e47b251d882890c931f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aced804d28c51063e9541b88bbbb2b485"><td class="memItemLeft" align="right" valign="top"><a id="aced804d28c51063e9541b88bbbb2b485"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html#aced804d28c51063e9541b88bbbb2b485">bindTextures</a> ()</td></tr>
+<tr class="memdesc:aced804d28c51063e9541b88bbbb2b485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds textures to specific texture units. Used before drawing the object. <br /></td></tr>
+<tr class="separator:aced804d28c51063e9541b88bbbb2b485"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a946658ad56ad140e6e5ec5d12a15affc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html#a946658ad56ad140e6e5ec5d12a15affc">copy</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html">TextureMaterial</a> &amp;mat)</td></tr>
 <tr class="separator:a946658ad56ad140e6e5ec5d12a15affc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_geometry_engine_1_1_geometry_material_1_1_material"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_geometry_engine_1_1_geometry_material_1_1_material')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html">GeometryEngine::GeometryMaterial::Material</a></td></tr>
@@ -248,8 +255,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html" title="Base class for all materials for world objects.">Material</a> that loads a color texture. Alternatively multiple textures can be loaded indicating to how many vertices it should be applied. The textures will be applied to the vertices in the order they are drawn and in the order the textures are included in the textures list. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a90a61577a2d5b13b91809bcaea97dae7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90a61577a2d5b13b91809bcaea97dae7">&#9670;&nbsp;</a></span>TextureMaterial() <span class="overload">[1/3]</span></h2>
+<a id="a3c928f93c8538111fba4e5985e9ce43e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c928f93c8538111fba4e5985e9ce43e">&#9670;&nbsp;</a></span>TextureMaterial() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -264,7 +271,13 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>shininess</em> = <code>10.0f</code>&#160;</td>
+          <td class="paramname"><em>shininess</em> = <code>10.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>getFromConf</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -273,12 +286,12 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor param texDir Key of the texture to be loaded param shininess parameter. Equation: spec contribution = cos(alpha) ^ shininess </p>
+<p>Constructor param texDir Key of the texture to be loaded param shininess parameter. Equation: spec contribution = cos(alpha) ^ shininess param getFromConf if false texDir is treated as a path to the texture if true its considered a key for the internal texture map </p>
 
 </div>
 </div>
 <a id="af6c96a0f976b0ed3d558d7d395ec35b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6c96a0f976b0ed3d558d7d395ec35b2">&#9670;&nbsp;</a></span>TextureMaterial() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af6c96a0f976b0ed3d558d7d395ec35b2">&#9670;&nbsp;</a></span>TextureMaterial() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,7 +320,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div>
 </div>
 <a id="a60678cd8338eeae2996e72b1d96a2364"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60678cd8338eeae2996e72b1d96a2364">&#9670;&nbsp;</a></span>TextureMaterial() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a60678cd8338eeae2996e72b1d96a2364">&#9670;&nbsp;</a></span>TextureMaterial() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -322,6 +335,32 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
 </div><div class="memdoc">
 <p>Copy constructor param ref Object to be copied. </p>
+
+</div>
+</div>
+<a id="a4aee4ff76a14519eac61ebc14d8ca998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aee4ff76a14519eac61ebc14d8ca998">&#9670;&nbsp;</a></span>TextureMaterial() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Empty constructor Called from child objects copy constructor to avoid double initialization </p>
 
 </div>
 </div>
@@ -351,6 +390,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><div class="memdoc">
 <p>Builds the textures param textureDirs list of material textures to be built </p>
 
+<p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material.html#a42321fbd382c20de406f80d44849c183">GeometryEngine::GeometryMaterial::NormalMapTextureMaterial</a>.</p>
+
 </div>
 </div>
 <a id="ace905cf02deb41ad8aa422ef2fb9070f"></a>
@@ -378,6 +419,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>Factory method. Creates a copy of this object return Pointer to a copy of this object </p>
 
 <p>Implements <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html#ae5513ff06d536365e18ddc5e07e79784">GeometryEngine::GeometryMaterial::Material</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_normal_map_texture_material.html#a3a3d1f16cf175f084bc3eeab56f6e42f">GeometryEngine::GeometryMaterial::NormalMapTextureMaterial</a>.</p>
 
 </div>
 </div>

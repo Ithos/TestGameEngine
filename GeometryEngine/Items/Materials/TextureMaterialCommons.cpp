@@ -11,6 +11,7 @@ const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_RIGHT_
 const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_UNIFIED_CUBE = "TEST_UNIFIED_CUBE";
 const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_TEXTURE = "TEST_TEXTURE";
 const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE = "TEST_BLACK_TEXTURE";
+const std::string GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP = "NORMALMAP_TEST_BLUE_CHIP";
 
 void GeometryEngine::GeometryMaterial::TextureParameters::Build()
 {

@@ -2,6 +2,7 @@ TEST_VERTEX_SHADER = TestVertexShader.vert
 COLOR_MATERIAL_VERTEX_SHADER = ColorShader.vert
 VERTEX_COLOR_MATERIAL_VERTEX_SHADER = VertexColorShader.vert
 TEXTURE_MATERIAL_VERTEX_SHADER = TextureMaterial.vert
+NORMALMAP_TEXTURE_MATERIAL_VERTEX_SHADER = NormalmapTextureMaterial.vert
 AMBIENT_LIGHT_VERTEX_SHADER = Lights\AmbientLight.vert
 DIRECTIONAL_LIGHT_VERTEX_SHADER = Lights\DirectionalLight.vert
 POINT_LIGHT_VERTEX_SHADER = Lights\PointLight.vert
