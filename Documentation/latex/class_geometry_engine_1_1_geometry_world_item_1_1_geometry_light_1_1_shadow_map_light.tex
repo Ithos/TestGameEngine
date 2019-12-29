@@ -1,0 +1,123 @@
+\hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light}{}\section{Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Light\+::Shadow\+Map\+Light Class Reference}
+\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light}\index{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight@{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight}}
+
+
+Abstract class that defines common methods for lights using shadow maps.  
+
+
+
+
+{\ttfamily \#include $<$Shadow\+Map\+Light.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Light\+::Shadow\+Map\+Light\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.700440cm]{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_adea3c877b7843389e52c351e5e4d5a75}{Shadow\+Map\+Light}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&viewport, const Q\+Vector3D \&direction, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$bounding\+Box=nullptr, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&pos=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), World\+Item $\ast$parent=nullptr)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a1156dcba4ae7c3f9dce061ef9c0b2e7a}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a1156dcba4ae7c3f9dce061ef9c0b2e7a}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a1156dcba4ae7c3f9dce061ef9c0b2e7a}{$\sim$\+Shadow\+Map\+Light}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a518efafd59e2dcd446140ae82140e172}{Calculate\+Shadow\+Map}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, const Q\+Matrix4x4 \&model\+Matrix, unsigned int total\+Vertex\+Num, unsigned int total\+Index\+Num) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a0465932bd0494929e5daa10ce8b77aa6}{Update\+Model\+Matrix}} (bool update\+Children=false) override
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_aef2c6de6b98796cec728cbfef90df27a}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_aef2c6de6b98796cec728cbfef90df27a}} 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_aef2c6de6b98796cec728cbfef90df27a}{Get\+Cast\+Shadows}} () override
+\begin{DoxyCompactList}\small\item\em Returns true if the light calculates shadows. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a3166b61bf08297eddf8b9e867c6d044a}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a3166b61bf08297eddf8b9e867c6d044a}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a3166b61bf08297eddf8b9e867c6d044a}{Resize\+Elements}} (int screen\+Width, int screen\+Height) override
+\begin{DoxyCompactList}\small\item\em Resizes the viewport used to calculate the shadowmap. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_ab83e05de53238453ebc8ed4b3a8777bc}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_ab83e05de53238453ebc8ed4b3a8777bc}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_ab83e05de53238453ebc8ed4b3a8777bc}{Set\+Direction}} (const Q\+Vector3D \&dir)
+\begin{DoxyCompactList}\small\item\em Sets the light direction. This direction is affected by the item rotation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a5443fd7c5c2549073841c691f21ba1e4}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a5443fd7c5c2549073841c691f21ba1e4}} 
+const Q\+Vector3D \& \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a5443fd7c5c2549073841c691f21ba1e4}{Get\+Direction}} ()
+\begin{DoxyCompactList}\small\item\em Returs the light direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a4a4cf34bc36f47f0c9f9747f376440b1}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a4a4cf34bc36f47f0c9f9747f376440b1}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a4a4cf34bc36f47f0c9f9747f376440b1}{init\+Shadow}} ()
+\begin{DoxyCompactList}\small\item\em Initializes managers and shaders for the shadow map calculation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_aeef3b93538eba1ac541ae5bca82543ae}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_aeef3b93538eba1ac541ae5bca82543ae}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_aeef3b93538eba1ac541ae5bca82543ae}{init\+Shadow\+Program}} ()
+\begin{DoxyCompactList}\small\item\em Loads and compiles shadow map shader programs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a5f116fe6be03990ec35b2bfa90d8d6e7}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a5f116fe6be03990ec35b2bfa90d8d6e7}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a5f116fe6be03990ec35b2bfa90d8d6e7}{init\+Shadow\+Shaders}} ()
+\begin{DoxyCompactList}\small\item\em Sets the shaders that should be loaded for the shadow map calculation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_abcc80135c350beeae54a684cf4b61d1e}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_abcc80135c350beeae54a684cf4b61d1e}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_abcc80135c350beeae54a684cf4b61d1e}{set\+Shadow\+Program\+Parameters}} (const Q\+Matrix4x4 \&model\+Matrix)
+\begin{DoxyCompactList}\small\item\em Sends parameters to the shadow map shaders. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a607026e6ab01948eef922a9370ee35f7}{render\+Shadow\+Map}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Num, unsigned int total\+Index\+Num)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_ae9a6fe5740de5b046d15ac094461edad}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_ae9a6fe5740de5b046d15ac094461edad}} 
+Q\+Open\+G\+L\+Shader\+Program $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_ae9a6fe5740de5b046d15ac094461edad}{mp\+Shadow\+Map\+Program}}
+\begin{DoxyCompactList}\small\item\em Shadow map shader. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a6ee944a9f465f85f46339539cf956723}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a6ee944a9f465f85f46339539cf956723}} 
+std\+::string {\bfseries m\+S\+Map\+Vertex\+Shader\+Key}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_ab20a39fbc3b2ff323b7f73d9f0e49218}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_ab20a39fbc3b2ff323b7f73d9f0e49218}} 
+std\+::string {\bfseries m\+S\+Map\+Fragment\+Shader\+Key}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_ac947ba6b3dd5dfa22aacf5ec081a167a}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_ac947ba6b3dd5dfa22aacf5ec081a167a}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} $\ast$ {\bfseries mp\+Viewport}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_ada375af833c52af24c2190d04fcfabf9}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_ada375af833c52af24c2190d04fcfabf9}} 
+Q\+Vector3D {\bfseries m\+Direction}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class that defines common methods for lights using shadow maps. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_adea3c877b7843389e52c351e5e4d5a75}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_adea3c877b7843389e52c351e5e4d5a75}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight@{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight}!ShadowMapLight@{ShadowMapLight}}
+\index{ShadowMapLight@{ShadowMapLight}!GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight@{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight}}
+\subsubsection{\texorpdfstring{ShadowMapLight()}{ShadowMapLight()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Shadow\+Map\+Light\+::\+Shadow\+Map\+Light (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&}]{viewport,  }\item[{const Q\+Vector3D \&}]{direction,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{bounding\+Box = {\ttfamily nullptr},  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Constructor param viewport Viewport that will be used for the shadowmap calculation. param direction Shadowmaps work only with single direction lights param bounding\+Box Geomtry used to render the light. \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} will be applied to every part of the scene that the geometry is drawn on top of. param diffuse Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 param ambient Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 param specular Specular component of the light. Each color goes from 0.\+0 to 1.\+0 param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a518efafd59e2dcd446140ae82140e172}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a518efafd59e2dcd446140ae82140e172}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight@{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight}!CalculateShadowMap@{CalculateShadowMap}}
+\index{CalculateShadowMap@{CalculateShadowMap}!GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight@{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight}}
+\subsubsection{\texorpdfstring{CalculateShadowMap()}{CalculateShadowMap()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Shadow\+Map\+Light\+::\+Calculate\+Shadow\+Map (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{const Q\+Matrix4x4 \&}]{model\+Matrix,  }\item[{unsigned int}]{total\+Vertex\+Num,  }\item[{unsigned int}]{total\+Index\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Applies the shadow map shaders. param vertex\+Buf Pointer to the vertex buffer param index\+Buffer Pointer to the index buffer param model\+Matrix model matrix of the item to be added to the shadow map param total\+Vertex\+Num Total amount of vertices param total\+Index\+Num Total amount of indices 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a76aff3602f7bf26416c36111ab79f898}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a607026e6ab01948eef922a9370ee35f7}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a607026e6ab01948eef922a9370ee35f7}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight@{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight}!renderShadowMap@{renderShadowMap}}
+\index{renderShadowMap@{renderShadowMap}!GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight@{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight}}
+\subsubsection{\texorpdfstring{renderShadowMap()}{renderShadowMap()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Shadow\+Map\+Light\+::render\+Shadow\+Map (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Num,  }\item[{unsigned int}]{total\+Index\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Binds shaders and calculates the shadow map. param vertex\+Buf Vertex buffer param index\+Buf Index\+Buffer param total\+Vertex\+Num Number of vetices param tital\+Index\+Num Number of indices \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a0465932bd0494929e5daa10ce8b77aa6}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a0465932bd0494929e5daa10ce8b77aa6}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight@{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight}!UpdateModelMatrix@{UpdateModelMatrix}}
+\index{UpdateModelMatrix@{UpdateModelMatrix}!GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight@{GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight}}
+\subsubsection{\texorpdfstring{UpdateModelMatrix()}{UpdateModelMatrix()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Shadow\+Map\+Light\+::\+Update\+Model\+Matrix (\begin{DoxyParamCaption}\item[{bool}]{update\+Children = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Updates the model matrix of this Item and updates the View matrix of the viewport param calculate\+Children true if children matrix should be updated 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a86effd24c41c87be8925ee3addd8c33d}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Lights/\+Shadow\+Casting\+Lights/Shadow\+Map\+Light.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Lights/\+Shadow\+Casting\+Lights/Shadow\+Map\+Light.\+cpp\end{DoxyCompactItemize}

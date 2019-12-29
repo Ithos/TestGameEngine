@@ -94,6 +94,7 @@ $(function() {
 <li>initLight()
 : <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#ab3be1e49344f033c893120a3de792b46">GeometryEngine::GeometryWorldItem::GeometryLight::Light</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_point_light.html#a0c6434862dabcbe1e32e04b8d73b5314">GeometryEngine::GeometryWorldItem::GeometryLight::PointLight</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_spotlight.html#a93e2c91b4377ecb98cf4c0409364c7be">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight.html#a47bba760d5da4f574274be437d5ddd04">GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight</a>
 </li>
 <li>initLightProgram()
@@ -102,8 +103,10 @@ $(function() {
 <li>initLightShaders()
 : <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light.html#a0d27aaf4867e35c545f572ff2cf8c251">GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light.html#a0488db9f38fe4382ed9e1b73a4b4eff7">GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_shadow_light.html#a3e31cf04dc9387c4c66a2a958c7281c7">GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#a7bcd2133b4b691496691148e73c5411b">GeometryEngine::GeometryWorldItem::GeometryLight::Light</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_point_light.html#a753a40c1c3c3a9a550980c002c636cfa">GeometryEngine::GeometryWorldItem::GeometryLight::PointLight</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_spotlight.html#aa4de61784b3cdb56739255fbcc00818c">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight.html#a3e9b0e3c458ea56708a16f8f988b01ce">GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight</a>
 </li>
 <li>initMaterial()
@@ -115,8 +118,7 @@ $(function() {
 : <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html#a9f680e91835d614dcc942fafe43bd3ae">GeometryEngine::GeometryPostProcess::PostProcess</a>
 </li>
 <li>initPostProcessPass()
-: <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_double_post_process_pass.html#a5ba91461e78b15f545a66a521fb1b4b7">GeometryEngine::GeometryRenderStep::DoublePostProcessPass</a>
-, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_single_post_process_pass.html#afb298edabcc05c78af2057da15476f78">GeometryEngine::GeometryRenderStep::SinglePostProcessPass</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#ae0bfafe4123decb5eb65e1decc3c07ba">GeometryEngine::GeometryRenderStep::PostProcessPass</a>
 </li>
 <li>initPostProcessProgram()
 : <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html#a1bd949b51ac91a8630d8df0a4e966afa">GeometryEngine::GeometryPostProcess::PostProcess</a>
@@ -135,6 +137,15 @@ $(function() {
 , <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material.html#aa5dd9c755aa814d4655355227aa68d1d">GeometryEngine::GeometryMaterial::MultiTextureMaterial</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html#a3c7934e5895c1abc1216e0c700626263">GeometryEngine::GeometryMaterial::TextureMaterial</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material.html#af390fb31e1017e64b7eeaaee36f29395">GeometryEngine::GeometryMaterial::VertexColorMaterial</a>
+</li>
+<li>initShadow()
+: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light.html#a4a4cf34bc36f47f0c9f9747f376440b1">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight</a>
+</li>
+<li>initShadowProgram()
+: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light.html#aeef3b93538eba1ac541ae5bca82543ae">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight</a>
+</li>
+<li>initShadowShaders()
+: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light.html#a5f116fe6be03990ec35b2bfa90d8d6e7">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight</a>
 </li>
 <li>initStencilProgram()
 : <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light.html#abf2cc5f924b94fd20dcfc36d4edad495">GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight</a>

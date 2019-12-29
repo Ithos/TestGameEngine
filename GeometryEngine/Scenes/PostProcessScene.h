@@ -8,8 +8,7 @@
 #include "../Render Utils/RenderSteps/GeometryPass.h"
 #include "../Render Utils/RenderSteps/LightingPass.h"
 #include "../Render Utils/RenderSteps/FinalPass.h"
-#include "../Render Utils/RenderSteps/SinglePostProcessPass.h"
-#include "../Render Utils/RenderSteps/DoublePostProcessPass.h"
+#include "../Render Utils/RenderSteps/PostProcessPass.h"
 #include "../Render Utils/GlSetups/InitialSetup.h"
 
 

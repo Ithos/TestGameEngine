@@ -69,8 +69,10 @@ $(function() {
 <li>calculateContribution()
 : <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light.html#a4f1d4fb9ad25626e15c28de03b610b4f">GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light.html#af1eac6f1aac9388efe95e1a898cf600f">GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_shadow_light.html#a712d0b0a0573ebd246a4a8aa6b2b667a">GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#a58aa2a3520f7aa2b03afcb4123e7530a">GeometryEngine::GeometryWorldItem::GeometryLight::Light</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_point_light.html#aa30244fd20e61fdfe1ac1d85c99fd154">GeometryEngine::GeometryWorldItem::GeometryLight::PointLight</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_spotlight.html#a27163f2f8903220d7eaae7aa70c9d6e6">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight.html#a6136ca2338a7b5f5be70ccab82fe655e">GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight</a>
 </li>
 <li>CalculateLighting()
@@ -80,19 +82,30 @@ $(function() {
 : <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_world_item.html#a15405881b3e3de9f417484160ab5c735">GeometryEngine::GeometryWorldItem::WorldItem</a>
 </li>
 <li>CalculateProjectionMatrix()
-: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#af155862b5750cc5e8ebf7da1895c4a98">GeometryEngine::GeometryWorldItem::GeometryCamera::Camera</a>
-, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_orthographic_camera.html#a123a6673acd7a3ceb0ae32b31be4eaaf">GeometryEngine::GeometryWorldItem::GeometryCamera::OrthographicCamera</a>
-, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_perspective_camera.html#aab54d51e17bcf21ec1144f8f60f83686">GeometryEngine::GeometryWorldItem::GeometryCamera::PerspectiveCamera</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport.html#a30dbefa19b28e26fd655255ccd5412b5">GeometryEngine::GeometryItemUtils::OrtographicViewport</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport.html#aeb08a0d3ef705c46c314f30fc562adeb">GeometryEngine::GeometryItemUtils::PerspectiveViewport</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_viewport.html#ac3800978fbb78fd90a9a9f20c0032e9d">GeometryEngine::GeometryItemUtils::Viewport</a>
+</li>
+<li>CalculateShadowMap()
+: <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#a6365f5d2036ee96eae06074917f691f3">GeometryEngine::GeometryRenderStep::ShadowedLightingPass</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#a76aff3602f7bf26416c36111ab79f898">GeometryEngine::GeometryWorldItem::GeometryLight::Light</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light.html#a518efafd59e2dcd446140ae82140e172">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight</a>
 </li>
 <li>CalculateStencil()
 : <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#ae50fab4782158671041ac986dfead7fc">GeometryEngine::GeometryWorldItem::GeometryLight::Light</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light.html#aa1d9d4bf4f47e6e55dbb1706a7e28697">GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight</a>
 </li>
 <li>Camera()
-: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#ac7d64cd73026094e72445d867fb96e7c">GeometryEngine::GeometryWorldItem::GeometryCamera::Camera</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a56a7538e5e5d2141832824bba448e271">GeometryEngine::GeometryWorldItem::GeometryCamera::Camera</a>
+</li>
+<li>CastsShadows()
+: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html#a4b9c066cbd4ab85ffae11bb4dcd9fc64">GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem</a>
 </li>
 <li>checkRenderGroups()
 : <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#af37e4ae472e97482eed93fc443438b2e">GeometryEngine::GeometryRenderStep::GeometryPass</a>
+</li>
+<li>ClearColorTexture()
+: <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#abf39c85cb87eaf0475205b59333253c0">GeometryEngine::GeometryBuffer::GBuffer</a>
 </li>
 <li>ClearCustomRenderSteps()
 : <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a59c06151d81ffaa11cd725e17d27429e">GeometryEngine::GeometryWorldItem::GeometryCamera::Camera</a>
@@ -117,6 +130,9 @@ $(function() {
 , <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer.html#add00c2857f9d425600ef83d50a9c8019">GeometryEngine::GeometryBuffer::SingleColorTextBuffer</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html#adf97b18fd8af32c63a189983ab35d5ae">GeometryEngine::GeometryGlSetup::GlSetup</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html#ade45cd909edd6ff3cae7323d5e1c53d0">GeometryEngine::GeometryGlSetup::InitialSetup</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport.html#a7729f7619d67c139f8510c305de1a286">GeometryEngine::GeometryItemUtils::OrtographicViewport</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport.html#a828a22e5d39e7c8d1812e97f582bf667">GeometryEngine::GeometryItemUtils::PerspectiveViewport</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_viewport.html#a8bd47866a001eae03f88df67fd699904">GeometryEngine::GeometryItemUtils::Viewport</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_color_material.html#a29dbf04e76b75fcc86f184d072bba0a5">GeometryEngine::GeometryMaterial::ColorMaterial</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html#ae5513ff06d536365e18ddc5e07e79784">GeometryEngine::GeometryMaterial::Material</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material.html#a66cef99b68270e1399830bc1b8bc8502">GeometryEngine::GeometryMaterial::MultiTextureMaterial</a>
@@ -127,12 +143,14 @@ $(function() {
 , <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process.html#a4399f435326724c64cf255a40479d330">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html#aa80749cf09041335f6b3bda3aaf31711">GeometryEngine::GeometryPostProcess::PostProcess</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process.html#a36f198711874587c9cbf5c958e6d09ea">GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess</a>
-, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_double_post_process_pass.html#a080175b6caf11b9b0e84b5c41c87d39a">GeometryEngine::GeometryRenderStep::DoublePostProcessPass</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_final_pass.html#a6633ed9c32944cc390d2b0ab32225845">GeometryEngine::GeometryRenderStep::FinalPass</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#a12e85a0169cb7b92cb8bd7b7fe100b33">GeometryEngine::GeometryRenderStep::GeometryPass</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a4f1cb36c7bf6a90d0aa3b8e8feba5e5e">GeometryEngine::GeometryRenderStep::LightingPass</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#afcf20dc0a20cf1e0fb730c7b56071c26">GeometryEngine::GeometryRenderStep::PostProcessPass</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#afe33ea9d82c5be11f55af7d39691d44b">GeometryEngine::GeometryRenderStep::RenderStep</a>
-, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_single_post_process_pass.html#adbbe0bb9d41386ced4080877f030407a">GeometryEngine::GeometryRenderStep::SinglePostProcessPass</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#a73176d6860aee0903034eeaf93edb40d">GeometryEngine::GeometryRenderStep::ShadowedLightingPass</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a53b37943c1929fde7396c66a36fb3c52">GeometryEngine::GeometryWorldItem::GeometryCamera::Camera</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera.html#ac020fe14bc32f3fdbd0c9423af1c975f">GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html#ab151cd962c45bc06d21e9e26c2d1c4aa">GeometryEngine::GeometryWorldItem::GeometryItem::Cube</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html#a1db8f97339ba49f746b3e0b4c4b02748">GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_quad.html#ad3a6d04a38253d1f26735a87a53a5446">GeometryEngine::GeometryWorldItem::GeometryItem::Quad</a>
@@ -142,10 +160,10 @@ $(function() {
 : <a class="el" href="class_geometry_engine_1_1_geometry_engine.html#ad91cb15665b5ee4f82c407d2e240a266">GeometryEngine::GeometryEngine</a>
 </li>
 <li>ColorMaterial()
-: <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_color_material.html#af445424ce4cb91403b9623cee72fdf92">GeometryEngine::GeometryMaterial::ColorMaterial</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_color_material.html#a42495fe930beb678d0c31a93045572e3">GeometryEngine::GeometryMaterial::ColorMaterial</a>
 </li>
 <li>CompleteColorBuffer()
-: <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer.html#ad1b8c2aed3b0c6154836275c91964a5a">GeometryEngine::GeometryBuffer::CompleteColorBuffer</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer.html#a82f095f182124cf3044333cdb738a4c1">GeometryEngine::GeometryBuffer::CompleteColorBuffer</a>
 </li>
 <li>CompleteColorPostProcessBuffer()
 : <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer.html#a7389da9d8218edf267649b7a10d29ce0">GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer</a>
@@ -157,6 +175,9 @@ $(function() {
 , <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer.html#a6e266272638dd67cec7b6d57f172eae2">GeometryEngine::GeometryBuffer::SingleColorTextBuffer</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html#a97e569658af28d7d60a3be95fa8cb0af">GeometryEngine::GeometryGlSetup::GlSetup</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html#a2140bf33e9792369fc60853c58fdc789">GeometryEngine::GeometryGlSetup::InitialSetup</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport.html#a01e153a7802a6593e0336464e3d8d3af">GeometryEngine::GeometryItemUtils::OrtographicViewport</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport.html#af751fd63329fb5f80965e3f864afb4b7">GeometryEngine::GeometryItemUtils::PerspectiveViewport</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_viewport.html#a2cd0eeeac769d5da977a17a4e394a1d9">GeometryEngine::GeometryItemUtils::Viewport</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_color_material.html#a11ddb849641dc6216d7ded2331636d46">GeometryEngine::GeometryMaterial::ColorMaterial</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html#a632cdbe72ea955bc591a3902f63b6061">GeometryEngine::GeometryMaterial::Material</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material.html#add208366ae882ad1bd9c6029969902b4">GeometryEngine::GeometryMaterial::MultiTextureMaterial</a>
@@ -167,12 +188,14 @@ $(function() {
 , <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html#aba093c175b228894204e785a5a54e6e9">GeometryEngine::GeometryPostProcess::PostProcess</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process.html#ae22e2bf8dc5b553a7b1526b695c8be88">GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_single_pass_post_process.html#ab47b36f68057dcff05402a9e5a630878">GeometryEngine::GeometryPostProcess::SinglePassPostProcess::SinglePassPostProcess</a>
-, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_double_post_process_pass.html#a1fd491635a67d9d228142c41a66d222b">GeometryEngine::GeometryRenderStep::DoublePostProcessPass</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_final_pass.html#a4ae9bc7bbc603ec3fd5c7681cc20e8f0">GeometryEngine::GeometryRenderStep::FinalPass</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#ae69b08dfd47ccfcc3888ca53511b660d">GeometryEngine::GeometryRenderStep::GeometryPass</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a4865616b03a872033a6f9abc5c370374">GeometryEngine::GeometryRenderStep::LightingPass</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#a5279399395c18ac4ef35fa3028aa4950">GeometryEngine::GeometryRenderStep::PostProcessPass</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#afe0321446beeb4093dba701424ec1e8c">GeometryEngine::GeometryRenderStep::RenderStep</a>
-, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_single_post_process_pass.html#a9b73ca0ef1ca7af5e8187ab24078b0cd">GeometryEngine::GeometryRenderStep::SinglePostProcessPass</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#add7b889c49a68911f675ee44ab656699">GeometryEngine::GeometryRenderStep::ShadowedLightingPass</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a821e388a441a9b4a80e8384fc79170e3">GeometryEngine::GeometryWorldItem::GeometryCamera::Camera</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera.html#a00eba99af30625646ea11f442ffa2742">GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera</a>
 </li>
 <li>Copy()
 : <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html#a36f20733aaadc9ab22a72eb87436b900">GeometryEngine::GeometryWorldItem::GeometryItem::Cube</a>
@@ -185,7 +208,7 @@ $(function() {
 : <a class="el" href="class_geometry_engine_1_1_scene_manager.html#aafc212a0eed6a49d411d06f03a73f943">GeometryEngine::SceneManager</a>
 </li>
 <li>Cube()
-: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html#a159c3e7e79d19df2a9857fc6b77d5955">GeometryEngine::GeometryWorldItem::GeometryItem::Cube</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html#a3971e98ccf681ba9dfae15b33ae0ca22">GeometryEngine::GeometryWorldItem::GeometryItem::Cube</a>
 </li>
 </ul>
 </div><!-- contents -->

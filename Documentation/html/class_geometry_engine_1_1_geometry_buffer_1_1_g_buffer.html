@@ -147,14 +147,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#ae35be249f45427e6425dfdaf2c67e61c">BindForFinalPass</a> ()</td></tr>
 <tr class="memdesc:ae35be249f45427e6425dfdaf2c67e61c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds final texture and the framebuffer for reading and the window for writing. <br /></td></tr>
 <tr class="separator:ae35be249f45427e6425dfdaf2c67e61c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac11c8a78abc4221466afd2d73f40b97b"><td class="memItemLeft" align="right" valign="top"><a id="ac11c8a78abc4221466afd2d73f40b97b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#ac11c8a78abc4221466afd2d73f40b97b">BindForPostProcess</a> ()</td></tr>
-<tr class="memdesc:ac11c8a78abc4221466afd2d73f40b97b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds final texture for reading and tmpTexture for writing. <br /></td></tr>
-<tr class="separator:ac11c8a78abc4221466afd2d73f40b97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae91d4ef60d2adacc2ccc8c49310610ae"><td class="memItemLeft" align="right" valign="top"><a id="ae91d4ef60d2adacc2ccc8c49310610ae"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#ae91d4ef60d2adacc2ccc8c49310610ae">BindForFinishPostProcess</a> ()</td></tr>
-<tr class="memdesc:ae91d4ef60d2adacc2ccc8c49310610ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds tmpTexture texture for reading and final for writing. <br /></td></tr>
-<tr class="separator:ae91d4ef60d2adacc2ccc8c49310610ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c67280eb1c468c049674662bc81af5b"><td class="memItemLeft" align="right" valign="top"><a id="a9c67280eb1c468c049674662bc81af5b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a9c67280eb1c468c049674662bc81af5b">BindTexturesForPostProcess</a> ()</td></tr>
+<tr class="memdesc:a9c67280eb1c468c049674662bc81af5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds final texture for reading and tmpTexture for writing. <br /></td></tr>
+<tr class="separator:a9c67280eb1c468c049674662bc81af5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb43b5511b3644649054af798775bd12"><td class="memItemLeft" align="right" valign="top"><a id="aeb43b5511b3644649054af798775bd12"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#aeb43b5511b3644649054af798775bd12">FinishPostProcessBinding</a> ()</td></tr>
+<tr class="memdesc:aeb43b5511b3644649054af798775bd12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds tmpTexture texture for reading and final for writing. <br /></td></tr>
+<tr class="separator:aeb43b5511b3644649054af798775bd12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6be0b4fb6077770c9e3a3673b1e5044"><td class="memItemLeft" align="right" valign="top"><a id="af6be0b4fb6077770c9e3a3673b1e5044"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#af6be0b4fb6077770c9e3a3673b1e5044">BindTmpTextureWrite</a> ()</td></tr>
+<tr class="memdesc:af6be0b4fb6077770c9e3a3673b1e5044"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds final texture for reading and tmpTexture for writing. <br /></td></tr>
+<tr class="separator:af6be0b4fb6077770c9e3a3673b1e5044"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bcec235e3592cec2c51563b3e8984c4"><td class="memItemLeft" align="right" valign="top"><a id="a9bcec235e3592cec2c51563b3e8984c4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a9bcec235e3592cec2c51563b3e8984c4">BindBuffer</a> ()</td></tr>
 <tr class="memdesc:a9bcec235e3592cec2c51563b3e8984c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds all textures. <br /></td></tr>
@@ -183,10 +187,20 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a2b829115597fc587cd6f4ddb52b875cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47bda4849000d2728538de4e2f27f11a"><td class="memItemLeft" align="right" valign="top">const QVector2D &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a47bda4849000d2728538de4e2f27f11a">GetMaxTextureSize</a> () const</td></tr>
 <tr class="separator:a47bda4849000d2728538de4e2f27f11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ea57f74fe7c40ea19d120ee271daeca"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a2ea57f74fe7c40ea19d120ee271daeca">GetTexture</a> (<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a> texture) const</td></tr>
-<tr class="separator:a2ea57f74fe7c40ea19d120ee271daeca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a798b7520f23c545e09d58639bd275f16"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a798b7520f23c545e09d58639bd275f16">GetTexture</a> (<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a> texture) const</td></tr>
+<tr class="separator:a798b7520f23c545e09d58639bd275f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66ccde86e455532b2eac771163570f04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a66ccde86e455532b2eac771163570f04">IsTextureActive</a> (<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a> texture) const</td></tr>
 <tr class="separator:a66ccde86e455532b2eac771163570f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf39c85cb87eaf0475205b59333253c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#abf39c85cb87eaf0475205b59333253c0">ClearColorTexture</a> (<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a> texture)</td></tr>
+<tr class="separator:abf39c85cb87eaf0475205b59333253c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d3ac4fcb577f48c5d7e7f023109cec0"><td class="memItemLeft" align="right" valign="top"><a id="a9d3ac4fcb577f48c5d7e7f023109cec0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a9d3ac4fcb577f48c5d7e7f023109cec0">DetachDepthBuffer</a> ()</td></tr>
+<tr class="memdesc:a9d3ac4fcb577f48c5d7e7f023109cec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches the depth texture from the framebuffer and attaches the tmp depth buffer. <br /></td></tr>
+<tr class="separator:a9d3ac4fcb577f48c5d7e7f023109cec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5101a82324f81ed73a1380d1ac97ce7f"><td class="memItemLeft" align="right" valign="top"><a id="a5101a82324f81ed73a1380d1ac97ce7f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a5101a82324f81ed73a1380d1ac97ce7f">AttachDepthBuffer</a> ()</td></tr>
+<tr class="memdesc:a5101a82324f81ed73a1380d1ac97ce7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches the tmp depth buffer and ataches the depth texture to the framebuffer. <br /></td></tr>
+<tr class="separator:a5101a82324f81ed73a1380d1ac97ce7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af993f8c23f7e78051f3071be4873af9d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html">GBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#af993f8c23f7e78051f3071be4873af9d">Clone</a> () const</td></tr>
 <tr class="separator:af993f8c23f7e78051f3071be4873af9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1242e69d277b69b58497f7d489e176c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#ad1242e69d277b69b58497f7d489e176c">FillGBufferInfo</a> (<a class="el" href="struct_geometry_engine_1_1_g_buffer_texture_info.html">GBufferTextureInfo</a> &amp;bufferInfo)</td></tr>
@@ -206,12 +220,16 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:afa5700526d827e83d0b6915c40cdbde8"><td class="memItemLeft" align="right" valign="top"><a id="afa5700526d827e83d0b6915c40cdbde8"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>mFbo</b></td></tr>
 <tr class="separator:afa5700526d827e83d0b6915c40cdbde8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a485e15e91bc847fcf66d79be6dfbdc99"><td class="memItemLeft" align="right" valign="top"><a id="a485e15e91bc847fcf66d79be6dfbdc99"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>mTextures</b> [GBUFFER_NUM_TEXTURES]</td></tr>
-<tr class="separator:a485e15e91bc847fcf66d79be6dfbdc99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a919af79ada16d935651f7123cb5a4700"><td class="memItemLeft" align="right" valign="top"><a id="a919af79ada16d935651f7123cb5a4700"></a>
+GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>mTextures</b> [GBUFFER_NUM_TEXTURES]</td></tr>
+<tr class="separator:a919af79ada16d935651f7123cb5a4700"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7923c84d57522ea62a748db16ceafff6"><td class="memItemLeft" align="right" valign="top"><a id="a7923c84d57522ea62a748db16ceafff6"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>mDepthTexture</b></td></tr>
 <tr class="separator:a7923c84d57522ea62a748db16ceafff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dd9f435e79e3570133e162fb699ef97"><td class="memItemLeft" align="right" valign="top"><a id="a6dd9f435e79e3570133e162fb699ef97"></a>
+GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a6dd9f435e79e3570133e162fb699ef97">mTmpDepthBuffer</a></td></tr>
+<tr class="memdesc:a6dd9f435e79e3570133e162fb699ef97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer for depth operations that do not need to be stored. <br /></td></tr>
+<tr class="separator:a6dd9f435e79e3570133e162fb699ef97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5d3493f8b8c0e2044b1cfc0484c3c3c"><td class="memItemLeft" align="right" valign="top"><a id="ad5d3493f8b8c0e2044b1cfc0484c3c3c"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>mFinalTexture</b></td></tr>
 <tr class="separator:ad5d3493f8b8c0e2044b1cfc0484c3c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -315,6 +333,25 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
       </table>
 </div><div class="memdoc">
 <p>Binds selected texture to its location param tex texture to bind </p>
+
+</div>
+</div>
+<a id="abf39c85cb87eaf0475205b59333253c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf39c85cb87eaf0475205b59333253c0">&#9670;&nbsp;</a></span>ClearColorTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeometryEngine::GeometryBuffer::GBuffer::ClearColorTexture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a>&#160;</td>
+          <td class="paramname"><em>texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Clears the color of one of the textures of the framebuffer param texture Texture to clear </p>
 
 </div>
 </div>
@@ -490,8 +527,8 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
 
 </div>
 </div>
-<a id="a2ea57f74fe7c40ea19d120ee271daeca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ea57f74fe7c40ea19d120ee271daeca">&#9670;&nbsp;</a></span>GetTexture()</h2>
+<a id="a798b7520f23c545e09d58639bd275f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a798b7520f23c545e09d58639bd275f16">&#9670;&nbsp;</a></span>GetTexture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,7 +537,7 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int GeometryEngine::GeometryBuffer::GBuffer::GetTexture </td>
+          <td class="memname">GLuint GeometryEngine::GeometryBuffer::GBuffer::GetTexture </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a>&#160;</td>
           <td class="paramname"><em>texture</em></td><td>)</td>

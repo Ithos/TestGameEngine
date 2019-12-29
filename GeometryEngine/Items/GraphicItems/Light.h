@@ -88,16 +88,29 @@ namespace GeometryEngine
 					assert(GetStencilTest() && "Stencil test not found");
 				}
 
+				/// Method to expose the shadow map calculation that some lights might have. Lights that cast shadows are supposed to re-implement this method
+				/// param vertexBuf Pointer to the vertex buffer
+				/// param indexBuffer Pointer to the index buffer
+				/// param modelMatrix model matrix of the item to be added to the shadow map
+				/// param totalVertexNum Total amount of vertices
+				/// param totalIndexNum Total amount of indices
+				virtual void CalculateShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelMatrix, unsigned int totalVertexNum, unsigned int totalIndexNum) {}
+
 				/// Method to be implemented by child classes. Returns a pointer to the boundng geometry of the ligh or nullptr if there is none
 				/// return Pointer to the boundng geometry of the ligh or nullptr if there is none
 				virtual WorldItem* const GetBoundingGeometry() { return nullptr; }
 				/// Method to be implemented by child classes. Returns true if the light performs a stencil test.
 				virtual bool GetStencilTest() { return false; }
+				/// Method to be implemented by child classes. Returns true if the light calculates shadows
+				virtual bool GetCastShadows() { return false; }
+				/// Method to be implemented by child classes. Updates elements when the screen is resized.
+				virtual void ResizeElements(int screenWidth, int screenHeight) {}
 			protected:
 				QVector3D mColorDiffuse; // Vec3 color  + float intensity
 				QVector3D mColorAmbient;
 				QVector3D mColorSpecular;
-				QOpenGLShaderProgram* mpProgram; // Lighting shader
+				/// Lighting shader
+				QOpenGLShaderProgram* mpProgram; 
 				Configuration::ConfigurationManager* mpConfInstance;
 				ShaderFiles::ShaderManager* mpShaderManager;
 				std::string mVertexShaderKey;

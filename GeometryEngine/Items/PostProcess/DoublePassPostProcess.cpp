@@ -1,13 +1,14 @@
 #include "DoublePassPostProcess.h"
 
-void GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess::ApplyFirstStep(const GBufferTextureInfo & gBuffTexInfo)
+void GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess::ApplyPostProcess(const GBufferTextureInfo & gBuffTexInfo)
 {
 	SetFirstStepParameters();
-	ApplyPostProcess(gBuffTexInfo);
+	PostProcess::ApplyPostProcess(gBuffTexInfo);
 }
 
-void GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess::ApplySecondStep(const GBufferTextureInfo & gBuffTexInfo)
+bool GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess::ApplyPostProcessSecondStep(const GBufferTextureInfo & gBuffTexInfo)
 {
 	SetSecondStepParameters();
-	ApplyPostProcess(gBuffTexInfo);
+	PostProcess::ApplyPostProcess(gBuffTexInfo);
+	return true;
 }

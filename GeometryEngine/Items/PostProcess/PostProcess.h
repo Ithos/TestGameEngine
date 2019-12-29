@@ -40,7 +40,12 @@ namespace GeometryEngine
 			virtual ~PostProcess();
 			/// Applies the post process
 			/// param gBuffTexInfo Geometry buffer data
-			void ApplyPostProcess(const GBufferTextureInfo& gBuffTexInfo);
+			virtual void ApplyPostProcess(const GBufferTextureInfo& gBuffTexInfo); 
+			/// Applies the second step of the post process if it exists. This method should be reimplemented by this class's children
+			/// param gBuffTexInfo Geometry buffer data
+			/// return true if the second step was applied, false if there isn't  a second step
+			virtual bool ApplyPostProcessSecondStep(const GBufferTextureInfo& gBuffTexInfo) { return false; }
+			/// Returns a pointer to the geometry in which the post process will be applied
 			virtual GeometryEngine::GeometryWorldItem::WorldItem* const GetBoundingGeometry() { return mpBoundingGeometry; }
 			/// Abstract method. Factory method. Creates a copy of this object
 			/// return Pointer to a copy of this object

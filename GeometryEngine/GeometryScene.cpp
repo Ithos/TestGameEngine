@@ -21,16 +21,21 @@ void GeometryEngine::GeometryScene::GeometryScene::InitializeGL()
 
 void GeometryEngine::GeometryScene::GeometryScene::ResizeScene(int w, int h, int formerW, int formerH)
 {
+	float wRel = (float)w / (float)formerW;
+	float hRel = (float)h / (float)formerH;
+
 	for (auto iter = mCameras.begin(); iter != mCameras.end(); ++iter)
 	{
 		if ((*iter)->IsAutoResize())
 		{
 			const QVector4D& viewport = (*iter)->GetViewportSize();
-			float wRel = (float)w / (float)formerW;
-			float hRel = (float)h / (float)formerH;
-
-			(*iter)->SetViewport(QVector4D(viewport.x() * wRel, viewport.y() * hRel, viewport.z() * wRel, viewport.w() * hRel));
+			(*iter)->SetViewportSize(QVector4D(viewport.x() * wRel, viewport.y() * hRel, viewport.z() * wRel, viewport.w() * hRel));
 		}
+	}
+
+	for (auto iter = mLights.begin(); iter != mLights.end(); ++iter)
+	{
+		(*iter)->ResizeElements(w, h);
 	}
 }
 

@@ -61,9 +61,11 @@ namespace GeometryEngine
 			/// Binds final texture and the framebuffer for reading and the window for writing
 			void BindForFinalPass();
 			/// Binds final texture for reading and tmpTexture for writing
-			void BindForPostProcess();
+			void BindTexturesForPostProcess();
 			/// Binds tmpTexture texture for reading and final for writing
-			void BindForFinishPostProcess();
+			void FinishPostProcessBinding();
+			/// Binds final texture for reading and tmpTexture for writing
+			void BindTmpTextureWrite();
 			/// Binds all textures
 			void BindBuffer();
 			/// Binds the final texture to the selected texture location
@@ -94,23 +96,31 @@ namespace GeometryEngine
 			/// Returns the OpenGl id of a texture
 			/// param texture Texture enum element
 			/// return OpenGl id of the texture
-			unsigned int GetTexture(GBUFFER_TEXTURE_TYPE texture) const { return mTextures[texture]; }
+			GLuint  GetTexture(GBUFFER_TEXTURE_TYPE texture) const { return mTextures[texture]; }
 			/// Returns true if the texture is active
 			/// param texture Texture to check
 			/// return true if active false otherwise
 			bool IsTextureActive(GBUFFER_TEXTURE_TYPE texture) const { return mActiveTextures.find(texture) != mActiveTextures.end(); }
+			/// Clears the color of one of the textures of the framebuffer
+			/// param texture Texture to clear
+			void ClearColorTexture(GBUFFER_TEXTURE_TYPE texture);
+			/// Detaches the depth texture from the framebuffer and attaches the tmp depth buffer
+			void DetachDepthBuffer();
+			/// Detaches the tmp depth buffer and ataches the depth texture to the framebuffer
+			void AttachDepthBuffer();
 			/// Factory method. Creates a copy of this object
 			/// return Pointer to a copy of this object
 			virtual GBuffer* Clone() const { return new GBuffer(*this); };
-
 			/// Sets the data of a GBufferTextureInfo
 			/// param bufferInfo GBufferTextureInfo to be updated
 			void FillGBufferInfo(GBufferTextureInfo& bufferInfo);
 
 		protected:
 			unsigned int mFbo;
-			unsigned int mTextures[GBUFFER_NUM_TEXTURES];
+			GLuint  mTextures[GBUFFER_NUM_TEXTURES];
 			unsigned int mDepthTexture;
+			/// Buffer for depth operations that do not need to be stored
+			GLuint mTmpDepthBuffer;
 			unsigned int mFinalTexture;
 			unsigned int mFinalTextureLocation;
 			QVector2D mTextureSize;

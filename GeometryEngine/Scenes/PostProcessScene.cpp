@@ -7,7 +7,6 @@ GeometryEngine::GeometryScene::PostProcessScene::PostProcessScene(SceneManager *
 
 	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::GeometryPass());
 	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::LightingPass());
-	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::SinglePostProcessPass());
-	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::DoublePostProcessPass());
+	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::PostProcessPass());
 	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::FinalPass());
 }

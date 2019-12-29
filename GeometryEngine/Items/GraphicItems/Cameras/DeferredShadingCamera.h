@@ -27,19 +27,28 @@ namespace GeometryEngine
 				/// param rot Initial rotaion of the item
 				/// param scale Initial scale to be applied to this item model
 				/// param parent Pointer to this items parent item, nullptr if none.
-				DeferredShadingCamera( const GeometryBuffer::GBuffer& gbuffer, const QVector4D& viewportSize, bool autoResize = true, GLdouble zNear = 0.1, 
-					GLdouble zFar = 30.0, const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f),
+				DeferredShadingCamera( const GeometryBuffer::GBuffer& gbuffer, const GeometryItemUtils::Viewport& viewport, bool autoResize = true, const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f),
 					const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
+				/// Copy constructor
+				/// param ref Object to be copied.
+				DeferredShadingCamera(const DeferredShadingCamera& ref);
 				/// Destructor
 				virtual ~DeferredShadingCamera() {}
 				/// Resizes the Opengl viewport and the Geometric buffer viewport size
 				/// param size Viewport size
-				virtual void SetViewport(const QVector4D& size) override;
+				virtual void SetViewportSize(const QVector4D& size) override;
+				/// Factory method. Creates a copy of this object
+				/// return Pointer to a copy of this object
+				virtual DeferredShadingCamera* Clone() const;
 
 			protected:
 				/// Clones the Geometric buffer into the camera and initializes the buffer textures with the size of the screen
 				/// param gBuffer Geometric buffer to be cloned into the camera
 				virtual void init( const GeometryBuffer::GBuffer& gbuffer);
+
+				/// Copies the data of a Camera object to the current object
+				/// param ref Camera to be copied
+				virtual void copy(const DeferredShadingCamera& ref);
 			};
 		}
 	}

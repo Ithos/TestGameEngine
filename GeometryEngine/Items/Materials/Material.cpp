@@ -38,14 +38,8 @@ GeometryEngine::GeometryMaterial::Material::~Material()
 void GeometryEngine::GeometryMaterial::Material::Draw(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf,
 	unsigned int totalVertexNumber, unsigned int totalIndexNumber, const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryWorldItem::GeometryItem::GeometryItem & parent)
 {
-	if (mpProgram != nullptr)
+	assert(mpProgram != nullptr && "No material shader program found");
 	{
-		// Link shader pipeline
-		if (!mpProgram->link())
-		{
-			assert(false && "Material --> Program failed to link");
-		}
-
 		// Bind shader pipeline for use
 		if (!mpProgram->bind())
 		{
@@ -97,6 +91,15 @@ void GeometryEngine::GeometryMaterial::Material::initProgram()
 		if (!mpProgram->addShaderFromSourceCode(QOpenGLShader::Fragment, mpShaderManager->GetLoadedShaderContent(mFragmentShaderKey).c_str()))
 		{
 			assert(false && "Material --> FragmentShader failed to compile");
+		}
+	}
+
+	assert(mpProgram != nullptr && "No material shader program found");
+	{
+		// Link shader pipeline
+		if (!mpProgram->link())
+		{
+			assert(false && "Material --> Program failed to link");
 		}
 	}
 }

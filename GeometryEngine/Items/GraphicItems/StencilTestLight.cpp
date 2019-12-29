@@ -20,15 +20,7 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::Calcula
 {
 	assert(GetBoundingGeometry() != nullptr && "Bounding geometry not found");
 	assert(mpStencilProgram != nullptr && "Shading program not found");
-
-	if (mpStencilProgram != nullptr)
 	{
-		// Link shader pipeline
-		if (!mpStencilProgram->link())
-		{
-			assert(false && "StencilTestLight --> Shader program failed to link");
-		}
-
 		// Bind shader pipeline for use
 		if (!mpStencilProgram->bind())
 		{
@@ -82,6 +74,15 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::initSte
 		if (!mpStencilProgram->addShaderFromSourceCode(QOpenGLShader::Fragment, mpShaderManager->GetLoadedShaderContent(mStencilFragmentShaderKey).c_str()))
 		{
 			assert(false && "StencilTestLight --> Failed to load fragment shader");
+		}
+	}
+
+	assert(mpStencilProgram != nullptr && "Shading program not found");
+	{
+		// Link shader pipeline
+		if (!mpStencilProgram->link())
+		{
+			assert(false && "StencilTestLight --> Shader program failed to link");
 		}
 	}
 }

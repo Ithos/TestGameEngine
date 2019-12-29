@@ -25,11 +25,13 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+Post\+Process\+::Post\+Pro
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_ae50dbe0c834a713d1f3163f9706b2e91}\label{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_ae50dbe0c834a713d1f3163f9706b2e91}} 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_ae50dbe0c834a713d1f3163f9706b2e91}{$\sim$\+Post\+Process}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_a2dbb157265ebdeea658982673e757d46}{Apply\+Post\+Process}} (const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info)
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_a2dbb157265ebdeea658982673e757d46}{Apply\+Post\+Process}} (const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info)
+\item 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_a3657f263948ecee70314c859e15412e1}{Apply\+Post\+Process\+Second\+Step}} (const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info)
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_a19b7d991ecfc7af8f9ca2c9f79488b9a}\label{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_a19b7d991ecfc7af8f9ca2c9f79488b9a}} 
-virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item}} $\ast$const {\bfseries Get\+Bounding\+Geometry} ()
-\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item}} $\ast$const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_a19b7d991ecfc7af8f9ca2c9f79488b9a}{Get\+Bounding\+Geometry}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the geometry in which the post process will be applied. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Post\+Process}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_aa80749cf09041335f6b3bda3aaf31711}{Clone}} () const =0
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
@@ -98,9 +100,23 @@ Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_en
 \index{GeometryEngine::GeometryPostProcess::PostProcess@{GeometryEngine::GeometryPostProcess::PostProcess}!ApplyPostProcess@{ApplyPostProcess}}
 \index{ApplyPostProcess@{ApplyPostProcess}!GeometryEngine::GeometryPostProcess::PostProcess@{GeometryEngine::GeometryPostProcess::PostProcess}}
 \subsubsection{\texorpdfstring{ApplyPostProcess()}{ApplyPostProcess()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process\+::\+Apply\+Post\+Process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process\+::\+Apply\+Post\+Process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Applies the post process param g\+Buff\+Tex\+Info Geometry buffer data \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_aa80749cf09041335f6b3bda3aaf31711}\label{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_aa80749cf09041335f6b3bda3aaf31711}} 
+Applies the post process param g\+Buff\+Tex\+Info Geometry buffer data 
+
+Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a9d2674bc5b237ed2e494d1c88f63d29e}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Double\+Pass\+Post\+Process}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_a3657f263948ecee70314c859e15412e1}\label{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_a3657f263948ecee70314c859e15412e1}} 
+\index{GeometryEngine::GeometryPostProcess::PostProcess@{GeometryEngine::GeometryPostProcess::PostProcess}!ApplyPostProcessSecondStep@{ApplyPostProcessSecondStep}}
+\index{ApplyPostProcessSecondStep@{ApplyPostProcessSecondStep}!GeometryEngine::GeometryPostProcess::PostProcess@{GeometryEngine::GeometryPostProcess::PostProcess}}
+\subsubsection{\texorpdfstring{ApplyPostProcessSecondStep()}{ApplyPostProcessSecondStep()}}
+{\footnotesize\ttfamily virtual bool Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process\+::\+Apply\+Post\+Process\+Second\+Step (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Applies the second step of the post process if it exists. This method should be reimplemented by this class\textquotesingle{}s children param g\+Buff\+Tex\+Info Geometry buffer data return true if the second step was applied, false if there isn\textquotesingle{}t a second step 
+
+Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a1caac8d2ec6f65de1bb98edd88ba14c6}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Double\+Pass\+Post\+Process}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_aa80749cf09041335f6b3bda3aaf31711}\label{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_aa80749cf09041335f6b3bda3aaf31711}} 
 \index{GeometryEngine::GeometryPostProcess::PostProcess@{GeometryEngine::GeometryPostProcess::PostProcess}!Clone@{Clone}}
 \index{Clone@{Clone}!GeometryEngine::GeometryPostProcess::PostProcess@{GeometryEngine::GeometryPostProcess::PostProcess}}
 \subsubsection{\texorpdfstring{Clone()}{Clone()}}

@@ -51,7 +51,7 @@ namespace GeometryEngine
 
 		GBufferTextureInfo(const QVector2D& texSize) :
 			AmbientTexture(0), DiffuseTexture(0), ReflectiveTexture(0), EmissiveTexture(0),
-			PositionTexture(0), NormalTexture(0), TmpTexture(0), FinalTexture(0), UseAmbientTexture(0),
+			PositionTexture(0), NormalTexture(0), TmpTexture(0), FinalTexture(0), UseAmbientTexture(false),
 			UseDiffuseTexture(false), UseReflectiveTexture(false), UseEmissiveTexture(false), UsePositionTexture(false), UseNormalTexture(false),
 			UseTmpTexture(false), TextureSize(texSize) {}
 

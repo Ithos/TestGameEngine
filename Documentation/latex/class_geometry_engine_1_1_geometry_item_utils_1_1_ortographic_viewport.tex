@@ -1,0 +1,77 @@
+\hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport}{}\section{Geometry\+Engine\+::Geometry\+Item\+Utils\+::Ortographic\+Viewport Class Reference}
+\label{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport}\index{GeometryEngine::GeometryItemUtils::OrtographicViewport@{GeometryEngine::GeometryItemUtils::OrtographicViewport}}
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Item\+Utils\+::Ortographic\+Viewport\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_ab209a520eb03901cc658da622914b5f7}{Ortographic\+Viewport}} (const Q\+Vector4D \&viewport\+Size, const Q\+Rect \&ortho\+Size, G\+Ldouble z\+Near=0.\+1, G\+Ldouble z\+Far=30.\+0)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a522e8770371fa1f12b0257e48773d201}{Ortographic\+Viewport}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport}{Ortographic\+Viewport}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a333fb2fed2e02506f8165b19a20169bd}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a333fb2fed2e02506f8165b19a20169bd}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a333fb2fed2e02506f8165b19a20169bd}{$\sim$\+Ortographic\+Viewport}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport}{Ortographic\+Viewport}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a7729f7619d67c139f8510c305de1a286}{Clone}} () const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a30dbefa19b28e26fd655255ccd5412b5}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a30dbefa19b28e26fd655255ccd5412b5}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a30dbefa19b28e26fd655255ccd5412b5}{Calculate\+Projection\+Matrix}} () override
+\begin{DoxyCompactList}\small\item\em Calculates the projection matrix for the camera as an orthographic projection matrix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_ada2137910c495f20108e98ae63ae55c8}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_ada2137910c495f20108e98ae63ae55c8}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_ada2137910c495f20108e98ae63ae55c8}{Set\+Ortho\+Size}} (const Q\+Rect \&ortho\+Size)
+\begin{DoxyCompactList}\small\item\em Sets the size of the orthographic prism used to render the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a01e153a7802a6593e0336464e3d8d3af}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport}{Ortographic\+Viewport}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_adf03f40d6e79f06fb48e38eca117f46e}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_adf03f40d6e79f06fb48e38eca117f46e}} 
+Q\+Rect {\bfseries m\+Ortho\+Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_ab209a520eb03901cc658da622914b5f7}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_ab209a520eb03901cc658da622914b5f7}} 
+\index{GeometryEngine::GeometryItemUtils::OrtographicViewport@{GeometryEngine::GeometryItemUtils::OrtographicViewport}!OrtographicViewport@{OrtographicViewport}}
+\index{OrtographicViewport@{OrtographicViewport}!GeometryEngine::GeometryItemUtils::OrtographicViewport@{GeometryEngine::GeometryItemUtils::OrtographicViewport}}
+\subsubsection{\texorpdfstring{OrtographicViewport()}{OrtographicViewport()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Ortographic\+Viewport\+::\+Ortographic\+Viewport (\begin{DoxyParamCaption}\item[{const Q\+Vector4D \&}]{viewport\+Size,  }\item[{const Q\+Rect \&}]{ortho\+Size,  }\item[{G\+Ldouble}]{z\+Near = {\ttfamily 0.1},  }\item[{G\+Ldouble}]{z\+Far = {\ttfamily 30.0} }\end{DoxyParamCaption})}
+
+Constructor. param viewport\+Size Size of the viewport. The values indicate in order x position, yposition, width, height. param ortho\+Size size of the ortographic prism param z\+Near Nearest z coordinate to be rendered param z\+Far Farthest z coordinate to be rendered \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a522e8770371fa1f12b0257e48773d201}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a522e8770371fa1f12b0257e48773d201}} 
+\index{GeometryEngine::GeometryItemUtils::OrtographicViewport@{GeometryEngine::GeometryItemUtils::OrtographicViewport}!OrtographicViewport@{OrtographicViewport}}
+\index{OrtographicViewport@{OrtographicViewport}!GeometryEngine::GeometryItemUtils::OrtographicViewport@{GeometryEngine::GeometryItemUtils::OrtographicViewport}}
+\subsubsection{\texorpdfstring{OrtographicViewport()}{OrtographicViewport()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Ortographic\+Viewport\+::\+Ortographic\+Viewport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport}{Ortographic\+Viewport}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a7729f7619d67c139f8510c305de1a286}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a7729f7619d67c139f8510c305de1a286}} 
+\index{GeometryEngine::GeometryItemUtils::OrtographicViewport@{GeometryEngine::GeometryItemUtils::OrtographicViewport}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryItemUtils::OrtographicViewport@{GeometryEngine::GeometryItemUtils::OrtographicViewport}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport}{Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Ortographic\+Viewport}} $\ast$ Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Ortographic\+Viewport\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a8bd47866a001eae03f88df67fd699904}{Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a01e153a7802a6593e0336464e3d8d3af}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a01e153a7802a6593e0336464e3d8d3af}} 
+\index{GeometryEngine::GeometryItemUtils::OrtographicViewport@{GeometryEngine::GeometryItemUtils::OrtographicViewport}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryItemUtils::OrtographicViewport@{GeometryEngine::GeometryItemUtils::OrtographicViewport}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Ortographic\+Viewport\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport}{Ortographic\+Viewport}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a Camera object to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport}{Ortographic\+Viewport}} to be copied 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Item Utils/\+Viewports/Ortographic\+Viewport.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Item Utils/\+Viewports/Ortographic\+Viewport.\+cpp\end{DoxyCompactItemize}

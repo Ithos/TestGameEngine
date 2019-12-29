@@ -8,6 +8,7 @@
 #include "../WorldItem.h"
 #include "Render Utils\GBuffer.h"
 #include "../PostProcess/PostProcess.h"
+#include "../Item Utils/Viewport.h"
 
 
 namespace GeometryEngine
@@ -37,42 +38,45 @@ namespace GeometryEngine
 			{
 			public:
 				/// Constructor.  FAQ: Scaling the camera scales the whole coordinate system, be careful with it
-				/// param viewportSize Size of the viewport. The values indicate in order x position, yposition, width, height.
-				/// param autoResize Indicates if the viewport should be resized when the window's size changes
-				/// param zNear Nearest z coordinate to be rendered
-				/// param zFar Farthest z coordinate to be rendered
+				/// param viewport Object that defines the view and projection matrices
 				/// param pos Initial position of the item
 				/// param rot Initial rotaion of the item
 				/// param scale Initial scale to be applied to this item model
 				/// param parent Pointer to this items parent item, nullptr if none.
-				Camera(const QVector4D& viewportSize, bool autoResize = true, GLdouble zNear = 0.1, GLdouble zFar = 30.0, const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f),
+				Camera(const GeometryItemUtils::Viewport& viewport, bool autoResize = true, const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f),
 					const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
+
+				/// Copy constructor
+				/// param ref Object to be copied.
+				Camera(const Camera& ref);
 				/// Destructor
 				virtual ~Camera();
-				/// Gets the Projection matrix
-				/// return projection matrix
-				virtual const QMatrix4x4& GetProjectionMatrix() { return mProjection; }
+				/// Gets a pointer to the camera vewport
+				/// return pointer to the camera viewport
+				GeometryItemUtils::Viewport* GetViewport() { return mpViewport; }
 				/// Gets the View matrix
 				/// return View Matrix
-				virtual const QMatrix4x4& GetViewMatrix() { return mModelMatrix; }
+				virtual const QMatrix4x4& GetViewMatrix() { return mpViewport->GetViewMatrix(); }
+				/// Gets the Projection matrix
+				/// return projection matrix
+				virtual const QMatrix4x4& GetProjectionMatrix() { return mpViewport->GetProjectionMatrix(); }
 				/// Gets the View projection matrix
 				/// return View projection matrix
-				virtual const QMatrix4x4& GetViewProjectionMatrix() { return mViewProjection; }
-				/// Sets a new size for the viewport, but does not update the viewport inmediately
-				/// param size New Viewport size. The values indicate in order x position, yposition, width, height.
-				virtual void SetViewport(const QVector4D& size) { mViewportSize.setX(size.x()); mViewportSize.setY(size.y()); mViewportSize.setZ(size.z()); mViewportSize.setW(size.w()); }
-				/// Sets new values for the z coordinate limits, but does not update the projection matrix inmediately
-				/// param zNear Nearest z coordinate to be rendered
-				/// param zFar Farthest z coordinate to be rendered
-				void SetBoundaries(GLdouble zNear, GLdouble zFar) { mZNear = zNear; mZFar = zFar; }
-				/// Abstract method. Calculates the projection matrix for the camera.
-				virtual void CalculateProjectionMatrix() = 0;
+				virtual const QMatrix4x4& GetViewProjectionMatrix() { return mpViewport->GetViewProjectionMatrix(); }
+				/// Get the current viewport size. Gets the stored viewport size but not the actual viewport size, if there are unnaplied changes the actual size may differ.
+				/// return Viewport size as a QVector4D. The values indicate in order x position, yposition, width, height.
+				virtual const QVector4D& GetViewportSize() { return mpViewport->GetViewportSize(); }
 				/// Updates the model matrix for the camera
 				/// param calculateChildren true if children matrix should be updated
 				virtual void UpdateModelMatrix(bool updateChildren = false) override;
-				/// Get the current viewport size. Gets the stored viewport size but not the actual viewport size, if there are unnaplied changes the actual size may differ.
-				/// return Viewport size as a QVector4D. The values indicate in order x position, yposition, width, height.
-				virtual const QVector4D& GetViewportSize() { return mViewportSize; }
+				/// Resizes the Opengl viewport
+				/// param size Viewport size
+				virtual void SetViewportSize(const QVector4D& size) { mpViewport->SetViewportSize(size); }
+				/// Sets new values for the z coordinate limits, but does not update the projection matrix inmediately
+				/// param zNear Nearest z coordinate to be rendered
+				/// param zFar Farthest z coordinate to be rendered
+				void SetBoundaries(GLdouble zNear, GLdouble zFar) { mpViewport->SetBoundaries(zNear, zFar); }
+
 				/// Gets the auto resize value
 				/// return Auto resize value
 				bool IsAutoResize() { return mAutoResize; }
@@ -133,23 +137,25 @@ namespace GeometryEngine
 				/// Removes the camera from all render groups. An object is not contained in any render group it's considered to be contained in the null render group.
 				virtual void ClearRenderGroups() { mRenderGroups.clear(); }
 
+				/// Factory method. Creates a copy of this object
+				/// return Pointer to a copy of this object
+				virtual Camera* Clone() const;
+
 			protected:
-				GLdouble mZNear;
-				GLdouble mZFar;
-				QVector4D mViewportSize;
-				QMatrix4x4 mProjection;
-				QMatrix4x4 mViewProjection;
+				GeometryItemUtils::Viewport* mpViewport;
+				
 				bool mAutoResize;
 				GeometryBuffer::GBuffer* mpGBuffer;
 				std::list< GeometryRenderStep::RenderStep* > mCustomRenderSteps;
 				std::list< GeometryPostProcess::PostProcess*> mPostProcess;
 				std::unordered_set<int> mRenderGroups;
 
-				/// Sets projection matrix to identity and updates the size of the actual OpenGl viewport
-				virtual void ResetCameraBeforeCalculation();
-				/// `Calculates the view projection matrix for the camera by multiplying projection by model matrices
-				virtual void ApplyCameraModelMatrix() { mViewProjection = mProjection * mModelMatrix; };
-				
+				/// Default constructor to be used by child classes when being copied
+				Camera() {}
+
+				/// Copies the data of a Camera object to the current object
+				/// param ref Camera to be copied
+				virtual void copy(const Camera& ref);
 			};
 		}
 	}

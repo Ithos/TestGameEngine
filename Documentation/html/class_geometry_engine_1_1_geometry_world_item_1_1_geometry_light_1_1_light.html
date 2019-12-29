@@ -87,13 +87,16 @@ Inheritance diagram for GeometryEngine::GeometryWorldItem::GeometryLight::Light:
  <div class="center">
   <img src="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.png" usemap="#GeometryEngine::GeometryWorldItem::GeometryLight::Light_map" alt=""/>
   <map id="GeometryEngine::GeometryWorldItem::GeometryLight::Light_map" name="GeometryEngine::GeometryWorldItem::GeometryLight::Light_map">
-<area href="class_geometry_engine_1_1_geometry_world_item_1_1_world_item.html" title="Base class for every object that may be included in a scene." alt="GeometryEngine::GeometryWorldItem::WorldItem" shape="rect" coords="447,0,884,24"/>
-<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light.html" title="Class for lights that are applied to a defined geometry on a separate rendering step." alt="GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight" shape="rect" coords="447,112,884,136"/>
-<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light.html" alt="GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight" shape="rect" coords="0,168,437,192"/>
-<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light.html" alt="GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight" shape="rect" coords="447,168,884,192"/>
-<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light.html" title="Deferred shading light that adds a stencil test to ensure that light defined in enclosed geometries d..." alt="GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight" shape="rect" coords="894,168,1331,192"/>
-<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_point_light.html" title="Class that defines a light with attenuation with distance. Generally used for lightbulb type lights." alt="GeometryEngine::GeometryWorldItem::GeometryLight::PointLight" shape="rect" coords="670,224,1107,248"/>
-<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight.html" title="Loacal light that defines a direction, attenuation, and a max angle in which it will be applied...." alt="GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight" shape="rect" coords="1117,224,1554,248"/>
+<area href="class_geometry_engine_1_1_geometry_world_item_1_1_world_item.html" title="Base class for every object that may be included in a scene." alt="GeometryEngine::GeometryWorldItem::WorldItem" shape="rect" coords="456,0,902,24"/>
+<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light.html" title="Class for lights that are applied to a defined geometry on a separate rendering step." alt="GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight" shape="rect" coords="456,112,902,136"/>
+<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light.html" alt="GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight" shape="rect" coords="0,168,446,192"/>
+<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light.html" alt="GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight" shape="rect" coords="456,168,902,192"/>
+<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light.html" title="Deferred shading light that adds a stencil test to ensure that light defined in enclosed geometries d..." alt="GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight" shape="rect" coords="912,168,1358,192"/>
+<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_point_light.html" title="Class that defines a light with attenuation with distance. Generally used for lightbulb type lights." alt="GeometryEngine::GeometryWorldItem::GeometryLight::PointLight" shape="rect" coords="456,224,902,248"/>
+<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light.html" title="Abstract class that defines common methods for lights using shadow maps." alt="GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight" shape="rect" coords="912,224,1358,248"/>
+<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight.html" title="Loacal light that defines a direction, attenuation, and a max angle in which it will be applied...." alt="GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight" shape="rect" coords="1368,224,1814,248"/>
+<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_shadow_light.html" title="Class that defines a directional light that casts dynamic shadows." alt="GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight" shape="rect" coords="684,280,1130,304"/>
+<area href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_spotlight.html" title="Class that defines a spotlight that casts dynamic shadows." alt="GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight" shape="rect" coords="1140,280,1586,304"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -111,12 +114,22 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="separator:a4dfee4fc27c75493f992a84c2ea3ff95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae50fab4782158671041ac986dfead7fc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#ae50fab4782158671041ac986dfead7fc">CalculateStencil</a> (const QMatrix4x4 &amp;projectionMatrix, const QMatrix4x4 &amp;viewMatrix)</td></tr>
 <tr class="separator:ae50fab4782158671041ac986dfead7fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76aff3602f7bf26416c36111ab79f898"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#a76aff3602f7bf26416c36111ab79f898">CalculateShadowMap</a> (QOpenGLBuffer *vertexBuf, QOpenGLBuffer *indexBuf, const QMatrix4x4 &amp;modelMatrix, unsigned int totalVertexNum, unsigned int totalIndexNum)</td></tr>
+<tr class="separator:a76aff3602f7bf26416c36111ab79f898"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53cc9a8e7ab6eab9d34f1655ef33eaef"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_world_item.html">WorldItem</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#a53cc9a8e7ab6eab9d34f1655ef33eaef">GetBoundingGeometry</a> ()</td></tr>
 <tr class="separator:a53cc9a8e7ab6eab9d34f1655ef33eaef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac057b7a5229d61154d8a79f4467eb042"><td class="memItemLeft" align="right" valign="top"><a id="ac057b7a5229d61154d8a79f4467eb042"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#ac057b7a5229d61154d8a79f4467eb042">GetStencilTest</a> ()</td></tr>
 <tr class="memdesc:ac057b7a5229d61154d8a79f4467eb042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to be implemented by child classes. Returns true if the light performs a stencil test. <br /></td></tr>
 <tr class="separator:ac057b7a5229d61154d8a79f4467eb042"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c5c36c23bc16960b6d3232c33673e0a"><td class="memItemLeft" align="right" valign="top"><a id="a3c5c36c23bc16960b6d3232c33673e0a"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#a3c5c36c23bc16960b6d3232c33673e0a">GetCastShadows</a> ()</td></tr>
+<tr class="memdesc:a3c5c36c23bc16960b6d3232c33673e0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to be implemented by child classes. Returns true if the light calculates shadows. <br /></td></tr>
+<tr class="separator:a3c5c36c23bc16960b6d3232c33673e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18009ba6ef9c788f3d33d1ebd78a2140"><td class="memItemLeft" align="right" valign="top"><a id="a18009ba6ef9c788f3d33d1ebd78a2140"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#a18009ba6ef9c788f3d33d1ebd78a2140">ResizeElements</a> (int screenWidth, int screenHeight)</td></tr>
+<tr class="memdesc:a18009ba6ef9c788f3d33d1ebd78a2140"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to be implemented by child classes. Updates elements when the screen is resized. <br /></td></tr>
+<tr class="separator:a18009ba6ef9c788f3d33d1ebd78a2140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_geometry_engine_1_1_geometry_world_item_1_1_world_item"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_geometry_engine_1_1_geometry_world_item_1_1_world_item')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_world_item.html">GeometryEngine::GeometryWorldItem::WorldItem</a></td></tr>
 <tr class="memitem:aff1363b5a1dba5557b3d1a07f81829aa inherit pub_methods_class_geometry_engine_1_1_geometry_world_item_1_1_world_item"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_world_item.html#aff1363b5a1dba5557b3d1a07f81829aa">WorldItem</a> (const QVector3D &amp;pos=QVector3D(0.0f, 0.0f, 0.0f), const QVector3D &amp;rot=QVector3D(0.0f, 0.0f, 0.0f), const QVector3D &amp;scale=QVector3D(1.0f, 1.0f, 1.0f), WorldItem *parent=nullptr)</td></tr>
 <tr class="separator:aff1363b5a1dba5557b3d1a07f81829aa inherit pub_methods_class_geometry_engine_1_1_geometry_world_item_1_1_world_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,7 +219,8 @@ QVector3D&#160;</td><td class="memItemRight" valign="bottom"><b>mColorAmbient</b
 QVector3D&#160;</td><td class="memItemRight" valign="bottom"><b>mColorSpecular</b></td></tr>
 <tr class="separator:a9d27f9b7258a99a08e5bfe238d3a2bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf8c1fa7fbdede637977d84bf1258daf"><td class="memItemLeft" align="right" valign="top"><a id="abf8c1fa7fbdede637977d84bf1258daf"></a>
-QOpenGLShaderProgram *&#160;</td><td class="memItemRight" valign="bottom"><b>mpProgram</b></td></tr>
+QOpenGLShaderProgram *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#abf8c1fa7fbdede637977d84bf1258daf">mpProgram</a></td></tr>
+<tr class="memdesc:abf8c1fa7fbdede637977d84bf1258daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lighting shader. <br /></td></tr>
 <tr class="separator:abf8c1fa7fbdede637977d84bf1258daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9e919cea4a37204b3557e153afa16e9"><td class="memItemLeft" align="right" valign="top"><a id="ab9e919cea4a37204b3557e153afa16e9"></a>
 <a class="el" href="class_configuration_1_1_configuration_manager.html">Configuration::ConfigurationManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mpConfInstance</b></td></tr>
@@ -356,7 +370,7 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </div><div class="memdoc">
 <p>Abstract method. Binds shaders and draws. param vertexBuf Vertex buffer param indexBuf IndexBuffer param totalVertexNum Number of vetices param titalIndexNum Number of indices </p>
 
-<p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight.html#a6136ca2338a7b5f5be70ccab82fe655e">GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight</a>, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light.html#af1eac6f1aac9388efe95e1a898cf600f">GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight</a>, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_point_light.html#aa30244fd20e61fdfe1ac1d85c99fd154">GeometryEngine::GeometryWorldItem::GeometryLight::PointLight</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light.html#a4f1d4fb9ad25626e15c28de03b610b4f">GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight</a>.</p>
+<p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_spotlight.html#a27163f2f8903220d7eaae7aa70c9d6e6">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight</a>, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light.html#af1eac6f1aac9388efe95e1a898cf600f">GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight</a>, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_shadow_light.html#a712d0b0a0573ebd246a4a8aa6b2b667a">GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight</a>, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight.html#a6136ca2338a7b5f5be70ccab82fe655e">GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight</a>, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_point_light.html#aa30244fd20e61fdfe1ac1d85c99fd154">GeometryEngine::GeometryWorldItem::GeometryLight::PointLight</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light.html#a4f1d4fb9ad25626e15c28de03b610b4f">GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight</a>.</p>
 
 </div>
 </div>
@@ -424,6 +438,63 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </table>
 </div><div class="memdoc">
 <p>Calls the light shader program. param vertexBuf Pointer to the vertex buffer param indexBuffer Pointer to the index buffer param transformData <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html" title="Base class for world objects that represent a light source in the scene.">Light</a> source matrices param gBufferTextureInfo Geometry buffer textures, where the lighting result image will be stored param viewPos Position of the camera, used for reflected lights param totalVertexNum Total amount of vertices param totalIndexNum Total amount of indices </p>
+
+</div>
+</div>
+<a id="a76aff3602f7bf26416c36111ab79f898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76aff3602f7bf26416c36111ab79f898">&#9670;&nbsp;</a></span>CalculateShadowMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GeometryEngine::GeometryWorldItem::GeometryLight::Light::CalculateShadowMap </td>
+          <td>(</td>
+          <td class="paramtype">QOpenGLBuffer *&#160;</td>
+          <td class="paramname"><em>vertexBuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QOpenGLBuffer *&#160;</td>
+          <td class="paramname"><em>indexBuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QMatrix4x4 &amp;&#160;</td>
+          <td class="paramname"><em>modelMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>totalVertexNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>totalIndexNum</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Method to expose the shadow map calculation that some lights might have. Lights that cast shadows are supposed to re-implement this method param vertexBuf Pointer to the vertex buffer param indexBuffer Pointer to the index buffer param modelMatrix model matrix of the item to be added to the shadow map param totalVertexNum Total amount of vertices param totalIndexNum Total amount of indices </p>
+
+<p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light.html#a518efafd59e2dcd446140ae82140e172">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight</a>.</p>
 
 </div>
 </div>
@@ -586,7 +657,7 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </div><div class="memdoc">
 <p>Abstract method. Sends parameters to the shaders. param transformData Matrices of the light param <a class="el" href="struct_geometry_engine_1_1_g_buffer_texture_info.html" title="Class that holds information about the geometric buffer textures to be passed to the shader.">GBufferTextureInfo</a> Data from the textures of the geometry buffer param viewPos Position of the camera </p>
 
-<p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight.html#a89686934756cc47dd810cc43d8f5f88a">GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight</a>, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light.html#ae395d609ee47dd5d399514bb2c76d2db">GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight</a>, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_point_light.html#acf3ebd411b36d95ba26ae41bcc25793a">GeometryEngine::GeometryWorldItem::GeometryLight::PointLight</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light.html#a37469f72317d3d9cd0e5fb46fbf5fedf">GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight</a>.</p>
+<p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_spotlight.html#aea5bd6e9315d5df327f59d752f8c6f95">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight</a>, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light.html#ae395d609ee47dd5d399514bb2c76d2db">GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight</a>, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_shadow_light.html#a9eb42440febb19231e71555f7fde2346">GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight</a>, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight.html#a89686934756cc47dd810cc43d8f5f88a">GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight</a>, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_point_light.html#acf3ebd411b36d95ba26ae41bcc25793a">GeometryEngine::GeometryWorldItem::GeometryLight::PointLight</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light.html#a37469f72317d3d9cd0e5fb46fbf5fedf">GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight</a>.</p>
 
 </div>
 </div>

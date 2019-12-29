@@ -7,8 +7,9 @@
 #include <Items/GeometryItem.h>
 #include <Items/WorldItem.h>
 #include <Items/GraphicItems/Camera.h>
-#include <Items/GraphicItems/Cameras/DeferredShading/OrthographicCamera.h>
-#include <Items/GraphicItems/Cameras/DeferredShading/PerspectiveCamera.h>
+#include <Items/GraphicItems/Cameras/DeferredShadingCamera.h>
+#include <Items/Item Utils/Viewports/OrtographicViewport.h>
+#include <Items/Item Utils/Viewports/PerspectiveViewport.h>
 #include <Items/Materials/ColorMaterial.h>
 #include <Items/Materials/TextureMaterial.h>
 #include <Items/Materials/MultiTextureMaterial.h>
@@ -19,8 +20,11 @@
 #include <Items\GraphicItems\Lights\DirectionalLight.h>
 #include <Items\GraphicItems\Lights\PointLight.h>
 #include <Items\GraphicItems\Lights\Spotlight.h>
+#include <Items\GraphicItems\Lights\ShadowCastingLights\DirectionalShadowLight.h>
+#include <Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.h>
 #include <Scenes/DeferredShadingScene.h>
 #include <Scenes\PostProcessScene.h>
+#include <Scenes\DynamicShadowsScene.h>
 #include <Render Utils\Gbuffers\CompleteColorBuffer.h>
 #include <Render Utils\Gbuffers\SingleColorTextureBuffer.h>
 #include <Render Utils\Gbuffers\CompleteColorPostProcessBuffer.h>
@@ -36,7 +40,6 @@ namespace Application
 	{
 		mWindowSize = QVector2D(this->width(), this->height());
 		mpMovementArray = new bool[6]{ false, false, false, false, false, false };
-
 	}
 
 	CWindowApplication::~CWindowApplication()
@@ -154,31 +157,42 @@ namespace Application
 
 		if (mpMovementArray[0])
 		{
-			cam->Move(QVector3D(0.0, 0.0, -0.2));
+			cam->Move(cam->ToModelCoordSystem(QVector3D(0.0, 0.0, -0.2)));
 		}
 		if (mpMovementArray[1])
 		{
-			cam->Move(QVector3D(0.0, 0.0, 0.2));
+			cam->Move(cam->ToModelCoordSystem(QVector3D(0.0, 0.0, 0.2)));
 		}
 		if (mpMovementArray[2])
 		{
-			cam->Move(QVector3D(-0.2, 0.0, 0.0));
+			cam->Move(cam->ToModelCoordSystem(QVector3D(-0.2, 0.0, 0.0)));
 		}
 		if (mpMovementArray[3])
 		{
-			cam->Move(QVector3D(0.2, 0.0, 0.0));
+			cam->Move(cam->ToModelCoordSystem(QVector3D(0.2, 0.0, 0.0)));
 		}
 		if (mpMovementArray[4])
 		{
-			cam->Rotate(cam->ToModelCoordSystem(QVector3D(0.0, 0.6, 0.0)));
+			cam->Rotate(cam->ToModelCoordSystem(QVector3D(0.0, -0.6, 0.0)));
 		}
 		if (mpMovementArray[5])
 		{
-			cam->Rotate(cam->ToModelCoordSystem(QVector3D(0.0, -0.6, 0.0)));
+			cam->Rotate(cam->ToModelCoordSystem(QVector3D(0.0, 0.6, 0.0)));
 		}
 
 		//cam->Rotate(rotation);
 		//mainLight->Rotate(mainLight->ToModelCoordSystem(QVector3D(0.3f, 0.0f, 0.0f)));
+
+		static QVector3D mov(0.1f, 0.0f, 0.1f);
+		if (secondLight->GetPosition().z() < -45 || secondLight->GetPosition().x() < -20) mov = QVector3D(0.1f, 0.0f, 0.1f);
+		if (secondLight->GetPosition().z() > 15 || secondLight->GetPosition().x() > 10) mov = QVector3D(-0.1f, 0.0f, -0.1f);
+
+		secondLight->Move(secondLight->ToModelCoordSystem(mov) );
+		lightCube2->Move(lightCube2->ToModelCoordSystem(mov));
+
+		QVector3D nDir(QVector3D(-5.0f, 0.0f, -15.0f) - secondLight->GetPosition());
+		nDir.normalize();
+		((GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight*)(secondLight))->SetDirection(nDir);
 
 		if (scene != nullptr)
 		{
@@ -187,8 +201,9 @@ namespace Application
 	}
 	void CWindowApplication::initGeometry(GeometryEngine::GeometryEngine* engine)
 	{
-		GeometryEngine::GeometryScene::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::GeometryScene::PostProcessScene>();
+		GeometryEngine::GeometryScene::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::GeometryScene::DynamicShadowsScene>();
 		GeometryEngine::GeometryMaterial::ColorMaterial mat( QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f)); // QVector3D(1.0f, 0.4f, 0.3f)
+		GeometryEngine::GeometryMaterial::ColorMaterial floorMat(QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f)); 
 
 		std::list< GeometryEngine::GeometryMaterial::TextureParameters* > tmpList;
 
@@ -211,12 +226,16 @@ namespace Application
 		GeometryEngine::GeometryMaterial::MultiTextureMaterial mtMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_RIGHT_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE);
 		/*GeometryEngine::Cube**/ testCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(tMat, 4.0f,QVector3D(-5.0f, 0.0f, -15.0f), QVector3D(30.0f, -30.0f, 0.0f));
-		/*GeometryEngine::Cube**/ testCube2 = new GeometryEngine::GeometryWorldItem::GeometryItem::Sphere(mat, 1.0f, 6, 12, QVector3D(5.0f, 0.0f, -15.0f));//new GeometryEngine::Cube(mat, 2.0f, QVector3D(5.0f, 0.0f, -15.0f), QVector3D(-30.0f, 30.0f, 0.0f));
-		/*GeometryEngine::PerspectiveCamera**/ cam = new GeometryEngine::GeometryWorldItem::GeometryCamera::PerspectiveCamera(
+		/*GeometryEngine::Cube**/ testCube2 = new GeometryEngine::GeometryWorldItem::GeometryItem::Sphere(mat, 1.0f, 6, 12, QVector3D(5.0f, 0.0f, -15.0f)); //new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 2.0f, QVector3D(5.0f, 0.0f, -15.0f), QVector3D(-30.0f, 30.0f, 0.0f));
+		GeometryEngine::GeometryItemUtils::PerspectiveViewport viewport(QVector4D(0, 0, this->width(), this->height()), 45.0f, 1.0f, 0.1f, 1000.0f);
+		/*GeometryEngine::PerspectiveCamera**/ cam = new GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera(
 																			GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer(),
-																			QVector4D(0, 0, this->width(), this->height()),
-																			45.0f, 1.0f, true, 0.1f, 1000.0f, 
-																			QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f) );
+																			viewport, true,
+																			QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0, 0, 0));
+		//cam->SetPosition(cam->ToModelCoordSystem(QVector3D(-5.0f, 10.0f, -15.0f)));
+		//cam->Rotate(QVector3D(90, 0, 0));
+
+		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* floor = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(floorMat, 1.0f, QVector3D(0.0f, -6.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(100.0f, 1.0f, 100.0f));
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Quad lightQuad(mat, 3.0f, 3.0f);
 		
@@ -225,17 +244,38 @@ namespace Application
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere lightSphere(mat);
 
-		mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight(45.0f, QVector3D(0.5f, 0.3f, 0.1f), QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
-			QVector3D(1.0f, 1.0f, 1.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(0.0f, 4.0f, -15.0f));
+		//GeometryEngine::GeometryItemUtils::PerspectiveViewport lightViewport(QVector4D(0, 0, this->width(), this->height()), 90.0f, 1.0f, 0.1f, 1000.0f);
+		GeometryEngine::GeometryItemUtils::OrtographicViewport lightViewport(QVector4D(0, 0, this->width(), this->height()), QRect(-this->width() / 24, -this->height() / 24, this->width() / 12, this->height() / 12), 0.1f, 1000.0f);
 
-		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* lightCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 0.2f, QVector3D(0.0f, 5.0f, -15.0f), QVector3D(0.1f, 0.1f, 0.1f), QVector3D(1.0f, 1.0f, 1.0f));
+		//mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight(45.0f, QVector3D(0.5f, 0.3f, 0.1f), QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
+		//	QVector3D(1.0f, 1.0f, 1.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(5.0f, 4.0f, -15.0f));
+
+		//secondLight = new GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight(45.0f, QVector3D(0.5f, 0.3f, 0.1f), QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
+		//	QVector3D(1.0f, 1.0f, 1.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(-5.0f, 4.0f, -15.0f));
+
+		//mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight(45.0f, QVector3D(0.1f, 0.1f, 0.01f), lightViewport, QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
+		//	QVector3D(1.0f, 1.0f, 1.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(5.0f, 10.0f, -15.0f));
+		secondLight = new GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight(/*45.0f, QVector3D(0.1f, 0.1f, 0.01f),*/ lightViewport, QVector3D(0.0f, -1.0f, 0.0f), &lightQuad, QVector3D(1.0f, 1.0f, 1.0f),
+				QVector3D(0.0f, 0.0f, 0.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(-5.0f, 10.0f, -15.0f));
+
+		//mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight(lightViewport, QVector3D(0.0, -1.0, 0.0), &lightQuad, QVector3D(1.0f, 1.0f, 1.0f),
+		//	QVector3D(1.0f, 1.0f, 1.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(5.0f, 30.0f, -15.0f));
+
+		//GeometryEngine::GeometryWorldItem::GeometryItem::Cube* lightCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 0.2f, QVector3D(5.0f, 5.0f, -15.0f), QVector3D(0.1f, 0.1f, 0.1f), QVector3D(1.0f, 1.0f, 1.0f));
+		//GeometryEngine::GeometryWorldItem::GeometryItem::Cube* 
+			lightCube2 = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 0.2f, QVector3D(-5.0f, 10.0f, -15.0f), QVector3D(0.1f, 0.1f, 0.1f), QVector3D(1.0f, 1.0f, 1.0f));
+
+		lightCube2->SetCastsShadows(false);
 
 		//GeometryEngine::OrthographicCamera* cam2 = new GeometryEngine::OrthographicCamera(QVector4D(0, this->height() / 2, this->width()/2, this->height() / 2), QRect(-10, 10, 20, 20));
 		scene->AddItem(testCube);
 		scene->AddItem(testCube2);
-		scene->AddItem(lightCube);
+		//scene->AddItem(lightCube);
+		scene->AddItem(lightCube2);
+		scene->AddItem(floor);
 		scene->AddCamera(cam);
-		scene->AddLight(mainLight);
+		//scene->AddLight(mainLight);
+		scene->AddLight(secondLight);
 		//scene->AddCamera(cam2);
 		scene->InitializeGL();
 		engine->GetSceneManager()->SetActiveScene(scene);

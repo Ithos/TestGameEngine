@@ -25,6 +25,11 @@ GeometryEngine::GeometryBuffer::GBuffer::~GBuffer()
 		glDeleteTextures(GBUFFER_NUM_TEXTURES, mTextures);
 	}
 
+	if (mTmpDepthBuffer != 0)
+	{
+		glDeleteBuffers(1, &mTmpDepthBuffer);
+	}
+
 	if (mDepthTexture != 0) {
 		glDeleteTextures(1, &mDepthTexture);
 	}
@@ -46,6 +51,8 @@ bool GeometryEngine::GeometryBuffer::GBuffer::Init(unsigned int MaxWindowWidth, 
 	glGenTextures(GBUFFER_NUM_TEXTURES, mTextures);
 	glGenTextures(1, &mFinalTexture);
 	glGenTextures(1, &mDepthTexture);
+	glGenRenderbuffers(1, &mTmpDepthBuffer);
+	
 	
 
 	for (unsigned int i = 0; i < GBUFFER_NUM_TEXTURES; i++) {
@@ -61,7 +68,14 @@ bool GeometryEngine::GeometryBuffer::GBuffer::Init(unsigned int MaxWindowWidth, 
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + GBUFFER_NUM_TEXTURES, GL_TEXTURE_2D, mFinalTexture, 0);
 
-	
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+	// tmpDepthBuffer
+	glBindRenderbuffer(GL_RENDERBUFFER, mTmpDepthBuffer);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, MaxWindowWidth, MaxWindowHeight);
 
 	// depth
 	glBindTexture(GL_TEXTURE_2D, mDepthTexture);
@@ -101,6 +115,10 @@ bool GeometryEngine::GeometryBuffer::GBuffer::Resize(unsigned int WindowWidth, u
 	glBindTexture(GL_TEXTURE_2D, mFinalTexture);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB32F, WindowWidth, WindowHeight, 0, GL_RGB, GL_FLOAT, NULL);
 
+	// tmpDepthBuffer
+	glBindRenderbuffer(GL_RENDERBUFFER, mTmpDepthBuffer);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, WindowWidth, WindowHeight);
+
 	// depth
 	glBindTexture(GL_TEXTURE_2D, mDepthTexture);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH32F_STENCIL8, WindowWidth, WindowHeight, 0, GL_DEPTH_STENCIL, GL_FLOAT_32_UNSIGNED_INT_24_8_REV, NULL);
@@ -118,6 +136,7 @@ void GeometryEngine::GeometryBuffer::GBuffer::StartFrame()
 {
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, mFbo);
 	glDrawBuffer(GL_COLOR_ATTACHMENT0 + GBUFFER_NUM_TEXTURES);
+	glBindTexture(GL_TEXTURE_2D, mDepthTexture);
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
@@ -157,18 +176,24 @@ void GeometryEngine::GeometryBuffer::GBuffer::BindForFinalPass()
 	glReadBuffer(GL_COLOR_ATTACHMENT0 + GBUFFER_NUM_TEXTURES);
 }
 
-void GeometryEngine::GeometryBuffer::GBuffer::BindForPostProcess()
+void GeometryEngine::GeometryBuffer::GBuffer::BindTexturesForPostProcess()
 {
 	glBindFramebuffer(GL_FRAMEBUFFER, mFbo);
 	glReadBuffer(GL_COLOR_ATTACHMENT0 + GBUFFER_NUM_TEXTURES);
 	glDrawBuffer(GL_COLOR_ATTACHMENT0 + GBUFFER_TEXTURE_TYPE_TEXCOORD);
 }
 
-void GeometryEngine::GeometryBuffer::GBuffer::BindForFinishPostProcess()
+void GeometryEngine::GeometryBuffer::GBuffer::FinishPostProcessBinding()
 {
 	glBindFramebuffer(GL_FRAMEBUFFER, mFbo);
 	glReadBuffer(GL_COLOR_ATTACHMENT0 + GBUFFER_TEXTURE_TYPE_TEXCOORD);
 	glDrawBuffer(GL_COLOR_ATTACHMENT0 + GBUFFER_NUM_TEXTURES);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::BindTmpTextureWrite()
+{
+	glBindFramebuffer(GL_FRAMEBUFFER, mFbo);
+	glDrawBuffer(GL_COLOR_ATTACHMENT0 + GBUFFER_TEXTURE_TYPE_TEXCOORD);
 }
 
 void GeometryEngine::GeometryBuffer::GBuffer::BindBuffer()
@@ -228,12 +253,17 @@ void GeometryEngine::GeometryBuffer::GBuffer::UnbindTexture(GBUFFER_TEXTURE_TYPE
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
+
 void GeometryEngine::GeometryBuffer::GBuffer::generateTexture(unsigned int arrayIndex, unsigned int maxWindowWidth, unsigned int maxWindowHeight)
 {
 	glBindTexture(GL_TEXTURE_2D, mTextures[arrayIndex]);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB32F, maxWindowWidth, maxWindowHeight, 0, GL_RGB, GL_FLOAT, NULL);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+	float borderColor[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+	glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + arrayIndex, GL_TEXTURE_2D, mTextures[arrayIndex], 0);
 }
 
@@ -269,6 +299,24 @@ void GeometryEngine::GeometryBuffer::GBuffer::copy(const GBuffer & ref)
 	}
 }
 
+void GeometryEngine::GeometryBuffer::GBuffer::ClearColorTexture(GBUFFER_TEXTURE_TYPE texture)
+{
+	glClearBufferuiv(GL_COLOR, texture, mTextures);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::DetachDepthBuffer()
+{
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_TEXTURE_2D, 0, 0);
+	glBindRenderbuffer(GL_RENDERBUFFER, 0);
+	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, mTmpDepthBuffer);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::AttachDepthBuffer()
+{
+	glBindRenderbuffer(GL_RENDERBUFFER, 0);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_TEXTURE_2D, mDepthTexture, 0);
+}
+
 void GeometryEngine::GeometryBuffer::GBuffer::FillGBufferInfo(GBufferTextureInfo & bufferInfo)
 {
 	// Indices of the texture units in which we store each texture
@@ -280,6 +328,7 @@ void GeometryEngine::GeometryBuffer::GBuffer::FillGBufferInfo(GBufferTextureInfo
 	bufferInfo.NormalTexture = (unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_NORMAL;
 	bufferInfo.TmpTexture = (unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_TEXCOORD;
 	bufferInfo.FinalTexture = mFinalTextureLocation;
+	
 
 	// Boolean values that indicate if each texture exists
 	bufferInfo.UseAmbientTexture = this->IsTextureActive(GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_AMBIENT);

@@ -12,23 +12,29 @@
 Inheritance diagram for Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Camera\+::Deferred\+Shading\+Camera\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.338205cm]{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera}
+\includegraphics[height=3.000000cm]{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a111a0e1973ca094ef1a09c10e3244db3}{Deferred\+Shading\+Camera}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} \&gbuffer, const Q\+Vector4D \&viewport\+Size, bool auto\+Resize=true, G\+Ldouble z\+Near=0.\+1, G\+Ldouble z\+Far=30.\+0, const Q\+Vector3D \&pos=Q\+Vector3D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), World\+Item $\ast$parent=nullptr)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a5efe7bec9b35953fe0ab0abf92a55248}{Deferred\+Shading\+Camera}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} \&gbuffer, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&viewport, bool auto\+Resize=true, const Q\+Vector3D \&pos=Q\+Vector3D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), World\+Item $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a3fddaea07dd897fe83081ff45cf99416}{Deferred\+Shading\+Camera}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera}{Deferred\+Shading\+Camera}} \&ref)
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_ae5eb53c675d8a7ad9070853f4b5d4951}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_ae5eb53c675d8a7ad9070853f4b5d4951}} 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_ae5eb53c675d8a7ad9070853f4b5d4951}{$\sim$\+Deferred\+Shading\+Camera}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a33cb7d45b61f5d4414951bafb3f6a342}{Set\+Viewport}} (const Q\+Vector4D \&size) override
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a16da38cfd723b755a63c372c08bbedf7}{Set\+Viewport\+Size}} (const Q\+Vector4D \&size) override
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera}{Deferred\+Shading\+Camera}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_ac020fe14bc32f3fdbd0c9423af1c975f}{Clone}} () const
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a36c689377af8038020678a37535870c8}{init}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} \&gbuffer)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a00eba99af30625646ea11f442ffa2742}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera}{Deferred\+Shading\+Camera}} \&ref)
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -37,34 +43,52 @@ virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Camera}} that stores a G\+Buffer to allow multiple step shading. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a111a0e1973ca094ef1a09c10e3244db3}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a111a0e1973ca094ef1a09c10e3244db3}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a5efe7bec9b35953fe0ab0abf92a55248}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a5efe7bec9b35953fe0ab0abf92a55248}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}!DeferredShadingCamera@{DeferredShadingCamera}}
 \index{DeferredShadingCamera@{DeferredShadingCamera}!GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}}
-\subsubsection{\texorpdfstring{DeferredShadingCamera()}{DeferredShadingCamera()}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Deferred\+Shading\+Camera\+::\+Deferred\+Shading\+Camera (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} \&}]{gbuffer,  }\item[{const Q\+Vector4D \&}]{viewport\+Size,  }\item[{bool}]{auto\+Resize = {\ttfamily true},  }\item[{G\+Ldouble}]{z\+Near = {\ttfamily 0.1},  }\item[{G\+Ldouble}]{z\+Far = {\ttfamily 30.0},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{DeferredShadingCamera()}{DeferredShadingCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Deferred\+Shading\+Camera\+::\+Deferred\+Shading\+Camera (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} \&}]{gbuffer,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&}]{viewport,  }\item[{bool}]{auto\+Resize = {\ttfamily true},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
 
-Constructor. F\+AQ\+: Scaling the camera scales the whole coordinate system, be careful with it param gbuffer Geometric buffer to be copied into the camera param viewport\+Size Size of the viewport. The values indicate in order x position, yposition, width, height. param auto\+Resize Indicates if the viewport should be resized when the window\textquotesingle{}s size changes param z\+Near Nearest z coordinate to be rendered param z\+Far Farthest z coordinate to be rendered param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. 
+Constructor. F\+AQ\+: Scaling the camera scales the whole coordinate system, be careful with it param gbuffer Geometric buffer to be copied into the camera param viewport\+Size Size of the viewport. The values indicate in order x position, yposition, width, height. param auto\+Resize Indicates if the viewport should be resized when the window\textquotesingle{}s size changes param z\+Near Nearest z coordinate to be rendered param z\+Far Farthest z coordinate to be rendered param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a3fddaea07dd897fe83081ff45cf99416}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a3fddaea07dd897fe83081ff45cf99416}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}!DeferredShadingCamera@{DeferredShadingCamera}}
+\index{DeferredShadingCamera@{DeferredShadingCamera}!GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}}
+\subsubsection{\texorpdfstring{DeferredShadingCamera()}{DeferredShadingCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Deferred\+Shading\+Camera\+::\+Deferred\+Shading\+Camera (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera}{Deferred\+Shading\+Camera}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a36c689377af8038020678a37535870c8}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a36c689377af8038020678a37535870c8}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_ac020fe14bc32f3fdbd0c9423af1c975f}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_ac020fe14bc32f3fdbd0c9423af1c975f}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Deferred\+Shading\+Camera}} $\ast$ Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Deferred\+Shading\+Camera\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a53b37943c1929fde7396c66a36fb3c52}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a00eba99af30625646ea11f442ffa2742}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a00eba99af30625646ea11f442ffa2742}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Deferred\+Shading\+Camera\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera}{Deferred\+Shading\+Camera}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Camera}} object to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Camera}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a36c689377af8038020678a37535870c8}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a36c689377af8038020678a37535870c8}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}!init@{init}}
 \index{init@{init}!GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}}
 \subsubsection{\texorpdfstring{init()}{init()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Deferred\+Shading\+Camera\+::init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} \&}]{gbuffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Clones the Geometric buffer into the camera and initializes the buffer textures with the size of the screen param g\+Buffer Geometric buffer to be cloned into the camera \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a33cb7d45b61f5d4414951bafb3f6a342}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a33cb7d45b61f5d4414951bafb3f6a342}} 
-\index{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}!SetViewport@{SetViewport}}
-\index{SetViewport@{SetViewport}!GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}}
-\subsubsection{\texorpdfstring{SetViewport()}{SetViewport()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Deferred\+Shading\+Camera\+::\+Set\+Viewport (\begin{DoxyParamCaption}\item[{const Q\+Vector4D \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+Clones the Geometric buffer into the camera and initializes the buffer textures with the size of the screen param g\+Buffer Geometric buffer to be cloned into the camera \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a16da38cfd723b755a63c372c08bbedf7}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera_a16da38cfd723b755a63c372c08bbedf7}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}!SetViewportSize@{SetViewportSize}}
+\index{SetViewportSize@{SetViewportSize}!GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera}}
+\subsubsection{\texorpdfstring{SetViewportSize()}{SetViewportSize()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Deferred\+Shading\+Camera\+::\+Set\+Viewport\+Size (\begin{DoxyParamCaption}\item[{const Q\+Vector4D \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 Resizes the Opengl viewport and the Geometric buffer viewport size param size Viewport size 
 
-Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_ad2a1aa18da04337fe34de5e9420c9703}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}}.
-
-
-
-Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_perspective_camera_a6b405005376c1396b311ebd16dcc4e98}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Perspective\+Camera}}.
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_aabac97d1334ff271308102e53735d042}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}}.
 
 
 

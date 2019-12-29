@@ -96,8 +96,7 @@ void GeometryEngine::GeometryWorldItem::WorldItem::Move(const QVector3D & vector
 
 void GeometryEngine::GeometryWorldItem::WorldItem::Rotate(const QVector3D & rot, bool updateChildren)
 {
-	QQuaternion tmpQuat ;
-	tmpQuat = tmpQuat.fromEulerAngles(rot.x(), rot.y(), rot.z());
+	QQuaternion tmpQuat = QQuaternion::fromEulerAngles(rot.x(), rot.y(), rot.z());
 	mRotation *= tmpQuat;
 
 	UpdateModelMatrix();

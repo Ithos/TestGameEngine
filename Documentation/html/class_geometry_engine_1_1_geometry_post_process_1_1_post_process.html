@@ -104,10 +104,13 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html#ae50dbe0c834a713d1f3163f9706b2e91">~PostProcess</a> ()</td></tr>
 <tr class="memdesc:ae50dbe0c834a713d1f3163f9706b2e91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
 <tr class="separator:ae50dbe0c834a713d1f3163f9706b2e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dbb157265ebdeea658982673e757d46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html#a2dbb157265ebdeea658982673e757d46">ApplyPostProcess</a> (const <a class="el" href="struct_geometry_engine_1_1_g_buffer_texture_info.html">GBufferTextureInfo</a> &amp;gBuffTexInfo)</td></tr>
+<tr class="memitem:a2dbb157265ebdeea658982673e757d46"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html#a2dbb157265ebdeea658982673e757d46">ApplyPostProcess</a> (const <a class="el" href="struct_geometry_engine_1_1_g_buffer_texture_info.html">GBufferTextureInfo</a> &amp;gBuffTexInfo)</td></tr>
 <tr class="separator:a2dbb157265ebdeea658982673e757d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3657f263948ecee70314c859e15412e1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html#a3657f263948ecee70314c859e15412e1">ApplyPostProcessSecondStep</a> (const <a class="el" href="struct_geometry_engine_1_1_g_buffer_texture_info.html">GBufferTextureInfo</a> &amp;gBuffTexInfo)</td></tr>
+<tr class="separator:a3657f263948ecee70314c859e15412e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19b7d991ecfc7af8f9ca2c9f79488b9a"><td class="memItemLeft" align="right" valign="top"><a id="a19b7d991ecfc7af8f9ca2c9f79488b9a"></a>
-virtual <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_world_item.html">GeometryEngine::GeometryWorldItem::WorldItem</a> *const&#160;</td><td class="memItemRight" valign="bottom"><b>GetBoundingGeometry</b> ()</td></tr>
+virtual <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_world_item.html">GeometryEngine::GeometryWorldItem::WorldItem</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html#a19b7d991ecfc7af8f9ca2c9f79488b9a">GetBoundingGeometry</a> ()</td></tr>
+<tr class="memdesc:a19b7d991ecfc7af8f9ca2c9f79488b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the geometry in which the post process will be applied. <br /></td></tr>
 <tr class="separator:a19b7d991ecfc7af8f9ca2c9f79488b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa80749cf09041335f6b3bda3aaf31711"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html">PostProcess</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html#aa80749cf09041335f6b3bda3aaf31711">Clone</a> () const =0</td></tr>
 <tr class="separator:aa80749cf09041335f6b3bda3aaf31711"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,6 +208,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mFragmentShade
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void GeometryEngine::GeometryPostProcess::PostProcess::ApplyPostProcess </td>
@@ -214,8 +220,44 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mFragmentShade
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Applies the post process param gBuffTexInfo Geometry buffer data </p>
+
+<p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process.html#a9d2674bc5b237ed2e494d1c88f63d29e">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess</a>.</p>
+
+</div>
+</div>
+<a id="a3657f263948ecee70314c859e15412e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3657f263948ecee70314c859e15412e1">&#9670;&nbsp;</a></span>ApplyPostProcessSecondStep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GeometryEngine::GeometryPostProcess::PostProcess::ApplyPostProcessSecondStep </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_geometry_engine_1_1_g_buffer_texture_info.html">GBufferTextureInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>gBuffTexInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Applies the second step of the post process if it exists. This method should be reimplemented by this class's children param gBuffTexInfo Geometry buffer data return true if the second step was applied, false if there isn't a second step </p>
+
+<p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process.html#a1caac8d2ec6f65de1bb98edd88ba14c6">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess</a>.</p>
 
 </div>
 </div>

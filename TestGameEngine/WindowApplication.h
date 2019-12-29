@@ -69,8 +69,10 @@ namespace Application
 		/// Items shouldnt be created here its just for testing purposes
 		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* testCube;
 		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere* testCube2;
-		GeometryEngine::GeometryWorldItem::GeometryCamera::PerspectiveCamera* cam;
+		GeometryEngine::GeometryWorldItem::GeometryCamera::Camera* cam;
 		GeometryEngine::GeometryWorldItem::GeometryLight::Light* mainLight;
+		GeometryEngine::GeometryWorldItem::GeometryLight::Light* secondLight;
+		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* lightCube2;
 
 		bool* mpMovementArray;
 

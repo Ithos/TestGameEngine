@@ -1,0 +1,116 @@
+\hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass}{}\section{Geometry\+Engine\+::Geometry\+Render\+Step\+::Post\+Process\+Pass Class Reference}
+\label{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass}\index{GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}}
+
+
+Applies a double step post process to the whole scene.  
+
+
+
+
+{\ttfamily \#include $<$Post\+Process\+Pass.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Render\+Step\+::Post\+Process\+Pass\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a258391904e3ae85a77f4bd471f15c60c}\label{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a258391904e3ae85a77f4bd471f15c60c}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a258391904e3ae85a77f4bd471f15c60c}{Post\+Process\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a79e267f8b485ebd55a9ac01ed0717f02}{Post\+Process\+Pass}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass}{Post\+Process\+Pass}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a638c1407f0a547b7b8c3b44914a7d6f7}\label{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a638c1407f0a547b7b8c3b44914a7d6f7}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a638c1407f0a547b7b8c3b44914a7d6f7}{$\sim$\+Post\+Process\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a2ebe2a0b940e47ccd10e649bff77138d}{Render}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$lights=nullptr) override
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_afcf20dc0a20cf1e0fb730c7b56071c26}{Clone}} () const override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_ac0f109e5dc7fb598c2613daaff285526}{apply\+Post\+Process}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} $\ast$buf, const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Geometry\+Post\+Process\+::\+Post\+Process}} $\ast$ $>$ \&post\+Process)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_ae0bfafe4123decb5eb65e1decc3c07ba}{init\+Post\+Process\+Pass}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} $\ast$buf)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a3d555943a9bc2b3105e71b8984b1ce0b}{second\+Post\+Process\+Pass}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} $\ast$buf)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_abfc2e269aad1157916f6c3c72b570ae9}{finish\+Post\+Proces\+Pass}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} $\ast$buf)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a5279399395c18ac4ef35fa3028aa4950}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass}{Post\+Process\+Pass}} \&ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Applies a double step post process to the whole scene. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a79e267f8b485ebd55a9ac01ed0717f02}\label{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a79e267f8b485ebd55a9ac01ed0717f02}} 
+\index{GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}!PostProcessPass@{PostProcessPass}}
+\index{PostProcessPass@{PostProcessPass}!GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}}
+\subsubsection{\texorpdfstring{PostProcessPass()}{PostProcessPass()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Post\+Process\+Pass\+::\+Post\+Process\+Pass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass}{Post\+Process\+Pass}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy Constructor param ref Const reference to Double\+Post\+Process\+Pass to be copied 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_ac0f109e5dc7fb598c2613daaff285526}\label{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_ac0f109e5dc7fb598c2613daaff285526}} 
+\index{GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}!applyPostProcess@{applyPostProcess}}
+\index{applyPostProcess@{applyPostProcess}!GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}}
+\subsubsection{\texorpdfstring{applyPostProcess()}{applyPostProcess()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Post\+Process\+Pass\+::apply\+Post\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} $\ast$}]{buf,  }\item[{const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Geometry\+Post\+Process\+::\+Post\+Process}} $\ast$ $>$ \&}]{post\+Process }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Initializes the Open\+Gl pipeline and applies every single pass post process in the list param buf Pointer to the geometric buffer param list of post processes to apply \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_afcf20dc0a20cf1e0fb730c7b56071c26}\label{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_afcf20dc0a20cf1e0fb730c7b56071c26}} 
+\index{GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}}$\ast$ Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Post\+Process\+Pass\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Returns a copy of this object. return A copy of this object. 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe33ea9d82c5be11f55af7d39691d44b}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Render\+Step}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a5279399395c18ac4ef35fa3028aa4950}\label{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a5279399395c18ac4ef35fa3028aa4950}} 
+\index{GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Post\+Process\+Pass\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass}{Post\+Process\+Pass}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data from a Double\+Post\+Process\+Pass into this object param ref Double\+Post\+Process\+Pass to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_abfc2e269aad1157916f6c3c72b570ae9}\label{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_abfc2e269aad1157916f6c3c72b570ae9}} 
+\index{GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}!finishPostProcesPass@{finishPostProcesPass}}
+\index{finishPostProcesPass@{finishPostProcesPass}!GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}}
+\subsubsection{\texorpdfstring{finishPostProcesPass()}{finishPostProcesPass()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Post\+Process\+Pass\+::finish\+Post\+Proces\+Pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} $\ast$}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Blits the tmp texture into the final texture param buf Pointer to the geometric buffer \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_ae0bfafe4123decb5eb65e1decc3c07ba}\label{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_ae0bfafe4123decb5eb65e1decc3c07ba}} 
+\index{GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}!initPostProcessPass@{initPostProcessPass}}
+\index{initPostProcessPass@{initPostProcessPass}!GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}}
+\subsubsection{\texorpdfstring{initPostProcessPass()}{initPostProcessPass()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Post\+Process\+Pass\+::init\+Post\+Process\+Pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} $\ast$}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Prepares the Open\+Gl pipeline for the first pass post process param buf Pointer to the geometric buffer \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a2ebe2a0b940e47ccd10e649bff77138d}\label{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a2ebe2a0b940e47ccd10e649bff77138d}} 
+\index{GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}!Render@{Render}}
+\index{Render@{Render}!GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}}
+\subsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Post\+Process\+Pass\+::\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{lights = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes the render step param cam Pointer to camera to be rendered. We only need the information of the camera and the geometric buffer. param items Set of items to be rendered. Not used. param lights Set of lights in the scene. Not used. 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a9b054ee8f38304319a9d03ba3e173dcd}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Render\+Step}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a3d555943a9bc2b3105e71b8984b1ce0b}\label{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a3d555943a9bc2b3105e71b8984b1ce0b}} 
+\index{GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}!secondPostProcessPass@{secondPostProcessPass}}
+\index{secondPostProcessPass@{secondPostProcessPass}!GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}}
+\subsubsection{\texorpdfstring{secondPostProcessPass()}{secondPostProcessPass()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Post\+Process\+Pass\+::second\+Post\+Process\+Pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} $\ast$}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Prepares the Open\+Gl pipeline for the second pass post process param buf Pointer to the geometric buffer 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Render\+Steps/Post\+Process\+Pass.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Render\+Steps/Post\+Process\+Pass.\+cpp\end{DoxyCompactItemize}

@@ -31,14 +31,8 @@ GeometryEngine::GeometryPostProcess::PostProcess::~PostProcess()
 
 void GeometryEngine::GeometryPostProcess::PostProcess::ApplyPostProcess(const GBufferTextureInfo & gBuffTexInfo)
 {
-	if (mpProgram != nullptr)
+	assert(mpProgram != nullptr && "No post process shader program found");
 	{
-		// Link shader pipeline
-		if (!mpProgram->link())
-		{
-			assert(false && "Post process shader failed to link");
-		}
-
 		// Bind shader pipeline for use
 		if (!mpProgram->bind())
 		{
@@ -89,6 +83,15 @@ void GeometryEngine::GeometryPostProcess::PostProcess::initPostProcessProgram()
 		if (!mpProgram->addShaderFromSourceCode(QOpenGLShader::Fragment, mpShaderManager->GetLoadedShaderContent(mFragmentShaderKey).c_str()))
 		{
 			assert(false && "Post process fragment shader failed to compile");
+		}
+	}
+
+	assert(mpProgram != nullptr && "No post process shader program found");
+	{
+		// Link shader pipeline
+		if (!mpProgram->link())
+		{
+			assert(false && "Post process shader failed to link");
 		}
 	}
 }

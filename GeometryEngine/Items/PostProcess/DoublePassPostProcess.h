@@ -25,10 +25,10 @@ namespace GeometryEngine
 				virtual ~DoublePassPostProcess() {}
 				/// Methods that applies the first render step of the post process
 				/// param gBuffTexInfo geometry buffer data
-				virtual void ApplyFirstStep(const GBufferTextureInfo& gBuffTexInfo);
+				virtual void ApplyPostProcess(const GBufferTextureInfo& gBuffTexInfo) override;
 				/// Methods that applies the second render step of the post process
 				/// param gBuffTexInfo geometry buffer data
-				virtual void ApplySecondStep(const GBufferTextureInfo& gBuffTexInfo);
+				virtual bool ApplyPostProcessSecondStep(const GBufferTextureInfo& gBuffTexInfo) override;
 
 			protected:
 				/// Abstract method. Sets class members to be used during the first render step.

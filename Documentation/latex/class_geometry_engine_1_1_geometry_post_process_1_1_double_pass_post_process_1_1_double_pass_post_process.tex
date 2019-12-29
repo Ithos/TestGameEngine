@@ -25,9 +25,9 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+Post\+Process\+::Double\+P
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_ae50b64dabbe90930bffb4976785021ed}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_ae50b64dabbe90930bffb4976785021ed}} 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_ae50b64dabbe90930bffb4976785021ed}{$\sim$\+Double\+Pass\+Post\+Process}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a1e32828640812e382cdd1b66207c88ee}{Apply\+First\+Step}} (const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info)
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a9d2674bc5b237ed2e494d1c88f63d29e}{Apply\+Post\+Process}} (const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info) override
 \item 
-virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a1e153685f0d82ca6fdb913d234fd3370}{Apply\+Second\+Step}} (const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info)
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a1caac8d2ec6f65de1bb98edd88ba14c6}{Apply\+Post\+Process\+Second\+Step}} (const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info) override
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -62,19 +62,27 @@ Constructor param bounding\+Geometry The post process will be applied to every p
 Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Post\+Process}} to be copied 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a1e32828640812e382cdd1b66207c88ee}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a1e32828640812e382cdd1b66207c88ee}} 
-\index{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess}!ApplyFirstStep@{ApplyFirstStep}}
-\index{ApplyFirstStep@{ApplyFirstStep}!GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess}}
-\subsubsection{\texorpdfstring{ApplyFirstStep()}{ApplyFirstStep()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Apply\+First\+Step (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a9d2674bc5b237ed2e494d1c88f63d29e}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a9d2674bc5b237ed2e494d1c88f63d29e}} 
+\index{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess}!ApplyPostProcess@{ApplyPostProcess}}
+\index{ApplyPostProcess@{ApplyPostProcess}!GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess}}
+\subsubsection{\texorpdfstring{ApplyPostProcess()}{ApplyPostProcess()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Apply\+Post\+Process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Methods that applies the first render step of the post process param g\+Buff\+Tex\+Info geometry buffer data \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a1e153685f0d82ca6fdb913d234fd3370}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a1e153685f0d82ca6fdb913d234fd3370}} 
-\index{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess}!ApplySecondStep@{ApplySecondStep}}
-\index{ApplySecondStep@{ApplySecondStep}!GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess}}
-\subsubsection{\texorpdfstring{ApplySecondStep()}{ApplySecondStep()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Apply\+Second\+Step (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+Methods that applies the first render step of the post process param g\+Buff\+Tex\+Info geometry buffer data 
 
-Methods that applies the second render step of the post process param g\+Buff\+Tex\+Info geometry buffer data \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a28b760437951a4676b55efb491358e8f}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a28b760437951a4676b55efb491358e8f}} 
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_a2dbb157265ebdeea658982673e757d46}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a1caac8d2ec6f65de1bb98edd88ba14c6}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a1caac8d2ec6f65de1bb98edd88ba14c6}} 
+\index{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess}!ApplyPostProcessSecondStep@{ApplyPostProcessSecondStep}}
+\index{ApplyPostProcessSecondStep@{ApplyPostProcessSecondStep}!GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess}}
+\subsubsection{\texorpdfstring{ApplyPostProcessSecondStep()}{ApplyPostProcessSecondStep()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Apply\+Post\+Process\+Second\+Step (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Methods that applies the second render step of the post process param g\+Buff\+Tex\+Info geometry buffer data 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_a3657f263948ecee70314c859e15412e1}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a28b760437951a4676b55efb491358e8f}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a28b760437951a4676b55efb491358e8f}} 
 \index{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess}!copy@{copy}}
 \index{copy@{copy}!GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess}}
 \subsubsection{\texorpdfstring{copy()}{copy()}}

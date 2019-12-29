@@ -32,9 +32,12 @@ namespace GeometryEngine
 					const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
 					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
-
 				/// Destructor
-				~DirectionalLight();
+				virtual ~DirectionalLight();
+				///Sets the light direction. This direction is affected by the item rotation
+				void SetDirection(const QVector3D& dir) { mDirection = dir; }
+				///Returs the light direction
+				const QVector3D& GetDirection() { return mDirection; }
 			protected:
 				QVector3D mDirection;
 				/// Sets the keys for the light shaders

@@ -12,7 +12,7 @@ Base class for world objects that represent a light source in the scene.
 Inheritance diagram for Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Light\+::Light\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.573034cm]{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}
+\includegraphics[height=1.850220cm]{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -29,11 +29,19 @@ virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_
 \item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_ae50fab4782158671041ac986dfead7fc}{Calculate\+Stencil}} (const Q\+Matrix4x4 \&projection\+Matrix, const Q\+Matrix4x4 \&view\+Matrix)
 \item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a76aff3602f7bf26416c36111ab79f898}{Calculate\+Shadow\+Map}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, const Q\+Matrix4x4 \&model\+Matrix, unsigned int total\+Vertex\+Num, unsigned int total\+Index\+Num)
+\item 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a53cc9a8e7ab6eab9d34f1655ef33eaef}{Get\+Bounding\+Geometry}} ()
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_ac057b7a5229d61154d8a79f4467eb042}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_ac057b7a5229d61154d8a79f4467eb042}} 
 virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_ac057b7a5229d61154d8a79f4467eb042}{Get\+Stencil\+Test}} ()
-\begin{DoxyCompactList}\small\item\em Method to be implemented by child classes. Returns true if the light performs a stencil test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Method to be implemented by child classes. Returns true if the light performs a stencil test. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a3c5c36c23bc16960b6d3232c33673e0a}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a3c5c36c23bc16960b6d3232c33673e0a}} 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a3c5c36c23bc16960b6d3232c33673e0a}{Get\+Cast\+Shadows}} ()
+\begin{DoxyCompactList}\small\item\em Method to be implemented by child classes. Returns true if the light calculates shadows. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a18009ba6ef9c788f3d33d1ebd78a2140}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a18009ba6ef9c788f3d33d1ebd78a2140}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a18009ba6ef9c788f3d33d1ebd78a2140}{Resize\+Elements}} (int screen\+Width, int screen\+Height)
+\begin{DoxyCompactList}\small\item\em Method to be implemented by child classes. Updates elements when the screen is resized. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -63,8 +71,8 @@ Q\+Vector3D {\bfseries m\+Color\+Ambient}
 Q\+Vector3D {\bfseries m\+Color\+Specular}
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_abf8c1fa7fbdede637977d84bf1258daf}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_abf8c1fa7fbdede637977d84bf1258daf}} 
-Q\+Open\+G\+L\+Shader\+Program $\ast$ {\bfseries mp\+Program}
-\item 
+Q\+Open\+G\+L\+Shader\+Program $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_abf8c1fa7fbdede637977d84bf1258daf}{mp\+Program}}
+\begin{DoxyCompactList}\small\item\em Lighting shader. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_ab9e919cea4a37204b3557e153afa16e9}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_ab9e919cea4a37204b3557e153afa16e9}} 
 \mbox{\hyperlink{class_configuration_1_1_configuration_manager}{Configuration\+::\+Configuration\+Manager}} $\ast$ {\bfseries mp\+Conf\+Instance}
 \item 
@@ -100,7 +108,7 @@ Constructor param diffuse Diffuse component of the light as an rgb vector. Each 
 
 Abstract method. Binds shaders and draws. param vertex\+Buf Vertex buffer param index\+Buf Index\+Buffer param total\+Vertex\+Num Number of vetices param tital\+Index\+Num Number of indices 
 
-Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a6136ca2338a7b5f5be70ccab82fe655e}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Spotlight}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_af1eac6f1aac9388efe95e1a898cf600f}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Light}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_point_light_aa30244fd20e61fdfe1ac1d85c99fd154}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Point\+Light}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light_a4f1d4fb9ad25626e15c28de03b610b4f}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Ambient\+Light}}.
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_spotlight_a27163f2f8903220d7eaae7aa70c9d6e6}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Shadow\+Spotlight}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_af1eac6f1aac9388efe95e1a898cf600f}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Light}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_shadow_light_a712d0b0a0573ebd246a4a8aa6b2b667a}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Shadow\+Light}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a6136ca2338a7b5f5be70ccab82fe655e}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Spotlight}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_point_light_aa30244fd20e61fdfe1ac1d85c99fd154}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Point\+Light}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light_a4f1d4fb9ad25626e15c28de03b610b4f}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Ambient\+Light}}.
 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a4a133e49941a68ac8c33f757e687c8b7}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a4a133e49941a68ac8c33f757e687c8b7}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryLight::Light@{GeometryEngine::GeometryWorldItem::GeometryLight::Light}!CalculateLighting@{CalculateLighting}}
@@ -108,7 +116,17 @@ Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_
 \subsubsection{\texorpdfstring{CalculateLighting()}{CalculateLighting()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light\+::\+Calculate\+Lighting (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{const \mbox{\hyperlink{struct_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}} \&}]{transform\+Data,  }\item[{const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info,  }\item[{const Q\+Vector3D \&}]{view\+Pos,  }\item[{unsigned int}]{total\+Vertex\+Num,  }\item[{unsigned int}]{total\+Index\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Calls the light shader program. param vertex\+Buf Pointer to the vertex buffer param index\+Buffer Pointer to the index buffer param transform\+Data \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} source matrices param g\+Buffer\+Texture\+Info Geometry buffer textures, where the lighting result image will be stored param view\+Pos Position of the camera, used for reflected lights param total\+Vertex\+Num Total amount of vertices param total\+Index\+Num Total amount of indices \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_ae50fab4782158671041ac986dfead7fc}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_ae50fab4782158671041ac986dfead7fc}} 
+Calls the light shader program. param vertex\+Buf Pointer to the vertex buffer param index\+Buffer Pointer to the index buffer param transform\+Data \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} source matrices param g\+Buffer\+Texture\+Info Geometry buffer textures, where the lighting result image will be stored param view\+Pos Position of the camera, used for reflected lights param total\+Vertex\+Num Total amount of vertices param total\+Index\+Num Total amount of indices \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a76aff3602f7bf26416c36111ab79f898}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a76aff3602f7bf26416c36111ab79f898}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::Light@{GeometryEngine::GeometryWorldItem::GeometryLight::Light}!CalculateShadowMap@{CalculateShadowMap}}
+\index{CalculateShadowMap@{CalculateShadowMap}!GeometryEngine::GeometryWorldItem::GeometryLight::Light@{GeometryEngine::GeometryWorldItem::GeometryLight::Light}}
+\subsubsection{\texorpdfstring{CalculateShadowMap()}{CalculateShadowMap()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light\+::\+Calculate\+Shadow\+Map (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{const Q\+Matrix4x4 \&}]{model\+Matrix,  }\item[{unsigned int}]{total\+Vertex\+Num,  }\item[{unsigned int}]{total\+Index\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Method to expose the shadow map calculation that some lights might have. Lights that cast shadows are supposed to re-\/implement this method param vertex\+Buf Pointer to the vertex buffer param index\+Buffer Pointer to the index buffer param model\+Matrix model matrix of the item to be added to the shadow map param total\+Vertex\+Num Total amount of vertices param total\+Index\+Num Total amount of indices 
+
+Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a518efafd59e2dcd446140ae82140e172}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Shadow\+Map\+Light}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_ae50fab4782158671041ac986dfead7fc}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_ae50fab4782158671041ac986dfead7fc}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryLight::Light@{GeometryEngine::GeometryWorldItem::GeometryLight::Light}!CalculateStencil@{CalculateStencil}}
 \index{CalculateStencil@{CalculateStencil}!GeometryEngine::GeometryWorldItem::GeometryLight::Light@{GeometryEngine::GeometryWorldItem::GeometryLight::Light}}
 \subsubsection{\texorpdfstring{CalculateStencil()}{CalculateStencil()}}
@@ -146,7 +164,7 @@ Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_
 
 Abstract method. Sends parameters to the shaders. param transform\+Data Matrices of the light param \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} Data from the textures of the geometry buffer param view\+Pos Position of the camera 
 
-Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a89686934756cc47dd810cc43d8f5f88a}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Spotlight}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_ae395d609ee47dd5d399514bb2c76d2db}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Light}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_point_light_acf3ebd411b36d95ba26ae41bcc25793a}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Point\+Light}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light_a37469f72317d3d9cd0e5fb46fbf5fedf}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Ambient\+Light}}.
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_spotlight_aea5bd6e9315d5df327f59d752f8c6f95}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Shadow\+Spotlight}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_ae395d609ee47dd5d399514bb2c76d2db}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Light}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_shadow_light_a9eb42440febb19231e71555f7fde2346}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Shadow\+Light}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a89686934756cc47dd810cc43d8f5f88a}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Spotlight}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_point_light_acf3ebd411b36d95ba26ae41bcc25793a}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Point\+Light}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light_a37469f72317d3d9cd0e5fb46fbf5fedf}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Ambient\+Light}}.
 
 
 

@@ -32,7 +32,7 @@ void GeometryEngine::GeometryRenderStep::GeometryPass::renderGeometry(GeometryWo
 	QVector4D viewport = cam->GetViewportSize();
 	if (viewport.z() > 0 && viewport.w())
 	{
-		cam->CalculateProjectionMatrix();
+		cam->GetViewport()->CalculateProjectionMatrix();
 
 		for (auto it = items->begin(); it != items->end(); ++it)
 		{

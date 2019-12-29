@@ -57,6 +57,10 @@ virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ab2ed6e137c09bd08335452fa4bb7742a}{Set\+Visible}} (bool visible)
 \item 
 virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a7fece5cb2992278b918286e3aeb9b561}{Is\+Visible}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a4b9c066cbd4ab85ffae11bb4dcd9fc64}{Casts\+Shadows}} ()
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a3851222930b03bafdf0338df339022d2}{Set\+Casts\+Shadows}} (bool casts\+Shadows)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -78,6 +82,9 @@ Q\+Open\+G\+L\+Buffer $\ast$ {\bfseries mp\+Index\+Buf}
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ad0b1a4147fa692c1a31938c9d791dba1}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_ad0b1a4147fa692c1a31938c9d791dba1}} 
 bool {\bfseries m\+Visible}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a3bb59933ca12f45686611e71e0d21ca0}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a3bb59933ca12f45686611e71e0d21ca0}} 
+bool {\bfseries m\+Casts\+Shadow}
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a7e726a5c2ced32ee542d897d8e8c70eb}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a7e726a5c2ced32ee542d897d8e8c70eb}} 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$ {\bfseries mp\+Material}
@@ -130,7 +137,13 @@ Copy constructor param ref Object to be copied.
 \subsubsection{\texorpdfstring{AddRenderGroup()}{AddRenderGroup()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Add\+Render\+Group (\begin{DoxyParamCaption}\item[{int}]{group }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Adds this item to a render group. Cameras only render objects contained in the same render groups that they are. All objects start in the null render group. param group Identifier of the render group return bool true if the object was not already contained in the render group \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a1db8f97339ba49f746b3e0b4c4b02748}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a1db8f97339ba49f746b3e0b4c4b02748}} 
+Adds this item to a render group. Cameras only render objects contained in the same render groups that they are. All objects start in the null render group. param group Identifier of the render group return bool true if the object was not already contained in the render group \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a4b9c066cbd4ab85ffae11bb4dcd9fc64}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a4b9c066cbd4ab85ffae11bb4dcd9fc64}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!CastsShadows@{CastsShadows}}
+\index{CastsShadows@{CastsShadows}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{CastsShadows()}{CastsShadows()}}
+{\footnotesize\ttfamily virtual bool Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Casts\+Shadows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets wether this items is taken into account when calculating shadows return whether this item casts shadows \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a1db8f97339ba49f746b3e0b4c4b02748}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a1db8f97339ba49f746b3e0b4c4b02748}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!Clone@{Clone}}
 \index{Clone@{Clone}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
 \subsubsection{\texorpdfstring{Clone()}{Clone()}}
@@ -200,7 +213,13 @@ Gets the visibility state for this item return the visibility state for this ite
 \subsubsection{\texorpdfstring{RemoveRenderGroup()}{RemoveRenderGroup()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Remove\+Render\+Group (\begin{DoxyParamCaption}\item[{int}]{group }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Removes this item from a render group. Cameras only render objects contained in the same render groups that they are. All objects start in the null render group. An object cannot be removed from the null render group, if an object is not contained in any render group it\textquotesingle{}s considered to be contained in the null render group. param group Identifier of the render group return bool true if the object was contained in the render group \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_addd7b6651de0583209ec45ff1a813dd1}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_addd7b6651de0583209ec45ff1a813dd1}} 
+Removes this item from a render group. Cameras only render objects contained in the same render groups that they are. All objects start in the null render group. An object cannot be removed from the null render group, if an object is not contained in any render group it\textquotesingle{}s considered to be contained in the null render group. param group Identifier of the render group return bool true if the object was contained in the render group \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a3851222930b03bafdf0338df339022d2}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a3851222930b03bafdf0338df339022d2}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!SetCastsShadows@{SetCastsShadows}}
+\index{SetCastsShadows@{SetCastsShadows}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
+\subsubsection{\texorpdfstring{SetCastsShadows()}{SetCastsShadows()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item\+::\+Set\+Casts\+Shadows (\begin{DoxyParamCaption}\item[{bool}]{casts\+Shadows }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets whether this item casts shadows param casts\+Shadows New shadow state \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_addd7b6651de0583209ec45ff1a813dd1}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_addd7b6651de0583209ec45ff1a813dd1}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}!SetMaterial@{SetMaterial}}
 \index{SetMaterial@{SetMaterial}!GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem@{GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem}}
 \subsubsection{\texorpdfstring{SetMaterial()}{SetMaterial()}}

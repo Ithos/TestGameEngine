@@ -2,11 +2,16 @@
 
 #include "Render Utils\RenderStep.h"
 
-GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::Camera(const QVector4D& viewportSize, bool autoResize, GLdouble zNear, GLdouble zFar, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent) :
-	WorldItem(pos, rot, scale, parent), mViewportSize(viewportSize), mZNear(zNear), mZFar(zFar), mAutoResize(autoResize), mpGBuffer(nullptr)
+GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::Camera(const GeometryItemUtils::Viewport & viewport, bool autoResize, const QVector3D & pos, 
+	const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : WorldItem(pos, rot, scale, parent), mAutoResize(autoResize), mpGBuffer(nullptr), mpViewport(nullptr)
 {
-	mProjection.setToIdentity();
+	mpViewport = viewport.Clone();
 	CalculateModelMatrix();
+}
+
+GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::Camera(const Camera & ref) : WorldItem()
+{
+	copy(ref);
 }
 
 GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::~Camera()
@@ -17,17 +22,19 @@ GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::~Camera()
 		mpGBuffer = nullptr;
 	}
 
+	if (mpViewport != nullptr)
+	{
+		delete mpViewport;
+		mpViewport = nullptr;
+	}
+
 	ClearCustomRenderSteps();
 	ClearPostProcess();
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::UpdateModelMatrix(bool updateChildren)
 {
-	// The transformations on the camera are really the opposite transformations on the world
-	mModelMatrix.setToIdentity();
-	mModelMatrix.translate(-GetPosition());
-	mModelMatrix.rotate(-mRotation);
-	mModelMatrix.scale(mScale);
+	mModelMatrix = mpViewport->UpdateViewMatrix(GetPosition(), mRotation, mScale);
 
 	if (updateChildren)
 	{
@@ -36,12 +43,6 @@ void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::UpdateModelMatri
 			(*iter)->UpdateModelMatrix(updateChildren);
 		}
 	}
-}
-
-void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::ResetCameraBeforeCalculation()
-{
-	mProjection.setToIdentity();
-	glViewport(mViewportSize.x(), mViewportSize.y(), mViewportSize.z(), mViewportSize.w());
 }
 
 bool GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::AddCustomRenderStep(const GeometryRenderStep::RenderStep & step)
@@ -134,4 +135,33 @@ bool GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::RemoveRenderGrou
 		return false;
 	mRenderGroups.erase(group);
 	return true;
+}
+
+GeometryEngine::GeometryWorldItem::GeometryCamera::Camera * GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::Clone() const
+{
+	return new Camera( (*this) );
+}
+
+void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::copy(const Camera & ref)
+{
+	WorldItem::Copy(ref);
+	
+	mpViewport = ref.mpViewport->Clone();
+
+	this->mAutoResize = ref.mAutoResize;
+
+	for (auto it = ref.mCustomRenderSteps.begin(); it != ref.mCustomRenderSteps.end(); ++it)
+	{
+		AddCustomRenderStep( *(*it) );
+	}
+
+	for (auto it = ref.mPostProcess.begin(); it != ref.mPostProcess.end(); ++it)
+	{
+		AddPostProcess( *(*it) );
+	}
+
+	for (auto it = ref.mRenderGroups.begin(); it != ref.mRenderGroups.end(); ++it)
+	{
+		AddRenderGroup( (*it) );
+	}
 }

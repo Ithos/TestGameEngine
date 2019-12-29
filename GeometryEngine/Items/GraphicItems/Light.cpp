@@ -35,14 +35,8 @@ GeometryEngine::GeometryWorldItem::GeometryLight::Light::~Light()
 void GeometryEngine::GeometryWorldItem::GeometryLight::Light::CalculateLighting(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const LightingTransformationData& transformData,
 	const GBufferTextureInfo& gBuffTexInfo, const QVector3D& viewPos, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
-	if (mpProgram != nullptr)
+	assert(mpProgram != nullptr && "No light shader program found");
 	{
-		// Link shader pipeline
-		if (!mpProgram->link())
-		{
-			assert(false && "Lighting shader failed to link");
-		}
-
 		// Bind shader pipeline for use
 		if (!mpProgram->bind())
 		{
@@ -94,6 +88,15 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::Light::initLightProgram()
 		if (!mpProgram->addShaderFromSourceCode(QOpenGLShader::Fragment, mpShaderManager->GetLoadedShaderContent(mFragmentShaderKey).c_str()))
 		{
 			assert(false && "Lighting fragment shader failed to compile");
+		}
+	}
+
+	assert(mpProgram != nullptr && "No light shader program found");
+	{
+		// Link shader pipeline
+		if (!mpProgram->link())
+		{
+			assert(false && "Lighting shader failed to link");
 		}
 	}
 }

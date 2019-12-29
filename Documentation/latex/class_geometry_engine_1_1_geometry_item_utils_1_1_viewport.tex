@@ -1,0 +1,158 @@
+\hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{}\section{Geometry\+Engine\+::Geometry\+Item\+Utils\+::Viewport Class Reference}
+\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}\index{GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}}
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Item\+Utils\+::Viewport\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.637427cm]{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a7533300b9cc61738b14fc0d6c67593ce}{Viewport}} (const Q\+Vector4D \&viewport\+Size, G\+Ldouble z\+Near=0.\+1, G\+Ldouble z\+Far=30.\+0)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a77455d64d5b6fec118f95438aff987c2}{Viewport}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Viewport}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a4f99bc87e9c31f3b0a5a6c66c8391178}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a4f99bc87e9c31f3b0a5a6c66c8391178}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a4f99bc87e9c31f3b0a5a6c66c8391178}{$\sim$\+Viewport}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Viewport}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a8bd47866a001eae03f88df67fd699904}{Clone}} () const =0
+\item 
+virtual const Q\+Matrix4x4 \& \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_ac3c9ce922326ed25d5ffa8d3c7ffc0ca}{Get\+View\+Matrix}} ()
+\item 
+virtual const Q\+Matrix4x4 \& \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a65f5f4ab19355462cb52127e7c1eb73d}{Get\+Projection\+Matrix}} ()
+\item 
+virtual const Q\+Matrix4x4 \& \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a026573276a6c7523adf0a2024597da46}{Get\+View\+Projection\+Matrix}} ()
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_aee56ad377f9615e64c33bdef3d05c94f}{Set\+Viewport\+Size}} (const Q\+Vector4D \&size)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a9500d8b22395ee3f94611881ea89b0aa}{Set\+Boundaries}} (G\+Ldouble z\+Near, G\+Ldouble z\+Far)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_ac3800978fbb78fd90a9a9f20c0032e9d}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_ac3800978fbb78fd90a9a9f20c0032e9d}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_ac3800978fbb78fd90a9a9f20c0032e9d}{Calculate\+Projection\+Matrix}} ()=0
+\begin{DoxyCompactList}\small\item\em Abstract method. Calculates the projection matrix for the camera. \end{DoxyCompactList}\item 
+virtual const Q\+Matrix4x4 \& \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a3a6f1e8286670aa78e21631e6f3ca80b}{Update\+View\+Matrix}} (const Q\+Vector3D \&pos, const Q\+Quaternion \&rot, const Q\+Vector3D \&scale)
+\item 
+virtual const Q\+Vector4D \& \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a0b5e2284b8a56be19d9f39a1b88c5eba}{Get\+Viewport\+Size}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_abd6d81a5e5d4dd10270a5856cc7dd469}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_abd6d81a5e5d4dd10270a5856cc7dd469}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_abd6d81a5e5d4dd10270a5856cc7dd469}{Viewport}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor to be used by child classes when being copied. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a59b1c812e5b06db173c540cade51b158}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a59b1c812e5b06db173c540cade51b158}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a59b1c812e5b06db173c540cade51b158}{Reset\+Camera\+Before\+Calculation}} ()
+\begin{DoxyCompactList}\small\item\em Sets projection matrix to identity and updates the size of the actual Open\+Gl viewport. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a07cf94a940faa629e5e7a5f6d263c6cf}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a07cf94a940faa629e5e7a5f6d263c6cf}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a07cf94a940faa629e5e7a5f6d263c6cf}{Apply\+Camera\+Model\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the view projection matrix for the camera by multiplying projection by model matrices. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a2cd0eeeac769d5da977a17a4e394a1d9}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Viewport}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a91d2d0e2cd9fc08f2ff878300249fc04}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a91d2d0e2cd9fc08f2ff878300249fc04}} 
+G\+Ldouble {\bfseries m\+Z\+Near}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a2406f22fb6240bad5f6b82e0829358a0}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a2406f22fb6240bad5f6b82e0829358a0}} 
+G\+Ldouble {\bfseries m\+Z\+Far}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_aaca6c28f08b882d9e22f8a7398f5a701}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_aaca6c28f08b882d9e22f8a7398f5a701}} 
+Q\+Vector4D {\bfseries m\+Viewport\+Size}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_af7c8597f8b85d16638b8f758e839c430}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_af7c8597f8b85d16638b8f758e839c430}} 
+Q\+Matrix4x4 {\bfseries m\+Projection}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a959a24f6b7b089948bfa8d678d6014f1}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a959a24f6b7b089948bfa8d678d6014f1}} 
+Q\+Matrix4x4 {\bfseries m\+View\+Projection}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_ad9fdc6df1b5f7873642ebbb4f8eb0a32}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_ad9fdc6df1b5f7873642ebbb4f8eb0a32}} 
+Q\+Matrix4x4 {\bfseries m\+View\+Matrix}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a7533300b9cc61738b14fc0d6c67593ce}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a7533300b9cc61738b14fc0d6c67593ce}} 
+\index{GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}!Viewport@{Viewport}}
+\index{Viewport@{Viewport}!GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}}
+\subsubsection{\texorpdfstring{Viewport()}{Viewport()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport\+::\+Viewport (\begin{DoxyParamCaption}\item[{const Q\+Vector4D \&}]{viewport\+Size,  }\item[{G\+Ldouble}]{z\+Near = {\ttfamily 0.1},  }\item[{G\+Ldouble}]{z\+Far = {\ttfamily 30.0} }\end{DoxyParamCaption})}
+
+Constructor. param viewport\+Size Size of the viewport. The values indicate in order x position, yposition, width, height. param z\+Near Nearest z coordinate to be rendered param z\+Far Farthest z coordinate to be rendered \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a77455d64d5b6fec118f95438aff987c2}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a77455d64d5b6fec118f95438aff987c2}} 
+\index{GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}!Viewport@{Viewport}}
+\index{Viewport@{Viewport}!GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}}
+\subsubsection{\texorpdfstring{Viewport()}{Viewport()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport\+::\+Viewport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Viewport}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a8bd47866a001eae03f88df67fd699904}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a8bd47866a001eae03f88df67fd699904}} 
+\index{GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Viewport}}$\ast$ Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_ortographic_viewport_a7729f7619d67c139f8510c305de1a286}{Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Ortographic\+Viewport}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a828a22e5d39e7c8d1812e97f582bf667}{Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Perspective\+Viewport}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a2cd0eeeac769d5da977a17a4e394a1d9}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a2cd0eeeac769d5da977a17a4e394a1d9}} 
+\index{GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Viewport}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a Camera object to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Viewport}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a65f5f4ab19355462cb52127e7c1eb73d}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a65f5f4ab19355462cb52127e7c1eb73d}} 
+\index{GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}!GetProjectionMatrix@{GetProjectionMatrix}}
+\index{GetProjectionMatrix@{GetProjectionMatrix}!GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}}
+\subsubsection{\texorpdfstring{GetProjectionMatrix()}{GetProjectionMatrix()}}
+{\footnotesize\ttfamily virtual const Q\+Matrix4x4\& Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport\+::\+Get\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the Projection matrix return projection matrix \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_ac3c9ce922326ed25d5ffa8d3c7ffc0ca}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_ac3c9ce922326ed25d5ffa8d3c7ffc0ca}} 
+\index{GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}!GetViewMatrix@{GetViewMatrix}}
+\index{GetViewMatrix@{GetViewMatrix}!GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}}
+\subsubsection{\texorpdfstring{GetViewMatrix()}{GetViewMatrix()}}
+{\footnotesize\ttfamily virtual const Q\+Matrix4x4\& Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport\+::\+Get\+View\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the View matrix return View Matrix \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a0b5e2284b8a56be19d9f39a1b88c5eba}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a0b5e2284b8a56be19d9f39a1b88c5eba}} 
+\index{GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}!GetViewportSize@{GetViewportSize}}
+\index{GetViewportSize@{GetViewportSize}!GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}}
+\subsubsection{\texorpdfstring{GetViewportSize()}{GetViewportSize()}}
+{\footnotesize\ttfamily virtual const Q\+Vector4D\& Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport\+::\+Get\+Viewport\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the current viewport size. Gets the stored viewport size but not the actual viewport size, if there are unnaplied changes the actual size may differ. return \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Viewport}} size as a Q\+Vector4D. The values indicate in order x position, yposition, width, height. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a026573276a6c7523adf0a2024597da46}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a026573276a6c7523adf0a2024597da46}} 
+\index{GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}!GetViewProjectionMatrix@{GetViewProjectionMatrix}}
+\index{GetViewProjectionMatrix@{GetViewProjectionMatrix}!GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}}
+\subsubsection{\texorpdfstring{GetViewProjectionMatrix()}{GetViewProjectionMatrix()}}
+{\footnotesize\ttfamily virtual const Q\+Matrix4x4\& Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport\+::\+Get\+View\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the View projection matrix return View projection matrix \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a9500d8b22395ee3f94611881ea89b0aa}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a9500d8b22395ee3f94611881ea89b0aa}} 
+\index{GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}!SetBoundaries@{SetBoundaries}}
+\index{SetBoundaries@{SetBoundaries}!GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}}
+\subsubsection{\texorpdfstring{SetBoundaries()}{SetBoundaries()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport\+::\+Set\+Boundaries (\begin{DoxyParamCaption}\item[{G\+Ldouble}]{z\+Near,  }\item[{G\+Ldouble}]{z\+Far }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets new values for the z coordinate limits, but does not update the projection matrix inmediately param z\+Near Nearest z coordinate to be rendered param z\+Far Farthest z coordinate to be rendered \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_aee56ad377f9615e64c33bdef3d05c94f}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_aee56ad377f9615e64c33bdef3d05c94f}} 
+\index{GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}!SetViewportSize@{SetViewportSize}}
+\index{SetViewportSize@{SetViewportSize}!GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}}
+\subsubsection{\texorpdfstring{SetViewportSize()}{SetViewportSize()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport\+::\+Set\+Viewport\+Size (\begin{DoxyParamCaption}\item[{const Q\+Vector4D \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets a new size for the viewport, but does not update the viewport inmediately param size New \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Viewport}} size. The values indicate in order x position, yposition, width, height. 
+
+Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a01764cc11407ed9ce70111a627c823ae}{Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Perspective\+Viewport}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a3a6f1e8286670aa78e21631e6f3ca80b}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a3a6f1e8286670aa78e21631e6f3ca80b}} 
+\index{GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}!UpdateViewMatrix@{UpdateViewMatrix}}
+\index{UpdateViewMatrix@{UpdateViewMatrix}!GeometryEngine::GeometryItemUtils::Viewport@{GeometryEngine::GeometryItemUtils::Viewport}}
+\subsubsection{\texorpdfstring{UpdateViewMatrix()}{UpdateViewMatrix()}}
+{\footnotesize\ttfamily const Q\+Matrix4x4 \& Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport\+::\+Update\+View\+Matrix (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{pos,  }\item[{const Q\+Quaternion \&}]{rot,  }\item[{const Q\+Vector3D \&}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Updates the model matrix for the camera param pos position where the viewport should be calculated param rot rotation ofthe viewport parm scale scale to be applied to the objects being represented by the viewport 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Item Utils/Viewport.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Item Utils/Viewport.\+cpp\end{DoxyCompactItemize}

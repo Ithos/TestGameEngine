@@ -18,7 +18,7 @@ void GeometryEngine::GeometryRenderStep::LightingPass::renderLights(GeometryWorl
 	QVector4D viewport = cam->GetViewportSize();
 	if (viewport.z() > 0 && viewport.w())
 	{
-		cam->CalculateProjectionMatrix();
+		cam->GetViewport()->CalculateProjectionMatrix();
 		applyLight(cam, lights);
 	}
 }
@@ -36,24 +36,7 @@ void GeometryEngine::GeometryRenderStep::LightingPass::applyLight(GeometryWorldI
 
 		assert(l->GetBoundingGeometry() != nullptr && "LightingPass --> Light without bounding geometry");
 
-		if (l->GetStencilTest())
-		{
-			prepareStencilPass(cam);
-			stencilPass(l, cam);
-			cam->GetGBuffer()->BindForLightPass();
-			setStencilLight();
-		}
-
-		prepareLightPass();
-
-		l->LightFromBoundignGeometry(cam->GetProjectionMatrix(), cam->GetViewMatrix(), gbuff, cam->GetPosition());
-
-		if (l->GetStencilTest())
-		{
-			finishStencilPass();
-		}
-
-		finishLightPass();
+		applySingleLight(cam, gbuff, l);
 
 	}
 
@@ -64,6 +47,28 @@ void GeometryEngine::GeometryRenderStep::LightingPass::initStep()
 {
 	glDisable(GL_DEPTH_TEST);
 	glDepthMask(GL_FALSE);
+}
+
+void GeometryEngine::GeometryRenderStep::LightingPass::applySingleLight(GeometryWorldItem::GeometryCamera::Camera * cam, const GBufferTextureInfo & gBuf, GeometryWorldItem::GeometryLight::Light * light)
+{
+	if (light->GetStencilTest())
+	{
+		prepareStencilPass(cam);
+		stencilPass(light, cam);
+		cam->GetGBuffer()->BindForLightPass();
+		setStencilLight();
+	}
+
+	prepareLightPass();
+
+	light->LightFromBoundignGeometry(cam->GetProjectionMatrix(), cam->GetViewMatrix(), gBuf, cam->GetPosition());
+
+	if (light->GetStencilTest())
+	{
+		finishStencilPass();
+	}
+
+	finishLightPass();
 }
 
 void GeometryEngine::GeometryRenderStep::LightingPass::finishStep()

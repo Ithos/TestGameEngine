@@ -98,17 +98,22 @@ namespace GeometryEngine
 				/// Gets the visibility state for this item
 				/// return the visibility state for this item
 				virtual bool IsVisible() { return mVisible; }
-
+				/// Gets wether this items is taken into account when calculating shadows
+				/// return whether this item casts shadows
+				virtual bool CastsShadows() { return mCastsShadow; }
+				/// Sets whether this item casts shadows
+				/// param castsShadows New shadow state
+				virtual void SetCastsShadows(bool castsShadows) { mCastsShadow = castsShadows; }
 			protected:
 				/// Abstract method. Initializes vertices an indices buffers
 				virtual void initGeometry() = 0;
 				/// Gets managers and creates buffers
 				virtual void initItem();
 
-
 				QOpenGLBuffer* mpArrayBuf;
 				QOpenGLBuffer* mpIndexBuf;
 				bool mVisible;
+				bool mCastsShadow;
 				GeometryMaterial::Material* mpMaterial;
 				Configuration::ConfigurationManager* mpConfInstance;
 				std::string mVertexShaderKey;

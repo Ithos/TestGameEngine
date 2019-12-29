@@ -1,0 +1,105 @@
+\hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport}{}\section{Geometry\+Engine\+::Geometry\+Item\+Utils\+::Perspective\+Viewport Class Reference}
+\label{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport}\index{GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}}
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Item\+Utils\+::Perspective\+Viewport\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_af8f86542b7ad6a8b91a3d659d3d2f933}{Perspective\+Viewport}} (const Q\+Vector4D \&viewport\+Size, G\+Ldouble fovy=45.\+0, G\+Ldouble aspect\+Ratio=1.\+0, G\+Ldouble z\+Near=0.\+1, G\+Ldouble z\+Far=30.\+0)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a9d671fa5666d470b23369b11e4dbc298}{Perspective\+Viewport}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport}{Perspective\+Viewport}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a27caa3ea6db0242b1737f4d4a402b3fb}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a27caa3ea6db0242b1737f4d4a402b3fb}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a27caa3ea6db0242b1737f4d4a402b3fb}{$\sim$\+Perspective\+Viewport}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport}{Perspective\+Viewport}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a828a22e5d39e7c8d1812e97f582bf667}{Clone}} () const override
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a916b7090b29f070efe8ca4b91e818182}{Set\+Aspect\+Ratio}} (int w, int h)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_ad53e3996cca001300427d04eb340bdee}{Set\+Projection}} (G\+Ldouble fovy, G\+Ldouble z\+Near, G\+Ldouble z\+Far)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a01764cc11407ed9ce70111a627c823ae}{Set\+Viewport\+Size}} (const Q\+Vector4D \&size) override
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_aeb08a0d3ef705c46c314f30fc562adeb}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_aeb08a0d3ef705c46c314f30fc562adeb}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_aeb08a0d3ef705c46c314f30fc562adeb}{Calculate\+Projection\+Matrix}} () override
+\begin{DoxyCompactList}\small\item\em Calculates the projection matrix of the camera as a perspective projection matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_af751fd63329fb5f80965e3f864afb4b7}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport}{Perspective\+Viewport}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a1bc99a06c49f91aa2e9638506000fa88}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a1bc99a06c49f91aa2e9638506000fa88}} 
+G\+Ldouble {\bfseries m\+Fo\+View}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_ac1c919889b6d566d796196d46cc36d47}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_ac1c919889b6d566d796196d46cc36d47}} 
+G\+Ldouble {\bfseries m\+Aspect\+Ratio}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_af8f86542b7ad6a8b91a3d659d3d2f933}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_af8f86542b7ad6a8b91a3d659d3d2f933}} 
+\index{GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}!PerspectiveViewport@{PerspectiveViewport}}
+\index{PerspectiveViewport@{PerspectiveViewport}!GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}}
+\subsubsection{\texorpdfstring{PerspectiveViewport()}{PerspectiveViewport()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Perspective\+Viewport\+::\+Perspective\+Viewport (\begin{DoxyParamCaption}\item[{const Q\+Vector4D \&}]{viewport\+Size,  }\item[{G\+Ldouble}]{fovy = {\ttfamily 45.0},  }\item[{G\+Ldouble}]{aspect\+Ratio = {\ttfamily 1.0},  }\item[{G\+Ldouble}]{z\+Near = {\ttfamily 0.1},  }\item[{G\+Ldouble}]{z\+Far = {\ttfamily 30.0} }\end{DoxyParamCaption})}
+
+Constructor. param viewport\+Size Size of the viewport. The values indicate in order x position, yposition, width, height. param z\+Near Nearest z coordinate to be rendered param z\+Far Farthest z coordinate to be rendered \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a9d671fa5666d470b23369b11e4dbc298}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a9d671fa5666d470b23369b11e4dbc298}} 
+\index{GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}!PerspectiveViewport@{PerspectiveViewport}}
+\index{PerspectiveViewport@{PerspectiveViewport}!GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}}
+\subsubsection{\texorpdfstring{PerspectiveViewport()}{PerspectiveViewport()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Perspective\+Viewport\+::\+Perspective\+Viewport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport}{Perspective\+Viewport}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a828a22e5d39e7c8d1812e97f582bf667}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a828a22e5d39e7c8d1812e97f582bf667}} 
+\index{GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport}{Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Perspective\+Viewport}} $\ast$ Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Perspective\+Viewport\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_a8bd47866a001eae03f88df67fd699904}{Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_af751fd63329fb5f80965e3f864afb4b7}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_af751fd63329fb5f80965e3f864afb4b7}} 
+\index{GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Perspective\+Viewport\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport}{Perspective\+Viewport}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a Camera object to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport}{Perspective\+Viewport}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a916b7090b29f070efe8ca4b91e818182}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a916b7090b29f070efe8ca4b91e818182}} 
+\index{GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}!SetAspectRatio@{SetAspectRatio}}
+\index{SetAspectRatio@{SetAspectRatio}!GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}}
+\subsubsection{\texorpdfstring{SetAspectRatio()}{SetAspectRatio()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Perspective\+Viewport\+::\+Set\+Aspect\+Ratio (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the aspect ratio to be used by the projection param w \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Viewport}} width param h Vewport height \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_ad53e3996cca001300427d04eb340bdee}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_ad53e3996cca001300427d04eb340bdee}} 
+\index{GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}!SetProjection@{SetProjection}}
+\index{SetProjection@{SetProjection}!GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}}
+\subsubsection{\texorpdfstring{SetProjection()}{SetProjection()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Perspective\+Viewport\+::\+Set\+Projection (\begin{DoxyParamCaption}\item[{G\+Ldouble}]{fovy,  }\item[{G\+Ldouble}]{z\+Near,  }\item[{G\+Ldouble}]{z\+Far }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the field of view angle and the z render limits param fovy Angle that the perspective frustrum opens param z\+Near Nearest z plane to be rendered param z\+Far Farthest z plane to be rendered \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a01764cc11407ed9ce70111a627c823ae}\label{class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport_a01764cc11407ed9ce70111a627c823ae}} 
+\index{GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}!SetViewportSize@{SetViewportSize}}
+\index{SetViewportSize@{SetViewportSize}!GeometryEngine::GeometryItemUtils::PerspectiveViewport@{GeometryEngine::GeometryItemUtils::PerspectiveViewport}}
+\subsubsection{\texorpdfstring{SetViewportSize()}{SetViewportSize()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Perspective\+Viewport\+::\+Set\+Viewport\+Size (\begin{DoxyParamCaption}\item[{const Q\+Vector4D \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Viewport}} size param size \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Viewport}} size 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport_aee56ad377f9615e64c33bdef3d05c94f}{Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Item Utils/\+Viewports/Perspective\+Viewport.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Item Utils/\+Viewports/Perspective\+Viewport.\+cpp\end{DoxyCompactItemize}

@@ -42,6 +42,11 @@ namespace GeometryEngine
 			/// param cam Pointer to Camera to be rendered
 			/// param lights Set of lights in the scene
 			void applyLight(GeometryWorldItem::GeometryCamera::Camera* cam, std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights);
+			/// Applies the effects of a single light to the scene
+			/// param cam Pointer to Camera to be rendered
+			/// param gBuf Geometry buffer information to be passed to the light shader
+			/// param light Light to be calculated
+			void applySingleLight(GeometryWorldItem::GeometryCamera::Camera* cam, const GBufferTextureInfo& gBuf, GeometryWorldItem::GeometryLight::Light* light);
 			/// Returns the OpenGl pipeline to its original state
 			void finishStep();
 
