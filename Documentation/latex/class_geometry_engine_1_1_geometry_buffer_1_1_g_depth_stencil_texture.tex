@@ -1,0 +1,133 @@
+\hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture}{}\section{Geometry\+Engine\+::Geometry\+Buffer\+::G\+Depth\+Stencil\+Texture Class Reference}
+\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture}\index{GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}}
+
+
+Class that represents a texture that stores depth or stencil information.  
+
+
+
+
+{\ttfamily \#include $<$G\+Depth\+Stencil\+Texture.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Buffer\+::G\+Depth\+Stencil\+Texture\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a2b0715430a2189c9fdce17ab836bbf25}{G\+Depth\+Stencil\+Texture}} (const Q\+Vector2D \&texture\+Size)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a03bf1c5b969afa4dbf5a7c53b6c9a58a}{G\+Depth\+Stencil\+Texture}} (const Q\+Vector2D \&texture\+Size, G\+Framebuffer\+Commons\+::\+G\+\_\+\+D\+E\+P\+T\+H\+\_\+\+S\+T\+E\+N\+C\+I\+L\+\_\+\+A\+T\+T\+A\+C\+H\+M\+E\+N\+TS attachment, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} $\ast$owner)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a32fd061895c2acd68316c4135607b25c}{G\+Depth\+Stencil\+Texture}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture}{G\+Depth\+Stencil\+Texture}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a5d4d22445a0212fb49d16da101fd5bdf}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a5d4d22445a0212fb49d16da101fd5bdf}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a5d4d22445a0212fb49d16da101fd5bdf}{$\sim$\+G\+Depth\+Stencil\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a00941483d89f2eb8f2adb09fb3744801}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a00941483d89f2eb8f2adb09fb3744801}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a00941483d89f2eb8f2adb09fb3744801}{Bind}} ()
+\begin{DoxyCompactList}\small\item\em Binds this texture to the Open\+Gl pipeline to perform operations on it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a52010a4029d0c2d3979489521de9dd8a}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a52010a4029d0c2d3979489521de9dd8a}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a52010a4029d0c2d3979489521de9dd8a}{Unbind}} ()
+\begin{DoxyCompactList}\small\item\em Unbinds this texture from the Open\+Gl pipeline so no more operations are performed on it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a1c2958f76446e543c7fac756fca00428}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a1c2958f76446e543c7fac756fca00428}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a1c2958f76446e543c7fac756fca00428}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear the target stored information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a4ef2c74391c1cc0b7ea98fe125f7b8ac}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a4ef2c74391c1cc0b7ea98fe125f7b8ac}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a4ef2c74391c1cc0b7ea98fe125f7b8ac}{Clear}} (G\+Luint $\ast$values)
+\begin{DoxyCompactList}\small\item\em Clear the target stored information with a given value or array of values. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a692ca73521e51be802c981ab05029369}{Resize}} (const Q\+Vector2D \&texture\+Size)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_aa4b676746b13f4ea748450ea19ca711a}{Set\+Attachment}} (unsigned int attachment\+Index)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_ae8d0ace073861e957f5abe264d2c321d}{Set\+Attachment}} (G\+Framebuffer\+Commons\+::\+G\+\_\+\+D\+E\+P\+T\+H\+\_\+\+S\+T\+E\+N\+C\+I\+L\+\_\+\+A\+T\+T\+A\+C\+H\+M\+E\+N\+TS attachment)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a38a1f3219bddbab69fa338a727e0ab3a}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a38a1f3219bddbab69fa338a727e0ab3a}} 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a38a1f3219bddbab69fa338a727e0ab3a}{Enable}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enable/\+Disable the depth texture. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture}{G\+Depth\+Stencil\+Texture}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_ae831cf8a8610c82ae4b50622348b4e57}{Clone}} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a80ef1aeb049b89848d7855f53107a9f0}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture}{G\+Depth\+Stencil\+Texture}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class that represents a texture that stores depth or stencil information. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a2b0715430a2189c9fdce17ab836bbf25}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a2b0715430a2189c9fdce17ab836bbf25}} 
+\index{GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}!GDepthStencilTexture@{GDepthStencilTexture}}
+\index{GDepthStencilTexture@{GDepthStencilTexture}!GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}}
+\subsubsection{\texorpdfstring{GDepthStencilTexture()}{GDepthStencilTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Texture\+::\+G\+Depth\+Stencil\+Texture (\begin{DoxyParamCaption}\item[{const Q\+Vector2D \&}]{texture\+Size }\end{DoxyParamCaption})}
+
+Constructor. param texture\+Size Size of the texture to be created \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a03bf1c5b969afa4dbf5a7c53b6c9a58a}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a03bf1c5b969afa4dbf5a7c53b6c9a58a}} 
+\index{GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}!GDepthStencilTexture@{GDepthStencilTexture}}
+\index{GDepthStencilTexture@{GDepthStencilTexture}!GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}}
+\subsubsection{\texorpdfstring{GDepthStencilTexture()}{GDepthStencilTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Texture\+::\+G\+Depth\+Stencil\+Texture (\begin{DoxyParamCaption}\item[{const Q\+Vector2D \&}]{texture\+Size,  }\item[{G\+Framebuffer\+Commons\+::\+G\+\_\+\+D\+E\+P\+T\+H\+\_\+\+S\+T\+E\+N\+C\+I\+L\+\_\+\+A\+T\+T\+A\+C\+H\+M\+E\+N\+TS}]{attachment,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} $\ast$}]{owner }\end{DoxyParamCaption})}
+
+Constructor param texture\+Size Size of the texture to be created param depth\+Attachment Number of the depth attachment to use, if it\textquotesingle{}s greater than 0 the depth texture will be attached param owner \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} where this texture is contained \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a32fd061895c2acd68316c4135607b25c}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a32fd061895c2acd68316c4135607b25c}} 
+\index{GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}!GDepthStencilTexture@{GDepthStencilTexture}}
+\index{GDepthStencilTexture@{GDepthStencilTexture}!GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}}
+\subsubsection{\texorpdfstring{GDepthStencilTexture()}{GDepthStencilTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Texture\+::\+G\+Depth\+Stencil\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture}{G\+Depth\+Stencil\+Texture}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_ae831cf8a8610c82ae4b50622348b4e57}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_ae831cf8a8610c82ae4b50622348b4e57}} 
+\index{GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture}{G\+Depth\+Stencil\+Texture}}$\ast$ Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Texture\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a3b14d8929cf9d2acb6bc263c709ff019}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a80ef1aeb049b89848d7855f53107a9f0}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a80ef1aeb049b89848d7855f53107a9f0}} 
+\index{GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Texture\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture}{G\+Depth\+Stencil\+Texture}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the Open\+Gl data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}{G\+Texture}} to the current object, creating another object that manages the same Open\+Gl texture param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}{G\+Texture}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a692ca73521e51be802c981ab05029369}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a692ca73521e51be802c981ab05029369}} 
+\index{GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}!Resize@{Resize}}
+\index{Resize@{Resize}!GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}}
+\subsubsection{\texorpdfstring{Resize()}{Resize()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Texture\+::\+Resize (\begin{DoxyParamCaption}\item[{const Q\+Vector2D \&}]{texture\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+resizes the texture param texture\+Size New size for the texture 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_ac1e54f456408b53de44fe10116d649dd}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_aa4b676746b13f4ea748450ea19ca711a}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_aa4b676746b13f4ea748450ea19ca711a}} 
+\index{GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}!SetAttachment@{SetAttachment}}
+\index{SetAttachment@{SetAttachment}!GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}}
+\subsubsection{\texorpdfstring{SetAttachment()}{SetAttachment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Texture\+::\+Set\+Attachment (\begin{DoxyParamCaption}\item[{unsigned int}]{attachment\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the attachment for this texture param color\+Attachment\+Number Number of the color attachment to use return true if the texture has an owner false otherwise 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a1031c44ad374654e2183d3b1b99638a3}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_ae8d0ace073861e957f5abe264d2c321d}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_ae8d0ace073861e957f5abe264d2c321d}} 
+\index{GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}!SetAttachment@{SetAttachment}}
+\index{SetAttachment@{SetAttachment}!GeometryEngine::GeometryBuffer::GDepthStencilTexture@{GeometryEngine::GeometryBuffer::GDepthStencilTexture}}
+\subsubsection{\texorpdfstring{SetAttachment()}{SetAttachment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Texture\+::\+Set\+Attachment (\begin{DoxyParamCaption}\item[{G\+Framebuffer\+Commons\+::\+G\+\_\+\+D\+E\+P\+T\+H\+\_\+\+S\+T\+E\+N\+C\+I\+L\+\_\+\+A\+T\+T\+A\+C\+H\+M\+E\+N\+TS}]{attachment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the attachment for this texture param attachment Color attachment to use return true if the texture has an owner false otherwise 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Buffer\+Utils/\+Framebuffer\+Elements/G\+Depth\+Stencil\+Texture.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Buffer\+Utils/\+Framebuffer\+Elements/G\+Depth\+Stencil\+Texture.\+cpp\end{DoxyCompactItemize}

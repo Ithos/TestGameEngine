@@ -21,7 +21,7 @@ namespace GeometryEngine
 		QMatrix3x3 GetNormalMatrix() const { return (ViewMatrix * ModelMatrix).normalMatrix(); }
 	};
 
-	/// Class that holds information about the geometric buffer textures to be passed to the shader
+	/// Class that holds information about the geometry buffer textures to be passed to the shader
 	struct GBufferTextureInfo
 	{
 		unsigned int AmbientTexture;

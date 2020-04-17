@@ -68,7 +68,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">GeometryEngine::GeometryBuffer Namespace Reference</div>  </div>
 </div><!--header-->
@@ -80,16 +81,44 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer.html">CompleteColorBuffer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometric buffer.">GBuffer</a> that only includes specific textures, in this case all color textures (diffuse, ambient, reflective, emmissive), normal, position and tmp.  <a href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometry buffer.">GBuffer</a> that only includes specific textures, in this case all color textures (diffuse, ambient, reflective, emmissive), normal, position and tmp.  <a href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer.html">CompleteColorPostProcessBuffer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html">GBuffer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that manages the geometric buffer.  <a href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that manages the geometry buffer.  <a href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_render_buffer.html">GDepthStencilRenderBuffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture.html">GDepthStencilTexture</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that represents a texture that stores depth or stencil information.  <a href="class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager.html">GFramebufferManager</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singleton that manages which framebuffer is attached and detaches all that aren't.  <a href="class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object.html">GFramebufferObject</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_render_buffer.html">GRenderBuffer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that represents a OpenGl color render buffer.  <a href="class_geometry_engine_1_1_geometry_buffer_1_1_g_render_buffer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target.html">GRenderTarget</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that represents an element that can be a render target.  <a href="class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_texture.html">GTexture</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that represents a OpenGl color texture.  <a href="class_geometry_engine_1_1_geometry_buffer_1_1_g_texture.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer.html">SingleColorTextBuffer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometric buffer.">GBuffer</a> that only includes the smallest functional amount of textures (diffuse color, positions, normal vectors, and tmp)  <a href="class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometry buffer.">GBuffer</a> that only includes the smallest functional amount of textures (diffuse color, positions, normal vectors, and tmp)  <a href="class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ae4923c87de2056a1df7228000a2fbad9"><td class="memItemLeft" align="right" valign="top"><a id="ae4923c87de2056a1df7228000a2fbad9"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>G_FRAMEBUFFER_BINDS</b> { <b>DETACH</b> = GL_NONE, 
+<b>DRAW</b> = GL_DRAW_FRAMEBUFFER, 
+<b>READ</b> = GL_READ_FRAMEBUFFER, 
+<b>DRAW_READ</b> = GL_FRAMEBUFFER
+ }</td></tr>
+<tr class="separator:ae4923c87de2056a1df7228000a2fbad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>namespace for geometry buffers </p>

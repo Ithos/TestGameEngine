@@ -83,7 +83,7 @@ Inheritance diagram for GeometryEngine::GeometryBuffer::CompleteColorPostProcess
  <div class="center">
   <img src="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer.png" usemap="#GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer_map" alt=""/>
   <map id="GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer_map" name="GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer_map">
-<area href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometric buffer." alt="GeometryEngine::GeometryBuffer::GBuffer" shape="rect" coords="0,56,394,80"/>
+<area href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometry buffer." alt="GeometryEngine::GeometryBuffer::GBuffer" shape="rect" coords="0,56,394,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -197,11 +197,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac7d1a90658b1a2f59674b76685e8b052"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer.html#ac7d1a90658b1a2f59674b76685e8b052">copy</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html">GBuffer</a> &amp;ref) override</td></tr>
 <tr class="separator:ac7d1a90658b1a2f59674b76685e8b052"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html">GeometryEngine::GeometryBuffer::GBuffer</a></td></tr>
-<tr class="memitem:a6194e72290d3fe4eafa565f57befabb2 inherit pro_methods_class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a6194e72290d3fe4eafa565f57befabb2">generateTexture</a> (unsigned int arrayIndex, unsigned int maxWindowWidth, unsigned int maxWindowHeight)</td></tr>
-<tr class="separator:a6194e72290d3fe4eafa565f57befabb2 inherit pro_methods_class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac01b2527d2b501e1f923ae6558469e5 inherit pro_methods_class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#aac01b2527d2b501e1f923ae6558469e5">generateNullTexture</a> (unsigned int arrayIndex)</td></tr>
-<tr class="separator:aac01b2527d2b501e1f923ae6558469e5 inherit pro_methods_class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -249,9 +244,12 @@ QVector2D&#160;</td><td class="memItemRight" valign="bottom"><b>mMaxTextureSize<
 <tr class="memitem:ad9b17162f29ea4d0600d665bd3f7f0e3 inherit pro_attribs_class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer"><td class="memItemLeft" align="right" valign="top"><a id="ad9b17162f29ea4d0600d665bd3f7f0e3"></a>
 std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mActiveTextures</b></td></tr>
 <tr class="separator:ad9b17162f29ea4d0600d665bd3f7f0e3 inherit pro_attribs_class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adecb16016bf50ab1f50924cee963f432 inherit pro_attribs_class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer"><td class="memItemLeft" align="right" valign="top"><a id="adecb16016bf50ab1f50924cee963f432"></a>
+<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object.html">GFramebufferObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mpFBO</b></td></tr>
+<tr class="separator:adecb16016bf50ab1f50924cee963f432 inherit pro_attribs_class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Specialization of <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometric buffer.">GBuffer</a> that only includes specific textures, in this case all color textures (diffuse, ambient, reflective, emmissive), normal, position and tmp. Functionally identical to Complete color buffer, but intended to be used with the post process scene. </p>
+<div class="textblock"><p>Specialization of <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometry buffer.">GBuffer</a> that only includes specific textures, in this case all color textures (diffuse, ambient, reflective, emmissive), normal, position and tmp. Functionally identical to Complete color buffer, but intended to be used with the post process scene. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7cce9b235baaf2d45b0a6e23c80a46e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7cce9b235baaf2d45b0a6e23c80a46e8">&#9670;&nbsp;</a></span>CompleteColorPostProcessBuffer()</h2>
@@ -324,15 +322,15 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copies the data from a <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometric buffer.">GBuffer</a> into this object param ref <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometric buffer.">GBuffer</a> to be copied </p>
+<p>Copies the data from a <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometry buffer.">GBuffer</a> into this object param ref <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometry buffer.">GBuffer</a> to be copied </p>
 
 <p>Reimplemented from <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a9f20eb78703ef048d59a54f90ee09f25">GeometryEngine::GeometryBuffer::GBuffer</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>E:/CommonData/Repositories/TestGameEngine/GeometryEngine/Render Utils/Gbuffers/<a class="el" href="_complete_color_post_process_buffer_8h_source.html">CompleteColorPostProcessBuffer.h</a></li>
-<li>E:/CommonData/Repositories/TestGameEngine/GeometryEngine/Render Utils/Gbuffers/CompleteColorPostProcessBuffer.cpp</li>
+<li>E:/CommonData/Repositories/TestGameEngine/GeometryEngine/Render Utils/GBuffers/<a class="el" href="_complete_color_post_process_buffer_8h_source.html">CompleteColorPostProcessBuffer.h</a></li>
+<li>E:/CommonData/Repositories/TestGameEngine/GeometryEngine/Render Utils/GBuffers/CompleteColorPostProcessBuffer.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

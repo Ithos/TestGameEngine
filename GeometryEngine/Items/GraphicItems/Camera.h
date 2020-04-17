@@ -80,8 +80,8 @@ namespace GeometryEngine
 				/// Gets the auto resize value
 				/// return Auto resize value
 				bool IsAutoResize() { return mAutoResize; }
-				/// Gets a pointer to the geometric buffer
-				/// return geometric buffer
+				/// Gets a pointer to the geometry buffer
+				/// return geometry buffer
 				virtual GeometryBuffer::GBuffer* GetGBuffer() { return mpGBuffer; }
 
 				/// Adds a render step to this camera. If a camera has custom render steps they are used instead of the scene when rendering the camera.

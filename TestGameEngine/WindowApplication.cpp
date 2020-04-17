@@ -244,8 +244,8 @@ namespace Application
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere lightSphere(mat);
 
-		//GeometryEngine::GeometryItemUtils::PerspectiveViewport lightViewport(QVector4D(0, 0, this->width(), this->height()), 90.0f, 1.0f, 0.1f, 1000.0f);
-		GeometryEngine::GeometryItemUtils::OrtographicViewport lightViewport(QVector4D(0, 0, this->width(), this->height()), QRect(-this->width() / 24, -this->height() / 24, this->width() / 12, this->height() / 12), 0.1f, 1000.0f);
+		GeometryEngine::GeometryItemUtils::PerspectiveViewport lightViewport(QVector4D(0, 0, this->width(), this->height()), 90.0f, 1.0f, 0.1f, 1000.0f);
+		//GeometryEngine::GeometryItemUtils::OrtographicViewport lightViewport(QVector4D(0, 0, this->width(), this->height()), QRect(-this->width() / 24, -this->height() / 24, this->width() / 12, this->height() / 12), 0.1f, 1000.0f);
 
 		//mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight(45.0f, QVector3D(0.5f, 0.3f, 0.1f), QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
 		//	QVector3D(1.0f, 1.0f, 1.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(5.0f, 4.0f, -15.0f));
@@ -255,7 +255,7 @@ namespace Application
 
 		//mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight(45.0f, QVector3D(0.1f, 0.1f, 0.01f), lightViewport, QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
 		//	QVector3D(1.0f, 1.0f, 1.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(5.0f, 10.0f, -15.0f));
-		secondLight = new GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight(/*45.0f, QVector3D(0.1f, 0.1f, 0.01f),*/ lightViewport, QVector3D(0.0f, -1.0f, 0.0f), &lightQuad, QVector3D(1.0f, 1.0f, 1.0f),
+		secondLight = new GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight(45.0f, QVector3D(0.1f, 0.1f, 0.01f), lightViewport, QVector3D(0.0f, -1.0f, 0.0f), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
 				QVector3D(0.0f, 0.0f, 0.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(-5.0f, 10.0f, -15.0f));
 
 		//mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight(lightViewport, QVector3D(0.0, -1.0, 0.0), &lightQuad, QVector3D(1.0f, 1.0f, 1.0f),

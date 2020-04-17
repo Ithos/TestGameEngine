@@ -1,0 +1,174 @@
+\hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}{}\section{Geometry\+Engine\+::Geometry\+Buffer\+::G\+Texture Class Reference}
+\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+
+
+Class that represents a Open\+Gl color texture.  
+
+
+
+
+{\ttfamily \#include $<$G\+Texture.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Buffer\+::G\+Texture\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a1e4c62fd1d54f676f117ca11a90d55c5}{G\+Texture}} (const Q\+Vector2D \&texture\+Size, const Q\+Vector3D \&border\+Color, G\+Framebuffer\+Commons\+::\+G\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+T\+T\+A\+C\+H\+M\+E\+N\+TS attachment, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} $\ast$owner)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a06caa47adf6c43699450c29212dab114}{G\+Texture}} (const Q\+Vector2D \&texture\+Size, const Q\+Vector3D \&border\+Color)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a8fa5f02d38154ba8642512e871a8edeb}{G\+Texture}} (const Q\+Vector2D \&texture\+Size)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_add6fc3854f8fe8996fcd29de07d05646}{G\+Texture}} (G\+Framebuffer\+Commons\+::\+G\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+T\+T\+A\+C\+H\+M\+E\+N\+TS attachment, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} $\ast$owner)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_acfb10448d13cf57f11ed8a80b2a620dd}{G\+Texture}} ()
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a6f0f5cdfdad0a20af7719c743375d678}{G\+Texture}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}{G\+Texture}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a6ce58e552cc52873766aaa45b6075054}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a6ce58e552cc52873766aaa45b6075054}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a6ce58e552cc52873766aaa45b6075054}{$\sim$\+G\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a997bf664c4e87802feb1547e62682aa6}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a997bf664c4e87802feb1547e62682aa6}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a997bf664c4e87802feb1547e62682aa6}{Bind}} ()
+\begin{DoxyCompactList}\small\item\em Binds this texture to the Open\+Gl pipeline to perform operations on it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a8f5f6ade8bb05e15d9d790f1de60ec69}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a8f5f6ade8bb05e15d9d790f1de60ec69}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a8f5f6ade8bb05e15d9d790f1de60ec69}{Unbind}} ()
+\begin{DoxyCompactList}\small\item\em Unbinds this texture from the Open\+Gl pipeline so no more operations are performed on it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_ac3ce04092fc1ef08ae4fb9da935b702d}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_ac3ce04092fc1ef08ae4fb9da935b702d}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_ac3ce04092fc1ef08ae4fb9da935b702d}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear the target stored information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_ab0916f94bc86212ffcc5e3c7553ef3b1}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_ab0916f94bc86212ffcc5e3c7553ef3b1}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_ab0916f94bc86212ffcc5e3c7553ef3b1}{Clear}} (G\+Luint $\ast$values)
+\begin{DoxyCompactList}\small\item\em Clear the target stored information with a given value or array of values. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a528604f22629785271b3f36ec18ffc78}{Enable}} (bool enable)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a17c5c626b214d8d0bfb9988b52376a55}{Resize}} (const Q\+Vector2D \&texture\+Size)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a30c0e98fd265c6f47fe7df0ad4f39644}{Set\+Attachment}} (unsigned int attachment\+Index)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a1dc99966bc21411656dc776d429b377d}{Set\+Attachment}} (G\+Framebuffer\+Commons\+::\+G\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+T\+T\+A\+C\+H\+M\+E\+N\+TS attachment)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a458a06591fb47ea1c3246af4c9bae344}{Set\+Border\+Color}} (const Q\+Vector3D \&border\+Color)
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}{G\+Texture}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_ad8a2b027a88527a03b925448d98efcbf}{Clone}} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_aff15a7cb82c8cd1ecf8654e9e62df62e}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}{G\+Texture}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class that represents a Open\+Gl color texture. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a1e4c62fd1d54f676f117ca11a90d55c5}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a1e4c62fd1d54f676f117ca11a90d55c5}} 
+\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}!GTexture@{GTexture}}
+\index{GTexture@{GTexture}!GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+\subsubsection{\texorpdfstring{GTexture()}{GTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture\+::\+G\+Texture (\begin{DoxyParamCaption}\item[{const Q\+Vector2D \&}]{texture\+Size,  }\item[{const Q\+Vector3D \&}]{border\+Color,  }\item[{G\+Framebuffer\+Commons\+::\+G\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+T\+T\+A\+C\+H\+M\+E\+N\+TS}]{attachment,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} $\ast$}]{owner }\end{DoxyParamCaption})}
+
+Constructor param texture\+Size Size of the texture to be created param attachment Color attachment to use param border\+Color Border color of the texture param owner \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} where this texture is contained \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a06caa47adf6c43699450c29212dab114}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a06caa47adf6c43699450c29212dab114}} 
+\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}!GTexture@{GTexture}}
+\index{GTexture@{GTexture}!GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+\subsubsection{\texorpdfstring{GTexture()}{GTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture\+::\+G\+Texture (\begin{DoxyParamCaption}\item[{const Q\+Vector2D \&}]{texture\+Size,  }\item[{const Q\+Vector3D \&}]{border\+Color }\end{DoxyParamCaption})}
+
+Constructor param texture\+Size Size of the texture to be created param border\+Color Border color of the texture \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a8fa5f02d38154ba8642512e871a8edeb}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a8fa5f02d38154ba8642512e871a8edeb}} 
+\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}!GTexture@{GTexture}}
+\index{GTexture@{GTexture}!GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+\subsubsection{\texorpdfstring{GTexture()}{GTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture\+::\+G\+Texture (\begin{DoxyParamCaption}\item[{const Q\+Vector2D \&}]{texture\+Size }\end{DoxyParamCaption})}
+
+Constructor. Creates a texture with white border color. param texture\+Size Size of the texture to be created \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_add6fc3854f8fe8996fcd29de07d05646}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_add6fc3854f8fe8996fcd29de07d05646}} 
+\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}!GTexture@{GTexture}}
+\index{GTexture@{GTexture}!GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+\subsubsection{\texorpdfstring{GTexture()}{GTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture\+::\+G\+Texture (\begin{DoxyParamCaption}\item[{G\+Framebuffer\+Commons\+::\+G\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+T\+T\+A\+C\+H\+M\+E\+N\+TS}]{attachment,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} $\ast$}]{owner }\end{DoxyParamCaption})}
+
+Null texture constructor Builds a null texture to be passed to shaders that need a texture to be passed param attachment Color attachment to use param owner \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} where this texture is contained \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_acfb10448d13cf57f11ed8a80b2a620dd}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_acfb10448d13cf57f11ed8a80b2a620dd}} 
+\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}!GTexture@{GTexture}}
+\index{GTexture@{GTexture}!GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+\subsubsection{\texorpdfstring{GTexture()}{GTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture\+::\+G\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor Builds a null texture to be passed to shaders that need a texture to be passed \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a6f0f5cdfdad0a20af7719c743375d678}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a6f0f5cdfdad0a20af7719c743375d678}} 
+\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}!GTexture@{GTexture}}
+\index{GTexture@{GTexture}!GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+\subsubsection{\texorpdfstring{GTexture()}{GTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture\+::\+G\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}{G\+Texture}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_ad8a2b027a88527a03b925448d98efcbf}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_ad8a2b027a88527a03b925448d98efcbf}} 
+\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}{G\+Texture}}$\ast$ Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a3b14d8929cf9d2acb6bc263c709ff019}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_aff15a7cb82c8cd1ecf8654e9e62df62e}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_aff15a7cb82c8cd1ecf8654e9e62df62e}} 
+\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}{G\+Texture}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the Open\+Gl data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}{G\+Texture}} to the current object, creating another object that manages the same Open\+Gl texture param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}{G\+Texture}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a528604f22629785271b3f36ec18ffc78}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a528604f22629785271b3f36ec18ffc78}} 
+\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}!Enable@{Enable}}
+\index{Enable@{Enable}!GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+\subsubsection{\texorpdfstring{Enable()}{Enable()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture\+::\+Enable (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Enable/\+Disable the depth buffer Returns true if the target is owned by an F\+BO false otherwise 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a1b8be750dfd13582d0730bf9e4c4e1d2}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a17c5c626b214d8d0bfb9988b52376a55}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a17c5c626b214d8d0bfb9988b52376a55}} 
+\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}!Resize@{Resize}}
+\index{Resize@{Resize}!GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+\subsubsection{\texorpdfstring{Resize()}{Resize()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture\+::\+Resize (\begin{DoxyParamCaption}\item[{const Q\+Vector2D \&}]{texture\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+resizes the texture param texture\+Size New size for the texture 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_ac1e54f456408b53de44fe10116d649dd}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a30c0e98fd265c6f47fe7df0ad4f39644}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a30c0e98fd265c6f47fe7df0ad4f39644}} 
+\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}!SetAttachment@{SetAttachment}}
+\index{SetAttachment@{SetAttachment}!GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+\subsubsection{\texorpdfstring{SetAttachment()}{SetAttachment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture\+::\+Set\+Attachment (\begin{DoxyParamCaption}\item[{unsigned int}]{attachment\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the attachment for this texture. The actual attachment is updated when Enable is called. param color\+Attachment\+Number Number of the color attachment to use return true if the texture has an owner false otherwise 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a1031c44ad374654e2183d3b1b99638a3}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a1dc99966bc21411656dc776d429b377d}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a1dc99966bc21411656dc776d429b377d}} 
+\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}!SetAttachment@{SetAttachment}}
+\index{SetAttachment@{SetAttachment}!GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+\subsubsection{\texorpdfstring{SetAttachment()}{SetAttachment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture\+::\+Set\+Attachment (\begin{DoxyParamCaption}\item[{G\+Framebuffer\+Commons\+::\+G\+\_\+\+C\+O\+L\+O\+R\+\_\+\+A\+T\+T\+A\+C\+H\+M\+E\+N\+TS}]{attachment }\end{DoxyParamCaption})}
+
+Sets the attachment for this texture.\+The actual attachment is updated when Enable is called. param attachment Color attachment to use return true if the texture has an owner false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a458a06591fb47ea1c3246af4c9bae344}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a458a06591fb47ea1c3246af4c9bae344}} 
+\index{GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}!SetBorderColor@{SetBorderColor}}
+\index{SetBorderColor@{SetBorderColor}!GeometryEngine::GeometryBuffer::GTexture@{GeometryEngine::GeometryBuffer::GTexture}}
+\subsubsection{\texorpdfstring{SetBorderColor()}{SetBorderColor()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture\+::\+Set\+Border\+Color (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{border\+Color }\end{DoxyParamCaption})}
+
+Sets the texture border color param border\+Color Border color of the texture 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Buffer\+Utils/\+Framebuffer\+Elements/G\+Texture.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Buffer\+Utils/\+Framebuffer\+Elements/G\+Texture.\+cpp\end{DoxyCompactItemize}

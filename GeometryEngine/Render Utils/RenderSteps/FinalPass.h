@@ -20,7 +20,7 @@ namespace GeometryEngine
 			/// Destructor
 			virtual ~FinalPass() {}
 			/// Executes the render step
-			/// param cam Pointer to camera to be rendered. We only need the information of the camera and the geometric buffer.
+			/// param cam Pointer to camera to be rendered. We only need the information of the camera and the geometry buffer.
 			/// param items Set of items to be rendered. Not used.
 			/// param lights Set of lights in the scene. Not used.
 			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*> * items = nullptr, 

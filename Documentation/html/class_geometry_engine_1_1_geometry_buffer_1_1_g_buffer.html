@@ -78,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Class that manages the geometric buffer.  
+<p>Class that manages the geometry buffer.  
  <a href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_g_buffer_8h_source.html">GBuffer.h</a>&gt;</code></p>
@@ -208,10 +208,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a6194e72290d3fe4eafa565f57befabb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a6194e72290d3fe4eafa565f57befabb2">generateTexture</a> (unsigned int arrayIndex, unsigned int maxWindowWidth, unsigned int maxWindowHeight)</td></tr>
-<tr class="separator:a6194e72290d3fe4eafa565f57befabb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac01b2527d2b501e1f923ae6558469e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#aac01b2527d2b501e1f923ae6558469e5">generateNullTexture</a> (unsigned int arrayIndex)</td></tr>
-<tr class="separator:aac01b2527d2b501e1f923ae6558469e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f20eb78703ef048d59a54f90ee09f25"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a9f20eb78703ef048d59a54f90ee09f25">copy</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html">GBuffer</a> &amp;ref)</td></tr>
 <tr class="separator:a9f20eb78703ef048d59a54f90ee09f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -245,9 +241,12 @@ QVector2D&#160;</td><td class="memItemRight" valign="bottom"><b>mMaxTextureSize<
 <tr class="memitem:ad9b17162f29ea4d0600d665bd3f7f0e3"><td class="memItemLeft" align="right" valign="top"><a id="ad9b17162f29ea4d0600d665bd3f7f0e3"></a>
 std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mActiveTextures</b></td></tr>
 <tr class="separator:ad9b17162f29ea4d0600d665bd3f7f0e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adecb16016bf50ab1f50924cee963f432"><td class="memItemLeft" align="right" valign="top"><a id="adecb16016bf50ab1f50924cee963f432"></a>
+<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object.html">GFramebufferObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mpFBO</b></td></tr>
+<tr class="separator:adecb16016bf50ab1f50924cee963f432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class that manages the geometric buffer. </p>
+<div class="textblock"><p>Class that manages the geometry buffer. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9b44aaba6f5e1ef02cdc8ab821d560bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b44aaba6f5e1ef02cdc8ab821d560bb">&#9670;&nbsp;</a></span>GBuffer()</h2>
@@ -264,7 +263,7 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Copy constructor param ref Const reference to <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometric buffer.">GBuffer</a> to be copied </p>
+<p>Copy constructor param ref Const reference to <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometry buffer.">GBuffer</a> to be copied </p>
 
 </div>
 </div>
@@ -313,7 +312,7 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Binds the final texture to the selected texture location and updates bufferInfo final texture param texture location to be bound param <a class="el" href="struct_geometry_engine_1_1_g_buffer_texture_info.html" title="Class that holds information about the geometric buffer textures to be passed to the shader.">GBufferTextureInfo</a> reference to be updated </p>
+<p>Binds the final texture to the selected texture location and updates bufferInfo final texture param texture location to be bound param <a class="el" href="struct_geometry_engine_1_1_g_buffer_texture_info.html" title="Class that holds information about the geometry buffer textures to be passed to the shader.">GBufferTextureInfo</a> reference to be updated </p>
 
 </div>
 </div>
@@ -406,7 +405,7 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copies a data <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometric buffer.">GBuffer</a> to the current object param ref <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometric buffer.">GBuffer</a> to be copied </p>
+<p>Copies a data <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometry buffer.">GBuffer</a> to the current object param ref <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometry buffer.">GBuffer</a> to be copied </p>
 
 <p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer.html#ac7d1a90658b1a2f59674b76685e8b052">GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer</a>, <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer.html#a0630be352a9267083d42802fb22ae36b">GeometryEngine::GeometryBuffer::CompleteColorBuffer</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer.html#a6e266272638dd67cec7b6d57f172eae2">GeometryEngine::GeometryBuffer::SingleColorTextBuffer</a>.</p>
 
@@ -427,77 +426,7 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the data of a <a class="el" href="struct_geometry_engine_1_1_g_buffer_texture_info.html" title="Class that holds information about the geometric buffer textures to be passed to the shader.">GBufferTextureInfo</a> param bufferInfo <a class="el" href="struct_geometry_engine_1_1_g_buffer_texture_info.html" title="Class that holds information about the geometric buffer textures to be passed to the shader.">GBufferTextureInfo</a> to be updated </p>
-
-</div>
-</div>
-<a id="aac01b2527d2b501e1f923ae6558469e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac01b2527d2b501e1f923ae6558469e5">&#9670;&nbsp;</a></span>generateNullTexture()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GeometryEngine::GeometryBuffer::GBuffer::generateNullTexture </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>arrayIndex</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Creates a null texture and adds it to the framebuffer. This is done so shaders do not fail when a texture is not present param arrayIndex Position of the texture in the array </p>
-
-</div>
-</div>
-<a id="a6194e72290d3fe4eafa565f57befabb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6194e72290d3fe4eafa565f57befabb2">&#9670;&nbsp;</a></span>generateTexture()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GeometryEngine::GeometryBuffer::GBuffer::generateTexture </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>arrayIndex</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>maxWindowWidth</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>maxWindowHeight</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Creates a texture and adds it to the framebuffer param arrayIndex Position of the texture in the array param MaxWindowWidth Max texture width param MaxWindowHeight Max texture height </p>
+<p>Sets the data of a <a class="el" href="struct_geometry_engine_1_1_g_buffer_texture_info.html" title="Class that holds information about the geometry buffer textures to be passed to the shader.">GBufferTextureInfo</a> param bufferInfo <a class="el" href="struct_geometry_engine_1_1_g_buffer_texture_info.html" title="Class that holds information about the geometry buffer textures to be passed to the shader.">GBufferTextureInfo</a> to be updated </p>
 
 </div>
 </div>

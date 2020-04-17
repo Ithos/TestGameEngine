@@ -46,7 +46,7 @@ namespace GeometryEngine
 	namespace GeometryScene
 	{
 		/// Base class for more specific scenes. It can be used as a custom scene if you need to build your own
-		/// Scenes should define the render steps and initial setup that will be used and contain GeometricItems, cameras and lights.
+		/// Scenes should define the render steps and initial setup that will be used and contain GeometryItems, cameras and lights.
 		class GeometryScene
 		{
 		public:

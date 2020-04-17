@@ -12,7 +12,7 @@ namespace GeometryEngine
 	{
 		namespace GeometryItem
 		{
-			/// Geometric item that defines a visual sphere
+			/// Geometry item that defines a visual sphere
 			class Sphere : public GeometryItem
 			{
 			public:

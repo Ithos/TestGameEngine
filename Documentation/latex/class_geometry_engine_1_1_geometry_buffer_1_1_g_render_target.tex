@@ -1,0 +1,165 @@
+\hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target}{}\section{Geometry\+Engine\+::Geometry\+Buffer\+::G\+Render\+Target Class Reference}
+\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target}\index{GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}}
+
+
+Class that represents an element that can be a render target.  
+
+
+
+
+{\ttfamily \#include $<$G\+Render\+Target.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Buffer\+::G\+Render\+Target\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.135135cm]{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_adcb56737d39537303e082e262af8207a}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_adcb56737d39537303e082e262af8207a}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_adcb56737d39537303e082e262af8207a}{G\+Render\+Target}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a8f9dc8c82ec5f21b7386e30073bed483}{G\+Render\+Target}} (const Q\+Vector2D \&size)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a26d555dc583ad6ae0c545f26db97274d}{G\+Render\+Target}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target}{G\+Render\+Target}} \&ref)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_ac1e54f456408b53de44fe10116d649dd}{Resize}} (const Q\+Vector2D \&size)=0
+\item 
+G\+Luint \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a68bde2ce731945e3f5668001403b1fed}{Get\+Index}} () const
+\item 
+G\+Lint \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a42f43fba3fb8fe32e81509b5869c87e2}{Get\+Attachment}} () const
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a1031c44ad374654e2183d3b1b99638a3}{Set\+Attachment}} (unsigned int attachment\+Index)=0
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a45c743235386bb57c3bbf12ed49b1410}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a45c743235386bb57c3bbf12ed49b1410}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a45c743235386bb57c3bbf12ed49b1410}{Bind}} ()=0
+\begin{DoxyCompactList}\small\item\em Binds this render target to the Open\+Gl pipeline to perform operations on it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_ac5ccb0cf3cc88d157a3688ee188f4214}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_ac5ccb0cf3cc88d157a3688ee188f4214}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_ac5ccb0cf3cc88d157a3688ee188f4214}{Unbind}} ()=0
+\begin{DoxyCompactList}\small\item\em Unbinds this render target from the Open\+Gl pipeline so no more operations are performed on it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a4d17d0a665d440caa9293c1908d6b1ea}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a4d17d0a665d440caa9293c1908d6b1ea}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a4d17d0a665d440caa9293c1908d6b1ea}{Clear}} ()=0
+\begin{DoxyCompactList}\small\item\em Clear the target stored information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_ac33eb031fd6f739915b47cf9becd8d34}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_ac33eb031fd6f739915b47cf9becd8d34}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_ac33eb031fd6f739915b47cf9becd8d34}{Clear}} (G\+Luint $\ast$values)=0
+\begin{DoxyCompactList}\small\item\em Clear the target stored information with a given value or array of values. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a1b8be750dfd13582d0730bf9e4c4e1d2}{Enable}} (bool enable)=0
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a6134efcdfa6fa9775c293a0802706cfc}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a6134efcdfa6fa9775c293a0802706cfc}} 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a6134efcdfa6fa9775c293a0802706cfc}{Get\+Enabled}} () const
+\begin{DoxyCompactList}\small\item\em Returns whether the target is enabled or not. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target}{G\+Render\+Target}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a3b14d8929cf9d2acb6bc263c709ff019}{Clone}} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a84368b4a4cac9f916d36c3117e6b1224}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target}{G\+Render\+Target}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a41e7e08764775e4cfa63d9471ce70fff}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a41e7e08764775e4cfa63d9471ce70fff}} 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a41e7e08764775e4cfa63d9471ce70fff}{Get\+Owner\+Bound}} () const
+\begin{DoxyCompactList}\small\item\em If the render target has an owner returns whether it is bound. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a3e527ce7cba2030bb6ff08be940a8dca}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a3e527ce7cba2030bb6ff08be940a8dca}} 
+Q\+Vector2D {\bfseries m\+Size}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_ad032baa2138e00d64388256216b8bc19}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_ad032baa2138e00d64388256216b8bc19}} 
+G\+Luint {\bfseries m\+Index}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a15b9222245c7190f4cc508a97d02e883}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a15b9222245c7190f4cc508a97d02e883}} 
+G\+Lenum {\bfseries m\+Attachment}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a76b2628206e3d0db7a2620636a6ac83d}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a76b2628206e3d0db7a2620636a6ac83d}} 
+bool {\bfseries m\+Enabled}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a7af62bab8ae5c64bef93716490c3bbf4}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a7af62bab8ae5c64bef93716490c3bbf4}} 
+const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} $\ast$ {\bfseries m\+Owner}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that represents an element that can be a render target. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a8f9dc8c82ec5f21b7386e30073bed483}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a8f9dc8c82ec5f21b7386e30073bed483}} 
+\index{GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}!GRenderTarget@{GRenderTarget}}
+\index{GRenderTarget@{GRenderTarget}!GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}}
+\subsubsection{\texorpdfstring{GRenderTarget()}{GRenderTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target\+::\+G\+Render\+Target (\begin{DoxyParamCaption}\item[{const Q\+Vector2D \&}]{size }\end{DoxyParamCaption})}
+
+Constructor. Creates a texture with white border color. param texture\+Size Size of the texture to be created \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a26d555dc583ad6ae0c545f26db97274d}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a26d555dc583ad6ae0c545f26db97274d}} 
+\index{GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}!GRenderTarget@{GRenderTarget}}
+\index{GRenderTarget@{GRenderTarget}!GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}}
+\subsubsection{\texorpdfstring{GRenderTarget()}{GRenderTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target\+::\+G\+Render\+Target (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target}{G\+Render\+Target}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a3b14d8929cf9d2acb6bc263c709ff019}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a3b14d8929cf9d2acb6bc263c709ff019}} 
+\index{GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target}{G\+Render\+Target}}$\ast$ Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Factory method. Creates a copy of this object return Pointer to a copy of this object 
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_ad8a2b027a88527a03b925448d98efcbf}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_buffer_a451303386c519d70d50875873dc7b1fc}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Buffer}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_ae831cf8a8610c82ae4b50622348b4e57}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Texture}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_render_buffer_a5c64d816141633964dd33605fbf42f97}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Render\+Buffer}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a84368b4a4cac9f916d36c3117e6b1224}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a84368b4a4cac9f916d36c3117e6b1224}} 
+\index{GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target}{G\+Render\+Target}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies a data \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target}{G\+Render\+Target}} to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target}{G\+Render\+Target}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a1b8be750dfd13582d0730bf9e4c4e1d2}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a1b8be750dfd13582d0730bf9e4c4e1d2}} 
+\index{GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}!Enable@{Enable}}
+\index{Enable@{Enable}!GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}}
+\subsubsection{\texorpdfstring{Enable()}{Enable()}}
+{\footnotesize\ttfamily virtual bool Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target\+::\+Enable (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Attaches or detaches the target from its given attachment Returns true if the target is owned by an F\+BO false otherwise 
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a528604f22629785271b3f36ec18ffc78}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a38a1f3219bddbab69fa338a727e0ab3a}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Texture}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_render_buffer_ad5c121dac465229736e6159981b965cb}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Render\+Buffer}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_buffer_afb80727ba33997fb7f48551de1831111}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Buffer}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a42f43fba3fb8fe32e81509b5869c87e2}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a42f43fba3fb8fe32e81509b5869c87e2}} 
+\index{GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}!GetAttachment@{GetAttachment}}
+\index{GetAttachment@{GetAttachment}!GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}}
+\subsubsection{\texorpdfstring{GetAttachment()}{GetAttachment()}}
+{\footnotesize\ttfamily G\+Lint Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target\+::\+Get\+Attachment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the attachment index for the element return attachment index of this element \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a68bde2ce731945e3f5668001403b1fed}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a68bde2ce731945e3f5668001403b1fed}} 
+\index{GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}!GetIndex@{GetIndex}}
+\index{GetIndex@{GetIndex}!GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}}
+\subsubsection{\texorpdfstring{GetIndex()}{GetIndex()}}
+{\footnotesize\ttfamily G\+Luint Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target\+::\+Get\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the Open\+Gl index for the element return Open\+Gl index of this element \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_ac1e54f456408b53de44fe10116d649dd}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_ac1e54f456408b53de44fe10116d649dd}} 
+\index{GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}!Resize@{Resize}}
+\index{Resize@{Resize}!GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}}
+\subsubsection{\texorpdfstring{Resize()}{Resize()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target\+::\+Resize (\begin{DoxyParamCaption}\item[{const Q\+Vector2D \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract method. Resizes the render target param size New size for the render target 
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a17c5c626b214d8d0bfb9988b52376a55}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_buffer_a3a3e0b2e031cce1c0bea9c2a4bc5465a}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Buffer}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_a692ca73521e51be802c981ab05029369}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Texture}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_render_buffer_aee7b6a5ecc14a2aac4c6f363fa609720}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Render\+Buffer}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a1031c44ad374654e2183d3b1b99638a3}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target_a1031c44ad374654e2183d3b1b99638a3}} 
+\index{GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}!SetAttachment@{SetAttachment}}
+\index{SetAttachment@{SetAttachment}!GeometryEngine::GeometryBuffer::GRenderTarget@{GeometryEngine::GeometryBuffer::GRenderTarget}}
+\subsubsection{\texorpdfstring{SetAttachment()}{SetAttachment()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Target\+::\+Set\+Attachment (\begin{DoxyParamCaption}\item[{unsigned int}]{attachment\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets the attachment for this element. The actual attachment is updated when Enable is called. prameter attachment\+Index integer that represents the attachment, the specific attachment represented must be decided by the child class 
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture_a30c0e98fd265c6f47fe7df0ad4f39644}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Texture}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_buffer_adb0c62f7d9fb1d61b3ea84bc026fa539}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Render\+Buffer}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture_aa4b676746b13f4ea748450ea19ca711a}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Texture}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_render_buffer_af2877932c33e892f310de1c07ad69a20}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Depth\+Stencil\+Render\+Buffer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Buffer\+Utils/\+Framebuffer\+Elements/G\+Render\+Target.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Buffer\+Utils/\+Framebuffer\+Elements/G\+Render\+Target.\+cpp\end{DoxyCompactItemize}

@@ -18,6 +18,7 @@ void GeometryEngine::GeometryEngine::Release()
 	{
 		mpInstance->close();
 		delete mpInstance;
+		mpInstance = nullptr;
 	}
 }
 

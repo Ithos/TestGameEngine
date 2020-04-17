@@ -13,9 +13,33 @@ class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_co
 class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer}{Complete\+Color\+Post\+Process\+Buffer}}
 \item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}}
-\begin{DoxyCompactList}\small\item\em Class that manages the geometric buffer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Class that manages the geometry buffer. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_render_buffer}{G\+Depth\+Stencil\+Render\+Buffer}}
+\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture}{G\+Depth\+Stencil\+Texture}}
+\begin{DoxyCompactList}\small\item\em Class that represents a texture that stores depth or stencil information. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager}{G\+Framebuffer\+Manager}}
+\begin{DoxyCompactList}\small\item\em Singleton that manages which framebuffer is attached and detaches all that aren\textquotesingle{}t. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}}
+\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_buffer}{G\+Render\+Buffer}}
+\begin{DoxyCompactList}\small\item\em Class that represents a Open\+Gl color render buffer. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_render_target}{G\+Render\+Target}}
+\begin{DoxyCompactList}\small\item\em Class that represents an element that can be a render target. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_texture}{G\+Texture}}
+\begin{DoxyCompactList}\small\item\em Class that represents a Open\+Gl color texture. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer}{Single\+Color\+Text\+Buffer}}
 \begin{DoxyCompactList}\small\item\em Specialization of \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} that only includes the smallest functional amount of textures (diffuse color, positions, normal vectors, and tmp) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_geometry_engine_1_1_geometry_buffer_ae4923c87de2056a1df7228000a2fbad9}\label{namespace_geometry_engine_1_1_geometry_buffer_ae4923c87de2056a1df7228000a2fbad9}} 
+enum {\bfseries G\+\_\+\+F\+R\+A\+M\+E\+B\+U\+F\+F\+E\+R\+\_\+\+B\+I\+N\+DS} \{ {\bfseries D\+E\+T\+A\+CH} = G\+L\+\_\+\+N\+O\+NE, 
+{\bfseries D\+R\+AW} = G\+L\+\_\+\+D\+R\+A\+W\+\_\+\+F\+R\+A\+M\+E\+B\+U\+F\+F\+ER, 
+{\bfseries R\+E\+AD} = G\+L\+\_\+\+R\+E\+A\+D\+\_\+\+F\+R\+A\+M\+E\+B\+U\+F\+F\+ER, 
+{\bfseries D\+R\+A\+W\+\_\+\+R\+E\+AD} = G\+L\+\_\+\+F\+R\+A\+M\+E\+B\+U\+F\+F\+ER
+ \}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

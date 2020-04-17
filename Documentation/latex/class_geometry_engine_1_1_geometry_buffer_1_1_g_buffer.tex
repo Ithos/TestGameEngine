@@ -2,7 +2,7 @@
 \label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
 
 
-Class that manages the geometric buffer.  
+Class that manages the geometry buffer.  
 
 
 
@@ -113,10 +113,6 @@ void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad1
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6194e72290d3fe4eafa565f57befabb2}{generate\+Texture}} (unsigned int array\+Index, unsigned int max\+Window\+Width, unsigned int max\+Window\+Height)
-\item 
-void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_aac01b2527d2b501e1f923ae6558469e5}{generate\+Null\+Texture}} (unsigned int array\+Index)
-\item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9f20eb78703ef048d59a54f90ee09f25}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} \&ref)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
@@ -148,11 +144,14 @@ Q\+Vector2D {\bfseries m\+Max\+Texture\+Size}
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad9b17162f29ea4d0600d665bd3f7f0e3}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad9b17162f29ea4d0600d665bd3f7f0e3}} 
 std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} $>$ {\bfseries m\+Active\+Textures}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_adecb16016bf50ab1f50924cee963f432}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_adecb16016bf50ab1f50924cee963f432}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} $\ast$ {\bfseries mp\+F\+BO}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Class that manages the geometric buffer. 
+Class that manages the geometry buffer. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9b44aaba6f5e1ef02cdc8ab821d560bb}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9b44aaba6f5e1ef02cdc8ab821d560bb}} 
@@ -214,19 +213,7 @@ Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_
 \subsubsection{\texorpdfstring{FillGBufferInfo()}{FillGBufferInfo()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Fill\+G\+Buffer\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{buffer\+Info }\end{DoxyParamCaption})}
 
-Sets the data of a \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} param buffer\+Info \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} to be updated \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_aac01b2527d2b501e1f923ae6558469e5}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_aac01b2527d2b501e1f923ae6558469e5}} 
-\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!generateNullTexture@{generateNullTexture}}
-\index{generateNullTexture@{generateNullTexture}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
-\subsubsection{\texorpdfstring{generateNullTexture()}{generateNullTexture()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::generate\+Null\+Texture (\begin{DoxyParamCaption}\item[{unsigned int}]{array\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-Creates a null texture and adds it to the framebuffer. This is done so shaders do not fail when a texture is not present param array\+Index Position of the texture in the array \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6194e72290d3fe4eafa565f57befabb2}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6194e72290d3fe4eafa565f57befabb2}} 
-\index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!generateTexture@{generateTexture}}
-\index{generateTexture@{generateTexture}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
-\subsubsection{\texorpdfstring{generateTexture()}{generateTexture()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::generate\+Texture (\begin{DoxyParamCaption}\item[{unsigned int}]{array\+Index,  }\item[{unsigned int}]{max\+Window\+Width,  }\item[{unsigned int}]{max\+Window\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-Creates a texture and adds it to the framebuffer param array\+Index Position of the texture in the array param Max\+Window\+Width Max texture width param Max\+Window\+Height Max texture height \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a47bda4849000d2728538de4e2f27f11a}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a47bda4849000d2728538de4e2f27f11a}} 
+Sets the data of a \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} param buffer\+Info \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} to be updated \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a47bda4849000d2728538de4e2f27f11a}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a47bda4849000d2728538de4e2f27f11a}} 
 \index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!GetMaxTextureSize@{GetMaxTextureSize}}
 \index{GetMaxTextureSize@{GetMaxTextureSize}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
 \subsubsection{\texorpdfstring{GetMaxTextureSize()}{GetMaxTextureSize()}}

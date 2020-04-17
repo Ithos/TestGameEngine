@@ -15,7 +15,8 @@ namespace GeometryEngine
 	///namespace for geometry buffers
 	namespace GeometryBuffer
 	{
-		/// Class that manages the geometric buffer
+		class GFramebufferObject;
+		/// Class that manages the geometry buffer
 		class GBuffer : protected QOpenGLExtraFunctions
 		{
 		public:
@@ -126,15 +127,7 @@ namespace GeometryEngine
 			QVector2D mTextureSize;
 			QVector2D mMaxTextureSize;
 			std::unordered_set<GBUFFER_TEXTURE_TYPE> mActiveTextures;
-			
-			/// Creates a texture and adds it to the framebuffer
-			/// param arrayIndex Position of the texture in the array
-			/// param MaxWindowWidth Max texture width
-			/// param MaxWindowHeight Max texture height
-			void generateTexture(unsigned int arrayIndex, unsigned int maxWindowWidth, unsigned int maxWindowHeight);
-			/// Creates a null texture and adds it to the framebuffer. This is done so shaders do not fail when a texture is not present
-			/// param arrayIndex Position of the texture in the array
-			void generateNullTexture(unsigned int arrayIndex);
+			GFramebufferObject* mpFBO;
 			/// Copies a data GBuffer to the current object
 			/// param ref GBuffer to be copied
 			virtual void copy(const GBuffer& ref);

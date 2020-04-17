@@ -51,7 +51,7 @@ namespace GeometryEngine
 			void finishStep();
 
 			/// Prepares the OpenGl pipeline to apply the light stencil test
-			/// param cam Camera being rendered. It contains a pointer to the geometric buffer
+			/// param cam Camera being rendered. It contains a pointer to the geometry buffer
 			void prepareStencilPass(GeometryWorldItem::GeometryCamera::Camera* cam);
 			/// Calls to the light calculateStencil
 			/// param light being rendered
