@@ -1,3 +1,9 @@
+#include "../Items/CommonItemParameters.h"
+#include "Items\GraphicItems\Camera.h"
+#include "Items\GraphicItems\Light.h"
+#include "Items\GeometryItem.h"
+#include "../Items/PostProcess/DoublePassPostProcess.h"
+#include"../GBuffer.h"
 #include "PostProcessPass.h"
 
 void GeometryEngine::GeometryRenderStep::PostProcessPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)

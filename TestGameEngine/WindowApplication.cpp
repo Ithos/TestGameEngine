@@ -1,6 +1,9 @@
 #include "WindowApplication.h"
 
 // TODO remove
+#include <GeometryEngine.h>
+#include <GeometryScene.h>
+#include <SceneManager.h>
 #include <Items/Geometries/Cube.h>
 #include <Items/Geometries/Sphere.h>
 #include <Items/Geometries/Quad.h>
@@ -15,6 +18,7 @@
 #include <Items/Materials/MultiTextureMaterial.h>
 #include <Items/Materials/NormalMapTextureMaterial.h>
 #include <Items/Materials/NormalMapMultiTextureMaterial.h>
+#include <Items\Materials\TextureMaterialCommons.h>
 #include <Textures.h>
 #include <Items\GraphicItems\Lights\AmbientLight.h>
 #include <Items\GraphicItems\Lights\DirectionalLight.h>

@@ -1,3 +1,11 @@
+#include "Items/WorldItem.h"
+#include "Items\GeometryItem.h"
+#include "Items/GraphicItems/Camera.h"
+#include "Items\GraphicItems\Light.h"
+#include "Render Utils\RenderStep.h"
+#include "Render Utils\GlSetup.h"
+#include "SceneManager.h"
+
 #include "GeometryScene.h"
 
 GeometryEngine::GeometryScene::GeometryScene::GeometryScene(SceneManager* manager, GLdouble fovy, GLdouble zNear, GLdouble zFar, QVector4D clearColor) : mClearColor(clearColor), mpInitialSetup(nullptr)
@@ -17,6 +25,11 @@ void GeometryEngine::GeometryScene::GeometryScene::InitializeGL()
 	assert(mpInitialSetup != nullptr && "GeometryScene --> no intial setup found");
 	mpInitialSetup->SetColor(mClearColor);
 	mpInitialSetup->StartSetup();
+}
+
+void GeometryEngine::GeometryScene::GeometryScene::SetInitialSetup(const GeometryGlSetup::GlSetup & setup)
+{
+	mpInitialSetup = setup.Clone();
 }
 
 void GeometryEngine::GeometryScene::GeometryScene::ResizeScene(int w, int h, int formerW, int formerH)

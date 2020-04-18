@@ -8,10 +8,9 @@
 #include <qvector2d.h>
 #include <unordered_set>
 
-#include "../Items/CommonItemParameters.h"
-
 namespace GeometryEngine
 {
+	class GBufferTextureInfo;
 	///namespace for geometry buffers
 	namespace GeometryBuffer
 	{

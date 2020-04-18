@@ -1,3 +1,4 @@
+#include "../CommonItemParameters.h"
 #include "Light.h"
 
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::AMBIENT_LIGHT_VERTEX_SHADER = "AMBIENT_LIGHT_VERTEX_SHADER";

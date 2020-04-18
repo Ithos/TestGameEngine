@@ -5,14 +5,18 @@
 
 #include <list>
 #include <qopengltexture.h>
-#include <Textures.h>
-#include "TextureMaterialCommons.h"
 #include "Material.h"
+
+namespace TexturesFiles
+{
+	class Textures;
+}
 
 namespace GeometryEngine
 {
 	namespace GeometryMaterial
 	{
+		class TextureParameters;
 		/// Material tha uses different textures for the different components of the light (ambient, diffuse, specular, emissive). Used to create complex light effects for certain materials like skin.
 		class MultiTextureMaterial : public Material
 		{

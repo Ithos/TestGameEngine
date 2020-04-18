@@ -1,3 +1,5 @@
+#include "../../CommonItemParameters.h"
+#include "../../GeometryItem.h"
 #include "Spotlight.h"
 
 GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::Spotlight(float maxLightAngle, const QVector3D & attParams, 

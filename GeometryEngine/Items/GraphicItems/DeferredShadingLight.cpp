@@ -1,3 +1,5 @@
+#include "../CommonItemParameters.h"
+#include "../GeometryItem.h"
 #include "DeferredShadingLight.h"
 
 GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::DeferredShadingLight(GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, const QVector3D & ambient,

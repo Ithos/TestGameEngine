@@ -4,7 +4,6 @@
 #define DEFERREDSHADINGLIGHT_H
 
 #include "Light.h"
-#include "../GeometryItem.h"
 
 namespace GeometryEngine
 {

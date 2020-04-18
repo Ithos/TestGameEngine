@@ -3,11 +3,11 @@
 #ifndef GEOMETRYENGINE_H
 #define GEOMETRYENGINE_H
 
-#include "SceneManager.h"
 /* QTDIR se define en vcxproj.user, hay que definir la carpeta correcta para configuración*/
 ///Main namespace it contains all GeometryEngine elements.
 namespace GeometryEngine
 {
+	class SceneManager;
 	/// Singleton that gives acces to the GeometryEngine
 	class GeometryEngine
 	{

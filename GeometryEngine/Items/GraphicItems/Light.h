@@ -10,10 +10,12 @@
 #include <ShaderManager.h>
 
 #include "../WorldItem.h"
-#include "../CommonItemParameters.h"
 
 namespace GeometryEngine
 {
+	class LightingTransformationData;
+	class GBufferTextureInfo;
+
 	namespace GeometryWorldItem
 	{
 		///namespace for all lights

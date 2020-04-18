@@ -1,3 +1,5 @@
+#include "TextureMaterialCommons.h"
+#include "../GeometryItem.h"
 #include "TextureMaterial.h"
 
 GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::string& texDir, float shininess, bool getFromConf ) :

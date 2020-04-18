@@ -1,3 +1,5 @@
+#include <Textures.h>
+#include <ConfigurationManager.h>
 #include "TextureMaterialCommons.h"
 
 const std::string GeometryEngine::GeometryMaterial::TextureConstant::ERROR_TEXTURE = "ERROR_TEXTURE";
@@ -12,6 +14,32 @@ const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_UNIFIE
 const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_TEXTURE = "TEST_TEXTURE";
 const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE = "TEST_BLACK_TEXTURE";
 const std::string GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP = "NORMALMAP_TEST_BLUE_CHIP";
+
+GeometryEngine::GeometryMaterial::TextureParameters::TextureParameters(const std::string & texDir, int vertex, bool getFromConf) : Texture(nullptr), mpConfInstance(nullptr), mpTexDirManager(nullptr)
+{
+	initManagers();
+	TextureDir = getFromConf ? mpTexDirManager->GetTextureDir(texDir) : texDir;
+	VertexNumber = vertex;
+}
+
+GeometryEngine::GeometryMaterial::TextureParameters::TextureParameters(const TextureParameters & ori)
+{
+	initManagers();
+	TextureDir = ori.TextureDir;
+	VertexNumber = ori.VertexNumber;
+	ori.Texture == nullptr ? this->Texture = nullptr : Build();
+}
+
+GeometryEngine::GeometryMaterial::TextureParameters::~TextureParameters()
+{
+	delete Texture;
+}
+
+void GeometryEngine::GeometryMaterial::TextureParameters::initManagers()
+{
+	mpConfInstance = Configuration::ConfigurationManager::GetInstance();
+	mpTexDirManager = TexturesFiles::Textures::InitInstance(mpConfInstance->getTexturesFolder(), mpConfInstance->getTexturesConfig());
+}
 
 void GeometryEngine::GeometryMaterial::TextureParameters::Build()
 {

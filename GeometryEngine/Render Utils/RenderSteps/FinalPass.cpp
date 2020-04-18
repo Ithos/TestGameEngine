@@ -1,3 +1,7 @@
+#include "Items\GraphicItems\Camera.h"
+#include "Items\GraphicItems\Light.h"
+#include "Items\GeometryItem.h"
+#include "../GBuffer.h"
 #include "FinalPass.h"
 
 void GeometryEngine::GeometryRenderStep::FinalPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, 

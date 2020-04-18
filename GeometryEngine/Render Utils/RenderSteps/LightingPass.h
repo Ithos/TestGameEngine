@@ -3,10 +3,12 @@
 #ifndef LIGHTINGPASS_H
 #define LIGHTINGPASS_H
 
-#include"../RenderStep.h"
+#include "../RenderStep.h"
 
 namespace GeometryEngine
 {
+	class GBufferTextureInfo;
+
 	namespace GeometryRenderStep
 	{
 		/// Appplies lighting to already rendered geometry

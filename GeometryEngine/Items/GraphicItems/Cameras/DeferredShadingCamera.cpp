@@ -1,3 +1,4 @@
+#include "Render Utils\GBuffer.h"
 #include "DeferredShadingCamera.h"
 
 GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera::DeferredShadingCamera(const GeometryBuffer::GBuffer& gbuffer, const GeometryItemUtils::Viewport& viewport,

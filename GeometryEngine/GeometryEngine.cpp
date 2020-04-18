@@ -1,3 +1,4 @@
+#include "SceneManager.h"
 #include "GeometryEngine.h"
 
 GeometryEngine::GeometryEngine* GeometryEngine::GeometryEngine::mpInstance = nullptr;

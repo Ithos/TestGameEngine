@@ -1,4 +1,9 @@
 #include "GFramebufferManager.h"
+#include "FramebufferElements/GRenderTarget.h"
+#include "FramebufferElements/GDepthStencilTexture.h"
+#include "FramebufferElements/GRenderBuffer.h"
+#include "FramebufferElements/GDepthStencilRenderBuffer.h"
+#include "FramebufferElements/GTexture.h"
 #include "GFramebufferObject.h"
 
 GeometryEngine::GeometryBuffer::GFramebufferObject::GFramebufferObject(GFramebufferManager* owner) : mFramebufferState(G_FRAMEBUFFER_BINDS::DETACH), mpDepthBuffer(nullptr), mpDepthTexture(nullptr),

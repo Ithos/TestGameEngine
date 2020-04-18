@@ -1,3 +1,5 @@
+#include "../../CommonItemParameters.h"
+#include "../../GeometryItem.h"
 #include "AmbientLight.h"
 
 GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight::AmbientLight(GeometryItem::GeometryItem* boundingBox, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular,

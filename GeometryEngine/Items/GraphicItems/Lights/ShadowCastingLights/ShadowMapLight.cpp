@@ -1,3 +1,5 @@
+#include "../../../Item Utils/Viewport.h"
+#include "../../../GeometryItem.h"
 #include "ShadowMapLight.h"
 
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapConstants::ShadowMapConstants::SHADOW_MAP_FRAGMENT_SHADER = "SHADOW_MAP_FRAGMENT_SHADER";

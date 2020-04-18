@@ -1,3 +1,4 @@
+#include "../GeometryItem.h"
 #include "VertexColorMaterial.h"
 
 GeometryEngine::GeometryMaterial::VertexColorMaterial::VertexColorMaterial() : Material()

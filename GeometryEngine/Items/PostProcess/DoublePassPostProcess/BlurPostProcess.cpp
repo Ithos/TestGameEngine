@@ -1,3 +1,5 @@
+#include "../../CommonItemParameters.h"
+#include "../../GeometryItem.h"
 #include "BlurPostProcess.h"
 
 GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess::BlurPostProcess( const GeometryWorldItem::GeometryItem::GeometryItem & boundingGeometry, bool isVertical) :

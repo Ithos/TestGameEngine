@@ -12,7 +12,6 @@
 #include <ConfigurationManager.h>
 #include <ShaderManager.h>
 
-#include "../GeometryItem.h"
 
 namespace GeometryEngine
 {

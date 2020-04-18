@@ -1,3 +1,9 @@
+#include "../SceneManager.h"
+#include "../Render Utils/RenderSteps/GeometryPass.h"
+#include "../Render Utils/RenderSteps/ShadowedLightingPass.h"
+#include "../Render Utils/RenderSteps/FinalPass.h"
+#include "../Render Utils/RenderSteps/PostProcessPass.h"
+#include "../Render Utils/GlSetups/InitialSetup.h"
 #include "DynamicShadowsScene.h"
 
 GeometryEngine::GeometryScene::DynamicShadowsScene::DynamicShadowsScene(SceneManager * manager, GLdouble fovy, GLdouble zNear, GLdouble zFar, QVector4D clearColor) :

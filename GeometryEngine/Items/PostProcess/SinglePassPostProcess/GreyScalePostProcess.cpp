@@ -1,3 +1,5 @@
+#include "../../CommonItemParameters.h"
+#include "../../GeometryItem.h"
 #include "GreyScalePostProcess.h"
 
 GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess::GreyScalePostProcess(const GeometryWorldItem::GeometryItem::GeometryItem & boundingGeometry) :

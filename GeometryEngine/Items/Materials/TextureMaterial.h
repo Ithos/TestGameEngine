@@ -8,13 +8,13 @@
 #include <list>
 #include <Textures.h>
 
-#include "TextureMaterialCommons.h"
 #include "Material.h"
 
 namespace GeometryEngine
 {
 	namespace GeometryMaterial
 	{
+		class TextureParameters;
 		///Material that loads a color texture. 
 		///Alternatively multiple textures can be loaded indicating to how many vertices it should be applied. The textures will be applied to the vertices in the order they are drawn 
 		///and in the order the textures are included in the textures list.

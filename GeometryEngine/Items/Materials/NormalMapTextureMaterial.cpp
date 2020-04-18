@@ -1,3 +1,4 @@
+#include "TextureMaterialCommons.h"
 #include "NormalMapTextureMaterial.h"
 
 GeometryEngine::GeometryMaterial::NormalMapTextureMaterial::NormalMapTextureMaterial(const std::string & texDir, const std::string & normalMapDir, float shininess)

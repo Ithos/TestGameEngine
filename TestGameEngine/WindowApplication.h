@@ -28,6 +28,7 @@ namespace GeometryEngine {
 
 		namespace GeometryCamera
 		{
+			class Camera;
 			class PerspectiveCamera;
 		}
 

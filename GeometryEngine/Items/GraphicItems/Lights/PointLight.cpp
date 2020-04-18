@@ -1,3 +1,5 @@
+#include "../../CommonItemParameters.h"
+#include "../../GeometryItem.h"
 #include "PointLight.h"
 
 GeometryEngine::GeometryWorldItem::GeometryLight::PointLight::PointLight(const QVector3D & attParam, GeometryItem::GeometryItem* boundingBox, const QVector3D & diffuse, const QVector3D & ambient,

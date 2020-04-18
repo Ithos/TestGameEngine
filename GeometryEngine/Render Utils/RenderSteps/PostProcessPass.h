@@ -4,10 +4,19 @@
 #define DOUBLEPOSTPROCESPASS_H
 
 #include "../RenderStep.h"
-#include "../Items/PostProcess/DoublePassPostProcess.h"
 
 namespace GeometryEngine
 {
+	namespace GeometryBuffer
+	{
+		class GBuffer;
+	}
+
+	namespace GeometryPostProcess
+	{
+		class PostProcess;
+	}
+
 	namespace GeometryRenderStep
 	{
 		/// Applies a double step post process to the whole scene

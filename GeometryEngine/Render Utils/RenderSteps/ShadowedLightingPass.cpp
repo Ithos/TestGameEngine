@@ -1,3 +1,9 @@
+#include "../Items/CommonItemParameters.h"
+#include "Items\GraphicItems\Camera.h"
+#include "Items\GraphicItems\Light.h"
+#include "Items\GeometryItem.h"
+#include "Items\GraphicItems\Lights\ShadowCastingLights\ShadowMapLight.h"
+#include"../GBuffer.h"
 #include "ShadowedLightingPass.h"
 
 void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)

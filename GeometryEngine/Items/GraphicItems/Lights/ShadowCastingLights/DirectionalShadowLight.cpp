@@ -1,3 +1,6 @@
+#include "../../../CommonItemParameters.h"
+#include "../../../Item Utils/Viewport.h"
+#include "../../../GeometryItem.h"
 #include "DirectionalShadowLight.h"
 
 GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::DirectionalShadowLight(const GeometryItemUtils::Viewport& viewport, const QVector3D & direction, 

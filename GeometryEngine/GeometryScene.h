@@ -5,13 +5,8 @@
 
 #include <unordered_set>
 #include <list>
-#include "Items/WorldItem.h"
-#include "Items\GeometryItem.h"
-#include "Items/GraphicItems/Camera.h"
-#include "Items\GraphicItems\Light.h"
-#include "Render Utils\RenderStep.h"
-#include "Render Utils\GlSetup.h"
-#include "SceneManager.h"
+#include <qvector4d.h>
+#include <qopengl.h>
 
 
 namespace GeometryEngine
@@ -26,22 +21,26 @@ namespace GeometryEngine
 		{
 			class Light;
 		}
-
 		namespace GeometryCamera
 		{
 			class Camera;
 		}
-	}
-
-	namespace GeometryGlSetup
-	{
-		class GlSetup;
+		namespace GeometryItem
+		{
+			class GeometryItem;
+		}
+		
 	}
 
 	namespace GeometryRenderStep
 	{
 		class RenderStep;
 	}
+	namespace GeometryGlSetup
+	{
+		class GlSetup;
+	}
+
 	///Namespace for scenes
 	namespace GeometryScene
 	{
@@ -96,7 +95,7 @@ namespace GeometryEngine
 			virtual void InitializeGL();
 			/// Set the initla setup object for the scene
 			/// param setup Constant reference to GlSetup
-			virtual void SetInitialSetup(const GeometryGlSetup::GlSetup& setup) { mpInitialSetup = setup.Clone(); }
+			virtual inline void SetInitialSetup(const GeometryGlSetup::GlSetup& setup);
 			/// Add render step to the scene
 			/// param step Constant reference to RenderStep
 			/// return false if the scene already contained the render step true otherwise

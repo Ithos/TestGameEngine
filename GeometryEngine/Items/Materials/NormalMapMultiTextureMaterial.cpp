@@ -1,3 +1,4 @@
+#include "TextureMaterialCommons.h"
 #include "NormalMapMultiTextureMaterial.h"
 
 GeometryEngine::GeometryMaterial::NormalMapMultiTextureMaterial::NormalMapMultiTextureMaterial(const std::string & ambientTexDir, const std::string & diffuseTexDir, 

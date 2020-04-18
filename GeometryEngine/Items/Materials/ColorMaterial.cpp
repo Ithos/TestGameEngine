@@ -1,3 +1,4 @@
+#include "../GeometryItem.h"
 #include "ColorMaterial.h"
 
 GeometryEngine::GeometryMaterial::ColorMaterial::ColorMaterial(const QVector3D & ambient, const QVector3D & diffuse,

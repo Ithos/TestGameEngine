@@ -4,11 +4,17 @@
 #define TEXTUREMATERIALCOMMONS_H
 
 #include <string>
-
 #include <qopengltexture.h>
 
-#include <Textures.h>
-#include <ConfigurationManager.h>
+namespace Configuration
+{
+	class ConfigurationManager;
+}
+
+namespace TexturesFiles
+{
+	class Textures;
+}
 
 namespace GeometryEngine
 {
@@ -39,28 +45,14 @@ namespace GeometryEngine
 			/// param texDir A texture direction or a key for a texture direction
 			/// param vertex Number of vertices that this texture will be applied to, its only used when many textures will be applied to the same object
 			/// param getFromConf If true the texDir parameter will be treated as a key for the conf files, else it will be treated as a path for a texture. 
-			TextureParameters(const std::string& texDir, int vertex = -1, bool getFromConf = true) : Texture(nullptr), mpConfInstance(nullptr), mpTexDirManager(nullptr)
-			{
-				initManagers();
-				TextureDir = getFromConf ? mpTexDirManager->GetTextureDir(texDir) : texDir;
-				VertexNumber = vertex;
-			}
+			TextureParameters(const std::string& texDir, int vertex = -1, bool getFromConf = true);
 
 			/// Copy constructor
 			/// param ori TextureParameters to be copied
-			TextureParameters(const TextureParameters& ori)
-			{
-				initManagers();
-				TextureDir = ori.TextureDir;
-				VertexNumber = ori.VertexNumber;
-				ori.Texture == nullptr ? this->Texture = nullptr : Build();
-			}
+			TextureParameters(const TextureParameters& ori);
 
 			///Destructor
-			virtual ~TextureParameters()
-			{
-				delete Texture;
-			}
+			virtual ~TextureParameters();
 
 		private:
 			std::string TextureDir;
@@ -75,11 +67,7 @@ namespace GeometryEngine
 			friend class NormalMapMultiTextureMaterial;
 
 			/// Get instances to configuration and texture managers
-			void initManagers()
-			{
-				mpConfInstance = Configuration::ConfigurationManager::GetInstance();
-				mpTexDirManager = TexturesFiles::Textures::InitInstance(mpConfInstance->getTexturesFolder(), mpConfInstance->getTexturesConfig());
-			}
+			void initManagers();
 
 			/// Loads the texture as an image and builds the texture
 			void Build();

@@ -1,3 +1,6 @@
+#include <Textures.h>
+#include "TextureMaterialCommons.h"
+#include "../GeometryItem.h"
 #include "MultiTextureMaterial.h"
 
 GeometryEngine::GeometryMaterial::MultiTextureMaterial::MultiTextureMaterial(const std::string & ambientTexDir, const std::string & diffuseTexDir, 

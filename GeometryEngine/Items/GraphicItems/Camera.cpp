@@ -1,6 +1,8 @@
-#include "Camera.h"
-
+#include "Render Utils\GBuffer.h"
+#include "../PostProcess/PostProcess.h"
+#include "../Item Utils/Viewport.h"
 #include "Render Utils\RenderStep.h"
+#include "Camera.h"
 
 GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::Camera(const GeometryItemUtils::Viewport & viewport, bool autoResize, const QVector3D & pos, 
 	const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : WorldItem(pos, rot, scale, parent), mAutoResize(autoResize), mpGBuffer(nullptr), mpViewport(nullptr)
@@ -32,6 +34,26 @@ GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::~Camera()
 	ClearPostProcess();
 }
 
+const QMatrix4x4 & GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::GetViewMatrix()
+{
+	return mpViewport->GetViewMatrix();
+}
+
+inline const QMatrix4x4 & GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::GetProjectionMatrix()
+{
+	return mpViewport->GetProjectionMatrix(); 
+}
+
+inline const QMatrix4x4 & GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::GetViewProjectionMatrix()
+{
+	return mpViewport->GetViewProjectionMatrix();
+}
+
+const QVector4D & GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::GetViewportSize()
+{
+	return mpViewport->GetViewportSize(); 
+}
+
 void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::UpdateModelMatrix(bool updateChildren)
 {
 	mModelMatrix = mpViewport->UpdateViewMatrix(GetPosition(), mRotation, mScale);
@@ -43,6 +65,16 @@ void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::UpdateModelMatri
 			(*iter)->UpdateModelMatrix(updateChildren);
 		}
 	}
+}
+
+void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::SetViewportSize(const QVector4D & size)
+{
+	mpViewport->SetViewportSize(size);
+}
+
+void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::SetBoundaries(GLdouble zNear, GLdouble zFar)
+{
+	mpViewport->SetBoundaries(zNear, zFar);
 }
 
 bool GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::AddCustomRenderStep(const GeometryRenderStep::RenderStep & step)

@@ -4,10 +4,14 @@
 #define SHADOWEDLIGHTINGPASS_H
 
 #include "LightingPass.h"
-#include "Items\GraphicItems\Lights\ShadowCastingLights\ShadowMapLight.h"
 
 namespace GeometryEngine
 {
+	namespace GeometryBuffer
+	{
+		class GBuffer;
+	}
+
 	namespace GeometryRenderStep
 	{
 		class ShadowedLightingPass : public LightingPass

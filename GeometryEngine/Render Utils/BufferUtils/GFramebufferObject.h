@@ -5,17 +5,17 @@
 
 #include <QOpenGLFunctions>
 #include <QOpenGLExtraFunctions>
-#include "FramebufferElements/GRenderTarget.h"
-#include "FramebufferElements/GTexture.h"
-#include "FramebufferElements/GDepthStencilTexture.h"
-#include "FramebufferElements/GRenderBuffer.h"
-#include "FramebufferElements/GDepthStencilRenderBuffer.h"
 #include "FramebufferElements/GFramebufferCommmons.h"
 
 namespace GeometryEngine
 {
 	namespace GeometryBuffer
 	{
+		class GFramebufferManager;
+		class GRenderTarget;
+		class GDepthStencilTexture;
+		class GDepthStencilRenderBuffer;
+
 		enum G_FRAMEBUFFER_BINDS
 		{
 			DETACH = GL_NONE,
@@ -23,8 +23,6 @@ namespace GeometryEngine
 			READ = GL_READ_FRAMEBUFFER,
 			DRAW_READ = GL_FRAMEBUFFER
 		};
-
-		class GFramebufferManager;
 
 		class GFramebufferObject : protected QOpenGLExtraFunctions
 		{
@@ -68,9 +66,9 @@ namespace GeometryEngine
 			/// return pointer to a render target in the framebuffer or null if the index is outside of the inner list
 			GRenderTarget* GetColorTarget(unsigned int index);
 			/// Returs a pointer to the stencil/depth texture in the framebuffer or null if it doesn`t have one
-			GDepthStencilTexture* GetStencilDepthTexture() { return mpDepthTexture; }
+			GRenderTarget* GetStencilDepthTexture() { return (GRenderTarget*)mpDepthTexture; }
 			/// Returs a pointer to the stencil/depth buffer in the framebuffer or null if it doesn`t have one
-			GDepthStencilRenderBuffer* GetStencilDepthBuffer() { return mpDepthBuffer; }
+			GRenderTarget* GetStencilDepthBuffer() { return (GRenderTarget*)mpDepthBuffer; }
 			/// Binds the FBO
 			/// param bind type of binding to be used
 			void Bind(G_FRAMEBUFFER_BINDS bind);

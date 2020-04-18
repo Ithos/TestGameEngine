@@ -1,3 +1,4 @@
+#include "../GeometryItem.h"
 #include "Material.h"
 
 const std::string GeometryEngine::GeometryMaterial::MaterialConstants::TEXTURE_MATERIAL_VERTEX_SHADER = "TEXTURE_MATERIAL_VERTEX_SHADER";

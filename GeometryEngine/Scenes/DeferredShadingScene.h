@@ -4,18 +4,12 @@
 
 #include "../GeometryScene.h"
 
-#include "../Render Utils/RenderSteps/GeometryPass.h"
-#include "../Render Utils/RenderSteps/LightingPass.h"
-#include "../Render Utils/RenderSteps/FinalPass.h"
-#include "../Render Utils/GlSetups/InitialSetup.h"
-
 namespace GeometryEngine
 {
 	class SceneManager;
 
 	namespace GeometryScene
 	{
-		class GeometryScene;
 		/// Scene that includes geometry rendering and deferred shading lighting
 		class DeferredShadingScene : public GeometryScene
 		{

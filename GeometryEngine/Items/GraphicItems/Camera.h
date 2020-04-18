@@ -4,28 +4,29 @@
 #define GEOMETRYCAMERA_H
 
 #include <list>
-
+#include <qopengl.h>
 #include "../WorldItem.h"
-#include "Render Utils\GBuffer.h"
-#include "../PostProcess/PostProcess.h"
-#include "../Item Utils/Viewport.h"
-
 
 namespace GeometryEngine
 {
-	namespace GeometryRenderStep
-	{
-		class RenderStep;
-	}
-
 	namespace GeometryBuffer
 	{
 		class GBuffer;
 	}
 
+	namespace GeometryRenderStep
+	{
+		class RenderStep;
+	}
+
 	namespace GeometryPostProcess
 	{
 		class PostProcess;
+	}
+
+	namespace GeometryItemUtils
+	{
+		class Viewport;
 	}
 
 	namespace GeometryWorldItem
@@ -56,26 +57,26 @@ namespace GeometryEngine
 				GeometryItemUtils::Viewport* GetViewport() { return mpViewport; }
 				/// Gets the View matrix
 				/// return View Matrix
-				virtual const QMatrix4x4& GetViewMatrix() { return mpViewport->GetViewMatrix(); }
+				virtual const QMatrix4x4& GetViewMatrix();
 				/// Gets the Projection matrix
 				/// return projection matrix
-				virtual const QMatrix4x4& GetProjectionMatrix() { return mpViewport->GetProjectionMatrix(); }
+				virtual inline const QMatrix4x4& GetProjectionMatrix();
 				/// Gets the View projection matrix
 				/// return View projection matrix
-				virtual const QMatrix4x4& GetViewProjectionMatrix() { return mpViewport->GetViewProjectionMatrix(); }
+				virtual inline const QMatrix4x4& GetViewProjectionMatrix();
 				/// Get the current viewport size. Gets the stored viewport size but not the actual viewport size, if there are unnaplied changes the actual size may differ.
 				/// return Viewport size as a QVector4D. The values indicate in order x position, yposition, width, height.
-				virtual const QVector4D& GetViewportSize() { return mpViewport->GetViewportSize(); }
+				virtual const QVector4D& GetViewportSize();
 				/// Updates the model matrix for the camera
 				/// param calculateChildren true if children matrix should be updated
 				virtual void UpdateModelMatrix(bool updateChildren = false) override;
 				/// Resizes the Opengl viewport
 				/// param size Viewport size
-				virtual void SetViewportSize(const QVector4D& size) { mpViewport->SetViewportSize(size); }
+				virtual void SetViewportSize(const QVector4D& size);
 				/// Sets new values for the z coordinate limits, but does not update the projection matrix inmediately
 				/// param zNear Nearest z coordinate to be rendered
 				/// param zFar Farthest z coordinate to be rendered
-				void SetBoundaries(GLdouble zNear, GLdouble zFar) { mpViewport->SetBoundaries(zNear, zFar); }
+				void SetBoundaries(GLdouble zNear, GLdouble zFar);
 
 				/// Gets the auto resize value
 				/// return Auto resize value

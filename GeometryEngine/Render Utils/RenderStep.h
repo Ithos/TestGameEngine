@@ -6,12 +6,28 @@
 #include <QOpenGLFunctions>
 #include <QOpenGLExtraFunctions>
 #include <unordered_set>
-#include "Items\GeometryItem.h"
-#include "Items\GraphicItems\Camera.h"
-#include "Items\GraphicItems\Light.h"
+
 
 namespace GeometryEngine
 {
+	namespace GeometryWorldItem
+	{
+		namespace GeometryCamera
+		{
+			class Camera;
+		}
+
+		namespace GeometryLight
+		{
+			class Light;
+		}
+
+		namespace GeometryItem
+		{
+			class GeometryItem;
+		}
+	}
+
 	///namespace for render steps
 	namespace GeometryRenderStep
 	{

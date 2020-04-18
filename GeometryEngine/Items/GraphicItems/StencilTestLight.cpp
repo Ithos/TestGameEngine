@@ -1,3 +1,4 @@
+#include "../GeometryItem.h"
 #include "StencilTestLight.h"
 
 GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::StencilTestLight(GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, 

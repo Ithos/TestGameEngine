@@ -3,11 +3,24 @@
 #ifndef POSTPROCESS_H
 #define POSTPROCESS_H
 
-#include "../GeometryItem.h"
-#include "../CommonItemParameters.h"
+#include <string>
+
+class QOpenGLShaderProgram;
+
+namespace Configuration
+{
+	class ConfigurationManager;
+}
+
+namespace ShaderFiles
+{
+	class ShaderManager;
+}
 
 namespace GeometryEngine
 {
+	class GBufferTextureInfo;
+
 	namespace GeometryWorldItem
 	{
 		namespace GeometryItem
@@ -46,12 +59,12 @@ namespace GeometryEngine
 			/// return true if the second step was applied, false if there isn't  a second step
 			virtual bool ApplyPostProcessSecondStep(const GBufferTextureInfo& gBuffTexInfo) { return false; }
 			/// Returns a pointer to the geometry in which the post process will be applied
-			virtual GeometryEngine::GeometryWorldItem::WorldItem* const GetBoundingGeometry() { return mpBoundingGeometry; }
+			virtual GeometryWorldItem::GeometryItem::GeometryItem* const GetBoundingGeometry() { return mpBoundingGeometry; }
 			/// Abstract method. Factory method. Creates a copy of this object
 			/// return Pointer to a copy of this object
 			virtual PostProcess* Clone() const = 0;
 		protected:
-			GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* mpBoundingGeometry;
+			GeometryWorldItem::GeometryItem::GeometryItem* mpBoundingGeometry;
 			QOpenGLShaderProgram* mpProgram;
 			Configuration::ConfigurationManager* mpConfInstance;
 			ShaderFiles::ShaderManager* mpShaderManager;

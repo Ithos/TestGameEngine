@@ -1,3 +1,8 @@
+#include <ConfigurationManager.h>
+#include <ShaderManager.h>
+#include <qopenglshaderprogram.h>
+#include "../CommonItemParameters.h"
+#include "../GeometryItem.h"
 #include "PostProcess.h"
 
 const std::string GeometryEngine::GeometryPostProcess::PostProcessShaderConstants::POST_PROCESS_VERTEX_SHADER = "POST_PROCESS_VERTEX_SHADER";

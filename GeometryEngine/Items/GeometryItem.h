@@ -3,7 +3,6 @@
 #ifndef GEOMETRYITEM_H
 #define GEOMETRYITEM_H
 
-
 #include <QOpenGLFunctions>
 #include <QOpenGLShaderProgram>
 #include <QOpenGLBuffer>
@@ -14,7 +13,7 @@
 #include <ConfigurationManager.h>
 #include <ShaderManager.h>
 #include "WorldItem.h"
-#include "Materials\Material.h"
+
 
 namespace GeometryEngine
 {
@@ -22,6 +21,7 @@ namespace GeometryEngine
 	{
 		class Material;
 	}
+
 	///namespace that contains everething that have a position in the scene
 	namespace GeometryWorldItem
 	{
@@ -122,8 +122,6 @@ namespace GeometryEngine
 				unsigned int mTotalVertexNumber;
 				unsigned int mTotalIndexNumber;
 				std::unordered_set<int> mRenderGroups;
-
-
 			};
 		}
 	}

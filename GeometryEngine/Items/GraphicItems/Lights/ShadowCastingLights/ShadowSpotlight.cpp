@@ -1,3 +1,6 @@
+#include "../../../CommonItemParameters.h"
+#include "../../../Item Utils/Viewport.h"
+#include "../../../GeometryItem.h"
 #include "ShadowSpotlight.h"
 
 GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::ShadowSpotlight(float maxLightAngle, const QVector3D & attParams, 

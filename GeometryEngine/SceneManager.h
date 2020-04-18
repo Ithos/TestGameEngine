@@ -5,7 +5,6 @@
 
 #include <list>
 #include <type_traits>
-#include "GeometryScene.h"
 
 namespace GeometryEngine
 {

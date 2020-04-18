@@ -4,10 +4,14 @@
 #define GEOMETRYSHADOWMAPLIGHT_H
 
 #include "../../StencilTestLight.h"
-#include "../../../Item Utils/Viewport.h"
 
 namespace GeometryEngine
 {
+	namespace GeometryItemUtils
+	{
+		class Viewport;
+	}
+
 	namespace GeometryWorldItem
 	{
 		namespace GeometryLight

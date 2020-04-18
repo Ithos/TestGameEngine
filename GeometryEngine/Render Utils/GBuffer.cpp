@@ -1,5 +1,7 @@
 #include "BufferUtils\GFramebufferManager.h"
 #include "BufferUtils\GFramebufferObject.h"
+#include "BufferUtils\FramebufferElements\GRenderTarget.h"
+#include "../Items/CommonItemParameters.h"
 #include "GBuffer.h"
 
 GeometryEngine::GeometryBuffer::GBuffer::GBuffer() : mFinalTextureLocation(0), mpFBO(nullptr)

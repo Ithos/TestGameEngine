@@ -8,8 +8,9 @@
 namespace GeometryEngine
 {
 	/// Class that holds inofrmation about the light to be passed to the shader
-	struct LightingTransformationData
+	class LightingTransformationData
 	{
+	public:
 		const QMatrix4x4& ProjectionMatrix;
 		const QMatrix4x4& ViewMatrix;
 		const QMatrix4x4& ModelMatrix;
@@ -22,8 +23,9 @@ namespace GeometryEngine
 	};
 
 	/// Class that holds information about the geometry buffer textures to be passed to the shader
-	struct GBufferTextureInfo
+	class GBufferTextureInfo
 	{
+	public:
 		unsigned int AmbientTexture;
 		unsigned int DiffuseTexture;
 		unsigned int ReflectiveTexture;

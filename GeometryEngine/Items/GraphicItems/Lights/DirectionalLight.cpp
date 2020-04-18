@@ -1,3 +1,5 @@
+#include "../../CommonItemParameters.h"
+#include "../../GeometryItem.h"
 #include "DirectionalLight.h"
 
 GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight::DirectionalLight(const QVector3D & direction, GeometryItem::GeometryItem* boundingBox, 
