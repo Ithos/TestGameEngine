@@ -30,13 +30,11 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::PointLight::setProgramPar
 		mpProgram->setUniformValue("mUseDiffuse", gBuffTexInfo.UseDiffuseTexture);
 		mpProgram->setUniformValue("mUseAmbient", gBuffTexInfo.UseAmbientTexture);
 		mpProgram->setUniformValue("mUseReflective", gBuffTexInfo.UseReflectiveTexture);
-		mpProgram->setUniformValue("mUseEmissive", gBuffTexInfo.UseEmissiveTexture);
 
 		mpProgram->setUniformValue("mPositionMap", gBuffTexInfo.PositionTexture);
 		mpProgram->setUniformValue("mDiffuseColorMap", gBuffTexInfo.DiffuseTexture);
 		mpProgram->setUniformValue("mAmbientColorMap", gBuffTexInfo.AmbientTexture);
 		mpProgram->setUniformValue("mReflectiveColorMap", gBuffTexInfo.ReflectiveTexture);
-		mpProgram->setUniformValue("mEmissiveColorMap", gBuffTexInfo.EmissiveTexture);
 		mpProgram->setUniformValue("mNormalMap", gBuffTexInfo.NormalTexture);
 
 		mpProgram->setUniformValue("mTextureSize", gBuffTexInfo.TextureSize);

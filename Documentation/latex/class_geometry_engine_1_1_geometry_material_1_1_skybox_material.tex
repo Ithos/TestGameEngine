@@ -1,0 +1,146 @@
+\hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material}{}\section{Geometry\+Engine\+::Geometry\+Material\+::Skybox\+Material Class Reference}
+\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material}\index{GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}}
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Skybox\+Material\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_geometry_engine_1_1_geometry_material_1_1_skybox_material}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a7cc6c7bb2246caad7f2eead65acb7bd8}{Skybox\+Material}} (const std\+::string \&texture\+Dir)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a6e96ce8e7ff9235b841185481e9646fe}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a6e96ce8e7ff9235b841185481e9646fe}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a6e96ce8e7ff9235b841185481e9646fe}{$\sim$\+Skybox\+Material}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a36e098e2d744596441ed450effcf8160}{Skybox\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material}{Skybox\+Material}} \&mat)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a8abf2f8ba43b6c17e31b3c82a958744f}{Set\+Texture}} (const std\+::string \&texture\+Dir)
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_ad1ec431a67d52440abfa24d66dbc12ca}{Clone}} () const override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_ab2e9b5f4126857d70499480be0de286d}{Skybox\+Material}} ()
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_addb02e1a849df4b8bb157a30d3544afa}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_addb02e1a849df4b8bb157a30d3544afa}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_addb02e1a849df4b8bb157a30d3544afa}{init\+Material}} () override
+\begin{DoxyCompactList}\small\item\em Calls parent init\+Material and dets a pointer to the material manager singelton. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a932f34e678f90b14b8bab22954e7abdb}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a932f34e678f90b14b8bab22954e7abdb}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a932f34e678f90b14b8bab22954e7abdb}{init\+Shaders}} () override
+\begin{DoxyCompactList}\small\item\em Sets the keys of the shaders to be used. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a86bbb73a1196ef11a9546abdbe13b09d}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a86bbb73a1196ef11a9546abdbe13b09d}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a86bbb73a1196ef11a9546abdbe13b09d}{init\+Textures}} ()
+\begin{DoxyCompactList}\small\item\em Builds all the textures. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a7760402d819462db205dadf3f370af73}{set\+Program\+Parameters}} (const Q\+Matrix4x4 \&projection, const Q\+Matrix4x4 \&view, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&parent) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a0cc520b905996a178c80a2657bc9746f}{draw\+Material}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Number, unsigned int total\+Index\+Number) override
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a04ca59e198af1cd358a2f876df876adb}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a04ca59e198af1cd358a2f876df876adb}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a04ca59e198af1cd358a2f876df876adb}{bind\+Textures}} ()
+\begin{DoxyCompactList}\small\item\em Binds textures to specific texture units. Used before drawing the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_afcb8bf256fbb2927e2030fbe8a631af0}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material}{Skybox\+Material}} \&mat)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_ac80f86b76cd14e2ba9e56cbba37bbab1}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_ac80f86b76cd14e2ba9e56cbba37bbab1}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ {\bfseries mp\+Ambient\+Texture}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_ab5a120670b90981dc51dcbea69146595}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_ab5a120670b90981dc51dcbea69146595}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ {\bfseries mp\+Diffuse\+Texture}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_abdc43451713ab6af18b7431eef24beb9}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_abdc43451713ab6af18b7431eef24beb9}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ {\bfseries mp\+Specular\+Texture}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_ae343dc00cb212adf0e43340d04c8b334}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_ae343dc00cb212adf0e43340d04c8b334}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ {\bfseries mp\+Skybox\+Texture}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a5622d1f62f666d6eb7050366f432848f}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a5622d1f62f666d6eb7050366f432848f}} 
+\mbox{\hyperlink{class_textures_files_1_1_textures}{Textures\+Files\+::\+Textures}} $\ast$ {\bfseries mp\+Tex\+Dir\+Manager}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a54ab79c3021684bb428d761e7c9f567b}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a54ab79c3021684bb428d761e7c9f567b}} 
+Q\+Matrix4x4 {\bfseries m\+Identity\+Matrix}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a0cb45513a44851f20d3451aae3792aeb}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a0cb45513a44851f20d3451aae3792aeb}} 
+static const int \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a0cb45513a44851f20d3451aae3792aeb}{T\+E\+X\+T\+U\+R\+E\+\_\+\+U\+N\+IT}} = 0
+\begin{DoxyCompactList}\small\item\em Texture unit to be used by the textures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a7cc6c7bb2246caad7f2eead65acb7bd8}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a7cc6c7bb2246caad7f2eead65acb7bd8}} 
+\index{GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}!SkyboxMaterial@{SkyboxMaterial}}
+\index{SkyboxMaterial@{SkyboxMaterial}!GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}}
+\subsubsection{\texorpdfstring{SkyboxMaterial()}{SkyboxMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Skybox\+Material\+::\+Skybox\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{texture\+Dir }\end{DoxyParamCaption})}
+
+Constructor param texture\+Dir key to the texture of the skybox. It will be considered as an emissive texture to avoid illumination. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a36e098e2d744596441ed450effcf8160}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a36e098e2d744596441ed450effcf8160}} 
+\index{GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}!SkyboxMaterial@{SkyboxMaterial}}
+\index{SkyboxMaterial@{SkyboxMaterial}!GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}}
+\subsubsection{\texorpdfstring{SkyboxMaterial()}{SkyboxMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Skybox\+Material\+::\+Skybox\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material}{Skybox\+Material}} \&}]{mat }\end{DoxyParamCaption})}
+
+Copy constructor param ref Object to be copied. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_ab2e9b5f4126857d70499480be0de286d}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_ab2e9b5f4126857d70499480be0de286d}} 
+\index{GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}!SkyboxMaterial@{SkyboxMaterial}}
+\index{SkyboxMaterial@{SkyboxMaterial}!GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}}
+\subsubsection{\texorpdfstring{SkyboxMaterial()}{SkyboxMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Skybox\+Material\+::\+Skybox\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Empty constructor Called from child objects copy constructor to avoid double initialization 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_ad1ec431a67d52440abfa24d66dbc12ca}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_ad1ec431a67d52440abfa24d66dbc12ca}} 
+\index{GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}}$\ast$ Geometry\+Engine\+::\+Geometry\+Material\+::\+Skybox\+Material\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Copy constructor param ref Object to be copied. 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_ae5513ff06d536365e18ddc5e07e79784}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_afcb8bf256fbb2927e2030fbe8a631af0}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_afcb8bf256fbb2927e2030fbe8a631af0}} 
+\index{GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Skybox\+Material\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_skybox_material}{Skybox\+Material}} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} object to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a0cc520b905996a178c80a2657bc9746f}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a0cc520b905996a178c80a2657bc9746f}} 
+\index{GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}!drawMaterial@{drawMaterial}}
+\index{drawMaterial@{drawMaterial}!GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}}
+\subsubsection{\texorpdfstring{drawMaterial()}{drawMaterial()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Skybox\+Material\+::draw\+Material (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Number,  }\item[{unsigned int}]{total\+Index\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Binds shaders and draws. param vertex\+Buf Vertex buffer param index\+Buf Index\+Buffer param total\+Vertex\+Num Number of vetices param total\+Index\+Number Number of indices 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a0070eab6e5fe86dc05dc69f2e37b9072}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a7760402d819462db205dadf3f370af73}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a7760402d819462db205dadf3f370af73}} 
+\index{GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}!setProgramParameters@{setProgramParameters}}
+\index{setProgramParameters@{setProgramParameters}!GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}}
+\subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Skybox\+Material\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection,  }\item[{const Q\+Matrix4x4 \&}]{view,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sends parameters to the shaders. param projection Projection matrix param view View matrix
+
+param parent geometry item to be drawn 
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a68310797df53062f237d0005fbcfce7e}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a8abf2f8ba43b6c17e31b3c82a958744f}\label{class_geometry_engine_1_1_geometry_material_1_1_skybox_material_a8abf2f8ba43b6c17e31b3c82a958744f}} 
+\index{GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!GeometryEngine::GeometryMaterial::SkyboxMaterial@{GeometryEngine::GeometryMaterial::SkyboxMaterial}}
+\subsubsection{\texorpdfstring{SetTexture()}{SetTexture()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Skybox\+Material\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{texture\+Dir }\end{DoxyParamCaption})}
+
+Sets the texture of the skybox. It is treated as an emmissive texture. param texture\+Dir Key to a texture that will be used as emmissive color 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Skybox\+Material.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Skybox\+Material.\+cpp\end{DoxyCompactItemize}

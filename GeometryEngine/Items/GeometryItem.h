@@ -25,7 +25,7 @@ namespace GeometryEngine
 	///namespace that contains everething that have a position in the scene
 	namespace GeometryWorldItem
 	{
-		///namespace that contains everething that may hace a geometry
+		///namespace that contains everything that may have a geometry
 		namespace GeometryItem
 		{
 			/// Base class for every object in the scene that has a visual model

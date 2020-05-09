@@ -18,7 +18,7 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+I
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_a3971e98ccf681ba9dfae15b33ae0ca22}{Cube}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} \&mat, float size=1.\+0f, const Q\+Vector3\+D \&pos=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), World\+Item $\ast$parent=nullptr)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_a17e32e15517c004eaaf5187d8c6bce4e}{Cube}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} \&mat, float size=1.\+0f, const Q\+Vector3\+D \&pos=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), World\+Item $\ast$parent=nullptr, std\+::vector$<$ Q\+Vector2\+D $>$ $\ast$texture\+Coord\+Array=nullptr)
 \item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_a159c3e7e79d19df2a9857fc6b77d5955}{Cube}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube}{Cube}} \&ref)
 \item 
@@ -34,12 +34,18 @@ virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geome
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_acdfe53700969b8060b6649f4cea14b41}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_acdfe53700969b8060b6649f4cea14b41}} 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_acdfe53700969b8060b6649f4cea14b41}{init\+Geometry}} () override
-\begin{DoxyCompactList}\small\item\em Initializes vertices an indices buffers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Initializes vertices an indices buffers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_ab76ab6dee3ea30ce6b4f4bb102fe9a7e}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_ab76ab6dee3ea30ce6b4f4bb102fe9a7e}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_ab76ab6dee3ea30ce6b4f4bb102fe9a7e}{init\+Texture\+Coordinates}} (std\+::vector$<$ Q\+Vector2D $>$ $\ast$texture\+Coord\+Array)
+\begin{DoxyCompactList}\small\item\em Initializes the texture coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_ab8f55c65010441e00d9b7268285095d4}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_ab8f55c65010441e00d9b7268285095d4}} 
 float {\bfseries m\+Size}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_a323483a46488df07601e22333a655e9f}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_a323483a46488df07601e22333a655e9f}} 
+std\+::vector$<$ Q\+Vector2D $>$ {\bfseries m\+Texture\+Coordinate\+Array}
 \end{DoxyCompactItemize}
 
 
@@ -47,13 +53,13 @@ float {\bfseries m\+Size}
 Geometry Item that defines a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube}{Cube}}. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_a3971e98ccf681ba9dfae15b33ae0ca22}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_a3971e98ccf681ba9dfae15b33ae0ca22}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_a17e32e15517c004eaaf5187d8c6bce4e}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_a17e32e15517c004eaaf5187d8c6bce4e}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryItem::Cube@{GeometryEngine::GeometryWorldItem::GeometryItem::Cube}!Cube@{Cube}}
 \index{Cube@{Cube}!GeometryEngine::GeometryWorldItem::GeometryItem::Cube@{GeometryEngine::GeometryWorldItem::GeometryItem::Cube}}
 \subsubsection{\texorpdfstring{Cube()}{Cube()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Cube\+::\+Cube (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} \&}]{mat,  }\item[{float}]{size = {\ttfamily 1.0f},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Cube\+::\+Cube (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} \&}]{mat,  }\item[{float}]{size = {\ttfamily 1.0f},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr},  }\item[{std\+::vector$<$ Q\+Vector2D $>$ $\ast$}]{texture\+Coord\+Array = {\ttfamily nullptr} }\end{DoxyParamCaption})}
 
-Constructor param mat Material to be used for rendering param size length of the cube side param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_a159c3e7e79d19df2a9857fc6b77d5955}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_a159c3e7e79d19df2a9857fc6b77d5955}} 
+Constructor param mat Material to be used for rendering param size length of the cube side param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. param texture\+Coord\+Array array of at least 24 elements containing texture coordinates, the order of the faces is F\+R\+O\+NT, R\+I\+G\+HT, B\+A\+CK, L\+E\+FT, B\+O\+T\+T\+OM, T\+OP, by default the texture is repeated on every face \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_a159c3e7e79d19df2a9857fc6b77d5955}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube_a159c3e7e79d19df2a9857fc6b77d5955}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryItem::Cube@{GeometryEngine::GeometryWorldItem::GeometryItem::Cube}!Cube@{Cube}}
 \index{Cube@{Cube}!GeometryEngine::GeometryWorldItem::GeometryItem::Cube@{GeometryEngine::GeometryWorldItem::GeometryItem::Cube}}
 \subsubsection{\texorpdfstring{Cube()}{Cube()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}

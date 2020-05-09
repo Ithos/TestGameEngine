@@ -1,0 +1,90 @@
+\hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass}{}\section{Geometry\+Engine\+::Geometry\+Render\+Step\+::Emissive\+Lighting\+Pass Class Reference}
+\label{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass}\index{GeometryEngine::GeometryRenderStep::EmissiveLightingPass@{GeometryEngine::GeometryRenderStep::EmissiveLightingPass}}
+
+
+Renders emissive colors and textures.  
+
+
+
+
+{\ttfamily \#include $<$Emissive\+Lighting\+Pass.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Render\+Step\+::Emissive\+Lighting\+Pass\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a826e0eee0473e47302406b328bc73104}\label{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a826e0eee0473e47302406b328bc73104}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a826e0eee0473e47302406b328bc73104}{Emissive\+Lighting\+Pass}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} \&emissive\+Lighting)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_af05c874fca05ebac313f13bbccbbb4d3}{Emissive\+Lighting\+Pass}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass}{Emissive\+Lighting\+Pass}} \&ref)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_adffe18f64968290aedda426bc4450414}{Render}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$lights=nullptr) override
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass}{Emissive\+Lighting\+Pass}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a5a46d5e73fe672e09584a2e6e8bfa5e8}{Clone}} () const override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a1856a521c04820f16f8f2516c65036d0}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass}{Emissive\+Lighting\+Pass}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_afc44f3c175dd6b6c78cf5cb967eacb31}\label{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_afc44f3c175dd6b6c78cf5cb967eacb31}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ {\bfseries mp\+Emissive\+Lighting}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a6f984b12dcad05be3c8e8c926215c797}\label{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a6f984b12dcad05be3c8e8c926215c797}} 
+std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ {\bfseries m\+Emissive\+Lights}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Renders emissive colors and textures. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_af05c874fca05ebac313f13bbccbbb4d3}\label{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_af05c874fca05ebac313f13bbccbbb4d3}} 
+\index{GeometryEngine::GeometryRenderStep::EmissiveLightingPass@{GeometryEngine::GeometryRenderStep::EmissiveLightingPass}!EmissiveLightingPass@{EmissiveLightingPass}}
+\index{EmissiveLightingPass@{EmissiveLightingPass}!GeometryEngine::GeometryRenderStep::EmissiveLightingPass@{GeometryEngine::GeometryRenderStep::EmissiveLightingPass}}
+\subsubsection{\texorpdfstring{EmissiveLightingPass()}{EmissiveLightingPass()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Emissive\+Lighting\+Pass\+::\+Emissive\+Lighting\+Pass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass}{Emissive\+Lighting\+Pass}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor param ref Geometry pass to be copied 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a5a46d5e73fe672e09584a2e6e8bfa5e8}\label{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a5a46d5e73fe672e09584a2e6e8bfa5e8}} 
+\index{GeometryEngine::GeometryRenderStep::EmissiveLightingPass@{GeometryEngine::GeometryRenderStep::EmissiveLightingPass}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryRenderStep::EmissiveLightingPass@{GeometryEngine::GeometryRenderStep::EmissiveLightingPass}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass}{Emissive\+Lighting\+Pass}}$\ast$ Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Emissive\+Lighting\+Pass\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Returns a copy of this object. return A copy of this object. 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4f1cb36c7bf6a90d0aa3b8e8feba5e5e}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a1856a521c04820f16f8f2516c65036d0}\label{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a1856a521c04820f16f8f2516c65036d0}} 
+\index{GeometryEngine::GeometryRenderStep::EmissiveLightingPass@{GeometryEngine::GeometryRenderStep::EmissiveLightingPass}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryRenderStep::EmissiveLightingPass@{GeometryEngine::GeometryRenderStep::EmissiveLightingPass}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Emissive\+Lighting\+Pass\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass}{Emissive\+Lighting\+Pass}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{Lighting\+Pass}} into this object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{Lighting\+Pass}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_adffe18f64968290aedda426bc4450414}\label{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_adffe18f64968290aedda426bc4450414}} 
+\index{GeometryEngine::GeometryRenderStep::EmissiveLightingPass@{GeometryEngine::GeometryRenderStep::EmissiveLightingPass}!Render@{Render}}
+\index{Render@{Render}!GeometryEngine::GeometryRenderStep::EmissiveLightingPass@{GeometryEngine::GeometryRenderStep::EmissiveLightingPass}}
+\subsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Emissive\+Lighting\+Pass\+::\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{lights = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Executes the render step param cam Pointer to camera to be rendered param items Set of items to be rendered param lights Set of lights in the scene. This lights will not be used in this step. 
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_ae6d9fa99f67e659839ca310947787f52}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Render\+Steps/Emissive\+Lighting\+Pass.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Render\+Steps/Emissive\+Lighting\+Pass.\+cpp\end{DoxyCompactItemize}

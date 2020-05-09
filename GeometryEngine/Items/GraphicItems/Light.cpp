@@ -18,9 +18,11 @@ const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderC
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::NULL_FRAGMENT_SHADER = "NULL_FRAGMENT_SHADER";
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::POSITION_VERTEX_SHADER = "POSITION_VERTEX_SHADER";
 
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::EMISSIVE_LIGHTING_FRAGMENT_SHADER = "EMISSIVE_LIGHTING_FRAGMENT_SHADER";
+
 GeometryEngine::GeometryWorldItem::GeometryLight::Light::Light(const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos,
 	const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : WorldItem(pos, rot, scale, parent), mColorDiffuse(diffuse), 
-	mColorAmbient(ambient), mColorSpecular(specular), mpProgram(nullptr), mVertexShaderKey(""), mFragmentShaderKey("")
+	mColorAmbient(ambient), mColorSpecular(specular), mpProgram(nullptr), mVertexShaderKey(""), mFragmentShaderKey(""), mpConfInstance(nullptr), mpShaderManager(nullptr)
 {
 }
 
@@ -100,4 +102,16 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::Light::initLightProgram()
 			assert(false && "Lighting shader failed to link");
 		}
 	}
+}
+
+void GeometryEngine::GeometryWorldItem::GeometryLight::Light::copy(const Light & ref)
+{
+	this->mColorDiffuse = ref.mColorDiffuse;
+	this->mColorAmbient = ref.mColorAmbient;;
+	this->mColorSpecular = ref.mColorSpecular;
+	this->mpProgram = nullptr;
+	this->mpConfInstance = nullptr;
+	this->mpShaderManager = nullptr;
+	this->mVertexShaderKey = ref.mVertexShaderKey;
+	this->mFragmentShaderKey = ref.mFragmentShaderKey;
 }

@@ -12,13 +12,11 @@ uniform vec3 mViewPos;
 uniform bool mUseDiffuse;
 uniform bool mUseAmbient;
 uniform bool mUseReflective;
-uniform bool mUseEmissive;
 
 uniform sampler2D mPositionMap;
 uniform sampler2D mDiffuseColorMap;
 uniform sampler2D mAmbientColorMap;
 uniform sampler2D mReflectiveColorMap;
-uniform sampler2D mEmissiveColorMap;
 uniform sampler2D mNormalMap;
 uniform sampler2D mShadowMap;
 
@@ -79,7 +77,6 @@ void main() {
     // Diffuse is the default color any other has to be especific
     vec3 AmbientColor = DiffuseColor;
     vec3 ReflectiveColor = DiffuseColor;
-    vec3 EmissiveColor = vec3(0.0, 0.0, 0.0);
 
     if(mUseAmbient)
     {
@@ -89,11 +86,6 @@ void main() {
     if(mUseReflective)
     {
         ReflectiveColor = texture(mReflectiveColorMap, TexCoord).xyz;
-    }
-
-    if(mUseEmissive)
-    {
-        EmissiveColor = texture(mEmissiveColorMap, TexCoord).xyz;
     }
 
 	// Fun with vectors
@@ -116,6 +108,6 @@ void main() {
     // calculate shadow
     float shadow = ShadowCalculation( mLightSpaceMatrix * vec4(WorldPos, 1.0), Normal,  lightDir);
         
-    vec3 result = (AmbientColor * ambient) + (1.0 - shadow) * ( (DiffuseColor * diffuse) + (ReflectiveColor * specular) ) + EmissiveColor;
+    vec3 result = (AmbientColor * ambient) + (1.0 - shadow) * ( (DiffuseColor * diffuse) + (ReflectiveColor * specular) );
     FragColor = vec4(result, 1.0);
 }

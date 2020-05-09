@@ -40,6 +40,8 @@ namespace GeometryEngine
 
 				static const std::string NULL_FRAGMENT_SHADER;
 				static const std::string POSITION_VERTEX_SHADER;
+
+				static const std::string EMISSIVE_LIGHTING_FRAGMENT_SHADER;
 			};
 
 			/// Base class for world objects that represent a light source in the scene
@@ -57,6 +59,10 @@ namespace GeometryEngine
 				Light(const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& ambient = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
 					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
+
+				/// Copy constructor
+				/// param ref Const reference to Light to be copied
+				Light(const Light& ref) { copy(ref); };
 
 				/// Destructor
 				virtual ~Light();
@@ -107,6 +113,9 @@ namespace GeometryEngine
 				virtual bool GetCastShadows() { return false; }
 				/// Method to be implemented by child classes. Updates elements when the screen is resized.
 				virtual void ResizeElements(int screenWidth, int screenHeight) {}
+				/// Factory method. Returns a copy of this object.
+				/// return A copy of this object.
+				virtual Light* Clone() const = 0;
 			protected:
 				QVector3D mColorDiffuse; // Vec3 color  + float intensity
 				QVector3D mColorAmbient;
@@ -135,6 +144,9 @@ namespace GeometryEngine
 				/// param totalVertexNum Number of vetices
 				/// param titalIndexNum Number of indices
 				virtual void calculateContribution(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum) = 0;
+				/// Copies the data from a Light into this object
+				/// param ref Light to be copied
+				virtual void copy(const Light& ref);
 			};
 		}
 	}

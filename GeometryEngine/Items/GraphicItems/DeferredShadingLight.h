@@ -33,6 +33,10 @@ namespace GeometryEngine
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
 					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
 
+				/// Copy constructor
+				/// param ref Const reference to DeferredShadingLight to be copied
+				DeferredShadingLight(const DeferredShadingLight& ref) { copy(ref); };
+
 				/// Destructor
 				virtual ~DeferredShadingLight();
 
@@ -47,13 +51,19 @@ namespace GeometryEngine
 				/// return pointer to the light bounding geometry
 				virtual WorldItem* const GetBoundingGeometry() override { return mpBoundingBox; }
 
+				/// Factory method. Returns a copy of this object.
+				/// return A copy of this object.
+				virtual DeferredShadingLight* Clone() const = 0;
+
 			protected:
 				GeometryItem::GeometryItem * mpBoundingBox;
 
 				/// Scales the bounding box of the light following the light attenuation function.
 				/// param light attenuation polynomial
 				virtual void ScaleBoundingBox(const QVector3D& attenuation);
-
+				/// Copies the data from a DeferredShadingLight into this object
+				/// param ref DeferredShadingLight to be copied
+				virtual void copy(const DeferredShadingLight& ref);
 			};
 		}
 	}

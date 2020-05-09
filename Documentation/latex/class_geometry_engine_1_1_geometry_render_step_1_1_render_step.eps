@@ -179,6 +179,7 @@ boxfont setfont
 (GeometryEngine::GeometryRenderStep::GeometryPass) cw
 (GeometryEngine::GeometryRenderStep::LightingPass) cw
 (GeometryEngine::GeometryRenderStep::PostProcessPass) cw
+(GeometryEngine::GeometryRenderStep::EmissiveLightingPass) cw
 (GeometryEngine::GeometryRenderStep::ShadowedLightingPass) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
@@ -197,7 +198,8 @@ boundx scalefactor div boundy scalefactor div scale
  (GeometryEngine::GeometryRenderStep::GeometryPass) 1.000000 1.000000 box
  (GeometryEngine::GeometryRenderStep::LightingPass) 2.000000 1.000000 box
  (GeometryEngine::GeometryRenderStep::PostProcessPass) 3.000000 1.000000 box
- (GeometryEngine::GeometryRenderStep::ShadowedLightingPass) 2.000000 0.000000 box
+ (GeometryEngine::GeometryRenderStep::EmissiveLightingPass) 1.500000 0.000000 box
+ (GeometryEngine::GeometryRenderStep::ShadowedLightingPass) 2.500000 0.000000 box
 
 % ----- relations -----
 
@@ -218,6 +220,10 @@ solid
 solid
 1 2.000000 0.250000 out
 solid
+1.500000 2.500000 1.000000 conn
+solid
 0 3.000000 1.750000 in
 solid
-0 2.000000 0.750000 in
+0 1.500000 0.750000 in
+solid
+0 2.500000 0.750000 in

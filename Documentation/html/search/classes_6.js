@@ -1,7 +1,7 @@
 var searchData=
 [
   ['gbuffer',['GBuffer',['../class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html',1,'GeometryEngine::GeometryBuffer']]],
-  ['gbuffertextureinfo',['GBufferTextureInfo',['../struct_geometry_engine_1_1_g_buffer_texture_info.html',1,'GeometryEngine']]],
+  ['gbuffertextureinfo',['GBufferTextureInfo',['../class_geometry_engine_1_1_g_buffer_texture_info.html',1,'GeometryEngine']]],
   ['gdepthstencilrenderbuffer',['GDepthStencilRenderBuffer',['../class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_render_buffer.html',1,'GeometryEngine::GeometryBuffer']]],
   ['gdepthstenciltexture',['GDepthStencilTexture',['../class_geometry_engine_1_1_geometry_buffer_1_1_g_depth_stencil_texture.html',1,'GeometryEngine::GeometryBuffer']]],
   ['geometryengine',['GeometryEngine',['../class_geometry_engine_1_1_geometry_engine.html',1,'GeometryEngine']]],

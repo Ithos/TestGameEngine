@@ -140,3 +140,18 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::renderSha
 	// Draw light
 	glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);
 }
+
+void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::copy(const ShadowMapLight & ref)
+{
+	StencilTestLight::copy(ref);
+	this->mpShadowMapProgram = nullptr;
+	this->mSMapFragmentShaderKey = ref.mSMapFragmentShaderKey;
+	this->mSMapVertexShaderKey = ref.mSMapVertexShaderKey;
+	this->mpViewport = nullptr;
+	this->mDirection = ref.mDirection;
+
+	if (ref.mpViewport != nullptr)
+	{
+		this->mpViewport = ref.mpViewport->Clone();
+	}
+}

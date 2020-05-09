@@ -4,7 +4,7 @@
 
 GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::DeferredShadingLight(GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, const QVector3D & ambient,
 	const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : Light(diffuse, ambient, specular, pos, rot, scale, parent),
-	mpBoundingBox(boundingBox)
+	mpBoundingBox(nullptr)
 {
 	if (boundingBox != nullptr)
 	{
@@ -44,5 +44,15 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::Sca
 			(2 * attenuation.z());
 
 		mpBoundingBox->Scale(ret * QVector3D(1.0f, 1.0f, 1.0f));
+	}
+}
+
+void GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::copy(const DeferredShadingLight & ref)
+{
+	Light::copy(ref);
+	this->mpBoundingBox = nullptr;
+	if (ref.mpBoundingBox != nullptr)
+	{
+		this->mpBoundingBox = ref.mpBoundingBox->Clone();
 	}
 }

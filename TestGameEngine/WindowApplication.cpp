@@ -18,6 +18,7 @@
 #include <Items/Materials/MultiTextureMaterial.h>
 #include <Items/Materials/NormalMapTextureMaterial.h>
 #include <Items/Materials/NormalMapMultiTextureMaterial.h>
+#include <Items/Materials/SkyboxMaterial.h>
 #include <Items\Materials\TextureMaterialCommons.h>
 #include <Textures.h>
 #include <Items\GraphicItems\Lights\AmbientLight.h>
@@ -246,10 +247,10 @@ namespace Application
 		//cam->AddPostProcess(GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess(lightQuad));
 		//cam->AddPostProcess( GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess(lightQuad) );
 
-		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere lightSphere(mat);
+		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere lightSphere(mat, 2.0f);
 
 		GeometryEngine::GeometryItemUtils::PerspectiveViewport lightViewport(QVector4D(0, 0, this->width(), this->height()), 90.0f, 1.0f, 0.1f, 1000.0f);
-		//GeometryEngine::GeometryItemUtils::OrtographicViewport lightViewport(QVector4D(0, 0, this->width(), this->height()), QRect(-this->width() / 24, -this->height() / 24, this->width() / 12, this->height() / 12), 0.1f, 1000.0f);
+		GeometryEngine::GeometryItemUtils::OrtographicViewport lightViewportOrto(QVector4D(0, 0, this->width(), this->height()), QRect(-this->width() / 24, -this->height() / 24, this->width() / 12, this->height() / 12), 0.1f, 1000.0f);
 
 		//mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight(45.0f, QVector3D(0.5f, 0.3f, 0.1f), QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
 		//	QVector3D(1.0f, 1.0f, 1.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(5.0f, 4.0f, -15.0f));
@@ -259,11 +260,11 @@ namespace Application
 
 		//mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight(45.0f, QVector3D(0.1f, 0.1f, 0.01f), lightViewport, QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
 		//	QVector3D(1.0f, 1.0f, 1.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(5.0f, 10.0f, -15.0f));
-		secondLight = new GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight(45.0f, QVector3D(0.1f, 0.1f, 0.01f), lightViewport, QVector3D(0.0f, -1.0f, 0.0f), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
+		secondLight = new GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight(45.0f, QVector3D(0.1f, 0.1f, 0.01f), lightViewportOrto, QVector3D(0.0f, -1.0f, 0.0f), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
 				QVector3D(0.0f, 0.0f, 0.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(-5.0f, 10.0f, -15.0f));
 
-		//mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight(lightViewport, QVector3D(0.0, -1.0, 0.0), &lightQuad, QVector3D(1.0f, 1.0f, 1.0f),
-		//	QVector3D(1.0f, 1.0f, 1.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(5.0f, 30.0f, -15.0f));
+		mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight(lightViewportOrto, QVector3D(0.0, -1.0, 0.0), &lightQuad, QVector3D(0.2f, 0.2f, 0.2f),
+			QVector3D(0.2f, 0.2f, 0.2f), QVector3D(0.2f, 0.2f, 0.2f), QVector3D(5.0f, 30.0f, -15.0f));
 
 		//GeometryEngine::GeometryWorldItem::GeometryItem::Cube* lightCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 0.2f, QVector3D(5.0f, 5.0f, -15.0f), QVector3D(0.1f, 0.1f, 0.1f), QVector3D(1.0f, 1.0f, 1.0f));
 		//GeometryEngine::GeometryWorldItem::GeometryItem::Cube* 
@@ -271,14 +272,38 @@ namespace Application
 
 		lightCube2->SetCastsShadows(false);
 
+		std::vector<QVector2D> texCoordArray;
+		// FRONT
+		texCoordArray.push_back(QVector2D(1.0f, 0.3333f)); texCoordArray.push_back(QVector2D(0.75f, 0.3333f)); 
+		texCoordArray.push_back(QVector2D(1.0f, 0.66666f)); texCoordArray.push_back(QVector2D(0.75f, 0.66666f));
+		// RIGHT
+		texCoordArray.push_back(QVector2D(0.75f, 0.3333f)); texCoordArray.push_back(QVector2D(0.5f, 0.3333f));
+		texCoordArray.push_back(QVector2D(0.75f, 0.6666f)); texCoordArray.push_back(QVector2D(0.5f, 0.6666f));
+		// BACK
+		texCoordArray.push_back(QVector2D(0.5f, 0.3333f)); texCoordArray.push_back(QVector2D(0.25f, 0.3333f));
+		texCoordArray.push_back(QVector2D(0.5f, 0.66666f)); texCoordArray.push_back(QVector2D(0.25f, 0.6666f));
+		// LEFT
+		texCoordArray.push_back(QVector2D(0.25f, 0.3333f)); texCoordArray.push_back(QVector2D(0.0f, 0.3333f));
+		texCoordArray.push_back(QVector2D(0.25f, 0.6666f)); texCoordArray.push_back(QVector2D(0.0f, 0.6666f));
+		// BOTTOM
+		texCoordArray.push_back(QVector2D(0.25f, 0.3333f)); texCoordArray.push_back(QVector2D(0.5f, 0.3333f));
+		texCoordArray.push_back(QVector2D(0.25f, 0.0f)); texCoordArray.push_back(QVector2D(0.5f, 0.0f));
+		// TOP
+		texCoordArray.push_back(QVector2D(0.25f, 1.0f)); texCoordArray.push_back(QVector2D(0.5f, 1.0f));
+		texCoordArray.push_back(QVector2D(0.25f, 0.6666f)); texCoordArray.push_back(QVector2D(0.5f, 0.66666f));
+
+		GeometryEngine::GeometryMaterial::SkyboxMaterial skyboxMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_SKYBOX_TEXTURE);
+		skyboxCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(skyboxMat, 200.0f, QVector3D(.0f,.0f,.0f), QVector3D(.0f,.0f,.0f), QVector3D(1.0f, 1.0f, 1.0f), nullptr, &texCoordArray);
+
 		//GeometryEngine::OrthographicCamera* cam2 = new GeometryEngine::OrthographicCamera(QVector4D(0, this->height() / 2, this->width()/2, this->height() / 2), QRect(-10, 10, 20, 20));
+		scene->AddItem(skyboxCube);
 		scene->AddItem(testCube);
 		scene->AddItem(testCube2);
 		//scene->AddItem(lightCube);
 		scene->AddItem(lightCube2);
 		scene->AddItem(floor);
 		scene->AddCamera(cam);
-		//scene->AddLight(mainLight);
+		scene->AddLight(mainLight);
 		scene->AddLight(secondLight);
 		//scene->AddCamera(cam2);
 		scene->InitializeGL();

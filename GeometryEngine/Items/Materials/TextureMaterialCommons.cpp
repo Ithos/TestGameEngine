@@ -14,6 +14,7 @@ const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_UNIFIE
 const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_TEXTURE = "TEST_TEXTURE";
 const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE = "TEST_BLACK_TEXTURE";
 const std::string GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP = "NORMALMAP_TEST_BLUE_CHIP";
+const std::string GeometryEngine::GeometryMaterial::TextureConstant::TEST_SKYBOX_TEXTURE = "TEST_SKYBOX_TEXTURE";
 
 GeometryEngine::GeometryMaterial::TextureParameters::TextureParameters(const std::string & texDir, int vertex, bool getFromConf) : Texture(nullptr), mpConfInstance(nullptr), mpTexDirManager(nullptr)
 {

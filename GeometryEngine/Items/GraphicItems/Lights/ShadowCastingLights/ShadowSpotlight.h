@@ -36,8 +36,16 @@ namespace GeometryEngine
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
 					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
 
+				/// Copy constructor
+				/// param ref Const reference to StencilTestLight to be copied
+				ShadowSpotlight(const ShadowSpotlight& ref) { copy(ref); initLight(); initShadow(); };
+
 				/// Destructor
 				virtual ~ShadowSpotlight();
+
+				/// Factory method. Returns a copy of this object.
+				/// return A copy of this object.
+				virtual ShadowSpotlight* Clone() const override { return new ShadowSpotlight((*this)); }
 			protected:
 				QVector3D mAttenuationParameters;
 				float mMaxLightAngle;
@@ -57,7 +65,9 @@ namespace GeometryEngine
 				virtual void calculateContribution(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum) override;
 				/// The class overrides this method to initialize the bounding geometry for the light 
 				virtual void initLight() override;
-
+				/// Copies the data from a ShadowMapLight into this object
+				/// param ref ShadowMapLight to be copied
+				virtual void copy(const ShadowSpotlight& ref);
 			};
 		}
 	}

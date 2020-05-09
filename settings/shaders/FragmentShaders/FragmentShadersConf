@@ -15,3 +15,4 @@ GREY_SCALE_PROCESS_FRAGMENT_SHADER = PostProcess\GreyScale.frag
 DIRECTIONAL_SHADOW_LIGHT_FRAGMENT_SHADER = Lights\ShadowCastingLights\DirectionalShadowLight.frag
 SPOTLIGHT_SHADOW_LIGHT_FRAGMENT_SHADER = Lights\ShadowCastingLights\ShadowSpotlight.frag
 SHADOW_MAP_FRAGMENT_SHADER = Lights\ShadowCastingLights\ShadowMap.frag
+EMISSIVE_LIGHTING_FRAGMENT_SHADER = Lights\EmissiveIllumination.frag

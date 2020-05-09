@@ -126,7 +126,7 @@ $(function() {
 : <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager.html#a8f42a16dacecdc9422b88c71cfb38889">GeometryEngine::GeometryBuffer::GFramebufferManager</a>
 </li>
 <li>SetInitialSetup()
-: <a class="el" href="class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene.html#a3c873554ae0898335d397d90aa2d25c3">GeometryEngine::GeometryScene::GeometryScene</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene.html#aaef4d7c17ec0292604c3d0cbb861b980">GeometryEngine::GeometryScene::GeometryScene</a>
 </li>
 <li>SetMaterial()
 : <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html#addd7b6651de0583209ec45ff1a813dd1">GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem</a>
@@ -144,6 +144,7 @@ $(function() {
 : <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_color_material.html#afc9bcbd2091f6592dfb8a6ace1d4adfb">GeometryEngine::GeometryMaterial::ColorMaterial</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html#a68310797df53062f237d0005fbcfce7e">GeometryEngine::GeometryMaterial::Material</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material.html#a5f07e3b2b0867d3905f912159ef2f67b">GeometryEngine::GeometryMaterial::MultiTextureMaterial</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_skybox_material.html#a7760402d819462db205dadf3f370af73">GeometryEngine::GeometryMaterial::SkyboxMaterial</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html#a985cdde7240f2acb18cd2944c5ca6193">GeometryEngine::GeometryMaterial::TextureMaterial</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material.html#a11bf01fb1d5ef41fb1a9cf4080c98b8c">GeometryEngine::GeometryMaterial::VertexColorMaterial</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process.html#a280fb0972fb63b1d0f283604678a7404">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess</a>
@@ -185,10 +186,13 @@ $(function() {
 <li>setStencilLight()
 : <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a576001cdaa8f2a377b926d9bcd7b2444">GeometryEngine::GeometryRenderStep::LightingPass</a>
 </li>
+<li>SetTexture()
+: <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_skybox_material.html#a8abf2f8ba43b6c17e31b3c82a958744f">GeometryEngine::GeometryMaterial::SkyboxMaterial</a>
+</li>
 <li>SetViewportSize()
 : <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_perspective_viewport.html#a01764cc11407ed9ce70111a627c823ae">GeometryEngine::GeometryItemUtils::PerspectiveViewport</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_viewport.html#aee56ad377f9615e64c33bdef3d05c94f">GeometryEngine::GeometryItemUtils::Viewport</a>
-, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#aabac97d1334ff271308102e53735d042">GeometryEngine::GeometryWorldItem::GeometryCamera::Camera</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a96954629a05eba955adc1dff2df1fbdb">GeometryEngine::GeometryWorldItem::GeometryCamera::Camera</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera.html#a16da38cfd723b755a63c372c08bbedf7">GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera</a>
 </li>
 <li>SetVisible()
@@ -204,22 +208,25 @@ $(function() {
 : <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light.html#adea3c877b7843389e52c351e5e4d5a75">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight</a>
 </li>
 <li>ShadowSpotlight()
-: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_spotlight.html#acd334b4a1d25cf529996f7960eb84312">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_spotlight.html#a8757a401616b581827158f64eb176964">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight</a>
 </li>
 <li>SingleColorTextBuffer()
-: <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer.html#a5c0841f56cbf2f652cfbf0d64c7abbce">GeometryEngine::GeometryBuffer::SingleColorTextBuffer</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer.html#ad0e30e16f3630ecf9ca654688b964067">GeometryEngine::GeometryBuffer::SingleColorTextBuffer</a>
 </li>
 <li>SinglePassPostProcess()
 : <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_single_pass_post_process.html#ad7fa78d4f0933ea4005612b4cdb2f34a">GeometryEngine::GeometryPostProcess::SinglePassPostProcess::SinglePassPostProcess</a>
 </li>
+<li>SkyboxMaterial()
+: <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_skybox_material.html#a7cc6c7bb2246caad7f2eead65acb7bd8">GeometryEngine::GeometryMaterial::SkyboxMaterial</a>
+</li>
 <li>Sphere()
-: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere.html#a65773e4801ab90a98d73a2905c785fd3">GeometryEngine::GeometryWorldItem::GeometryItem::Sphere</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere.html#a347e98690182023f565422548d4a6b9f">GeometryEngine::GeometryWorldItem::GeometryItem::Sphere</a>
 </li>
 <li>splitString()
 : <a class="el" href="class_string_functions_1_1_string_functions.html#ad3aa0a66a39c3fbe2f7b35e750b1338a">StringFunctions::StringFunctions</a>
 </li>
 <li>Spotlight()
-: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight.html#ad7bc16302cf245e1f71d8c9af23d3a20">GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight.html#a9d503c8da14980a0e7df3c9c0edde42c">GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight</a>
 </li>
 <li>StartFrame()
 : <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#adda275d5380f81e48c41114b52eaaa5f">GeometryEngine::GeometryBuffer::GBuffer</a>

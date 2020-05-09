@@ -10,3 +10,4 @@ TEST_RIGHT_TEXTURE = RightTest.bmp
 TEST_UNIFIED_CUBE = UnifiedCube.png
 TEST_TEXTURE = TestTexture.bmp
 TEST_BLACK_TEXTURE = Black.bmp
+TEST_SKYBOX_TEXTURE = skyboxTexture.jpg

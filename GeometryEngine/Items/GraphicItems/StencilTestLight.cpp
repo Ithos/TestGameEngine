@@ -102,3 +102,11 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::runSten
 	// Draw light
 	glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);
 }
+
+void GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight::copy(const StencilTestLight & ref)
+{
+	DeferredShadingLight::copy(ref);
+	this->mStencilVertexShaderKey = ref.mStencilVertexShaderKey;
+	this->mStencilFragmentShaderKey = ref.mStencilFragmentShaderKey;
+	this-> mpStencilProgram = nullptr;
+}

@@ -30,8 +30,14 @@ namespace GeometryEngine
 					const QVector3D& ambient = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
 					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
+				/// Copy constructor
+				/// param ref Const reference to AmbientLight to be copied
+				AmbientLight(const AmbientLight& ref) { copy(ref); initLight(); };
 				/// Destructor
 				~AmbientLight();
+				/// Factory method. Returns a copy of this object.
+				/// return A copy of this object.
+				virtual AmbientLight* Clone() const { return new AmbientLight(*this); };
 			protected:
 				/// Sets the keys for the light shaders
 				virtual void initLightShaders();
@@ -47,6 +53,9 @@ namespace GeometryEngine
 				/// param totalVertexNum Number of vetices
 				/// param titalIndexNum Number of indices
 				virtual void calculateContribution(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum);
+				/// Copies the data from a AmbientLight into this object
+				/// param ref AmbientLight to be copied
+				virtual void copy(const AmbientLight& ref) { DeferredShadingLight::copy(ref); };
 			};
 		}
 	}

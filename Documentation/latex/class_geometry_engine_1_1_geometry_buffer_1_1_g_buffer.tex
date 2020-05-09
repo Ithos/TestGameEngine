@@ -75,7 +75,7 @@ void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a9b
 \begin{DoxyCompactList}\small\item\em Binds all textures. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad64fb7191a7dc256b1282a7f1deab756}{Bind\+Final\+Texture}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} location)
 \item 
-void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a710627a05fa69f6aa98ee6d90ab57e85}{Bind\+Final\+Texture}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} location, \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&buffer\+Info)
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a710627a05fa69f6aa98ee6d90ab57e85}{Bind\+Final\+Texture}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} location, \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&buffer\+Info)
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a1ef28cc887dbd56d20ae4df0617b8eb1}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a1ef28cc887dbd56d20ae4df0617b8eb1}} 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a1ef28cc887dbd56d20ae4df0617b8eb1}{Reset\+Bindings}} ()
@@ -108,7 +108,7 @@ void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a51
 \begin{DoxyCompactList}\small\item\em Detaches the tmp depth buffer and ataches the depth texture to the framebuffer. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{G\+Buffer}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_af993f8c23f7e78051f3071be4873af9d}{Clone}} () const
 \item 
-void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad1242e69d277b69b58497f7d489e176c}{Fill\+G\+Buffer\+Info}} (\mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&buffer\+Info)
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_ad1242e69d277b69b58497f7d489e176c}{Fill\+G\+Buffer\+Info}} (\mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&buffer\+Info)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -173,9 +173,9 @@ Binds the final texture to the selected texture location param texture location 
 \index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!BindFinalTexture@{BindFinalTexture}}
 \index{BindFinalTexture@{BindFinalTexture}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
 \subsubsection{\texorpdfstring{BindFinalTexture()}{BindFinalTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Bind\+Final\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}}}]{location,  }\item[{\mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{buffer\+Info }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Bind\+Final\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a718dceafcac1915f7de061108597e1cc}{G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}}}]{location,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{buffer\+Info }\end{DoxyParamCaption})}
 
-Binds the final texture to the selected texture location and updates buffer\+Info final texture param texture location to be bound param \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} reference to be updated \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6a2469afe0c79b97d35ba5d2b6a1ae52}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6a2469afe0c79b97d35ba5d2b6a1ae52}} 
+Binds the final texture to the selected texture location and updates buffer\+Info final texture param texture location to be bound param \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} reference to be updated \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6a2469afe0c79b97d35ba5d2b6a1ae52}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a6a2469afe0c79b97d35ba5d2b6a1ae52}} 
 \index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!BindTexture@{BindTexture}}
 \index{BindTexture@{BindTexture}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
 \subsubsection{\texorpdfstring{BindTexture()}{BindTexture()}}
@@ -211,9 +211,9 @@ Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_
 \index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!FillGBufferInfo@{FillGBufferInfo}}
 \index{FillGBufferInfo@{FillGBufferInfo}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
 \subsubsection{\texorpdfstring{FillGBufferInfo()}{FillGBufferInfo()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Fill\+G\+Buffer\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{buffer\+Info }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Buffer\+::\+Fill\+G\+Buffer\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{buffer\+Info }\end{DoxyParamCaption})}
 
-Sets the data of a \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} param buffer\+Info \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} to be updated \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a47bda4849000d2728538de4e2f27f11a}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a47bda4849000d2728538de4e2f27f11a}} 
+Sets the data of a \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} param buffer\+Info \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} to be updated \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a47bda4849000d2728538de4e2f27f11a}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer_a47bda4849000d2728538de4e2f27f11a}} 
 \index{GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}!GetMaxTextureSize@{GetMaxTextureSize}}
 \index{GetMaxTextureSize@{GetMaxTextureSize}!GeometryEngine::GeometryBuffer::GBuffer@{GeometryEngine::GeometryBuffer::GBuffer}}
 \subsubsection{\texorpdfstring{GetMaxTextureSize()}{GetMaxTextureSize()}}

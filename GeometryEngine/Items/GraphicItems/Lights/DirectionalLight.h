@@ -32,12 +32,18 @@ namespace GeometryEngine
 					const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
 					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
+				/// Copy constructor
+				/// param ref Const reference to DirectionalLight to be copied
+				DirectionalLight(const DirectionalLight& ref) { copy(ref); initLight(); };
 				/// Destructor
 				virtual ~DirectionalLight();
 				///Sets the light direction. This direction is affected by the item rotation
 				void SetDirection(const QVector3D& dir) { mDirection = dir; }
 				///Returs the light direction
 				const QVector3D& GetDirection() { return mDirection; }
+				/// Factory method. Returns a copy of this object.
+				/// return A copy of this object.
+				virtual DirectionalLight* Clone() const { return new DirectionalLight(*this); };
 			protected:
 				QVector3D mDirection;
 				/// Sets the keys for the light shaders
@@ -54,6 +60,9 @@ namespace GeometryEngine
 				/// param totalVertexNum Number of vetices
 				/// param titalIndexNum Number of indices
 				virtual void calculateContribution(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum);
+				/// Copies the data from a DirectionalLight into this object
+				/// param ref DirectionalLight to be copied
+				virtual void copy(const DirectionalLight& ref) { DeferredShadingLight::copy(ref); this->mDirection = ref.mDirection; };
 			};
 		}
 	}

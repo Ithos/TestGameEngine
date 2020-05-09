@@ -12,7 +12,7 @@ Appplies lighting to already rendered geometry.
 Inheritance diagram for Geometry\+Engine\+::Geometry\+Render\+Step\+::Lighting\+Pass\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=4.000000cm]{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}
+\includegraphics[height=2.986667cm]{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -40,7 +40,7 @@ void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lightin
 \item 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a9d0a0f3b9d52036b9d4f9fbee353cd10}{apply\+Light}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$lights)
 \item 
-void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_ae55cc29215ac54a526d9107f4e1f2803}{apply\+Single\+Light}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buf, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$light)
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_ae55cc29215ac54a526d9107f4e1f2803}{apply\+Single\+Light}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buf, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$light)
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a980473c9d2e2e77ebdce9e56454f3d3f}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a980473c9d2e2e77ebdce9e56454f3d3f}} 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a980473c9d2e2e77ebdce9e56454f3d3f}{finish\+Step}} ()
@@ -88,7 +88,7 @@ Applies stencil test and renders every light in the set param cam Pointer to Cam
 \index{GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}!applySingleLight@{applySingleLight}}
 \index{applySingleLight@{applySingleLight}!GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}}
 \subsubsection{\texorpdfstring{applySingleLight()}{applySingleLight()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass\+::apply\+Single\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{const \mbox{\hyperlink{struct_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buf,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{light }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass\+::apply\+Single\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buf,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{light }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 Applies the effects of a single light to the scene param cam Pointer to Camera to be rendered param g\+Buf Geometry buffer information to be passed to the light shader param light Light to be calculated \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4f1cb36c7bf6a90d0aa3b8e8feba5e5e}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4f1cb36c7bf6a90d0aa3b8e8feba5e5e}} 
 \index{GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}!Clone@{Clone}}
@@ -102,7 +102,7 @@ Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_r
 
 
 
-Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a73176d6860aee0903034eeaf93edb40d}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass}}.
+Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a73176d6860aee0903034eeaf93edb40d}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a5a46d5e73fe672e09584a2e6e8bfa5e8}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Emissive\+Lighting\+Pass}}.
 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4865616b03a872033a6f9abc5c370374}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4865616b03a872033a6f9abc5c370374}} 
 \index{GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}!copy@{copy}}
@@ -128,7 +128,7 @@ Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_r
 
 
 
-Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_af52807435083cd96125e6ef6d7453027}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass}}.
+Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_af52807435083cd96125e6ef6d7453027}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_adffe18f64968290aedda426bc4450414}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Emissive\+Lighting\+Pass}}.
 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a437ff10a7ef9e7529a4852389a5cf871}\label{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a437ff10a7ef9e7529a4852389a5cf871}} 
 \index{GeometryEngine::GeometryRenderStep::LightingPass@{GeometryEngine::GeometryRenderStep::LightingPass}!renderLights@{renderLights}}

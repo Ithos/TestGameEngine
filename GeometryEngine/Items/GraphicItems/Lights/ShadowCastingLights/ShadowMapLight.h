@@ -47,6 +47,10 @@ namespace GeometryEngine
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
 					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
 
+				/// Copy constructor
+				/// param ref Const reference to StencilTestLight to be copied
+				ShadowMapLight(const ShadowMapLight& ref) { copy(ref); };
+
 				/// Destructor
 				virtual ~ShadowMapLight();
 
@@ -70,7 +74,15 @@ namespace GeometryEngine
 				void SetDirection(const QVector3D& dir) { mDirection = dir; }
 				///Returs the light direction
 				const QVector3D& GetDirection() { return mDirection; }
+
+				/// Factory method. Returns a copy of this object.
+				/// return A copy of this object.
+				virtual ShadowMapLight* Clone() const = 0;
+
 			protected:
+				/// Private constructor for object copies
+				ShadowMapLight() {}
+
 				/// Shadow map shader
 				QOpenGLShaderProgram* mpShadowMapProgram; 
 
@@ -94,6 +106,9 @@ namespace GeometryEngine
 				/// param totalVertexNum Number of vetices
 				/// param titalIndexNum Number of indices
 				virtual void renderShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum);
+				/// Copies the data from a ShadowMapLight into this object
+				/// param ref ShadowMapLight to be copied
+				virtual void copy(const ShadowMapLight& ref);
 			};
 		}
 	}

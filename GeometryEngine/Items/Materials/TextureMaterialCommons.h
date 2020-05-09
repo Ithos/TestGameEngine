@@ -35,6 +35,7 @@ namespace GeometryEngine
 			static const std::string TEST_TEXTURE;
 			static const std::string TEST_BLACK_TEXTURE;
 			static const std::string NORMALMAP_TEST_BLUE_CHIP;
+			static const std::string TEST_SKYBOX_TEXTURE;
 		};
 
 		/// Class that holds texture data
@@ -65,6 +66,7 @@ namespace GeometryEngine
 			friend class MultiTextureMaterial;
 			friend class NormalMapTextureMaterial;
 			friend class NormalMapMultiTextureMaterial;
+			friend class SkyboxMaterial;
 
 			/// Get instances to configuration and texture managers
 			void initManagers();

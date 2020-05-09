@@ -32,9 +32,14 @@ namespace GeometryEngine
 					const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
 					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
-
+				/// Copy constructor
+				/// param ref Const reference to Spotlight to be copied
+				Spotlight(const Spotlight& ref) { copy(ref); initLight(); };
 				/// Destructor
 				~Spotlight();
+				/// Factory method. Returns a copy of this object.
+				/// return A copy of this object.
+				virtual Spotlight* Clone() const { return new Spotlight(*this); };
 			protected:
 				QVector3D mDirection;
 				QVector3D mAttenuationParameters;
@@ -55,6 +60,9 @@ namespace GeometryEngine
 				virtual void calculateContribution(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum);
 				/// The class overrides this method to initialize the bounding geometry for the light 
 				virtual void initLight();
+				/// Copies the data from a Spotlight into this object
+				/// param ref Spotlight to be copied
+				virtual void copy(const Spotlight& ref);
 			};
 		}
 	}

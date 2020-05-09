@@ -30,9 +30,14 @@ namespace GeometryEngine
 					const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
 					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
-
+				/// Copy constructor
+				/// param ref Const reference to PointLight to be copied
+				PointLight(const PointLight& ref) { copy(ref); initLight(); };
 				/// Destructor
 				~PointLight();
+				/// Factory method. Returns a copy of this object.
+				/// return A copy of this object.
+				virtual PointLight* Clone() const { return new PointLight(*this); };
 			protected:
 				QVector3D mAttenuationParameters;
 				/// Sets the keys for the light shaders
@@ -50,6 +55,9 @@ namespace GeometryEngine
 				virtual void calculateContribution(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum);
 				/// The class overrides this method to initialize the bounding geometry for the light 
 				virtual void initLight() override;
+				/// Copies the data from a PointLight into this object
+				/// param ref PointLight to be copied
+				virtual void copy(const PointLight& ref) { DeferredShadingLight::copy(ref); this->mAttenuationParameters = ref.mAttenuationParameters; };
 			};
 		}
 	}

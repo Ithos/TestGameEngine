@@ -94,8 +94,8 @@ Inheritance diagram for GeometryEngine::GeometryWorldItem::GeometryItem::Cube:</
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3971e98ccf681ba9dfae15b33ae0ca22"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html#a3971e98ccf681ba9dfae15b33ae0ca22">Cube</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html">GeometryMaterial::Material</a> &amp;mat, float size=1.0f, const QVector3D &amp;pos=QVector3D(0.0f, 0.0f, 0.0f), const QVector3D &amp;rot=QVector3D(0.0f, 0.0f, 0.0f), const QVector3D &amp;scale=QVector3D(1.0f, 1.0f, 1.0f), WorldItem *parent=nullptr)</td></tr>
-<tr class="separator:a3971e98ccf681ba9dfae15b33ae0ca22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17e32e15517c004eaaf5187d8c6bce4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html#a17e32e15517c004eaaf5187d8c6bce4e">Cube</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html">GeometryMaterial::Material</a> &amp;mat, float size=1.0f, const QVector3D &amp;pos=QVector3D(0.0f, 0.0f, 0.0f), const QVector3D &amp;rot=QVector3D(0.0f, 0.0f, 0.0f), const QVector3D &amp;scale=QVector3D(1.0f, 1.0f, 1.0f), WorldItem *parent=nullptr, std::vector&lt; QVector2D &gt; *textureCoordArray=nullptr)</td></tr>
+<tr class="separator:a17e32e15517c004eaaf5187d8c6bce4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a159c3e7e79d19df2a9857fc6b77d5955"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html#a159c3e7e79d19df2a9857fc6b77d5955">Cube</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html">Cube</a> &amp;ref)</td></tr>
 <tr class="separator:a159c3e7e79d19df2a9857fc6b77d5955"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08410ebbd8eb4adce0706505e0150ba1"><td class="memItemLeft" align="right" valign="top"><a id="a08410ebbd8eb4adce0706505e0150ba1"></a>
@@ -213,6 +213,10 @@ Protected Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html#acdfe53700969b8060b6649f4cea14b41">initGeometry</a> () override</td></tr>
 <tr class="memdesc:acdfe53700969b8060b6649f4cea14b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes vertices an indices buffers. <br /></td></tr>
 <tr class="separator:acdfe53700969b8060b6649f4cea14b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab76ab6dee3ea30ce6b4f4bb102fe9a7e"><td class="memItemLeft" align="right" valign="top"><a id="ab76ab6dee3ea30ce6b4f4bb102fe9a7e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html#ab76ab6dee3ea30ce6b4f4bb102fe9a7e">initTextureCoordinates</a> (std::vector&lt; QVector2D &gt; *textureCoordArray)</td></tr>
+<tr class="memdesc:ab76ab6dee3ea30ce6b4f4bb102fe9a7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the texture coordinates. <br /></td></tr>
+<tr class="separator:ab76ab6dee3ea30ce6b4f4bb102fe9a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem</a></td></tr>
 <tr class="memitem:a9ccef8be90d38736e82f0d9666938b8a inherit pro_methods_class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item"><td class="memItemLeft" align="right" valign="top"><a id="a9ccef8be90d38736e82f0d9666938b8a"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html#a9ccef8be90d38736e82f0d9666938b8a">initItem</a> ()</td></tr>
@@ -224,6 +228,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ab8f55c65010441e00d9b7268285095d4"><td class="memItemLeft" align="right" valign="top"><a id="ab8f55c65010441e00d9b7268285095d4"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>mSize</b></td></tr>
 <tr class="separator:ab8f55c65010441e00d9b7268285095d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a323483a46488df07601e22333a655e9f"><td class="memItemLeft" align="right" valign="top"><a id="a323483a46488df07601e22333a655e9f"></a>
+std::vector&lt; QVector2D &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mTextureCoordinateArray</b></td></tr>
+<tr class="separator:a323483a46488df07601e22333a655e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem</a></td></tr>
 <tr class="memitem:a15dd56cefa01278fb6406249607e0e87 inherit pro_attribs_class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item"><td class="memItemLeft" align="right" valign="top"><a id="a15dd56cefa01278fb6406249607e0e87"></a>
 QOpenGLBuffer *&#160;</td><td class="memItemRight" valign="bottom"><b>mpArrayBuf</b></td></tr>
@@ -290,8 +297,8 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Geometry Item that defines a <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html" title="Geometry Item that defines a Cube.">Cube</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3971e98ccf681ba9dfae15b33ae0ca22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3971e98ccf681ba9dfae15b33ae0ca22">&#9670;&nbsp;</a></span>Cube() <span class="overload">[1/2]</span></h2>
+<a id="a17e32e15517c004eaaf5187d8c6bce4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17e32e15517c004eaaf5187d8c6bce4e">&#9670;&nbsp;</a></span>Cube() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -330,7 +337,13 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_world_item.html">WorldItem</a> *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; QVector2D &gt; *&#160;</td>
+          <td class="paramname"><em>textureCoordArray</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -339,7 +352,7 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor param mat Material to be used for rendering param size length of the cube side param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. </p>
+<p>Constructor param mat Material to be used for rendering param size length of the cube side param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. param textureCoordArray array of at least 24 elements containing texture coordinates, the order of the faces is FRONT, RIGHT, BACK, LEFT, BOTTOM, TOP, by default the texture is repeated on every face </p>
 
 </div>
 </div>

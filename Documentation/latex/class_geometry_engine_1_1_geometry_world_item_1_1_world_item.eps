@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 35.788846
+%%BoundingBox: 0 0 500 31.315240
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,13 +19,13 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 13.970834 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 15.966666 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
 /rows 6 def
-/cols 7 def
+/cols 8 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
 
@@ -184,6 +184,7 @@ boxfont setfont
 (GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight) cw
 (GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight) cw
 (GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight) cw
+(GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting) cw
 (GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight) cw
 (GeometryEngine::GeometryWorldItem::GeometryLight::PointLight) cw
 (GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight) cw
@@ -210,14 +211,15 @@ boundx scalefactor div boundy scalefactor div scale
  (GeometryEngine::GeometryWorldItem::GeometryItem::Quad) 2.000000 3.000000 box
  (GeometryEngine::GeometryWorldItem::GeometryItem::Sphere) 3.000000 3.000000 box
  (GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight) 4.000000 3.000000 box
- (GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight) 3.000000 2.000000 box
- (GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight) 4.000000 2.000000 box
- (GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight) 5.000000 2.000000 box
- (GeometryEngine::GeometryWorldItem::GeometryLight::PointLight) 4.000000 1.000000 box
- (GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight) 5.000000 1.000000 box
- (GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight) 6.000000 1.000000 box
- (GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight) 4.500000 0.000000 box
- (GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight) 5.500000 0.000000 box
+ (GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight) 2.500000 2.000000 box
+ (GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight) 3.500000 2.000000 box
+ (GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting) 4.500000 2.000000 box
+ (GeometryEngine::GeometryWorldItem::GeometryLight::StencilTestLight) 5.500000 2.000000 box
+ (GeometryEngine::GeometryWorldItem::GeometryLight::PointLight) 4.500000 1.000000 box
+ (GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight) 5.500000 1.000000 box
+ (GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight) 6.500000 1.000000 box
+ (GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight) 5.000000 0.000000 box
+ (GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight) 6.000000 0.000000 box
 
 % ----- relations -----
 
@@ -252,28 +254,30 @@ solid
 solid
 1 4.000000 2.250000 out
 solid
-3.000000 5.000000 3.000000 conn
+2.500000 5.500000 3.000000 conn
 solid
-0 3.000000 2.750000 in
+0 2.500000 2.750000 in
 solid
-0 4.000000 2.750000 in
+0 3.500000 2.750000 in
 solid
-0 5.000000 2.750000 in
+0 4.500000 2.750000 in
 solid
-1 5.000000 1.250000 out
+0 5.500000 2.750000 in
 solid
-4.000000 6.000000 2.000000 conn
+1 5.500000 1.250000 out
 solid
-0 4.000000 1.750000 in
+4.500000 6.500000 2.000000 conn
 solid
-0 5.000000 1.750000 in
+0 4.500000 1.750000 in
 solid
-1 5.000000 0.250000 out
+0 5.500000 1.750000 in
 solid
-4.500000 5.500000 1.000000 conn
+1 5.500000 0.250000 out
 solid
-0 6.000000 1.750000 in
+5.000000 6.000000 1.000000 conn
 solid
-0 4.500000 0.750000 in
+0 6.500000 1.750000 in
 solid
-0 5.500000 0.750000 in
+0 5.000000 0.750000 in
+solid
+0 6.000000 0.750000 in
