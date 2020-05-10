@@ -102,7 +102,7 @@ void GeometryEngine::GeometryMaterial::SkyboxMaterial::drawMaterial(QOpenGLBuffe
 	assert(mpProgram != nullptr && "Skybox Material --> Shader Program Null");
 	if (mpProgram != nullptr)
 	{
-		glDisable(GL_CULL_FACE);
+		glCullFace(GL_FRONT);
 
 		// Tell OpenGL which VBOs to use
 		vertexBuf->bind();
@@ -127,8 +127,7 @@ void GeometryEngine::GeometryMaterial::SkyboxMaterial::drawMaterial(QOpenGLBuffe
 
 		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
 
-		glEnable(GL_CULL_FACE);
-
+		glCullFace(GL_BACK);
 	}
 }
 

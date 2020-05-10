@@ -61,15 +61,24 @@ void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::initShadowStep(Ge
 	buf->ClearColorTexture(GeometryEngine::GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE_TEXCOORD);
 	buf->DetachDepthBuffer();
 	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_CULL_FACE);
-	glCullFace(GL_FRONT);
+
+	if (mFrontFaceCulling)
+	{
+		glEnable(GL_CULL_FACE);
+		glCullFace(GL_FRONT);
+	}
+
 	glClear(GL_DEPTH_BUFFER_BIT);
 }
 
 void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::finishShadowStep(GeometryBuffer::GBuffer* buf)
 {
-	glCullFace(GL_BACK);
-	glDisable(GL_CULL_FACE);
+	if (mFrontFaceCulling)
+	{
+		glCullFace(GL_BACK);
+		glDisable(GL_CULL_FACE);
+	}
+
 	buf->AttachDepthBuffer();
 	buf->UnbindTexture(GeometryEngine::GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE_TEXCOORD);
 }

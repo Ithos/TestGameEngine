@@ -70,6 +70,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GeometryEngine::GeometryRenderStep::ShadowedLightingPass Class Reference</div>  </div>
@@ -88,10 +89,8 @@ Inheritance diagram for GeometryEngine::GeometryRenderStep::ShadowedLightingPass
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa7ad63b588f46dd15bf660c9bd6a14f4"><td class="memItemLeft" align="right" valign="top"><a id="aa7ad63b588f46dd15bf660c9bd6a14f4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#aa7ad63b588f46dd15bf660c9bd6a14f4">ShadowedLightingPass</a> ()</td></tr>
-<tr class="memdesc:aa7ad63b588f46dd15bf660c9bd6a14f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
-<tr class="separator:aa7ad63b588f46dd15bf660c9bd6a14f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b97807a606bb5ac276e6c9c6e5f745"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#a16b97807a606bb5ac276e6c9c6e5f745">ShadowedLightingPass</a> (bool useFrontFaceCulling=true)</td></tr>
+<tr class="separator:a16b97807a606bb5ac276e6c9c6e5f745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf51ceddfb91cb0749f15074cc067e12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#abf51ceddfb91cb0749f15074cc067e12">ShadowedLightingPass</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html">ShadowedLightingPass</a> &amp;ref)</td></tr>
 <tr class="separator:abf51ceddfb91cb0749f15074cc067e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a023b4f4a44fd25c1e0f6695a604b1f72"><td class="memItemLeft" align="right" valign="top"><a id="a023b4f4a44fd25c1e0f6695a604b1f72"></a>
@@ -171,10 +170,43 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="inherit_header pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">GeometryEngine::GeometryRenderStep::RenderStep</a></td></tr>
 <tr class="memitem:afe0321446beeb4093dba701424ec1e8c inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#afe0321446beeb4093dba701424ec1e8c">copy</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">RenderStep</a> &amp;ref)</td></tr>
 <tr class="separator:afe0321446beeb4093dba701424ec1e8c inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:aae3f3534c07598d23a6e397dfde2acb9"><td class="memItemLeft" align="right" valign="top"><a id="aae3f3534c07598d23a6e397dfde2acb9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>mFrontFaceCulling</b></td></tr>
+<tr class="separator:aae3f3534c07598d23a6e397dfde2acb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a16b97807a606bb5ac276e6c9c6e5f745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16b97807a606bb5ac276e6c9c6e5f745">&#9670;&nbsp;</a></span>ShadowedLightingPass() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeometryEngine::GeometryRenderStep::ShadowedLightingPass::ShadowedLightingPass </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useFrontFaceCulling</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructor param useFrontFaceCulling Front face culling helps avoid Shadow acne. </p>
+
+</div>
+</div>
 <a id="abf51ceddfb91cb0749f15074cc067e12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf51ceddfb91cb0749f15074cc067e12">&#9670;&nbsp;</a></span>ShadowedLightingPass()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abf51ceddfb91cb0749f15074cc067e12">&#9670;&nbsp;</a></span>ShadowedLightingPass() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

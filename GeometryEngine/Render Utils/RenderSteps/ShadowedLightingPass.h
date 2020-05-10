@@ -18,7 +18,8 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor
-			ShadowedLightingPass() : LightingPass() {}
+			/// param useFrontFaceCulling Front face culling helps avoid Shadow acne.
+			ShadowedLightingPass(bool useFrontFaceCulling = true) : mFrontFaceCulling(useFrontFaceCulling), LightingPass() {}
 			/// Copy constructor
 			/// param ref Const reference to LightingPass to be copied
 			ShadowedLightingPass(const ShadowedLightingPass& ref) : LightingPass() { copy(ref); }
@@ -36,6 +37,9 @@ namespace GeometryEngine
 			virtual RenderStep* Clone() const override { return new ShadowedLightingPass(*this); }
 
 		protected:
+
+			bool mFrontFaceCulling;
+
 			/// Copies the data from a LightingPass into this object
 			/// param ref LightingPass to be copied
 			virtual void copy(const ShadowedLightingPass& ref) { LightingPass::copy(ref); }

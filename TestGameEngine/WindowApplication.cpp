@@ -189,8 +189,8 @@ namespace Application
 		//mainLight->Rotate(mainLight->ToModelCoordSystem(QVector3D(0.3f, 0.0f, 0.0f)));
 
 		static QVector3D mov(0.1f, 0.0f, 0.1f);
-		if (secondLight->GetPosition().z() < -45 || secondLight->GetPosition().x() < -20) mov = QVector3D(0.1f, 0.0f, 0.1f);
-		if (secondLight->GetPosition().z() > 15 || secondLight->GetPosition().x() > 10) mov = QVector3D(-0.1f, 0.0f, -0.1f);
+		if (secondLight->GetPosition().z() < -65 || secondLight->GetPosition().x() < -40) mov = QVector3D(0.1f, 0.0f, 0.1f);
+		if (secondLight->GetPosition().z() > 35 || secondLight->GetPosition().x() > 30) mov = QVector3D(-0.1f, 0.0f, -0.1f);
 
 		secondLight->Move(secondLight->ToModelCoordSystem(mov) );
 		lightCube2->Move(lightCube2->ToModelCoordSystem(mov));
@@ -249,7 +249,7 @@ namespace Application
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere lightSphere(mat, 2.0f);
 
-		GeometryEngine::GeometryItemUtils::PerspectiveViewport lightViewport(QVector4D(0, 0, this->width(), this->height()), 90.0f, 1.0f, 0.1f, 1000.0f);
+		GeometryEngine::GeometryItemUtils::PerspectiveViewport lightViewport(QVector4D(0, 0, this->width(), this->height()), 120.0f, 1.0f, 0.1f, 10000.0f);
 		GeometryEngine::GeometryItemUtils::OrtographicViewport lightViewportOrto(QVector4D(0, 0, this->width(), this->height()), QRect(-this->width() / 24, -this->height() / 24, this->width() / 12, this->height() / 12), 0.1f, 1000.0f);
 
 		//mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight(45.0f, QVector3D(0.5f, 0.3f, 0.1f), QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
@@ -260,17 +260,16 @@ namespace Application
 
 		//mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight(45.0f, QVector3D(0.1f, 0.1f, 0.01f), lightViewport, QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
 		//	QVector3D(1.0f, 1.0f, 1.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(5.0f, 10.0f, -15.0f));
-		secondLight = new GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight(45.0f, QVector3D(0.1f, 0.1f, 0.01f), lightViewportOrto, QVector3D(0.0f, -1.0f, 0.0f), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
-				QVector3D(0.0f, 0.0f, 0.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(-5.0f, 10.0f, -15.0f));
+		secondLight = new GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight(45.0f, QVector3D(0.1f, 0.1f, 0.01f), lightViewport, QVector3D(0.0f, -1.0f, 0.0f), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
+				QVector3D(0.0f, 0.0f, 0.0f), QVector3D(1.0f, 1.0f, 1.0f), QVector3D(-5.0f, 10.0f, -15.0f), QVector3D(0.0f, 0.0f, 0.0f), 0.0003f);
 
-		mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight(lightViewportOrto, QVector3D(0.0, -1.0, 0.0), &lightQuad, QVector3D(0.2f, 0.2f, 0.2f),
-			QVector3D(0.2f, 0.2f, 0.2f), QVector3D(0.2f, 0.2f, 0.2f), QVector3D(5.0f, 30.0f, -15.0f));
+		mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight(lightViewportOrto, QVector3D(0.0, -1.0, 0.0), &lightQuad, QVector3D(0.1f, 0.1f, 0.1f),
+			QVector3D(0.1f, 0.1f, 0.1f), QVector3D(0.1f, 0.1f, 0.1f), QVector3D(5.0f, 30.0f, -15.0f));
 
 		//GeometryEngine::GeometryWorldItem::GeometryItem::Cube* lightCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 0.2f, QVector3D(5.0f, 5.0f, -15.0f), QVector3D(0.1f, 0.1f, 0.1f), QVector3D(1.0f, 1.0f, 1.0f));
 		//GeometryEngine::GeometryWorldItem::GeometryItem::Cube* 
 			lightCube2 = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 0.2f, QVector3D(-5.0f, 10.0f, -15.0f), QVector3D(0.1f, 0.1f, 0.1f), QVector3D(1.0f, 1.0f, 1.0f));
-
-		lightCube2->SetCastsShadows(false);
+			lightCube2->SetCastsShadows(false);
 
 		std::vector<QVector2D> texCoordArray;
 		// FRONT
@@ -294,6 +293,7 @@ namespace Application
 
 		GeometryEngine::GeometryMaterial::SkyboxMaterial skyboxMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_SKYBOX_TEXTURE);
 		skyboxCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(skyboxMat, 200.0f, QVector3D(.0f,.0f,.0f), QVector3D(.0f,.0f,.0f), QVector3D(1.0f, 1.0f, 1.0f), nullptr, &texCoordArray);
+		skyboxCube->SetCastsShadows(false);
 
 		//GeometryEngine::OrthographicCamera* cam2 = new GeometryEngine::OrthographicCamera(QVector4D(0, this->height() / 2, this->width()/2, this->height() / 2), QRect(-10, 10, 20, 20));
 		scene->AddItem(skyboxCube);

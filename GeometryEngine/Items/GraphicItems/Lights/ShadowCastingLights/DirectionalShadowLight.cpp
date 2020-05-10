@@ -5,7 +5,8 @@
 
 GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::DirectionalShadowLight(const GeometryItemUtils::Viewport& viewport, const QVector3D & direction, 
 	GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, 
-	const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : ShadowMapLight(viewport, direction, boundingBox, diffuse, ambient, specular, pos, rot, scale, parent)
+	const QVector3D & rot, float maxShadowBias, const QVector3D & scale, WorldItem * parent) : 
+	ShadowMapLight(viewport, direction, boundingBox, diffuse, ambient, specular, pos, rot, maxShadowBias, scale, parent)
 {
 	initLight();
 	initShadow();
@@ -51,6 +52,7 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::s
 		mpProgram->setUniformValue("mLightSpaceMatrix", mpViewport->GetViewProjectionMatrix());
 
 		mpProgram->setUniformValue("mViewPos", viewPos);
+		mpProgram->setUniformValue("mMaxBias", mMaxShadowBias);
 	}
 }
 

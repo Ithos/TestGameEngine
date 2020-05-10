@@ -26,6 +26,7 @@ var searchData=
   ['getloadedshader',['GetLoadedShader',['../class_shader_files_1_1_shader_manager.html#a96cd9397c9e932cd69fac3ce4363dabe',1,'ShaderFiles::ShaderManager']]],
   ['getloadedshadercontent',['GetLoadedShaderContent',['../class_shader_files_1_1_shader_manager.html#a82aa01b675a8ef29aa1283f86574166e',1,'ShaderFiles::ShaderManager']]],
   ['getmaterialptr',['GetMaterialPtr',['../class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html#a2987613e4509c7748b72a76ccfe9babe',1,'GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem']]],
+  ['getmaxshadowbias',['GetMaxShadowBias',['../class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light.html#a6e0a525a1d150179e26af0d068e9379e',1,'GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight']]],
   ['getmaxtexturesize',['GetMaxTextureSize',['../class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a47bda4849000d2728538de4e2f27f11a',1,'GeometryEngine::GeometryBuffer::GBuffer']]],
   ['getmodelmatrix',['GetModelMatrix',['../class_geometry_engine_1_1_geometry_world_item_1_1_world_item.html#a341eff00c85bddf6ced93102ddf18408',1,'GeometryEngine::GeometryWorldItem::WorldItem']]],
   ['getnewframebuffer',['GetNewFramebuffer',['../class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager.html#a4409dc69749e27c6864b25a76b1bcec9',1,'GeometryEngine::GeometryBuffer::GFramebufferManager']]],

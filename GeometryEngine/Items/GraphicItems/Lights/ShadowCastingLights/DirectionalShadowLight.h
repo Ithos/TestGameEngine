@@ -25,12 +25,13 @@ namespace GeometryEngine
 				/// param specular Specular component of the light. Each color goes from 0.0 to 1.0
 				/// param pos Initial position of the item
 				/// param rot Initial rotaion of the item
+				/// param mMaxShadowBias Max shadow bias value allowed when calculating dynamic shadow bias. A greater value prevents shadow acne but may cause some shadows disappear suddenly.
 				/// param scale Initial scale to be applied to this item model
 				/// param parent Pointer to this items parent item, nullptr if none.
 				DirectionalShadowLight(const GeometryItemUtils::Viewport& viewport, const QVector3D& direction, GeometryItem::GeometryItem* boundingBox = nullptr,
 					const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& ambient = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
-					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
+					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f), float maxShadowBias = 0.0f,
 					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
 
 				/// Copy constructor

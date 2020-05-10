@@ -23,6 +23,7 @@ uniform sampler2D mShadowMap;
 uniform vec2 mTextureSize;
 
 uniform highp mat4 mLightSpaceMatrix;
+uniform float mMaxBias;
 
 layout (location = 0) out vec4 FragColor;
 
@@ -43,7 +44,7 @@ float ShadowCalculation(vec4 fragPosLightSpace, vec3 normal, vec3 lightDir)
     // bias deals with shadow acne 
     float cosTheta = clamp( dot(normal, lightDir), 0, 1);
     float bias = 0.0005*tan( acos( cosTheta) );
-    bias = clamp(bias, 0,0.01);
+    bias = clamp(bias, 0, mMaxBias); // 0.0001
     float shadow = 0.0;
 
     vec2 texelSize = 1.0 / textureSize(mShadowMap, 0);

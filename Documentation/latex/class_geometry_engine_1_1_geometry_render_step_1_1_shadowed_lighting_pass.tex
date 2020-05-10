@@ -9,9 +9,8 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+Render\+Step\+::Shadowed\+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_aa7ad63b588f46dd15bf660c9bd6a14f4}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_aa7ad63b588f46dd15bf660c9bd6a14f4}} 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_aa7ad63b588f46dd15bf660c9bd6a14f4}{Shadowed\+Lighting\+Pass}} ()
-\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a16b97807a606bb5ac276e6c9c6e5f745}{Shadowed\+Lighting\+Pass}} (bool use\+Front\+Face\+Culling=true)
+\item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_abf51ceddfb91cb0749f15074cc067e12}{Shadowed\+Lighting\+Pass}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass}{Shadowed\+Lighting\+Pass}} \&ref)
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a023b4f4a44fd25c1e0f6695a604b1f72}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a023b4f4a44fd25c1e0f6695a604b1f72}} 
@@ -28,13 +27,25 @@ virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1
 \item 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a6365f5d2036ee96eae06074917f691f3}{Calculate\+Shadow\+Map}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$shadowed\+Lights, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items)
 \end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_aae3f3534c07598d23a6e397dfde2acb9}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_aae3f3534c07598d23a6e397dfde2acb9}} 
+bool {\bfseries m\+Front\+Face\+Culling}
+\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_abf51ceddfb91cb0749f15074cc067e12}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_abf51ceddfb91cb0749f15074cc067e12}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a16b97807a606bb5ac276e6c9c6e5f745}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a16b97807a606bb5ac276e6c9c6e5f745}} 
 \index{GeometryEngine::GeometryRenderStep::ShadowedLightingPass@{GeometryEngine::GeometryRenderStep::ShadowedLightingPass}!ShadowedLightingPass@{ShadowedLightingPass}}
 \index{ShadowedLightingPass@{ShadowedLightingPass}!GeometryEngine::GeometryRenderStep::ShadowedLightingPass@{GeometryEngine::GeometryRenderStep::ShadowedLightingPass}}
-\subsubsection{\texorpdfstring{ShadowedLightingPass()}{ShadowedLightingPass()}}
+\subsubsection{\texorpdfstring{ShadowedLightingPass()}{ShadowedLightingPass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass\+::\+Shadowed\+Lighting\+Pass (\begin{DoxyParamCaption}\item[{bool}]{use\+Front\+Face\+Culling = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor param use\+Front\+Face\+Culling Front face culling helps avoid Shadow acne. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_abf51ceddfb91cb0749f15074cc067e12}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_abf51ceddfb91cb0749f15074cc067e12}} 
+\index{GeometryEngine::GeometryRenderStep::ShadowedLightingPass@{GeometryEngine::GeometryRenderStep::ShadowedLightingPass}!ShadowedLightingPass@{ShadowedLightingPass}}
+\index{ShadowedLightingPass@{ShadowedLightingPass}!GeometryEngine::GeometryRenderStep::ShadowedLightingPass@{GeometryEngine::GeometryRenderStep::ShadowedLightingPass}}
+\subsubsection{\texorpdfstring{ShadowedLightingPass()}{ShadowedLightingPass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass\+::\+Shadowed\+Lighting\+Pass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass}{Shadowed\+Lighting\+Pass}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{Lighting\+Pass}} to be copied 
