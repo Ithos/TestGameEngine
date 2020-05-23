@@ -17,7 +17,7 @@ namespace GeometryEngine
 			/// Constructor
 			/// param texDir Key of the texture to be loaded
 			/// param mormalMapDir Key of the normal map texture to be used
-			/// param shininess parameter. Equation: spec contribution = cos(alpha) ^ shininess
+			/// param shininess parameter. Equation: spec contribution = cos(alpha) ^ shininess. If shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
 			NormalMapTextureMaterial(const std::string& texDir, const std::string& mormalMapDir,  float shininess = 10.0f);
 			/// Copy constructor
 			/// param ref Object to be copied.

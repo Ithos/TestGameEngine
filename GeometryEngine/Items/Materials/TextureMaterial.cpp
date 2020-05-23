@@ -3,7 +3,7 @@
 #include "TextureMaterial.h"
 
 GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::string& texDir, float shininess, bool getFromConf ) :
-	Material(QVector3D(0.0f,0.0f,0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), shininess), mpTexDirManager(nullptr)
+	Material(shininess), mpTexDirManager(nullptr)
 {
 	std::list<TextureParameters*> tmpList;
 	TextureParameters tmpParam = TextureParameters(texDir, -1, getFromConf);
@@ -12,7 +12,7 @@ GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::st
 }
 
 GeometryEngine::GeometryMaterial::TextureMaterial::TextureMaterial(const std::list<TextureParameters* >& textureDirs, float shininess) : 
-	Material(QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), shininess), mpTexDirManager(nullptr)
+	Material(shininess), mpTexDirManager(nullptr)
 {
 	initMaterial( textureDirs );
 }
@@ -82,6 +82,7 @@ void GeometryEngine::GeometryMaterial::TextureMaterial::setProgramParameters(con
 		mpProgram->setUniformValue("modelViewProjectionMatrix", projection * view * parent.GetModelMatrix());
 		mpProgram->setUniformValue("modelViewMatrix", view * parent.GetModelMatrix());
 		mpProgram->setUniformValue("modelMatrix", parent.GetModelMatrix());
+		mpProgram->setUniformValue("mShininess", mShininess);
 
 		mpProgram->setUniformValue("texture", TEXTURE_UNIT );
 	}

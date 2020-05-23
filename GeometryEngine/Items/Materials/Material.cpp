@@ -15,11 +15,19 @@ const std::string GeometryEngine::GeometryMaterial::MaterialConstants::NORMALMAP
 const std::string GeometryEngine::GeometryMaterial::MaterialConstants::TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER = "TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER";
 const std::string GeometryEngine::GeometryMaterial::MaterialConstants::MULTI_TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER = "MULTI_TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER";
 
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_COLOR_MATERIAL_VERTEX_SHADER = "ALPHA_COLOR_MATERIAL_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_COLOR_MATERIAL_FRAGMENT_SHADER = "ALPHA_COLOR_MATERIAL_FRAGMENT_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_TEXTURE_MATERIAL_VERTEX_SHADER = "ALPHA_TEXTURE_MATERIAL_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_MULTI_TEXTURE_MATERIAL_FRAGMENT_SHADER = "ALPHA_MULTI_TEXTURE_MATERIAL_FRAGMENT_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_MULTI_TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER = "ALPHA_MULTI_TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_TEXTURE_MATERIAL_FRAGMENT_SHADER = "ALPHA_TEXTURE_MATERIAL_FRAGMENT_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_NORMALMAP_TEXTURE_MATERIAL_VERTEX_SHADER = "ALPHA_NORMALMAP_TEXTURE_MATERIAL_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER = "ALPHA_TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER";
 
-GeometryEngine::GeometryMaterial::Material::Material(const QVector3D & ambient, const QVector3D & diffuse, const QVector3D & specular, const QVector3D& emissive,
-	float shininess) : mpProgram(nullptr),
-	mAmbient(ambient), mDiffuse(diffuse), mSpecular(specular), mShininess(shininess), mEmissive(emissive), mpShaderManager(nullptr), mpConfInstance(nullptr)
+
+GeometryEngine::GeometryMaterial::Material::Material(float shininess) : mpProgram(nullptr), mpShaderManager(nullptr), mpConfInstance(nullptr), mShininess(shininess)
 {
+	mShininess = checkShininessValue(mShininess);
 }
 
 GeometryEngine::GeometryMaterial::Material::Material(const Material & mat)
@@ -107,11 +115,6 @@ void GeometryEngine::GeometryMaterial::Material::initProgram()
 
 void GeometryEngine::GeometryMaterial::Material::copy(const Material & mat)
 {
-	this->mAmbient = mat.mAmbient;
-	this->mDiffuse = mat.mDiffuse;
-	this->mSpecular = mat.mSpecular;
-	this->mShininess = mat.mShininess;
-	this->mEmissive = mat.mEmissive;
 	this->mLit = mat.mLit;
 	this->mpConfInstance = mat.mpConfInstance;
 	this->mFragmentShaderKey = mat.mFragmentShaderKey;

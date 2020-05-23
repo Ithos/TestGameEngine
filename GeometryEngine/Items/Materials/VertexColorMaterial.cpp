@@ -1,7 +1,7 @@
 #include "../GeometryItem.h"
 #include "VertexColorMaterial.h"
 
-GeometryEngine::GeometryMaterial::VertexColorMaterial::VertexColorMaterial() : Material()
+GeometryEngine::GeometryMaterial::VertexColorMaterial::VertexColorMaterial(float shininess) : Material(shininess)
 {
 	initMaterial();
 }
@@ -30,6 +30,7 @@ void GeometryEngine::GeometryMaterial::VertexColorMaterial::setProgramParameters
 		mpProgram->setUniformValue("modelViewProjectionMatrix", projection * view * parent.GetModelMatrix());
 		mpProgram->setUniformValue("modelViewMatrix", view * parent.GetModelMatrix());
 		mpProgram->setUniformValue("modelMatrix", parent.GetModelMatrix());
+		mpProgram->setUniformValue("mShininess", mShininess);
 	}
 }
 

@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeometryEngine.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryScene.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Geometries\Cube.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GeometryItem.h" />
+    <ClInclude Include="Items\WorldItem.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\Camera.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\Light.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\Lights\DirectionalLight.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\Lights\PointLight.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\Lights\Spotlight.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\Lights\AmbientLight.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\Material.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\TextureMaterial.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\ColorMaterial.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\GBuffer.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\Cameras\DeferredShadingCamera.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Geometries\Sphere.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\DeferredShadingLight.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Geometries\Quad.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\StencilTestLight.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\RenderStep.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\RenderSteps\GeometryPass.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\RenderSteps\LightingPass.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\RenderSteps\FinalPass.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\GlSetup.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\GlSetups\InitialSetup.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\DeferredShadingScene.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\Gbuffers\SingleColorTextureBuffer.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\Gbuffers\CompleteColorBuffer.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\VertexColorMaterial.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\MultiTextureMaterial.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\TextureMaterialCommons.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\PostProcessScene.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\PostProcess\PostProcess.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\CommonItemParameters.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\PostProcess\SinglePassPostProcess.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\PostProcess\DoublePassPostProcess.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\PostProcess\DoublePassPostProcess\BlurPostProcess.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\Gbuffers\CompleteColorPostProcessBuffer.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\NormalMapTextureMaterial.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\NormalMapMultiTextureMaterial.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\DirectionalShadowLight.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowMapLight.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\RenderSteps\ShadowedLightingPass.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Item Utils\Viewport.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Item Utils\Viewports\OrtographicViewport.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Item Utils\Viewports\PerspectiveViewport.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\DynamicShadowsScene.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\RenderSteps\PostProcessPass.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\BufferUtils\GFramebufferObject.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GTexture.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GRenderBuffer.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GRenderTarget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GDepthStencilTexture.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GFramebufferCommmons.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GDepthStencilRenderBuffer.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\BufferUtils\GFramebufferManager.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\SkyboxMaterial.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\RenderSteps\EmissiveLightingPass.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\Lights\EmissiveLighting.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\TransparentMaterial.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\TransparentMaterials\AlphaColorMaterial.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\TransparentMaterials\AlphaMultiTextureMaterial.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\TransparentMaterials\AlphaNormalmapMultiTextureMaterial.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\TransparentMaterials\AlphaTextureMaterial.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\Materials\TransparentMaterials\AlphaNormalMapTextureMaterial.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GeometryEngine.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryScene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GeometryItem.cpp" />
+    <ClCompile Include="Items\WorldItem.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\Camera.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Geometries\Cube.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\Light.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\Lights\DirectionalLight.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\Lights\PointLight.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\Lights\Spotlight.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\Lights\AmbientLight.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\Material.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\TextureMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\ColorMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\GBuffer.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Geometries\Sphere.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\DeferredShadingLight.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Geometries\Quad.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\StencilTestLight.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\RenderStep.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\RenderSteps\GeometryPass.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\RenderSteps\LightingPass.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\RenderSteps\FinalPass.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\GlSetup.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\GlSetups\InitialSetup.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes\DeferredShadingScene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\Gbuffers\SingleColorTextureBuffer.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\Gbuffers\CompleteColorBuffer.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\Cameras\DeferredShadingCamera.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\VertexColorMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\MultiTextureMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\TextureMaterialCommons.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes\PostProcessScene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\PostProcess\PostProcess.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\CommonItemParameters.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\PostProcess\SinglePassPostProcess.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\PostProcess\DoublePassPostProcess.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\PostProcess\DoublePassPostProcess\BlurPostProcess.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\Gbuffers\CompleteColorPostProcessBuffer.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\NormalMapTextureMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\NormalMapMultiTextureMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\DirectionalShadowLight.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowMapLight.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\RenderSteps\ShadowedLightingPass.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Item Utils\Viewport.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Item Utils\Viewports\OrtographicViewport.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Item Utils\Viewports\PerspectiveViewport.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes\DynamicShadowsScene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\RenderSteps\PostProcessPass.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\BufferUtils\GFramebufferObject.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\BufferUtils\FramebufferElements\GTexture.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\BufferUtils\FramebufferElements\GRenderBuffer.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\BufferUtils\FramebufferElements\GRenderTarget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\BufferUtils\FramebufferElements\GDepthStencilTexture.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\BufferUtils\FramebufferElements\GDepthStencilRenderBuffer.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\BufferUtils\GFramebufferManager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\SkyboxMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\RenderSteps\EmissiveLightingPass.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\Lights\EmissiveLighting.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\TransparentMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\TransparentMaterials\AlphaColorMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\TransparentMaterials\AlphaMultiTextureMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\TransparentMaterials\AlphaNormalmapMultiTextureMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\TransparentMaterials\AlphaTextureMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\Materials\TransparentMaterials\AlphaNormalMapTextureMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

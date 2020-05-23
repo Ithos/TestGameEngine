@@ -4,7 +4,7 @@
 #include "SkyboxMaterial.h"
 
 GeometryEngine::GeometryMaterial::SkyboxMaterial::SkyboxMaterial(const std::string & textureDir) :
-	Material(QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), 0.0), mpTexDirManager(nullptr), mpSkyboxTexture(nullptr)
+	Material(0.0), mpTexDirManager(nullptr), mpSkyboxTexture(nullptr)
 {
 	mpAmbientTexture = new TextureParameters(TextureConstant::TEST_BLACK_TEXTURE, -1, true);
 	mpDiffuseTexture = new TextureParameters(TextureConstant::TEST_BLACK_TEXTURE, -1, true);;
@@ -89,6 +89,7 @@ void GeometryEngine::GeometryMaterial::SkyboxMaterial::setProgramParameters(cons
 		mpProgram->setUniformValue("modelViewProjectionMatrix", projection * rot); // Nomodel matrix, the skybox does not move or rotate
 		mpProgram->setUniformValue("modelViewMatrix", rot);
 		mpProgram->setUniformValue("modelMatrix", mIdentityMatrix);
+		mpProgram->setUniformValue("mShininess", mShininess);
 
 		mpProgram->setUniformValue("textureAmbient", TEXTURE_UNIT);
 		mpProgram->setUniformValue("textureDiffuse", TEXTURE_UNIT + 1);

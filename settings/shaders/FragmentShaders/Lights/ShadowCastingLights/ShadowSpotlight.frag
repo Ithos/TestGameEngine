@@ -79,7 +79,8 @@ void main() {
     vec2 TexCoord = gl_FragCoord.xy / mTextureSize; // Calculate position in coordinate textures for the texture we are processing
 
     vec3 WorldPos = texture(mPositionMap, TexCoord).xyz;
-    vec3 Normal = texture(mNormalMap, TexCoord).xyz; // Get data from the textures 
+    vec3 Normal = texture(mNormalMap, TexCoord).xyz; // Get data from the textures
+    float shininess = length(Normal);
 
     vec3 DiffuseColor = vec3(0.0, 0.0, 0.0);
 
@@ -125,7 +126,7 @@ void main() {
         diffuse = mLight.diffuse * diff;
         
         // specular
-        float spec = max(dot(Normal, halfwayDir), 0.0);
+        float spec = pow(max(dot(Normal, halfwayDir), 0.0), shininess);
         specular = mLight.specular * spec;  
     }
 
@@ -134,4 +135,5 @@ void main() {
 
     vec3 result = (AmbientColor * ambient) + (1.0 - shadow) * ( (DiffuseColor * diffuse) + (ReflectiveColor * specular) ) ;
     FragColor = vec4((result * lightAtt) , 1.0);
+
 }

@@ -67,6 +67,11 @@ namespace GeometryEngine
 			friend class NormalMapTextureMaterial;
 			friend class NormalMapMultiTextureMaterial;
 			friend class SkyboxMaterial;
+			friend class AlphaMultiTextureMaterial;
+			friend class AlphaNormalMapMultiTextureMaterial;
+			friend class AlphaTextureMaterial;
+			friend class AlphaNormalMapTextureMaterial;
+
 
 			/// Get instances to configuration and texture managers
 			void initManagers();

@@ -14,12 +14,17 @@
 #include <Items/Item Utils/Viewports/OrtographicViewport.h>
 #include <Items/Item Utils/Viewports/PerspectiveViewport.h>
 #include <Items/Materials/ColorMaterial.h>
+#include <Items/Materials/TransparentMaterials/AlphaColorMaterial.h>
 #include <Items/Materials/TextureMaterial.h>
 #include <Items/Materials/MultiTextureMaterial.h>
 #include <Items/Materials/NormalMapTextureMaterial.h>
 #include <Items/Materials/NormalMapMultiTextureMaterial.h>
 #include <Items/Materials/SkyboxMaterial.h>
 #include <Items\Materials\TextureMaterialCommons.h>
+#include <Items/Materials/TransparentMaterials/AlphaTextureMaterial.h>
+#include <Items/Materials/TransparentMaterials/AlphaNormalMapTextureMaterial.h>
+#include <Items/Materials/TransparentMaterials/AlphaMultiTextureMaterial.h>
+#include <Items/Materials/TransparentMaterials/AlphaNormalMapMultiTextureMaterial.h>
 #include <Textures.h>
 #include <Items\GraphicItems\Lights\AmbientLight.h>
 #include <Items\GraphicItems\Lights\DirectionalLight.h>
@@ -208,7 +213,7 @@ namespace Application
 	{
 		GeometryEngine::GeometryScene::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::GeometryScene::DynamicShadowsScene>();
 		GeometryEngine::GeometryMaterial::ColorMaterial mat( QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f)); // QVector3D(1.0f, 0.4f, 0.3f)
-		GeometryEngine::GeometryMaterial::ColorMaterial floorMat(QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f)); 
+		GeometryEngine::GeometryMaterial::ColorMaterial floorMat(QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f));
 
 		std::list< GeometryEngine::GeometryMaterial::TextureParameters* > tmpList;
 
@@ -226,6 +231,12 @@ namespace Application
 																				GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
 																				GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE,
 																				GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP);
+
+		GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial atMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE, 
+			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
+			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
+			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE,
+			GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP, 0.4f, 0.5f);
 																	
 
 		GeometryEngine::GeometryMaterial::MultiTextureMaterial mtMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_RIGHT_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE,
@@ -249,7 +260,7 @@ namespace Application
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere lightSphere(mat, 2.0f);
 
-		GeometryEngine::GeometryItemUtils::PerspectiveViewport lightViewport(QVector4D(0, 0, this->width(), this->height()), 120.0f, 1.0f, 0.1f, 10000.0f);
+		GeometryEngine::GeometryItemUtils::PerspectiveViewport lightViewport(QVector4D(0, 0, this->width(), this->height()), 120.0f, 1.0f, 0.1f, 100.0f);
 		GeometryEngine::GeometryItemUtils::OrtographicViewport lightViewportOrto(QVector4D(0, 0, this->width(), this->height()), QRect(-this->width() / 24, -this->height() / 24, this->width() / 12, this->height() / 12), 0.1f, 1000.0f);
 
 		//mainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight(45.0f, QVector3D(0.5f, 0.3f, 0.1f), QVector3D(0.0, -1.0, 0.0), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),

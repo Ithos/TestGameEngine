@@ -2,6 +2,8 @@
 
 uniform sampler2D texture;
 
+uniform float mShininess;
+
 in vec3 fragNormal;
 in vec3 fragPos;
 in vec2 fragTexCoord;
@@ -22,6 +24,6 @@ void main(void)
 	FragReflectiveColor = vec4(texture(texture, fragTexCoord).xyz, 1.0);
 	FragEmissiveColor = vec4(0.0, 0.0, 0.0, 1.0);
 	WorldPosOut = vec4(fragNormalPos, 1.0);
-    NormalOut = vec4(normalize(fragNormal), 1.0);
+    NormalOut = vec4( mShininess * normalize(fragNormal), 1.0);
     TexCoordOut = vec4(fragTexCoord, 0.0, 1.0);
 }

@@ -2,7 +2,7 @@
 #include "ColorMaterial.h"
 
 GeometryEngine::GeometryMaterial::ColorMaterial::ColorMaterial(const QVector3D & ambient, const QVector3D & diffuse,
-	const QVector3D & specular, const QVector3D & emissive, float shininess) : Material(ambient, diffuse, specular, emissive, shininess)
+	const QVector3D & specular, const QVector3D & emissive, float shininess) : Material(shininess), mAmbient(ambient), mDiffuse(diffuse), mSpecular(specular), mEmissive(emissive)
 {
 	initMaterial();
 }
@@ -41,6 +41,7 @@ void GeometryEngine::GeometryMaterial::ColorMaterial::setProgramParameters(const
 		mpProgram->setUniformValue("diffuseColor", mDiffuse);
 		mpProgram->setUniformValue("reflectiveColor", mSpecular);
 		mpProgram->setUniformValue("emissiveColor", mEmissive);
+		mpProgram->setUniformValue("mShininess", mShininess);
 	}
 }
 
@@ -76,5 +77,9 @@ void GeometryEngine::GeometryMaterial::ColorMaterial::drawMaterial(QOpenGLBuffer
 void GeometryEngine::GeometryMaterial::ColorMaterial::copy(const ColorMaterial & mat)
 {
 	Material::copy(mat);
+	this->mAmbient = mat.mAmbient;
+	this->mDiffuse = mat.mDiffuse;
+	this->mSpecular = mat.mSpecular;
+	this->mShininess = mat.mShininess;
 	this->mEmissive = mat.mEmissive;
 }

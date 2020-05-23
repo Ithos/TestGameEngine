@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{992ABD81-5D99-4623-A1E2-1B03A50C99EE}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)_int\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)_int\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)_int\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)_int\</IntDir>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;GEOMETRYENGINE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;opengl32.lib;glu32.lib;\;$(INHERIT)\;Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;GEOMETRYENGINE_LIB;%(PreprocessorDefinitions)</Define>
+      <IncludePath>..\Common;.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;GEOMETRYENGINE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;opengl32.lib;glu32.lib;\;$(INHERIT)\;Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;GEOMETRYENGINE_LIB;%(PreprocessorDefinitions)</Define>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);..\Common;%(AdditionalIncludeDirectories)</IncludePath>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;GEOMETRYENGINE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;opengl32.lib;glu32.lib;\;$(INHERIT)\;Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;GEOMETRYENGINE_LIB;%(PreprocessorDefinitions)</Define>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);..\Common;%(AdditionalIncludeDirectories)</IncludePath>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;GEOMETRYENGINE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);..\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;opengl32.lib;glu32.lib;\;$(INHERIT)\;Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;NDEBUG;GEOMETRYENGINE_LIB;%(PreprocessorDefinitions)</Define>
+      <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);..\Common;%(AdditionalIncludeDirectories)</IncludePath>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Items\CommonItemParameters.h" />
+    <ClInclude Include="Items\Geometries\Cube.h" />
+    <ClInclude Include="GeometryEngine.h" />
+    <ClInclude Include="Items\Geometries\Quad.h" />
+    <ClInclude Include="Items\Geometries\Sphere.h" />
+    <ClInclude Include="Items\GeometryItem.h" />
+    <ClInclude Include="GeometryScene.h" />
+    <ClInclude Include="Items\GraphicItems\Camera.h" />
+    <ClInclude Include="Items\GraphicItems\Cameras\DeferredShadingCamera.h" />
+    <ClInclude Include="Items\GraphicItems\Light.h" />
+    <ClInclude Include="Items\GraphicItems\Lights\AmbientLight.h" />
+    <ClInclude Include="Items\GraphicItems\DeferredShadingLight.h" />
+    <ClInclude Include="Items\GraphicItems\Lights\DirectionalLight.h" />
+    <ClInclude Include="Items\GraphicItems\Lights\EmissiveLighting.h" />
+    <ClInclude Include="Items\GraphicItems\Lights\PointLight.h" />
+    <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\DirectionalShadowLight.h" />
+    <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowMapLight.h" />
+    <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.h" />
+    <ClInclude Include="Items\GraphicItems\Lights\Spotlight.h" />
+    <ClInclude Include="Items\GraphicItems\StencilTestLight.h" />
+    <ClInclude Include="Items\Item Utils\Viewports\OrtographicViewport.h" />
+    <ClInclude Include="Items\Item Utils\Viewports\PerspectiveViewport.h" />
+    <ClInclude Include="Items\Item Utils\Viewport.h" />
+    <ClInclude Include="Items\Materials\ColorMaterial.h" />
+    <ClInclude Include="Items\Materials\Material.h" />
+    <ClInclude Include="Items\Materials\MultiTextureMaterial.h" />
+    <ClInclude Include="Items\Materials\NormalMapMultiTextureMaterial.h" />
+    <ClInclude Include="Items\Materials\NormalMapTextureMaterial.h" />
+    <ClInclude Include="Items\Materials\SkyboxMaterial.h" />
+    <ClInclude Include="Items\Materials\TextureMaterial.h" />
+    <ClInclude Include="Items\Materials\TextureMaterialCommons.h" />
+    <ClInclude Include="Items\Materials\TransparentMaterial.h" />
+    <ClInclude Include="Items\Materials\TransparentMaterials\AlphaColorMaterial.h" />
+    <ClInclude Include="Items\Materials\TransparentMaterials\AlphaMultiTextureMaterial.h" />
+    <ClInclude Include="Items\Materials\TransparentMaterials\AlphaNormalMapMultiTextureMaterial.h" />
+    <ClInclude Include="Items\Materials\TransparentMaterials\AlphaNormalMapTextureMaterial.h" />
+    <ClInclude Include="Items\Materials\TransparentMaterials\AlphaTextureMaterial.h" />
+    <ClInclude Include="Items\Materials\VertexColorMaterial.h" />
+    <ClInclude Include="Items\PostProcess\DoublePassPostProcess\BlurPostProcess.h" />
+    <ClInclude Include="Items\PostProcess\DoublePassPostProcess.h" />
+    <ClInclude Include="Items\PostProcess\PostProcess.h" />
+    <ClInclude Include="Items\PostProcess\SinglePassPostProcess.h" />
+    <ClInclude Include="Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.h" />
+    <ClInclude Include="Items\WorldItem.h" />
+    <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GFramebufferCommmons.h" />
+    <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GDepthStencilRenderBuffer.h" />
+    <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GDepthStencilTexture.h" />
+    <ClInclude Include="Render Utils\BufferUtils\GFramebufferManager.h" />
+    <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GRenderBuffer.h" />
+    <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GRenderTarget.h" />
+    <ClInclude Include="Render Utils\GBuffer.h" />
+    <ClInclude Include="Render Utils\Gbuffers\CompleteColorBuffer.h" />
+    <ClInclude Include="Render Utils\Gbuffers\CompleteColorPostProcessBuffer.h" />
+    <ClInclude Include="Render Utils\Gbuffers\SingleColorTextureBuffer.h" />
+    <ClInclude Include="Render Utils\BufferUtils\GFramebufferObject.h" />
+    <ClInclude Include="Render Utils\GlSetup.h" />
+    <ClInclude Include="Render Utils\GlSetups\InitialSetup.h" />
+    <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GTexture.h" />
+    <ClInclude Include="Render Utils\RenderStep.h" />
+    <ClInclude Include="Render Utils\RenderSteps\EmissiveLightingPass.h" />
+    <ClInclude Include="Render Utils\RenderSteps\PostProcessPass.h" />
+    <ClInclude Include="Render Utils\RenderSteps\FinalPass.h" />
+    <ClInclude Include="Render Utils\RenderSteps\GeometryPass.h" />
+    <ClInclude Include="Render Utils\RenderSteps\LightingPass.h" />
+    <ClInclude Include="Render Utils\RenderSteps\ShadowedLightingPass.h" />
+    <ClInclude Include="Scenes\DeferredShadingScene.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Scenes\DynamicShadowsScene.h" />
+    <ClInclude Include="Scenes\PostProcessScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Items\CommonItemParameters.cpp" />
+    <ClCompile Include="Items\Geometries\Cube.cpp" />
+    <ClCompile Include="GeometryEngine.cpp" />
+    <ClCompile Include="Items\Geometries\Quad.cpp" />
+    <ClCompile Include="Items\Geometries\Sphere.cpp" />
+    <ClCompile Include="Items\GeometryItem.cpp" />
+    <ClCompile Include="GeometryScene.cpp" />
+    <ClCompile Include="Items\GraphicItems\Camera.cpp" />
+    <ClCompile Include="Items\GraphicItems\Cameras\DeferredShadingCamera.cpp" />
+    <ClCompile Include="Items\GraphicItems\DeferredShadingLight.cpp" />
+    <ClCompile Include="Items\GraphicItems\Light.cpp" />
+    <ClCompile Include="Items\GraphicItems\Lights\AmbientLight.cpp" />
+    <ClCompile Include="Items\GraphicItems\Lights\DirectionalLight.cpp" />
+    <ClCompile Include="Items\GraphicItems\Lights\EmissiveLighting.cpp" />
+    <ClCompile Include="Items\GraphicItems\Lights\PointLight.cpp" />
+    <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\DirectionalShadowLight.cpp" />
+    <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowMapLight.cpp" />
+    <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.cpp" />
+    <ClCompile Include="Items\GraphicItems\Lights\Spotlight.cpp" />
+    <ClCompile Include="Items\GraphicItems\StencilTestLight.cpp" />
+    <ClCompile Include="Items\Item Utils\Viewports\OrtographicViewport.cpp" />
+    <ClCompile Include="Items\Item Utils\Viewports\PerspectiveViewport.cpp" />
+    <ClCompile Include="Items\Item Utils\Viewport.cpp" />
+    <ClCompile Include="Items\Materials\ColorMaterial.cpp" />
+    <ClCompile Include="Items\Materials\Material.cpp" />
+    <ClCompile Include="Items\Materials\MultiTextureMaterial.cpp" />
+    <ClCompile Include="Items\Materials\NormalMapMultiTextureMaterial.cpp" />
+    <ClCompile Include="Items\Materials\NormalMapTextureMaterial.cpp" />
+    <ClCompile Include="Items\Materials\SkyboxMaterial.cpp" />
+    <ClCompile Include="Items\Materials\TextureMaterial.cpp" />
+    <ClCompile Include="Items\Materials\TextureMaterialCommons.cpp" />
+    <ClCompile Include="Items\Materials\TransparentMaterial.cpp" />
+    <ClCompile Include="Items\Materials\TransparentMaterials\AlphaColorMaterial.cpp" />
+    <ClCompile Include="Items\Materials\TransparentMaterials\AlphaMultiTextureMaterial.cpp" />
+    <ClCompile Include="Items\Materials\TransparentMaterials\AlphaNormalMapMultiTextureMaterial.cpp" />
+    <ClCompile Include="Items\Materials\TransparentMaterials\AlphaNormalMapTextureMaterial.cpp" />
+    <ClCompile Include="Items\Materials\TransparentMaterials\AlphaTextureMaterial.cpp" />
+    <ClCompile Include="Items\Materials\VertexColorMaterial.cpp" />
+    <ClCompile Include="Items\PostProcess\DoublePassPostProcess\BlurPostProcess.cpp" />
+    <ClCompile Include="Items\PostProcess\DoublePassPostProcess.cpp" />
+    <ClCompile Include="Items\PostProcess\PostProcess.cpp" />
+    <ClCompile Include="Items\PostProcess\SinglePassPostProcess.cpp" />
+    <ClCompile Include="Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.cpp" />
+    <ClCompile Include="Items\WorldItem.cpp" />
+    <ClCompile Include="Render Utils\BufferUtils\FramebufferElements\GDepthStencilRenderBuffer.cpp" />
+    <ClCompile Include="Render Utils\BufferUtils\FramebufferElements\GDepthStencilTexture.cpp" />
+    <ClCompile Include="Render Utils\BufferUtils\FramebufferElements\GRenderBuffer.cpp" />
+    <ClCompile Include="Render Utils\BufferUtils\FramebufferElements\GRenderTarget.cpp" />
+    <ClCompile Include="Render Utils\BufferUtils\GFramebufferManager.cpp" />
+    <ClCompile Include="Render Utils\GBuffer.cpp" />
+    <ClCompile Include="Render Utils\Gbuffers\CompleteColorBuffer.cpp" />
+    <ClCompile Include="Render Utils\Gbuffers\CompleteColorPostProcessBuffer.cpp" />
+    <ClCompile Include="Render Utils\Gbuffers\SingleColorTextureBuffer.cpp" />
+    <ClCompile Include="Render Utils\BufferUtils\GFramebufferObject.cpp" />
+    <ClCompile Include="Render Utils\GlSetup.cpp" />
+    <ClCompile Include="Render Utils\GlSetups\InitialSetup.cpp" />
+    <ClCompile Include="Render Utils\BufferUtils\FramebufferElements\GTexture.cpp" />
+    <ClCompile Include="Render Utils\RenderStep.cpp" />
+    <ClCompile Include="Render Utils\RenderSteps\EmissiveLightingPass.cpp" />
+    <ClCompile Include="Render Utils\RenderSteps\PostProcessPass.cpp" />
+    <ClCompile Include="Render Utils\RenderSteps\FinalPass.cpp" />
+    <ClCompile Include="Render Utils\RenderSteps\GeometryPass.cpp" />
+    <ClCompile Include="Render Utils\RenderSteps\LightingPass.cpp" />
+    <ClCompile Include="Render Utils\RenderSteps\ShadowedLightingPass.cpp" />
+    <ClCompile Include="Scenes\DeferredShadingScene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Scenes\DynamicShadowsScene.cpp" />
+    <ClCompile Include="Scenes\PostProcessScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.vcxproj">
+      <Project>{555d57ad-8025-4fe4-9ec0-812e213cc5d6}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_Win32="msvc2015" Qt5Version_x0020_x64="msvc2015_64" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

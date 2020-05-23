@@ -10,6 +10,8 @@ in lowp vec3 mDiffuseColor;
 in lowp vec3 mReflectiveColor;
 in lowp vec3 mEmissiveColor;
 
+uniform float mShininess;
+
 layout (location = 0) out vec4 FragAmbientColor;
 layout (location = 1) out vec4 FragDiffuseColor;
 layout (location = 2) out vec4 FragReflectiveColor;
@@ -24,6 +26,6 @@ void main() {
    	FragReflectiveColor = vec4(mReflectiveColor, 1.0);
    	FragEmissiveColor = vec4(mEmissiveColor, 1.0);
 	WorldPosOut = vec4(fragNormalPos, 1.0);
-    NormalOut = vec4(normalize(fragNormal), 1.0);
+    NormalOut = vec4( mShininess * normalize(fragNormal), 1.0);
     TexCoordOut = vec4(fragTexCoord, 0.0, 1.0);
 }

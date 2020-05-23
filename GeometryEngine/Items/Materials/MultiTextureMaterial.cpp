@@ -5,7 +5,7 @@
 
 GeometryEngine::GeometryMaterial::MultiTextureMaterial::MultiTextureMaterial(const std::string & ambientTexDir, const std::string & diffuseTexDir, 
 	const std::string & specularTexDir, const std::string & emissiveTexDir, float shininess) : 
-	Material(QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), shininess), mpTexDirManager(nullptr), mpAmbientTexture(nullptr),
+	Material(shininess), mpTexDirManager(nullptr), mpAmbientTexture(nullptr),
 	mpDiffuseTexture(nullptr), mpSpecularTexture(nullptr), mpEmissiveTexture(nullptr)
 {
 	mpAmbientTexture = new TextureParameters(ambientTexDir, -1, true);
@@ -117,6 +117,7 @@ void GeometryEngine::GeometryMaterial::MultiTextureMaterial::setProgramParameter
 		mpProgram->setUniformValue("modelViewProjectionMatrix", projection * view * parent.GetModelMatrix());
 		mpProgram->setUniformValue("modelViewMatrix", view * parent.GetModelMatrix());
 		mpProgram->setUniformValue("modelMatrix", parent.GetModelMatrix());
+		mpProgram->setUniformValue("mShininess", mShininess);
 
 		mpProgram->setUniformValue("textureAmbient", TEXTURE_UNIT);
 		mpProgram->setUniformValue("textureDiffuse", TEXTURE_UNIT + 1);

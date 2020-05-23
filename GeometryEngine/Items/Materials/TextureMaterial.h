@@ -23,7 +23,7 @@ namespace GeometryEngine
 		public:
 			/// Constructor
 			/// param texDir Key of the texture to be loaded
-			/// param shininess parameter. Equation: spec contribution = cos(alpha) ^ shininess
+			/// param shininess parameter. Equation: spec contribution = cos(alpha) ^ shininess. If shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
 			/// param getFromConf if false texDir is treated as a path to the texture if true its considered a key for the internal texture map
 			TextureMaterial(const std::string& texDir, float shininess = 10.0f, bool getFromConf = true);
 			/// Constructor

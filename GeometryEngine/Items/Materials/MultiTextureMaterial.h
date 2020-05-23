@@ -26,7 +26,7 @@ namespace GeometryEngine
 			/// param diffuseTexDir Key to a texture that will be used as diffuse color
 			/// param specularTexDir Key to a texture that will be used as specular color
 			/// param emissiveTexDir Key to a texture that will be used as emissive color
-			/// param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininess
+			/// param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininess. If shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
 			MultiTextureMaterial(const std::string& ambientTexDir, const std::string& diffuseTexDir, const std::string& specularTexDir, const std::string& emissiveTexDir, float shininess = 10.0f);
 			///Destructor
 			virtual ~MultiTextureMaterial();

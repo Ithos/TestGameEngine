@@ -19,7 +19,7 @@ namespace GeometryEngine
 			/// param specularTexDir Key to a texture that will be used as specular color
 			/// param emissiveTexDir Key to a texture that will be used as emissive color
 			/// param normalMapTexDir Key to a texture that contains the object normal map
-			/// param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininess
+			/// param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininess. If shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
 			NormalMapMultiTextureMaterial(const std::string& ambientTexDir, const std::string& diffuseTexDir, const std::string& specularTexDir, 
 				const std::string& emissiveTexDir, const std::string& normalMapTexDir, float shininess = 10.0f);
 			/// Copy constructor

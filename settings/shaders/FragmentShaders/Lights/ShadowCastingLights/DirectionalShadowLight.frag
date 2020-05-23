@@ -67,6 +67,7 @@ void main() {
 
 	vec3 WorldPos = texture(mPositionMap, TexCoord).xyz;
 	vec3 Normal = texture(mNormalMap, TexCoord).xyz; // Get data from the textures
+    float shininess = length(Normal);
 
     vec3 DiffuseColor = vec3(0.0, 0.0, 0.0);
 
@@ -103,7 +104,7 @@ void main() {
     vec3 diffuse = mLight.diffuse * diff;
 
     // specular
-    float spec = max(dot(Normal, halfwayDir), 0.0);
+    float spec = pow(max(dot(Normal, halfwayDir), 0.0), shininess);
     vec3 specular = mLight.specular * spec;  
 
     // calculate shadow

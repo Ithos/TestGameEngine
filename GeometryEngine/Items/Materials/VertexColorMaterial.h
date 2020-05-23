@@ -13,7 +13,8 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor. Calls init material
-			VertexColorMaterial();
+			/// param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininess. If shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
+			VertexColorMaterial(float shininess = 10.0f);
 			/// Copy constructor
 			/// param ref Object to be copied.
 			VertexColorMaterial(const VertexColorMaterial& mat);
