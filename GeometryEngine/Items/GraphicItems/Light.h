@@ -10,6 +10,7 @@
 #include <ShaderManager.h>
 
 #include "../WorldItem.h"
+#include "..\CommonInerfaces\CustomShadingInterface.h"
 
 namespace GeometryEngine
 {
@@ -96,13 +97,29 @@ namespace GeometryEngine
 					assert(GetStencilTest() && "Stencil test not found");
 				}
 
-				/// Method to expose the shadow map calculation that some lights might have. Lights that cast shadows are supposed to re-implement this method
+				/// Method to expose the default (solid) shadow map calculation that some lights might have. Lights that cast shadows are supposed to override this method. By default triggers an assert.
 				/// param vertexBuf Pointer to the vertex buffer
 				/// param indexBuffer Pointer to the index buffer
 				/// param modelMatrix model matrix of the item to be added to the shadow map
 				/// param totalVertexNum Total amount of vertices
 				/// param totalIndexNum Total amount of indices
-				virtual void CalculateShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelMatrix, unsigned int totalVertexNum, unsigned int totalIndexNum) {}
+				virtual void CalculateShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelMatrix, unsigned int totalVertexNum, unsigned int totalIndexNum) 
+				{
+					assert(GetCastShadows() && "Shadow map calculation not found");
+				}
+
+				/// Method that passes light data to a class that implements custom shadow map calculation. Lights that cast shadows are supposed to override this method. By default triggers an assert.
+				/// param vertexBuf Pointer to the vertex buffer
+				/// param indexBuffer Pointer to the index buffer
+				/// param modelMatrix model matrix of the item to be added to the shadow map
+				/// param totalVertexNum Total amount of vertices
+				/// param totalIndexNum Total amount of indices
+				/// param customShadingPtr Pointer to a class that calculates a custom (transparent, translucent) shadowmap 
+				virtual void CalculateCustomShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelMatrix, unsigned int totalVertexNum, unsigned int totalIndexNum,
+					CustomShadingInterface* customShadingPtr) 
+				{
+					assert(GetCastShadows() && "Shadow map calculation not found");
+				}
 
 				/// Method to be implemented by child classes. Returns a pointer to the boundng geometry of the ligh or nullptr if there is none
 				/// return Pointer to the boundng geometry of the ligh or nullptr if there is none

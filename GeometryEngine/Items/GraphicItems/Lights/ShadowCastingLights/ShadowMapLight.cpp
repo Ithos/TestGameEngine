@@ -27,7 +27,8 @@ GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::~ShadowMapLigh
 	}
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::CalculateShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelMatrix, unsigned int totalVertexNum, unsigned int totalIndexNum)
+void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::CalculateShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelMatrix, 
+	unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	assert(mpShadowMapProgram != nullptr && "No shadow map program found");
 	{
@@ -40,6 +41,15 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::Calculate
 		setShadowProgramParameters(modelMatrix);
 		renderShadowMap(vertexBuf, indexBuf, totalVertexNum, totalIndexNum);
 	}
+}
+
+void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::CalculateCustomShadowMap(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, const QMatrix4x4 & modelMatrix, 
+	unsigned int totalVertexNum, unsigned int totalIndexNum, CustomShadingInterface * customShadingPtr)
+{
+	UpdateModelMatrix(true);
+	mpViewport->CalculateProjectionMatrix();
+	QMatrix4x4 modelViewProjection = mpViewport->GetViewProjectionMatrix() * modelMatrix;
+	customShadingPtr->CalculateCustomShadowMap(vertexBuf, indexBuf, modelViewProjection, totalVertexNum, totalIndexNum);
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::UpdateModelMatrix(bool updateChildren)

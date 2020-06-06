@@ -24,8 +24,15 @@ const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_TEX
 const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_NORMALMAP_TEXTURE_MATERIAL_VERTEX_SHADER = "ALPHA_NORMALMAP_TEXTURE_MATERIAL_VERTEX_SHADER";
 const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER = "ALPHA_TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER";
 
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::POSITION_VERTEX_SHADER = "POSITION_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::POSITION_TEX_COORD_VERTEX_SHADER = "POSITION_TEX_COORD_VERTEX_SHADER";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_COLOR_SHADOWMAP = "ALPHA_COLOR_SHADOWMAP";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_TEXTURE_SHADOWMAP = "ALPHA_TEXTURE_SHADOWMAP";
+const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_MULTI_TEXTURE_SHADOWMAP = "ALPHA_MULTI_TEXTURE_SHADOWMAP";
 
-GeometryEngine::GeometryMaterial::Material::Material(float shininess) : mpProgram(nullptr), mpShaderManager(nullptr), mpConfInstance(nullptr), mShininess(shininess)
+
+GeometryEngine::GeometryMaterial::Material::Material(float shininess) : mpProgram(nullptr), mpShaderManager(nullptr), mpConfInstance(nullptr), mShininess(shininess), mApplyCustomShadowMap(false), 
+																			mDrawBothFaces(false)
 {
 	mShininess = checkShininessValue(mShininess);
 }
@@ -56,9 +63,17 @@ void GeometryEngine::GeometryMaterial::Material::Draw(QOpenGLBuffer * vertexBuf,
 		}
 
 		setProgramParameters(projection, view, parent);
+		modifyDrawMaterial(vertexBuf, indexBuf, totalVertexNumber, totalIndexNumber);
+	}
+}
 
+void GeometryEngine::GeometryMaterial::Material::modifyDrawMaterial(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber)
+{
+	if (mDrawBothFaces) glDisable(GL_CULL_FACE);
+	{
 		drawMaterial(vertexBuf, indexBuf, totalVertexNumber, totalIndexNumber);
 	}
+	if (mDrawBothFaces) glEnable(GL_CULL_FACE);
 }
 
 void GeometryEngine::GeometryMaterial::Material::initMaterial()
@@ -121,4 +136,7 @@ void GeometryEngine::GeometryMaterial::Material::copy(const Material & mat)
 	this->mpProgram = nullptr;
 	this->mpShaderManager = mat.mpShaderManager;
 	this->mVertexShaderKey = mat.mVertexShaderKey;
+	this->mShininess = mat.mShininess;
+	this->mApplyCustomShadowMap = mat.mApplyCustomShadowMap;
+	this->mDrawBothFaces = mat.mDrawBothFaces;
 }

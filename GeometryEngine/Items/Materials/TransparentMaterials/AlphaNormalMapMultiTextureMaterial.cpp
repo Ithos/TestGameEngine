@@ -11,8 +11,8 @@ GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::AlphaNorma
 GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::AlphaNormalMapMultiTextureMaterial(const AlphaNormalMapMultiTextureMaterial & mat) : AlphaMultiTextureMaterial()
 {
 	copy(mat);
-	initTextures();
 	initMaterial();
+	initTextures();
 }
 
 GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::~AlphaNormalMapMultiTextureMaterial()
@@ -41,7 +41,7 @@ void GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::initT
 
 void GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::initShaders()
 {
-	mVertexShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_TEXTURE_MATERIAL_VERTEX_SHADER;
+	mVertexShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_NORMALMAP_TEXTURE_MATERIAL_VERTEX_SHADER;
 	mFragmentShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_MULTI_TEXTURE_NORMALMAP_MATERIAL_FRAGMENT_SHADER;
 }
 

@@ -36,6 +36,7 @@ namespace GeometryEngine
 			static const std::string TEST_BLACK_TEXTURE;
 			static const std::string NORMALMAP_TEST_BLUE_CHIP;
 			static const std::string TEST_SKYBOX_TEXTURE;
+			static const std::string TEST_GRASS_TEXTURE;
 		};
 
 		/// Class that holds texture data

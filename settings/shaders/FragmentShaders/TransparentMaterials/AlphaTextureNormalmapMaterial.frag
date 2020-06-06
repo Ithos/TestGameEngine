@@ -37,5 +37,5 @@ void main(void)
 	FragEmissiveColor = vec4(0.0, 0.0, 0.0, texAlpha);
 	WorldPosOut = vec4(fragNormalPos, 1.0);
     NormalOut = vec4( mShininess * normalize( inverseSceneTangentMatrix * ( (2 * texture(normalMapTexture, fragTexCoord).xyz) - vec3(1.0, 1.0, 1.0) ) ), 1.0);
-    TexCoordOut = vec4(fragTexCoord, 0.0, 0.0, 1.0);
+    TexCoordOut = vec4(fragTexCoord, 0.0, 1.0);
 }

@@ -1,6 +1,7 @@
 #include "../Items/CommonItemParameters.h"
 #include "Items\GraphicItems\Camera.h"
 #include "Items\GraphicItems\Light.h"
+#include "Items\Materials\Material.h"
 #include "Items\GeometryItem.h"
 #include "Items\GraphicItems\Lights\ShadowCastingLights\ShadowMapLight.h"
 #include"../GBuffer.h"
@@ -50,7 +51,7 @@ void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::calculateSingleLi
 	for (auto it = items->begin(); it != items->end(); ++it)
 	{
 		GeometryWorldItem::GeometryItem::GeometryItem* item = (*it);
-		if(item->CastsShadows())light->CalculateShadowMap(item->GetArrayBuffer(), item->GetIndexBuffer(), item->GetModelMatrix(), item->GetVertexNumber(), item->GetIndexNumber());
+		if (item->CastsShadows())calculateItemShadowMap(item, light);
 	}
 }
 
@@ -81,4 +82,12 @@ void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::finishShadowStep(
 
 	buf->AttachDepthBuffer();
 	buf->UnbindTexture(GeometryEngine::GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE_TEXCOORD);
+}
+
+void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::calculateItemShadowMap(GeometryWorldItem::GeometryItem::GeometryItem * item, GeometryWorldItem::GeometryLight::Light* light)
+{
+	if (item->GetMaterialPtr()->GetApplyCustomShadowMap()) light->CalculateCustomShadowMap(item->GetArrayBuffer(), item->GetIndexBuffer(),
+																								item->GetModelMatrix(), item->GetVertexNumber(), item->GetIndexNumber(), item->GetMaterialPtr());
+	else light->CalculateShadowMap(item->GetArrayBuffer(), item->GetIndexBuffer(), item->GetModelMatrix(), item->GetVertexNumber(), item->GetIndexNumber());
+
 }

@@ -37,7 +37,7 @@ namespace GeometryEngine
 			/// Draws each item in the set using the camera transformation matrix
 			/// param cam Pointer to camera to be rendered
 			/// param items Set of items to be rendered
-			void renderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items);
+			virtual void renderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items);
 			/// Draws an individual item.
 			/// param cam Pointer to camera to be rendered
 			/// param item Item to be rendered

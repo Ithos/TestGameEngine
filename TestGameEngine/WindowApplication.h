@@ -24,6 +24,7 @@ namespace GeometryEngine {
 		{
 			class Cube;
 			class Sphere;
+			class Quad;
 		}
 
 		namespace GeometryCamera
@@ -75,6 +76,7 @@ namespace Application
 		GeometryEngine::GeometryWorldItem::GeometryLight::Light* mainLight;
 		GeometryEngine::GeometryWorldItem::GeometryLight::Light* secondLight;
 		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* lightCube2;
+		GeometryEngine::GeometryWorldItem::GeometryItem::Quad* textureQuad;
 
 		bool* mpMovementArray;
 

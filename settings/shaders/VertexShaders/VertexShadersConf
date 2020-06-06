@@ -10,6 +10,7 @@ FLASHLIGHT_VERTEX_SHADER = Lights\Flashlight.vert
 DEFERRED_SHADING_VERTEX_SHADER = Lights\DeferredShadingLight.vert
 SHADOW_MAP_VERTEX_SHADER = Lights\ShadowMap.vert
 POSITION_VERTEX_SHADER = PositionShader.vert
+POSITION_TEX_COORD_VERTEX_SHADER = PositionTexCoordShader.vert
 POST_PROCESS_VERTEX_SHADER = PostProcess\PostProcess.vert
 DIRECTIONAL_SHADOW_LIGHT_VERTEX_SHADER = Lights\ShadowCastingLights\DirectionalShadowLight.vert
 SPOTLIGHT_SHADOW_LIGHT_VERTEX_SHADER = Lights\ShadowCastingLights\ShadowSpotlight.vert

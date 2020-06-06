@@ -173,6 +173,7 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Items\CommonInerfaces\CustomShadingInterface.h" />
     <ClInclude Include="Items\CommonItemParameters.h" />
     <ClInclude Include="Items\Geometries\Cube.h" />
     <ClInclude Include="GeometryEngine.h" />
@@ -238,10 +239,13 @@
     <ClInclude Include="Render Utils\RenderSteps\GeometryPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\LightingPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\ShadowedLightingPass.h" />
+    <ClInclude Include="Render Utils\RenderSteps\TransparentGeometryPass.h" />
+    <ClInclude Include="Render Utils\RenderSteps\TransparentShadowedLightingPass.h" />
     <ClInclude Include="Scenes\DeferredShadingScene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Scenes\DynamicShadowsScene.h" />
     <ClInclude Include="Scenes\PostProcessScene.h" />
+    <ClInclude Include="Scenes\TransparentGeometryScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Items\CommonItemParameters.cpp" />
@@ -308,10 +312,13 @@
     <ClCompile Include="Render Utils\RenderSteps\GeometryPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\LightingPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\ShadowedLightingPass.cpp" />
+    <ClCompile Include="Render Utils\RenderSteps\TransparentGeometryPass.cpp" />
+    <ClCompile Include="Render Utils\RenderSteps\TransparentShadowedLightingPass.cpp" />
     <ClCompile Include="Scenes\DeferredShadingScene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Scenes\DynamicShadowsScene.cpp" />
     <ClCompile Include="Scenes\PostProcessScene.cpp" />
+    <ClCompile Include="Scenes\TransparentGeometryScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.vcxproj">

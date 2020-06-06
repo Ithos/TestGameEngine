@@ -50,6 +50,8 @@ namespace GeometryEngine
 
 			/// Sets the shaders that should be loaded
 			virtual void initShaders();
+			/// Abstract method. Sets the material shadow map shaders that should be loaded
+			virtual void initShadowMapShaders();
 			/// Sends parameters to the shaders.
 			/// param projection Projection matrix
 			/// param view View matrix			 
@@ -61,6 +63,15 @@ namespace GeometryEngine
 			/// param totalVertexNum Number of vetices
 			/// param titalIndexNum Number of indices
 			virtual void drawMaterial(QOpenGLBuffer* arrayBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) override;
+			/// Sends parameters to the shadow map shaders.
+			/// param modelViewProjectionMatrix Model matrix modified by the light's viewport viewProjection matrix
+			virtual void setShadowProgramParameters(const QMatrix4x4& modelViewProjectionMatrix) override;
+			/// Binds shaders and calculates the shadow map.
+			/// param vertexBuf Vertex buffer
+			/// param indexBuf IndexBuffer
+			/// param totalVertexNum Number of vetices
+			/// param titalIndexNum Number of indices
+			virtual void renderShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum) override;
 			/// Copies the data of a Material object to the current object
 			/// param ref Material to be copied
 			virtual void copy(const AlphaColorMaterial& mat);

@@ -32,9 +32,12 @@
 #include <Items\GraphicItems\Lights\Spotlight.h>
 #include <Items\GraphicItems\Lights\ShadowCastingLights\DirectionalShadowLight.h>
 #include <Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.h>
+
 #include <Scenes/DeferredShadingScene.h>
 #include <Scenes\PostProcessScene.h>
 #include <Scenes\DynamicShadowsScene.h>
+#include <Scenes\TransparentGeometryScene.h>
+
 #include <Render Utils\Gbuffers\CompleteColorBuffer.h>
 #include <Render Utils\Gbuffers\SingleColorTextureBuffer.h>
 #include <Render Utils\Gbuffers\CompleteColorPostProcessBuffer.h>
@@ -211,8 +214,8 @@ namespace Application
 	}
 	void CWindowApplication::initGeometry(GeometryEngine::GeometryEngine* engine)
 	{
-		GeometryEngine::GeometryScene::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::GeometryScene::DynamicShadowsScene>();
-		GeometryEngine::GeometryMaterial::ColorMaterial mat( QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f)); // QVector3D(1.0f, 0.4f, 0.3f)
+		GeometryEngine::GeometryScene::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::GeometryScene::TransparentGeometryScene>();
+		GeometryEngine::GeometryMaterial::AlphaColorMaterial mat( QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f),0.1f, 0.7f, 100.0f); // QVector3D(1.0f, 0.4f, 0.3f)
 		GeometryEngine::GeometryMaterial::ColorMaterial floorMat(QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f));
 
 		std::list< GeometryEngine::GeometryMaterial::TextureParameters* > tmpList;
@@ -230,18 +233,21 @@ namespace Application
 																				GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
 																				GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
 																				GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE,
-																				GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP);
+																				GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP, 1000.0f);
 
 		GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial atMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE, 
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE,
-			GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP, 0.4f, 0.5f);
+			GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP, 0.1f, 0.8f, 1000.0f);
+
+		GeometryEngine::GeometryMaterial::AlphaTextureMaterial grassMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_GRASS_TEXTURE, 0.1f);
+		grassMat.SetDrawBacksideFaces(true);
 																	
 
 		GeometryEngine::GeometryMaterial::MultiTextureMaterial mtMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_RIGHT_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE);
-		/*GeometryEngine::Cube**/ testCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(tMat, 4.0f,QVector3D(-5.0f, 0.0f, -15.0f), QVector3D(30.0f, -30.0f, 0.0f));
+		/*GeometryEngine::Cube**/ testCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(atMat, 4.0f,QVector3D(-5.0f, 0.0f, -15.0f), QVector3D(30.0f, -30.0f, 0.0f));
 		/*GeometryEngine::Cube**/ testCube2 = new GeometryEngine::GeometryWorldItem::GeometryItem::Sphere(mat, 1.0f, 6, 12, QVector3D(5.0f, 0.0f, -15.0f)); //new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 2.0f, QVector3D(5.0f, 0.0f, -15.0f), QVector3D(-30.0f, 30.0f, 0.0f));
 		GeometryEngine::GeometryItemUtils::PerspectiveViewport viewport(QVector4D(0, 0, this->width(), this->height()), 45.0f, 1.0f, 0.1f, 1000.0f);
 		/*GeometryEngine::PerspectiveCamera**/ cam = new GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera(
@@ -250,6 +256,8 @@ namespace Application
 																			QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0, 0, 0));
 		//cam->SetPosition(cam->ToModelCoordSystem(QVector3D(-5.0f, 10.0f, -15.0f)));
 		//cam->Rotate(QVector3D(90, 0, 0));
+
+		textureQuad = new GeometryEngine::GeometryWorldItem::GeometryItem::Quad(grassMat, 1.0f, 1.0f, QVector3D(0.0f, 0.0f, -15.0f), QVector3D(0.0f, 45.0f, 0.0f));
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* floor = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(floorMat, 1.0f, QVector3D(0.0f, -6.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(100.0f, 1.0f, 100.0f));
 
@@ -310,6 +318,7 @@ namespace Application
 		scene->AddItem(skyboxCube);
 		scene->AddItem(testCube);
 		scene->AddItem(testCube2);
+		scene->AddItem(textureQuad);
 		//scene->AddItem(lightCube);
 		scene->AddItem(lightCube2);
 		scene->AddItem(floor);

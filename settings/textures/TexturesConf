@@ -11,3 +11,6 @@ TEST_UNIFIED_CUBE = UnifiedCube.png
 TEST_TEXTURE = TestTexture.bmp
 TEST_BLACK_TEXTURE = Black.bmp
 TEST_SKYBOX_TEXTURE = skyboxTexture.jpg
+TEST_GRASS_TEXTURE = GrassTexture.png
+TEST_WOOD_SLATES_TEXTURE = WoodSlates.jpg
+TEST_WOOD_WINDOW_TEXTURE = WoodSlatesWindow.jpg

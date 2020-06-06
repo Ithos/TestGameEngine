@@ -10,8 +10,8 @@ GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial::AlphaNormalMapT
 GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial::AlphaNormalMapTextureMaterial(const AlphaNormalMapTextureMaterial & mat) : AlphaTextureMaterial()
 {
 	copy(mat);
-	initTextures();
 	initMaterial();
+	initTextures();
 }
 
 GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial::~AlphaNormalMapTextureMaterial()

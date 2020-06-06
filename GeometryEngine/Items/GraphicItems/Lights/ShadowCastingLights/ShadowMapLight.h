@@ -63,6 +63,16 @@ namespace GeometryEngine
 				/// param totalIndexNum Total amount of indices
 				virtual void CalculateShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelMatrix, unsigned int totalVertexNum, unsigned int totalIndexNum) override;
 
+				/// Method that passes light data to a class that implements custom shadow map calculation 
+				/// param vertexBuf Pointer to the vertex buffer
+				/// param indexBuffer Pointer to the index buffer
+				/// param modelMatrix model matrix of the item to be added to the shadow map
+				/// param totalVertexNum Total amount of vertices
+				/// param totalIndexNum Total amount of indices
+				/// param customShadingPtr Pointer to a class that calculates a custom (transparent, translucent) shadowmap 
+				virtual void CalculateCustomShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelMatrix, unsigned int totalVertexNum, unsigned int totalIndexNum,
+					CustomShadingInterface* customShadingPtr) override;
+
 				/// Updates the model matrix of this Item and updates the View matrix of the viewport
 				/// param calculateChildren true if children matrix should be updated
 				virtual void UpdateModelMatrix(bool updateChildren = false) override;
