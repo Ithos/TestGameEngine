@@ -41,6 +41,7 @@
 *.suo
 *.idb
 *.cache
+*.VC.VC.opendb
 
 # Qt Generated files
 moc_*

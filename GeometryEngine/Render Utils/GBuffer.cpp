@@ -40,6 +40,7 @@ bool GeometryEngine::GeometryBuffer::GBuffer::Init(unsigned int MaxWindowWidth, 
 	}
 	
 	mpFBO->AddTexture(QVector2D(MaxWindowWidth, MaxWindowHeight), GFramebufferCommons::G_COLOR_ATTACHMENTS(GL_COLOR_ATTACHMENT0 + GBUFFER_NUM_TEXTURES));
+
 	mpFBO->SetStencilDepthBuffer(QVector2D(MaxWindowWidth, MaxWindowHeight), GFramebufferCommons::G_DEPTH_STENCIL_ATTACHMENTS(GL_DEPTH_STENCIL_ATTACHMENT));
 	mpFBO->GetStencilDepthBuffer()->Enable(false);
 	mpFBO->SetStencilDepthTexture(QVector2D(MaxWindowWidth, MaxWindowHeight), GFramebufferCommons::G_DEPTH_STENCIL_ATTACHMENTS(GL_DEPTH_STENCIL_ATTACHMENT));
@@ -146,7 +147,7 @@ void GeometryEngine::GeometryBuffer::GBuffer::BindBuffer()
 void GeometryEngine::GeometryBuffer::GBuffer::BindFinalTexture(GBUFFER_TEXTURE_TYPE location)
 {
 	glActiveTexture(GL_TEXTURE0 + location);
-	mpFBO->GetColorTarget(mFinalTexture)->Bind();
+	mpFBO->GetColorTarget(GBUFFER_NUM_TEXTURES)->Bind();
 	mFinalTextureLocation = location;
 }
 
@@ -175,7 +176,7 @@ void GeometryEngine::GeometryBuffer::GBuffer::UnbindFinalTexture()
 {
 	
 	glActiveTexture(GL_TEXTURE0 + mFinalTextureLocation);
-	mpFBO->GetColorTarget(mFinalTexture)->Unbind();
+	mpFBO->GetColorTarget((unsigned int)GBUFFER_NUM_TEXTURES)->Unbind();
 	mFinalTextureLocation = 0;
 }
 
@@ -193,9 +194,6 @@ void GeometryEngine::GeometryBuffer::GBuffer::UnbindTexture(GBUFFER_TEXTURE_TYPE
 
 void GeometryEngine::GeometryBuffer::GBuffer::copy(const GBuffer & ref)
 {
-	this->mFbo = 0;
-	this->mDepthTexture = 0;
-	this->mFinalTexture = 0;
 	this->mTextureSize.setX(ref.mTextureSize.x());
 	this->mTextureSize.setY(ref.mTextureSize.y());
 	this->mMaxTextureSize.setX(ref.mMaxTextureSize.x());
@@ -203,11 +201,6 @@ void GeometryEngine::GeometryBuffer::GBuffer::copy(const GBuffer & ref)
 	this->mFinalTextureLocation = 0;
 
 	this->mpFBO = nullptr;
-
-	for (int i = 0; i < GBUFFER_NUM_TEXTURES; ++i)
-	{
-		this->mTextures[i] = 0;
-	}
 
 	for (auto it = ref.mActiveTextures.begin(); it != ref.mActiveTextures.end(); ++it)
 	{

@@ -93,10 +93,6 @@ namespace GeometryEngine
 			/// Gets the max texture size
 			/// return Max texture siza
 			const QVector2D& GetMaxTextureSize() const { return mMaxTextureSize; }
-			/// Returns the OpenGl id of a texture
-			/// param texture Texture enum element
-			/// return OpenGl id of the texture
-			GLuint  GetTexture(GBUFFER_TEXTURE_TYPE texture) const { return mTextures[texture]; }
 			/// Returns true if the texture is active
 			/// param texture Texture to check
 			/// return true if active false otherwise
@@ -116,12 +112,6 @@ namespace GeometryEngine
 			void FillGBufferInfo(GBufferTextureInfo& bufferInfo);
 
 		protected:
-			unsigned int mFbo;
-			GLuint  mTextures[GBUFFER_NUM_TEXTURES];
-			unsigned int mDepthTexture;
-			/// Buffer for depth operations that do not need to be stored
-			GLuint mTmpDepthBuffer;
-			unsigned int mFinalTexture;
 			unsigned int mFinalTextureLocation;
 			QVector2D mTextureSize;
 			QVector2D mMaxTextureSize;
