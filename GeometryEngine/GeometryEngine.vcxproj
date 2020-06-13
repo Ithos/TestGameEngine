@@ -232,6 +232,7 @@
     <ClInclude Include="Render Utils\GlSetup.h" />
     <ClInclude Include="Render Utils\GlSetups\InitialSetup.h" />
     <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GTexture.h" />
+    <ClInclude Include="Render Utils\RenderBuffersData.h" />
     <ClInclude Include="Render Utils\RenderStep.h" />
     <ClInclude Include="Render Utils\RenderSteps\EmissiveLightingPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\PostProcessPass.h" />
@@ -241,6 +242,7 @@
     <ClInclude Include="Render Utils\RenderSteps\ShadowedLightingPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\TransparentGeometryPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\TransparentShadowedLightingPass.h" />
+    <ClInclude Include="Render Utils\TranslucentBuffer.h" />
     <ClInclude Include="Scenes\DeferredShadingScene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Scenes\DynamicShadowsScene.h" />
@@ -305,6 +307,7 @@
     <ClCompile Include="Render Utils\GlSetup.cpp" />
     <ClCompile Include="Render Utils\GlSetups\InitialSetup.cpp" />
     <ClCompile Include="Render Utils\BufferUtils\FramebufferElements\GTexture.cpp" />
+    <ClCompile Include="Render Utils\RenderBuffersData.cpp" />
     <ClCompile Include="Render Utils\RenderStep.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\EmissiveLightingPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\PostProcessPass.cpp" />
@@ -314,6 +317,7 @@
     <ClCompile Include="Render Utils\RenderSteps\ShadowedLightingPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\TransparentGeometryPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\TransparentShadowedLightingPass.cpp" />
+    <ClCompile Include="Render Utils\TranslucentBuffer.cpp" />
     <ClCompile Include="Scenes\DeferredShadingScene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Scenes\DynamicShadowsScene.cpp" />

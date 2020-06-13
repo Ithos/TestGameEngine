@@ -48,7 +48,7 @@ namespace GeometryEngine
 			/// param cam Pointer to camera to be rendered
 			/// param items Set of items to be rendered. Items will no be used in this step, we will use the information stored in the geometry buffer instead.
 			/// param shadowedLights Set of shadow casting lights in the scene.
-			void CalculateShadowMap(GeometryWorldItem::GeometryCamera::Camera* cam, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* shadowedLights,
+			virtual void CalculateShadowMap(GeometryWorldItem::GeometryCamera::Camera* cam, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* shadowedLights,
 				std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items);
 			/// Calculates the shadow map for a single light
 			/// param light Light whose shadow mat will be calculated

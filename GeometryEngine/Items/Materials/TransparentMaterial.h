@@ -17,7 +17,7 @@ namespace GeometryEngine
 			/// param thresholdValue Min alpha value below which the fragment is dropped completely. This value is clamped to the range [0, 1]
 			/// param globalAlphaValue Global alpha value to be applied to the whole model. This value is multiplied by other posible alphas. This value is clamped to the range [0, 1]
 			/// param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininessIf shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
-			TransparentMaterial(float thresholdValue = 0.0f, float globalAlphaValue = 1.0f, float shininess = 10.0f);
+			TransparentMaterial(float thresholdValue = 0.0f, float globalAlphaValue = 1.0f, float shininess = 10.0f, bool translucent = false);
 			/// Copy constructor
 			/// param ref Object to be copied.
 			TransparentMaterial(const TransparentMaterial& ref);
@@ -48,9 +48,15 @@ namespace GeometryEngine
 			/// param applyCustom true if custom shadow maps should be used false otherwise.
 			virtual void SetApplyCustomShadowMap(bool applyCustom) override { mApplyCustomShadowMap = applyCustom; }
 
+			/// Returns whether translucent shadowing should be applied to this material or not.
+			virtual bool IsTranslucent() override { return mIsTranslucent; }
+			/// Sets whether translucent shadowing should be applied to this material or not.
+			virtual void SetTranslucent(bool isTranslucent) { mIsTranslucent = isTranslucent; }
+
 		protected:
 			float mThresholdValue;
 			float mGlobalAlphaValue;
+			bool mIsTranslucent;
 
 			QOpenGLShaderProgram* mpShadowMapProgram; // Lighting shader
 			std::string mShadowMapVertexShaderKey;

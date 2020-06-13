@@ -4,7 +4,8 @@
 #include "AlphaMultiTextureMaterial.h"
 
 GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::AlphaMultiTextureMaterial(const std::string & ambientTexDir, const std::string & diffuseTexDir, 
-	const std::string & specularTexDir, const std::string & emissiveTexDir, float thresholdValue, float globalAlphaValue, float shininess) : TransparentMaterial(thresholdValue, globalAlphaValue, shininess),
+	const std::string & specularTexDir, const std::string & emissiveTexDir, float thresholdValue, float globalAlphaValue, float shininess, bool translucent) : 
+	TransparentMaterial(thresholdValue, globalAlphaValue, shininess, translucent),
 	mpTexDirManager(nullptr), mpAmbientTexture(nullptr), mpDiffuseTexture(nullptr), mpSpecularTexture(nullptr), mpEmissiveTexture(nullptr)
 {
 	mpAmbientTexture = new TextureParameters(ambientTexDir, -1, true);

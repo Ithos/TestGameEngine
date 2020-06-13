@@ -2,7 +2,7 @@
 #include "AlphaNormalMapTextureMaterial.h"
 
 GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial::AlphaNormalMapTextureMaterial(const std::string & texDir, const std::string & normalMapTexDir, 
-	float thresholdValue, float globalAlphaValue, float shininess): AlphaTextureMaterial(texDir, thresholdValue, globalAlphaValue, shininess), mpNormalMapTexture(nullptr)
+	float thresholdValue, float globalAlphaValue, float shininess, bool translucent): AlphaTextureMaterial(texDir, thresholdValue, globalAlphaValue, shininess, translucent), mpNormalMapTexture(nullptr)
 {
 	mpNormalMapTexture = new TextureParameters(normalMapTexDir, -1, true);
 }

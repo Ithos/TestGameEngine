@@ -59,6 +59,24 @@ namespace GeometryEngine
 
 
 	};
+
+	///Class that holds information about the translucency buffer
+	class TBufferTextureInfo
+	{
+	public:
+		unsigned int DiffuseColorMapTexture;
+		unsigned int SpecularColorMapTexture;
+		unsigned int ShadowMapTexture;
+		unsigned int TranslucentDepthMapTexture;
+		const QVector2D& TextureSize;
+
+		TBufferTextureInfo(unsigned int diffuseColorMap, unsigned int specColorMap, unsigned int shadowMap, unsigned int translucentDepthMap, const QVector2D& texSize) :
+			DiffuseColorMapTexture(diffuseColorMap), SpecularColorMapTexture(specColorMap), ShadowMapTexture(shadowMap), TranslucentDepthMapTexture(translucentDepthMap),
+			TextureSize(texSize) {}
+
+		TBufferTextureInfo(const QVector2D& texSize) :
+			DiffuseColorMapTexture(0), SpecularColorMapTexture(0), ShadowMapTexture(0), TranslucentDepthMapTexture(0), TextureSize(texSize) {}
+	};
 }
 
 #endif

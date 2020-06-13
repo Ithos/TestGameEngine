@@ -3,8 +3,8 @@
 #include "../../GeometryItem.h"
 #include "AlphaTextureMaterial.h"
 
-GeometryEngine::GeometryMaterial::AlphaTextureMaterial::AlphaTextureMaterial(const std::string & texDir, float thresholdValue, float globalAlphaValue, float shininess):
-	TransparentMaterial(thresholdValue, globalAlphaValue, shininess), mpTexture(nullptr)
+GeometryEngine::GeometryMaterial::AlphaTextureMaterial::AlphaTextureMaterial(const std::string & texDir, float thresholdValue, float globalAlphaValue, float shininess, bool translucent):
+	TransparentMaterial(thresholdValue, globalAlphaValue, shininess, translucent), mpTexture(nullptr)
 {
 	mpTexture = new TextureParameters(texDir, -1, true);
 	initMaterial();

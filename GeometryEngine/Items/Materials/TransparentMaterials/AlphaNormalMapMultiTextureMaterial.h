@@ -24,7 +24,7 @@ namespace GeometryEngine
 			/// param shininess Shininess component. Has to be > 0 if invalid takes the value 0.0001. Equation: spec contribution = cos(alpha) ^ shininessIf shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
 			AlphaNormalMapMultiTextureMaterial(const std::string & ambientTexDir, const std::string & diffuseTexDir,
 				const std::string & specularTexDir, const std::string & emissiveTexDir, const std::string & normalMapTexDir, float thresholdValue = 0.0f,
-				float globalAlphaValue = 1.0f, float shininess = 10.0f);
+				float globalAlphaValue = 1.0f, float shininess = 10.0f, bool translucent = false);
 			/// Copy constructor
 			/// param ref Object to be copied.
 			AlphaNormalMapMultiTextureMaterial(const AlphaNormalMapMultiTextureMaterial& ref);

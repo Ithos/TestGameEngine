@@ -230,6 +230,12 @@
     <ClInclude Include="Items\CommonInerfaces\CustomShadingInterface.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="Render Utils\TranslucentBuffer.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\RenderBuffersData.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeometryEngine.cpp">
@@ -441,6 +447,12 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Items\Materials\ColorMaterial.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\TranslucentBuffer.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\RenderBuffersData.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>

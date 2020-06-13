@@ -4,7 +4,7 @@
 #include "../Items/CommonItemParameters.h"
 #include "GBuffer.h"
 
-GeometryEngine::GeometryBuffer::GBuffer::GBuffer() : mFinalTextureLocation(0), mpFBO(nullptr)
+GeometryEngine::GeometryBuffer::GBuffer::GBuffer() : mFinalTextureLocation(0), mpFBO(nullptr), mMaxTextureSize(0.0f, 0.0f), mTextureSize(0.0f, 0.0f)
 {
 	initializeOpenGLFunctions();
 }
@@ -86,7 +86,7 @@ void GeometryEngine::GeometryBuffer::GBuffer::StartFrame()
 	mpFBO->Draw(GBUFFER_NUM_TEXTURES); 
 	mpFBO->GetStencilDepthTexture()->Bind();
 
-	// This remains
+	// Clear final texture and depth texture
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
@@ -182,13 +182,23 @@ void GeometryEngine::GeometryBuffer::GBuffer::UnbindFinalTexture()
 
 void GeometryEngine::GeometryBuffer::GBuffer::BindTexture(GBUFFER_TEXTURE_TYPE tex)
 {
-	glActiveTexture(GL_TEXTURE0 + (unsigned int)tex);
+	BindTexture(tex, (unsigned int)tex);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::BindTexture(GBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit)
+{
+	glActiveTexture(GL_TEXTURE0 + textureUnit);
 	mpFBO->GetColorTarget((unsigned int)tex)->Bind();
 }
 
 void GeometryEngine::GeometryBuffer::GBuffer::UnbindTexture(GBUFFER_TEXTURE_TYPE tex)
 {
-	glActiveTexture(GL_TEXTURE0 + (unsigned int)tex);
+	UnbindTexture(tex, (unsigned int)tex);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::UnbindTexture(GBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit)
+{
+	glActiveTexture(GL_TEXTURE0 + textureUnit);
 	mpFBO->GetColorTarget((unsigned int)tex)->Unbind();
 }
 
@@ -227,7 +237,7 @@ void GeometryEngine::GeometryBuffer::GBuffer::AttachDepthBuffer()
 
 void GeometryEngine::GeometryBuffer::GBuffer::FillGBufferInfo(GBufferTextureInfo & bufferInfo)
 {
-	// Indices of the texture units in which we store each texture
+	// Indices of the texture units in which we store each texture by default
 	bufferInfo.AmbientTexture = (unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_AMBIENT;
 	bufferInfo.DiffuseTexture = (unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_DIFFUSE;
 	bufferInfo.ReflectiveTexture = (unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_REFLECTIVE;

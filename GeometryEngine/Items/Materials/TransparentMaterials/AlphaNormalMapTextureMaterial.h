@@ -19,7 +19,8 @@ namespace GeometryEngine
 			/// param thresholdValue Min alpha value below which the fragment is dropped completely. This value is clamped to the range [0, 1]
 			/// param globalAlphaValue Main alpha value for the whole object, clamps to 0.0 to 1.0 range. This value gets multiplied to every fragment color alpha.
 			/// param shininess Shininess component. Has to be > 0 if invalid takes the value 0.0001. Equation: spec contribution = cos(alpha) ^ shininessIf shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
-			AlphaNormalMapTextureMaterial(const std::string & texDir, const std::string & normalMapTexDir, float thresholdValue = 0.0f, float globalAlphaValue = 1.0f, float shininess = 10.0f);
+			AlphaNormalMapTextureMaterial(const std::string & texDir, const std::string & normalMapTexDir, float thresholdValue = 0.0f, float globalAlphaValue = 1.0f, float shininess = 10.0f, 
+				bool translucent = false);
 			/// Copy constructor
 			/// param ref Object to be copied.
 			AlphaNormalMapTextureMaterial(const AlphaNormalMapTextureMaterial& ref);

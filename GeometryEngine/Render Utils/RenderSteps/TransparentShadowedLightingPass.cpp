@@ -36,3 +36,7 @@ void GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass::calcul
 		glCullFace(GL_FRONT);
 	}
 }
+
+//void GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass::CalculateShadowMap(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* shadowedLights, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items)
+//{
+//}

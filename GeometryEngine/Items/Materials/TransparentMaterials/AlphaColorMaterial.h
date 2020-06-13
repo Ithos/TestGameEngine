@@ -22,7 +22,7 @@ namespace GeometryEngine
 			/// param shininess Shininess component. Has to be > 0 if invalid takes the value 0.0001. Equation: spec contribution = cos(alpha) ^ shininessIf shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
 			AlphaColorMaterial(const QVector3D& ambient = QVector3D(0.0f, 0.0, 0.0f), const QVector3D& diffuse = QVector3D(0.0f, 0.0f, 0.0f),
 				const QVector3D& specular = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D& emissive = QVector3D(0.0f, 0.0f, 0.0f), float thresholdValue = 0.0f,
-				float globalAlphaValue = 1.0f, float shininess = 10.0f);
+				float globalAlphaValue = 1.0f, float shininess = 10.0f, bool translucent = false);
 			/// Copy constructor
 			/// param ref Object to be copied.
 			AlphaColorMaterial(const AlphaColorMaterial& ref);

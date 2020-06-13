@@ -1,7 +1,7 @@
 #include "TransparentMaterial.h"
 
-GeometryEngine::GeometryMaterial::TransparentMaterial::TransparentMaterial(float thresholdValue, float globalAlphaValue, float shininess): Material(shininess), 
-mGlobalAlphaValue(globalAlphaValue), mThresholdValue(thresholdValue)
+GeometryEngine::GeometryMaterial::TransparentMaterial::TransparentMaterial(float thresholdValue, float globalAlphaValue, float shininess, bool translucent): Material(shininess),
+mGlobalAlphaValue(globalAlphaValue), mThresholdValue(thresholdValue), mIsTranslucent(translucent)
 {
 	mGlobalAlphaValue = checkAlphaValue(mGlobalAlphaValue);
 	mThresholdValue = checkAlphaValue(mThresholdValue);

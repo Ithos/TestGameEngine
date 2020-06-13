@@ -121,8 +121,10 @@ namespace GeometryEngine
 
 			/// If set to true both frontfaces and backfaces of the model will be drawn
 			void SetDrawBacksideFaces(bool drawBackside) { mDrawBothFaces = drawBackside; }
-			/// Returns if bckside faces will be drawn
+			/// Returns if backside faces will be drawn
 			bool GetDrawBacksideFaces() { return mDrawBothFaces; }
+			/// Method to be reimplemented by child classes. Returns whether translucent shadowing should be applied to this material or not.
+			virtual bool IsTranslucent() { return false; }
 
 		protected:
 			float mShininess;

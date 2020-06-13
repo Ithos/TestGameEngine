@@ -32,6 +32,12 @@ namespace GeometryEngine
 			/// Copies the data from a LightingPass into this object
 			/// param ref LightingPass to be copied
 			virtual void copy(const ShadowedLightingPass& ref) { ShadowedLightingPass::copy(ref); }
+			///Calculates the shadowmap for every light and applies the light contribution
+			/// param cam Pointer to camera to be rendered
+			/// param items Set of items to be rendered. Items will no be used in this step, we will use the information stored in the geometry buffer instead.
+			/// param shadowedLights Set of shadow casting lights in the scene.
+			//virtual void CalculateShadowMap(GeometryWorldItem::GeometryCamera::Camera* cam, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* shadowedLights,
+			//	std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items) override;
 		};
 	}
 }

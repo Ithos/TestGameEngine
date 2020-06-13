@@ -81,12 +81,18 @@ namespace GeometryEngine
 			void UnbindBuffer();
 			/// Unbinds the final texture from its location
 			void UnbindFinalTexture();
-			/// Binds selected texture to its location
+			/// Binds selected texture to its default texture unit
 			/// param tex texture to bind
 			void BindTexture(GBUFFER_TEXTURE_TYPE tex);
-			/// Unbinds texture
+			/// Binds selected texture to the selected texture unit
+			/// param tex texture to bind
+			void BindTexture(GBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit);
+			/// Unbinds texture from its default texture unit
 			/// param tex texture to unbind
 			void UnbindTexture(GBUFFER_TEXTURE_TYPE tex);
+			/// Unbinds texture from the selected texture unit
+			/// param tex texture to unbind
+			void UnbindTexture(GBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit);
 			/// Gets current texture size
 			/// return Current texture size
 			const QVector2D& GetTextureSize() const { return mTextureSize; }

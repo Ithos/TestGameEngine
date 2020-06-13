@@ -2,8 +2,8 @@
 #include "AlphaColorMaterial.h"
 
 GeometryEngine::GeometryMaterial::AlphaColorMaterial::AlphaColorMaterial(const QVector3D & ambient, const QVector3D & diffuse, const QVector3D & specular, 
-	const QVector3D & emissive, float thresholdValue, float globalAlphaValue, float shininess) : TransparentMaterial(thresholdValue, globalAlphaValue, shininess), mAmbient(ambient), mDiffuse(diffuse),
-	mSpecular(specular), mEmissive(emissive)
+	const QVector3D & emissive, float thresholdValue, float globalAlphaValue, float shininess, bool translucent) : TransparentMaterial(thresholdValue, globalAlphaValue, shininess, translucent), 
+	mAmbient(ambient), mDiffuse(diffuse), mSpecular(specular), mEmissive(emissive)
 {
 	initMaterial();
 }
