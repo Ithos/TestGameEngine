@@ -24,12 +24,6 @@ void GeometryEngine::GeometryMaterial::AlphaColorMaterial::initShaders()
 	mFragmentShaderKey = GeometryMaterial::MaterialConstants::ALPHA_COLOR_MATERIAL_FRAGMENT_SHADER;
 }
 
-void GeometryEngine::GeometryMaterial::AlphaColorMaterial::initShadowMapShaders()
-{
-	mShadowMapVertexShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::POSITION_VERTEX_SHADER;
-	mShadowMapFragmentShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_COLOR_SHADOWMAP;
-}
-
 void GeometryEngine::GeometryMaterial::AlphaColorMaterial::setProgramParameters(const QMatrix4x4 & projection, const QMatrix4x4 & view, const GeometryWorldItem::GeometryItem::GeometryItem & parent)
 {
 	assert(mpProgram != nullptr && "Alpha Color Material --> Shader Program Null");
@@ -76,31 +70,6 @@ void GeometryEngine::GeometryMaterial::AlphaColorMaterial::drawMaterial(QOpenGLB
 		// Draw cube geometry using indices from VBO 1
 		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
 	}
-}
-
-void GeometryEngine::GeometryMaterial::AlphaColorMaterial::setShadowProgramParameters(const QMatrix4x4 & modelViewProjectionMatrix)
-{
-	assert(mpShadowMapProgram != nullptr && "Material color shadow map program not found");
-	{
-		mpShadowMapProgram->setUniformValue("mModelViewProjectionMatrix", modelViewProjectionMatrix);
-		mpShadowMapProgram->setUniformValue("mThresholdAlphaValue", mThresholdValue);
-		mpShadowMapProgram->setUniformValue("mGlobalAlphaValue", mGlobalAlphaValue);
-	}
-}
-
-void GeometryEngine::GeometryMaterial::AlphaColorMaterial::renderShadowMap(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
-{
-	// Tell OpenGL which VBOs to use
-	vertexBuf->bind();
-	indexBuf->bind();
-
-	// Tell OpenGL programmable pipeline how to locate vertex position data
-	int vertexLocation = mpShadowMapProgram->attributeLocation("posAttr");
-	mpShadowMapProgram->enableAttributeArray(vertexLocation);
-	mpShadowMapProgram->setAttributeBuffer(vertexLocation, GL_FLOAT, VertexData::POSITION_OFFSET, 3, sizeof(VertexData));
-
-	// Draw light
-	glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);
 }
 
 void GeometryEngine::GeometryMaterial::AlphaColorMaterial::copy(const AlphaColorMaterial & mat)

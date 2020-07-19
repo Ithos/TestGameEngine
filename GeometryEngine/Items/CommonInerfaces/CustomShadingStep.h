@@ -100,6 +100,12 @@ namespace GeometryEngine
 			/// param totalVertexNum Number of vetices
 			/// param titalIndexNum Number of indices
 			virtual void drawShader(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) = 0;
+			/// Applies internal modifiers and calls renderShadowMap
+			/// param vertexBuf Vertex buffer
+			/// param indexBuf IndexBuffer
+			/// param totalVertexNum Number of vetices
+			/// param titalIndexNum Number of indices
+			virtual void modifyRenderShader(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum);
 			/// Copies the data of a CustomShadingStep object to the current object
 			/// param ref CustomShadingStep to be copied
 			virtual void copy(const CustomShadingStep& ref);

@@ -35,14 +35,6 @@ namespace GeometryEngine
 			/// Returns whether the material allows transparencies. Overrides the parent method to return true.
 			virtual bool IsTransparent() override { return true; }
 
-			/// Applies the material shadow map shaders.
-			/// param vertexBuf Pointer to the vertex buffer
-			/// param indexBuffer Pointer to the index buffer
-			/// param modelMatrix model matrix of the item to be added to the shadow map
-			/// param totalVertexNum Total amount of vertices
-			/// param totalIndexNum Total amount of indices
-			virtual void CalculateCustomShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelViewProjection, unsigned int totalVertexNum, unsigned int totalIndexNum);
-
 			/// Returns whether translucent shadowing should be applied to this material or not.
 			virtual bool IsTranslucent() override { return mIsTranslucent; }
 			/// Sets whether translucent shadowing should be applied to this material or not.
@@ -53,35 +45,9 @@ namespace GeometryEngine
 			float mGlobalAlphaValue;
 			bool mIsTranslucent;
 
-			QOpenGLShaderProgram* mpShadowMapProgram; // Lighting shader
-			std::string mShadowMapVertexShaderKey;
-			std::string mShadowMapFragmentShaderKey;
-
 			///Empty constructor
 			///Called from child objects copy constructor to avoid double initialization 
 			TransparentMaterial() {}
-
-			/// Initializes managers and shaders
-			virtual void initMaterial() override;
-			/// Abstract method. Sets the material shadow map shaders that should be loaded
-			virtual void initShadowMapShaders() = 0;
-			/// Loads and compiles material shadow map shader program
-			virtual void initShadowMapProgram();
-			/// Abstract method. Sends parameters to the shadow map shaders.
-			/// param modelViewProjectionMatrix Model matrix modified by the light's viewport viewProjection matrix
-			virtual void setShadowProgramParameters(const QMatrix4x4& modelViewProjectionMatrix) = 0;
-			/// Abstract method. Binds shaders and calculates the shadow map.
-			/// param vertexBuf Vertex buffer
-			/// param indexBuf IndexBuffer
-			/// param totalVertexNum Number of vetices
-			/// param titalIndexNum Number of indices
-			virtual void renderShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum) = 0;
-			/// Applies internal modifiers and calls renderShadowMap
-			/// param vertexBuf Vertex buffer
-			/// param indexBuf IndexBuffer
-			/// param totalVertexNum Number of vetices
-			/// param titalIndexNum Number of indices
-			virtual void modifyRenderShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum);
 			/// Copies the data of a Material object to the current object
 			/// param ref Material to be copied
 			void copy(const TransparentMaterial & mat);

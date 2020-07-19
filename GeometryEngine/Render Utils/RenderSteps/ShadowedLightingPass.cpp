@@ -92,7 +92,6 @@ void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::calculateItemShad
 		item->GetMaterialPtr()->GetCustomShaders()->RenderStep(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP, item->GetArrayBuffer(),
 			item->GetIndexBuffer(), transf->ProjectionMatrix * transf->ViewMatrix * item->GetModelMatrix(), item->GetVertexNumber(), item->GetIndexNumber());
 	}
-	//if (item->GetMaterialPtr()->GetApplyCustomShadowMap()) light->CalculateCustomShadowMap(item->GetArrayBuffer(), item->GetIndexBuffer(), item->GetModelMatrix(), item->GetVertexNumber(), item->GetIndexNumber(), item->GetMaterialPtr());
 	else light->CalculateShadowMap(item->GetArrayBuffer(), item->GetIndexBuffer(), item->GetModelMatrix(), item->GetVertexNumber(), item->GetIndexNumber());
 
 }

@@ -98,12 +98,6 @@ void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::initShaders()
 	mFragmentShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_MULTI_TEXTURE_MATERIAL_FRAGMENT_SHADER;
 }
 
-void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::initShadowMapShaders()
-{
-	mShadowMapVertexShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::POSITION_TEX_COORD_VERTEX_SHADER;
-	mShadowMapFragmentShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_MULTI_TEXTURE_SHADOWMAP;
-}
-
 void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::initTextures()
 {
 	if (mpAmbientTexture->Texture == nullptr)
@@ -178,47 +172,6 @@ void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::BindTextures()
 		mpSpecularTexture->Texture->bind(TEXTURE_UNIT + 2);
 	if (mpEmissiveTexture->Texture != nullptr)
 		mpEmissiveTexture->Texture->bind(TEXTURE_UNIT + 3);
-}
-
-void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::setShadowProgramParameters(const QMatrix4x4 & modelViewProjectionMatrix)
-{
-	assert(mpShadowMapProgram != nullptr && "Material texture shadow map program not found");
-	if (mpShadowMapProgram != nullptr)
-	{
-		mpShadowMapProgram->setUniformValue("textureAmbient", TEXTURE_UNIT);
-		mpShadowMapProgram->setUniformValue("textureDiffuse", TEXTURE_UNIT + 1);
-		mpShadowMapProgram->setUniformValue("textureReflective", TEXTURE_UNIT + 2);
-		mpShadowMapProgram->setUniformValue("textureEmissive", TEXTURE_UNIT + 3);
-		mpShadowMapProgram->setUniformValue("mModelViewProjectionMatrix", modelViewProjectionMatrix);
-		mpShadowMapProgram->setUniformValue("mThresholdAlphaValue", mThresholdValue);
-		mpShadowMapProgram->setUniformValue("mGlobalAlphaValue", mGlobalAlphaValue);
-	}
-}
-
-void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::renderShadowMap(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
-{
-	assert(mpShadowMapProgram != nullptr && "Alpha Multi Texture Material --> Shader ShadowMap program Null");
-	if (mpShadowMapProgram != nullptr)
-	{
-		// Tell OpenGL which VBOs to use
-		vertexBuf->bind();
-		indexBuf->bind();
-
-		// Tell OpenGL programmable pipeline how to locate vertex position data
-		int vertexLocation = mpShadowMapProgram->attributeLocation("posAttr");
-		mpShadowMapProgram->enableAttributeArray(vertexLocation);
-		mpShadowMapProgram->setAttributeBuffer(vertexLocation, GL_FLOAT, VertexData::POSITION_OFFSET, 3, sizeof(VertexData));
-
-		// Tell OpenGL programmable pipeline how to locate texture coordinates
-		int textureCoordinate = mpShadowMapProgram->attributeLocation("TexCoord");
-		mpShadowMapProgram->enableAttributeArray(textureCoordinate);
-		mpShadowMapProgram->setAttributeBuffer(textureCoordinate, GL_FLOAT, VertexData::TEXTURE_COORDINATES_OFFSET, 2, sizeof(VertexData));
-
-		BindTextures();
-
-		// Draw light
-		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);
-	}
 }
 
 void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::copy(const AlphaMultiTextureMaterial & mat)

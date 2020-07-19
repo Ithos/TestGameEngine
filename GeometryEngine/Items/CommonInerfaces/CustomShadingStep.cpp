@@ -36,7 +36,7 @@ void GeometryEngine::CustomShading::CustomShadingStep::RenderShaders(QOpenGLBuff
 		}
 
 		setProgramParameters(modelViewProjection);
-		drawShader(vertexBuf, indexBuf, totalVertexNum, totalIndexNum);
+		modifyRenderShader(vertexBuf, indexBuf, totalVertexNum, totalIndexNum);
 	}
 }
 
@@ -84,6 +84,15 @@ void GeometryEngine::CustomShading::CustomShadingStep::AddToInterface(CustomShad
 {
 	mpParentInterface = parent;
 	mpParentInterface->AddShadingStep(this, step);
+}
+
+void GeometryEngine::CustomShading::CustomShadingStep::modifyRenderShader(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
+{
+	if ( mpTargetMaterial->GetDrawBacksideFaces() ) glDisable(GL_CULL_FACE);
+	{
+		drawShader(vertexBuf, indexBuf, totalVertexNum, totalIndexNum);
+	}
+	if (mpTargetMaterial->GetDrawBacksideFaces()) glEnable(GL_CULL_FACE);
 }
 
 void GeometryEngine::CustomShading::CustomShadingStep::copy(const CustomShadingStep & ref)

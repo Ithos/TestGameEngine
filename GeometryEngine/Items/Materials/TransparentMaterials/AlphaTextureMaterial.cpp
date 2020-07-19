@@ -47,12 +47,6 @@ void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::initShaders()
 	mFragmentShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_TEXTURE_MATERIAL_FRAGMENT_SHADER;
 }
 
-void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::initShadowMapShaders()
-{
-	mShadowMapVertexShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::POSITION_TEX_COORD_VERTEX_SHADER;
-	mShadowMapFragmentShaderKey = GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_TEXTURE_SHADOWMAP;
-}
-
 void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::initTextures()
 {
 	if (mpTexture->Texture == nullptr) mpTexture->Build();
@@ -107,47 +101,9 @@ void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::drawMaterial(QOpenG
 	}
 }
 
-void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::setShadowProgramParameters(const QMatrix4x4 & modelViewProjectionMatrix)
-{
-	assert(mpShadowMapProgram != nullptr && "Material texture shadow map program not found");
-	if (mpShadowMapProgram != nullptr)
-	{
-		mpShadowMapProgram->setUniformValue("textureColor", TEXTURE_UNIT);
-		mpShadowMapProgram->setUniformValue("mModelViewProjectionMatrix", modelViewProjectionMatrix);
-		mpShadowMapProgram->setUniformValue("mThresholdAlphaValue", mThresholdValue);
-		mpShadowMapProgram->setUniformValue("mGlobalAlphaValue", mGlobalAlphaValue);
-	}
-}
-
 void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::BindTextures()
 {
 	if (mpTexture->Texture != nullptr) mpTexture->Texture->bind(TEXTURE_UNIT);
-}
-
-void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::renderShadowMap(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
-{
-	assert(mpShadowMapProgram != nullptr && "Alpha Texture Material --> Shader ShadowMap program Null");
-	if (mpShadowMapProgram != nullptr)
-	{
-		// Tell OpenGL which VBOs to use
-		vertexBuf->bind();
-		indexBuf->bind();
-
-		// Tell OpenGL programmable pipeline how to locate vertex position data
-		int vertexLocation = mpShadowMapProgram->attributeLocation("posAttr");
-		mpShadowMapProgram->enableAttributeArray(vertexLocation);
-		mpShadowMapProgram->setAttributeBuffer(vertexLocation, GL_FLOAT, VertexData::POSITION_OFFSET, 3, sizeof(VertexData));
-
-		// Tell OpenGL programmable pipeline how to locate texture coordinates
-		int textureCoordinate = mpShadowMapProgram->attributeLocation("TexCoord");
-		mpShadowMapProgram->enableAttributeArray(textureCoordinate);
-		mpShadowMapProgram->setAttributeBuffer(textureCoordinate, GL_FLOAT, VertexData::TEXTURE_COORDINATES_OFFSET, 2, sizeof(VertexData));
-
-		BindTextures();
-
-		// Draw light
-		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);
-	}
 }
 
 void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::copy(const AlphaTextureMaterial & mat)
