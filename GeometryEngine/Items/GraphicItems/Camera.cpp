@@ -1,11 +1,11 @@
-#include "Render Utils\GBuffer.h"
 #include "../PostProcess/PostProcess.h"
 #include "../Item Utils/Viewport.h"
 #include "Render Utils\RenderStep.h"
+#include "Render Utils\RenderBuffersData.h"
 #include "Camera.h"
 
 GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::Camera(const GeometryItemUtils::Viewport & viewport, bool autoResize, const QVector3D & pos, 
-	const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : WorldItem(pos, rot, scale, parent), mAutoResize(autoResize), mpGBuffer(nullptr), mpViewport(nullptr)
+	const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : WorldItem(pos, rot, scale, parent), mAutoResize(autoResize), mpGBufferData(nullptr), mpViewport(nullptr)
 {
 	mpViewport = viewport.Clone();
 	CalculateModelMatrix();
@@ -18,10 +18,10 @@ GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::Camera(const Camera &
 
 GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::~Camera()
 {
-	if (mpGBuffer != nullptr)
+	if (mpGBufferData != nullptr)
 	{
-		delete mpGBuffer;
-		mpGBuffer = nullptr;
+		delete mpGBufferData;
+		mpGBufferData = nullptr;
 	}
 
 	if (mpViewport != nullptr)
@@ -75,6 +75,12 @@ void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::SetViewportSize(
 void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::SetBoundaries(GLdouble zNear, GLdouble zFar)
 {
 	mpViewport->SetBoundaries(zNear, zFar);
+}
+
+GeometryEngine::GeometryBuffer::GBuffer * GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::GetGBuffer()
+{
+	if (mpGBufferData != nullptr) return mpGBufferData->GetGeometryBuffer();
+	return nullptr;
 }
 
 bool GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::AddCustomRenderStep(const GeometryRenderStep::RenderStep & step)

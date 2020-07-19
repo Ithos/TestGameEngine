@@ -3,8 +3,9 @@
 #include "../../GeometryItem.h"
 #include "AlphaTextureMaterial.h"
 
-GeometryEngine::GeometryMaterial::AlphaTextureMaterial::AlphaTextureMaterial(const std::string & texDir, float thresholdValue, float globalAlphaValue, float shininess, bool translucent):
-	TransparentMaterial(thresholdValue, globalAlphaValue, shininess, translucent), mpTexture(nullptr)
+GeometryEngine::GeometryMaterial::AlphaTextureMaterial::AlphaTextureMaterial(const CustomShading::CustomShadingInterface* const customShading, const std::string & texDir, 
+	float thresholdValue, float globalAlphaValue, float shininess, bool translucent):
+	TransparentMaterial(customShading, thresholdValue, globalAlphaValue, shininess, translucent), mpTexture(nullptr)
 {
 	mpTexture = new TextureParameters(texDir, -1, true);
 	initMaterial();
@@ -100,7 +101,7 @@ void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::drawMaterial(QOpenG
 		mpProgram->enableAttributeArray(normalVector);
 		mpProgram->setAttributeBuffer(normalVector, GL_FLOAT, VertexData::NORMALS_OFFSET, 3, sizeof(VertexData));
 
-		bindTextures();
+		BindTextures();
 
 		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
 	}
@@ -118,7 +119,7 @@ void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::setShadowProgramPar
 	}
 }
 
-void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::bindTextures()
+void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::BindTextures()
 {
 	if (mpTexture->Texture != nullptr) mpTexture->Texture->bind(TEXTURE_UNIT);
 }
@@ -138,11 +139,11 @@ void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::renderShadowMap(QOp
 		mpShadowMapProgram->setAttributeBuffer(vertexLocation, GL_FLOAT, VertexData::POSITION_OFFSET, 3, sizeof(VertexData));
 
 		// Tell OpenGL programmable pipeline how to locate texture coordinates
-		int textureCoordinate = mpProgram->attributeLocation("TexCoord");
-		mpProgram->enableAttributeArray(textureCoordinate);
-		mpProgram->setAttributeBuffer(textureCoordinate, GL_FLOAT, VertexData::TEXTURE_COORDINATES_OFFSET, 2, sizeof(VertexData));
+		int textureCoordinate = mpShadowMapProgram->attributeLocation("TexCoord");
+		mpShadowMapProgram->enableAttributeArray(textureCoordinate);
+		mpShadowMapProgram->setAttributeBuffer(textureCoordinate, GL_FLOAT, VertexData::TEXTURE_COORDINATES_OFFSET, 2, sizeof(VertexData));
 
-		bindTextures();
+		BindTextures();
 
 		// Draw light
 		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);

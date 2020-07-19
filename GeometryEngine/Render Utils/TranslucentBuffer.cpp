@@ -132,6 +132,12 @@ void GeometryEngine::GeometryBuffer::TranslucentBuffer::UnbindTexture(TBUFFER_TE
 	mpFBO->GetColorTarget((unsigned int)tex)->Unbind();
 }
 
+void GeometryEngine::GeometryBuffer::TranslucentBuffer::BindShadowMapTextureWrite()
+{
+	mpFBO->Bind(GeometryBuffer::DRAW_READ);
+	mpFBO->Draw(TBUFFER_TEXTURE_TYPE_SHADOW_MAP);
+}
+
 void GeometryEngine::GeometryBuffer::TranslucentBuffer::ClearColorTexture(TBUFFER_TEXTURE_TYPE texture)
 {
 	mpFBO->GetColorTarget((unsigned int)texture)->Clear();

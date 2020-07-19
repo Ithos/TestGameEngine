@@ -86,8 +86,13 @@ void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::finishShadowStep(
 
 void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::calculateItemShadowMap(GeometryWorldItem::GeometryItem::GeometryItem * item, GeometryWorldItem::GeometryLight::Light* light)
 {
-	if (item->GetMaterialPtr()->GetApplyCustomShadowMap()) light->CalculateCustomShadowMap(item->GetArrayBuffer(), item->GetIndexBuffer(),
-																								item->GetModelMatrix(), item->GetVertexNumber(), item->GetIndexNumber(), item->GetMaterialPtr());
+	const GeometryEngine::LightingTransformationData* transf = light->GetLightTransformationMatrices(GeometryEngine::GeometryWorldItem::GeometryLight::LightTransformationMatrices::LIGHTSPACE_TRANSFORMATION_MATRICES);
+	if (transf != nullptr && item->GetMaterialPtr()->GetCustomShaders() != nullptr && item->GetMaterialPtr()->GetCustomShaders()->ContainsStep(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP))
+	{
+		item->GetMaterialPtr()->GetCustomShaders()->RenderStep(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP, item->GetArrayBuffer(),
+			item->GetIndexBuffer(), transf->ProjectionMatrix * transf->ViewMatrix * item->GetModelMatrix(), item->GetVertexNumber(), item->GetIndexNumber());
+	}
+	//if (item->GetMaterialPtr()->GetApplyCustomShadowMap()) light->CalculateCustomShadowMap(item->GetArrayBuffer(), item->GetIndexBuffer(), item->GetModelMatrix(), item->GetVertexNumber(), item->GetIndexNumber(), item->GetMaterialPtr());
 	else light->CalculateShadowMap(item->GetArrayBuffer(), item->GetIndexBuffer(), item->GetModelMatrix(), item->GetVertexNumber(), item->GetIndexNumber());
 
 }

@@ -236,6 +236,18 @@
     <ClInclude Include="Render Utils\RenderBuffersData.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\CustomShadingStep.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaColorShadowMap.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaTextureShadowMap.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaMultiTextureShadowMap.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeometryEngine.cpp">
@@ -453,6 +465,12 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Render Utils\RenderBuffersData.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\CommonInerfaces\CustomShadingInterface.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\CommonInerfaces\CustomShadingStep.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>

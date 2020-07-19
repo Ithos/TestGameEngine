@@ -58,16 +58,13 @@ namespace GeometryEngine
 		};
 
 		/// Base class for all materials for world objects. 
-		class Material : public CustomShadingInterface
+		class Material
 		{
 		public:
 			/// Constructor 
-			/// param ambient Ambient rgb color component of the material. Each color goes from 0.0 to 1.0
-			/// param diffuse Diffuse rgb color component of the material. Each color goes from 0.0 to 1.0
-			/// param specular Specular rgb color component of the material. Each color goes from 0.0 to 1.0
-			/// param emissive Emissive rgb color component of the material. Each color goes from 0.0 to 1.0
 			/// param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininess. If shininess is <= 0 it is set to 0.001 to avoid errors in the shaders. 
-			Material(float shininess = 10.0f);
+			/// param customShading Interface to an object that implements custom shadow shading for this material.
+			Material(float shininess = 10.0f, const CustomShading::CustomShadingInterface* const customShading = nullptr);
 
 			/// Copy constructor
 			/// param ref Object to be copied.
@@ -94,47 +91,26 @@ namespace GeometryEngine
 
 			/// Returns whether the material allows transparencies. Method to be overwritten by child classes. By default returns false.
 			virtual bool IsTransparent() { return false; }
-
-			/// Method to be implemented by child classes, by default triggers an assert. Applies the material shadow map shaders.
-			/// param vertexBuf Pointer to the vertex buffer
-			/// param indexBuffer Pointer to the index buffer
-			/// param modelMatrix model matrix of the item to be added to the shadow map
-			/// param totalVertexNum Total amount of vertices
-			/// param totalIndexNum Total amount of indices
-			virtual void CalculateCustomShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelViewProjection, unsigned int totalVertexNum, unsigned int totalIndexNum) override
-			{
-				assert(GetApplyCustomShadowMap() && "Custom shadow map not found");
-			}
-
-			/// Method to be reimplemented by child classes. Returns whether custom shadow map shaders should be used.
-			virtual bool GetApplyCustomShadowMap() override
-			{
-				return false;
-			}
-
-			/// Method to be reimplemented by child classes, by default triggers an assert. Sets whether custom shadow map shaders should be used
-			/// param applyCustom true if custom shadow maps should be used false otherwise.
-			virtual void SetApplyCustomShadowMap(bool applyCustom) override
-			{
-				assert(GetApplyCustomShadowMap() && "Custom shadow map not found");
-			}
-
+			/// Returns whether the material casts translucent shadows. The material must be transparent to be able to be considered translucent. Method to be overwritten by child classes. 
+			/// By default returns false.
+			virtual bool IsTranslucent() { return false; }
 			/// If set to true both frontfaces and backfaces of the model will be drawn
 			void SetDrawBacksideFaces(bool drawBackside) { mDrawBothFaces = drawBackside; }
 			/// Returns if backside faces will be drawn
 			bool GetDrawBacksideFaces() { return mDrawBothFaces; }
-			/// Method to be reimplemented by child classes. Returns whether translucent shadowing should be applied to this material or not.
-			virtual bool IsTranslucent() { return false; }
+			/// Returns the material's custom shading object
+			CustomShading::CustomShadingInterface* GetCustomShaders() { return mpCustomShading; }
 
 		protected:
 			float mShininess;
 			bool mLit;
-			bool mApplyCustomShadowMap;
 			bool mDrawBothFaces;
 
 			QOpenGLShaderProgram* mpProgram; // Lighting shader
 			ShaderFiles::ShaderManager* mpShaderManager;
 			Configuration::ConfigurationManager* mpConfInstance;
+
+			CustomShading::CustomShadingInterface* mpCustomShading;
 
 			std::string mVertexShaderKey;
 			std::string mFragmentShaderKey;

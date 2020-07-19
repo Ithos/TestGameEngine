@@ -14,13 +14,15 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor. Calls init material
+			/// param customShading Interface to an object that implements custom shadow shading for this material
 			/// param ambient Ambient rgb color component of the material. Each color goes from 0.0 to 1.0
 			/// param diffuse Diffuse rgb color component of the material. Each color goes from 0.0 to 1.0
 			/// param specular Specular rgb color component of the material. Each color goes from 0.0 to 1.0
 			/// param emissive Emissive rgb color component of the material. Each color goes from 0.0 to 1.0
 			/// param globalAlphaValue Main alpha value for the whole object, clamps to 0.0 to 1.0 range. This value gets multiplied to every fragment color alpha.
 			/// param shininess Shininess component. Has to be > 0 if invalid takes the value 0.0001. Equation: spec contribution = cos(alpha) ^ shininessIf shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
-			AlphaColorMaterial(const QVector3D& ambient = QVector3D(0.0f, 0.0, 0.0f), const QVector3D& diffuse = QVector3D(0.0f, 0.0f, 0.0f),
+			AlphaColorMaterial(const CustomShading::CustomShadingInterface* const customShading, const QVector3D& ambient = QVector3D(0.0f, 0.0, 0.0f), 
+				const QVector3D& diffuse = QVector3D(0.0f, 0.0f, 0.0f),
 				const QVector3D& specular = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D& emissive = QVector3D(0.0f, 0.0f, 0.0f), float thresholdValue = 0.0f,
 				float globalAlphaValue = 1.0f, float shininess = 10.0f, bool translucent = false);
 			/// Copy constructor

@@ -14,10 +14,12 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor 
+			/// param customShading Interface to an object that implements custom shadow shading for this material
 			/// param thresholdValue Min alpha value below which the fragment is dropped completely. This value is clamped to the range [0, 1]
 			/// param globalAlphaValue Global alpha value to be applied to the whole model. This value is multiplied by other posible alphas. This value is clamped to the range [0, 1]
 			/// param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininessIf shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
-			TransparentMaterial(float thresholdValue = 0.0f, float globalAlphaValue = 1.0f, float shininess = 10.0f, bool translucent = false);
+			TransparentMaterial(const CustomShading::CustomShadingInterface* const customShading, float thresholdValue = 0.0f, float globalAlphaValue = 1.0f, 
+				float shininess = 10.0f, bool translucent = false);
 			/// Copy constructor
 			/// param ref Object to be copied.
 			TransparentMaterial(const TransparentMaterial& ref);
@@ -41,13 +43,6 @@ namespace GeometryEngine
 			/// param totalIndexNum Total amount of indices
 			virtual void CalculateCustomShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelViewProjection, unsigned int totalVertexNum, unsigned int totalIndexNum);
 
-			/// Returns whether custom shadow map shaders should be used.
-			virtual bool GetApplyCustomShadowMap() override { return mApplyCustomShadowMap; }
-
-			/// Sets whether custom shadow map shaders should be used
-			/// param applyCustom true if custom shadow maps should be used false otherwise.
-			virtual void SetApplyCustomShadowMap(bool applyCustom) override { mApplyCustomShadowMap = applyCustom; }
-
 			/// Returns whether translucent shadowing should be applied to this material or not.
 			virtual bool IsTranslucent() override { return mIsTranslucent; }
 			/// Sets whether translucent shadowing should be applied to this material or not.
@@ -61,6 +56,10 @@ namespace GeometryEngine
 			QOpenGLShaderProgram* mpShadowMapProgram; // Lighting shader
 			std::string mShadowMapVertexShaderKey;
 			std::string mShadowMapFragmentShaderKey;
+
+			///Empty constructor
+			///Called from child objects copy constructor to avoid double initialization 
+			TransparentMaterial() {}
 
 			/// Initializes managers and shaders
 			virtual void initMaterial() override;

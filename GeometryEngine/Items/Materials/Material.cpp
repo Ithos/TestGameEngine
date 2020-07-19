@@ -31,10 +31,15 @@ const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_TEX
 const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_MULTI_TEXTURE_SHADOWMAP = "ALPHA_MULTI_TEXTURE_SHADOWMAP";
 
 
-GeometryEngine::GeometryMaterial::Material::Material(float shininess) : mpProgram(nullptr), mpShaderManager(nullptr), mpConfInstance(nullptr), mShininess(shininess), mApplyCustomShadowMap(false), 
-																			mDrawBothFaces(false)
+GeometryEngine::GeometryMaterial::Material::Material(float shininess, const CustomShading::CustomShadingInterface* const customShading) : mpProgram(nullptr), mpShaderManager(nullptr), mpConfInstance(nullptr),
+												mShininess(shininess), mDrawBothFaces(false), mpCustomShading(nullptr)
 {
 	mShininess = checkShininessValue(mShininess);
+	if (customShading != nullptr) 
+	{
+		mpCustomShading = customShading->Clone();
+		mpCustomShading->SetTargetMaterial(this);
+	}
 }
 
 GeometryEngine::GeometryMaterial::Material::Material(const Material & mat)
@@ -137,6 +142,11 @@ void GeometryEngine::GeometryMaterial::Material::copy(const Material & mat)
 	this->mpShaderManager = mat.mpShaderManager;
 	this->mVertexShaderKey = mat.mVertexShaderKey;
 	this->mShininess = mat.mShininess;
-	this->mApplyCustomShadowMap = mat.mApplyCustomShadowMap;
 	this->mDrawBothFaces = mat.mDrawBothFaces;
+	if (mat.mpCustomShading != nullptr)
+	{
+		this->mpCustomShading = mat.mpCustomShading->Clone();
+		this->mpCustomShading->SetTargetMaterial(this);
+	}
+	else this->mpCustomShading = nullptr;
 }

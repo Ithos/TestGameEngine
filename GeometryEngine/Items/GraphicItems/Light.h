@@ -3,6 +3,8 @@
 #ifndef GEOMETRYLIGHT_H
 #define GEOMETRYLIGHT_H
 
+#include <map>
+
 #include <QOpenGLShaderProgram>
 #include <QOpenGLBuffer>
 
@@ -10,7 +12,6 @@
 #include <ShaderManager.h>
 
 #include "../WorldItem.h"
-#include "..\CommonInerfaces\CustomShadingInterface.h"
 
 namespace GeometryEngine
 {
@@ -43,6 +44,11 @@ namespace GeometryEngine
 				static const std::string POSITION_VERTEX_SHADER;
 
 				static const std::string EMISSIVE_LIGHTING_FRAGMENT_SHADER;
+			};
+
+			enum LightTransformationMatrices
+			{
+				LIGHTSPACE_TRANSFORMATION_MATRICES
 			};
 
 			/// Base class for world objects that represent a light source in the scene
@@ -108,19 +114,6 @@ namespace GeometryEngine
 					assert(GetCastShadows() && "Shadow map calculation not found");
 				}
 
-				/// Method that passes light data to a class that implements custom shadow map calculation. Lights that cast shadows are supposed to override this method. By default triggers an assert.
-				/// param vertexBuf Pointer to the vertex buffer
-				/// param indexBuffer Pointer to the index buffer
-				/// param modelMatrix model matrix of the item to be added to the shadow map
-				/// param totalVertexNum Total amount of vertices
-				/// param totalIndexNum Total amount of indices
-				/// param customShadingPtr Pointer to a class that calculates a custom (transparent, translucent) shadowmap 
-				virtual void CalculateCustomShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelMatrix, unsigned int totalVertexNum, unsigned int totalIndexNum,
-					CustomShadingInterface* customShadingPtr) 
-				{
-					assert(GetCastShadows() && "Shadow map calculation not found");
-				}
-
 				/// Method to be implemented by child classes. Returns a pointer to the boundng geometry of the ligh or nullptr if there is none
 				/// return Pointer to the boundng geometry of the ligh or nullptr if there is none
 				virtual WorldItem* const GetBoundingGeometry() { return nullptr; }
@@ -130,6 +123,9 @@ namespace GeometryEngine
 				virtual bool GetCastShadows() { return false; }
 				/// Method to be implemented by child classes. Updates elements when the screen is resized.
 				virtual void ResizeElements(int screenWidth, int screenHeight) {}
+				/// Method to obtain light transformation matrices by name
+				/// return LightingTransformationData pointer, null if the transformation does not exist
+				virtual const LightingTransformationData* const GetLightTransformationMatrices(LightTransformationMatrices transformation) { return mMatricesMap[transformation]; }
 				/// Factory method. Returns a copy of this object.
 				/// return A copy of this object.
 				virtual Light* Clone() const = 0;
@@ -143,6 +139,8 @@ namespace GeometryEngine
 				ShaderFiles::ShaderManager* mpShaderManager;
 				std::string mVertexShaderKey;
 				std::string mFragmentShaderKey;
+
+				std::map<LightTransformationMatrices, const LightingTransformationData*> mMatricesMap;
 
 				/// Initializes managers and shaders
 				virtual void initLight();

@@ -32,6 +32,11 @@
 #include <Items\GraphicItems\Lights\Spotlight.h>
 #include <Items\GraphicItems\Lights\ShadowCastingLights\DirectionalShadowLight.h>
 #include <Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.h>
+#include <Items\CommonInerfaces\CustomShadingInterface.h>
+#include <Items\CommonInerfaces\CustomShadingStep.h>
+#include <Items\CommonInerfaces\ShadingSteps\AlphaColorShadowMap.h>
+#include <Items\CommonInerfaces\ShadingSteps\AlphaTextureShadowMap.h>
+#include <Items\CommonInerfaces\ShadingSteps\AlphaMultiTextureShadowMap.h>
 
 #include <Scenes/DeferredShadingScene.h>
 #include <Scenes\PostProcessScene.h>
@@ -41,6 +46,7 @@
 #include <Render Utils\Gbuffers\CompleteColorBuffer.h>
 #include <Render Utils\Gbuffers\SingleColorTextureBuffer.h>
 #include <Render Utils\Gbuffers\CompleteColorPostProcessBuffer.h>
+#include <Render Utils\RenderBuffersData.h>
 #include <Items\PostProcess\DoublePassPostProcess\BlurPostProcess.h>
 #include <Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.h>
 #include <Items\PostProcess\PostProcess.h>
@@ -214,8 +220,11 @@ namespace Application
 	}
 	void CWindowApplication::initGeometry(GeometryEngine::GeometryEngine* engine)
 	{
+		GeometryEngine::CustomShading::CustomShadingInterface alphaColorInterface;
+		alphaColorInterface.AddNewShadingStep< GeometryEngine::CustomShading::AlphaColorShadowMap<GeometryEngine::GeometryMaterial::AlphaColorMaterial> >(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP);
+
 		GeometryEngine::GeometryScene::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::GeometryScene::TransparentGeometryScene>();
-		GeometryEngine::GeometryMaterial::AlphaColorMaterial mat( QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f),0.1f, 0.7f, 100.0f); // QVector3D(1.0f, 0.4f, 0.3f)
+		GeometryEngine::GeometryMaterial::AlphaColorMaterial mat( &alphaColorInterface, QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f),0.1f, 0.7f, 100.0f); // QVector3D(1.0f, 0.4f, 0.3f)
 		GeometryEngine::GeometryMaterial::ColorMaterial floorMat(QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f));
 
 		std::list< GeometryEngine::GeometryMaterial::TextureParameters* > tmpList;
@@ -235,15 +244,22 @@ namespace Application
 																				GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE,
 																				GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP, 1000.0f);
 
-		GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial atMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE, 
+		GeometryEngine::CustomShading::CustomShadingInterface alphaNormalMapMultiTextureInterface;
+		alphaNormalMapMultiTextureInterface.AddNewShadingStep<GeometryEngine::CustomShading::AlphaMultiTextureShadowMap< GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial > >(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP);
+
+
+		GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial atMat( &alphaNormalMapMultiTextureInterface, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP, 0.1f, 0.8f, 1000.0f);
 
-		GeometryEngine::GeometryMaterial::AlphaTextureMaterial grassMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_GRASS_TEXTURE, 0.1f);
+		GeometryEngine::CustomShading::CustomShadingInterface alphaTextureInterface;
+		alphaTextureInterface.AddNewShadingStep< GeometryEngine::CustomShading::AlphaTextureShadowMap<GeometryEngine::GeometryMaterial::AlphaTextureMaterial> >(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP);
+
+		GeometryEngine::GeometryMaterial::AlphaTextureMaterial grassMat( &alphaTextureInterface, GeometryEngine::GeometryMaterial::TextureConstant::TEST_GRASS_TEXTURE, 0.1f);
 		grassMat.SetDrawBacksideFaces(true);
-																	
+								
 
 		GeometryEngine::GeometryMaterial::MultiTextureMaterial mtMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_RIGHT_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE);
@@ -251,7 +267,7 @@ namespace Application
 		/*GeometryEngine::Cube**/ testCube2 = new GeometryEngine::GeometryWorldItem::GeometryItem::Sphere(mat, 1.0f, 6, 12, QVector3D(5.0f, 0.0f, -15.0f)); //new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 2.0f, QVector3D(5.0f, 0.0f, -15.0f), QVector3D(-30.0f, 30.0f, 0.0f));
 		GeometryEngine::GeometryItemUtils::PerspectiveViewport viewport(QVector4D(0, 0, this->width(), this->height()), 45.0f, 1.0f, 0.1f, 1000.0f);
 		/*GeometryEngine::PerspectiveCamera**/ cam = new GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera(
-																			GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer(),
+																			GeometryEngine::GeometryRenderData::RenderBuffersData(GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer()),
 																			viewport, true,
 																			QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0, 0, 0));
 		//cam->SetPosition(cam->ToModelCoordSystem(QVector3D(-5.0f, 10.0f, -15.0f)));

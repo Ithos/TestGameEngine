@@ -9,6 +9,11 @@
 
 namespace GeometryEngine
 {
+	namespace GeometryRenderData
+	{
+		class RenderBuffersData;
+	}
+
 	namespace GeometryBuffer
 	{
 		class GBuffer;
@@ -83,8 +88,10 @@ namespace GeometryEngine
 				bool IsAutoResize() { return mAutoResize; }
 				/// Gets a pointer to the geometry buffer
 				/// return geometry buffer
-				virtual GeometryBuffer::GBuffer* GetGBuffer() { return mpGBuffer; }
-
+				virtual GeometryBuffer::GBuffer* GetGBuffer();
+				/// Gets a pointer to the RenderBufferData
+				/// return RenderBufferData
+				virtual GeometryRenderData::RenderBuffersData* GetRenderBufferData() { return mpGBufferData; }
 				/// Adds a render step to this camera. If a camera has custom render steps they are used instead of the scene when rendering the camera.
 				/// param step render step to be added to the camera
 				/// return true if ok false otherwise
@@ -144,9 +151,8 @@ namespace GeometryEngine
 
 			protected:
 				GeometryItemUtils::Viewport* mpViewport;
-				
 				bool mAutoResize;
-				GeometryBuffer::GBuffer* mpGBuffer;
+				GeometryRenderData::RenderBuffersData* mpGBufferData;
 				std::list< GeometryRenderStep::RenderStep* > mCustomRenderSteps;
 				std::list< GeometryPostProcess::PostProcess*> mPostProcess;
 				std::unordered_set<int> mRenderGroups;

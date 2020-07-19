@@ -7,6 +7,11 @@
 
 namespace GeometryEngine
 {
+	namespace GeometryBuffer
+	{
+		class TranslucentBuffer;
+	}
+
 	namespace GeometryRenderStep
 	{
 		/// Lighting pass that calculates transparent and translucent shadows
@@ -38,6 +43,12 @@ namespace GeometryEngine
 			/// param shadowedLights Set of shadow casting lights in the scene.
 			//virtual void CalculateShadowMap(GeometryWorldItem::GeometryCamera::Camera* cam, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* shadowedLights,
 			//	std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items) override;
+		private:
+			/// Initializes the OpenGl pipeline for the shadow calculation
+			/// sets cull face to front and sets the tmpTexture as the active texture, also enables depth test just in case
+			//void initShadowStep(GeometryBuffer::TranslucentBuffer* buf);
+			/// Resets the openGl pipeline
+			//void finishShadowStep(GeometryBuffer::TranslucentBuffer* buf);
 		};
 	}
 }

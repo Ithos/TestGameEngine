@@ -64,6 +64,8 @@ namespace GeometryEngine
 			/// Unbinds texture from the selected texture unit
 			/// param tex texture to unbind
 			void UnbindTexture(TBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit);
+			/// Bindsthe buffer as Read/Write and the shadowMap texture for writing
+			void BindShadowMapTextureWrite();
 			/// Gets current texture size
 			/// return Current texture size
 			const QVector2D& GetTextureSize() const { return mTextureSize; }

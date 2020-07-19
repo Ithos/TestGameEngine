@@ -1,9 +1,11 @@
 #include "../TextureMaterialCommons.h"
 #include "AlphaNormalmapMultiTextureMaterial.h"
 
-GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::AlphaNormalMapMultiTextureMaterial(const std::string & ambientTexDir, const std::string & diffuseTexDir, 
+GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::AlphaNormalMapMultiTextureMaterial(const CustomShading::CustomShadingInterface* const customShading, 
+	const std::string & ambientTexDir, const std::string & diffuseTexDir,
 	const std::string & specularTexDir, const std::string & emissiveTexDir, const std::string & normalMapTexDir, float thresholdValue, float globalAlphaValue, float shininess, 
-	bool translucent): AlphaMultiTextureMaterial(ambientTexDir, diffuseTexDir, specularTexDir, emissiveTexDir, thresholdValue, globalAlphaValue, shininess, translucent), mpNormalMapTexture(nullptr)
+	bool translucent): AlphaMultiTextureMaterial(customShading, ambientTexDir, diffuseTexDir, specularTexDir, emissiveTexDir, thresholdValue, globalAlphaValue, shininess, translucent), 
+	mpNormalMapTexture(nullptr)
 {
 		mpNormalMapTexture = new TextureParameters(normalMapTexDir, -1, true);
 }
@@ -53,9 +55,9 @@ void GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::setPr
 	if (mpProgram != nullptr) mpProgram->setUniformValue("normalMapTexture", TEXTURE_UNIT + 4);
 }
 
-void GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::bindTextures()
+void GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::BindTextures()
 {
-	GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::bindTextures();
+	GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::BindTextures();
 	if (mpNormalMapTexture != nullptr) mpNormalMapTexture->Texture->bind(TEXTURE_UNIT + 4);
 }
 

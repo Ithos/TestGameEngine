@@ -1,5 +1,6 @@
 #include "../../../Item Utils/Viewport.h"
 #include "../../../GeometryItem.h"
+#include"../../../CommonItemParameters.h"
 #include "ShadowMapLight.h"
 
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapConstants::ShadowMapConstants::SHADOW_MAP_FRAGMENT_SHADER = "SHADOW_MAP_FRAGMENT_SHADER";
@@ -16,6 +17,8 @@ GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::ShadowMapLight
 	StencilTestLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, parent)
 {
 	mpViewport = viewport.Clone();
+	mMatricesMap[LightTransformationMatrices::LIGHTSPACE_TRANSFORMATION_MATRICES] =
+		new LightingTransformationData(mpViewport->GetProjectionMatrix(), mpViewport->GetViewMatrix(), this->GetModelMatrix(), this->GetRotation());
 }
 
 GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::~ShadowMapLight()
@@ -41,15 +44,6 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::Calculate
 		setShadowProgramParameters(modelMatrix);
 		renderShadowMap(vertexBuf, indexBuf, totalVertexNum, totalIndexNum);
 	}
-}
-
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::CalculateCustomShadowMap(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, const QMatrix4x4 & modelMatrix, 
-	unsigned int totalVertexNum, unsigned int totalIndexNum, CustomShadingInterface * customShadingPtr)
-{
-	UpdateModelMatrix(true);
-	mpViewport->CalculateProjectionMatrix();
-	QMatrix4x4 modelViewProjection = mpViewport->GetViewProjectionMatrix() * modelMatrix;
-	customShadingPtr->CalculateCustomShadowMap(vertexBuf, indexBuf, modelViewProjection, totalVertexNum, totalIndexNum);
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::UpdateModelMatrix(bool updateChildren)

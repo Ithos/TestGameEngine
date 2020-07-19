@@ -3,9 +3,10 @@
 #include "../../GeometryItem.h"
 #include "AlphaMultiTextureMaterial.h"
 
-GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::AlphaMultiTextureMaterial(const std::string & ambientTexDir, const std::string & diffuseTexDir, 
+GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::AlphaMultiTextureMaterial(const CustomShading::CustomShadingInterface* const customShading, 
+	const std::string & ambientTexDir, const std::string & diffuseTexDir,
 	const std::string & specularTexDir, const std::string & emissiveTexDir, float thresholdValue, float globalAlphaValue, float shininess, bool translucent) : 
-	TransparentMaterial(thresholdValue, globalAlphaValue, shininess, translucent),
+	TransparentMaterial(customShading, thresholdValue, globalAlphaValue, shininess, translucent),
 	mpTexDirManager(nullptr), mpAmbientTexture(nullptr), mpDiffuseTexture(nullptr), mpSpecularTexture(nullptr), mpEmissiveTexture(nullptr)
 {
 	mpAmbientTexture = new TextureParameters(ambientTexDir, -1, true);
@@ -161,13 +162,13 @@ void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::drawMaterial(Q
 		mpProgram->enableAttributeArray(normalVector);
 		mpProgram->setAttributeBuffer(normalVector, GL_FLOAT, VertexData::NORMALS_OFFSET, 3, sizeof(VertexData));
 
-		bindTextures();
+		BindTextures();
 
 		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
 	}
 }
 
-void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::bindTextures()
+void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::BindTextures()
 {
 	if (mpAmbientTexture->Texture != nullptr)
 		mpAmbientTexture->Texture->bind(TEXTURE_UNIT);
@@ -184,10 +185,10 @@ void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::setShadowProgr
 	assert(mpShadowMapProgram != nullptr && "Material texture shadow map program not found");
 	if (mpShadowMapProgram != nullptr)
 	{
-		mpProgram->setUniformValue("textureAmbient", TEXTURE_UNIT);
-		mpProgram->setUniformValue("textureDiffuse", TEXTURE_UNIT + 1);
-		mpProgram->setUniformValue("textureReflective", TEXTURE_UNIT + 2);
-		mpProgram->setUniformValue("textureEmissive", TEXTURE_UNIT + 3);
+		mpShadowMapProgram->setUniformValue("textureAmbient", TEXTURE_UNIT);
+		mpShadowMapProgram->setUniformValue("textureDiffuse", TEXTURE_UNIT + 1);
+		mpShadowMapProgram->setUniformValue("textureReflective", TEXTURE_UNIT + 2);
+		mpShadowMapProgram->setUniformValue("textureEmissive", TEXTURE_UNIT + 3);
 		mpShadowMapProgram->setUniformValue("mModelViewProjectionMatrix", modelViewProjectionMatrix);
 		mpShadowMapProgram->setUniformValue("mThresholdAlphaValue", mThresholdValue);
 		mpShadowMapProgram->setUniformValue("mGlobalAlphaValue", mGlobalAlphaValue);
@@ -196,8 +197,8 @@ void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::setShadowProgr
 
 void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::renderShadowMap(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
-	assert(mpProgram != nullptr && "Alpha Multi Texture Material --> Shader ShadowMap program Null");
-	if (mpProgram != nullptr)
+	assert(mpShadowMapProgram != nullptr && "Alpha Multi Texture Material --> Shader ShadowMap program Null");
+	if (mpShadowMapProgram != nullptr)
 	{
 		// Tell OpenGL which VBOs to use
 		vertexBuf->bind();
@@ -209,11 +210,11 @@ void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::renderShadowMa
 		mpShadowMapProgram->setAttributeBuffer(vertexLocation, GL_FLOAT, VertexData::POSITION_OFFSET, 3, sizeof(VertexData));
 
 		// Tell OpenGL programmable pipeline how to locate texture coordinates
-		int textureCoordinate = mpProgram->attributeLocation("TexCoord");
-		mpProgram->enableAttributeArray(textureCoordinate);
-		mpProgram->setAttributeBuffer(textureCoordinate, GL_FLOAT, VertexData::TEXTURE_COORDINATES_OFFSET, 2, sizeof(VertexData));
+		int textureCoordinate = mpShadowMapProgram->attributeLocation("TexCoord");
+		mpShadowMapProgram->enableAttributeArray(textureCoordinate);
+		mpShadowMapProgram->setAttributeBuffer(textureCoordinate, GL_FLOAT, VertexData::TEXTURE_COORDINATES_OFFSET, 2, sizeof(VertexData));
 
-		bindTextures();
+		BindTextures();
 
 		// Draw light
 		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);

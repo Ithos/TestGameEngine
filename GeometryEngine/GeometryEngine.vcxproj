@@ -174,6 +174,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Items\CommonInerfaces\CustomShadingInterface.h" />
+    <ClInclude Include="Items\CommonInerfaces\CustomShadingStep.h" />
+    <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaColorShadowMap.h" />
+    <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaMultiTextureShadowMap.h" />
+    <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaTextureShadowMap.h" />
     <ClInclude Include="Items\CommonItemParameters.h" />
     <ClInclude Include="Items\Geometries\Cube.h" />
     <ClInclude Include="GeometryEngine.h" />
@@ -250,6 +254,8 @@
     <ClInclude Include="Scenes\TransparentGeometryScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Items\CommonInerfaces\CustomShadingInterface.cpp" />
+    <ClCompile Include="Items\CommonInerfaces\CustomShadingStep.cpp" />
     <ClCompile Include="Items\CommonItemParameters.cpp" />
     <ClCompile Include="Items\Geometries\Cube.cpp" />
     <ClCompile Include="GeometryEngine.cpp" />

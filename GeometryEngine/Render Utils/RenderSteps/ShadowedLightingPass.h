@@ -59,9 +59,9 @@ namespace GeometryEngine
 		private:
 			/// Initializes the OpenGl pipeline for the shadow calculation
 			/// sets cull face to front and sets the tmpTexture as the active texture, also enables depth test just in case
-			void initShadowStep(GeometryBuffer::GBuffer* buf);
+			virtual void initShadowStep(GeometryBuffer::GBuffer* buf);
 			/// Resets the openGl pipeline
-			void finishShadowStep(GeometryBuffer::GBuffer* buf);
+			virtual void finishShadowStep(GeometryBuffer::GBuffer* buf);
 		};
 	}
 }

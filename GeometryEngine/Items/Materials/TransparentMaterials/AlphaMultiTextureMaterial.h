@@ -14,6 +14,7 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor. Calls init material
+			/// param customShading Interface to an object that implements custom shadow shading for this material
 			/// param ambientTexDir Key to a texture that will be used as ambient color
 			/// param diffuseTexDir Key to a texture that will be used as diffuse color
 			/// param specularTexDir Key to a texture that will be used as specular color
@@ -21,7 +22,8 @@ namespace GeometryEngine
 			/// param thresholdValue Min alpha value below which the fragment is dropped completely. This value is clamped to the range [0, 1]
 			/// param globalAlphaValue Main alpha value for the whole object, clamps to 0.0 to 1.0 range. This value gets multiplied to every fragment color alpha.
 			/// param shininess Shininess component. Has to be > 0 if invalid takes the value 0.0001. Equation: spec contribution = cos(alpha) ^ shininessIf shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
-			AlphaMultiTextureMaterial(const std::string & ambientTexDir, const std::string & diffuseTexDir, const std::string & specularTexDir, const std::string & emissiveTexDir, 
+			AlphaMultiTextureMaterial(const CustomShading::CustomShadingInterface* const customShading, const std::string & ambientTexDir, const std::string & diffuseTexDir, 
+				const std::string & specularTexDir, const std::string & emissiveTexDir,
 				float thresholdValue = 0.0f, float globalAlphaValue = 1.0f, float shininess = 10.0f, bool translucent = false);
 			/// Copy constructor
 			/// param ref Object to be copied.
@@ -43,6 +45,10 @@ namespace GeometryEngine
 			/// Sets the emissive texture
 			/// param emissiveTexDir Key to a texture that will be used as emissive color 
 			void SetEmissiveTexture(const std::string& emissiveTexDir);
+			/// Binds textures to specific texture units. Used before drawing the object
+			virtual void BindTextures();
+			/// Returns the initial texture unit for this material
+			int GetInitialTextureUnit() { return TEXTURE_UNIT; }
 
 		protected:
 			/// Texture unit to be used by the textures
@@ -77,8 +83,6 @@ namespace GeometryEngine
 			/// param totalVertexNum Number of vetices
 			/// param titalIndexNum Number of indices
 			virtual void drawMaterial(QOpenGLBuffer* arrayBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) override;
-			/// Binds textures to specific texture units. Used before drawing the object
-			virtual void bindTextures();
 			/// Abstract method. Sends parameters to the shadow map shaders.
 			/// param modelViewProjectionMatrix Model matrix modified by the light's viewport viewProjection matrix
 			virtual void setShadowProgramParameters(const QMatrix4x4& modelViewProjectionMatrix) override;
