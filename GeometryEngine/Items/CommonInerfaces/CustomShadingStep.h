@@ -59,7 +59,7 @@ namespace GeometryEngine
 			/// Render shaders
 			/// param vertexBuf Pointer to the vertex buffer
 			/// param indexBuffer Pointer to the index buffer
-			/// param modelMatrix model matrix of the item to be added to the shadow map
+			/// param modelViewProjection combined matrices to be used 
 			/// param totalVertexNum Total amount of vertices
 			/// param totalIndexNum Total amount of indices
 			virtual void RenderShaders(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelViewProjection, unsigned int totalVertexNum, unsigned int totalIndexNum);

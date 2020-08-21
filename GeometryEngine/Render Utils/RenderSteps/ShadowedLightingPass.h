@@ -3,6 +3,7 @@
 #ifndef SHADOWEDLIGHTINGPASS_H
 #define SHADOWEDLIGHTINGPASS_H
 
+#include <assert.h>
 #include "LightingPass.h"
 
 namespace GeometryEngine
@@ -10,6 +11,7 @@ namespace GeometryEngine
 	namespace GeometryBuffer
 	{
 		class GBuffer;
+		class TranslucentBuffer;
 	}
 
 	namespace GeometryRenderStep

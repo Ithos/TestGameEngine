@@ -42,11 +42,12 @@ namespace GeometryEngine
 				/// param rot Initial rotaion of the item
 				/// param mMaxShadowBias Max shadow bias value allowed when calculating dynamic shadow bias. A greater value prevents shadow acne but may cause some shadows disappear suddenly.
 				/// param scale Initial scale to be applied to this item model
+				/// param manager Light functionalities manager, defaults to nullptr.
 				/// param parent Pointer to this items parent item, nullptr if none.
 				ShadowMapLight(const GeometryItemUtils::Viewport& viewport, const QVector3D& direction, GeometryItem::GeometryItem* boundingBox = nullptr,
 					const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& ambient = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f), float maxShadowBias = 0.0f,
-					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
+					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), const LightUtils::LightFunctionalities* const manager = nullptr, WorldItem* parent = nullptr);
 
 				/// Copy constructor
 				/// param ref Const reference to StencilTestLight to be copied
@@ -55,20 +56,10 @@ namespace GeometryEngine
 				/// Destructor
 				virtual ~ShadowMapLight();
 
-				/// Applies the shadow map shaders.
-				/// param vertexBuf Pointer to the vertex buffer
-				/// param indexBuffer Pointer to the index buffer
-				/// param modelMatrix model matrix of the item to be added to the shadow map
-				/// param totalVertexNum Total amount of vertices
-				/// param totalIndexNum Total amount of indices
-				virtual void CalculateShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelMatrix, unsigned int totalVertexNum, unsigned int totalIndexNum) override;
-
 				/// Updates the model matrix of this Item and updates the View matrix of the viewport
 				/// param calculateChildren true if children matrix should be updated
 				virtual void UpdateModelMatrix(bool updateChildren = false) override;
 
-				/// Returns true if the light calculates shadows
-				virtual bool GetCastShadows() override { return true; }
 				///  Resizes the viewport used to calculate the shadowmap
 				virtual void ResizeElements(int screenWidth, int screenHeight) override;
 				///Sets the light direction. This direction is affected by the item rotation
@@ -79,6 +70,8 @@ namespace GeometryEngine
 				void SetMaxShadowBias(float maxBias) { mMaxShadowBias = maxBias; }
 				/// Returns the max value for the shadow bias parameter.
 				float GetMaxShadowBias() { return mMaxShadowBias; }
+				/// Returns the light viewport object
+				GeometryItemUtils::Viewport& GetLightViewport() { return *mpViewport; }
 
 				/// Factory method. Returns a copy of this object.
 				/// return A copy of this object.
@@ -88,31 +81,15 @@ namespace GeometryEngine
 				/// Private constructor for object copies
 				ShadowMapLight() {}
 
-				/// Shadow map shader
-				QOpenGLShaderProgram* mpShadowMapProgram; 
-
-				std::string mSMapVertexShaderKey;
-				std::string mSMapFragmentShaderKey;
-
 				GeometryItemUtils::Viewport* mpViewport;
 				QVector3D mDirection;
 
 				float mMaxShadowBias;
 
-				/// Initializes managers and shaders for the shadow map calculation
-				virtual void initShadow();
-				/// Loads and compiles shadow map shader programs
-				virtual void initShadowProgram();
-				/// Sets the shaders that should be loaded for the shadow map calculation
-				virtual void initShadowShaders();
-				/// Sends parameters to the shadow map shaders.
-				virtual void setShadowProgramParameters(const QMatrix4x4& modelMatrix);
-				/// Binds shaders and calculates the shadow map.
-				/// param vertexBuf Vertex buffer
-				/// param indexBuf IndexBuffer
-				/// param totalVertexNum Number of vetices
-				/// param titalIndexNum Number of indices
-				virtual void renderShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum);
+				///Method that checks what light functionalities the manager contains and acts on them
+				virtual void checkLightFunctionalities();
+				/// Checks if the stencil test funcyionality exists and adds it to the manager if it doesn't.
+				virtual void checkShadowMapFuntionality();
 				/// Copies the data from a ShadowMapLight into this object
 				/// param ref ShadowMapLight to be copied
 				virtual void copy(const ShadowMapLight& ref);

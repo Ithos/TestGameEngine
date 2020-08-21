@@ -18,6 +18,11 @@ namespace GeometryEngine
 	class LightingTransformationData;
 	class GBufferTextureInfo;
 
+	namespace LightUtils
+	{
+		class LightFunctionalities;
+	}
+
 	namespace GeometryWorldItem
 	{
 		///namespace for all lights
@@ -62,10 +67,11 @@ namespace GeometryEngine
 				/// param pos Initial position of the item
 				/// param rot Initial rotaion of the item
 				/// param scale Initial scale to be applied to this item model
+				/// param manager Light functionalities manager, defaults to nullptr.
 				/// param parent Pointer to this items parent item, nullptr if none.
 				Light(const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& ambient = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
-					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
+					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), const LightUtils::LightFunctionalities* const manager = nullptr, WorldItem* parent = nullptr);
 
 				/// Copy constructor
 				/// param ref Const reference to Light to be copied
@@ -85,42 +91,10 @@ namespace GeometryEngine
 				virtual void CalculateLighting(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const LightingTransformationData& transformData, 
 					const GBufferTextureInfo& gBuffTexInfo, const QVector3D& viewPos, unsigned int totalVertexNum, unsigned int totalIndexNum);
 
-				/// Method to be implemented by child classes. Calculates the lighting just within the volume defined by a geometry. 2D geometries apply lighting to everything that the camera sees throug it.
-				/// param projectionMatrix Camera projection matrix
-				/// param viewMatrix Camera view matrix
-				/// param gBuffInfo Textures from the geometry buffer of the camera
-				/// param viewPos Position of the camera
-				virtual void LightFromBoundignGeometry(const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix, const GBufferTextureInfo& gBuffTexInfo, const QVector3D& viewPos)
-				{
-					assert(GetBoundingGeometry() != nullptr && "Bounding geometry not found");
-				}
+				/// Returns the Light functionalities manager for the light
+				/// return Pointer to the light functionalities manager
+				virtual LightUtils::LightFunctionalities* GetLightFunctionalities() { return mpFunctionalitiesManager; }
 
-				/// Method to be implemented by child classes. Updates the stencil buffer which indicates where the light calculations will be applied
-				/// param projectionMatrix Camera projection matrix
-				/// param viewMatrix View matrix of the camera
-				virtual void CalculateStencil(const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix)
-				{
-					assert(GetStencilTest() && "Stencil test not found");
-				}
-
-				/// Method to expose the default (solid) shadow map calculation that some lights might have. Lights that cast shadows are supposed to override this method. By default triggers an assert.
-				/// param vertexBuf Pointer to the vertex buffer
-				/// param indexBuffer Pointer to the index buffer
-				/// param modelMatrix model matrix of the item to be added to the shadow map
-				/// param totalVertexNum Total amount of vertices
-				/// param totalIndexNum Total amount of indices
-				virtual void CalculateShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelMatrix, unsigned int totalVertexNum, unsigned int totalIndexNum) 
-				{
-					assert(GetCastShadows() && "Shadow map calculation not found");
-				}
-
-				/// Method to be implemented by child classes. Returns a pointer to the boundng geometry of the ligh or nullptr if there is none
-				/// return Pointer to the boundng geometry of the ligh or nullptr if there is none
-				virtual WorldItem* const GetBoundingGeometry() { return nullptr; }
-				/// Method to be implemented by child classes. Returns true if the light performs a stencil test.
-				virtual bool GetStencilTest() { return false; }
-				/// Method to be implemented by child classes. Returns true if the light calculates shadows
-				virtual bool GetCastShadows() { return false; }
 				/// Method to be implemented by child classes. Updates elements when the screen is resized.
 				virtual void ResizeElements(int screenWidth, int screenHeight) {}
 				/// Method to obtain light transformation matrices by name
@@ -137,11 +111,13 @@ namespace GeometryEngine
 				QOpenGLShaderProgram* mpProgram; 
 				Configuration::ConfigurationManager* mpConfInstance;
 				ShaderFiles::ShaderManager* mpShaderManager;
+				LightUtils::LightFunctionalities* mpFunctionalitiesManager;
 				std::string mVertexShaderKey;
 				std::string mFragmentShaderKey;
 
 				std::map<LightTransformationMatrices, const LightingTransformationData*> mMatricesMap;
-
+				///Method that checks what light functionalities the manager contains and acts on them
+				virtual void checkLightFunctionalities() {}
 				/// Initializes managers and shaders
 				virtual void initLight();
 				/// Loads and compiles light shader programs

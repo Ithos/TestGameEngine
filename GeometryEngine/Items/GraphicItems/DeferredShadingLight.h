@@ -28,28 +28,22 @@ namespace GeometryEngine
 				/// param pos Initial position of the item
 				/// param rot Initial rotaion of the item
 				/// param scale Initial scale to be applied to this item model
+				/// param manager Light functionalities manager, defaults to nullptr.
 				/// param parent Pointer to this items parent item, nullptr if none.
 				DeferredShadingLight(GeometryItem::GeometryItem* boundingBox = nullptr, const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& ambient = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
-					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
+					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), const LightUtils::LightFunctionalities* const manager = nullptr, WorldItem* parent = nullptr);
 
 				/// Copy constructor
 				/// param ref Const reference to DeferredShadingLight to be copied
-				DeferredShadingLight(const DeferredShadingLight& ref) { copy(ref); };
+				DeferredShadingLight(const DeferredShadingLight& ref) { copy(ref); initLight(); };
 
 				/// Destructor
 				virtual ~DeferredShadingLight();
 
-				/// Renders the light
-				/// param projectionMatrix Camera projection matrix
-				/// param viewMatrix Camera view matrix
-				/// param gBuffInfo Textures from the geometry buffer of the camera
-				/// param viewPos Position of the camera
-				virtual void LightFromBoundignGeometry(const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix, const GBufferTextureInfo& gBuffTexInfo, const QVector3D& viewPos) override;
-
-				/// Gets a pointer to the light bounding geometry
-				/// return pointer to the light bounding geometry
-				virtual WorldItem* const GetBoundingGeometry() override { return mpBoundingBox; }
+				/// Method to be implemented by child classes. Returns a pointer to the boundng geometry of the ligh or nullptr if there is none
+				/// return Pointer to the boundng geometry of the ligh or nullptr if there is none
+				virtual GeometryItem::GeometryItem* const GetBoundingGeometry() { return mpBoundingBox; }
 
 				/// Factory method. Returns a copy of this object.
 				/// return A copy of this object.
@@ -57,7 +51,10 @@ namespace GeometryEngine
 
 			protected:
 				GeometryItem::GeometryItem * mpBoundingBox;
-
+				///Method that checks what light functionalities the manager contains and acts on them
+				virtual void checkLightFunctionalities() override;
+				/// Checks if the bounding geometry technique exists and adds it to the manager if it doesn't.
+				virtual void checkDeferredShadingTechnique();
 				/// Scales the bounding box of the light following the light attenuation function.
 				/// param light attenuation polynomial
 				virtual void ScaleBoundingBox(const QVector3D& attenuation);

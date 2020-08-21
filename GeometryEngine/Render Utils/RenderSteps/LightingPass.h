@@ -7,7 +7,7 @@
 
 namespace GeometryEngine
 {
-	class GBufferTextureInfo;
+    class BuffersInfo;
 
 	namespace GeometryRenderStep
 	{
@@ -48,7 +48,15 @@ namespace GeometryEngine
 			/// param cam Pointer to Camera to be rendered
 			/// param gBuf Geometry buffer information to be passed to the light shader
 			/// param light Light to be calculated
-			void applySingleLight(GeometryWorldItem::GeometryCamera::Camera* cam, const GBufferTextureInfo& gBuf, GeometryWorldItem::GeometryLight::Light* light);
+			void applySingleLight(GeometryWorldItem::GeometryCamera::Camera* cam, const BuffersInfo& buff, GeometryWorldItem::GeometryLight::Light* light);
+			/// Checks if the light uses bounding geometry and calculates the lighting
+			/// param light Light to be calculated
+			/// param projectionMatrix Camera projection matrix
+			/// param viewMatrix Camera view matrix
+			/// param buffTexInfo Buffer information, geometry buffer information is required
+			/// param viewPos Position of the camera
+			void calculateLighting(GeometryWorldItem::GeometryLight::Light* light, const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix, const BuffersInfo& buffTexInfo, const QVector3D& viewPos);
+
 			/// Returns the OpenGl pipeline to its original state
 			void finishStep();
 

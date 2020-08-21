@@ -95,6 +95,13 @@ void GeometryEngine::GeometryBuffer::TranslucentBuffer::StartFrame()
 	glClearColor(clearColor[0], clearColor[1], clearColor[2], clearColor[3]);
 }
 
+void GeometryEngine::GeometryBuffer::TranslucentBuffer::BindColorMaps()
+{
+	mpFBO->Bind(GeometryBuffer::DRAW);
+	unsigned int ColorMapBuffers[] = { 0, 1 };
+	mpFBO->Draw(ColorMapBuffers, 2);
+}
+
 void GeometryEngine::GeometryBuffer::TranslucentBuffer::ResetBindings()
 {
 	for (unsigned int i = 0; i < TBUFFER_NUM_TEXTURES; i++) {

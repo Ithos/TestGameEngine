@@ -48,6 +48,8 @@ namespace GeometryEngine
 			bool Resize(unsigned int WindowWidth, unsigned int WindowHeight);
 			/// Clears textures color
 			void StartFrame();
+			/// Binds color map buffers buffers
+			void BindColorMaps();
 			/// Unbind all texture locations
 			void ResetBindings();
 			/// Unbind all buffer textures

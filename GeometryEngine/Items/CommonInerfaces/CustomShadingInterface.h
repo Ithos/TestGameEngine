@@ -50,8 +50,18 @@ namespace GeometryEngine
 			/// return Pointer to a copy of this object
 			virtual CustomShadingInterface* Clone() const { return new CustomShadingInterface((*this)); }
 
+			/// Adds a new CustomShadingStep T on the selected step slot
+			/// param step Step key where the CustomShadingStep object will be added
 			template <typename T > CustomShadingStep* AddNewShadingStep(CustomShadingSteps step) { return new T(this, step); }
+			/// Adds a new CustomShadingStep on the selected function slot
+			/// param value CustomShadingStep to be added to the manager
+			/// param key Step key where the CustomShadingStep object will be added
 			bool AddShadingStep(CustomShadingStep* value, CustomShadingSteps key);
+			/// Removes custom step from the manager
+			/// param key Custom step key to be removed
+			bool RemoveShadingStep(CustomShadingSteps key);
+			/// Checks if the manager contains a custom step key
+			/// param step Key to check
 			bool ContainsStep(CustomShadingSteps step) { return mStepMap.find(step) != mStepMap.end(); }
 
 			/// Sets the target for every shading step in this interface
@@ -69,6 +79,8 @@ namespace GeometryEngine
 				unsigned int totalVertexNum, unsigned int totalIndexNum);
 			/// Calls init on all the shading steps in the map. This method should be called before trying to use any shading step.
 			void InitCustomSteps();
+			/// Calls init on the selected shading step. Steps should be initialited before trying to use them.
+			bool InitCustomStep(CustomShadingSteps key);
 
 		protected:
 			ShaderFiles::ShaderManager* mpShaderManager;

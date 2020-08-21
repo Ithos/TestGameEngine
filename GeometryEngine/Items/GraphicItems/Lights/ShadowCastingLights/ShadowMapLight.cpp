@@ -1,6 +1,8 @@
 #include "../../../Item Utils/Viewport.h"
 #include "../../../GeometryItem.h"
 #include"../../../CommonItemParameters.h"
+#include "..\..\LightUtils\LightFunctionalities.h"
+#include "..\..\LightUtils\LightFunctions\DefaultShadowMap.h"
 #include "ShadowMapLight.h"
 
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapConstants::ShadowMapConstants::SHADOW_MAP_FRAGMENT_SHADER = "SHADOW_MAP_FRAGMENT_SHADER";
@@ -12,9 +14,8 @@ const std::string GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapCon
 
 GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::ShadowMapLight(const GeometryItemUtils::Viewport& viewport, const QVector3D& direction,  GeometryItem::GeometryItem * boundingBox,
 	const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, 
-	const QVector3D & rot, float maxShadowBias, const QVector3D & scale, WorldItem * parent) : mpViewport(nullptr), mDirection(direction),
-	mpShadowMapProgram(nullptr), mSMapVertexShaderKey(""), mSMapFragmentShaderKey(""), mMaxShadowBias(maxShadowBias),
-	StencilTestLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, parent)
+	const QVector3D & rot, float maxShadowBias, const QVector3D & scale, const LightUtils::LightFunctionalities* const manager, WorldItem * parent) : mpViewport(nullptr), mDirection(direction), 
+	mMaxShadowBias(maxShadowBias), StencilTestLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, manager, parent)
 {
 	mpViewport = viewport.Clone();
 	mMatricesMap[LightTransformationMatrices::LIGHTSPACE_TRANSFORMATION_MATRICES] =
@@ -23,27 +24,6 @@ GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::ShadowMapLight
 
 GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::~ShadowMapLight()
 {
-	if (mpShadowMapProgram != nullptr)
-	{
-		delete mpShadowMapProgram;
-		mpShadowMapProgram = nullptr;
-	}
-}
-
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::CalculateShadowMap(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelMatrix, 
-	unsigned int totalVertexNum, unsigned int totalIndexNum)
-{
-	assert(mpShadowMapProgram != nullptr && "No shadow map program found");
-	{
-		// Bind shader pipeline for use
-		if (!mpShadowMapProgram->bind())
-		{
-			assert(false && "Shadow map shader failed to bind");
-		}
-
-		setShadowProgramParameters(modelMatrix);
-		renderShadowMap(vertexBuf, indexBuf, totalVertexNum, totalIndexNum);
-	}
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::UpdateModelMatrix(bool updateChildren)
@@ -60,97 +40,28 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::ResizeEle
 	mpViewport->SetViewportSize(QVector4D(0, 0, screenWidth, screenHeight));
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::initShadow()
+void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::checkLightFunctionalities()
 {
-	if(mpConfInstance == nullptr) mpConfInstance = Configuration::ConfigurationManager::GetInstance();
-	if (mpShaderManager == nullptr) mpShaderManager = ShaderFiles::ShaderManager::GetInstance(mpConfInstance->getVertexShaderFolder(), mpConfInstance->getFragmentShaderFolder(),
-		mpConfInstance->getVertexShaderConfig(), mpConfInstance->getFragmentShaderConfig());
-
-	mpShadowMapProgram = new QOpenGLShaderProgram();
-
-	this->initShadowShaders();
-	this->initShadowProgram();
+	StencilTestLight::checkLightFunctionalities();
+	checkShadowMapFuntionality();
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::initShadowProgram()
+void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::checkShadowMapFuntionality()
 {
-	if (mSMapVertexShaderKey != "")
+	assert(mpFunctionalitiesManager != nullptr && "No light funtionalitites manager found");
 	{
-		if (!mpShaderManager->IsLoaded(mSMapVertexShaderKey))
+		if (!mpFunctionalitiesManager->ContainsFunction(LightUtils::DEFAULT_SHADOWMAP))
 		{
-			mpShaderManager->LoadShader(mSMapVertexShaderKey);
-		}
-
-		// Compile vertex shader
-		if (!mpShadowMapProgram->addShaderFromSourceCode(QOpenGLShader::Vertex, mpShaderManager->GetLoadedShaderContent(mSMapVertexShaderKey).c_str()))
-		{
-			assert(false && "Lighting vertex shader failed to compile");
+			mpFunctionalitiesManager->AddNewLightFunction< LightUtils::DefaultShadowMap <ShadowMapLight> >(LightUtils::DEFAULT_SHADOWMAP);
+			mpFunctionalitiesManager->SetTargetLight(this, LightUtils::DEFAULT_SHADOWMAP);
+			mpFunctionalitiesManager->InitLightFunction(LightUtils::DEFAULT_SHADOWMAP);
 		}
 	}
-
-	if (mSMapFragmentShaderKey != "")
-	{
-		if (!mpShaderManager->IsLoaded(mSMapFragmentShaderKey))
-		{
-			mpShaderManager->LoadShader(mSMapFragmentShaderKey);
-		}
-
-		// Compile fragment shader
-		if (!mpShadowMapProgram->addShaderFromSourceCode(QOpenGLShader::Fragment, mpShaderManager->GetLoadedShaderContent(mSMapFragmentShaderKey).c_str()))
-		{
-			assert(false && "Lighting fragment shader failed to compile");
-		}
-	}
-
-	assert(mpShadowMapProgram != nullptr && "No shadow map program found");
-	{
-		// Link shader pipeline
-		if (!mpShadowMapProgram->link())
-		{
-			assert(false && "Shadow map shader failed to link");
-		}
-	}
-}
-
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::initShadowShaders()
-{
-	mSMapVertexShaderKey  = ShadowMapConstants::POSITION_VERTEX_SHADER;
-	mSMapFragmentShaderKey = ShadowMapConstants::SHADOW_MAP_FRAGMENT_SHADER;
-}
-
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::setShadowProgramParameters(const QMatrix4x4& modelMatrix)
-{
-	assert(mpShadowMapProgram != nullptr && "Shading shadow map program not found");
-	{
-		UpdateModelMatrix(true);
-		mpViewport->CalculateProjectionMatrix();
-		QMatrix4x4 modelViewProjection = mpViewport->GetViewProjectionMatrix() * modelMatrix;
-
-		mpShadowMapProgram->setUniformValue("mModelViewProjectionMatrix", modelViewProjection);
-	}
-}
-
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::renderShadowMap(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
-{
-	// Tell OpenGL which VBOs to use
-	vertexBuf->bind();
-	indexBuf->bind();
-
-	// Tell OpenGL programmable pipeline how to locate vertex position data
-	int vertexLocation = mpShadowMapProgram->attributeLocation("posAttr");
-	mpShadowMapProgram->enableAttributeArray(vertexLocation);
-	mpShadowMapProgram->setAttributeBuffer(vertexLocation, GL_FLOAT, VertexData::POSITION_OFFSET, 3, sizeof(VertexData));
-
-	// Draw light
-	glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::copy(const ShadowMapLight & ref)
 {
 	StencilTestLight::copy(ref);
-	this->mpShadowMapProgram = nullptr;
-	this->mSMapFragmentShaderKey = ref.mSMapFragmentShaderKey;
-	this->mSMapVertexShaderKey = ref.mSMapVertexShaderKey;
 	this->mpViewport = nullptr;
 	this->mDirection = ref.mDirection;
 

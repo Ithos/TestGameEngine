@@ -27,16 +27,17 @@ namespace GeometryEngine
 				/// param rot Initial rotaion of the item
 				/// param mMaxShadowBias Max shadow bias value allowed when calculating dynamic shadow bias. A greater value prevents shadow acne but may cause some shadows disappear suddenly.
 				/// param scale Initial scale to be applied to this item model
+				/// param manager Light functionalities manager, defaults to nullptr.
 				/// param parent Pointer to this items parent item, nullptr if none.
 				DirectionalShadowLight(const GeometryItemUtils::Viewport& viewport, const QVector3D& direction, GeometryItem::GeometryItem* boundingBox = nullptr,
 					const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& ambient = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f), float maxShadowBias = 0.0f,
-					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
+					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), const LightUtils::LightFunctionalities* const manager = nullptr, WorldItem* parent = nullptr);
 
 				/// Copy constructor
 				/// param ref Const reference to StencilTestLight to be copied
-				DirectionalShadowLight(const DirectionalShadowLight& ref) { copy(ref); initLight(); initShadow(); };
+				DirectionalShadowLight(const DirectionalShadowLight& ref) { copy(ref); initLight(); };
 
 				/// Destructor
 				virtual ~DirectionalShadowLight();
@@ -45,9 +46,9 @@ namespace GeometryEngine
 				/// return A copy of this object.
 				virtual DirectionalShadowLight* Clone() const override { return new DirectionalShadowLight((*this)); }
 
-				/// Method used to check if the light performs a stencil test step
-				virtual bool GetStencilTest() override { return false; }
 			protected:
+				/// Checks if the stencil test funcyionality exists and removes it from the manager if it does
+				virtual void checkStencylTestFunctionality() override;
 				/// Sets the keys for the light shaders
 				virtual void initLightShaders();
 				/// Sends parameters to the shaders.

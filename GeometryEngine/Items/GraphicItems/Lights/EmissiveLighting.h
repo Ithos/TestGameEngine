@@ -19,8 +19,9 @@ namespace GeometryEngine
 				/// Constructor
 				/// param boundingBox Geomtry used to render the light. Light will be applied to every part of the scene that the geometry is drawn on top of. 
 				/// This class expects a 2D bounding geometry that will be rendered in front of the camera, applying the light like a filter.
+				/// param manager Light functionalities manager, defaults to nullptr.
 				/// param parent Pointer to this items parent item, nullptr if none.
-				EmissiveLighting(GeometryItem::GeometryItem* boundingBox = nullptr, WorldItem* parent = nullptr);
+				EmissiveLighting(GeometryItem::GeometryItem* boundingBox = nullptr, const LightUtils::LightFunctionalities* const manager = nullptr, WorldItem* parent = nullptr);
 				/// Copy constructor
 				/// param ref Const reference to EmissiveLighting to be copied
 				EmissiveLighting(const EmissiveLighting& ref) { copy(ref); initLight(); };

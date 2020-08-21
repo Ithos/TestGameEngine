@@ -2,9 +2,9 @@
 #include "../../GeometryItem.h"
 #include "EmissiveLighting.h"
 
-GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting::EmissiveLighting(GeometryItem::GeometryItem * boundingBox, WorldItem * parent) : 
+GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting::EmissiveLighting(GeometryItem::GeometryItem * boundingBox, const LightUtils::LightFunctionalities* const manager, WorldItem * parent) :
 	DeferredShadingLight(boundingBox, QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f),
-		QVector3D(0.0f, 0.0f, 0.0f), parent)
+		QVector3D(0.0f, 0.0f, 0.0f), manager, parent)
 {
 	initLight();
 }

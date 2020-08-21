@@ -23,49 +23,32 @@ namespace GeometryEngine
 				/// param pos Initial position of the item
 				/// param rot Initial rotaion of the item
 				/// param scale Initial scale to be applied to this item model
+				/// param manager Light functionalities manager, defaults to nullptr.
 				/// param parent Pointer to this items parent item, nullptr if none.
 				StencilTestLight(GeometryItem::GeometryItem* boundingBox = nullptr, const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f), 
 					const QVector3D& ambient = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
-					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
+					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), const LightUtils::LightFunctionalities* const manager = nullptr, WorldItem* parent = nullptr);
 
 				/// Copy constructor
 				/// param ref Const reference to StencilTestLight to be copied
-				StencilTestLight(const StencilTestLight& ref) { copy(ref); };
+				StencilTestLight(const StencilTestLight& ref) { copy(ref); initLight(); };
 
 				/// Destructor
-				virtual ~StencilTestLight();
-
-				/// Updates the stencil buffer which indicates where the light calculations will be applied
-				/// param projectionMatrix Camera projection matrix
-				/// param viewMatrix View matrix of the camera
-				virtual void CalculateStencil(const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix) override;
-
-				/// Method used to check if the light performs a stencil test step
-				virtual bool GetStencilTest() override { return true; }
+				virtual ~StencilTestLight() {};
 
 				/// Factory method. Returns a copy of this object.
 				/// return A copy of this object.
 				virtual StencilTestLight* Clone() const = 0;
 
 			protected:
-				std::string mStencilVertexShaderKey;
-				std::string mStencilFragmentShaderKey;
-				QOpenGLShaderProgram* mpStencilProgram; // Stenil shader
-
-				/// Gets managers and initializes the stencil shaders
-				virtual void initStencilShaders();
-				/// Load stencil shaders
-				virtual void initStencilProgram();
-				/// Binds stencil shaders, sends vertex data and renders the scene
-				/// param indexBuf IndexBuffer
-				/// param arrayBuf Array buffer
-				/// param totalVertexNum Number of vetices
-				/// param titalIndexNum Number of indices
-				virtual void runStencilProgram(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum);
-				/// Copies the data from a StencilTestLight into this object
-				/// param ref StencilTestLight to be copied
-				virtual void copy(const StencilTestLight& ref);
+				///Method that checks what light functionalities the manager contains and acts on them
+				virtual void checkLightFunctionalities() override;
+				/// Checks if the stencil test funcyionality exists and adds it to the manager if it doesn't.
+				virtual void checkStencylTestFunctionality();
+				/// Copies the data from a DeferredShadingLight into this object
+				/// param ref DeferredShadingLight to be copied
+				virtual void copy(const StencilTestLight& ref) { DeferredShadingLight::copy(ref); };
 			};
 		}
 	}

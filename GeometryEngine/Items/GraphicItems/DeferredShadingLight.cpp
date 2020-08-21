@@ -1,10 +1,12 @@
 #include "../CommonItemParameters.h"
 #include "../GeometryItem.h"
+#include "LightUtils\LightFunctionalities.h"
+#include "LightUtils\LightRenderTechniques\BoundingGeometryLighting.h"
 #include "DeferredShadingLight.h"
 
 GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::DeferredShadingLight(GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, const QVector3D & ambient,
-	const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : Light(diffuse, ambient, specular, pos, rot, scale, parent),
-	mpBoundingBox(nullptr)
+	const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, const LightUtils::LightFunctionalities* const manager, WorldItem * parent) : 
+	Light(diffuse, ambient, specular, pos, rot, scale, manager, parent), mpBoundingBox(nullptr)
 {
 	if (boundingBox != nullptr)
 	{
@@ -21,14 +23,22 @@ GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::~Deferre
 	}
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::LightFromBoundignGeometry(const QMatrix4x4& projectionMatrix, 
-	const QMatrix4x4& viewMatrix, const GBufferTextureInfo& gBuffTexInfo, const QVector3D & viewPos)
+void GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::checkLightFunctionalities()
 {
-	assert(GetBoundingGeometry() != nullptr && "Bounding geometry not found");
-	mpBoundingBox->CalculateModelMatrix();
-	LightingTransformationData ltd(projectionMatrix, viewMatrix, GetBoundingGeometry()->GetModelMatrix(), GetBoundingGeometry()->GetRotation());
+	Light::checkLightFunctionalities();
+	checkDeferredShadingTechnique();
+}
 
-	CalculateLighting(mpBoundingBox->GetArrayBuffer(), mpBoundingBox->GetIndexBuffer(), ltd, gBuffTexInfo, viewPos, mpBoundingBox->GetVertexNumber(), mpBoundingBox->GetIndexNumber());
+void GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::checkDeferredShadingTechnique()
+{
+	assert(mpFunctionalitiesManager != nullptr && "No light funtionalitites manager found");
+	{
+		if (!mpFunctionalitiesManager->ContainsTechnique(LightUtils::BOUNDING_GEOMETRY))
+		{
+			mpFunctionalitiesManager->AddNewLightTechnique< LightUtils::BoundingGeometryLighting<DeferredShadingLight> >(LightUtils::BOUNDING_GEOMETRY);
+			mpFunctionalitiesManager->SetTargetLight(this, LightUtils::BOUNDING_GEOMETRY);
+		}
+	}
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::ScaleBoundingBox(const QVector3D & attenuation)

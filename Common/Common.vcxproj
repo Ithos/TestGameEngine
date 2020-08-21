@@ -139,6 +139,7 @@
   <ItemGroup>
     <ClInclude Include="ConfigFileFunctions.h" />
     <ClInclude Include="ConfigurationManager.h" />
+    <ClInclude Include="Property.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="StringFunctions.h" />

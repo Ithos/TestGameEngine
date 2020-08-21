@@ -54,6 +54,12 @@ GeometryEngine::GeometryMaterial::Material::~Material()
 		delete mpProgram;
 		mpProgram = nullptr;
 	}
+
+	if (mpCustomShading != nullptr)
+	{
+		delete mpCustomShading;
+		mpCustomShading = nullptr;
+	}
 }
 
 void GeometryEngine::GeometryMaterial::Material::Draw(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf,

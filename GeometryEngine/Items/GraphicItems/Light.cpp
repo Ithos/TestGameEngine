@@ -1,4 +1,5 @@
 #include "../CommonItemParameters.h"
+#include "LightUtils\LightFunctionalities.h"
 #include "Light.h"
 
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::AMBIENT_LIGHT_VERTEX_SHADER = "AMBIENT_LIGHT_VERTEX_SHADER";
@@ -21,9 +22,21 @@ const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderC
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::EMISSIVE_LIGHTING_FRAGMENT_SHADER = "EMISSIVE_LIGHTING_FRAGMENT_SHADER";
 
 GeometryEngine::GeometryWorldItem::GeometryLight::Light::Light(const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos,
-	const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : WorldItem(pos, rot, scale, parent), mColorDiffuse(diffuse), 
-	mColorAmbient(ambient), mColorSpecular(specular), mpProgram(nullptr), mVertexShaderKey(""), mFragmentShaderKey(""), mpConfInstance(nullptr), mpShaderManager(nullptr)
+	const QVector3D & rot, const QVector3D & scale, const LightUtils::LightFunctionalities* const manager, WorldItem * parent) : WorldItem(pos, rot, scale, parent), mColorDiffuse(diffuse),
+	mColorAmbient(ambient), mColorSpecular(specular), mpProgram(nullptr), mVertexShaderKey(""), mFragmentShaderKey(""), mpConfInstance(nullptr), mpShaderManager(nullptr), mpFunctionalitiesManager(nullptr)
 {
+	if (manager != nullptr)
+	{
+		mpFunctionalitiesManager = manager->Clone();
+		mpFunctionalitiesManager->SetTargetLight(this);
+	}
+	else
+	{
+		mpFunctionalitiesManager = new LightUtils::LightFunctionalities();
+		mpFunctionalitiesManager->InitFunctions();
+	}
+
+	checkLightFunctionalities();
 }
 
 GeometryEngine::GeometryWorldItem::GeometryLight::Light::~Light()
@@ -32,6 +45,12 @@ GeometryEngine::GeometryWorldItem::GeometryLight::Light::~Light()
 	{
 		delete mpProgram;
 		mpProgram = nullptr;
+	}
+
+	if (mpFunctionalitiesManager != nullptr)
+	{
+		delete mpFunctionalitiesManager;
+		mpFunctionalitiesManager = nullptr;
 	}
 }
 
@@ -62,6 +81,8 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::Light::initLight()
 
 	this->initLightShaders();
 	this->initLightProgram();
+
+	checkLightFunctionalities();
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::Light::initLightProgram()
@@ -114,4 +135,10 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::Light::copy(const Light &
 	this->mpShaderManager = nullptr;
 	this->mVertexShaderKey = ref.mVertexShaderKey;
 	this->mFragmentShaderKey = ref.mFragmentShaderKey;
+
+	if (ref.mpFunctionalitiesManager != nullptr)
+	{
+		mpFunctionalitiesManager = ref.mpFunctionalitiesManager->Clone();
+		mpFunctionalitiesManager->SetTargetLight(this);
+	}
 }

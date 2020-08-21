@@ -5,7 +5,8 @@
 GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::Spotlight(float maxLightAngle, const QVector3D & attParams, 
 	const QVector3D & direction, GeometryItem::GeometryItem* boundingBox, const QVector3D & diffuse,
 	const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, const QVector3D & rot,
-	const QVector3D & scale, WorldItem * parent) : StencilTestLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, parent), mAttenuationParameters(attParams), mDirection(direction),
+	const QVector3D & scale, const LightUtils::LightFunctionalities* const manager, WorldItem * parent) : 
+	StencilTestLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, manager, parent), mAttenuationParameters(attParams), mDirection(direction),
 	mMaxLightAngle(maxLightAngle)
 {
 	initLight();

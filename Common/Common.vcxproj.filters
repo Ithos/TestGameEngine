@@ -39,5 +39,6 @@
     <ClInclude Include="ConfigurationManager.h" />
     <ClInclude Include="Textures.h" />
     <ClInclude Include="ConfigFileFunctions.h" />
+    <ClInclude Include="Property.h" />
   </ItemGroup>
 </Project>

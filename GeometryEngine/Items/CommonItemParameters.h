@@ -77,6 +77,16 @@ namespace GeometryEngine
 		TBufferTextureInfo(const QVector2D& texSize) :
 			DiffuseColorMapTexture(0), SpecularColorMapTexture(0), ShadowMapTexture(0), TranslucentDepthMapTexture(0), TextureSize(texSize) {}
 	};
+
+	/// Class that holds information about different buffers. This class is used to hold and pass information, it doesn´t own the info classes and it won´t destory them.
+	class BuffersInfo
+	{
+	public:
+		BuffersInfo(): GeometryBufferInfo(nullptr), TranslucentBufferInfo(nullptr) {}
+
+		GBufferTextureInfo* GeometryBufferInfo;
+		TBufferTextureInfo* TranslucentBufferInfo;
+	};
 }
 
 #endif

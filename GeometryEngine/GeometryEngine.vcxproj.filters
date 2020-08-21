@@ -248,6 +248,24 @@
     <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaMultiTextureShadowMap.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightFunctionalities.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightFunction.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightFunctions\StencilTesting.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightFunctions\DefaultShadowMap.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightRenderTechnique.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightRenderTechniques\BoundingGeometryLighting.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeometryEngine.cpp">
@@ -471,6 +489,15 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Items\CommonInerfaces\CustomShadingStep.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\LightUtils\LightFunctionalities.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\LightUtils\LightFunction.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\LightUtils\LightRenderTechnique.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>

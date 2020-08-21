@@ -197,6 +197,12 @@
     <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowMapLight.h" />
     <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.h" />
     <ClInclude Include="Items\GraphicItems\Lights\Spotlight.h" />
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightFunction.h" />
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightFunctionalities.h" />
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightFunctions\DefaultShadowMap.h" />
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightFunctions\StencilTesting.h" />
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightRenderTechnique.h" />
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightRenderTechniques\BoundingGeometryLighting.h" />
     <ClInclude Include="Items\GraphicItems\StencilTestLight.h" />
     <ClInclude Include="Items\Item Utils\Viewports\OrtographicViewport.h" />
     <ClInclude Include="Items\Item Utils\Viewports\PerspectiveViewport.h" />
@@ -275,6 +281,9 @@
     <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowMapLight.cpp" />
     <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.cpp" />
     <ClCompile Include="Items\GraphicItems\Lights\Spotlight.cpp" />
+    <ClCompile Include="Items\GraphicItems\LightUtils\LightFunction.cpp" />
+    <ClCompile Include="Items\GraphicItems\LightUtils\LightFunctionalities.cpp" />
+    <ClCompile Include="Items\GraphicItems\LightUtils\LightRenderTechnique.cpp" />
     <ClCompile Include="Items\GraphicItems\StencilTestLight.cpp" />
     <ClCompile Include="Items\Item Utils\Viewports\OrtographicViewport.cpp" />
     <ClCompile Include="Items\Item Utils\Viewports\PerspectiveViewport.cpp" />

@@ -4,6 +4,7 @@
 #include "Items\GeometryItem.h"
 #include "../GBuffer.h"
 #include "../Items/Item Utils/Viewport.h"
+#include "Items\GraphicItems\LightUtils\LightFunctionalities.h"
 #include "LightingPass.h"
 
 void GeometryEngine::GeometryRenderStep::LightingPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, 
@@ -33,16 +34,15 @@ void GeometryEngine::GeometryRenderStep::LightingPass::applyLight(GeometryWorldI
 {
 	GBufferTextureInfo gbuff(cam->GetGBuffer()->GetTextureSize());
 	cam->GetGBuffer()->FillGBufferInfo(gbuff);
-
 	cam->GetGBuffer()->BindForLightPass();
+
+	BuffersInfo buff; 
+	buff.GeometryBufferInfo = &gbuff;
 
 	for (auto iter = lights->begin(); iter != lights->end(); ++iter)
 	{
 		GeometryWorldItem::GeometryLight::Light* l = (*iter);
-
-		assert(l->GetBoundingGeometry() != nullptr && "LightingPass --> Light without bounding geometry");
-
-		applySingleLight(cam, gbuff, l);
+		applySingleLight(cam, buff, l);
 
 	}
 
@@ -55,9 +55,11 @@ void GeometryEngine::GeometryRenderStep::LightingPass::initStep()
 	glDepthMask(GL_FALSE);
 }
 
-void GeometryEngine::GeometryRenderStep::LightingPass::applySingleLight(GeometryWorldItem::GeometryCamera::Camera * cam, const GBufferTextureInfo & gBuf, GeometryWorldItem::GeometryLight::Light * light)
+void GeometryEngine::GeometryRenderStep::LightingPass::applySingleLight(GeometryWorldItem::GeometryCamera::Camera * cam, const BuffersInfo & buff, GeometryWorldItem::GeometryLight::Light * light)
 {
-	if (light->GetStencilTest())
+	bool stencilTest = light->GetLightFunctionalities()->ContainsFunction(LightUtils::STENCIL_TESTING);
+
+	if (stencilTest)
 	{
 		prepareStencilPass(cam);
 		stencilPass(light, cam);
@@ -67,14 +69,24 @@ void GeometryEngine::GeometryRenderStep::LightingPass::applySingleLight(Geometry
 
 	prepareLightPass();
 
-	light->LightFromBoundignGeometry(cam->GetProjectionMatrix(), cam->GetViewMatrix(), gBuf, cam->GetPosition());
+	calculateLighting(light, cam->GetProjectionMatrix(), cam->GetViewMatrix(), buff, cam->GetPosition());
 
-	if (light->GetStencilTest())
+	if (stencilTest)
 	{
 		finishStencilPass();
 	}
 
 	finishLightPass();
+}
+
+void GeometryEngine::GeometryRenderStep::LightingPass::calculateLighting(GeometryWorldItem::GeometryLight::Light* light, const QMatrix4x4 & projectionMatrix, const QMatrix4x4 & viewMatrix, const BuffersInfo & buffTexInfo, const QVector3D & viewPos)
+{
+	LightUtils::LightFunctionalities* lightFuntionManager = light->GetLightFunctionalities();
+
+	assert(lightFuntionManager != nullptr && lightFuntionManager->ContainsTechnique(LightUtils::LightTechniques::BOUNDING_GEOMETRY) && "Deferred lighting bounding geometry technique not found" );
+	{
+		lightFuntionManager->ApplyTechnique(LightUtils::LightTechniques::BOUNDING_GEOMETRY, projectionMatrix, viewMatrix, buffTexInfo, viewPos);
+	}
 }
 
 void GeometryEngine::GeometryRenderStep::LightingPass::finishStep()
@@ -103,8 +115,14 @@ void GeometryEngine::GeometryRenderStep::LightingPass::prepareStencilPass(Geomet
 
 void GeometryEngine::GeometryRenderStep::LightingPass::stencilPass(GeometryWorldItem::GeometryLight::Light * light, GeometryWorldItem::GeometryCamera::Camera * cam)
 {
-	assert(light->GetStencilTest() && "LightingPass --> No stencil test found diring stencil pass");
-	light->CalculateStencil(cam->GetProjectionMatrix(), cam->GetViewMatrix());
+	//assert(light->GetStencilTest() && "LightingPass --> No stencil test found during stencil pass");
+	//light->CalculateStencil(cam->GetProjectionMatrix(), cam->GetViewMatrix());
+
+	LightUtils::LightFunctionalities* lightFuntionManager = light->GetLightFunctionalities();
+	assert(lightFuntionManager != nullptr && lightFuntionManager->ContainsFunction(LightUtils::STENCIL_TESTING) && "Stencil testing light function not found");
+	{
+		lightFuntionManager->ApplyFunction(LightUtils::STENCIL_TESTING, nullptr, nullptr, cam->GetProjectionMatrix(), cam->GetViewMatrix(), QMatrix4x4(), 0, 0);
+	}
 }
 
 void GeometryEngine::GeometryRenderStep::LightingPass::setStencilLight()

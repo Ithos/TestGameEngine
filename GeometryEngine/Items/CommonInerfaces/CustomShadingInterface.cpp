@@ -29,6 +29,14 @@ bool GeometryEngine::CustomShading::CustomShadingInterface::AddShadingStep(Custo
 	return true;
 }
 
+bool GeometryEngine::CustomShading::CustomShadingInterface::RemoveShadingStep(CustomShadingSteps key)
+{
+	if (!ContainsStep(key)) return false;
+	delete mStepMap[key];
+	mStepMap.erase(key);
+	return true;
+}
+
 void GeometryEngine::CustomShading::CustomShadingInterface::SetTargetMaterial(GeometryEngine::GeometryMaterial::Material * target)
 {
 	for (auto it = mStepMap.begin(); it != mStepMap.end(); ++it)
@@ -55,6 +63,13 @@ void GeometryEngine::CustomShading::CustomShadingInterface::InitCustomSteps()
 	{
 		(*it).second->initCustomShading(mpShaderManager);
 	}
+}
+
+bool GeometryEngine::CustomShading::CustomShadingInterface::InitCustomStep(CustomShadingSteps key)
+{
+	if (!ContainsStep(key)) return false;
+	mStepMap[key]->initCustomShading(mpShaderManager);
+	return true;
 }
 
 void GeometryEngine::CustomShading::CustomShadingInterface::getManagers()
