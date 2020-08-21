@@ -10,9 +10,6 @@
 #include "../Items/Geometries/Quad.h"
 #include "../Items/GraphicItems/Lights/EmissiveLighting.h"
 
-#include "../Items/GraphicItems/LightUtils/LightFunctionalities.h"
-#include "../Items/GraphicItems//LightUtils/LightRenderTechniques/BoundingGeometryLighting.h"
-
 #include "PostProcessScene.h"
 
 GeometryEngine::GeometryScene::PostProcessScene::PostProcessScene(SceneManager * manager, GLdouble fovy, GLdouble zNear, GLdouble zFar, QVector4D clearColor) :
@@ -23,12 +20,8 @@ GeometryEngine::GeometryScene::PostProcessScene::PostProcessScene(SceneManager *
 	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::GeometryPass());
 	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::LightingPass());
 
-	GeometryEngine::LightUtils::LightFunctionalities lightFuncs;
-	lightFuncs.AddNewLightTechnique< GeometryEngine::LightUtils::BoundingGeometryLighting<GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting> >
-		(GeometryEngine::LightUtils::BOUNDING_GEOMETRY);
-
 	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::EmissiveLightingPass( GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting( 
-		&GeometryEngine::GeometryWorldItem::GeometryItem::Quad(GeometryEngine::GeometryMaterial::ColorMaterial(), 3.0f, 3.0f ), &lightFuncs) ) );
+		&GeometryEngine::GeometryWorldItem::GeometryItem::Quad(GeometryEngine::GeometryMaterial::ColorMaterial(), 3.0f, 3.0f ) ) ) );
 
 	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::PostProcessPass());
 	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::FinalPass());
