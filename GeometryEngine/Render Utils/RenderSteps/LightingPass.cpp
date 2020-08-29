@@ -4,7 +4,7 @@
 #include "Items\GeometryItem.h"
 #include "../GBuffer.h"
 #include "../Items/Item Utils/Viewport.h"
-#include "Items\GraphicItems\LightUtils\LightFunctionalities.h"
+#include "Items\GraphicItems\LightUtils\LightComponentManager.h"
 #include "LightingPass.h"
 
 void GeometryEngine::GeometryRenderStep::LightingPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, 
@@ -57,7 +57,7 @@ void GeometryEngine::GeometryRenderStep::LightingPass::initStep()
 
 void GeometryEngine::GeometryRenderStep::LightingPass::applySingleLight(GeometryWorldItem::GeometryCamera::Camera * cam, const BuffersInfo & buff, GeometryWorldItem::GeometryLight::Light * light)
 {
-	bool stencilTest = light->GetLightFunctionalities()->ContainsFunction(LightUtils::STENCIL_TESTING);
+	bool stencilTest = light->GetLightFunctionalities()->ContainsLightShadingComponent(LightUtils::STENCIL_TESTING);
 
 	if (stencilTest)
 	{
@@ -81,11 +81,11 @@ void GeometryEngine::GeometryRenderStep::LightingPass::applySingleLight(Geometry
 
 void GeometryEngine::GeometryRenderStep::LightingPass::calculateLighting(GeometryWorldItem::GeometryLight::Light* light, const QMatrix4x4 & projectionMatrix, const QMatrix4x4 & viewMatrix, const BuffersInfo & buffTexInfo, const QVector3D & viewPos)
 {
-	LightUtils::LightFunctionalities* lightFuntionManager = light->GetLightFunctionalities();
+	LightUtils::LightComponentManager* lightFuntionManager = light->GetLightFunctionalities();
 
-	assert(lightFuntionManager != nullptr && lightFuntionManager->ContainsTechnique(LightUtils::LightTechniques::BOUNDING_GEOMETRY) && "Deferred lighting bounding geometry technique not found" );
+	assert(lightFuntionManager != nullptr && lightFuntionManager->ContainsLightRenderComponent(LightUtils::LightRender::BOUNDING_GEOMETRY) && "Deferred lighting bounding geometry technique not found" );
 	{
-		lightFuntionManager->ApplyTechnique(LightUtils::LightTechniques::BOUNDING_GEOMETRY, projectionMatrix, viewMatrix, buffTexInfo, viewPos);
+		lightFuntionManager->ApplyLightRender(LightUtils::LightRender::BOUNDING_GEOMETRY, projectionMatrix, viewMatrix, buffTexInfo, viewPos);
 	}
 }
 
@@ -118,10 +118,10 @@ void GeometryEngine::GeometryRenderStep::LightingPass::stencilPass(GeometryWorld
 	//assert(light->GetStencilTest() && "LightingPass --> No stencil test found during stencil pass");
 	//light->CalculateStencil(cam->GetProjectionMatrix(), cam->GetViewMatrix());
 
-	LightUtils::LightFunctionalities* lightFuntionManager = light->GetLightFunctionalities();
-	assert(lightFuntionManager != nullptr && lightFuntionManager->ContainsFunction(LightUtils::STENCIL_TESTING) && "Stencil testing light function not found");
+	LightUtils::LightComponentManager* lightFuntionManager = light->GetLightFunctionalities();
+	assert(lightFuntionManager != nullptr && lightFuntionManager->ContainsLightShadingComponent(LightUtils::STENCIL_TESTING) && "Stencil testing light function not found");
 	{
-		lightFuntionManager->ApplyFunction(LightUtils::STENCIL_TESTING, nullptr, nullptr, cam->GetProjectionMatrix(), cam->GetViewMatrix(), QMatrix4x4(), 0, 0);
+		lightFuntionManager->ApplyLightShading(LightUtils::STENCIL_TESTING, nullptr, nullptr, cam->GetProjectionMatrix(), cam->GetViewMatrix(), QMatrix4x4(), 0, 0);
 	}
 }
 

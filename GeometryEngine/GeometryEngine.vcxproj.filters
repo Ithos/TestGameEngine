@@ -230,9 +230,6 @@
     <ClInclude Include="Items\CommonInerfaces\CustomShadingInterface.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="Render Utils\TranslucentBuffer.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="Render Utils\RenderBuffersData.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -248,22 +245,25 @@
     <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaMultiTextureShadowMap.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="Items\GraphicItems\LightUtils\LightFunctionalities.h">
+    <ClInclude Include="Render Utils\ShadingBuffer.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="Items\GraphicItems\LightUtils\LightFunction.h">
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightComponentManager.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="Items\GraphicItems\LightUtils\LightFunctions\StencilTesting.h">
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightShadingComponent.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="Items\GraphicItems\LightUtils\LightFunctions\DefaultShadowMap.h">
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightRenderComponent.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="Items\GraphicItems\LightUtils\LightRenderTechnique.h">
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightShadingComponents\DefaultShadowMap.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="Items\GraphicItems\LightUtils\LightRenderTechniques\BoundingGeometryLighting.h">
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightShadingComponents\StencilTesting.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\LightUtils\LightRenderComponents\BoundingGeometryLighting.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -479,9 +479,6 @@
     <ClCompile Include="Items\Materials\ColorMaterial.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="Render Utils\TranslucentBuffer.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
     <ClCompile Include="Render Utils\RenderBuffersData.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
@@ -491,13 +488,16 @@
     <ClCompile Include="Items\CommonInerfaces\CustomShadingStep.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="Items\GraphicItems\LightUtils\LightFunctionalities.cpp">
+    <ClCompile Include="Render Utils\ShadingBuffer.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="Items\GraphicItems\LightUtils\LightFunction.cpp">
+    <ClCompile Include="Items\GraphicItems\LightUtils\LightComponentManager.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="Items\GraphicItems\LightUtils\LightRenderTechnique.cpp">
+    <ClCompile Include="Items\GraphicItems\LightUtils\LightShadingComponent.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\LightUtils\LightRenderComponent.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>

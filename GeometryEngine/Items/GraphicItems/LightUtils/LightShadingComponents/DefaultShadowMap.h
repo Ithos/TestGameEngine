@@ -3,7 +3,7 @@
 #ifndef GEOMETRYDEFAULTSHADOWMAP_H
 #define GEOMETRYDEFAULTSHADOWMAP_H
 
-#include "../LightFunction.h"
+#include "../LightShadingComponent.h"
 #include "../../../Item Utils/Viewport.h"
 
 namespace GeometryEngine
@@ -13,24 +13,24 @@ namespace GeometryEngine
 
 		/// Class that contains the default shadowmap calculation for the light
 		template<class T>
-		class DefaultShadowMap : public LightFunction
+		class DefaultShadowMap : public LightShadingComponent
 		{
 		public:
 			/// Constructor
 			/// param parent Pointer to the LightFunctionalities that contains it 
 			/// param Value that indicates at which light function this fclass corresponds
-			DefaultShadowMap(LightFunctionalities* parent, LightFunctions step) : LightFunction(parent, step) {};
+			DefaultShadowMap(LightComponentManager* parent, LightShading step) : LightShadingComponent(parent, step) {};
 
 			/// Copy constructor
 			/// param ref Object to be copied.
-			DefaultShadowMap(const LightFunction& ref) { copy(ref); }
+			DefaultShadowMap(const LightShadingComponent& ref) { copy(ref); }
 
 			/// Destructor
 			virtual ~DefaultShadowMap() {};
 
 			/// Abstract method. Factory method. Creates a copy of this object
 			/// return Pointer to a copy of this object
-			virtual DefaultShadowMap* Clone(LightFunctionalities* parent, LightFunctions step) const {
+			virtual DefaultShadowMap* Clone(LightComponentManager* parent, LightShading step) const {
 				DefaultShadowMap* cloned = new DefaultShadowMap((*this));
 				cloned->AddToInterface(parent, step);
 				return cloned;

@@ -3,7 +3,7 @@
 #include "PointLight.h"
 
 GeometryEngine::GeometryWorldItem::GeometryLight::PointLight::PointLight(const QVector3D & attParam, GeometryItem::GeometryItem* boundingBox, const QVector3D & diffuse, const QVector3D & ambient,
-	const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, const LightUtils::LightFunctionalities* const manager, WorldItem * parent) :
+	const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, const LightUtils::LightComponentManager* const manager, WorldItem * parent) :
 	StencilTestLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, manager, parent), mAttenuationParameters(attParam)
 {
 	initLight();
@@ -20,10 +20,12 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::PointLight::initLightShad
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::PointLight::setProgramParameters(const LightingTransformationData & transformData,
-	const GBufferTextureInfo& gBuffTexInfo, const QVector3D & viewPos)
+	const BuffersInfo& buffInfo, const QVector3D & viewPos)
 {
 	assert(mpProgram != nullptr && "Shading program not found");
 	{
+		GBufferTextureInfo gBuffTexInfo = (*buffInfo.GeometryBufferInfo);
+
 		// Set matrices
 		mpProgram->setUniformValue("modelViewProjectionMatrix", transformData.ProjectionMatrix * transformData.ViewMatrix * transformData.ModelMatrix);
 		

@@ -1,8 +1,8 @@
 #include "../../../Item Utils/Viewport.h"
 #include "../../../GeometryItem.h"
 #include"../../../CommonItemParameters.h"
-#include "..\..\LightUtils\LightFunctionalities.h"
-#include "..\..\LightUtils\LightFunctions\DefaultShadowMap.h"
+#include "..\..\LightUtils\LightComponentManager.h"
+#include "..\..\LightUtils\LightShadingComponents\DefaultShadowMap.h"
 #include "ShadowMapLight.h"
 
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapConstants::ShadowMapConstants::SHADOW_MAP_FRAGMENT_SHADER = "SHADOW_MAP_FRAGMENT_SHADER";
@@ -14,7 +14,7 @@ const std::string GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapCon
 
 GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::ShadowMapLight(const GeometryItemUtils::Viewport& viewport, const QVector3D& direction,  GeometryItem::GeometryItem * boundingBox,
 	const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, 
-	const QVector3D & rot, float maxShadowBias, const QVector3D & scale, const LightUtils::LightFunctionalities* const manager, WorldItem * parent) : mpViewport(nullptr), mDirection(direction), 
+	const QVector3D & rot, float maxShadowBias, const QVector3D & scale, const LightUtils::LightComponentManager* const manager, WorldItem * parent) : mpViewport(nullptr), mDirection(direction), 
 	mMaxShadowBias(maxShadowBias), StencilTestLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, manager, parent)
 {
 	mpViewport = viewport.Clone();
@@ -50,11 +50,11 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::checkShad
 {
 	assert(mpFunctionalitiesManager != nullptr && "No light funtionalitites manager found");
 	{
-		if (!mpFunctionalitiesManager->ContainsFunction(LightUtils::DEFAULT_SHADOWMAP))
+		if (!mpFunctionalitiesManager->ContainsLightShadingComponent(LightUtils::DEFAULT_SHADOWMAP))
 		{
-			mpFunctionalitiesManager->AddNewLightFunction< LightUtils::DefaultShadowMap <ShadowMapLight> >(LightUtils::DEFAULT_SHADOWMAP);
+			mpFunctionalitiesManager->AddNewLightShadingComponent< LightUtils::DefaultShadowMap <ShadowMapLight> >(LightUtils::DEFAULT_SHADOWMAP);
 			mpFunctionalitiesManager->SetTargetLight(this, LightUtils::DEFAULT_SHADOWMAP);
-			mpFunctionalitiesManager->InitLightFunction(LightUtils::DEFAULT_SHADOWMAP);
+			mpFunctionalitiesManager->InitLightShadingComponent(LightUtils::DEFAULT_SHADOWMAP);
 		}
 	}
 }

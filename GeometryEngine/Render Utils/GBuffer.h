@@ -11,11 +11,11 @@
 namespace GeometryEngine
 {
 	class GBufferTextureInfo;
-	///namespace for geometry buffers
+	///namespace for buffer clases
 	namespace GeometryBuffer
 	{
 		class GFramebufferObject;
-		/// Class that manages the geometry buffer
+		/// Class that manages a framebuffer object for geometry, lighting and post process effects
 		class GBuffer : protected QOpenGLExtraFunctions
 		{
 		public:
@@ -126,6 +126,7 @@ namespace GeometryEngine
 			/// Copies a data GBuffer to the current object
 			/// param ref GBuffer to be copied
 			virtual void copy(const GBuffer& ref);
+			static const int mTextureUnits[GBUFFER_NUM_TEXTURES + 1];
 		};
 	}
 }

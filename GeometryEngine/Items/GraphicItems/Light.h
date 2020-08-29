@@ -16,11 +16,11 @@
 namespace GeometryEngine
 {
 	class LightingTransformationData;
-	class GBufferTextureInfo;
+	class BuffersInfo;
 
 	namespace LightUtils
 	{
-		class LightFunctionalities;
+		class LightComponentManager;
 	}
 
 	namespace GeometryWorldItem
@@ -67,11 +67,11 @@ namespace GeometryEngine
 				/// param pos Initial position of the item
 				/// param rot Initial rotaion of the item
 				/// param scale Initial scale to be applied to this item model
-				/// param manager Light functionalities manager, defaults to nullptr.
+				/// param manager Light component manager, defaults to nullptr.
 				/// param parent Pointer to this items parent item, nullptr if none.
 				Light(const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& ambient = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f),
-					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), const LightUtils::LightFunctionalities* const manager = nullptr, WorldItem* parent = nullptr);
+					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), const LightUtils::LightComponentManager* const manager = nullptr, WorldItem* parent = nullptr);
 
 				/// Copy constructor
 				/// param ref Const reference to Light to be copied
@@ -89,11 +89,11 @@ namespace GeometryEngine
 				/// param totalVertexNum Total amount of vertices
 				/// param totalIndexNum Total amount of indices
 				virtual void CalculateLighting(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const LightingTransformationData& transformData, 
-					const GBufferTextureInfo& gBuffTexInfo, const QVector3D& viewPos, unsigned int totalVertexNum, unsigned int totalIndexNum);
+					const BuffersInfo& buffInfo, const QVector3D& viewPos, unsigned int totalVertexNum, unsigned int totalIndexNum);
 
 				/// Returns the Light functionalities manager for the light
 				/// return Pointer to the light functionalities manager
-				virtual LightUtils::LightFunctionalities* GetLightFunctionalities() { return mpFunctionalitiesManager; }
+				virtual LightUtils::LightComponentManager* GetLightFunctionalities() { return mpFunctionalitiesManager; }
 
 				/// Method to be implemented by child classes. Updates elements when the screen is resized.
 				virtual void ResizeElements(int screenWidth, int screenHeight) {}
@@ -111,7 +111,7 @@ namespace GeometryEngine
 				QOpenGLShaderProgram* mpProgram; 
 				Configuration::ConfigurationManager* mpConfInstance;
 				ShaderFiles::ShaderManager* mpShaderManager;
-				LightUtils::LightFunctionalities* mpFunctionalitiesManager;
+				LightUtils::LightComponentManager* mpFunctionalitiesManager;
 				std::string mVertexShaderKey;
 				std::string mFragmentShaderKey;
 
@@ -126,9 +126,9 @@ namespace GeometryEngine
 				virtual void initLightShaders() = 0;
 				/// Abstract method. Sends parameters to the shaders.
 				/// param transformData Matrices of the light
-				/// param GBufferTextureInfo Data from the textures of the geometry buffer 
+				/// param buffInfo Data from the textures of the buffers
 				/// param viewPos Position of the camera
-				virtual void setProgramParameters(const LightingTransformationData& transformData, const GBufferTextureInfo& GBuffTexInfo, const QVector3D& viewPos) = 0;
+				virtual void setProgramParameters(const LightingTransformationData& transformData, const BuffersInfo& buffInfo, const QVector3D& viewPos) = 0;
 				/// Abstract method. Binds shaders and draws.
 				/// param vertexBuf Vertex buffer
 				/// param indexBuf IndexBuffer

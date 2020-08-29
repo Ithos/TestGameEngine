@@ -1,5 +1,5 @@
 #include "../CommonItemParameters.h"
-#include "LightUtils\LightFunctionalities.h"
+#include "LightUtils\LightComponentManager.h"
 #include "Light.h"
 
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::AMBIENT_LIGHT_VERTEX_SHADER = "AMBIENT_LIGHT_VERTEX_SHADER";
@@ -22,7 +22,7 @@ const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderC
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::LightShaderConstants::LightShaderConstants::EMISSIVE_LIGHTING_FRAGMENT_SHADER = "EMISSIVE_LIGHTING_FRAGMENT_SHADER";
 
 GeometryEngine::GeometryWorldItem::GeometryLight::Light::Light(const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos,
-	const QVector3D & rot, const QVector3D & scale, const LightUtils::LightFunctionalities* const manager, WorldItem * parent) : WorldItem(pos, rot, scale, parent), mColorDiffuse(diffuse),
+	const QVector3D & rot, const QVector3D & scale, const LightUtils::LightComponentManager* const manager, WorldItem * parent) : WorldItem(pos, rot, scale, parent), mColorDiffuse(diffuse),
 	mColorAmbient(ambient), mColorSpecular(specular), mpProgram(nullptr), mVertexShaderKey(""), mFragmentShaderKey(""), mpConfInstance(nullptr), mpShaderManager(nullptr), mpFunctionalitiesManager(nullptr)
 {
 	if (manager != nullptr)
@@ -32,7 +32,7 @@ GeometryEngine::GeometryWorldItem::GeometryLight::Light::Light(const QVector3D &
 	}
 	else
 	{
-		mpFunctionalitiesManager = new LightUtils::LightFunctionalities();
+		mpFunctionalitiesManager = new LightUtils::LightComponentManager();
 		mpFunctionalitiesManager->InitFunctions();
 	}
 
@@ -55,7 +55,7 @@ GeometryEngine::GeometryWorldItem::GeometryLight::Light::~Light()
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::Light::CalculateLighting(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const LightingTransformationData& transformData,
-	const GBufferTextureInfo& gBuffTexInfo, const QVector3D& viewPos, unsigned int totalVertexNum, unsigned int totalIndexNum)
+	const BuffersInfo& buffInfo, const QVector3D& viewPos, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	assert(mpProgram != nullptr && "No light shader program found");
 	{
@@ -65,7 +65,7 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::Light::CalculateLighting(
 			assert(false && "Lighting shader failed to bind");
 		}
 
-		setProgramParameters(transformData, gBuffTexInfo, viewPos);
+		setProgramParameters(transformData, buffInfo, viewPos);
 
 		calculateContribution(vertexBuf, indexBuf, totalVertexNum, totalIndexNum);
 	}

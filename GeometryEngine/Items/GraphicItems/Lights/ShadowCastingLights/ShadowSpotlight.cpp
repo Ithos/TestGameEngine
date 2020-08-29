@@ -6,7 +6,7 @@
 GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::ShadowSpotlight(float maxLightAngle, const QVector3D & attParams, 
 	const GeometryItemUtils::Viewport & viewport, const QVector3D & direction, GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, 
 	const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, float maxShadowBias, const QVector3D & scale, 
-	const LightUtils::LightFunctionalities* const manager, WorldItem * parent) :
+	const LightUtils::LightComponentManager* const manager, WorldItem * parent) :
 	mAttenuationParameters(attParams), mMaxLightAngle(maxLightAngle), ShadowMapLight(viewport, direction, boundingBox, diffuse, ambient, specular, pos, rot, maxShadowBias, scale, manager, parent)
 {
 	initLight();
@@ -22,10 +22,13 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::initLigh
 	mFragmentShaderKey = ShadowMapConstants::SPOTLIGHT_SHADOW_LIGHT_FRAGMENT_SHADER;
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::setProgramParameters(const LightingTransformationData & transformData, const GBufferTextureInfo & gBuffTexInfo, const QVector3D & viewPos)
+void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::setProgramParameters(const LightingTransformationData & transformData, const BuffersInfo& buffInfo, const QVector3D & viewPos)
 {
 	assert(mpProgram != nullptr && "Shading program not found");
 	{
+		GBufferTextureInfo gBuffTexInfo = (*buffInfo.GeometryBufferInfo);
+		ShadingBufferTextureInfo tBufferTexInfo = (*buffInfo.ShadingBufferInfo);
+
 		// Set matrices
 		mpProgram->setUniformValue("modelViewProjectionMatrix", transformData.ProjectionMatrix * transformData.ViewMatrix * transformData.ModelMatrix);
 
@@ -39,7 +42,7 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::setProgr
 		mpProgram->setUniformValue("mAmbientColorMap", gBuffTexInfo.AmbientTexture);
 		mpProgram->setUniformValue("mReflectiveColorMap", gBuffTexInfo.ReflectiveTexture);
 		mpProgram->setUniformValue("mNormalMap", gBuffTexInfo.NormalTexture);
-		mpProgram->setUniformValue("mShadowMap", gBuffTexInfo.TmpTexture);
+		mpProgram->setUniformValue("mShadowMap", tBufferTexInfo.ShadowMapTexture);
 
 		mpProgram->setUniformValue("mTextureSize", gBuffTexInfo.TextureSize);
 

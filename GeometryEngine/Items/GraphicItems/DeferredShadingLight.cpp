@@ -1,11 +1,11 @@
 #include "../CommonItemParameters.h"
 #include "../GeometryItem.h"
-#include "LightUtils\LightFunctionalities.h"
-#include "LightUtils\LightRenderTechniques\BoundingGeometryLighting.h"
+#include "LightUtils\LightComponentManager.h"
+#include "LightUtils\LightRenderComponents\BoundingGeometryLighting.h"
 #include "DeferredShadingLight.h"
 
 GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::DeferredShadingLight(GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, const QVector3D & ambient,
-	const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, const LightUtils::LightFunctionalities* const manager, WorldItem * parent) : 
+	const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, const LightUtils::LightComponentManager* const manager, WorldItem * parent) : 
 	Light(diffuse, ambient, specular, pos, rot, scale, manager, parent), mpBoundingBox(nullptr)
 {
 	if (boundingBox != nullptr)
@@ -33,9 +33,9 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DeferredShadingLight::che
 {
 	assert(mpFunctionalitiesManager != nullptr && "No light funtionalitites manager found");
 	{
-		if (!mpFunctionalitiesManager->ContainsTechnique(LightUtils::BOUNDING_GEOMETRY))
+		if (!mpFunctionalitiesManager->ContainsLightRenderComponent(LightUtils::BOUNDING_GEOMETRY))
 		{
-			mpFunctionalitiesManager->AddNewLightTechnique< LightUtils::BoundingGeometryLighting<DeferredShadingLight> >(LightUtils::BOUNDING_GEOMETRY);
+			mpFunctionalitiesManager->AddNewLightRenderComponent< LightUtils::BoundingGeometryLighting<DeferredShadingLight> >(LightUtils::BOUNDING_GEOMETRY);
 			mpFunctionalitiesManager->SetTargetLight(this, LightUtils::BOUNDING_GEOMETRY);
 		}
 	}

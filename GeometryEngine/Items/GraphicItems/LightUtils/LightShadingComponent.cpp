@@ -1,13 +1,13 @@
-#include "LightFunction.h"
+#include "LightShadingComponent.h"
 
-GeometryEngine::LightUtils::LightFunction::LightFunction(LightFunctionalities * parent, LightFunctions step) : mpProgram(nullptr), mpShaderManager(nullptr),
+GeometryEngine::LightUtils::LightShadingComponent::LightShadingComponent(LightComponentManager * parent, LightShading step) : mpProgram(nullptr), mpShaderManager(nullptr),
 mpTargetLight(nullptr), mpParentInterface(parent)
 {
 	mpProgram = new QOpenGLShaderProgram();
-	mpParentInterface->AddNewLightFunction(this, step);
+	mpParentInterface->AddNewLightShadingComponent(this, step);
 }
 
-GeometryEngine::LightUtils::LightFunction::~LightFunction()
+GeometryEngine::LightUtils::LightShadingComponent::~LightShadingComponent()
 {
 	if (mpProgram != nullptr)
 	{
@@ -16,7 +16,7 @@ GeometryEngine::LightUtils::LightFunction::~LightFunction()
 	}
 }
 
-void GeometryEngine::LightUtils::LightFunction::InitCustomShading(ShaderFiles::ShaderManager * shaderManager)
+void GeometryEngine::LightUtils::LightShadingComponent::InitCustomShading(ShaderFiles::ShaderManager * shaderManager)
 {
 	mpShaderManager = shaderManager;
 	this->mpProgram = new QOpenGLShaderProgram();
@@ -24,7 +24,7 @@ void GeometryEngine::LightUtils::LightFunction::InitCustomShading(ShaderFiles::S
 	this->initProgram();
 }
 
-void GeometryEngine::LightUtils::LightFunction::ApplyFunction(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix, 
+void GeometryEngine::LightUtils::LightShadingComponent::Render(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix, 
 	const QMatrix4x4& modelMatrix, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	assert(mpProgram != nullptr && "No shader program found");
@@ -40,7 +40,7 @@ void GeometryEngine::LightUtils::LightFunction::ApplyFunction(QOpenGLBuffer* ver
 	}
 }
 
-void GeometryEngine::LightUtils::LightFunction::initProgram()
+void GeometryEngine::LightUtils::LightShadingComponent::initProgram()
 {
 	if (mVertexShaderKey != "")
 	{
@@ -80,13 +80,13 @@ void GeometryEngine::LightUtils::LightFunction::initProgram()
 	}
 }
 
-void GeometryEngine::LightUtils::LightFunction::AddToInterface(LightFunctionalities * parent, LightFunctions step)
+void GeometryEngine::LightUtils::LightShadingComponent::AddToInterface(LightComponentManager * parent, LightShading step)
 {
 	mpParentInterface = parent;
-	mpParentInterface->AddNewLightFunction(this, step);
+	mpParentInterface->AddNewLightShadingComponent(this, step);
 }
 
-void GeometryEngine::LightUtils::LightFunction::copy(const LightFunction & ref)
+void GeometryEngine::LightUtils::LightShadingComponent::copy(const LightShadingComponent & ref)
 {
 	this->mpParentInterface = nullptr;
 	this->mpTargetLight = nullptr;

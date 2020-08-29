@@ -11,7 +11,7 @@ namespace GeometryEngine
 	namespace GeometryBuffer
 	{
 		class GBuffer;
-		class TranslucentBuffer;
+		class ShadingBuffer;
 	}
 
 	namespace GeometryRenderStep
@@ -61,9 +61,9 @@ namespace GeometryEngine
 		private:
 			/// Initializes the OpenGl pipeline for the shadow calculation
 			/// sets cull face to front and sets the tmpTexture as the active texture, also enables depth test just in case
-			virtual void initShadowStep(GeometryBuffer::GBuffer* buf);
+			virtual void initShadowStep(GeometryBuffer::ShadingBuffer* buf);
 			/// Resets the openGl pipeline
-			virtual void finishShadowStep(GeometryBuffer::GBuffer* buf);
+			virtual void finishShadowStep(GeometryBuffer::ShadingBuffer* buf);
 		};
 	}
 }

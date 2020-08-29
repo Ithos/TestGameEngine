@@ -36,7 +36,7 @@ namespace GeometryEngine
 					const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& ambient = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f), float maxShadowBias = 0.0f,
-					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), const LightUtils::LightFunctionalities* const manager = nullptr, WorldItem* parent = nullptr);
+					const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), const LightUtils::LightComponentManager* const manager = nullptr, WorldItem* parent = nullptr);
 
 				/// Copy constructor
 				/// param ref Const reference to StencilTestLight to be copied
@@ -55,10 +55,9 @@ namespace GeometryEngine
 				virtual void initLightShaders() override;
 				/// Sends parameters to the shaders.
 				/// param transformData Matrices of the light
-				/// param GBufferTextureInfo Data from the textures of the geometry buffer 
+				/// param buffInfo Data from the textures of the buffers
 				/// param viewPos Position of the camera
-				virtual void setProgramParameters(const LightingTransformationData& transformData, const GBufferTextureInfo& gBuffTexInfo,
-					const QVector3D& viewPos) override;
+				virtual void setProgramParameters(const LightingTransformationData& transformData, const BuffersInfo& buffInfo, const QVector3D& viewPos) override;
 				/// Binds shaders and draws.
 				/// param vertexBuf Vertex buffer
 				/// param indexBuf IndexBuffer

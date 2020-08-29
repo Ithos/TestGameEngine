@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef TRANSLUCENTBUFFER_H
-#define TRENSLUCENTBUFFER_H
+#ifndef GEOMETRYSHADINGBUFFER_H
+#define GEOMETRYSHADINGBUFFER_H
 
 #include <QOpenGLFunctions>
 #include <QOpenGLExtraFunctions>
@@ -9,32 +9,32 @@
 
 namespace GeometryEngine
 {
-	class TBufferTextureInfo;
-	///namespace for geometry buffers
+	class ShadingBufferTextureInfo;
+	
 	namespace GeometryBuffer
 	{
 		class GFramebufferObject;
-		/// Class that manages the geometry buffer
-		class TranslucentBuffer : protected QOpenGLExtraFunctions
+		/// Class that manages framebuffer object for shading and color maps
+		class ShadingBuffer : protected QOpenGLExtraFunctions
 		{
 		public:
-			/// Enum used to locate every texture used to store different information in the geometry buffer
-			enum TBUFFER_TEXTURE_TYPE
+			/// Enum used to locate every texture used to store different information in the buffer
+			enum SHADINGBUFFER_TEXTURE_TYPE
 			{
-				TBUFFER_TEXTURE_TYPE_DIFFUSE_MAP,
-				TBUFFER_TEXTURE_TYPE_SPECULAR_MAP,
-				TBUFFER_TEXTURE_TYPE_SHADOW_MAP,
-				TBUFFER_TEXTURE_TYPE_TRANSLUCENT_DEPTH_MAP,
-				TBUFFER_NUM_TEXTURES
+				SHADINGBUFFER_TEXTURE_TYPE_DIFFUSE_MAP,
+				SHADINGBUFFER_TEXTURE_TYPE_SPECULAR_MAP,
+				SHADINGBUFFER_TEXTURE_TYPE_SHADOW_MAP,
+				SHADINGBUFFER_TEXTURE_TYPE_TRANSLUCENT_DEPTH_MAP,
+				SHADINGBUFFER_NUM_TEXTURES
 			};
 
 			/// Constructor
-			TranslucentBuffer();
+			ShadingBuffer();
 			/// Copy constructor
-			/// param ref Const reference to GBuffer to be copied
-			TranslucentBuffer(const TranslucentBuffer& ref);
+			/// param ref Const reference to ShadingBuffer to be copied
+			ShadingBuffer(const ShadingBuffer& ref);
 			/// Destructor. Clears framebuffers and textures.
-			virtual ~TranslucentBuffer();
+			virtual ~ShadingBuffer();
 
 			/// Creates framebuffers and textures
 			/// param MaxWindowWidth Max texture width
@@ -56,18 +56,20 @@ namespace GeometryEngine
 			void UnbindBuffer();
 			/// Binds selected texture to its default texture unit
 			/// param tex texture to bind
-			void BindTexture(TBUFFER_TEXTURE_TYPE tex);
+			void BindTexture(SHADINGBUFFER_TEXTURE_TYPE tex);
 			/// Binds selected texture to the selected texture unit
 			/// param tex texture to bind
-			void BindTexture(TBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit);
+			void BindTexture(SHADINGBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit);
 			/// Unbinds texture from its default texture unit
 			/// param tex texture to unbind
-			void UnbindTexture(TBUFFER_TEXTURE_TYPE tex);
+			void UnbindTexture(SHADINGBUFFER_TEXTURE_TYPE tex);
 			/// Unbinds texture from the selected texture unit
 			/// param tex texture to unbind
-			void UnbindTexture(TBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit);
-			/// Bindsthe buffer as Read/Write and the shadowMap texture for writing
+			void UnbindTexture(SHADINGBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit);
+			/// Binds the buffer as Read/Write and the shadowMap texture for writing
 			void BindShadowMapTextureWrite();
+			/// Binds the buffer as Read/Write and the shadowMap texture for Reading
+			void BindShadowMapTextureRead();
 			/// Gets current texture size
 			/// return Current texture size
 			const QVector2D& GetTextureSize() const { return mTextureSize; }
@@ -76,20 +78,21 @@ namespace GeometryEngine
 			const QVector2D& GetMaxTextureSize() const { return mMaxTextureSize; }
 			/// Clears the color of one of the textures of the framebuffer
 			/// param texture Texture to clear
-			void ClearColorTexture(TBUFFER_TEXTURE_TYPE texture);
+			void ClearColorTexture(SHADINGBUFFER_TEXTURE_TYPE texture);
 			/// Factory method. Creates a copy of this object
 			/// return Pointer to a copy of this object
-			virtual TranslucentBuffer* Clone() const { return new TranslucentBuffer(*this); };
+			virtual ShadingBuffer* Clone() const { return new ShadingBuffer(*this); };
 			/// Sets the data of a TBufferTextureInfo
 			/// param bufferInfo TBufferTextureInfo to be updated
-			void FillGBufferInfo(TBufferTextureInfo& bufferInfo);
+			void FillShadingBufferInfo(ShadingBufferTextureInfo& bufferInfo);
 		protected:
 			QVector2D mTextureSize;
 			QVector2D mMaxTextureSize;
 			GFramebufferObject* mpFBO;
-			/// Copies a data GBuffer to the current object
-			/// param ref GBuffer to be copied
-			virtual void copy(const TranslucentBuffer& ref);
+			static const int mTextureUnits[SHADINGBUFFER_NUM_TEXTURES];
+			/// Copies a data ShadingBuffer to the current object
+			/// param ref ShadingBuffer to be copied
+			virtual void copy(const ShadingBuffer& ref);
 		};
 	}
 }

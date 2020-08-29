@@ -1,6 +1,6 @@
 #include "CompleteColorBuffer.h"
 
-GeometryEngine::GeometryBuffer::CompleteColorBuffer::CompleteColorBuffer()
+GeometryEngine::GeometryBuffer::CompleteColorBuffer::CompleteColorBuffer() : GBuffer()
 {
 	mActiveTextures.insert(GBUFFER_TEXTURE_TYPE_AMBIENT);
 	mActiveTextures.insert(GBUFFER_TEXTURE_TYPE_DIFFUSE);

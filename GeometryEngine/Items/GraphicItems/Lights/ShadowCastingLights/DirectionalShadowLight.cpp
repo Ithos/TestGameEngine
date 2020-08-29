@@ -1,12 +1,12 @@
 #include "../../../CommonItemParameters.h"
 #include "../../../Item Utils/Viewport.h"
 #include "../../../GeometryItem.h"
-#include "../../LightUtils/LightFunctionalities.h"
+#include "../../LightUtils/LightComponentManager.h"
 #include "DirectionalShadowLight.h"
 
 GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::DirectionalShadowLight(const GeometryItemUtils::Viewport& viewport, const QVector3D & direction, 
 	GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, 
-	const QVector3D & rot, float maxShadowBias, const QVector3D & scale, const LightUtils::LightFunctionalities* const manager, WorldItem * parent) :
+	const QVector3D & rot, float maxShadowBias, const QVector3D & scale, const LightUtils::LightComponentManager* const manager, WorldItem * parent) :
 	ShadowMapLight(viewport, direction, boundingBox, diffuse, ambient, specular, pos, rot, maxShadowBias, scale, manager, parent)
 {
 	initLight();
@@ -18,9 +18,9 @@ GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::~Direc
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::checkStencylTestFunctionality()
 {
-	if (mpFunctionalitiesManager != nullptr && mpFunctionalitiesManager->ContainsFunction(LightUtils::STENCIL_TESTING))
+	if (mpFunctionalitiesManager != nullptr && mpFunctionalitiesManager->ContainsLightShadingComponent(LightUtils::STENCIL_TESTING))
 	{
-		mpFunctionalitiesManager->RemoveLightFunction(LightUtils::STENCIL_TESTING);
+		mpFunctionalitiesManager->RemoveLightShadingComponent(LightUtils::STENCIL_TESTING);
 	}
 }
 
@@ -31,10 +31,13 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::i
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::setProgramParameters(const LightingTransformationData & transformData, 
-	const GBufferTextureInfo & gBuffTexInfo, const QVector3D & viewPos)
+	const BuffersInfo& buffInfo, const QVector3D & viewPos)
 {
 	assert(mpProgram != nullptr && "Shading program not found");
 	{
+		GBufferTextureInfo gBuffTexInfo = (*buffInfo.GeometryBufferInfo);
+		ShadingBufferTextureInfo tBufferTexInfo = (*buffInfo.ShadingBufferInfo);
+
 		// Set matrices
 		mpProgram->setUniformValue("modelViewProjectionMatrix", transformData.ModelMatrix);
 
@@ -47,7 +50,7 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::s
 		mpProgram->setUniformValue("mAmbientColorMap", gBuffTexInfo.AmbientTexture);
 		mpProgram->setUniformValue("mReflectiveColorMap", gBuffTexInfo.ReflectiveTexture);
 		mpProgram->setUniformValue("mNormalMap", gBuffTexInfo.NormalTexture);
-		mpProgram->setUniformValue("mShadowMap", gBuffTexInfo.TmpTexture);
+		mpProgram->setUniformValue("mShadowMap", tBufferTexInfo.ShadowMapTexture);
 
 		mpProgram->setUniformValue("mTextureSize", gBuffTexInfo.TextureSize);
 

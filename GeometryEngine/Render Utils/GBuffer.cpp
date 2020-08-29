@@ -4,9 +4,10 @@
 #include "../Items/CommonItemParameters.h"
 #include "GBuffer.h"
 
+const int GeometryEngine::GeometryBuffer::GBuffer::mTextureUnits[GBUFFER_NUM_TEXTURES + 1] = { 0, 1, 2, 3, 4, 5, 6, 7 };
+
 GeometryEngine::GeometryBuffer::GBuffer::GBuffer() : mFinalTextureLocation(0), mpFBO(nullptr), mMaxTextureSize(0.0f, 0.0f), mTextureSize(0.0f, 0.0f)
 {
-	initializeOpenGLFunctions();
 }
 
 GeometryEngine::GeometryBuffer::GBuffer::GBuffer(const GBuffer & ref)
@@ -25,6 +26,8 @@ GeometryEngine::GeometryBuffer::GBuffer::~GBuffer()
 
 bool GeometryEngine::GeometryBuffer::GBuffer::Init(unsigned int MaxWindowWidth, unsigned int MaxWindowHeight)
 {
+	initializeOpenGLFunctions();
+
 	if (mpFBO != nullptr) return false;
 
 	mMaxTextureSize.setX(MaxWindowWidth); mMaxTextureSize.setY(MaxWindowHeight);
@@ -105,6 +108,7 @@ void GeometryEngine::GeometryBuffer::GBuffer::BindForStencilPass()
 
 void GeometryEngine::GeometryBuffer::GBuffer::BindForLightPass()// Buffer to final
 {
+	mpFBO->Bind(GeometryBuffer::DRAW_READ);
 	mpFBO->Draw(GBUFFER_NUM_TEXTURES);
 	BindBuffer();
 }
@@ -139,14 +143,14 @@ void GeometryEngine::GeometryBuffer::GBuffer::BindTmpTextureWrite()
 void GeometryEngine::GeometryBuffer::GBuffer::BindBuffer()
 {
 	for (unsigned int i = 0; i < GBUFFER_NUM_TEXTURES; i++) {
-		glActiveTexture(GL_TEXTURE0 + i); // The framebuffer object wrapper doesn't manage the texture units
+		glActiveTexture(GL_TEXTURE0 + mTextureUnits[i]); // The framebuffer object wrapper doesn't manage the texture units
 		mpFBO->GetColorTarget(i)->Bind();
 	}
 }
 
 void GeometryEngine::GeometryBuffer::GBuffer::BindFinalTexture(GBUFFER_TEXTURE_TYPE location)
 {
-	glActiveTexture(GL_TEXTURE0 + location);
+	glActiveTexture(GL_TEXTURE0 + mTextureUnits[location]);
 	mpFBO->GetColorTarget(GBUFFER_NUM_TEXTURES)->Bind();
 	mFinalTextureLocation = location;
 }
@@ -160,7 +164,7 @@ void GeometryEngine::GeometryBuffer::GBuffer::BindFinalTexture(GBUFFER_TEXTURE_T
 void GeometryEngine::GeometryBuffer::GBuffer::ResetBindings()
 {
 	for (unsigned int i = 0; i < GBUFFER_NUM_TEXTURES; i++) {
-		glActiveTexture(GL_TEXTURE0 + i); // The framebuffer object wrapper doesn't manage the texture units
+		glActiveTexture(GL_TEXTURE0 + mTextureUnits[i]); // The framebuffer object wrapper doesn't manage the texture units
 		mpFBO->GetColorTarget(i)->Unbind();
 	}
 }
@@ -175,7 +179,7 @@ void GeometryEngine::GeometryBuffer::GBuffer::UnbindBuffer()
 void GeometryEngine::GeometryBuffer::GBuffer::UnbindFinalTexture()
 {
 	
-	glActiveTexture(GL_TEXTURE0 + mFinalTextureLocation);
+	glActiveTexture(GL_TEXTURE0 + mTextureUnits[mFinalTextureLocation]);
 	mpFBO->GetColorTarget((unsigned int)GBUFFER_NUM_TEXTURES)->Unbind();
 	mFinalTextureLocation = 0;
 }
@@ -187,7 +191,7 @@ void GeometryEngine::GeometryBuffer::GBuffer::BindTexture(GBUFFER_TEXTURE_TYPE t
 
 void GeometryEngine::GeometryBuffer::GBuffer::BindTexture(GBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit)
 {
-	glActiveTexture(GL_TEXTURE0 + textureUnit);
+	glActiveTexture(GL_TEXTURE0 + mTextureUnits[textureUnit]);
 	mpFBO->GetColorTarget((unsigned int)tex)->Bind();
 }
 
@@ -198,7 +202,7 @@ void GeometryEngine::GeometryBuffer::GBuffer::UnbindTexture(GBUFFER_TEXTURE_TYPE
 
 void GeometryEngine::GeometryBuffer::GBuffer::UnbindTexture(GBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit)
 {
-	glActiveTexture(GL_TEXTURE0 + textureUnit);
+	glActiveTexture(GL_TEXTURE0 + mTextureUnits[textureUnit]);
 	mpFBO->GetColorTarget((unsigned int)tex)->Unbind();
 }
 
@@ -208,7 +212,6 @@ void GeometryEngine::GeometryBuffer::GBuffer::copy(const GBuffer & ref)
 	this->mTextureSize.setY(ref.mTextureSize.y());
 	this->mMaxTextureSize.setX(ref.mMaxTextureSize.x());
 	this->mMaxTextureSize.setY(ref.mMaxTextureSize.y());
-	this->mFinalTextureLocation = 0;
 
 	this->mpFBO = nullptr;
 
@@ -238,14 +241,14 @@ void GeometryEngine::GeometryBuffer::GBuffer::AttachDepthBuffer()
 void GeometryEngine::GeometryBuffer::GBuffer::FillGBufferInfo(GBufferTextureInfo & bufferInfo)
 {
 	// Indices of the texture units in which we store each texture by default
-	bufferInfo.AmbientTexture = (unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_AMBIENT;
-	bufferInfo.DiffuseTexture = (unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_DIFFUSE;
-	bufferInfo.ReflectiveTexture = (unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_REFLECTIVE;
-	bufferInfo.EmissiveTexture = (unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_EMMISSIVE;
-	bufferInfo.PositionTexture = (unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_POSITION;
-	bufferInfo.NormalTexture = (unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_NORMAL;
-	bufferInfo.TmpTexture = (unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_TEXCOORD;
-	bufferInfo.FinalTexture = mFinalTextureLocation;
+	bufferInfo.AmbientTexture = mTextureUnits[(unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_AMBIENT];
+	bufferInfo.DiffuseTexture = mTextureUnits[(unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_DIFFUSE];
+	bufferInfo.ReflectiveTexture = mTextureUnits[(unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_REFLECTIVE];
+	bufferInfo.EmissiveTexture = mTextureUnits[(unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_EMMISSIVE];
+	bufferInfo.PositionTexture = mTextureUnits[(unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_POSITION];
+	bufferInfo.NormalTexture = mTextureUnits[(unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_NORMAL];
+	bufferInfo.TmpTexture = mTextureUnits[(unsigned int)GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_TEXCOORD];
+	bufferInfo.FinalTexture = mTextureUnits[mFinalTextureLocation];
 	
 
 	// Boolean values that indicate if each texture exists

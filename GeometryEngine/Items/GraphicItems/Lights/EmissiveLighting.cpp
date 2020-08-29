@@ -2,7 +2,7 @@
 #include "../../GeometryItem.h"
 #include "EmissiveLighting.h"
 
-GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting::EmissiveLighting(GeometryItem::GeometryItem * boundingBox, const LightUtils::LightFunctionalities* const manager, WorldItem * parent) :
+GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting::EmissiveLighting(GeometryItem::GeometryItem * boundingBox, const LightUtils::LightComponentManager* const manager, WorldItem * parent) :
 	DeferredShadingLight(boundingBox, QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f),
 		QVector3D(0.0f, 0.0f, 0.0f), manager, parent)
 {
@@ -19,10 +19,12 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting::initLig
 	mFragmentShaderKey = LightShaderConstants::EMISSIVE_LIGHTING_FRAGMENT_SHADER;
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting::setProgramParameters(const LightingTransformationData & transformData, const GBufferTextureInfo & gBuffTexInfo, const QVector3D & viewPos)
+void GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting::setProgramParameters(const LightingTransformationData & transformData, const BuffersInfo& buffInfo, const QVector3D & viewPos)
 {
 	assert(mpProgram != nullptr && "Shading program not found");
 	{
+		GBufferTextureInfo gBuffTexInfo = (*buffInfo.GeometryBufferInfo);
+
 		mpProgram->setUniformValue("modelViewProjectionMatrix", transformData.ModelMatrix);
 		mpProgram->setUniformValue("mEmissiveColorMap", gBuffTexInfo.EmissiveTexture);
 		mpProgram->setUniformValue("mTextureSize", gBuffTexInfo.TextureSize);

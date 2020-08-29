@@ -47,6 +47,7 @@
 #include <Render Utils\Gbuffers\SingleColorTextureBuffer.h>
 #include <Render Utils\Gbuffers\CompleteColorPostProcessBuffer.h>
 #include <Render Utils\RenderBuffersData.h>
+#include <Render Utils\ShadingBuffer.h>
 #include <Items\PostProcess\DoublePassPostProcess\BlurPostProcess.h>
 #include <Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.h>
 #include <Items\PostProcess\PostProcess.h>
@@ -267,7 +268,7 @@ namespace Application
 		/*GeometryEngine::Cube**/ testCube2 = new GeometryEngine::GeometryWorldItem::GeometryItem::Sphere(mat, 1.0f, 6, 12, QVector3D(5.0f, 0.0f, -15.0f)); //new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 2.0f, QVector3D(5.0f, 0.0f, -15.0f), QVector3D(-30.0f, 30.0f, 0.0f));
 		GeometryEngine::GeometryItemUtils::PerspectiveViewport viewport(QVector4D(0, 0, this->width(), this->height()), 45.0f, 1.0f, 0.1f, 1000.0f);
 		/*GeometryEngine::PerspectiveCamera**/ cam = new GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera(
-																			GeometryEngine::GeometryRenderData::RenderBuffersData(GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer()),
+																			GeometryEngine::GeometryRenderData::RenderBuffersData( GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer(), &GeometryEngine::GeometryBuffer::ShadingBuffer() ),
 																			viewport, true,
 																			QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0, 0, 0));
 		//cam->SetPosition(cam->ToModelCoordSystem(QVector3D(-5.0f, 10.0f, -15.0f)));

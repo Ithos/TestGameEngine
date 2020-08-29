@@ -21,7 +21,7 @@ namespace GeometryEngine
 				/// This class expects a 2D bounding geometry that will be rendered in front of the camera, applying the light like a filter.
 				/// param manager Light functionalities manager, defaults to nullptr.
 				/// param parent Pointer to this items parent item, nullptr if none.
-				EmissiveLighting(GeometryItem::GeometryItem* boundingBox = nullptr, const LightUtils::LightFunctionalities* const manager = nullptr, WorldItem* parent = nullptr);
+				EmissiveLighting(GeometryItem::GeometryItem* boundingBox = nullptr, const LightUtils::LightComponentManager* const manager = nullptr, WorldItem* parent = nullptr);
 				/// Copy constructor
 				/// param ref Const reference to EmissiveLighting to be copied
 				EmissiveLighting(const EmissiveLighting& ref) { copy(ref); initLight(); };
@@ -35,10 +35,10 @@ namespace GeometryEngine
 				virtual void initLightShaders();
 				/// Sends parameters to the shaders.
 				/// param transformData Matrices of the light
-				/// param GBufferTextureInfo Data from the textures of the geometry buffer 
+				/// param buffInfo Data from the textures of the buffers
 				/// param viewPos Position of the camera
 				virtual void setProgramParameters(const LightingTransformationData & transformData,
-					const GBufferTextureInfo& gBuffTexInfo, const QVector3D & viewPos);
+					const BuffersInfo& buffInfo, const QVector3D & viewPos) override;
 				/// Binds shaders and draws.
 				/// param vertexBuf Array buffer
 				/// param indexBuf IndexBuffer

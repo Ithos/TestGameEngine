@@ -5,7 +5,7 @@
 GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::Spotlight(float maxLightAngle, const QVector3D & attParams, 
 	const QVector3D & direction, GeometryItem::GeometryItem* boundingBox, const QVector3D & diffuse,
 	const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, const QVector3D & rot,
-	const QVector3D & scale, const LightUtils::LightFunctionalities* const manager, WorldItem * parent) : 
+	const QVector3D & scale, const LightUtils::LightComponentManager* const manager, WorldItem * parent) : 
 	StencilTestLight(boundingBox, diffuse, ambient, specular, pos, rot, scale, manager, parent), mAttenuationParameters(attParams), mDirection(direction),
 	mMaxLightAngle(maxLightAngle)
 {
@@ -22,11 +22,13 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::initLightShade
 	mFragmentShaderKey = LightShaderConstants::FLASHLIGHT_FRAGMENT_SHADER;
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::setProgramParameters(const LightingTransformationData & transformData, const GBufferTextureInfo& gBuffTexInfo,
+void GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight::setProgramParameters(const LightingTransformationData & transformData, const BuffersInfo& buffInfo,
 	const QVector3D & viewPos)
 {
 	assert( mpProgram != nullptr && "Shading program not found");
 	{
+		GBufferTextureInfo gBuffTexInfo = (*buffInfo.GeometryBufferInfo);
+
 		// Set matrices
 		mpProgram->setUniformValue("modelViewProjectionMatrix", transformData.ProjectionMatrix * transformData.ViewMatrix * transformData.ModelMatrix);
 

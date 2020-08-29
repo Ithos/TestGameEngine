@@ -8,7 +8,7 @@ namespace GeometryEngine
 	namespace GeometryBuffer
 	{
 		class GBuffer;
-		class TranslucentBuffer;
+		class ShadingBuffer;
 	}
 
 	///Namespace for Render data classes
@@ -18,7 +18,7 @@ namespace GeometryEngine
 		class RenderBuffersData
 		{
 		public:
-			RenderBuffersData(const GeometryBuffer::GBuffer& geometryBuffer, const GeometryBuffer::TranslucentBuffer* const translucentBuffer = nullptr);
+			RenderBuffersData(const GeometryBuffer::GBuffer& geometryBuffer, const GeometryBuffer::ShadingBuffer* const shadingBuffer = nullptr);
 
 			RenderBuffersData(const RenderBuffersData& ref) { copy(ref); }
 			virtual ~RenderBuffersData();
@@ -26,12 +26,12 @@ namespace GeometryEngine
 			void Resize(unsigned int WindowWidth, unsigned int WindowHeight);
 
 			GeometryBuffer::GBuffer* GetGeometryBuffer() { return mpGeometryBuffer; }
-			GeometryBuffer::TranslucentBuffer* GetTranslucentBuffer() { return mpTranslucentBuffer; }
+			GeometryBuffer::ShadingBuffer* GetShadingBuffer() { return mpShadingBuffer; }
 
 			RenderBuffersData* Clone() const { return new RenderBuffersData( (*this) ); }
 		protected:
 			GeometryBuffer::GBuffer* mpGeometryBuffer;
-			GeometryBuffer::TranslucentBuffer* mpTranslucentBuffer;
+			GeometryBuffer::ShadingBuffer* mpShadingBuffer;
 
 			void copy(const RenderBuffersData& ref);
 		};

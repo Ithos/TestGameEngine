@@ -4,7 +4,7 @@
 #define GEOMETRYSTENCILTESTING_H
 
 #include "../GeometryEngine/Items/GeometryItem.h"
-#include "../LightFunction.h"
+#include "../LightShadingComponent.h"
 
 namespace GeometryEngine
 {
@@ -12,30 +12,30 @@ namespace GeometryEngine
 	{
 		/// Class that performs the stencil test for the light
 		template<class T>
-		class StencilTesting : public LightFunction
+		class StencilTesting : public LightShadingComponent
 		{
 		public:
 			/// Constructor
 			/// param parent Pointer to the CustomShadingInterface that contains it 
 			/// param Value that indicates at which render stepthis shading technique will be used
-			StencilTesting(LightFunctionalities* parent, LightFunctions step) : LightFunction(parent, step) {};
+			StencilTesting(LightComponentManager* parent, LightShading step) : LightShadingComponent(parent, step) {};
 
 			/// Copy constructor
 			/// param ref Object to be copied.
-			StencilTesting(const LightFunction& ref) { copy(ref); }
+			StencilTesting(const LightShadingComponent& ref) { copy(ref); }
 
 			/// Destructor
 			virtual ~StencilTesting() {};
 
 			/// Abstract method. Factory method. Creates a copy of this object
 			/// return Pointer to a copy of this object
-			virtual StencilTesting* Clone(LightFunctionalities* parent, LightFunctions step) const {
+			virtual StencilTesting* Clone(LightComponentManager* parent, LightShading step) const {
 				StencilTesting* cloned = new StencilTesting((*this));
 				cloned->AddToInterface(parent, step);
 				return cloned;
 			}
 
-			/// Apply light technique.
+			/// Apply Shading step.
 			/// param vertexBuf Expected null as it isn't used
 			/// param indexBuffer Expected null as it isn't used
 			/// param projectionMatrix Projection matrix to be used 
@@ -43,7 +43,7 @@ namespace GeometryEngine
 			/// param modelMatrix ModelMatrix of the object to be drawn or identity if it's not necessary
 			/// param totalVertexNum Expected 0 as it isn't used
 			/// param totalIndexNum Expected 0 as it isn't used
-			virtual void ApplyFunction(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix, const QMatrix4x4& modelMatrix,
+			virtual void Render(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix, const QMatrix4x4& modelMatrix,
 				unsigned int totalVertexNum, unsigned int totalIndexNum) override
 			{
 				assert(mpProgram != nullptr && "No shader program found");

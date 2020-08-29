@@ -4,9 +4,9 @@
 #include "Items\Materials\Material.h"
 #include "Items\GraphicItems\Camera.h"
 #include"../GBuffer.h"
-#include "../TranslucentBuffer.h"
+#include "../ShadingBuffer.h"
 #include "../RenderBuffersData.h"
-#include "Items\GraphicItems\LightUtils\LightFunctionalities.h"
+#include "Items\GraphicItems\LightUtils\LightComponentManager.h"
 #include "TransparentShadowedLightingPass.h"
 
 void GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass::calculateSingleLightShadowMap(GeometryWorldItem::GeometryLight::Light * light, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items)

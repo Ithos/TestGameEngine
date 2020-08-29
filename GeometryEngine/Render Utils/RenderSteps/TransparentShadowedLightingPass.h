@@ -9,7 +9,7 @@ namespace GeometryEngine
 {
 	namespace GeometryBuffer
 	{
-		class TranslucentBuffer;
+		class ShadingBuffer;
 	}
 
 	namespace GeometryRenderStep
