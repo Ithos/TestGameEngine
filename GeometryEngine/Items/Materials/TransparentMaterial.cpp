@@ -21,6 +21,7 @@ void GeometryEngine::GeometryMaterial::TransparentMaterial::copy(const Transpare
 	Material::copy(mat);
 	mGlobalAlphaValue = mat.mGlobalAlphaValue;
 	mThresholdValue = mat.mThresholdValue;
+	mIsTranslucent = mat.mIsTranslucent;
 }
 
 float GeometryEngine::GeometryMaterial::TransparentMaterial::checkAlphaValue(float alphaValue)

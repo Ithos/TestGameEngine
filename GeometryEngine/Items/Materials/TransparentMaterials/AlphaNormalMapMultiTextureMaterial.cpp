@@ -61,6 +61,12 @@ void GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::BindT
 	if (mpNormalMapTexture != nullptr) mpNormalMapTexture->Texture->bind(TEXTURE_UNIT + 4);
 }
 
+void GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::UnbindTextures()
+{
+	GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::UnbindTextures();
+	if (mpNormalMapTexture != nullptr) mpNormalMapTexture->Texture->release();
+}
+
 void GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::copy(const AlphaNormalMapMultiTextureMaterial & mat)
 {
 	GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::copy(mat);

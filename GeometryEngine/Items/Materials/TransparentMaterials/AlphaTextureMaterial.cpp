@@ -98,12 +98,22 @@ void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::drawMaterial(QOpenG
 		BindTextures();
 
 		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
+
+		UnbindTextures();
+
+		vertexBuf->release();
+		indexBuf->release();
 	}
 }
 
 void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::BindTextures()
 {
 	if (mpTexture->Texture != nullptr) mpTexture->Texture->bind(TEXTURE_UNIT);
+}
+
+void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::UnbindTextures()
+{
+	if (mpTexture->Texture != nullptr) mpTexture->Texture->release();
 }
 
 void GeometryEngine::GeometryMaterial::AlphaTextureMaterial::copy(const AlphaTextureMaterial & mat)

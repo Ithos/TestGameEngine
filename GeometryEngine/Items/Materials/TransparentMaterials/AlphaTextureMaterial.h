@@ -35,6 +35,8 @@ namespace GeometryEngine
 			int GetInitialTextureUnit() { return TEXTURE_UNIT; }
 			/// Binds textures to specific texture units. Used before drawing the object
 			virtual void BindTextures();
+			/// Unbinds textures.
+			virtual void UnbindTextures();
 
 		protected:
 			/// Texture unit that the textures in the material will be binded to

@@ -25,6 +25,9 @@ namespace GeometryEngine
 				static const std::string DIRECTIONAL_SHADOW_LIGHT_VERTEX_SHADER;
 				static const std::string SPOTLIGHT_SHADOW_LIGHT_FRAGMENT_SHADER;
 				static const std::string SPOTLIGHT_SHADOW_LIGHT_VERTEX_SHADER;
+				// Pruebas de modificación de shader de iluminación
+				static const std::string DIRECTIONAL_TRANSLUCENT_SHADOW_LIGHT_FRAGMENT_SHADER;
+				static const std::string SPOTLIGHT_TRANSLUCENT_SHADOW_LIGHT_FRAGMENT_SHADER;
 			};
 
 			/// Abstract class that defines common methods for lights using shadow maps

@@ -28,7 +28,7 @@ void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::CalculateShadowMa
 	GeometryEngine::GeometryBuffer::ShadingBuffer* trBuffer = cam->GetRenderBufferData()->GetShadingBuffer();
 
 	GBufferTextureInfo gbuff(geomBuffer->GetTextureSize());
-	cam->GetGBuffer()->FillGBufferInfo(gbuff);
+	geomBuffer->FillGBufferInfo(gbuff);
 
 	ShadingBufferTextureInfo tbuff(trBuffer->GetTextureSize());
 	trBuffer->FillShadingBufferInfo(tbuff);
@@ -53,15 +53,13 @@ void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::CalculateShadowMa
 
 		//Apply light
 		LightingPass::initStep();
-		trBuffer->BindShadowMapTextureRead();
-		trBuffer->BindTexture(GeometryEngine::GeometryBuffer::ShadingBuffer::SHADINGBUFFER_TEXTURE_TYPE_SHADOW_MAP);
-		cam->GetGBuffer()->BindForLightPass();
+		bindRenderTextures(geomBuffer, trBuffer);
 		
 		LightingPass::applySingleLight(cam, buff, shadowLight);
 		LightingPass::finishStep();
 	}
 
-	cam->GetGBuffer()->UnbindBuffer();
+	geomBuffer->UnbindBuffer();
 }
 
 void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::calculateSingleLightShadowMap(GeometryWorldItem::GeometryLight::Light * light, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items)
@@ -75,9 +73,9 @@ void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::calculateSingleLi
 
 void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::initShadowStep(GeometryBuffer::ShadingBuffer* buf)
 {
-	buf->BindShadowMapTextureWrite();
 	buf->ClearColorTexture(GeometryEngine::GeometryBuffer::ShadingBuffer::SHADINGBUFFER_TEXTURE_TYPE_SHADOW_MAP);
-	buf->BindTexture(GeometryEngine::GeometryBuffer::ShadingBuffer::SHADINGBUFFER_TEXTURE_TYPE_SHADOW_MAP);
+	buf->BindShadowMapTextureWrite();
+	//buf->BindTexture(GeometryEngine::GeometryBuffer::ShadingBuffer::SHADINGBUFFER_TEXTURE_TYPE_SHADOW_MAP);
 	
 	
 	glEnable(GL_DEPTH_TEST);
@@ -99,6 +97,14 @@ void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::finishShadowStep(
 	}
 
 	buf->UnbindTexture(GeometryEngine::GeometryBuffer::ShadingBuffer::SHADINGBUFFER_TEXTURE_TYPE_SHADOW_MAP);
+}
+
+void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::bindRenderTextures(GeometryBuffer::GBuffer * geomBuff, GeometryBuffer::ShadingBuffer * shadingBuff)
+{
+	shadingBuff->BindShadowMapTextureRead();
+	shadingBuff->BindTranslucentDepthMapRead();
+	shadingBuff->BindColorMapsRead();
+	geomBuff->BindForLightPass();
 }
 
 void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::calculateItemShadowMap(GeometryWorldItem::GeometryItem::GeometryItem * item, GeometryWorldItem::GeometryLight::Light* light)

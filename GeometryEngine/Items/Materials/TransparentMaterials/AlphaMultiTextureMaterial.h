@@ -47,6 +47,8 @@ namespace GeometryEngine
 			void SetEmissiveTexture(const std::string& emissiveTexDir);
 			/// Binds textures to specific texture units. Used before drawing the object
 			virtual void BindTextures();
+			/// Unbinds textures.
+			virtual void UnbindTextures();
 			/// Returns the initial texture unit for this material
 			int GetInitialTextureUnit() { return TEXTURE_UNIT; }
 

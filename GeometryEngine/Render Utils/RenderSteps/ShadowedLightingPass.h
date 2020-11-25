@@ -58,12 +58,17 @@ namespace GeometryEngine
 			virtual void calculateSingleLightShadowMap(GeometryWorldItem::GeometryLight::Light* light, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items);
 			/// Calls the shadowMap calculation for a GeometryItem
 			void calculateItemShadowMap(GeometryWorldItem::GeometryItem::GeometryItem* item, GeometryWorldItem::GeometryLight::Light* light);
-		private:
 			/// Initializes the OpenGl pipeline for the shadow calculation
 			/// sets cull face to front and sets the tmpTexture as the active texture, also enables depth test just in case
+			/// param buf ShadingBuffer that stores the shadow map
 			virtual void initShadowStep(GeometryBuffer::ShadingBuffer* buf);
 			/// Resets the openGl pipeline
+			/// param buf ShadingBuffer that stores the shadow map
 			virtual void finishShadowStep(GeometryBuffer::ShadingBuffer* buf);
+			/// Binds textures before rendering the light
+			/// param geomBuff GeometryBuffer that stores intermediate textures
+			/// param shadingBuff ShadingBuffer that stores the shadow map
+			virtual void bindRenderTextures(GeometryBuffer::GBuffer* geomBuff, GeometryBuffer::ShadingBuffer* shadingBuff);
 		};
 	}
 }

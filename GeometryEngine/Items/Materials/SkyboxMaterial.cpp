@@ -128,20 +128,29 @@ void GeometryEngine::GeometryMaterial::SkyboxMaterial::drawMaterial(QOpenGLBuffe
 
 		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
 
+		unbindTextures();
+
+		vertexBuf->release();
+		indexBuf->release();
+
 		glCullFace(GL_BACK);
 	}
 }
 
 void GeometryEngine::GeometryMaterial::SkyboxMaterial::bindTextures()
 {
-	if (mpAmbientTexture->Texture != nullptr)
-		mpAmbientTexture->Texture->bind(TEXTURE_UNIT);
-	if (mpDiffuseTexture->Texture != nullptr)
-		mpDiffuseTexture->Texture->bind(TEXTURE_UNIT + 1);
-	if (mpSpecularTexture->Texture != nullptr)
-		mpSpecularTexture->Texture->bind(TEXTURE_UNIT + 2);
-	if (mpSkyboxTexture->Texture != nullptr)
-		mpSkyboxTexture->Texture->bind(TEXTURE_UNIT + 3);
+	if (mpAmbientTexture->Texture != nullptr) mpAmbientTexture->Texture->bind(TEXTURE_UNIT);
+	if (mpDiffuseTexture->Texture != nullptr) mpDiffuseTexture->Texture->bind(TEXTURE_UNIT + 1);
+	if (mpSpecularTexture->Texture != nullptr) mpSpecularTexture->Texture->bind(TEXTURE_UNIT + 2);
+	if (mpSkyboxTexture->Texture != nullptr) mpSkyboxTexture->Texture->bind(TEXTURE_UNIT + 3);
+}
+
+void GeometryEngine::GeometryMaterial::SkyboxMaterial::unbindTextures()
+{
+	if (mpAmbientTexture->Texture != nullptr) mpAmbientTexture->Texture->release();
+	if (mpDiffuseTexture->Texture != nullptr) mpDiffuseTexture->Texture->release();
+	if (mpSpecularTexture->Texture != nullptr) mpSpecularTexture->Texture->release();
+	if (mpSkyboxTexture->Texture != nullptr) mpSkyboxTexture->Texture->release();
 }
 
 void GeometryEngine::GeometryMaterial::SkyboxMaterial::copy(const SkyboxMaterial & mat)

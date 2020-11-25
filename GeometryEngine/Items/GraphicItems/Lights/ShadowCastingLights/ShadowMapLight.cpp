@@ -12,6 +12,9 @@ const std::string GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapCon
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapConstants::ShadowMapConstants::SPOTLIGHT_SHADOW_LIGHT_FRAGMENT_SHADER = "SPOTLIGHT_SHADOW_LIGHT_FRAGMENT_SHADER";
 const std::string GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapConstants::ShadowMapConstants::SPOTLIGHT_SHADOW_LIGHT_VERTEX_SHADER = "SPOTLIGHT_SHADOW_LIGHT_VERTEX_SHADER";
 
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapConstants::ShadowMapConstants::DIRECTIONAL_TRANSLUCENT_SHADOW_LIGHT_FRAGMENT_SHADER = "DIRECTIONAL_TRANSLUCENT_SHADOW_LIGHT_FRAGMENT_SHADER";
+const std::string GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapConstants::ShadowMapConstants::SPOTLIGHT_TRANSLUCENT_SHADOW_LIGHT_FRAGMENT_SHADER = "SPOTLIGHT_TRANSLUCENT_SHADOW_LIGHT_FRAGMENT_SHADER";
+
 GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight::ShadowMapLight(const GeometryItemUtils::Viewport& viewport, const QVector3D& direction,  GeometryItem::GeometryItem * boundingBox,
 	const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, 
 	const QVector3D & rot, float maxShadowBias, const QVector3D & scale, const LightUtils::LightComponentManager* const manager, WorldItem * parent) : mpViewport(nullptr), mDirection(direction), 

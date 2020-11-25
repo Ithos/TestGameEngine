@@ -17,3 +17,4 @@ SPOTLIGHT_SHADOW_LIGHT_VERTEX_SHADER = Lights\ShadowCastingLights\ShadowSpotligh
 ALPHA_COLOR_MATERIAL_VERTEX_SHADER = TransparentMaterials\AlphaColorShader.vert
 ALPHA_TEXTURE_MATERIAL_VERTEX_SHADER = TransparentMaterials\AlphaTextureMaterial.vert
 ALPHA_NORMALMAP_TEXTURE_MATERIAL_VERTEX_SHADER = TransparentMaterials\AlphaTextureNormalmapMaterial.vert
+DIRECT_COLOR_MAP_VERTEX_SHADER = TransparentMaterials\TranslucentColorMap\DirectColorMap.vert

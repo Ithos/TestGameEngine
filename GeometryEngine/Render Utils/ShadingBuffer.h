@@ -23,8 +23,8 @@ namespace GeometryEngine
 			{
 				SHADINGBUFFER_TEXTURE_TYPE_DIFFUSE_MAP,
 				SHADINGBUFFER_TEXTURE_TYPE_SPECULAR_MAP,
-				SHADINGBUFFER_TEXTURE_TYPE_SHADOW_MAP,
 				SHADINGBUFFER_TEXTURE_TYPE_TRANSLUCENT_DEPTH_MAP,
+				SHADINGBUFFER_TEXTURE_TYPE_SHADOW_MAP,
 				SHADINGBUFFER_NUM_TEXTURES
 			};
 
@@ -48,8 +48,10 @@ namespace GeometryEngine
 			bool Resize(unsigned int WindowWidth, unsigned int WindowHeight);
 			/// Clears textures color
 			void StartFrame();
-			/// Binds color map buffers buffers
-			void BindColorMaps();
+			/// Binds color map buffers buffers for drawing
+			void BindColorMapsWrite();
+			/// Binds color map buffers buffers for reading
+			void BindColorMapsRead();
 			/// Unbind all texture locations
 			void ResetBindings();
 			/// Unbind all buffer textures
@@ -70,6 +72,10 @@ namespace GeometryEngine
 			void BindShadowMapTextureWrite();
 			/// Binds the buffer as Read/Write and the shadowMap texture for Reading
 			void BindShadowMapTextureRead();
+			/// Binds the buffer as Read/Write and the translucentDepthMAp texture for writing
+			void BindTranslucentDepthMapWrite();
+			/// Binds the buffer as Read/Write and the translucentDepthMAp texture for reading
+			void BindTranslucentDepthMapRead();
 			/// Gets current texture size
 			/// return Current texture size
 			const QVector2D& GetTextureSize() const { return mTextureSize; }
@@ -79,6 +85,10 @@ namespace GeometryEngine
 			/// Clears the color of one of the textures of the framebuffer
 			/// param texture Texture to clear
 			void ClearColorTexture(SHADINGBUFFER_TEXTURE_TYPE texture);
+			/// Detaches the depth texture from the framebuffer and attaches the tmp depth buffer
+			void DetachDepthTexture();
+			/// Detaches the tmp depth buffer and ataches the depth texture to the framebuffer
+			void AttachDepthTexture();
 			/// Factory method. Creates a copy of this object
 			/// return Pointer to a copy of this object
 			virtual ShadingBuffer* Clone() const { return new ShadingBuffer(*this); };

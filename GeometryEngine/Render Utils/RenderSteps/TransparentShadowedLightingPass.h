@@ -30,11 +30,6 @@ namespace GeometryEngine
 			/// return A copy of this object.
 			virtual RenderStep* Clone() const override { return new TransparentShadowedLightingPass(*this); }
 		protected:
-			/// Calculates the shadow map for a single light
-			/// param light Light whose shadow map will be calculated
-			/// param items Set of items whose shadows will be applied
-			virtual void calculateSingleLightShadowMap(GeometryWorldItem::GeometryLight::Light* light, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items) override;
-/*			
 			/// Calculates the translucent color map for a single light
 			/// param light Light whose color map will be calculated
 			/// param items Set of items whose color map will be applied
@@ -46,33 +41,28 @@ namespace GeometryEngine
 			/// Copies the data from a LightingPass into this object
 			/// param ref LightingPass to be copied
 			virtual void copy(const ShadowedLightingPass& ref) { ShadowedLightingPass::copy(ref); }
-			///Calculates the shadowmap for every light and applies the light contribution
+			/// Calculates the shadowmap for every light and applies the light contribution
 			/// param cam Pointer to camera to be rendered
 			/// param items Set of items to be rendered. Items will no be used in this step, we will use the information stored in the geometry buffer instead.
 			/// param shadowedLights Set of shadow casting lights in the scene.
 			virtual void CalculateShadowMap(GeometryWorldItem::GeometryCamera::Camera* cam, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* shadowedLights,
 				std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items) override;
-
-
+			/// Calculates the colormap contribution of the item
+			/// param item Item to be rendered into the colormap
+			/// param light Light whose color map will be calculated
 			virtual void calculateItemTranslucentShadowing(GeometryWorldItem::GeometryItem::GeometryItem * item, GeometryWorldItem::GeometryLight::Light* light);
-
-
 		private:
-			/// Initializes the OpenGl pipeline for the shadow calculation
-			/// sets cull face to front and sets the tmpTexture as the active texture, also enables depth test just in case
-			void initShadowStep(GeometryBuffer::TranslucentBuffer* buf);
-			/// Resets the openGl pipeline
-			void finishShadowStep(GeometryBuffer::TranslucentBuffer* buf);
+			/// Performs the actions required to calculate the transparent shadowmap
+			/// param buf ShadingBuffer that stores the shadow map
+			void initTransparentShadowMap(GeometryBuffer::ShadingBuffer* buf);
+			/// Resets the pipeline state after the transparent shadowmap calculation
+			void finishTransparentShadowMap(GeometryBuffer::ShadingBuffer* buf);
 			/// Initializes the OpenGl pipeline for the color map calculation
-			void initColorMapStep(GeometryBuffer::TranslucentBuffer* buf);
+			/// param buf ShadingBuffer that stores the shadow map
+			void initColorMap(GeometryBuffer::ShadingBuffer* buf);
 			/// Resets the openGl pipeline
-			void finishColorMapStep(GeometryBuffer::TranslucentBuffer* buf);
-
-			void initTransparentShadowMap(GeometryBuffer::TranslucentBuffer* buf);
-
-			void finishTransparentShadowMap(GeometryBuffer::TranslucentBuffer* buf);
-
-*/
+			/// param buf ShadingBuffer that stores the shadow map
+			void finishColorMap(GeometryBuffer::ShadingBuffer* buf);
 		};
 	}
 }

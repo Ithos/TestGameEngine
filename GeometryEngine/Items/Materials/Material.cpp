@@ -141,7 +141,6 @@ void GeometryEngine::GeometryMaterial::Material::initProgram()
 
 void GeometryEngine::GeometryMaterial::Material::copy(const Material & mat)
 {
-	this->mLit = mat.mLit;
 	this->mpConfInstance = mat.mpConfInstance;
 	this->mFragmentShaderKey = mat.mFragmentShaderKey;
 	this->mpProgram = nullptr;

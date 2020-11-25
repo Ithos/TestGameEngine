@@ -37,6 +37,9 @@
 #include <Items\CommonInerfaces\ShadingSteps\AlphaColorShadowMap.h>
 #include <Items\CommonInerfaces\ShadingSteps\AlphaTextureShadowMap.h>
 #include <Items\CommonInerfaces\ShadingSteps\AlphaMultiTextureShadowMap.h>
+#include <Items\CommonInerfaces\ShadingSteps\DirectColorMap.h>
+#include <Items\CommonInerfaces\ShadingSteps\TextureColorMap.h>
+#include <Items\CommonInerfaces\ShadingSteps\MultiTextureColorMap.h>
 
 #include <Scenes/DeferredShadingScene.h>
 #include <Scenes\PostProcessScene.h>
@@ -221,11 +224,17 @@ namespace Application
 	}
 	void CWindowApplication::initGeometry(GeometryEngine::GeometryEngine* engine)
 	{
+		GeometryEngine::CustomShading::CustomShadingInterface trAlphaColorInterface;
+		trAlphaColorInterface.AddNewShadingStep< GeometryEngine::CustomShading::AlphaColorShadowMap<GeometryEngine::GeometryMaterial::AlphaColorMaterial> >(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP);
+		trAlphaColorInterface.AddNewShadingStep< GeometryEngine::CustomShading::DirectColorMap<GeometryEngine::GeometryMaterial::AlphaColorMaterial> >(GeometryEngine::CustomShading::CUSTOM_COLORMAP);
+
+		GeometryEngine::GeometryMaterial::AlphaColorMaterial trMat(&trAlphaColorInterface, QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f), 0.1f, 0.7f, 100.0f, true); // QVector3D(1.0f, 0.4f, 0.3f)
+
 		GeometryEngine::CustomShading::CustomShadingInterface alphaColorInterface;
 		alphaColorInterface.AddNewShadingStep< GeometryEngine::CustomShading::AlphaColorShadowMap<GeometryEngine::GeometryMaterial::AlphaColorMaterial> >(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP);
 
 		GeometryEngine::GeometryScene::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::GeometryScene::TransparentGeometryScene>();
-		GeometryEngine::GeometryMaterial::AlphaColorMaterial mat( &alphaColorInterface, QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f),0.1f, 0.7f, 100.0f); // QVector3D(1.0f, 0.4f, 0.3f)
+		GeometryEngine::GeometryMaterial::AlphaColorMaterial mat(&alphaColorInterface, QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f), 0.1f, 0.7f, 100.0f); // QVector3D(1.0f, 0.4f, 0.3f)
 		GeometryEngine::GeometryMaterial::ColorMaterial floorMat(QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f));
 
 		std::list< GeometryEngine::GeometryMaterial::TextureParameters* > tmpList;
@@ -247,25 +256,28 @@ namespace Application
 
 		GeometryEngine::CustomShading::CustomShadingInterface alphaNormalMapMultiTextureInterface;
 		alphaNormalMapMultiTextureInterface.AddNewShadingStep<GeometryEngine::CustomShading::AlphaMultiTextureShadowMap< GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial > >(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP);
+		alphaNormalMapMultiTextureInterface.AddNewShadingStep< GeometryEngine::CustomShading::MultiTextureColorMap<GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial> >(GeometryEngine::CustomShading::CUSTOM_COLORMAP);
 
 
 		GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial atMat( &alphaNormalMapMultiTextureInterface, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE,
-			GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP, 0.1f, 0.8f, 1000.0f);
+			GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP, 0.1f, 0.9f, 1000.0f, true);
 
 		GeometryEngine::CustomShading::CustomShadingInterface alphaTextureInterface;
 		alphaTextureInterface.AddNewShadingStep< GeometryEngine::CustomShading::AlphaTextureShadowMap<GeometryEngine::GeometryMaterial::AlphaTextureMaterial> >(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP);
+		alphaTextureInterface.AddNewShadingStep< GeometryEngine::CustomShading::TextureColorMap<GeometryEngine::GeometryMaterial::AlphaTextureMaterial> >(GeometryEngine::CustomShading::CUSTOM_COLORMAP);
 
-		GeometryEngine::GeometryMaterial::AlphaTextureMaterial grassMat( &alphaTextureInterface, GeometryEngine::GeometryMaterial::TextureConstant::TEST_GRASS_TEXTURE, 0.1f);
+		GeometryEngine::GeometryMaterial::AlphaTextureMaterial grassMat( &alphaTextureInterface, GeometryEngine::GeometryMaterial::TextureConstant::TEST_GRASS_TEXTURE, 0.1f, 1.0f, 10.0f, true);
 		grassMat.SetDrawBacksideFaces(true);
 								
+		/// -- TODO -- Al dibujar una sombra después de dibujar un quad se queda con la sombra del quad //
 
 		GeometryEngine::GeometryMaterial::MultiTextureMaterial mtMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_RIGHT_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE);
 		/*GeometryEngine::Cube**/ testCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(atMat, 4.0f,QVector3D(-5.0f, 0.0f, -15.0f), QVector3D(30.0f, -30.0f, 0.0f));
-		/*GeometryEngine::Cube**/ testCube2 = new GeometryEngine::GeometryWorldItem::GeometryItem::Sphere(mat, 1.0f, 6, 12, QVector3D(5.0f, 0.0f, -15.0f)); //new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 2.0f, QVector3D(5.0f, 0.0f, -15.0f), QVector3D(-30.0f, 30.0f, 0.0f));
+		/*GeometryEngine::Cube**/ testCube2 = new GeometryEngine::GeometryWorldItem::GeometryItem::Sphere(trMat, 1.0f, 6, 12, QVector3D(-5.0f, 5.0f, -15.0f)); //QVector3D(5.0f, 0.0f, -15.0f)
 		GeometryEngine::GeometryItemUtils::PerspectiveViewport viewport(QVector4D(0, 0, this->width(), this->height()), 45.0f, 1.0f, 0.1f, 1000.0f);
 		/*GeometryEngine::PerspectiveCamera**/ cam = new GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera(
 																			GeometryEngine::GeometryRenderData::RenderBuffersData( GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer(), &GeometryEngine::GeometryBuffer::ShadingBuffer() ),
@@ -278,7 +290,7 @@ namespace Application
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* floor = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(floorMat, 1.0f, QVector3D(0.0f, -6.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(100.0f, 1.0f, 100.0f));
 
-		GeometryEngine::GeometryWorldItem::GeometryItem::Quad lightQuad(mat, 3.0f, 3.0f);
+		GeometryEngine::GeometryWorldItem::GeometryItem::Quad lightQuad(floorMat, 3.0f, 3.0f);
 		
 		//cam->AddPostProcess(GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess(lightQuad));
 		//cam->AddPostProcess( GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess(lightQuad) );
@@ -306,7 +318,7 @@ namespace Application
 
 		//GeometryEngine::GeometryWorldItem::GeometryItem::Cube* lightCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 0.2f, QVector3D(5.0f, 5.0f, -15.0f), QVector3D(0.1f, 0.1f, 0.1f), QVector3D(1.0f, 1.0f, 1.0f));
 		//GeometryEngine::GeometryWorldItem::GeometryItem::Cube* 
-			lightCube2 = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(mat, 0.2f, QVector3D(-5.0f, 10.0f, -15.0f), QVector3D(0.1f, 0.1f, 0.1f), QVector3D(1.0f, 1.0f, 1.0f));
+			lightCube2 = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(floorMat, 0.2f, QVector3D(-5.0f, 10.0f, -15.0f), QVector3D(0.1f, 0.1f, 0.1f), QVector3D(1.0f, 1.0f, 1.0f));
 			lightCube2->SetCastsShadows(false);
 
 		std::vector<QVector2D> texCoordArray;

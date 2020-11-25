@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef GEOMETRYALPHACOLORSHADOWMAP_H
-#define GEOMETRYALPHACOLORSHADOWMAP_H
+#ifndef GEOMETRYDIRECTCOLORMAP_H
+#define GEOMETRYDIRECTCOLORMAP_H
 
 #include "../CustomShadingStep.h"
 
@@ -9,38 +9,36 @@ namespace GeometryEngine
 {
 	namespace CustomShading
 	{
-        /// Custom shadowmap calculation for alpha color materials
+		/// Custom color map calculation for alpha color materials
 		template<class T>
-		class AlphaColorShadowMap : public CustomShadingStep
+		class DirectColorMap : public CustomShadingStep
 		{
 		public:
-
 			/// Constructor
 			/// param parent Pointer to the CustomShadingInterface that contains it 
 			/// param Value that indicates at which render stepthis shading technique will be used
-			AlphaColorShadowMap(CustomShadingInterface* parent, CustomShadingSteps step) : CustomShadingStep(parent, step) {};
+			DirectColorMap(CustomShadingInterface* parent, CustomShadingSteps step) : CustomShadingStep(parent, step) {};
 
 			/// Copy constructor
 			/// param ref Object to be copied.
-			AlphaColorShadowMap(const CustomShadingStep& ref) { copy(ref); }
+			DirectColorMap(const CustomShadingStep& ref) { copy(ref); }
 
 			/// Destructor
-			virtual ~AlphaColorShadowMap() {};
+			virtual ~DirectColorMap() {};
 
 			/// Abstract method. Factory method. Creates a copy of this object
 			/// return Pointer to a copy of this object
-			virtual AlphaColorShadowMap* Clone(CustomShadingInterface* parent, CustomShadingSteps step) const { 
-				AlphaColorShadowMap* cloned = new AlphaColorShadowMap((*this)); 
+			virtual DirectColorMap* Clone(CustomShadingInterface* parent, CustomShadingSteps step) const {
+				DirectColorMap* cloned = new DirectColorMap((*this));
 				cloned->AddToInterface(parent, step);
 				return cloned;
 			}
-
 		protected:
 			/// Sets the shaders that should be loaded
 			virtual void initShaders() override
 			{
-				mVertexShaderKey = CustomShadingConstants::POSITION_TEX_COORD_VERTEX_SHADER;
-				mFragmentShaderKey = CustomShadingConstants::ALPHA_TEXTURE_SHADOWMAP;
+				mVertexShaderKey = CustomShadingConstants::DIRECT_COLOR_MAP_VERTEX_SHADER;
+				mFragmentShaderKey = CustomShadingConstants::DIRECT_COLOR_MAP_FRAGMENT_SHADER;
 			}
 
 			/// Abstract method. Sends parameters to the shaders.
@@ -53,8 +51,10 @@ namespace GeometryEngine
 				assert(mpTargetMaterial != nullptr && "Target material not found");
 				{
 					mpProgram->setUniformValue("mModelViewProjectionMatrix", modelViewProjectionMatrix);
-					mpProgram->setUniformValue( "mThresholdAlphaValue", ((T*)mpTargetMaterial)->GetThresholdValue() );
-					mpProgram->setUniformValue("mGlobalAlphaValue", ((T*)mpTargetMaterial)->GetGlobalAlpha() );
+					mpProgram->setUniformValue("diffuseColor", ((T*)mpTargetMaterial)->GetDiffuse());
+					mpProgram->setUniformValue("reflectiveColor", ((T*)mpTargetMaterial)->GetSpecular());
+					mpProgram->setUniformValue("mThresholdAlphaValue", ((T*)mpTargetMaterial)->GetThresholdValue());
+					mpProgram->setUniformValue("mGlobalAlphaValue", ((T*)mpTargetMaterial)->GetGlobalAlpha());
 				}
 			}
 
@@ -80,9 +80,8 @@ namespace GeometryEngine
 				vertexBuf->release();
 				indexBuf->release();
 			}
-		};
 
+		};
 	}
 }
-#endif // !GEOMETRYALPHACOLORSHADOWMAP_H
-
+#endif

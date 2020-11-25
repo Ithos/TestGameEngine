@@ -40,6 +40,8 @@ bool GeometryEngine::GeometryBuffer::ShadingBuffer::Init(unsigned int MaxWindowW
 		mpFBO->AddTexture(QVector2D(MaxWindowWidth, MaxWindowHeight), GFramebufferCommons::G_COLOR_ATTACHMENTS(GL_COLOR_ATTACHMENT0 + i));
 	}
 
+	mpFBO->SetStencilDepthBuffer(QVector2D(MaxWindowWidth, MaxWindowHeight), GFramebufferCommons::G_DEPTH_STENCIL_ATTACHMENTS(GL_DEPTH_STENCIL_ATTACHMENT));
+	mpFBO->GetStencilDepthBuffer()->Enable(false);
 	mpFBO->SetStencilDepthTexture(QVector2D(MaxWindowWidth, MaxWindowHeight), GFramebufferCommons::G_DEPTH_STENCIL_ATTACHMENTS(GL_DEPTH_STENCIL_ATTACHMENT));
 
 	mTextureSize.setX(MaxWindowWidth); mTextureSize.setY(MaxWindowHeight);
@@ -66,6 +68,7 @@ bool GeometryEngine::GeometryBuffer::ShadingBuffer::Resize(unsigned int WindowWi
 		mpFBO->GetColorTarget(i)->Resize(size);
 	}
 
+	mpFBO->GetStencilDepthBuffer()->Resize(size);
 	mpFBO->GetStencilDepthTexture()->Resize(size);
 	mTextureSize.setX(WindowWidth); mTextureSize.setY(WindowHeight);
 	mpFBO->Unbind();
@@ -82,15 +85,8 @@ void GeometryEngine::GeometryBuffer::ShadingBuffer::StartFrame()
 
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 	{
-		unsigned int DrawBuffers[] = { 0, 1 };
-		mpFBO->Draw(DrawBuffers, 2);
-	}
-	glClear(GL_COLOR_BUFFER_BIT);
-
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-	{
-		unsigned int DrawBuffers[] = { 2, 3 };
-		mpFBO->Draw(DrawBuffers, 2);
+		unsigned int DrawBuffers[] = { 0, 1, 2, 3 };
+		mpFBO->Draw(DrawBuffers, 4);
 		mpFBO->GetStencilDepthTexture()->Bind();
 	}
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
@@ -98,11 +94,22 @@ void GeometryEngine::GeometryBuffer::ShadingBuffer::StartFrame()
 	glClearColor(clearColor[0], clearColor[1], clearColor[2], clearColor[3]);
 }
 
-void GeometryEngine::GeometryBuffer::ShadingBuffer::BindColorMaps()
+void GeometryEngine::GeometryBuffer::ShadingBuffer::BindColorMapsWrite()
 {
 	mpFBO->Bind(GeometryBuffer::DRAW);
 	unsigned int ColorMapBuffers[] = { 0, 1 };
 	mpFBO->Draw(ColorMapBuffers, 2);
+}
+
+void GeometryEngine::GeometryBuffer::ShadingBuffer::BindColorMapsRead()
+{
+	mpFBO->Bind(GeometryBuffer::READ);
+
+	mpFBO->Read(SHADINGBUFFER_TEXTURE_TYPE_DIFFUSE_MAP);
+	mpFBO->Read(SHADINGBUFFER_TEXTURE_TYPE_SPECULAR_MAP);
+
+	BindTexture(SHADINGBUFFER_TEXTURE_TYPE_DIFFUSE_MAP);
+	BindTexture(SHADINGBUFFER_TEXTURE_TYPE_SPECULAR_MAP);
 }
 
 void GeometryEngine::GeometryBuffer::ShadingBuffer::ResetBindings()
@@ -147,17 +154,45 @@ void GeometryEngine::GeometryBuffer::ShadingBuffer::BindShadowMapTextureWrite()
 {
 	mpFBO->Bind(GeometryBuffer::DRAW_READ);
 	mpFBO->Draw(SHADINGBUFFER_TEXTURE_TYPE_SHADOW_MAP);
+	BindTexture(SHADINGBUFFER_TEXTURE_TYPE_SHADOW_MAP);
 }
 
 void GeometryEngine::GeometryBuffer::ShadingBuffer::BindShadowMapTextureRead()
 {
 	mpFBO->Bind(GeometryBuffer::DRAW_READ);
 	mpFBO->Read(SHADINGBUFFER_TEXTURE_TYPE_SHADOW_MAP);
+	BindTexture(SHADINGBUFFER_TEXTURE_TYPE_SHADOW_MAP);
+}
+
+void GeometryEngine::GeometryBuffer::ShadingBuffer::BindTranslucentDepthMapWrite()
+{
+	mpFBO->Bind(GeometryBuffer::DRAW_READ);
+	mpFBO->Draw(SHADINGBUFFER_TEXTURE_TYPE_TRANSLUCENT_DEPTH_MAP);
+	BindTexture(SHADINGBUFFER_TEXTURE_TYPE_TRANSLUCENT_DEPTH_MAP);
+}
+
+void GeometryEngine::GeometryBuffer::ShadingBuffer::BindTranslucentDepthMapRead()
+{
+	mpFBO->Bind(GeometryBuffer::DRAW_READ);
+	mpFBO->Read(SHADINGBUFFER_TEXTURE_TYPE_TRANSLUCENT_DEPTH_MAP);
+	BindTexture(SHADINGBUFFER_TEXTURE_TYPE_TRANSLUCENT_DEPTH_MAP);
 }
 
 void GeometryEngine::GeometryBuffer::ShadingBuffer::ClearColorTexture(SHADINGBUFFER_TEXTURE_TYPE texture)
 {
 	mpFBO->GetColorTarget((unsigned int)texture)->Clear();
+}
+
+void GeometryEngine::GeometryBuffer::ShadingBuffer::DetachDepthTexture()
+{
+	mpFBO->GetStencilDepthTexture()->Enable(false);
+	mpFBO->GetStencilDepthBuffer()->Enable(true);
+}
+
+void GeometryEngine::GeometryBuffer::ShadingBuffer::AttachDepthTexture()
+{
+	mpFBO->GetStencilDepthBuffer()->Enable(false);
+	mpFBO->GetStencilDepthTexture()->Enable(true);
 }
 
 void GeometryEngine::GeometryBuffer::ShadingBuffer::FillShadingBufferInfo(ShadingBufferTextureInfo & bufferInfo)

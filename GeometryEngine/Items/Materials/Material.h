@@ -103,7 +103,6 @@ namespace GeometryEngine
 
 		protected:
 			float mShininess;
-			bool mLit;
 			bool mDrawBothFaces;
 
 			QOpenGLShaderProgram* mpProgram; // Lighting shader

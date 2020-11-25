@@ -226,13 +226,13 @@ void GeometryEngine::GeometryBuffer::GBuffer::ClearColorTexture(GBUFFER_TEXTURE_
 	mpFBO->GetColorTarget((unsigned int)texture)->Clear();
 }
 
-void GeometryEngine::GeometryBuffer::GBuffer::DetachDepthBuffer()
+void GeometryEngine::GeometryBuffer::GBuffer::DetachDepthTexture()
 {
 	mpFBO->GetStencilDepthTexture()->Enable(false);
 	mpFBO->GetStencilDepthBuffer()->Enable(true);
 }
 
-void GeometryEngine::GeometryBuffer::GBuffer::AttachDepthBuffer()
+void GeometryEngine::GeometryBuffer::GBuffer::AttachDepthTexture()
 {
 	mpFBO->GetStencilDepthBuffer()->Enable(false);
 	mpFBO->GetStencilDepthTexture()->Enable(true);

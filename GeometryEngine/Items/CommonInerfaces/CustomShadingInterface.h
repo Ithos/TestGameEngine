@@ -33,6 +33,10 @@ namespace GeometryEngine
 			static const std::string ALPHA_COLOR_SHADOWMAP;
 			static const std::string ALPHA_TEXTURE_SHADOWMAP;
 			static const std::string ALPHA_MULTI_TEXTURE_SHADOWMAP;
+			static const std::string DIRECT_COLOR_MAP_VERTEX_SHADER;
+			static const std::string DIRECT_COLOR_MAP_FRAGMENT_SHADER;
+			static const std::string TEXTURE_COLOR_MAP_FRAGMENT_SHADER;
+			static const std::string MULTI_TEXTURE_COLOR_MAP_FRAGMENT_SHADER;
 		};
 
 		/// Interface for objects that implement custom shadow map calculations

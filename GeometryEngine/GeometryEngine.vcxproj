@@ -178,6 +178,9 @@
     <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaColorShadowMap.h" />
     <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaMultiTextureShadowMap.h" />
     <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaTextureShadowMap.h" />
+    <ClInclude Include="Items\CommonInerfaces\ShadingSteps\DirectColorMap.h" />
+    <ClInclude Include="Items\CommonInerfaces\ShadingSteps\MultiTextureColorMap.h" />
+    <ClInclude Include="Items\CommonInerfaces\ShadingSteps\TextureColorMap.h" />
     <ClInclude Include="Items\CommonItemParameters.h" />
     <ClInclude Include="Items\Geometries\Cube.h" />
     <ClInclude Include="GeometryEngine.h" />

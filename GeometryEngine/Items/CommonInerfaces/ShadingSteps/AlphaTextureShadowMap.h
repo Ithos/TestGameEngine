@@ -88,6 +88,11 @@ namespace GeometryEngine
 
 					// Draw light
 					glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
+
+					((T*)mpTargetMaterial)->UnbindTextures();
+
+					vertexBuf->release();
+					indexBuf->release();
 				}
 			}
 		};

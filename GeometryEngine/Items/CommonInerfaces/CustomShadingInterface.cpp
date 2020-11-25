@@ -6,6 +6,10 @@ const std::string GeometryEngine::CustomShading::CustomShadingConstants::POSITIO
 const std::string GeometryEngine::CustomShading::CustomShadingConstants::ALPHA_COLOR_SHADOWMAP = "ALPHA_COLOR_SHADOWMAP";
 const std::string GeometryEngine::CustomShading::CustomShadingConstants::ALPHA_TEXTURE_SHADOWMAP = "ALPHA_TEXTURE_SHADOWMAP";
 const std::string GeometryEngine::CustomShading::CustomShadingConstants::ALPHA_MULTI_TEXTURE_SHADOWMAP = "ALPHA_MULTI_TEXTURE_SHADOWMAP";
+const std::string GeometryEngine::CustomShading::CustomShadingConstants::DIRECT_COLOR_MAP_VERTEX_SHADER = "DIRECT_COLOR_MAP_VERTEX_SHADER";
+const std::string GeometryEngine::CustomShading::CustomShadingConstants::DIRECT_COLOR_MAP_FRAGMENT_SHADER = "DIRECT_COLOR_MAP_FRAGMENT_SHADER";
+const std::string GeometryEngine::CustomShading::CustomShadingConstants::TEXTURE_COLOR_MAP_FRAGMENT_SHADER = "TEXTURE_COLOR_MAP_FRAGMENT_SHADER";
+const std::string GeometryEngine::CustomShading::CustomShadingConstants::MULTI_TEXTURE_COLOR_MAP_FRAGMENT_SHADER = "MULTI_TEXTURE_COLOR_MAP_FRAGMENT_SHADER";
 
 GeometryEngine::CustomShading::CustomShadingInterface::CustomShadingInterface(const CustomShadingInterface & ref)
 {

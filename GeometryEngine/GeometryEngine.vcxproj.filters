@@ -266,6 +266,15 @@
     <ClInclude Include="Items\GraphicItems\LightUtils\LightRenderComponents\BoundingGeometryLighting.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\ShadingSteps\DirectColorMap.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\ShadingSteps\TextureColorMap.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\ShadingSteps\MultiTextureColorMap.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeometryEngine.cpp">

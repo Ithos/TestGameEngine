@@ -50,6 +50,7 @@ namespace GeometryEngine
 			/// Deletes all textures from the material
 			virtual void DeleteAllTextures();
 
+
 		protected:
 			/// Texture unit that the textures in the material will be binded to
 			static const int TEXTURE_UNIT = 0;
@@ -87,6 +88,8 @@ namespace GeometryEngine
 			virtual void drawMaterial(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) override;
 			/// Binds textures to specific texture units. Used before drawing the object
 			virtual void bindTextures();
+			/// Unbinds textures.
+			virtual void unbindTextures();
 			/// Copies the data of a Material object to the current object
 			/// param ref Material to be copied
 			virtual void copy(const TextureMaterial& mat);

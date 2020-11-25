@@ -49,6 +49,8 @@ namespace GeometryEngine
 			virtual void setProgramParameters(const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryWorldItem::GeometryItem::GeometryItem& parent) override;
 			/// Binds textures to specific texture units. Used before drawing the object
 			virtual void bindTextures() override;
+			/// Unbinds textures.
+			virtual void unbindTextures() override;
 			/// Copies the data of a Material object to the current object
 			/// param ref Material to be copied
 			virtual void copy(const NormalMapMultiTextureMaterial& mat);

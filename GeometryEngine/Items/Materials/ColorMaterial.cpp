@@ -71,6 +71,9 @@ void GeometryEngine::GeometryMaterial::ColorMaterial::drawMaterial(QOpenGLBuffer
 
 		// Draw cube geometry using indices from VBO 1
 		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
+
+		arrayBuf->release();
+		indexBuf->release();
 	}
 }
 

@@ -53,10 +53,16 @@ void GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial::setProgram
 	if (mpProgram != nullptr) mpProgram->setUniformValue("normalMapTexture", TEXTURE_UNIT + 1);
 }
 
-void GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial::bindTextures()
+void GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial::BindTextures()
 {
 	GeometryEngine::GeometryMaterial::AlphaTextureMaterial::BindTextures();
 	if (mpNormalMapTexture != nullptr) mpNormalMapTexture->Texture->bind(TEXTURE_UNIT + 1);
+}
+
+void GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial::UnbindTextures()
+{
+	GeometryEngine::GeometryMaterial::AlphaTextureMaterial::UnbindTextures();
+	if (mpNormalMapTexture != nullptr) mpNormalMapTexture->Texture->release();
 }
 
 void GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial::copy(const AlphaNormalMapTextureMaterial & mat)

@@ -34,12 +34,14 @@ namespace GeometryEngine
 			/// Sets the emissive texture
 			/// param emissiveTexDir Key to a texture that will be used as emissive color 
 			void SetNormalMapTexture(const std::string& normalMapTexDir);
+			/// Binds textures to specific texture units. Used before drawing the object
+			virtual void BindTextures() override;
+			/// Unbinds textures.
+			virtual void UnbindTextures() override;
 		protected:
 			TextureParameters* mpNormalMapTexture;
 			/// Builds all the textures
 			virtual void initTextures() override;
-			/// Binds textures to specific texture units. Used before drawing the object
-			virtual void bindTextures();
 			/// Sets the shaders that should be loaded
 			virtual void initShaders();
 			/// Sends parameters to the shaders.

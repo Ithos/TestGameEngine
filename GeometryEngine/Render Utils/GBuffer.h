@@ -107,9 +107,9 @@ namespace GeometryEngine
 			/// param texture Texture to clear
 			void ClearColorTexture(GBUFFER_TEXTURE_TYPE texture);
 			/// Detaches the depth texture from the framebuffer and attaches the tmp depth buffer
-			void DetachDepthBuffer();
+			void DetachDepthTexture();
 			/// Detaches the tmp depth buffer and ataches the depth texture to the framebuffer
-			void AttachDepthBuffer();
+			void AttachDepthTexture();
 			/// Factory method. Creates a copy of this object
 			/// return Pointer to a copy of this object
 			virtual GBuffer* Clone() const { return new GBuffer(*this); };

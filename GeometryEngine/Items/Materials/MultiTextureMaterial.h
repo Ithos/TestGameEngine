@@ -83,6 +83,8 @@ namespace GeometryEngine
 			virtual void drawMaterial(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) override;
 			/// Binds textures to specific texture units. Used before drawing the object
 			virtual void bindTextures();
+			/// Unbinds textures.
+			virtual void unbindTextures();
 			/// Copies the data of a Material object to the current object
 			/// param ref Material to be copied
 			virtual void copy(const MultiTextureMaterial& mat);

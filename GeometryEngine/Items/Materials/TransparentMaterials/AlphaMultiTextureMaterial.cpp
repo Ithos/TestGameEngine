@@ -159,19 +159,28 @@ void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::drawMaterial(Q
 		BindTextures();
 
 		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
+
+		UnbindTextures();
+
+		vertexBuf->release();
+		indexBuf->release();
 	}
 }
 
 void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::BindTextures()
 {
-	if (mpAmbientTexture->Texture != nullptr)
-		mpAmbientTexture->Texture->bind(TEXTURE_UNIT);
-	if (mpDiffuseTexture->Texture != nullptr)
-		mpDiffuseTexture->Texture->bind(TEXTURE_UNIT + 1);
-	if (mpSpecularTexture->Texture != nullptr)
-		mpSpecularTexture->Texture->bind(TEXTURE_UNIT + 2);
-	if (mpEmissiveTexture->Texture != nullptr)
-		mpEmissiveTexture->Texture->bind(TEXTURE_UNIT + 3);
+	if (mpAmbientTexture->Texture != nullptr) mpAmbientTexture->Texture->bind(TEXTURE_UNIT);
+	if (mpDiffuseTexture->Texture != nullptr) mpDiffuseTexture->Texture->bind(TEXTURE_UNIT + 1);
+	if (mpSpecularTexture->Texture != nullptr) mpSpecularTexture->Texture->bind(TEXTURE_UNIT + 2);
+	if (mpEmissiveTexture->Texture != nullptr) mpEmissiveTexture->Texture->bind(TEXTURE_UNIT + 3);
+}
+
+void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::UnbindTextures()
+{
+	if (mpAmbientTexture->Texture != nullptr) mpAmbientTexture->Texture->release();
+	if (mpDiffuseTexture->Texture != nullptr) mpDiffuseTexture->Texture->release();
+	if (mpSpecularTexture->Texture != nullptr) mpSpecularTexture->Texture->release();
+	if (mpEmissiveTexture->Texture != nullptr) mpEmissiveTexture->Texture->release();
 }
 
 void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::copy(const AlphaMultiTextureMaterial & mat)

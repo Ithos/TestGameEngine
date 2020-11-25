@@ -27,7 +27,7 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::c
 void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::initLightShaders()
 {
 	mVertexShaderKey = ShadowMapConstants::DIRECTIONAL_SHADOW_LIGHT_VERTEX_SHADER;
-	mFragmentShaderKey = ShadowMapConstants::DIRECTIONAL_SHADOW_LIGHT_FRAGMENT_SHADER;
+	mFragmentShaderKey = ShadowMapConstants::DIRECTIONAL_TRANSLUCENT_SHADOW_LIGHT_FRAGMENT_SHADER; // ShadowMapConstants::DIRECTIONAL_SHADOW_LIGHT_FRAGMENT_SHADER;
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::setProgramParameters(const LightingTransformationData & transformData, 
@@ -51,6 +51,10 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::s
 		mpProgram->setUniformValue("mReflectiveColorMap", gBuffTexInfo.ReflectiveTexture);
 		mpProgram->setUniformValue("mNormalMap", gBuffTexInfo.NormalTexture);
 		mpProgram->setUniformValue("mShadowMap", tBufferTexInfo.ShadowMapTexture);
+
+		mpProgram->setUniformValue("mSpecularTranslucentMap", tBufferTexInfo.SpecularColorMapTexture);
+		mpProgram->setUniformValue("mDiffuseTranslucentMap", tBufferTexInfo.DiffuseColorMapTexture);
+		mpProgram->setUniformValue("mTranslucentShadowMap", tBufferTexInfo.TranslucentDepthMapTexture);
 
 		mpProgram->setUniformValue("mTextureSize", gBuffTexInfo.TextureSize);
 

@@ -19,7 +19,7 @@ GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::~ShadowSpotli
 void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::initLightShaders()
 {
 	mVertexShaderKey = ShadowMapConstants::SPOTLIGHT_SHADOW_LIGHT_VERTEX_SHADER;
-	mFragmentShaderKey = ShadowMapConstants::SPOTLIGHT_SHADOW_LIGHT_FRAGMENT_SHADER;
+	mFragmentShaderKey = ShadowMapConstants::SPOTLIGHT_TRANSLUCENT_SHADOW_LIGHT_FRAGMENT_SHADER; // ShadowMapConstants::SPOTLIGHT_SHADOW_LIGHT_FRAGMENT_SHADER;
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::setProgramParameters(const LightingTransformationData & transformData, const BuffersInfo& buffInfo, const QVector3D & viewPos)
@@ -43,6 +43,10 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::setProgr
 		mpProgram->setUniformValue("mReflectiveColorMap", gBuffTexInfo.ReflectiveTexture);
 		mpProgram->setUniformValue("mNormalMap", gBuffTexInfo.NormalTexture);
 		mpProgram->setUniformValue("mShadowMap", tBufferTexInfo.ShadowMapTexture);
+
+		mpProgram->setUniformValue("mSpecularTranslucentMap", tBufferTexInfo.SpecularColorMapTexture);
+		mpProgram->setUniformValue("mDiffuseTranslucentMap", tBufferTexInfo.DiffuseColorMapTexture);
+		mpProgram->setUniformValue("mTranslucentShadowMap", tBufferTexInfo.TranslucentDepthMapTexture);
 
 		mpProgram->setUniformValue("mTextureSize", gBuffTexInfo.TextureSize);
 

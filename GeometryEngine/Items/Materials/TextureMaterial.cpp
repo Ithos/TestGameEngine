@@ -118,6 +118,7 @@ void GeometryEngine::GeometryMaterial::TextureMaterial::drawMaterial(QOpenGLBuff
 		{
 			bindTextures();
 			glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
+			unbindTextures();
 			return;
 		}
 
@@ -128,16 +129,20 @@ void GeometryEngine::GeometryMaterial::TextureMaterial::drawMaterial(QOpenGLBuff
 
 			assert((*it)->Texture != nullptr && "TextureMaterial -> Texture not built");
 
-			if ((*it)->Texture != nullptr)
-				(*it)->Texture->bind(TEXTURE_UNIT);
+			if ((*it)->Texture != nullptr) (*it)->Texture->bind(TEXTURE_UNIT);
 
 			int vertexNum = (*it)->VertexNumber > 0 ? (*it)->VertexNumber : totalVertexNumber;
 
 			/// Maybe do the same, but with indices?
 			glDrawArrays(GL_TRIANGLE_STRIP, vertexCount, vertexNum); /// Draw sets of 3 vertex you can also go for sets of 4 by swapping 3s for 4s in the call to the method
 
+			if ((*it)->Texture != nullptr) (*it)->Texture->release();
+
 			vertexCount += (*it)->VertexNumber;
 		}
+
+		vertexBuf->release();
+		indexBuf->release();
 	}
 }
 
@@ -148,8 +153,17 @@ void GeometryEngine::GeometryMaterial::TextureMaterial::bindTextures()
 
 	assert((*it)->Texture != nullptr && "TextureMaterial -> Texture not built");
 
-	if ((*it)->Texture != nullptr)
-		(*it)->Texture->bind(TEXTURE_UNIT);
+	if ((*it)->Texture != nullptr) (*it)->Texture->bind(TEXTURE_UNIT);
+}
+
+void GeometryEngine::GeometryMaterial::TextureMaterial::unbindTextures()
+{
+	auto it = mTexturesList.begin();
+	std::advance(it, 0);
+
+	assert((*it)->Texture != nullptr && "TextureMaterial -> Texture not built");
+
+	if ((*it)->Texture != nullptr) (*it)->Texture->release();
 }
 
 void GeometryEngine::GeometryMaterial::TextureMaterial::copy(const TextureMaterial & mat)
