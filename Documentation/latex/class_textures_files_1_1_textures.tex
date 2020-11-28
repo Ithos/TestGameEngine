@@ -36,19 +36,40 @@ Singleton that manages texture files and texture configuration files.
 \subsubsection{\texorpdfstring{GetActiveInstance()}{GetActiveInstance()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{class_textures_files_1_1_textures}{Textures}}$\ast$ Textures\+Files\+::\+Textures\+::\+Get\+Active\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Returns the singleton instance if null the singleton has not been initialized return singleton instance \mbox{\Hypertarget{class_textures_files_1_1_textures_ae484783c9a26a493e649cc5ccff166de}\label{class_textures_files_1_1_textures_ae484783c9a26a493e649cc5ccff166de}} 
+Returns the singleton instance if null the singleton has not been initialized \begin{DoxyReturn}{Returns}
+singleton instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_textures_files_1_1_textures_ae484783c9a26a493e649cc5ccff166de}\label{class_textures_files_1_1_textures_ae484783c9a26a493e649cc5ccff166de}} 
 \index{TexturesFiles::Textures@{TexturesFiles::Textures}!GetTextureDir@{GetTextureDir}}
 \index{GetTextureDir@{GetTextureDir}!TexturesFiles::Textures@{TexturesFiles::Textures}}
 \subsubsection{\texorpdfstring{GetTextureDir()}{GetTextureDir()}}
 {\footnotesize\ttfamily const std\+::string \& Textures\+Files\+::\+Textures\+::\+Get\+Texture\+Dir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
 
-Gets the path to a loaded texture. If the texture key has not been defined an assert will trigger param key texture key return path to the texture \mbox{\Hypertarget{class_textures_files_1_1_textures_a76d7462b113235e27422e143bde5e527}\label{class_textures_files_1_1_textures_a76d7462b113235e27422e143bde5e527}} 
+Gets the path to a loaded texture. If the texture key has not been defined an assert will trigger 
+\begin{DoxyParams}{Parameters}
+{\em key} & texture key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+path to the texture 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_textures_files_1_1_textures_a76d7462b113235e27422e143bde5e527}\label{class_textures_files_1_1_textures_a76d7462b113235e27422e143bde5e527}} 
 \index{TexturesFiles::Textures@{TexturesFiles::Textures}!InitInstance@{InitInstance}}
 \index{InitInstance@{InitInstance}!TexturesFiles::Textures@{TexturesFiles::Textures}}
 \subsubsection{\texorpdfstring{InitInstance()}{InitInstance()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_textures_files_1_1_textures}{Textures\+Files\+::\+Textures}} $\ast$ Textures\+Files\+::\+Textures\+::\+Init\+Instance (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Folder,  }\item[{const std\+::string \&}]{tex\+Conf\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Initializes the singleton instance if it has not been initialized and returns the singleton instance param tex\+Folder path to the textures folder param tex\+Conf\+File name of the textures conf file return singleton instance 
+Initializes the singleton instance if it has not been initialized and returns the singleton instance 
+\begin{DoxyParams}{Parameters}
+{\em tex\+Folder} & path to the textures folder \\
+\hline
+{\em tex\+Conf\+File} & name of the textures conf file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+singleton instance 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

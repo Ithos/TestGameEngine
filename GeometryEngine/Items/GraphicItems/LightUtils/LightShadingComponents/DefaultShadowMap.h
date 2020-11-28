@@ -17,19 +17,19 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor
-			/// param parent Pointer to the LightFunctionalities that contains it 
-			/// param Value that indicates at which light function this fclass corresponds
+			/// \param parent Pointer to the LightFunctionalities that contains it 
+			/// \param Value that indicates at which light function this fclass corresponds
 			DefaultShadowMap(LightComponentManager* parent, LightShading step) : LightShadingComponent(parent, step) {};
 
 			/// Copy constructor
-			/// param ref Object to be copied.
+			/// \param ref Object to be copied.
 			DefaultShadowMap(const LightShadingComponent& ref) { copy(ref); }
 
 			/// Destructor
 			virtual ~DefaultShadowMap() {};
 
 			/// Abstract method. Factory method. Creates a copy of this object
-			/// return Pointer to a copy of this object
+			/// \return Pointer to a copy of this object
 			virtual DefaultShadowMap* Clone(LightComponentManager* parent, LightShading step) const {
 				DefaultShadowMap* cloned = new DefaultShadowMap((*this));
 				cloned->AddToInterface(parent, step);
@@ -45,9 +45,9 @@ namespace GeometryEngine
 			}
 
 			/// Sends parameters to the shader.
-			/// param projectionMatrix Projection matrix to be used 
-			/// param viewMatrix ViewMatrix to be used
-			/// param modelMatrix ModelMatrix of the object to be drawn or identity if it's not necessary
+			/// \param projectionMatrix Projection matrix to be used 
+			/// \param viewMatrix ViewMatrix to be used
+			/// \param modelMatrix ModelMatrix of the object to be drawn or identity if it's not necessary
 			virtual void setProgramParameters(const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix, const QMatrix4x4& modelMatrix) override
 			{
 				assert(mpProgram != nullptr && "Stencil Test shadow map program not found");
@@ -64,10 +64,10 @@ namespace GeometryEngine
 			}
 
 			/// Binds shaders and draws.
-			/// param vertexBuf Vertex buffer
-			/// param indexBuf IndexBuffer
-			/// param totalVertexNum Number of vetices
-			/// param titalIndexNum Number of indices
+			/// \param vertexBuf Vertex buffer
+			/// \param indexBuf IndexBuffer
+			/// \param totalVertexNum Number of vetices
+			/// \param titalIndexNum Number of indices
 			virtual void applyShader(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) override
 			{
 				assert(mpProgram != nullptr && "Stencil Test shadow map program not found");

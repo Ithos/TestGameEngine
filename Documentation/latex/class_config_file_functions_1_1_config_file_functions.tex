@@ -26,7 +26,21 @@ Static singleton for reading config files.
 \subsubsection{\texorpdfstring{ReadConfigFileIntoStringMap()}{ReadConfigFileIntoStringMap()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{namespace_config_file_functions_aa7fab72913bf30fd480cb3d7dbf47518}{Read\+Config\+Error\+Codes}} Config\+File\+Functions\+::\+Config\+File\+Functions\+::\+Read\+Config\+File\+Into\+String\+Map (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{folder\+Path,  }\item[{const std\+::string \&}]{conf\+File,  }\item[{char}]{separator,  }\item[{std\+::map$<$ std\+::string, std\+::string $>$ \&}]{des\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Reads a configuration file following the format \char`\"{}\mbox{[}key\mbox{]} \mbox{[}separator\mbox{]} \mbox{[}value\mbox{]}\char`\"{} returns all pairs of key value in a \mbox{[}string, string\mbox{]} map param folder\+Path path of the folder that contains the conf file param conf\+File name of the conf file param separator used in the conf file param des\+Map map where the key value pairs will be returned return result code 
+Reads a configuration file following the format \char`\"{}\mbox{[}key\mbox{]} \mbox{[}separator\mbox{]} \mbox{[}value\mbox{]}\char`\"{} returns all pairs of key value in a \mbox{[}string, string\mbox{]} map 
+\begin{DoxyParams}{Parameters}
+{\em folder\+Path} & path of the folder that contains the conf file \\
+\hline
+{\em conf\+File} & name of the conf file \\
+\hline
+{\em separator} & used in the conf file \\
+\hline
+{\em des\+Map} & map where the key value pairs will be returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result code 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

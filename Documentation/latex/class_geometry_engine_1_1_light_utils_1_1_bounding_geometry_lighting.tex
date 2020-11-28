@@ -1,0 +1,118 @@
+\hypertarget{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting}{}\section{Geometry\+Engine\+::Light\+Utils\+::Bounding\+Geometry\+Lighting$<$ T $>$ Class Template Reference}
+\label{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting}\index{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$@{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$}}
+
+
+Class that limits the lighting to a defined geometry.  
+
+
+
+
+{\ttfamily \#include $<$Bounding\+Geometry\+Lighting.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Light\+Utils\+::Bounding\+Geometry\+Lighting$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_a9b7363be5820b70f03828a4704fe448d}{Bounding\+Geometry\+Lighting}} (\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}} step)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_aba6240594290eef979a9313a55eb9e3f}{Bounding\+Geometry\+Lighting}} (const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_ab2fd445874bdee65c82b44431e58c4bb}\label{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_ab2fd445874bdee65c82b44431e58c4bb}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_ab2fd445874bdee65c82b44431e58c4bb}{$\sim$\+Bounding\+Geometry\+Lighting}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting}{Bounding\+Geometry\+Lighting}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_af28cdecb60e4230898099d85245fb5c8}{Clone}} (\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}} step) const
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_a604f7fea25829abe9106f929eb2b142f}{Render}} (const Q\+Matrix4x4 \&projection\+Matrix, const Q\+Matrix4x4 \&view\+Matrix, const \mbox{\hyperlink{class_geometry_engine_1_1_buffers_info}{Buffers\+Info}} \&buffers\+Info, const Q\+Vector3D \&view\+Pos) override
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Geometry\+Engine\+::\+Light\+Utils\+::\+Bounding\+Geometry\+Lighting$<$ T $>$}
+
+Class that limits the lighting to a defined geometry. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_a9b7363be5820b70f03828a4704fe448d}\label{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_a9b7363be5820b70f03828a4704fe448d}} 
+\index{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$@{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$}!BoundingGeometryLighting@{BoundingGeometryLighting}}
+\index{BoundingGeometryLighting@{BoundingGeometryLighting}!GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$@{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$}}
+\subsubsection{\texorpdfstring{BoundingGeometryLighting()}{BoundingGeometryLighting()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting}{Geometry\+Engine\+::\+Light\+Utils\+::\+Bounding\+Geometry\+Lighting}}$<$ T $>$\+::\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting}{Bounding\+Geometry\+Lighting}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}}}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the Custom\+Shading\+Interface that contains it \\
+\hline
+{\em Value} & that indicates at which render step this shading technique will be used \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_aba6240594290eef979a9313a55eb9e3f}\label{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_aba6240594290eef979a9313a55eb9e3f}} 
+\index{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$@{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$}!BoundingGeometryLighting@{BoundingGeometryLighting}}
+\index{BoundingGeometryLighting@{BoundingGeometryLighting}!GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$@{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$}}
+\subsubsection{\texorpdfstring{BoundingGeometryLighting()}{BoundingGeometryLighting()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting}{Geometry\+Engine\+::\+Light\+Utils\+::\+Bounding\+Geometry\+Lighting}}$<$ T $>$\+::\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting}{Bounding\+Geometry\+Lighting}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_af28cdecb60e4230898099d85245fb5c8}\label{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_af28cdecb60e4230898099d85245fb5c8}} 
+\index{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$@{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$@{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting}{Bounding\+Geometry\+Lighting}}$\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting}{Geometry\+Engine\+::\+Light\+Utils\+::\+Bounding\+Geometry\+Lighting}}$<$ T $>$\+::Clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}}}]{step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Abstract method. Factory method. Creates a copy of this object 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the Light\+Functionalities that contains it \\
+\hline
+{\em step} & indicates to which Light\+Render key this object corresponds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a0311667e3f6faa30c938303e8eaa9670}{Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Render\+Component}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_a604f7fea25829abe9106f929eb2b142f}\label{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_a604f7fea25829abe9106f929eb2b142f}} 
+\index{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$@{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$}!Render@{Render}}
+\index{Render@{Render}!GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$@{GeometryEngine::LightUtils::BoundingGeometryLighting$<$ T $>$}}
+\subsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting}{Geometry\+Engine\+::\+Light\+Utils\+::\+Bounding\+Geometry\+Lighting}}$<$ T $>$\+::Render (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection\+Matrix,  }\item[{const Q\+Matrix4x4 \&}]{view\+Matrix,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_buffers_info}{Buffers\+Info}} \&}]{buffers\+Info,  }\item[{const Q\+Vector3D \&}]{view\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Apply light technique. 
+\begin{DoxyParams}{Parameters}
+{\em projection\+Matrix} & Camera projection matrix \\
+\hline
+{\em view\+Matrix} & Camera view matrix \\
+\hline
+{\em g\+Buff\+Info} & Texture info from the camera buffers \\
+\hline
+{\em view\+Pos} & Position of the camera \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a025de8e4ec4345f0e7b303646a1d765b}{Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Render\+Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Light\+Utils/\+Light\+Render\+Components/Bounding\+Geometry\+Lighting.\+h\end{DoxyCompactItemize}

@@ -16,18 +16,18 @@ namespace GeometryEngine
 			{
 			public:
 				/// Constructor
-				/// param boundingGeometry The post process will be applied to every part of the screen where the bounding geometry is drawn. Usually it should be a rectangle directly in front of the camera.
+				/// \param boundingGeometry The post process will be applied to every part of the screen where the bounding geometry is drawn. Usually it should be a rectangle directly in front of the camera.
 				DoublePassPostProcess( const GeometryWorldItem::GeometryItem::GeometryItem & boundingGeometry) : PostProcess(boundingGeometry) {}
 				/// Copy constructor
-				/// param ref Const reference to PostProcess to be copied
+				/// \param ref Const reference to PostProcess to be copied
 				DoublePassPostProcess(const DoublePassPostProcess& ref) : PostProcess(ref) {};
 				/// Destructor
 				virtual ~DoublePassPostProcess() {}
 				/// Methods that applies the first render step of the post process
-				/// param gBuffTexInfo geometry buffer data
+				/// \param gBuffTexInfo geometry buffer data
 				virtual void ApplyPostProcess(const GBufferTextureInfo& gBuffTexInfo) override;
 				/// Methods that applies the second render step of the post process
-				/// param gBuffTexInfo geometry buffer data
+				/// \param gBuffTexInfo geometry buffer data
 				virtual bool ApplyPostProcessSecondStep(const GBufferTextureInfo& gBuffTexInfo) override;
 
 			protected:
@@ -36,7 +36,7 @@ namespace GeometryEngine
 				/// Abstract method. Sets class members to be used during the second render step.
 				virtual void SetSecondStepParameters() = 0;
 				/// Copies the data of a PostProcess object to the current object
-				/// param ref PostProcess to be copied
+				/// \param ref PostProcess to be copied
 				virtual void copy(const PostProcess& ref) { PostProcess::copy(ref); }
 			};
 		}

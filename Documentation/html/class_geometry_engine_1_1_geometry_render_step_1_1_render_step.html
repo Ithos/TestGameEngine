@@ -83,12 +83,14 @@ Inheritance diagram for GeometryEngine::GeometryRenderStep::RenderStep:</div>
  <div class="center">
   <img src="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.png" usemap="#GeometryEngine::GeometryRenderStep::RenderStep_map" alt=""/>
   <map id="GeometryEngine::GeometryRenderStep::RenderStep_map" name="GeometryEngine::GeometryRenderStep::RenderStep_map">
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_final_pass.html" title="Renders the final texture to the screen." alt="GeometryEngine::GeometryRenderStep::FinalPass" shape="rect" coords="0,112,367,136"/>
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html" title="Renders geometry without illumination." alt="GeometryEngine::GeometryRenderStep::GeometryPass" shape="rect" coords="377,112,744,136"/>
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry." alt="GeometryEngine::GeometryRenderStep::LightingPass" shape="rect" coords="754,112,1121,136"/>
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html" title="Applies a double step post process to the whole scene." alt="GeometryEngine::GeometryRenderStep::PostProcessPass" shape="rect" coords="1131,112,1498,136"/>
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html" title="Renders emissive colors and textures." alt="GeometryEngine::GeometryRenderStep::EmissiveLightingPass" shape="rect" coords="565,168,932,192"/>
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html" alt="GeometryEngine::GeometryRenderStep::ShadowedLightingPass" shape="rect" coords="942,168,1309,192"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_final_pass.html" title="Renders the final texture to the screen." alt="GeometryEngine::GeometryRenderStep::FinalPass" shape="rect" coords="0,112,435,136"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html" title="Renders geometry without illumination." alt="GeometryEngine::GeometryRenderStep::GeometryPass" shape="rect" coords="445,112,880,136"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry." alt="GeometryEngine::GeometryRenderStep::LightingPass" shape="rect" coords="1112,112,1547,136"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html" title="Applies a double step post process to the whole scene." alt="GeometryEngine::GeometryRenderStep::PostProcessPass" shape="rect" coords="1557,112,1992,136"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass.html" title="Render step that renders geometry without illumination and separates the rendering of transparent and..." alt="GeometryEngine::GeometryRenderStep::TransparentGeometryPass" shape="rect" coords="445,168,880,192"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html" title="Renders emissive colors and textures." alt="GeometryEngine::GeometryRenderStep::EmissiveLightingPass" shape="rect" coords="890,168,1325,192"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html" title="Lighting pass that calculates solid shadows." alt="GeometryEngine::GeometryRenderStep::ShadowedLightingPass" shape="rect" coords="1335,168,1770,192"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass.html" title="Lighting pass that calculates transparent and translucent shadows." alt="GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass" shape="rect" coords="1335,224,1770,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -140,7 +142,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copy Constructor parameter ref Constant reference to the <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">RenderStep</a> to be copied </p>
+<p>Copy Constructor \parameter ref Constant reference to the <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">RenderStep</a> to be copied </p>
 
 </div>
 </div>
@@ -167,9 +169,9 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Factory method that creates a copy of the object return Pointer to a copy of the object </p>
+<p>Factory method that creates a copy of the object </p><dl class="section return"><dt>Returns</dt><dd>Pointer to a copy of the object </dd></dl>
 
-<p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#afcf20dc0a20cf1e0fb730c7b56071c26">GeometryEngine::GeometryRenderStep::PostProcessPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#a73176d6860aee0903034eeaf93edb40d">GeometryEngine::GeometryRenderStep::ShadowedLightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a4f1cb36c7bf6a90d0aa3b8e8feba5e5e">GeometryEngine::GeometryRenderStep::LightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#a12e85a0169cb7b92cb8bd7b7fe100b33">GeometryEngine::GeometryRenderStep::GeometryPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html#a5a46d5e73fe672e09584a2e6e8bfa5e8">GeometryEngine::GeometryRenderStep::EmissiveLightingPass</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_final_pass.html#a6633ed9c32944cc390d2b0ab32225845">GeometryEngine::GeometryRenderStep::FinalPass</a>.</p>
+<p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#afcf20dc0a20cf1e0fb730c7b56071c26">GeometryEngine::GeometryRenderStep::PostProcessPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#a73176d6860aee0903034eeaf93edb40d">GeometryEngine::GeometryRenderStep::ShadowedLightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a4f1cb36c7bf6a90d0aa3b8e8feba5e5e">GeometryEngine::GeometryRenderStep::LightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#a12e85a0169cb7b92cb8bd7b7fe100b33">GeometryEngine::GeometryRenderStep::GeometryPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass.html#a56d2ef131669ae3964a04cb54e6c3b0f">GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html#a5a46d5e73fe672e09584a2e6e8bfa5e8">GeometryEngine::GeometryRenderStep::EmissiveLightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_final_pass.html#a6633ed9c32944cc390d2b0ab32225845">GeometryEngine::GeometryRenderStep::FinalPass</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass.html#a6bfc83f45b84112bbf1beda1ed8e5466">GeometryEngine::GeometryRenderStep::TransparentGeometryPass</a>.</p>
 
 </div>
 </div>
@@ -196,7 +198,12 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copies the values of a <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">RenderStep</a> to this object param ref Constant reference to a <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">RenderStep</a> whose values should be copied </p>
+<p>Copies the values of a <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">RenderStep</a> to this object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td>Constant reference to a <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">RenderStep</a> whose values should be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -239,7 +246,14 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Executes the render step operations param cam Pointer to the camera is being rendered param items Set of items to be rendered param lights Set of lights to be rendered </p>
+<p>Executes the render step operations </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam</td><td>Pointer to the camera is being rendered </td></tr>
+    <tr><td class="paramname">items</td><td>Set of items to be rendered </td></tr>
+    <tr><td class="paramname">lights</td><td>Set of lights to be rendered </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#a2ebe2a0b940e47ccd10e649bff77138d">GeometryEngine::GeometryRenderStep::PostProcessPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#af52807435083cd96125e6ef6d7453027">GeometryEngine::GeometryRenderStep::ShadowedLightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#ae6d9fa99f67e659839ca310947787f52">GeometryEngine::GeometryRenderStep::LightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#ac3bfd0a3915cd8a8cd7e1bf81157f6ad">GeometryEngine::GeometryRenderStep::GeometryPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html#adffe18f64968290aedda426bc4450414">GeometryEngine::GeometryRenderStep::EmissiveLightingPass</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_final_pass.html#ad078d0e9d394754dbbd3cff871d72b9f">GeometryEngine::GeometryRenderStep::FinalPass</a>.</p>
 

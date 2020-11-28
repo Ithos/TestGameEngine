@@ -87,13 +87,23 @@ Base class for all post processes.
 \subsubsection{\texorpdfstring{PostProcess()}{PostProcess()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process\+::\+Post\+Process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&}]{bounding\+Geometry }\end{DoxyParamCaption})}
 
-Construct param bounding\+Geometry The post process will be applied to every part of the screen where the bounding geometry is drawn. Usually it should be a rectangle directly in front of the camera. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_af5599c4257746130644eb6beb421a25a}\label{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_af5599c4257746130644eb6beb421a25a}} 
+Construct 
+\begin{DoxyParams}{Parameters}
+{\em bounding\+Geometry} & The post process will be applied to every part of the screen where the bounding geometry is drawn. Usually it should be a rectangle directly in front of the camera. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_af5599c4257746130644eb6beb421a25a}\label{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_af5599c4257746130644eb6beb421a25a}} 
 \index{GeometryEngine::GeometryPostProcess::PostProcess@{GeometryEngine::GeometryPostProcess::PostProcess}!PostProcess@{PostProcess}}
 \index{PostProcess@{PostProcess}!GeometryEngine::GeometryPostProcess::PostProcess@{GeometryEngine::GeometryPostProcess::PostProcess}}
 \subsubsection{\texorpdfstring{PostProcess()}{PostProcess()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process\+::\+Post\+Process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Post\+Process}} \&}]{ref }\end{DoxyParamCaption})}
 
-Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Post\+Process}} to be copied 
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Post\+Process}} to be copied \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_a2dbb157265ebdeea658982673e757d46}\label{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_a2dbb157265ebdeea658982673e757d46}} 
@@ -102,7 +112,12 @@ Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_en
 \subsubsection{\texorpdfstring{ApplyPostProcess()}{ApplyPostProcess()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process\+::\+Apply\+Post\+Process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Applies the post process param g\+Buff\+Tex\+Info Geometry buffer data 
+Applies the post process 
+\begin{DoxyParams}{Parameters}
+{\em g\+Buff\+Tex\+Info} & Geometry buffer data \\
+\hline
+\end{DoxyParams}
+
 
 Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a9d2674bc5b237ed2e494d1c88f63d29e}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Double\+Pass\+Post\+Process}}.
 
@@ -112,7 +127,15 @@ Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_proces
 \subsubsection{\texorpdfstring{ApplyPostProcessSecondStep()}{ApplyPostProcessSecondStep()}}
 {\footnotesize\ttfamily virtual bool Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process\+::\+Apply\+Post\+Process\+Second\+Step (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-Applies the second step of the post process if it exists. This method should be reimplemented by this class\textquotesingle{}s children param g\+Buff\+Tex\+Info Geometry buffer data return true if the second step was applied, false if there isn\textquotesingle{}t a second step 
+Applies the second step of the post process if it exists. This method should be reimplemented by this class\textquotesingle{}s children 
+\begin{DoxyParams}{Parameters}
+{\em g\+Buff\+Tex\+Info} & Geometry buffer data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the second step was applied, false if there isn\textquotesingle{}t a second step 
+\end{DoxyReturn}
+
 
 Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a1caac8d2ec6f65de1bb98edd88ba14c6}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Double\+Pass\+Post\+Process}}.
 
@@ -122,7 +145,10 @@ Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_proces
 \subsubsection{\texorpdfstring{Clone()}{Clone()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Post\+Process}}$\ast$ Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Abstract method. Factory method. Creates a copy of this object return Pointer to a copy of this object 
+Abstract method. Factory method. Creates a copy of this object \begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+
 
 Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a4399f435326724c64cf255a40479d330}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Blur\+Post\+Process}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_a36f198711874587c9cbf5c958e6d09ea}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Single\+Pass\+Post\+Process\+::\+Grey\+Scale\+Post\+Process}}.
 
@@ -132,7 +158,12 @@ Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_
 \subsubsection{\texorpdfstring{copy()}{copy()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Post\+Process}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Post\+Process}} object to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Post\+Process}} to be copied 
+Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Post\+Process}} object to the current object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Post\+Process}} to be copied \\
+\hline
+\end{DoxyParams}
+
 
 Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a28b760437951a4676b55efb491358e8f}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Double\+Pass\+Post\+Process}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_single_pass_post_process_ab47b36f68057dcff05402a9e5a630878}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Single\+Pass\+Post\+Process\+::\+Single\+Pass\+Post\+Process}}.
 

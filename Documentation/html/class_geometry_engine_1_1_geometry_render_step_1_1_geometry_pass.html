@@ -86,7 +86,8 @@ Inheritance diagram for GeometryEngine::GeometryRenderStep::GeometryPass:</div>
  <div class="center">
   <img src="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.png" usemap="#GeometryEngine::GeometryRenderStep::GeometryPass_map" alt=""/>
   <map id="GeometryEngine::GeometryRenderStep::GeometryPass_map" name="GeometryEngine::GeometryRenderStep::GeometryPass_map">
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html" alt="GeometryEngine::GeometryRenderStep::RenderStep" shape="rect" coords="0,56,318,80"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html" alt="GeometryEngine::GeometryRenderStep::RenderStep" shape="rect" coords="0,56,386,80"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass.html" title="Render step that renders geometry without illumination and separates the rendering of transparent and..." alt="GeometryEngine::GeometryRenderStep::TransparentGeometryPass" shape="rect" coords="0,168,386,192"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -124,7 +125,7 @@ Protected Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#a23575018d6032000ac8f2751efcc2240">initStep</a> ()</td></tr>
 <tr class="memdesc:a23575018d6032000ac8f2751efcc2240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the OpenGl pipeline. <br /></td></tr>
 <tr class="separator:a23575018d6032000ac8f2751efcc2240"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2929c4675eb93efd992739baac565425"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#a2929c4675eb93efd992739baac565425">renderGeometry</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *items)</td></tr>
+<tr class="memitem:a2929c4675eb93efd992739baac565425"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#a2929c4675eb93efd992739baac565425">renderGeometry</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *items)</td></tr>
 <tr class="separator:a2929c4675eb93efd992739baac565425"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e3189d5f441ada51ef31e09f100e270"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#a0e3189d5f441ada51ef31e09f100e270">drawItem</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> *item)</td></tr>
 <tr class="separator:a0e3189d5f441ada51ef31e09f100e270"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,7 +163,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copy constructor param ref Geometry pass to be copied </p>
+<p>Copy constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td>Geometry pass to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -200,7 +206,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Method that checks if the item and the camera are in the same render group. Used to decide if an item should be rendered param cam Pointer to camera to be rendered param item Item to be rendered return true if both are in the same render group false otherwise </p>
+<p>Method that checks if the item and the camera are in the same render group. Used to decide if an item should be rendered </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam</td><td>Pointer to camera to be rendered </td></tr>
+    <tr><td class="paramname">item</td><td>Item to be rendered </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if both are in the same render group false otherwise </dd></dl>
 
 </div>
 </div>
@@ -226,9 +239,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Factory method. Returns a copy of this object. return Acopy of this object. </p>
+<p>Factory method. Returns a copy of this object. </p><dl class="section return"><dt>Returns</dt><dd>Acopy of this object. </dd></dl>
 
 <p>Implements <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#afe33ea9d82c5be11f55af7d39691d44b">GeometryEngine::GeometryRenderStep::RenderStep</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass.html#a6bfc83f45b84112bbf1beda1ed8e5466">GeometryEngine::GeometryRenderStep::TransparentGeometryPass</a>.</p>
 
 </div>
 </div>
@@ -255,7 +270,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copies the data from a <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html" title="Renders geometry without illumination.">GeometryPass</a> into this object param ref <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html" title="Renders geometry without illumination.">GeometryPass</a> to be copied </p>
+<p>Copies the data from a <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html" title="Renders geometry without illumination.">GeometryPass</a> into this object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html" title="Renders geometry without illumination.">GeometryPass</a> to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -292,7 +312,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Draws an individual item. param cam Pointer to camera to be rendered param item Item to be rendered </p>
+<p>Draws an individual item. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam</td><td>Pointer to camera to be rendered </td></tr>
+    <tr><td class="paramname">item</td><td>Item to be rendered </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -335,7 +361,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Executes the render step param cam Pointer to camera to be rendered param items Set of items to be rendered param lights Set of lights in the scene. This lights will not be used in this step. </p>
+<p>Executes the render step </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam</td><td>Pointer to camera to be rendered </td></tr>
+    <tr><td class="paramname">items</td><td>Set of items to be rendered </td></tr>
+    <tr><td class="paramname">lights</td><td>Set of lights in the scene. This lights will not be used in this step. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#a9b054ee8f38304319a9d03ba3e173dcd">GeometryEngine::GeometryRenderStep::RenderStep</a>.</p>
 
@@ -370,11 +403,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Draws each item in the set using the camera transformation matrix param cam Pointer to camera to be rendered param items Set of items to be rendered </p>
+<p>Draws each item in the set using the camera transformation matrix </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam</td><td>Pointer to camera to be rendered </td></tr>
+    <tr><td class="paramname">items</td><td>Set of items to be rendered </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass.html#a22bae026c0e006318d5ab21bdaeeb247">GeometryEngine::GeometryRenderStep::TransparentGeometryPass</a>.</p>
 
 </div>
 </div>

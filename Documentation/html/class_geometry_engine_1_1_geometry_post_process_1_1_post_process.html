@@ -179,7 +179,12 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mFragmentShade
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Construct param boundingGeometry The post process will be applied to every part of the screen where the bounding geometry is drawn. Usually it should be a rectangle directly in front of the camera. </p>
+<p>Construct </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boundingGeometry</td><td>The post process will be applied to every part of the screen where the bounding geometry is drawn. Usually it should be a rectangle directly in front of the camera. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -198,7 +203,12 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mFragmentShade
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Copy constructor param ref Const reference to <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html" title="Base class for all post processes.">PostProcess</a> to be copied </p>
+<p>Copy constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td>Const reference to <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html" title="Base class for all post processes.">PostProcess</a> to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -226,7 +236,12 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mFragmentShade
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Applies the post process param gBuffTexInfo Geometry buffer data </p>
+<p>Applies the post process </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gBuffTexInfo</td><td>Geometry buffer data </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process.html#a9d2674bc5b237ed2e494d1c88f63d29e">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess</a>.</p>
 
@@ -255,7 +270,13 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mFragmentShade
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Applies the second step of the post process if it exists. This method should be reimplemented by this class's children param gBuffTexInfo Geometry buffer data return true if the second step was applied, false if there isn't a second step </p>
+<p>Applies the second step of the post process if it exists. This method should be reimplemented by this class's children </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gBuffTexInfo</td><td>Geometry buffer data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the second step was applied, false if there isn't a second step </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process.html#a1caac8d2ec6f65de1bb98edd88ba14c6">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess</a>.</p>
 
@@ -283,7 +304,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mFragmentShade
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Abstract method. Factory method. Creates a copy of this object return Pointer to a copy of this object </p>
+<p>Abstract method. Factory method. Creates a copy of this object </p><dl class="section return"><dt>Returns</dt><dd>Pointer to a copy of this object </dd></dl>
 
 <p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process.html#a4399f435326724c64cf255a40479d330">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process.html#a36f198711874587c9cbf5c958e6d09ea">GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess</a>.</p>
 
@@ -312,7 +333,12 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mFragmentShade
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copies the data of a <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html" title="Base class for all post processes.">PostProcess</a> object to the current object param ref <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html" title="Base class for all post processes.">PostProcess</a> to be copied </p>
+<p>Copies the data of a <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html" title="Base class for all post processes.">PostProcess</a> object to the current object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td><a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html" title="Base class for all post processes.">PostProcess</a> to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process.html#a28b760437951a4676b55efb491358e8f">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_single_pass_post_process.html#ab47b36f68057dcff05402a9e5a630878">GeometryEngine::GeometryPostProcess::SinglePassPostProcess::SinglePassPostProcess</a>.</p>
 

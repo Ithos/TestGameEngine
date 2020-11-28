@@ -41,25 +41,43 @@ Singleton that manages which framebuffer is attached and detaches all that aren\
 \subsubsection{\texorpdfstring{AddFramebuffer()}{AddFramebuffer()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Framebuffer\+Manager\+::\+Add\+Framebuffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} $\ast$}]{fbo }\end{DoxyParamCaption})}
 
-Adds a F\+BO to the manager. Does nothing if the F\+BO was already included. It isn\textquotesingle{}t necessary to call this method outside the manager or the F\+BO itself. param fbo Pointer to the framebuffer to add \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager_a53ef67132cb5556dc5fd60d01c3a6b9e}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager_a53ef67132cb5556dc5fd60d01c3a6b9e}} 
+Adds a F\+BO to the manager. Does nothing if the F\+BO was already included. It isn\textquotesingle{}t necessary to call this method outside the manager or the F\+BO itself. 
+\begin{DoxyParams}{Parameters}
+{\em fbo} & Pointer to the framebuffer to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager_a53ef67132cb5556dc5fd60d01c3a6b9e}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager_a53ef67132cb5556dc5fd60d01c3a6b9e}} 
 \index{GeometryEngine::GeometryBuffer::GFramebufferManager@{GeometryEngine::GeometryBuffer::GFramebufferManager}!DeleteFramebuffer@{DeleteFramebuffer}}
 \index{DeleteFramebuffer@{DeleteFramebuffer}!GeometryEngine::GeometryBuffer::GFramebufferManager@{GeometryEngine::GeometryBuffer::GFramebufferManager}}
 \subsubsection{\texorpdfstring{DeleteFramebuffer()}{DeleteFramebuffer()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Framebuffer\+Manager\+::\+Delete\+Framebuffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} $\ast$}]{fbo }\end{DoxyParamCaption})}
 
-Deletes a framebuffer and removes it from the manager. The framebuffer standard destructor also removes it from the manager for safety. param fbo Pointer to the fbo to be removed \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager_a4409dc69749e27c6864b25a76b1bcec9}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager_a4409dc69749e27c6864b25a76b1bcec9}} 
+Deletes a framebuffer and removes it from the manager. The framebuffer standard destructor also removes it from the manager for safety. 
+\begin{DoxyParams}{Parameters}
+{\em fbo} & Pointer to the fbo to be removed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager_a4409dc69749e27c6864b25a76b1bcec9}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager_a4409dc69749e27c6864b25a76b1bcec9}} 
 \index{GeometryEngine::GeometryBuffer::GFramebufferManager@{GeometryEngine::GeometryBuffer::GFramebufferManager}!GetNewFramebuffer@{GetNewFramebuffer}}
 \index{GetNewFramebuffer@{GetNewFramebuffer}!GeometryEngine::GeometryBuffer::GFramebufferManager@{GeometryEngine::GeometryBuffer::GFramebufferManager}}
 \subsubsection{\texorpdfstring{GetNewFramebuffer()}{GetNewFramebuffer()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Framebuffer\+Object}} $\ast$ Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Framebuffer\+Manager\+::\+Get\+New\+Framebuffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Factory method. Creates a new framebuffer return pointer to a new framebuffer \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager_a8f42a16dacecdc9422b88c71cfb38889}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager_a8f42a16dacecdc9422b88c71cfb38889}} 
+Factory method. Creates a new framebuffer \begin{DoxyReturn}{Returns}
+pointer to a new framebuffer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager_a8f42a16dacecdc9422b88c71cfb38889}\label{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_manager_a8f42a16dacecdc9422b88c71cfb38889}} 
 \index{GeometryEngine::GeometryBuffer::GFramebufferManager@{GeometryEngine::GeometryBuffer::GFramebufferManager}!SetFramebufferActive@{SetFramebufferActive}}
 \index{SetFramebufferActive@{SetFramebufferActive}!GeometryEngine::GeometryBuffer::GFramebufferManager@{GeometryEngine::GeometryBuffer::GFramebufferManager}}
 \subsubsection{\texorpdfstring{SetFramebufferActive()}{SetFramebufferActive()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+G\+Framebuffer\+Manager\+::\+Set\+Framebuffer\+Active (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object}{G\+Framebuffer\+Object}} $\ast$}]{fbo }\end{DoxyParamCaption})}
 
-Sets a new active framebuffer and sets all other framebuffers as detached. param fbo Pointer to the framebuffer to be set as active 
+Sets a new active framebuffer and sets all other framebuffers as detached. 
+\begin{DoxyParams}{Parameters}
+{\em fbo} & Pointer to the framebuffer to be set as active \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

@@ -60,56 +60,108 @@ Class that contains all scenes in the engine and manages swaps between active sc
 \subsubsection{\texorpdfstring{AddScene()}{AddScene()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Scene\+Manager\+::\+Add\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene}{Geometry\+Scene\+::\+Geometry\+Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
 
-Adds a scene to the manager\textquotesingle{}s list param Pointer to the scene to be added return false if the manager already contains the scene true otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_aafc212a0eed6a49d411d06f03a73f943}\label{class_geometry_engine_1_1_scene_manager_aafc212a0eed6a49d411d06f03a73f943}} 
+Adds a scene to the manager\textquotesingle{}s list 
+\begin{DoxyParams}{Parameters}
+{\em Pointer} & to the scene to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the manager already contains the scene true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_aafc212a0eed6a49d411d06f03a73f943}\label{class_geometry_engine_1_1_scene_manager_aafc212a0eed6a49d411d06f03a73f943}} 
 \index{GeometryEngine::SceneManager@{GeometryEngine::SceneManager}!CreateScene@{CreateScene}}
 \index{CreateScene@{CreateScene}!GeometryEngine::SceneManager@{GeometryEngine::SceneManager}}
 \subsubsection{\texorpdfstring{CreateScene()}{CreateScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene}{Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene}} $\ast$ Geometry\+Engine\+::\+Scene\+Manager\+::\+Create\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Factory method. Builds a new \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_scene}{Geometry\+Scene}} and adds it to this manager. return Pointer to the new scene \mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_acccb8a2f57b58cc96f77c7316b99248e}\label{class_geometry_engine_1_1_scene_manager_acccb8a2f57b58cc96f77c7316b99248e}} 
+Factory method. Builds a new \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_scene}{Geometry\+Scene}} and adds it to this manager. \begin{DoxyReturn}{Returns}
+Pointer to the new scene 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_acccb8a2f57b58cc96f77c7316b99248e}\label{class_geometry_engine_1_1_scene_manager_acccb8a2f57b58cc96f77c7316b99248e}} 
 \index{GeometryEngine::SceneManager@{GeometryEngine::SceneManager}!CreateScene@{CreateScene}}
 \index{CreateScene@{CreateScene}!GeometryEngine::SceneManager@{GeometryEngine::SceneManager}}
 \subsubsection{\texorpdfstring{CreateScene()}{CreateScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene}{Geometry\+Scene\+::\+Geometry\+Scene}}$\ast$ Geometry\+Engine\+::\+Scene\+Manager\+::\+Create\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Factory method. Builds a new object that inherits from \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_scene}{Geometry\+Scene}} and adds it to this manager. return Pointer to the new scene \mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_a8d9620773e7ee65a82aa13bb4a1a1fdf}\label{class_geometry_engine_1_1_scene_manager_a8d9620773e7ee65a82aa13bb4a1a1fdf}} 
+Factory method. Builds a new object that inherits from \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_scene}{Geometry\+Scene}} and adds it to this manager. \begin{DoxyReturn}{Returns}
+Pointer to the new scene 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_a8d9620773e7ee65a82aa13bb4a1a1fdf}\label{class_geometry_engine_1_1_scene_manager_a8d9620773e7ee65a82aa13bb4a1a1fdf}} 
 \index{GeometryEngine::SceneManager@{GeometryEngine::SceneManager}!GetActiveScene@{GetActiveScene}}
 \index{GetActiveScene@{GetActiveScene}!GeometryEngine::SceneManager@{GeometryEngine::SceneManager}}
 \subsubsection{\texorpdfstring{GetActiveScene()}{GetActiveScene()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene}{Geometry\+Scene\+::\+Geometry\+Scene}}$\ast$ Geometry\+Engine\+::\+Scene\+Manager\+::\+Get\+Active\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a pointer to the active scene return Pointer to the currently active scene \mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_a1dc46b5707a779a3fcc3881bb7c8f3f6}\label{class_geometry_engine_1_1_scene_manager_a1dc46b5707a779a3fcc3881bb7c8f3f6}} 
+Returns a pointer to the active scene \begin{DoxyReturn}{Returns}
+Pointer to the currently active scene 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_a1dc46b5707a779a3fcc3881bb7c8f3f6}\label{class_geometry_engine_1_1_scene_manager_a1dc46b5707a779a3fcc3881bb7c8f3f6}} 
 \index{GeometryEngine::SceneManager@{GeometryEngine::SceneManager}!GetSceneCount@{GetSceneCount}}
 \index{GetSceneCount@{GetSceneCount}!GeometryEngine::SceneManager@{GeometryEngine::SceneManager}}
 \subsubsection{\texorpdfstring{GetSceneCount()}{GetSceneCount()}}
 {\footnotesize\ttfamily int Geometry\+Engine\+::\+Scene\+Manager\+::\+Get\+Scene\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Get the number of scenes in the manager return Amount of scenes in the manager scene list \mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_a31890e580c47aceaeab795e8886bcf82}\label{class_geometry_engine_1_1_scene_manager_a31890e580c47aceaeab795e8886bcf82}} 
+Get the number of scenes in the manager \begin{DoxyReturn}{Returns}
+Amount of scenes in the manager scene list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_a31890e580c47aceaeab795e8886bcf82}\label{class_geometry_engine_1_1_scene_manager_a31890e580c47aceaeab795e8886bcf82}} 
 \index{GeometryEngine::SceneManager@{GeometryEngine::SceneManager}!RemoveScene@{RemoveScene}}
 \index{RemoveScene@{RemoveScene}!GeometryEngine::SceneManager@{GeometryEngine::SceneManager}}
 \subsubsection{\texorpdfstring{RemoveScene()}{RemoveScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Scene\+Manager\+::\+Remove\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene}{Geometry\+Scene\+::\+Geometry\+Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
 
-Remove a scene from the manager\textquotesingle{}s list param scene Pointer to the scene to be removed return false if the manager doesn\textquotesingle{}t contain the scene true otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_ad8ca79bfce997398df387dd42d6e4312}\label{class_geometry_engine_1_1_scene_manager_ad8ca79bfce997398df387dd42d6e4312}} 
+Remove a scene from the manager\textquotesingle{}s list 
+\begin{DoxyParams}{Parameters}
+{\em scene} & Pointer to the scene to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the manager doesn\textquotesingle{}t contain the scene true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_ad8ca79bfce997398df387dd42d6e4312}\label{class_geometry_engine_1_1_scene_manager_ad8ca79bfce997398df387dd42d6e4312}} 
 \index{GeometryEngine::SceneManager@{GeometryEngine::SceneManager}!RemoveScene@{RemoveScene}}
 \index{RemoveScene@{RemoveScene}!GeometryEngine::SceneManager@{GeometryEngine::SceneManager}}
 \subsubsection{\texorpdfstring{RemoveScene()}{RemoveScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Scene\+Manager\+::\+Remove\+Scene (\begin{DoxyParamCaption}\item[{unsigned int}]{scene\+Id }\end{DoxyParamCaption})}
 
-Remove a scene from the manager\textquotesingle{}s list by index param scene\+Id Index of the scene in the scene list return false if the manager doesn\textquotesingle{}t contain the scene true otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_a0d493622807bb55d8e33a313ca61a3db}\label{class_geometry_engine_1_1_scene_manager_a0d493622807bb55d8e33a313ca61a3db}} 
+Remove a scene from the manager\textquotesingle{}s list by index 
+\begin{DoxyParams}{Parameters}
+{\em scene\+Id} & Index of the scene in the scene list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the manager doesn\textquotesingle{}t contain the scene true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_a0d493622807bb55d8e33a313ca61a3db}\label{class_geometry_engine_1_1_scene_manager_a0d493622807bb55d8e33a313ca61a3db}} 
 \index{GeometryEngine::SceneManager@{GeometryEngine::SceneManager}!SetActiveScene@{SetActiveScene}}
 \index{SetActiveScene@{SetActiveScene}!GeometryEngine::SceneManager@{GeometryEngine::SceneManager}}
 \subsubsection{\texorpdfstring{SetActiveScene()}{SetActiveScene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Scene\+Manager\+::\+Set\+Active\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene}{Geometry\+Scene\+::\+Geometry\+Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
 
-Set the active scene param scene Pointer to the scene return false if the manager doesn\textquotesingle{}t contain the scene true otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_a2a188fd362d750afeca3aa79102fc9de}\label{class_geometry_engine_1_1_scene_manager_a2a188fd362d750afeca3aa79102fc9de}} 
+Set the active scene 
+\begin{DoxyParams}{Parameters}
+{\em scene} & Pointer to the scene \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the manager doesn\textquotesingle{}t contain the scene true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_scene_manager_a2a188fd362d750afeca3aa79102fc9de}\label{class_geometry_engine_1_1_scene_manager_a2a188fd362d750afeca3aa79102fc9de}} 
 \index{GeometryEngine::SceneManager@{GeometryEngine::SceneManager}!SetActiveScene@{SetActiveScene}}
 \index{SetActiveScene@{SetActiveScene}!GeometryEngine::SceneManager@{GeometryEngine::SceneManager}}
 \subsubsection{\texorpdfstring{SetActiveScene()}{SetActiveScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Scene\+Manager\+::\+Set\+Active\+Scene (\begin{DoxyParamCaption}\item[{unsigned int}]{scene\+ID }\end{DoxyParamCaption})}
 
-Set the active scene by index param scene\+ID Index of the scene in the scene list return false if the manager doesn\textquotesingle{}t contain the scene true otherwise 
+Set the active scene by index 
+\begin{DoxyParams}{Parameters}
+{\em scene\+ID} & Index of the scene in the scene list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the manager doesn\textquotesingle{}t contain the scene true otherwise 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

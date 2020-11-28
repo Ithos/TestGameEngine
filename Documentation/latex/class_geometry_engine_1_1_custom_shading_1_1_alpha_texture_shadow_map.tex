@@ -1,0 +1,139 @@
+\hypertarget{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map}{}\section{Geometry\+Engine\+::Custom\+Shading\+::Alpha\+Texture\+Shadow\+Map$<$ T $>$ Class Template Reference}
+\label{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map}\index{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$@{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$}}
+
+
+Custom shadowmap calculation for alpha texture materials.  
+
+
+
+
+{\ttfamily \#include $<$Alpha\+Texture\+Shadow\+Map.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Custom\+Shading\+::Alpha\+Texture\+Shadow\+Map$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a16e60f631c844c7579e9f5070bfcb02f}{Alpha\+Texture\+Shadow\+Map}} (\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a2dc236a5b567da5099069ce2b2be5609}{Custom\+Shading\+Steps}} step)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a48d3c0a306c157d9c56bfb68256a260c}{Alpha\+Texture\+Shadow\+Map}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_step}{Custom\+Shading\+Step}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a9204071cbf39806264d892d69fee6ce2}\label{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a9204071cbf39806264d892d69fee6ce2}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a9204071cbf39806264d892d69fee6ce2}{$\sim$\+Alpha\+Texture\+Shadow\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map}{Alpha\+Texture\+Shadow\+Map}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a5ff646b3f8b6da56acd2d98f09265769}{Clone}} (\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a2dc236a5b567da5099069ce2b2be5609}{Custom\+Shading\+Steps}} step) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a8dcf554907128b18251440ef9bbd25eb}\label{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a8dcf554907128b18251440ef9bbd25eb}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a8dcf554907128b18251440ef9bbd25eb}{init\+Shaders}} () override
+\begin{DoxyCompactList}\small\item\em Sets the shaders that should be loaded. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a32014c932093151182926d6d681314de}{set\+Program\+Parameters}} (const Q\+Matrix4x4 \&model\+View\+Projection\+Matrix) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a338fc51d0712fa02fa4d23baa4fa2daa}{draw\+Shader}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Number, unsigned int total\+Index\+Number) override
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Geometry\+Engine\+::\+Custom\+Shading\+::\+Alpha\+Texture\+Shadow\+Map$<$ T $>$}
+
+Custom shadowmap calculation for alpha texture materials. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a16e60f631c844c7579e9f5070bfcb02f}\label{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a16e60f631c844c7579e9f5070bfcb02f}} 
+\index{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$@{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$}!AlphaTextureShadowMap@{AlphaTextureShadowMap}}
+\index{AlphaTextureShadowMap@{AlphaTextureShadowMap}!GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$@{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$}}
+\subsubsection{\texorpdfstring{AlphaTextureShadowMap()}{AlphaTextureShadowMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Alpha\+Texture\+Shadow\+Map}}$<$ T $>$\+::\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map}{Alpha\+Texture\+Shadow\+Map}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a2dc236a5b567da5099069ce2b2be5609}{Custom\+Shading\+Steps}}}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}} that contains it \\
+\hline
+{\em Value} & that indicates at which render stepthis shading technique will be used \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a48d3c0a306c157d9c56bfb68256a260c}\label{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a48d3c0a306c157d9c56bfb68256a260c}} 
+\index{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$@{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$}!AlphaTextureShadowMap@{AlphaTextureShadowMap}}
+\index{AlphaTextureShadowMap@{AlphaTextureShadowMap}!GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$@{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$}}
+\subsubsection{\texorpdfstring{AlphaTextureShadowMap()}{AlphaTextureShadowMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Alpha\+Texture\+Shadow\+Map}}$<$ T $>$\+::\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map}{Alpha\+Texture\+Shadow\+Map}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_step}{Custom\+Shading\+Step}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a5ff646b3f8b6da56acd2d98f09265769}\label{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a5ff646b3f8b6da56acd2d98f09265769}} 
+\index{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$@{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$@{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map}{Alpha\+Texture\+Shadow\+Map}}$\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Alpha\+Texture\+Shadow\+Map}}$<$ T $>$\+::Clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a2dc236a5b567da5099069ce2b2be5609}{Custom\+Shading\+Steps}}}]{step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Abstract method. Factory method. Creates a copy of this object \begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_step_aa9279c195d3a8f294860a431508675c3}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Custom\+Shading\+Step}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a338fc51d0712fa02fa4d23baa4fa2daa}\label{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a338fc51d0712fa02fa4d23baa4fa2daa}} 
+\index{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$@{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$}!drawShader@{drawShader}}
+\index{drawShader@{drawShader}!GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$@{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$}}
+\subsubsection{\texorpdfstring{drawShader()}{drawShader()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Alpha\+Texture\+Shadow\+Map}}$<$ T $>$\+::draw\+Shader (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Number,  }\item[{unsigned int}]{total\+Index\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Abstract method. Binds shaders and draws. 
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Buf} & Vertex buffer \\
+\hline
+{\em index\+Buf} & Index\+Buffer \\
+\hline
+{\em total\+Vertex\+Num} & Number of vetices \\
+\hline
+{\em tital\+Index\+Num} & Number of indices \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_step_a0aeb32e0833ce1b40946cd16c62167b9}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Custom\+Shading\+Step}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a32014c932093151182926d6d681314de}\label{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map_a32014c932093151182926d6d681314de}} 
+\index{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$@{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$}!setProgramParameters@{setProgramParameters}}
+\index{setProgramParameters@{setProgramParameters}!GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$@{GeometryEngine::CustomShading::AlphaTextureShadowMap$<$ T $>$}}
+\subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Alpha\+Texture\+Shadow\+Map}}$<$ T $>$\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{model\+View\+Projection\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Abstract method. Sends parameters to the shaders. 
+\begin{DoxyParams}{Parameters}
+{\em projection} & Projection matrix \\
+\hline
+{\em view} & View matrix\\
+\hline
+{\em geometry} & Geometry item to be drawn \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_step_a81d32702424be4eeb4ba3afc932571e7}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Custom\+Shading\+Step}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Common\+Inerfaces/\+Shading\+Steps/Alpha\+Texture\+Shadow\+Map.\+h\end{DoxyCompactItemize}

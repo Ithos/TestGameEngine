@@ -86,9 +86,10 @@ Inheritance diagram for GeometryEngine::GeometryRenderStep::LightingPass:</div>
  <div class="center">
   <img src="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.png" usemap="#GeometryEngine::GeometryRenderStep::LightingPass_map" alt=""/>
   <map id="GeometryEngine::GeometryRenderStep::LightingPass_map" name="GeometryEngine::GeometryRenderStep::LightingPass_map">
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html" alt="GeometryEngine::GeometryRenderStep::RenderStep" shape="rect" coords="188,56,555,80"/>
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html" title="Renders emissive colors and textures." alt="GeometryEngine::GeometryRenderStep::EmissiveLightingPass" shape="rect" coords="0,168,367,192"/>
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html" alt="GeometryEngine::GeometryRenderStep::ShadowedLightingPass" shape="rect" coords="377,168,744,192"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html" alt="GeometryEngine::GeometryRenderStep::RenderStep" shape="rect" coords="222,56,657,80"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html" title="Renders emissive colors and textures." alt="GeometryEngine::GeometryRenderStep::EmissiveLightingPass" shape="rect" coords="0,168,435,192"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html" title="Lighting pass that calculates solid shadows." alt="GeometryEngine::GeometryRenderStep::ShadowedLightingPass" shape="rect" coords="445,168,880,192"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass.html" title="Lighting pass that calculates transparent and translucent shadows." alt="GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass" shape="rect" coords="445,224,880,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -130,8 +131,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a437ff10a7ef9e7529a4852389a5cf871"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d0a0f3b9d52036b9d4f9fbee353cd10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a9d0a0f3b9d52036b9d4f9fbee353cd10">applyLight</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> * &gt; *lights)</td></tr>
 <tr class="separator:a9d0a0f3b9d52036b9d4f9fbee353cd10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae55cc29215ac54a526d9107f4e1f2803"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#ae55cc29215ac54a526d9107f4e1f2803">applySingleLight</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, const <a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html">GBufferTextureInfo</a> &amp;gBuf, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> *light)</td></tr>
-<tr class="separator:ae55cc29215ac54a526d9107f4e1f2803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a958341b3bf1f95dfb56bc5b2833813b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a958341b3bf1f95dfb56bc5b2833813b0">applySingleLight</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, const <a class="el" href="class_geometry_engine_1_1_buffers_info.html">BuffersInfo</a> &amp;buff, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> *light)</td></tr>
+<tr class="separator:a958341b3bf1f95dfb56bc5b2833813b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa30f6513bececfbaeb5ce7ec7e0d370d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#aa30f6513bececfbaeb5ce7ec7e0d370d">calculateLighting</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> *light, const QMatrix4x4 &amp;projectionMatrix, const QMatrix4x4 &amp;viewMatrix, const <a class="el" href="class_geometry_engine_1_1_buffers_info.html">BuffersInfo</a> &amp;buffTexInfo, const QVector3D &amp;viewPos)</td></tr>
+<tr class="separator:aa30f6513bececfbaeb5ce7ec7e0d370d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a980473c9d2e2e77ebdce9e56454f3d3f"><td class="memItemLeft" align="right" valign="top"><a id="a980473c9d2e2e77ebdce9e56454f3d3f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a980473c9d2e2e77ebdce9e56454f3d3f">finishStep</a> ()</td></tr>
 <tr class="memdesc:a980473c9d2e2e77ebdce9e56454f3d3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the OpenGl pipeline to its original state. <br /></td></tr>
@@ -188,7 +191,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copy constructor param ref Const reference to <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry.">LightingPass</a> to be copied </p>
+<p>Copy constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td>Const reference to <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry.">LightingPass</a> to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -226,12 +234,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Applies stencil test and renders every light in the set param cam Pointer to Camera to be rendered param lights Set of lights in the scene </p>
+<p>Applies stencil test and renders every light in the set </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam</td><td>Pointer to Camera to be rendered </td></tr>
+    <tr><td class="paramname">lights</td><td>Set of lights in the scene </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="ae55cc29215ac54a526d9107f4e1f2803"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae55cc29215ac54a526d9107f4e1f2803">&#9670;&nbsp;</a></span>applySingleLight()</h2>
+<a id="a958341b3bf1f95dfb56bc5b2833813b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a958341b3bf1f95dfb56bc5b2833813b0">&#9670;&nbsp;</a></span>applySingleLight()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,8 +262,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html">GBufferTextureInfo</a> &amp;&#160;</td>
-          <td class="paramname"><em>gBuf</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_geometry_engine_1_1_buffers_info.html">BuffersInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -269,7 +283,78 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Applies the effects of a single light to the scene param cam Pointer to Camera to be rendered param gBuf Geometry buffer information to be passed to the light shader param light Light to be calculated </p>
+<p>Applies the effects of a single light to the scene </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam</td><td>Pointer to Camera to be rendered </td></tr>
+    <tr><td class="paramname">gBuf</td><td>Geometry buffer information to be passed to the light shader </td></tr>
+    <tr><td class="paramname">light</td><td>Light to be calculated </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa30f6513bececfbaeb5ce7ec7e0d370d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa30f6513bececfbaeb5ce7ec7e0d370d">&#9670;&nbsp;</a></span>calculateLighting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeometryEngine::GeometryRenderStep::LightingPass::calculateLighting </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> *&#160;</td>
+          <td class="paramname"><em>light</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QMatrix4x4 &amp;&#160;</td>
+          <td class="paramname"><em>projectionMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QMatrix4x4 &amp;&#160;</td>
+          <td class="paramname"><em>viewMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_geometry_engine_1_1_buffers_info.html">BuffersInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>buffTexInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVector3D &amp;&#160;</td>
+          <td class="paramname"><em>viewPos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Checks if the light uses bounding geometry and calculates the lighting </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">light</td><td>Light to be calculated </td></tr>
+    <tr><td class="paramname">projectionMatrix</td><td>Camera projection matrix </td></tr>
+    <tr><td class="paramname">viewMatrix</td><td>Camera view matrix </td></tr>
+    <tr><td class="paramname">buffTexInfo</td><td>Buffer information, geometry buffer information is required </td></tr>
+    <tr><td class="paramname">viewPos</td><td>Position of the camera </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -295,11 +380,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Factory method. Returns a copy of this object. return A copy of this object. </p>
+<p>Factory method. Returns a copy of this object. </p><dl class="section return"><dt>Returns</dt><dd>A copy of this object. </dd></dl>
 
 <p>Implements <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#afe33ea9d82c5be11f55af7d39691d44b">GeometryEngine::GeometryRenderStep::RenderStep</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#a73176d6860aee0903034eeaf93edb40d">GeometryEngine::GeometryRenderStep::ShadowedLightingPass</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html#a5a46d5e73fe672e09584a2e6e8bfa5e8">GeometryEngine::GeometryRenderStep::EmissiveLightingPass</a>.</p>
+<p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#a73176d6860aee0903034eeaf93edb40d">GeometryEngine::GeometryRenderStep::ShadowedLightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass.html#a56d2ef131669ae3964a04cb54e6c3b0f">GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html#a5a46d5e73fe672e09584a2e6e8bfa5e8">GeometryEngine::GeometryRenderStep::EmissiveLightingPass</a>.</p>
 
 </div>
 </div>
@@ -326,7 +411,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copies the data from a <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry.">LightingPass</a> into this object param ref <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry.">LightingPass</a> to be copied </p>
+<p>Copies the data from a <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry.">LightingPass</a> into this object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry.">LightingPass</a> to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -353,7 +443,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Prepares the OpenGl pipeline to apply the light stencil test param cam Camera being rendered. It contains a pointer to the geometry buffer </p>
+<p>Prepares the OpenGl pipeline to apply the light stencil test </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam</td><td>Camera being rendered. It contains a pointer to the geometry buffer </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -396,7 +491,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Executes the render step param cam Pointer to camera to be rendered param items Set of items to be rendered. Items will no be used in this step, we will use the information stored in the geometry buffer instead. param lights Set of lights in the scene. </p>
+<p>Executes the render step </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam</td><td>Pointer to camera to be rendered </td></tr>
+    <tr><td class="paramname">items</td><td>Set of items to be rendered. Items will no be used in this step, we will use the information stored in the geometry buffer instead. </td></tr>
+    <tr><td class="paramname">lights</td><td>Set of lights in the scene. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#a9b054ee8f38304319a9d03ba3e173dcd">GeometryEngine::GeometryRenderStep::RenderStep</a>.</p>
 
@@ -437,7 +539,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Updates the camera and calls applyLight param cam Pointer to Camera to be rendered param lights Set of lights in the scene </p>
+<p>Updates the camera and calls applyLight </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam</td><td>Pointer to Camera to be rendered </td></tr>
+    <tr><td class="paramname">lights</td><td>Set of lights in the scene </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -474,7 +582,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Calls to the light calculateStencil param light being rendered param cam Pointer to Camera to be rendered </p>
+<p>Calls to the light calculateStencil </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">light</td><td>being rendered </td></tr>
+    <tr><td class="paramname">cam</td><td>Pointer to Camera to be rendered </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

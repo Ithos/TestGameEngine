@@ -1,0 +1,104 @@
+\hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass}{}\section{Geometry\+Engine\+::Geometry\+Render\+Step\+::Transparent\+Geometry\+Pass Class Reference}
+\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass}\index{GeometryEngine::GeometryRenderStep::TransparentGeometryPass@{GeometryEngine::GeometryRenderStep::TransparentGeometryPass}}
+
+
+Render step that renders geometry without illumination and separates the rendering of transparent and non transparent geometry.  
+
+
+
+
+{\ttfamily \#include $<$Transparent\+Geometry\+Pass.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Render\+Step\+::Transparent\+Geometry\+Pass\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_ab72551e63adc36d0a0462ed31c729e66}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_ab72551e63adc36d0a0462ed31c729e66}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_ab72551e63adc36d0a0462ed31c729e66}{Transparent\+Geometry\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a345a08ae0ee85a990f56f8e943a4e22d}{Transparent\+Geometry\+Pass}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass}{Transparent\+Geometry\+Pass}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_ae778f2628acf89a75613121eea32ec72}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_ae778f2628acf89a75613121eea32ec72}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_ae778f2628acf89a75613121eea32ec72}{$\sim$\+Transparent\+Geometry\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass}{Transparent\+Geometry\+Pass}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a6bfc83f45b84112bbf1beda1ed8e5466}{Clone}} () const override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a22bae026c0e006318d5ab21bdaeeb247}{render\+Geometry}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a4f8821d67b06746fa1c1aba1f70e1b83}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass}{Transparent\+Geometry\+Pass}} \&ref)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Render step that renders geometry without illumination and separates the rendering of transparent and non transparent geometry. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a345a08ae0ee85a990f56f8e943a4e22d}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a345a08ae0ee85a990f56f8e943a4e22d}} 
+\index{GeometryEngine::GeometryRenderStep::TransparentGeometryPass@{GeometryEngine::GeometryRenderStep::TransparentGeometryPass}!TransparentGeometryPass@{TransparentGeometryPass}}
+\index{TransparentGeometryPass@{TransparentGeometryPass}!GeometryEngine::GeometryRenderStep::TransparentGeometryPass@{GeometryEngine::GeometryRenderStep::TransparentGeometryPass}}
+\subsubsection{\texorpdfstring{TransparentGeometryPass()}{TransparentGeometryPass()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Geometry\+Pass\+::\+Transparent\+Geometry\+Pass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass}{Transparent\+Geometry\+Pass}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Geometry pass to be copied \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a6bfc83f45b84112bbf1beda1ed8e5466}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a6bfc83f45b84112bbf1beda1ed8e5466}} 
+\index{GeometryEngine::GeometryRenderStep::TransparentGeometryPass@{GeometryEngine::GeometryRenderStep::TransparentGeometryPass}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryRenderStep::TransparentGeometryPass@{GeometryEngine::GeometryRenderStep::TransparentGeometryPass}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass}{Transparent\+Geometry\+Pass}}$\ast$ Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Geometry\+Pass\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Returns a copy of this object. \begin{DoxyReturn}{Returns}
+Acopy of this object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a12e85a0169cb7b92cb8bd7b7fe100b33}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a4f8821d67b06746fa1c1aba1f70e1b83}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a4f8821d67b06746fa1c1aba1f70e1b83}} 
+\index{GeometryEngine::GeometryRenderStep::TransparentGeometryPass@{GeometryEngine::GeometryRenderStep::TransparentGeometryPass}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryRenderStep::TransparentGeometryPass@{GeometryEngine::GeometryRenderStep::TransparentGeometryPass}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Geometry\+Pass\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass}{Transparent\+Geometry\+Pass}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass}{Geometry\+Pass}} into this object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass}{Geometry\+Pass}} to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a22bae026c0e006318d5ab21bdaeeb247}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a22bae026c0e006318d5ab21bdaeeb247}} 
+\index{GeometryEngine::GeometryRenderStep::TransparentGeometryPass@{GeometryEngine::GeometryRenderStep::TransparentGeometryPass}!renderGeometry@{renderGeometry}}
+\index{renderGeometry@{renderGeometry}!GeometryEngine::GeometryRenderStep::TransparentGeometryPass@{GeometryEngine::GeometryRenderStep::TransparentGeometryPass}}
+\subsubsection{\texorpdfstring{renderGeometry()}{renderGeometry()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Geometry\+Pass\+::render\+Geometry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Draws each item in the set using the camera transformation matrix 
+\begin{DoxyParams}{Parameters}
+{\em cam} & Pointer to camera to be rendered \\
+\hline
+{\em items} & Set of items to be rendered \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a2929c4675eb93efd992739baac565425}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Render\+Steps/Transparent\+Geometry\+Pass.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Render\+Steps/Transparent\+Geometry\+Pass.\+cpp\end{DoxyCompactItemize}

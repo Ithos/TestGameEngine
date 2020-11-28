@@ -16,16 +16,16 @@ namespace GeometryEngine
 			/// Constructor
 			CompleteColorPostProcessBuffer();
 			/// Copy constructor
-			/// param ref Const reference to CompleteColorPostProcessBuffer to be copied
+			/// \param ref Const reference to CompleteColorPostProcessBuffer to be copied
 			CompleteColorPostProcessBuffer(const CompleteColorPostProcessBuffer& ref);
 			/// Destructor
 			virtual ~CompleteColorPostProcessBuffer() {};
 			/// Factory method. Creates a copy of this object
-			/// return Pointer to a copy of this object
+			/// \return Pointer to a copy of this object
 			virtual GBuffer* Clone() const override { return new CompleteColorPostProcessBuffer(*this); };
 		protected:
 			/// Copies the data from a GBuffer into this object
-			/// param ref GBuffer to be copied
+			/// \param ref GBuffer to be copied
 			virtual void copy(const GBuffer& ref) override;
 		};
 	}

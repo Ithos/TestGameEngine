@@ -44,13 +44,13 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor
-			/// param texDir A texture direction or a key for a texture direction
-			/// param vertex Number of vertices that this texture will be applied to, its only used when many textures will be applied to the same object
-			/// param getFromConf If true the texDir parameter will be treated as a key for the conf files, else it will be treated as a path for a texture. 
+			/// \param texDir A texture direction or a key for a texture direction
+			/// \param vertex Number of vertices that this texture will be applied to, its only used when many textures will be applied to the same object
+			/// \param getFromConf If true the texDir parameter will be treated as a key for the conf files, else it will be treated as a path for a texture. 
 			TextureParameters(const std::string& texDir, int vertex = -1, bool getFromConf = true);
 
 			/// Copy constructor
-			/// param ori TextureParameters to be copied
+			/// \param ori TextureParameters to be copied
 			TextureParameters(const TextureParameters& ori);
 
 			///Destructor

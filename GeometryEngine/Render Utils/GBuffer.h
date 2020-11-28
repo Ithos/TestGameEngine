@@ -35,20 +35,20 @@ namespace GeometryEngine
 			/// Constructor
 			GBuffer();
 			/// Copy constructor
-			/// param ref Const reference to GBuffer to be copied
+			/// \param ref Const reference to GBuffer to be copied
 			GBuffer(const GBuffer& ref);
 			/// Destructor. Clears framebuffers and textures.
 			virtual ~GBuffer();
 
 			/// Creates framebuffers and textures
-			/// param MaxWindowWidth Max texture width
-			/// param MaxWindowHeight Max texture height
-			/// return true if ok false otherwise
+			/// \param MaxWindowWidth Max texture width
+			/// \param MaxWindowHeight Max texture height
+			/// \return true if ok false otherwise
 			bool Init(unsigned int MaxWindowWidth, unsigned int MaxWindowHeight);
 			/// Resizes textures
-			/// param WindowWidth New texture width
-			/// param WindowHeight New texture height
-			/// return true if ok false otherwise
+			/// \param WindowWidth New texture width
+			/// \param WindowHeight New texture height
+			/// \return true if ok false otherwise
 			bool Resize(unsigned int WindowWidth, unsigned int WindowHeight);
 			/// Clears textures color
 			void StartFrame();
@@ -69,11 +69,11 @@ namespace GeometryEngine
 			/// Binds all textures
 			void BindBuffer();
 			/// Binds the final texture to the selected texture location
-			/// param texture location to be bound
+			/// \param texture location to be bound
 			void BindFinalTexture(GBUFFER_TEXTURE_TYPE location);
 			/// Binds the final texture to the selected texture location and updates bufferInfo final texture
-			/// param texture location to be bound
-			/// param GBufferTextureInfo reference to be updated 
+			/// \param texture location to be bound
+			/// \param GBufferTextureInfo reference to be updated 
 			void BindFinalTexture(GBUFFER_TEXTURE_TYPE location, GBufferTextureInfo& bufferInfo);
 			/// Unbind all texture locations
 			void ResetBindings();
@@ -82,39 +82,39 @@ namespace GeometryEngine
 			/// Unbinds the final texture from its location
 			void UnbindFinalTexture();
 			/// Binds selected texture to its default texture unit
-			/// param tex texture to bind
+			/// \param tex texture to bind
 			void BindTexture(GBUFFER_TEXTURE_TYPE tex);
 			/// Binds selected texture to the selected texture unit
-			/// param tex texture to bind
+			/// \param tex texture to bind
 			void BindTexture(GBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit);
 			/// Unbinds texture from its default texture unit
-			/// param tex texture to unbind
+			/// \param tex texture to unbind
 			void UnbindTexture(GBUFFER_TEXTURE_TYPE tex);
 			/// Unbinds texture from the selected texture unit
-			/// param tex texture to unbind
+			/// \param tex texture to unbind
 			void UnbindTexture(GBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit);
 			/// Gets current texture size
-			/// return Current texture size
+			/// \return Current texture size
 			const QVector2D& GetTextureSize() const { return mTextureSize; }
 			/// Gets the max texture size
-			/// return Max texture siza
+			/// \return Max texture siza
 			const QVector2D& GetMaxTextureSize() const { return mMaxTextureSize; }
 			/// Returns true if the texture is active
-			/// param texture Texture to check
-			/// return true if active false otherwise
+			/// \param texture Texture to check
+			/// \return true if active false otherwise
 			bool IsTextureActive(GBUFFER_TEXTURE_TYPE texture) const { return mActiveTextures.find(texture) != mActiveTextures.end(); }
 			/// Clears the color of one of the textures of the framebuffer
-			/// param texture Texture to clear
+			/// \param texture Texture to clear
 			void ClearColorTexture(GBUFFER_TEXTURE_TYPE texture);
 			/// Detaches the depth texture from the framebuffer and attaches the tmp depth buffer
 			void DetachDepthTexture();
 			/// Detaches the tmp depth buffer and ataches the depth texture to the framebuffer
 			void AttachDepthTexture();
 			/// Factory method. Creates a copy of this object
-			/// return Pointer to a copy of this object
+			/// \return Pointer to a copy of this object
 			virtual GBuffer* Clone() const { return new GBuffer(*this); };
 			/// Sets the data of a GBufferTextureInfo
-			/// param bufferInfo GBufferTextureInfo to be updated
+			/// \param bufferInfo GBufferTextureInfo to be updated
 			void FillGBufferInfo(GBufferTextureInfo& bufferInfo);
 
 		protected:
@@ -124,7 +124,7 @@ namespace GeometryEngine
 			std::unordered_set<GBUFFER_TEXTURE_TYPE> mActiveTextures;
 			GFramebufferObject* mpFBO;
 			/// Copies a data GBuffer to the current object
-			/// param ref GBuffer to be copied
+			/// \param ref GBuffer to be copied
 			virtual void copy(const GBuffer& ref);
 			static const int mTextureUnits[GBUFFER_NUM_TEXTURES + 1];
 		};

@@ -1,0 +1,302 @@
+\hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{}\section{Geometry\+Engine\+::Light\+Utils\+::Light\+Component\+Manager Class Reference}
+\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+
+
+Class that manages light components and acts as an interface for them.  
+
+
+
+
+{\ttfamily \#include $<$Light\+Component\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a1f77e3c649c1fd460ba12298fe88defa}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a1f77e3c649c1fd460ba12298fe88defa}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a1f77e3c649c1fd460ba12298fe88defa}{Light\+Component\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a5df9525266ca550924bd395075132485}{Light\+Component\+Manager}} (const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a456d8db6aba307b77a5e98f317c96f85}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a456d8db6aba307b77a5e98f317c96f85}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a456d8db6aba307b77a5e98f317c96f85}{$\sim$\+Light\+Component\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a41569931e24cebf0285474c55f54164a}{Add\+New\+Light\+Shading\+Component}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}} component)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a70a226e94e3f7369348e3ed9de7ee5bb}{Add\+New\+Light\+Shading\+Component}} (\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} $\ast$value, \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}} key)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a56c2e68fe7eb7188d1b489f7e3ef24a0}{Remove\+Light\+Shading\+Component}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}} key)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a453eb8a7b769afeb7b3c72489426b7b4}{Contains\+Light\+Shading\+Component}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}} key)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a2c2ee1a95b3de44b815d841f5d40a321}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a2c2ee1a95b3de44b815d841f5d40a321}} 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a2c2ee1a95b3de44b815d841f5d40a321}{Init\+Light\+Shading\+Component}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}} key)
+\begin{DoxyCompactList}\small\item\em Calls init on the selected shading step. Steps should be initialited before trying to use them. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a9d7a94e51a747d074c2431cec2e3b4b7}{Add\+New\+Light\+Render\+Component}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}} component)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a94a6f31346ad67f67b8dcd8988a35fa6}{Add\+New\+Light\+Render\+Component}} (\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} $\ast$value, \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}} key)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a1d15d69445169347c1492609a427d0b4}{Remove\+Light\+Render\+Component}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}} key)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a938dfaba1159f85fbfcae097a867644a}{Contains\+Light\+Render\+Component}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}} key)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a58bdb7761c9adde821fda19062ef0ae5}{Set\+Target\+Light}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$target)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_ad502d8781fa4d993d4db5b6954b14ff6}{Set\+Target\+Light}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$target, \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}} key)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a617a2cf91b3e0280a2f88cb91ce0fb04}{Set\+Target\+Light}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$target, \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}} key)
+\item 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_aea6e9aa3b5b26039fdaab99dc4e1af14}{Apply\+Light\+Shading}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}} component, Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, const Q\+Matrix4x4 \&projection\+Matrix, const Q\+Matrix4x4 \&view\+Matrix, const Q\+Matrix4x4 \&model\+Matrix, unsigned int total\+Vertex\+Num, unsigned int total\+Index\+Num)
+\item 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a21423f7a50b0a6c53370665d134e0d0d}{Apply\+Light\+Render}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}} component, const Q\+Matrix4x4 \&projection\+Matrix, const Q\+Matrix4x4 \&view\+Matrix, const \mbox{\hyperlink{class_geometry_engine_1_1_buffers_info}{Buffers\+Info}} \&buffers\+Info, const Q\+Vector3D \&view\+Pos)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a4c7d0373018c657d5825c4cb51150097}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a4c7d0373018c657d5825c4cb51150097}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a4c7d0373018c657d5825c4cb51150097}{Init\+Functions}} ()
+\begin{DoxyCompactList}\small\item\em Calls init on all the functionalities in the map. This method should be called before trying to use any functionality. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a10b87de25a7cc3ab14e76cc2d6889d20}{Clone}} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a2c201628a924f33ac8fdf6f1259ea45e}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a2c201628a924f33ac8fdf6f1259ea45e}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a2c201628a924f33ac8fdf6f1259ea45e}{get\+Managers}} ()
+\begin{DoxyCompactList}\small\item\em Initializes managers and shaders. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a5641d12a923d4868e3e65613de335857}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a92502bce6a2b170590e8ff080f8efb98}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a92502bce6a2b170590e8ff080f8efb98}} 
+\mbox{\hyperlink{class_shader_files_1_1_shader_manager}{Shader\+Files\+::\+Shader\+Manager}} $\ast$ {\bfseries mp\+Shader\+Manager}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a08607395b8258e1d533eb63aa0009e02}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a08607395b8258e1d533eb63aa0009e02}} 
+\mbox{\hyperlink{class_configuration_1_1_configuration_manager}{Configuration\+::\+Configuration\+Manager}} $\ast$ {\bfseries mp\+Conf\+Instance}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_ad2f5a370cb22b752ab44464b0bf53f51}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_ad2f5a370cb22b752ab44464b0bf53f51}} 
+std\+::map$<$ \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}}, \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} $\ast$ $>$ {\bfseries m\+Shading\+Map}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a930d39bce6d0fbbfd2ba7a1bfeb20e59}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a930d39bce6d0fbbfd2ba7a1bfeb20e59}} 
+std\+::map$<$ \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}}, \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} $\ast$ $>$ {\bfseries m\+Render\+Map}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that manages light components and acts as an interface for them. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a5df9525266ca550924bd395075132485}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a5df9525266ca550924bd395075132485}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!LightComponentManager@{LightComponentManager}}
+\index{LightComponentManager@{LightComponentManager}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{LightComponentManager()}{LightComponentManager()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Light\+Component\+Manager (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor. Automatiaclly initializes the shading steps after copying them. 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a9d7a94e51a747d074c2431cec2e3b4b7}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a9d7a94e51a747d074c2431cec2e3b4b7}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!AddNewLightRenderComponent@{AddNewLightRenderComponent}}
+\index{AddNewLightRenderComponent@{AddNewLightRenderComponent}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{AddNewLightRenderComponent()}{AddNewLightRenderComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}}$\ast$ Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Add\+New\+Light\+Render\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a new \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} T on the selected Light\+Render slot 
+\begin{DoxyParams}{Parameters}
+{\em component} & Light\+Render key where the \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} object will be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a94a6f31346ad67f67b8dcd8988a35fa6}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a94a6f31346ad67f67b8dcd8988a35fa6}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!AddNewLightRenderComponent@{AddNewLightRenderComponent}}
+\index{AddNewLightRenderComponent@{AddNewLightRenderComponent}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{AddNewLightRenderComponent()}{AddNewLightRenderComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Add\+New\+Light\+Render\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} $\ast$}]{value,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}}}]{key }\end{DoxyParamCaption})}
+
+Adds a new \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} on the selected Light\+Render slot 
+\begin{DoxyParams}{Parameters}
+{\em value} & \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} to be added to the manager \\
+\hline
+{\em key} & Light\+Render key where the \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} object will be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a41569931e24cebf0285474c55f54164a}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a41569931e24cebf0285474c55f54164a}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!AddNewLightShadingComponent@{AddNewLightShadingComponent}}
+\index{AddNewLightShadingComponent@{AddNewLightShadingComponent}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{AddNewLightShadingComponent()}{AddNewLightShadingComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}}$\ast$ Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Add\+New\+Light\+Shading\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a new \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} T on the selected Shading\+Component slot 
+\begin{DoxyParams}{Parameters}
+{\em component} & Light\+Shading key where the \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} object will be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a70a226e94e3f7369348e3ed9de7ee5bb}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a70a226e94e3f7369348e3ed9de7ee5bb}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!AddNewLightShadingComponent@{AddNewLightShadingComponent}}
+\index{AddNewLightShadingComponent@{AddNewLightShadingComponent}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{AddNewLightShadingComponent()}{AddNewLightShadingComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Add\+New\+Light\+Shading\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} $\ast$}]{value,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}}}]{key }\end{DoxyParamCaption})}
+
+Adds a new \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} on the selected Shading\+Component slot 
+\begin{DoxyParams}{Parameters}
+{\em value} & \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} to be added to the manager \\
+\hline
+{\em key} & Light\+Shading key where the \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} object will be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a21423f7a50b0a6c53370665d134e0d0d}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a21423f7a50b0a6c53370665d134e0d0d}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!ApplyLightRender@{ApplyLightRender}}
+\index{ApplyLightRender@{ApplyLightRender}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{ApplyLightRender()}{ApplyLightRender()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Apply\+Light\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}}}]{component,  }\item[{const Q\+Matrix4x4 \&}]{projection\+Matrix,  }\item[{const Q\+Matrix4x4 \&}]{view\+Matrix,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_buffers_info}{Buffers\+Info}} \&}]{buffers\+Info,  }\item[{const Q\+Vector3D \&}]{view\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute a light shading component
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Component key to be executed \\
+\hline
+{\em projection\+Matrix} & Camera projection matrix \\
+\hline
+{\em view\+Matrix} & Camera view matrix \\
+\hline
+{\em g\+Buff\+Info} & Texture info from the camera buffers \\
+\hline
+{\em view\+Pos} & Position of the camera \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_aea6e9aa3b5b26039fdaab99dc4e1af14}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_aea6e9aa3b5b26039fdaab99dc4e1af14}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!ApplyLightShading@{ApplyLightShading}}
+\index{ApplyLightShading@{ApplyLightShading}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{ApplyLightShading()}{ApplyLightShading()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Apply\+Light\+Shading (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}}}]{component,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{const Q\+Matrix4x4 \&}]{projection\+Matrix,  }\item[{const Q\+Matrix4x4 \&}]{view\+Matrix,  }\item[{const Q\+Matrix4x4 \&}]{model\+Matrix,  }\item[{unsigned int}]{total\+Vertex\+Num,  }\item[{unsigned int}]{total\+Index\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute a light shading component 
+\begin{DoxyParams}{Parameters}
+{\em component} & Component key to be executed \\
+\hline
+{\em vertex\+Buf} & Pointer to the vertex buffer \\
+\hline
+{\em index\+Buffer} & Pointer to the index buffer \\
+\hline
+{\em projection\+Matrix} & Projection matrix to be used \\
+\hline
+{\em view\+Matrix} & View\+Matrix to be used \\
+\hline
+{\em model\+Matrix} & Model\+Matrix of the object to be drawn or identity if it\textquotesingle{}s not necessary \\
+\hline
+{\em total\+Vertex\+Num} & Total amount of vertices \\
+\hline
+{\em total\+Index\+Num} & Total amount of indices \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a10b87de25a7cc3ab14e76cc2d6889d20}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a10b87de25a7cc3ab14e76cc2d6889d20}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}}$\ast$ Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Abstract method. Factory method. Creates a copy of this object \begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a938dfaba1159f85fbfcae097a867644a}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a938dfaba1159f85fbfcae097a867644a}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!ContainsLightRenderComponent@{ContainsLightRenderComponent}}
+\index{ContainsLightRenderComponent@{ContainsLightRenderComponent}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{ContainsLightRenderComponent()}{ContainsLightRenderComponent()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Contains\+Light\+Render\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if the manager contains a Light\+Render key 
+\begin{DoxyParams}{Parameters}
+{\em key} & Light\+Render key to check \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a453eb8a7b769afeb7b3c72489426b7b4}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a453eb8a7b769afeb7b3c72489426b7b4}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!ContainsLightShadingComponent@{ContainsLightShadingComponent}}
+\index{ContainsLightShadingComponent@{ContainsLightShadingComponent}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{ContainsLightShadingComponent()}{ContainsLightShadingComponent()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Contains\+Light\+Shading\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if the manager contains a Light\+Shading key 
+\begin{DoxyParams}{Parameters}
+{\em key} & Key to check \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a5641d12a923d4868e3e65613de335857}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a5641d12a923d4868e3e65613de335857}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a Material object to the current object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Material to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a1d15d69445169347c1492609a427d0b4}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a1d15d69445169347c1492609a427d0b4}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!RemoveLightRenderComponent@{RemoveLightRenderComponent}}
+\index{RemoveLightRenderComponent@{RemoveLightRenderComponent}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{RemoveLightRenderComponent()}{RemoveLightRenderComponent()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Remove\+Light\+Render\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}}}]{key }\end{DoxyParamCaption})}
+
+Removes a \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} from the manager 
+\begin{DoxyParams}{Parameters}
+{\em key} & Light\+Render key to be removed Returns false if the Light\+Render key is not in the manager true otherwise \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a56c2e68fe7eb7188d1b489f7e3ef24a0}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a56c2e68fe7eb7188d1b489f7e3ef24a0}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!RemoveLightShadingComponent@{RemoveLightShadingComponent}}
+\index{RemoveLightShadingComponent@{RemoveLightShadingComponent}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{RemoveLightShadingComponent()}{RemoveLightShadingComponent()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Remove\+Light\+Shading\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}}}]{key }\end{DoxyParamCaption})}
+
+Removes a \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} from the manager 
+\begin{DoxyParams}{Parameters}
+{\em key} & Light\+Shading key to be removed Returns false if the Light\+Shading key is not in the manager true otherwise \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a58bdb7761c9adde821fda19062ef0ae5}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a58bdb7761c9adde821fda19062ef0ae5}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!SetTargetLight@{SetTargetLight}}
+\index{SetTargetLight@{SetTargetLight}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{SetTargetLight()}{SetTargetLight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Set\+Target\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{target }\end{DoxyParamCaption})}
+
+Sets the target for every shading step in this interface 
+\begin{DoxyParams}{Parameters}
+{\em target} & Light to be set as target \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_ad502d8781fa4d993d4db5b6954b14ff6}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_ad502d8781fa4d993d4db5b6954b14ff6}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!SetTargetLight@{SetTargetLight}}
+\index{SetTargetLight@{SetTargetLight}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{SetTargetLight()}{SetTargetLight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Set\+Target\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{target,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}}}]{key }\end{DoxyParamCaption})}
+
+Sets the target for the selected function 
+\begin{DoxyParams}{Parameters}
+{\em target} & Light to be set as target \\
+\hline
+{\em key} & Component key to be modified Returns false if the function is not in the manager true otherwise \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a617a2cf91b3e0280a2f88cb91ce0fb04}\label{class_geometry_engine_1_1_light_utils_1_1_light_component_manager_a617a2cf91b3e0280a2f88cb91ce0fb04}} 
+\index{GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}!SetTargetLight@{SetTargetLight}}
+\index{SetTargetLight@{SetTargetLight}!GeometryEngine::LightUtils::LightComponentManager@{GeometryEngine::LightUtils::LightComponentManager}}
+\subsubsection{\texorpdfstring{SetTargetLight()}{SetTargetLight()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Component\+Manager\+::\+Set\+Target\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{target,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}}}]{key }\end{DoxyParamCaption})}
+
+Sets the target for the selected technique 
+\begin{DoxyParams}{Parameters}
+{\em target} & Light to be set as target \\
+\hline
+{\em key} & Component key to be modified Returns false if the key is not in the manager true otherwise \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Light\+Utils/Light\+Component\+Manager.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Light\+Utils/Light\+Component\+Manager.\+cpp\end{DoxyCompactItemize}

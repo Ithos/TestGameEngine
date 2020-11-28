@@ -15,18 +15,18 @@ namespace ShaderFiles
 	{
 	public:
 		///Constructor. Loads the sader.
-		///param filepath path to the shader file
+		/// \param filepath path to the shader file
 		Shader(const std::string& filepath);
 		///Destructor
 		virtual ~Shader();
-		///Returns the raw code of the shader
-		///return Raw code of the shader
+		/// Returns the raw code of the shader
+		/// \return Raw code of the shader
 		std::string& getContent() { return (*_mContent); }
 
 	private:
 		std::string* _mContent;
 		///Loads the shader file and stores the code
-		///param filepath path to the shader file
+		/// \param filepath path to the shader file
 		void LoadShader(const std::string& filepath);
 
 	};

@@ -36,6 +36,18 @@ class {\bfseries Normal\+Map\+Multi\+Texture\+Material}
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_a672a5580567681a3314cb24f4817415a}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_a672a5580567681a3314cb24f4817415a}} 
 class {\bfseries Skybox\+Material}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_a88402a78773fdff0239db754484c7348}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_a88402a78773fdff0239db754484c7348}} 
+class {\bfseries Alpha\+Multi\+Texture\+Material}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_ad6ce96c21a73235262b0d76b7a840a3d}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_ad6ce96c21a73235262b0d76b7a840a3d}} 
+class {\bfseries Alpha\+Normal\+Map\+Multi\+Texture\+Material}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_a31691ee65aca08fc5d64e31b9edbff83}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_a31691ee65aca08fc5d64e31b9edbff83}} 
+class {\bfseries Alpha\+Texture\+Material}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_ac39375f6a831b1af28d6f63c4f416c25}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_ac39375f6a831b1af28d6f63c4f416c25}} 
+class {\bfseries Alpha\+Normal\+Map\+Texture\+Material}
 \end{DoxyCompactItemize}
 
 
@@ -49,13 +61,27 @@ Class that holds texture data.
 \subsubsection{\texorpdfstring{TextureParameters()}{TextureParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Parameters\+::\+Texture\+Parameters (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Dir,  }\item[{int}]{vertex = {\ttfamily -\/1},  }\item[{bool}]{get\+From\+Conf = {\ttfamily true} }\end{DoxyParamCaption})}
 
-Constructor param tex\+Dir A texture direction or a key for a texture direction param vertex Number of vertices that this texture will be applied to, its only used when many textures will be applied to the same object param get\+From\+Conf If true the tex\+Dir parameter will be treated as a key for the conf files, else it will be treated as a path for a texture. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_abbda2d6bc0bfc273cd8454acc8b326b7}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_abbda2d6bc0bfc273cd8454acc8b326b7}} 
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em tex\+Dir} & A texture direction or a key for a texture direction \\
+\hline
+{\em vertex} & Number of vertices that this texture will be applied to, its only used when many textures will be applied to the same object \\
+\hline
+{\em get\+From\+Conf} & If true the tex\+Dir parameter will be treated as a key for the conf files, else it will be treated as a path for a texture. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_abbda2d6bc0bfc273cd8454acc8b326b7}\label{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters_abbda2d6bc0bfc273cd8454acc8b326b7}} 
 \index{GeometryEngine::GeometryMaterial::TextureParameters@{GeometryEngine::GeometryMaterial::TextureParameters}!TextureParameters@{TextureParameters}}
 \index{TextureParameters@{TextureParameters}!GeometryEngine::GeometryMaterial::TextureParameters@{GeometryEngine::GeometryMaterial::TextureParameters}}
 \subsubsection{\texorpdfstring{TextureParameters()}{TextureParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Texture\+Parameters\+::\+Texture\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} \&}]{ori }\end{DoxyParamCaption})}
 
-Copy constructor param ori \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} to be copied 
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ori} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} to be copied \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

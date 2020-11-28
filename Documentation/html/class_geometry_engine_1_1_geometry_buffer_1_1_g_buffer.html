@@ -72,13 +72,14 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
 <a href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GeometryEngine::GeometryBuffer::GBuffer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Class that manages the geometry buffer.  
+<p>Class that manages a framebuffer object for geometry, lighting and post process effects.  
  <a href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_g_buffer_8h_source.html">GBuffer.h</a>&gt;</code></p>
@@ -181,26 +182,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a954286e665d76dc77f352923a3c0b191"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a2469afe0c79b97d35ba5d2b6a1ae52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a6a2469afe0c79b97d35ba5d2b6a1ae52">BindTexture</a> (<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a> tex)</td></tr>
 <tr class="separator:a6a2469afe0c79b97d35ba5d2b6a1ae52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3142603e5ce9519da6d4aba1d07fec1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a3142603e5ce9519da6d4aba1d07fec1f">BindTexture</a> (<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a> tex, unsigned int textureUnit)</td></tr>
+<tr class="separator:a3142603e5ce9519da6d4aba1d07fec1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15ffb63e72295abb6a10b2481fb878e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a15ffb63e72295abb6a10b2481fb878e4">UnbindTexture</a> (<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a> tex)</td></tr>
 <tr class="separator:a15ffb63e72295abb6a10b2481fb878e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bbb50c4eabcee8677a3da316042c44e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a0bbb50c4eabcee8677a3da316042c44e">UnbindTexture</a> (<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a> tex, unsigned int textureUnit)</td></tr>
+<tr class="separator:a0bbb50c4eabcee8677a3da316042c44e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b829115597fc587cd6f4ddb52b875cc"><td class="memItemLeft" align="right" valign="top">const QVector2D &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a2b829115597fc587cd6f4ddb52b875cc">GetTextureSize</a> () const</td></tr>
 <tr class="separator:a2b829115597fc587cd6f4ddb52b875cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47bda4849000d2728538de4e2f27f11a"><td class="memItemLeft" align="right" valign="top">const QVector2D &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a47bda4849000d2728538de4e2f27f11a">GetMaxTextureSize</a> () const</td></tr>
 <tr class="separator:a47bda4849000d2728538de4e2f27f11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a798b7520f23c545e09d58639bd275f16"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a798b7520f23c545e09d58639bd275f16">GetTexture</a> (<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a> texture) const</td></tr>
-<tr class="separator:a798b7520f23c545e09d58639bd275f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66ccde86e455532b2eac771163570f04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a66ccde86e455532b2eac771163570f04">IsTextureActive</a> (<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a> texture) const</td></tr>
 <tr class="separator:a66ccde86e455532b2eac771163570f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf39c85cb87eaf0475205b59333253c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#abf39c85cb87eaf0475205b59333253c0">ClearColorTexture</a> (<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a> texture)</td></tr>
 <tr class="separator:abf39c85cb87eaf0475205b59333253c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d3ac4fcb577f48c5d7e7f023109cec0"><td class="memItemLeft" align="right" valign="top"><a id="a9d3ac4fcb577f48c5d7e7f023109cec0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a9d3ac4fcb577f48c5d7e7f023109cec0">DetachDepthBuffer</a> ()</td></tr>
-<tr class="memdesc:a9d3ac4fcb577f48c5d7e7f023109cec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches the depth texture from the framebuffer and attaches the tmp depth buffer. <br /></td></tr>
-<tr class="separator:a9d3ac4fcb577f48c5d7e7f023109cec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5101a82324f81ed73a1380d1ac97ce7f"><td class="memItemLeft" align="right" valign="top"><a id="a5101a82324f81ed73a1380d1ac97ce7f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a5101a82324f81ed73a1380d1ac97ce7f">AttachDepthBuffer</a> ()</td></tr>
-<tr class="memdesc:a5101a82324f81ed73a1380d1ac97ce7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches the tmp depth buffer and ataches the depth texture to the framebuffer. <br /></td></tr>
-<tr class="separator:a5101a82324f81ed73a1380d1ac97ce7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95a83a79632226dd0cc8878af9c76f62"><td class="memItemLeft" align="right" valign="top"><a id="a95a83a79632226dd0cc8878af9c76f62"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a95a83a79632226dd0cc8878af9c76f62">DetachDepthTexture</a> ()</td></tr>
+<tr class="memdesc:a95a83a79632226dd0cc8878af9c76f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches the depth texture from the framebuffer and attaches the tmp depth buffer. <br /></td></tr>
+<tr class="separator:a95a83a79632226dd0cc8878af9c76f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a95e0e90117676e44a29c09eb15c65d"><td class="memItemLeft" align="right" valign="top"><a id="a3a95e0e90117676e44a29c09eb15c65d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a3a95e0e90117676e44a29c09eb15c65d">AttachDepthTexture</a> ()</td></tr>
+<tr class="memdesc:a3a95e0e90117676e44a29c09eb15c65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches the tmp depth buffer and ataches the depth texture to the framebuffer. <br /></td></tr>
+<tr class="separator:a3a95e0e90117676e44a29c09eb15c65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af993f8c23f7e78051f3071be4873af9d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html">GBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#af993f8c23f7e78051f3071be4873af9d">Clone</a> () const</td></tr>
 <tr class="separator:af993f8c23f7e78051f3071be4873af9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1242e69d277b69b58497f7d489e176c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#ad1242e69d277b69b58497f7d489e176c">FillGBufferInfo</a> (<a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html">GBufferTextureInfo</a> &amp;bufferInfo)</td></tr>
@@ -213,22 +216,6 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:afa5700526d827e83d0b6915c40cdbde8"><td class="memItemLeft" align="right" valign="top"><a id="afa5700526d827e83d0b6915c40cdbde8"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>mFbo</b></td></tr>
-<tr class="separator:afa5700526d827e83d0b6915c40cdbde8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a919af79ada16d935651f7123cb5a4700"><td class="memItemLeft" align="right" valign="top"><a id="a919af79ada16d935651f7123cb5a4700"></a>
-GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>mTextures</b> [GBUFFER_NUM_TEXTURES]</td></tr>
-<tr class="separator:a919af79ada16d935651f7123cb5a4700"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7923c84d57522ea62a748db16ceafff6"><td class="memItemLeft" align="right" valign="top"><a id="a7923c84d57522ea62a748db16ceafff6"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>mDepthTexture</b></td></tr>
-<tr class="separator:a7923c84d57522ea62a748db16ceafff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dd9f435e79e3570133e162fb699ef97"><td class="memItemLeft" align="right" valign="top"><a id="a6dd9f435e79e3570133e162fb699ef97"></a>
-GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a6dd9f435e79e3570133e162fb699ef97">mTmpDepthBuffer</a></td></tr>
-<tr class="memdesc:a6dd9f435e79e3570133e162fb699ef97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer for depth operations that do not need to be stored. <br /></td></tr>
-<tr class="separator:a6dd9f435e79e3570133e162fb699ef97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5d3493f8b8c0e2044b1cfc0484c3c3c"><td class="memItemLeft" align="right" valign="top"><a id="ad5d3493f8b8c0e2044b1cfc0484c3c3c"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>mFinalTexture</b></td></tr>
-<tr class="separator:ad5d3493f8b8c0e2044b1cfc0484c3c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fc8627c8538eb232c21f0f23e0375d1"><td class="memItemLeft" align="right" valign="top"><a id="a6fc8627c8538eb232c21f0f23e0375d1"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>mFinalTextureLocation</b></td></tr>
 <tr class="separator:a6fc8627c8538eb232c21f0f23e0375d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -244,9 +231,15 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
 <tr class="memitem:adecb16016bf50ab1f50924cee963f432"><td class="memItemLeft" align="right" valign="top"><a id="adecb16016bf50ab1f50924cee963f432"></a>
 <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_framebuffer_object.html">GFramebufferObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mpFBO</b></td></tr>
 <tr class="separator:adecb16016bf50ab1f50924cee963f432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr class="memitem:ac0644e1c1bbc64dfae4c1425c528571b"><td class="memItemLeft" align="right" valign="top"><a id="ac0644e1c1bbc64dfae4c1425c528571b"></a>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><b>mTextureUnits</b> [GBUFFER_NUM_TEXTURES+1] = { 0, 1, 2, 3, 4, 5, 6, 7 }</td></tr>
+<tr class="separator:ac0644e1c1bbc64dfae4c1425c528571b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class that manages the geometry buffer. </p>
+<div class="textblock"><p>Class that manages a framebuffer object for geometry, lighting and post process effects. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9b44aaba6f5e1ef02cdc8ab821d560bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b44aaba6f5e1ef02cdc8ab821d560bb">&#9670;&nbsp;</a></span>GBuffer()</h2>
@@ -263,7 +256,12 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Copy constructor param ref Const reference to <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometry buffer.">GBuffer</a> to be copied </p>
+<p>Copy constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td>Const reference to <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages a framebuffer object for geometry, lighting and post process effects.">GBuffer</a> to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -283,7 +281,12 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Binds the final texture to the selected texture location param texture location to be bound </p>
+<p>Binds the final texture to the selected texture location </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture</td><td>location to be bound </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -312,12 +315,18 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Binds the final texture to the selected texture location and updates bufferInfo final texture param texture location to be bound param <a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html" title="Class that holds information about the geometry buffer textures to be passed to the shader.">GBufferTextureInfo</a> reference to be updated </p>
+<p>Binds the final texture to the selected texture location and updates bufferInfo final texture </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture</td><td>location to be bound </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html" title="Class that holds information about the geometry buffer textures to be passed to the shader.">GBufferTextureInfo</a></td><td>reference to be updated </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <a id="a6a2469afe0c79b97d35ba5d2b6a1ae52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a2469afe0c79b97d35ba5d2b6a1ae52">&#9670;&nbsp;</a></span>BindTexture()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a2469afe0c79b97d35ba5d2b6a1ae52">&#9670;&nbsp;</a></span>BindTexture() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -331,7 +340,46 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Binds selected texture to its location param tex texture to bind </p>
+<p>Binds selected texture to its default texture unit </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tex</td><td>texture to bind </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3142603e5ce9519da6d4aba1d07fec1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3142603e5ce9519da6d4aba1d07fec1f">&#9670;&nbsp;</a></span>BindTexture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeometryEngine::GeometryBuffer::GBuffer::BindTexture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a>&#160;</td>
+          <td class="paramname"><em>tex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>textureUnit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Binds selected texture to the selected texture unit </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tex</td><td>texture to bind </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -350,7 +398,12 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Clears the color of one of the textures of the framebuffer param texture Texture to clear </p>
+<p>Clears the color of one of the textures of the framebuffer </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture</td><td>Texture to clear </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -376,7 +429,7 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Factory method. Creates a copy of this object return Pointer to a copy of this object </p>
+<p>Factory method. Creates a copy of this object </p><dl class="section return"><dt>Returns</dt><dd>Pointer to a copy of this object </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer.html#a8a484d5196bba7b92f31e500229743bc">GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer</a>, <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer.html#a56aee74c7523f0b16fd8b97c8c44f84f">GeometryEngine::GeometryBuffer::CompleteColorBuffer</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer.html#add00c2857f9d425600ef83d50a9c8019">GeometryEngine::GeometryBuffer::SingleColorTextBuffer</a>.</p>
 
@@ -405,7 +458,12 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copies a data <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometry buffer.">GBuffer</a> to the current object param ref <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages the geometry buffer.">GBuffer</a> to be copied </p>
+<p>Copies a data <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages a framebuffer object for geometry, lighting and post process effects.">GBuffer</a> to the current object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html" title="Class that manages a framebuffer object for geometry, lighting and post process effects.">GBuffer</a> to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_post_process_buffer.html#ac7d1a90658b1a2f59674b76685e8b052">GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer</a>, <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_complete_color_buffer.html#a0630be352a9267083d42802fb22ae36b">GeometryEngine::GeometryBuffer::CompleteColorBuffer</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer.html#a6e266272638dd67cec7b6d57f172eae2">GeometryEngine::GeometryBuffer::SingleColorTextBuffer</a>.</p>
 
@@ -426,7 +484,12 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the data of a <a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html" title="Class that holds information about the geometry buffer textures to be passed to the shader.">GBufferTextureInfo</a> param bufferInfo <a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html" title="Class that holds information about the geometry buffer textures to be passed to the shader.">GBufferTextureInfo</a> to be updated </p>
+<p>Sets the data of a <a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html" title="Class that holds information about the geometry buffer textures to be passed to the shader.">GBufferTextureInfo</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bufferInfo</td><td><a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html" title="Class that holds information about the geometry buffer textures to be passed to the shader.">GBufferTextureInfo</a> to be updated </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -452,34 +515,7 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Gets the max texture size return Max texture siza </p>
-
-</div>
-</div>
-<a id="a798b7520f23c545e09d58639bd275f16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a798b7520f23c545e09d58639bd275f16">&#9670;&nbsp;</a></span>GetTexture()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">GLuint GeometryEngine::GeometryBuffer::GBuffer::GetTexture </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a>&#160;</td>
-          <td class="paramname"><em>texture</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Returns the OpenGl id of a texture param texture Texture enum element return OpenGl id of the texture </p>
+<p>Gets the max texture size </p><dl class="section return"><dt>Returns</dt><dd>Max texture siza </dd></dl>
 
 </div>
 </div>
@@ -505,7 +541,7 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Gets current texture size return Current texture size </p>
+<p>Gets current texture size </p><dl class="section return"><dt>Returns</dt><dd>Current texture size </dd></dl>
 
 </div>
 </div>
@@ -534,7 +570,14 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates framebuffers and textures param MaxWindowWidth Max texture width param MaxWindowHeight Max texture height return true if ok false otherwise </p>
+<p>Creates framebuffers and textures </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">MaxWindowWidth</td><td>Max texture width </td></tr>
+    <tr><td class="paramname">MaxWindowHeight</td><td>Max texture height </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if ok false otherwise </dd></dl>
 
 </div>
 </div>
@@ -561,7 +604,13 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns true if the texture is active param texture Texture to check return true if active false otherwise </p>
+<p>Returns true if the texture is active </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture</td><td>Texture to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if active false otherwise </dd></dl>
 
 </div>
 </div>
@@ -590,12 +639,19 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Resizes textures param WindowWidth New texture width param WindowHeight New texture height return true if ok false otherwise </p>
+<p>Resizes textures </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">WindowWidth</td><td>New texture width </td></tr>
+    <tr><td class="paramname">WindowHeight</td><td>New texture height </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if ok false otherwise </dd></dl>
 
 </div>
 </div>
 <a id="a15ffb63e72295abb6a10b2481fb878e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15ffb63e72295abb6a10b2481fb878e4">&#9670;&nbsp;</a></span>UnbindTexture()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a15ffb63e72295abb6a10b2481fb878e4">&#9670;&nbsp;</a></span>UnbindTexture() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -609,7 +665,46 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_bu
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Unbinds texture param tex texture to unbind </p>
+<p>Unbinds texture from its default texture unit </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tex</td><td>texture to unbind </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0bbb50c4eabcee8677a3da316042c44e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bbb50c4eabcee8677a3da316042c44e">&#9670;&nbsp;</a></span>UnbindTexture() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeometryEngine::GeometryBuffer::GBuffer::UnbindTexture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html#a718dceafcac1915f7de061108597e1cc">GBUFFER_TEXTURE_TYPE</a>&#160;</td>
+          <td class="paramname"><em>tex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>textureUnit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Unbinds texture from the selected texture unit </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tex</td><td>texture to unbind </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

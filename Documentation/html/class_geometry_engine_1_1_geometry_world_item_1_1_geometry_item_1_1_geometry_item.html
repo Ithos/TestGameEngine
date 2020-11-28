@@ -319,7 +319,16 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor param mat Material to be used for rendering param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. </p>
+<p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td>Material to be used for rendering </td></tr>
+    <tr><td class="paramname">pos</td><td>Initial position of the item </td></tr>
+    <tr><td class="paramname">rot</td><td>Initial rotaion of the item </td></tr>
+    <tr><td class="paramname">scale</td><td>Initial scale to be applied to this item model </td></tr>
+    <tr><td class="paramname">parent</td><td>Pointer to this items parent item, nullptr if none. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -338,7 +347,12 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Copy constructor param ref Object to be copied. </p>
+<p>Copy constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td>Object to be copied. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -366,7 +380,13 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Adds this item to a render group. Cameras only render objects contained in the same render groups that they are. All objects start in the null render group. param group Identifier of the render group return bool true if the object was not already contained in the render group </p>
+<p>Adds this item to a render group. Cameras only render objects contained in the same render groups that they are. All objects start in the null render group. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>Identifier of the render group </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool true if the object was not already contained in the render group </dd></dl>
 
 </div>
 </div>
@@ -392,7 +412,7 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Gets wether this items is taken into account when calculating shadows return whether this item casts shadows </p>
+<p>Gets wether this items is taken into account when calculating shadows </p><dl class="section return"><dt>Returns</dt><dd>whether this item casts shadows </dd></dl>
 
 </div>
 </div>
@@ -418,7 +438,7 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Abstract method. Factory method. Creates a copy of this object return Pointer to a copy of this object </p>
+<p>Abstract method. Factory method. Creates a copy of this object </p><dl class="section return"><dt>Returns</dt><dd>Pointer to a copy of this object </dd></dl>
 
 <p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere.html#aaf5b7221c60ac1feefaacff14a20c1f3">GeometryEngine::GeometryWorldItem::GeometryItem::Sphere</a>, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html#ab151cd962c45bc06d21e9e26c2d1c4aa">GeometryEngine::GeometryWorldItem::GeometryItem::Cube</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_quad.html#ad3a6d04a38253d1f26735a87a53a5446">GeometryEngine::GeometryWorldItem::GeometryItem::Quad</a>.</p>
 
@@ -447,7 +467,12 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copies the data from a <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html" title="Base class for every object in the scene that has a visual model.">GeometryItem</a> into this object param ref <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html" title="Base class for every object in the scene that has a visual model.">GeometryItem</a> to be copied </p>
+<p>Copies the data from a <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html" title="Base class for every object in the scene that has a visual model.">GeometryItem</a> into this object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html" title="Base class for every object in the scene that has a visual model.">GeometryItem</a> to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -484,7 +509,13 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Draws the geometry using the material param projection Projection matrix provided by the camera param view View matrix, provided by the camera </p>
+<p>Draws the geometry using the material </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">projection</td><td>Projection matrix provided by the camera </td></tr>
+    <tr><td class="paramname">view</td><td>View matrix, provided by the camera </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -510,7 +541,7 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Gets a pointer to the array buffer of the item return pointer to the array buffer of the item </p>
+<p>Gets a pointer to the array buffer of the item </p><dl class="section return"><dt>Returns</dt><dd>pointer to the array buffer of the item </dd></dl>
 
 </div>
 </div>
@@ -536,7 +567,7 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Gets a pointer to the index buffer of the item return pointer to the index buffer of the item </p>
+<p>Gets a pointer to the index buffer of the item </p><dl class="section return"><dt>Returns</dt><dd>pointer to the index buffer of the item </dd></dl>
 
 </div>
 </div>
@@ -562,7 +593,7 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Gets the number of indices of the model return number of indices of the model </p>
+<p>Gets the number of indices of the model </p><dl class="section return"><dt>Returns</dt><dd>number of indices of the model </dd></dl>
 
 </div>
 </div>
@@ -588,7 +619,7 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Gets a pointer to the item material return pointer to the item Material </p>
+<p>Gets a pointer to the item material </p><dl class="section return"><dt>Returns</dt><dd>pointer to the item Material </dd></dl>
 
 </div>
 </div>
@@ -614,7 +645,7 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Gets the set of render groups this object is contained in return set of render groups this object is contained in </p>
+<p>Gets the set of render groups this object is contained in </p><dl class="section return"><dt>Returns</dt><dd>set of render groups this object is contained in </dd></dl>
 
 </div>
 </div>
@@ -640,7 +671,7 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Gets the number of vertices of the model return number of vertices of the model </p>
+<p>Gets the number of vertices of the model </p><dl class="section return"><dt>Returns</dt><dd>number of vertices of the model </dd></dl>
 
 </div>
 </div>
@@ -666,7 +697,7 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Gets the visibility state for this item return the visibility state for this item </p>
+<p>Gets the visibility state for this item </p><dl class="section return"><dt>Returns</dt><dd>the visibility state for this item </dd></dl>
 
 </div>
 </div>
@@ -693,7 +724,13 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Removes this item from a render group. Cameras only render objects contained in the same render groups that they are. All objects start in the null render group. An object cannot be removed from the null render group, if an object is not contained in any render group it's considered to be contained in the null render group. param group Identifier of the render group return bool true if the object was contained in the render group </p>
+<p>Removes this item from a render group. Cameras only render objects contained in the same render groups that they are. All objects start in the null render group. An object cannot be removed from the null render group, if an object is not contained in any render group it's considered to be contained in the null render group. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">group</td><td>Identifier of the render group </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool true if the object was contained in the render group </dd></dl>
 
 </div>
 </div>
@@ -720,7 +757,12 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Sets whether this item casts shadows param castsShadows New shadow state </p>
+<p>Sets whether this item casts shadows </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">castsShadows</td><td>New shadow state </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -747,7 +789,12 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Sets the material of the item param mat new material for the item </p>
+<p>Sets the material of the item </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td>new material for the item </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -774,7 +821,12 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Sets the visibility for this item param visible New visibility state </p>
+<p>Sets the visibility for this item </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visible</td><td>New visibility state </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -812,7 +864,13 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </table>
 </div><div class="memdoc">
 <p>Calls DrawItem</p>
-<p>param projection Projection matrix provided by the camera param view View matrix, provided by the camera </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">projection</td><td>Projection matrix provided by the camera </td></tr>
+    <tr><td class="paramname">view</td><td>View matrix, provided by the camera </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented from <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_world_item.html#aa6e82e5d95ae34d0addb991cd84aca6f">GeometryEngine::GeometryWorldItem::WorldItem</a>.</p>
 

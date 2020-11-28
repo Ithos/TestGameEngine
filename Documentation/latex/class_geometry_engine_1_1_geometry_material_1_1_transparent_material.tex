@@ -1,0 +1,127 @@
+\hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material}{}\section{Geometry\+Engine\+::Geometry\+Material\+::Transparent\+Material Class Reference}
+\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material}\index{GeometryEngine::GeometryMaterial::TransparentMaterial@{GeometryEngine::GeometryMaterial::TransparentMaterial}}
+
+
+Class that represents a material that may contain transparencies. Implements Custom\+Shading\+Interface so child classes can implement their own shadow\+Map shaders.  
+
+
+
+
+{\ttfamily \#include $<$Transparent\+Material.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Transparent\+Material\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.704718cm]{class_geometry_engine_1_1_geometry_material_1_1_transparent_material}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_abbc191aa9453c1279319e53766fd5dc4}{Transparent\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$const custom\+Shading, float threshold\+Value=0.\+0f, float global\+Alpha\+Value=1.\+0f, float shininess=10.\+0f, bool translucent=false)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a1687629a2e24bc6b2ef6971723111eee}{Transparent\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material}{Transparent\+Material}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a7a71619c3cb1214c1b3e31fd752341e2}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a7a71619c3cb1214c1b3e31fd752341e2}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a7a71619c3cb1214c1b3e31fd752341e2}{$\sim$\+Transparent\+Material}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a54f17a71f747afdc27c3712a591cf4ab}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a54f17a71f747afdc27c3712a591cf4ab}} 
+float {\bfseries Get\+Threshold\+Value} ()
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_acbf5bf9a51d111ad8d020755716d13d1}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_acbf5bf9a51d111ad8d020755716d13d1}} 
+float {\bfseries Get\+Global\+Alpha} ()
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_afc7175239967f643813558883b80a732}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_afc7175239967f643813558883b80a732}} 
+void {\bfseries Set\+Threshold\+Value} (float threshold\+Value)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a45cacc645954431aeccc862412de34f7}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a45cacc645954431aeccc862412de34f7}} 
+void {\bfseries Set\+Global\+Alpha} (float global\+Alpha)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a79bd48c5e5ab2e5f4768d5ee5d4e9aa6}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a79bd48c5e5ab2e5f4768d5ee5d4e9aa6}} 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a79bd48c5e5ab2e5f4768d5ee5d4e9aa6}{Is\+Transparent}} () override
+\begin{DoxyCompactList}\small\item\em Returns whether the material allows transparencies. Overrides the parent method to return true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a8f1c79252a956b5ff856cb65dafdf86b}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a8f1c79252a956b5ff856cb65dafdf86b}} 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a8f1c79252a956b5ff856cb65dafdf86b}{Is\+Translucent}} () override
+\begin{DoxyCompactList}\small\item\em Returns whether translucent shadowing should be applied to this material or not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_aea8dc6fea6f642b67a7479ebb7921e23}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_aea8dc6fea6f642b67a7479ebb7921e23}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_aea8dc6fea6f642b67a7479ebb7921e23}{Set\+Translucent}} (bool is\+Translucent)
+\begin{DoxyCompactList}\small\item\em Sets whether translucent shadowing should be applied to this material or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_ac27f7c3f5604b030abbbfc21cbe31890}{Transparent\+Material}} ()
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a89eaec3ce50fbca5e56edcbe3f3cde6f}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material}{Transparent\+Material}} \&mat)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_ad7182a65cc6564b203248f890a165c1d}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_ad7182a65cc6564b203248f890a165c1d}} 
+float {\bfseries m\+Threshold\+Value}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a6ad3ebcd85fddb914e1613149cf5bdc2}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a6ad3ebcd85fddb914e1613149cf5bdc2}} 
+float {\bfseries m\+Global\+Alpha\+Value}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_acb52de4a47e810e1f25f267742067c53}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_acb52de4a47e810e1f25f267742067c53}} 
+bool {\bfseries m\+Is\+Translucent}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that represents a material that may contain transparencies. Implements Custom\+Shading\+Interface so child classes can implement their own shadow\+Map shaders. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_abbc191aa9453c1279319e53766fd5dc4}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_abbc191aa9453c1279319e53766fd5dc4}} 
+\index{GeometryEngine::GeometryMaterial::TransparentMaterial@{GeometryEngine::GeometryMaterial::TransparentMaterial}!TransparentMaterial@{TransparentMaterial}}
+\index{TransparentMaterial@{TransparentMaterial}!GeometryEngine::GeometryMaterial::TransparentMaterial@{GeometryEngine::GeometryMaterial::TransparentMaterial}}
+\subsubsection{\texorpdfstring{TransparentMaterial()}{TransparentMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Transparent\+Material\+::\+Transparent\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$const}]{custom\+Shading,  }\item[{float}]{threshold\+Value = {\ttfamily 0.0f},  }\item[{float}]{global\+Alpha\+Value = {\ttfamily 1.0f},  }\item[{float}]{shininess = {\ttfamily 10.0f},  }\item[{bool}]{translucent = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em custom\+Shading} & Interface to an object that implements custom shadow shading for this material \\
+\hline
+{\em threshold\+Value} & Min alpha value below which the fragment is dropped completely. This value is clamped to the range \mbox{[}0, 1\mbox{]} \\
+\hline
+{\em global\+Alpha\+Value} & Global alpha value to be applied to the whole model. This value is multiplied by other posible alphas. This value is clamped to the range \mbox{[}0, 1\mbox{]} \\
+\hline
+{\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess\+If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a1687629a2e24bc6b2ef6971723111eee}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a1687629a2e24bc6b2ef6971723111eee}} 
+\index{GeometryEngine::GeometryMaterial::TransparentMaterial@{GeometryEngine::GeometryMaterial::TransparentMaterial}!TransparentMaterial@{TransparentMaterial}}
+\index{TransparentMaterial@{TransparentMaterial}!GeometryEngine::GeometryMaterial::TransparentMaterial@{GeometryEngine::GeometryMaterial::TransparentMaterial}}
+\subsubsection{\texorpdfstring{TransparentMaterial()}{TransparentMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Transparent\+Material\+::\+Transparent\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material}{Transparent\+Material}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_ac27f7c3f5604b030abbbfc21cbe31890}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_ac27f7c3f5604b030abbbfc21cbe31890}} 
+\index{GeometryEngine::GeometryMaterial::TransparentMaterial@{GeometryEngine::GeometryMaterial::TransparentMaterial}!TransparentMaterial@{TransparentMaterial}}
+\index{TransparentMaterial@{TransparentMaterial}!GeometryEngine::GeometryMaterial::TransparentMaterial@{GeometryEngine::GeometryMaterial::TransparentMaterial}}
+\subsubsection{\texorpdfstring{TransparentMaterial()}{TransparentMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Transparent\+Material\+::\+Transparent\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Empty constructor Called from child objects copy constructor to avoid double initialization 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a89eaec3ce50fbca5e56edcbe3f3cde6f}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a89eaec3ce50fbca5e56edcbe3f3cde6f}} 
+\index{GeometryEngine::GeometryMaterial::TransparentMaterial@{GeometryEngine::GeometryMaterial::TransparentMaterial}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryMaterial::TransparentMaterial@{GeometryEngine::GeometryMaterial::TransparentMaterial}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Transparent\+Material\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material}{Transparent\+Material}} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} object to the current object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} to be copied \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Transparent\+Material.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/Transparent\+Material.\+cpp\end{DoxyCompactItemize}

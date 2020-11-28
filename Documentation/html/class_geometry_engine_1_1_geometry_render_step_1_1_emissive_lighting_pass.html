@@ -140,8 +140,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a437ff10a7ef9e7529a4852389a5cf871 inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d0a0f3b9d52036b9d4f9fbee353cd10 inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a9d0a0f3b9d52036b9d4f9fbee353cd10">applyLight</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> * &gt; *lights)</td></tr>
 <tr class="separator:a9d0a0f3b9d52036b9d4f9fbee353cd10 inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae55cc29215ac54a526d9107f4e1f2803 inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#ae55cc29215ac54a526d9107f4e1f2803">applySingleLight</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, const <a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html">GBufferTextureInfo</a> &amp;gBuf, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> *light)</td></tr>
-<tr class="separator:ae55cc29215ac54a526d9107f4e1f2803 inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a958341b3bf1f95dfb56bc5b2833813b0 inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a958341b3bf1f95dfb56bc5b2833813b0">applySingleLight</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, const <a class="el" href="class_geometry_engine_1_1_buffers_info.html">BuffersInfo</a> &amp;buff, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> *light)</td></tr>
+<tr class="separator:a958341b3bf1f95dfb56bc5b2833813b0 inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa30f6513bececfbaeb5ce7ec7e0d370d inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#aa30f6513bececfbaeb5ce7ec7e0d370d">calculateLighting</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> *light, const QMatrix4x4 &amp;projectionMatrix, const QMatrix4x4 &amp;viewMatrix, const <a class="el" href="class_geometry_engine_1_1_buffers_info.html">BuffersInfo</a> &amp;buffTexInfo, const QVector3D &amp;viewPos)</td></tr>
+<tr class="separator:aa30f6513bececfbaeb5ce7ec7e0d370d inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a980473c9d2e2e77ebdce9e56454f3d3f inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass"><td class="memItemLeft" align="right" valign="top"><a id="a980473c9d2e2e77ebdce9e56454f3d3f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a980473c9d2e2e77ebdce9e56454f3d3f">finishStep</a> ()</td></tr>
 <tr class="memdesc:a980473c9d2e2e77ebdce9e56454f3d3f inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the OpenGl pipeline to its original state. <br /></td></tr>
@@ -207,7 +209,12 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_wo
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copy constructor param ref Geometry pass to be copied </p>
+<p>Copy constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td>Geometry pass to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -234,7 +241,7 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_wo
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Factory method. Returns a copy of this object. return A copy of this object. </p>
+<p>Factory method. Returns a copy of this object. </p><dl class="section return"><dt>Returns</dt><dd>A copy of this object. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a4f1cb36c7bf6a90d0aa3b8e8feba5e5e">GeometryEngine::GeometryRenderStep::LightingPass</a>.</p>
 
@@ -263,7 +270,12 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_wo
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copies the data from a <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry.">LightingPass</a> into this object param ref <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry.">LightingPass</a> to be copied </p>
+<p>Copies the data from a <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry.">LightingPass</a> into this object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry.">LightingPass</a> to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -306,7 +318,14 @@ std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_wo
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Executes the render step param cam Pointer to camera to be rendered param items Set of items to be rendered param lights Set of lights in the scene. This lights will not be used in this step. </p>
+<p>Executes the render step </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam</td><td>Pointer to camera to be rendered </td></tr>
+    <tr><td class="paramname">items</td><td>Set of items to be rendered </td></tr>
+    <tr><td class="paramname">lights</td><td>Set of lights in the scene. This lights will not be used in this step. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented from <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#ae6d9fa99f67e659839ca310947787f52">GeometryEngine::GeometryRenderStep::LightingPass</a>.</p>
 

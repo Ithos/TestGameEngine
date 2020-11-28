@@ -172,7 +172,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adds a color buffer attached to an OpenGl color attachment if the Framebuffer is attached parameter bufferSize Size of the buffer parameter attachment Attachment where the texture will be attached return true if the FBO is bound false if it isn't </p>
+<p>Adds a color buffer attached to an OpenGl color attachment if the Framebuffer is attached \parameter bufferSize Size of the buffer \parameter attachment Attachment where the texture will be attached </p><dl class="section return"><dt>Returns</dt><dd>true if the FBO is bound false if it isn't </dd></dl>
 
 </div>
 </div>
@@ -191,7 +191,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adds a null texture attached to an OpenGl color attachment if the Framebuffer is attached parameter attachment Attachment where the texture will be attached return true if the FBO is bound false if it isn't </p>
+<p>Adds a null texture attached to an OpenGl color attachment if the Framebuffer is attached \parameter attachment Attachment where the texture will be attached </p><dl class="section return"><dt>Returns</dt><dd>true if the FBO is bound false if it isn't </dd></dl>
 
 </div>
 </div>
@@ -220,7 +220,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adds a color texture attached to an OpenGl color attachment if the Framebuffer is attached parameter textureSize Size of the texture parameter attachment Attachment where the texture will be attached return true if the FBO is bound false if it isn't </p>
+<p>Adds a color texture attached to an OpenGl color attachment if the Framebuffer is attached \parameter textureSize Size of the texture \parameter attachment Attachment where the texture will be attached </p><dl class="section return"><dt>Returns</dt><dd>true if the FBO is bound false if it isn't </dd></dl>
 
 </div>
 </div>
@@ -255,7 +255,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adds a color texture attached to an OpenGl color attachment if the Framebuffer is attached parameter textureSize Size of the texture parameter borderColor Border color of the texture parameter attachment Attachment where the texture will be attached return true if the FBO is bound false if it isn't </p>
+<p>Adds a color texture attached to an OpenGl color attachment if the Framebuffer is attached \parameter textureSize Size of the texture \parameter borderColor Border color of the texture \parameter attachment Attachment where the texture will be attached </p><dl class="section return"><dt>Returns</dt><dd>true if the FBO is bound false if it isn't </dd></dl>
 
 </div>
 </div>
@@ -274,7 +274,12 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Binds the FBO param bind type of binding to be used </p>
+<p>Binds the FBO </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bind</td><td>type of binding to be used </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -292,7 +297,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Remove current draw targets return true if the framebuffer is bound for drawing false otherwise </p>
+<p>Remove current draw targets </p><dl class="section return"><dt>Returns</dt><dd>true if the framebuffer is bound for drawing false otherwise </dd></dl>
 
 </div>
 </div>
@@ -310,7 +315,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Remove current read targets return true if the framebuffer is bound for reading false otherwise </p>
+<p>Remove current read targets </p><dl class="section return"><dt>Returns</dt><dd>true if the framebuffer is bound for reading false otherwise </dd></dl>
 
 </div>
 </div>
@@ -329,7 +334,13 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Specify which color buffers are to be drawn into param index Index of the render target in the list return true if the index exists and the framebuffer is bound for drawing false othewise </p>
+<p>Specify which color buffers are to be drawn into </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index of the render target in the list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the index exists and the framebuffer is bound for drawing false othewise </dd></dl>
 
 </div>
 </div>
@@ -358,7 +369,14 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Specify which color buffers are to be drawn into param indices Array of indices of the render targets in the list param lenght Lenght of the array return true if all the indices exist and the framebuffer is bound for drawing false othewise </p>
+<p>Specify which color buffers are to be drawn into </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indices</td><td>Array of indices of the render targets in the list </td></tr>
+    <tr><td class="paramname">lenght</td><td>Lenght of the array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if all the indices exist and the framebuffer is bound for drawing false othewise </dd></dl>
 
 </div>
 </div>
@@ -377,7 +395,13 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returs a pointer to a render target in the framebuffer param index Index of the render target in the list return pointer to a render target in the framebuffer or null if the index is outside of the inner list </p>
+<p>Returs a pointer to a render target in the framebuffer </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index of the render target in the list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to a render target in the framebuffer or null if the index is outside of the inner list </dd></dl>
 
 </div>
 </div>
@@ -396,7 +420,13 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Specify which color buffers are to be read from param index Index of the render target in the list return true if the index exists false and the framebuffer is bound for reading othewise </p>
+<p>Specify which color buffers are to be read from </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index of the render target in the list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the index exists false and the framebuffer is bound for reading othewise </dd></dl>
 
 </div>
 </div>
@@ -425,7 +455,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates a new depth buffer if the FBO is attached. If a depth buffer already exists it's destroyed and replaced by a new one parameter bufferSize Size of the buffer parameter attachment Attachment where the texture will be attached return true if the FBO is bound false if it isn't </p>
+<p>Creates a new depth buffer if the FBO is attached. If a depth buffer already exists it's destroyed and replaced by a new one \parameter bufferSize Size of the buffer \parameter attachment Attachment where the texture will be attached </p><dl class="section return"><dt>Returns</dt><dd>true if the FBO is bound false if it isn't </dd></dl>
 
 </div>
 </div>
@@ -454,7 +484,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates a new depth texture if the FBO is attached. If a depth texture already exists it's destroyed and replaced by a new one parameter textureSize Size of the texture parameter attachment Attachment where the texture will be attached return true if the FBO is bound false if it isn't </p>
+<p>Creates a new depth texture if the FBO is attached. If a depth texture already exists it's destroyed and replaced by a new one \parameter textureSize Size of the texture \parameter attachment Attachment where the texture will be attached </p><dl class="section return"><dt>Returns</dt><dd>true if the FBO is bound false if it isn't </dd></dl>
 
 </div>
 </div>

@@ -62,12 +62,12 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor 
-			/// param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininess. If shininess is <= 0 it is set to 0.001 to avoid errors in the shaders. 
-			/// param customShading Interface to an object that implements custom shadow shading for this material.
+			/// \param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininess. If shininess is <= 0 it is set to 0.001 to avoid errors in the shaders. 
+			/// \param customShading Interface to an object that implements custom shadow shading for this material.
 			Material(float shininess = 10.0f, const CustomShading::CustomShadingInterface* const customShading = nullptr);
 
 			/// Copy constructor
-			/// param ref Object to be copied.
+			/// \param ref Object to be copied.
 			Material(const Material& mat);
 
 			/// Destructor
@@ -76,17 +76,17 @@ namespace GeometryEngine
 			void SetShininess(float shininess) { mShininess = checkShininessValue(shininess); }
 
 			/// Render material shaders
-			/// param vertexBuf Pointer to the vertex buffer
-			/// param indexBuffer Pointer to the index buffer
-			/// param totalVertexNumber Total amount of vertices
-			/// param totalIndexNumberTotal amount of indices
-			/// param projection Projection Matrix
-			/// param view View matrix
-			/// param parent Parent geometry item
+			/// \param vertexBuf Pointer to the vertex buffer
+			/// \param indexBuffer Pointer to the index buffer
+			/// \param totalVertexNumber Total amount of vertices
+			/// \param totalIndexNumberTotal amount of indices
+			/// \param projection Projection Matrix
+			/// \param view View matrix
+			/// \param parent Parent geometry item
 			virtual void Draw(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber,
 				const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryWorldItem::GeometryItem::GeometryItem& parent);
 			/// Abstract method. Factory method. Creates a copy of this object
-			/// return Pointer to a copy of this object
+			/// \return Pointer to a copy of this object
 			virtual Material* Clone() const = 0;
 
 			/// Returns whether the material allows transparencies. Method to be overwritten by child classes. By default returns false.
@@ -121,25 +121,25 @@ namespace GeometryEngine
 			/// Loads and compiles material shader program
 			virtual void initProgram();
 			/// Copies the data of a Material object to the current object
-			/// param ref Material to be copied
+			/// \param ref Material to be copied
 			virtual void copy(const Material& mat);
 
 			/// Abstract method. Sends parameters to the shaders.
-			/// param projection Projection matrix
-			/// param view View matrix			 
-			/// param parent geometry item
+			/// \param projection Projection matrix
+			/// \param view View matrix			 
+			/// \param parent geometry item
 			virtual void setProgramParameters(const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryWorldItem::GeometryItem::GeometryItem& parent) = 0;
 			/// Abstract method. Binds shaders and draws.
-			/// param vertexBuf Vertex buffer
-			/// param indexBuf IndexBuffer
-			/// param totalVertexNum Number of vetices
-			/// param titalIndexNum Number of indices
+			/// \param vertexBuf Vertex buffer
+			/// \param indexBuf IndexBuffer
+			/// \param totalVertexNum Number of vetices
+			/// \param titalIndexNum Number of indices
 			virtual void drawMaterial(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) = 0;
 			/// Applies internal modifiers and calls draw material.
-			/// param vertexBuf Vertex buffer
-			/// param indexBuf IndexBuffer
-			/// param totalVertexNum Number of vetices
-			/// param titalIndexNum Number of indices
+			/// \param vertexBuf Vertex buffer
+			/// \param indexBuf IndexBuffer
+			/// \param totalVertexNum Number of vetices
+			/// \param titalIndexNum Number of indices
 			virtual void modifyDrawMaterial(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber);
 		private:
 			float checkShininessValue(float shininessValue) { if (shininessValue <= 0.0f) return 0.0001f; return shininessValue; }

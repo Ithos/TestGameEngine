@@ -14,14 +14,14 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor 
-			/// param customShading Interface to an object that implements custom shadow shading for this material
-			/// param thresholdValue Min alpha value below which the fragment is dropped completely. This value is clamped to the range [0, 1]
-			/// param globalAlphaValue Global alpha value to be applied to the whole model. This value is multiplied by other posible alphas. This value is clamped to the range [0, 1]
-			/// param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininessIf shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
+			/// \param customShading Interface to an object that implements custom shadow shading for this material
+			/// \param thresholdValue Min alpha value below which the fragment is dropped completely. This value is clamped to the range [0, 1]
+			/// \param globalAlphaValue Global alpha value to be applied to the whole model. This value is multiplied by other posible alphas. This value is clamped to the range [0, 1]
+			/// \param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininessIf shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
 			TransparentMaterial(const CustomShading::CustomShadingInterface* const customShading, float thresholdValue = 0.0f, float globalAlphaValue = 1.0f, 
 				float shininess = 10.0f, bool translucent = false);
 			/// Copy constructor
-			/// param ref Object to be copied.
+			/// \param ref Object to be copied.
 			TransparentMaterial(const TransparentMaterial& ref);
 			/// Destructor
 			virtual ~TransparentMaterial();
@@ -49,12 +49,12 @@ namespace GeometryEngine
 			///Called from child objects copy constructor to avoid double initialization 
 			TransparentMaterial() {}
 			/// Copies the data of a Material object to the current object
-			/// param ref Material to be copied
+			/// \param ref Material to be copied
 			void copy(const TransparentMaterial & mat);
 		private:
 			/// Clamps a candidate alpha value to the range [0, 1]
-			/// param alphaValue Candidate alpha value
-			/// return value clamped to range [0, 1]
+			/// \param alphaValue Candidate alpha value
+			/// \return value clamped to range [0, 1]
 			float checkAlphaValue(float alphaValue);
 
 		};

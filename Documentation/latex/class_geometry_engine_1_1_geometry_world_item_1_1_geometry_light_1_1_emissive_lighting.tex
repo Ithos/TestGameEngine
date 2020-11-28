@@ -13,7 +13,7 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+L
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting_a50dbde1e7a06662e05bd9732b040b845}{Emissive\+Lighting}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$bounding\+Box=nullptr, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$parent=nullptr)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting_a224b3b3fd70066beab9f7229c7c45783}{Emissive\+Lighting}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$bounding\+Box=nullptr, const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Utils\+::\+Light\+Component\+Manager}} $\ast$const manager=nullptr, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$parent=nullptr)
 \item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting_aac76201e50ff6a2a62ec84225c7bffaa}{Emissive\+Lighting}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting}{Emissive\+Lighting}} \&ref)
 \item 
@@ -29,19 +29,33 @@ virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geome
 Class that draws the emissive colors and textures of the scene This class expects a 2D bounding geometry that will be rendered in front of the camera, applying the light like a filter. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting_a50dbde1e7a06662e05bd9732b040b845}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting_a50dbde1e7a06662e05bd9732b040b845}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting_a224b3b3fd70066beab9f7229c7c45783}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting_a224b3b3fd70066beab9f7229c7c45783}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting@{GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting}!EmissiveLighting@{EmissiveLighting}}
 \index{EmissiveLighting@{EmissiveLighting}!GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting@{GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting}}
 \subsubsection{\texorpdfstring{EmissiveLighting()}{EmissiveLighting()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Emissive\+Lighting\+::\+Emissive\+Lighting (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{bounding\+Box = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Emissive\+Lighting\+::\+Emissive\+Lighting (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{bounding\+Box = {\ttfamily nullptr},  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Utils\+::\+Light\+Component\+Manager}} $\ast$const}]{manager = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
 
-Constructor param bounding\+Box Geomtry used to render the light. \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} will be applied to every part of the scene that the geometry is drawn on top of. This class expects a 2D bounding geometry that will be rendered in front of the camera, applying the light like a filter. param parent Pointer to this items parent item, nullptr if none. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting_aac76201e50ff6a2a62ec84225c7bffaa}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting_aac76201e50ff6a2a62ec84225c7bffaa}} 
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em bounding\+Box} & Geomtry used to render the light. \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} will be applied to every part of the scene that the geometry is drawn on top of. This class expects a 2D bounding geometry that will be rendered in front of the camera, applying the light like a filter. \\
+\hline
+{\em manager} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} functionalities manager, defaults to nullptr. \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting_aac76201e50ff6a2a62ec84225c7bffaa}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting_aac76201e50ff6a2a62ec84225c7bffaa}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting@{GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting}!EmissiveLighting@{EmissiveLighting}}
 \index{EmissiveLighting@{EmissiveLighting}!GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting@{GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting}}
 \subsubsection{\texorpdfstring{EmissiveLighting()}{EmissiveLighting()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Emissive\+Lighting\+::\+Emissive\+Lighting (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting}{Emissive\+Lighting}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting}{Emissive\+Lighting}} to be copied 
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting}{Emissive\+Lighting}} to be copied \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting_ac7e3e90cadf700764fccdacc94238bac}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting_ac7e3e90cadf700764fccdacc94238bac}} 
@@ -50,7 +64,10 @@ Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_en
 \subsubsection{\texorpdfstring{Clone()}{Clone()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_emissive_lighting}{Emissive\+Lighting}}$\ast$ Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Emissive\+Lighting\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-Factory method. Returns a copy of this object. return A copy of this object. 
+Factory method. Returns a copy of this object. \begin{DoxyReturn}{Returns}
+A copy of this object. 
+\end{DoxyReturn}
+
 
 Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_a7ef4d7b7a41cbda01a55bcb0475484d3}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Deferred\+Shading\+Light}}.
 

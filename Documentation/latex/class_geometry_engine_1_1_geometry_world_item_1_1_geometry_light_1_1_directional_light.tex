@@ -13,7 +13,7 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+L
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_ab11752fa06e7f257334bf12cab849139}{Directional\+Light}} (const Q\+Vector3D \&direction, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$bounding\+Box=nullptr, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&pos=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), World\+Item $\ast$parent=nullptr)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_ac85f53b0abb002ec8406755b9177cf53}{Directional\+Light}} (const Q\+Vector3D \&direction, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$bounding\+Box=nullptr, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&pos=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Light\+Utils\+::\+Light\+Component\+Manager $\ast$const manager=nullptr, World\+Item $\ast$parent=nullptr)
 \item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_a51bac310074f6315122e23c2d9e28d6f}{Directional\+Light}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light}{Directional\+Light}} \&ref)
 \item 
@@ -34,7 +34,7 @@ virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geome
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_a0488db9f38fe4382ed9e1b73a4b4eff7}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_a0488db9f38fe4382ed9e1b73a4b4eff7}} 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_a0488db9f38fe4382ed9e1b73a4b4eff7}{init\+Light\+Shaders}} ()
 \begin{DoxyCompactList}\small\item\em Sets the keys for the light shaders. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_ae395d609ee47dd5d399514bb2c76d2db}{set\+Program\+Parameters}} (const \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}} \&transform\+Data, const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info, const Q\+Vector3D \&view\+Pos)
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_a63668286e9b1cef5358c8d8f931a733c}{set\+Program\+Parameters}} (const \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}} \&transform\+Data, const \mbox{\hyperlink{class_geometry_engine_1_1_buffers_info}{Buffers\+Info}} \&buff\+Info, const Q\+Vector3D \&view\+Pos) override
 \item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_af1eac6f1aac9388efe95e1a898cf600f}{calculate\+Contribution}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Num, unsigned int total\+Index\+Num)
 \item 
@@ -52,19 +52,47 @@ Q\+Vector3D {\bfseries m\+Direction}
 Class that defines a global ligthsource on the scene with a direction for reflection generally used as sunlight This class expects a 2D bounding geometry that will be rendered in front of the camera, applying the light like a filter. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_ab11752fa06e7f257334bf12cab849139}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_ab11752fa06e7f257334bf12cab849139}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_ac85f53b0abb002ec8406755b9177cf53}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_ac85f53b0abb002ec8406755b9177cf53}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight}!DirectionalLight@{DirectionalLight}}
 \index{DirectionalLight@{DirectionalLight}!GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight}}
 \subsubsection{\texorpdfstring{DirectionalLight()}{DirectionalLight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Light\+::\+Directional\+Light (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{direction,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{bounding\+Box = {\ttfamily nullptr},  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Light\+::\+Directional\+Light (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{direction,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{bounding\+Box = {\ttfamily nullptr},  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Utils\+::\+Light\+Component\+Manager}} $\ast$const}]{manager = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
 
-Constructor param direction light direction vector param bounding\+Box Geomtry used to render the light. \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} will be applied to every part of the scene that the geometry is drawn on top of. This class expects a 2D bounding geometry that will be rendered in front of the camera, applying the light like a filter. param diffuse Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 param ambient Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 param specular Specular component of the light. Each color goes from 0.\+0 to 1.\+0 param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_a51bac310074f6315122e23c2d9e28d6f}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_a51bac310074f6315122e23c2d9e28d6f}} 
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em direction} & light direction vector \\
+\hline
+{\em bounding\+Box} & Geomtry used to render the light. \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} will be applied to every part of the scene that the geometry is drawn on top of. This class expects a 2D bounding geometry that will be rendered in front of the camera, applying the light like a filter. \\
+\hline
+{\em diffuse} & Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em ambient} & Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em pos} & Initial position of the item \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em scale} & Initial scale to be applied to this item model \\
+\hline
+{\em manager} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} functionalities manager, defaults to nullptr. \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_a51bac310074f6315122e23c2d9e28d6f}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_a51bac310074f6315122e23c2d9e28d6f}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight}!DirectionalLight@{DirectionalLight}}
 \index{DirectionalLight@{DirectionalLight}!GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight}}
 \subsubsection{\texorpdfstring{DirectionalLight()}{DirectionalLight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Light\+::\+Directional\+Light (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light}{Directional\+Light}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light}{Directional\+Light}} to be copied 
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light}{Directional\+Light}} to be copied \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_af1eac6f1aac9388efe95e1a898cf600f}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_af1eac6f1aac9388efe95e1a898cf600f}} 
@@ -73,7 +101,18 @@ Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_en
 \subsubsection{\texorpdfstring{calculateContribution()}{calculateContribution()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Light\+::calculate\+Contribution (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Num,  }\item[{unsigned int}]{total\+Index\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Binds shaders and draws. param vertex\+Buf Array buffer param index\+Buf Index\+Buffer param total\+Vertex\+Num Number of vetices param tital\+Index\+Num Number of indices 
+Binds shaders and draws. 
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Buf} & Array buffer \\
+\hline
+{\em index\+Buf} & Index\+Buffer \\
+\hline
+{\em total\+Vertex\+Num} & Number of vetices \\
+\hline
+{\em tital\+Index\+Num} & Number of indices \\
+\hline
+\end{DoxyParams}
+
 
 Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a58aa2a3520f7aa2b03afcb4123e7530a}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}}.
 
@@ -83,7 +122,10 @@ Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_ge
 \subsubsection{\texorpdfstring{Clone()}{Clone()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light}{Directional\+Light}}$\ast$ Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Light\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-Factory method. Returns a copy of this object. return A copy of this object. 
+Factory method. Returns a copy of this object. \begin{DoxyReturn}{Returns}
+A copy of this object. 
+\end{DoxyReturn}
+
 
 Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_deferred_shading_light_a7ef4d7b7a41cbda01a55bcb0475484d3}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Deferred\+Shading\+Light}}.
 
@@ -93,15 +135,29 @@ Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_ge
 \subsubsection{\texorpdfstring{copy()}{copy()}}
 {\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Light\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light}{Directional\+Light}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light}{Directional\+Light}} into this object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light}{Directional\+Light}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_ae395d609ee47dd5d399514bb2c76d2db}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_ae395d609ee47dd5d399514bb2c76d2db}} 
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light}{Directional\+Light}} into this object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light}{Directional\+Light}} to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_a63668286e9b1cef5358c8d8f931a733c}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_light_a63668286e9b1cef5358c8d8f931a733c}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight}!setProgramParameters@{setProgramParameters}}
 \index{setProgramParameters@{setProgramParameters}!GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalLight}}
 \subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Light\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}} \&}]{transform\+Data,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info,  }\item[{const Q\+Vector3D \&}]{view\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Light\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}} \&}]{transform\+Data,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_buffers_info}{Buffers\+Info}} \&}]{buff\+Info,  }\item[{const Q\+Vector3D \&}]{view\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Sends parameters to the shaders. param transform\+Data Matrices of the light param \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} Data from the textures of the geometry buffer param view\+Pos Position of the camera 
+Sends parameters to the shaders. 
+\begin{DoxyParams}{Parameters}
+{\em transform\+Data} & Matrices of the light \\
+\hline
+{\em buff\+Info} & Data from the textures of the buffers \\
+\hline
+{\em view\+Pos} & Position of the camera \\
+\hline
+\end{DoxyParams}
 
-Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a366be5945389fe58df4bf5aa8c43138f}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}}.
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a108d5b6143e4c55113f7656224f9799f}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}}.
 
 
 

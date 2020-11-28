@@ -12,7 +12,7 @@ Renders geometry without illumination.
 Inheritance diagram for Geometry\+Engine\+::Geometry\+Render\+Step\+::Geometry\+Pass\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass}
+\includegraphics[height=4.000000cm]{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -36,7 +36,7 @@ virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_rend
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a23575018d6032000ac8f2751efcc2240}\label{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a23575018d6032000ac8f2751efcc2240}} 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a23575018d6032000ac8f2751efcc2240}{init\+Step}} ()
 \begin{DoxyCompactList}\small\item\em Initializes the Open\+Gl pipeline. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a2929c4675eb93efd992739baac565425}{render\+Geometry}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items)
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a2929c4675eb93efd992739baac565425}{render\+Geometry}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items)
 \item 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a0e3189d5f441ada51ef31e09f100e270}{draw\+Item}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$item)
 \item 
@@ -56,7 +56,12 @@ Renders geometry without illumination.
 \subsubsection{\texorpdfstring{GeometryPass()}{GeometryPass()}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass\+::\+Geometry\+Pass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass}{Geometry\+Pass}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Copy constructor param ref Geometry pass to be copied 
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Geometry pass to be copied \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_af37e4ae472e97482eed93fc443438b2e}\label{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_af37e4ae472e97482eed93fc443438b2e}} 
@@ -65,15 +70,32 @@ Copy constructor param ref Geometry pass to be copied
 \subsubsection{\texorpdfstring{checkRenderGroups()}{checkRenderGroups()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass\+::check\+Render\+Groups (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-Method that checks if the item and the camera are in the same render group. Used to decide if an item should be rendered param cam Pointer to camera to be rendered param item Item to be rendered return true if both are in the same render group false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a12e85a0169cb7b92cb8bd7b7fe100b33}\label{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a12e85a0169cb7b92cb8bd7b7fe100b33}} 
+Method that checks if the item and the camera are in the same render group. Used to decide if an item should be rendered 
+\begin{DoxyParams}{Parameters}
+{\em cam} & Pointer to camera to be rendered \\
+\hline
+{\em item} & Item to be rendered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if both are in the same render group false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a12e85a0169cb7b92cb8bd7b7fe100b33}\label{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a12e85a0169cb7b92cb8bd7b7fe100b33}} 
 \index{GeometryEngine::GeometryRenderStep::GeometryPass@{GeometryEngine::GeometryRenderStep::GeometryPass}!Clone@{Clone}}
 \index{Clone@{Clone}!GeometryEngine::GeometryRenderStep::GeometryPass@{GeometryEngine::GeometryRenderStep::GeometryPass}}
 \subsubsection{\texorpdfstring{Clone()}{Clone()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}}$\ast$ Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Factory method. Returns a copy of this object. return Acopy of this object. 
+Factory method. Returns a copy of this object. \begin{DoxyReturn}{Returns}
+Acopy of this object. 
+\end{DoxyReturn}
+
 
 Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe33ea9d82c5be11f55af7d39691d44b}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Render\+Step}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a6bfc83f45b84112bbf1beda1ed8e5466}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Geometry\+Pass}}.
 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_ae69b08dfd47ccfcc3888ca53511b660d}\label{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_ae69b08dfd47ccfcc3888ca53511b660d}} 
 \index{GeometryEngine::GeometryRenderStep::GeometryPass@{GeometryEngine::GeometryRenderStep::GeometryPass}!copy@{copy}}
@@ -81,19 +103,40 @@ Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_r
 \subsubsection{\texorpdfstring{copy()}{copy()}}
 {\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass}{Geometry\+Pass}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass}{Geometry\+Pass}} into this object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass}{Geometry\+Pass}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a0e3189d5f441ada51ef31e09f100e270}\label{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a0e3189d5f441ada51ef31e09f100e270}} 
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass}{Geometry\+Pass}} into this object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass}{Geometry\+Pass}} to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a0e3189d5f441ada51ef31e09f100e270}\label{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a0e3189d5f441ada51ef31e09f100e270}} 
 \index{GeometryEngine::GeometryRenderStep::GeometryPass@{GeometryEngine::GeometryRenderStep::GeometryPass}!drawItem@{drawItem}}
 \index{drawItem@{drawItem}!GeometryEngine::GeometryRenderStep::GeometryPass@{GeometryEngine::GeometryRenderStep::GeometryPass}}
 \subsubsection{\texorpdfstring{drawItem()}{drawItem()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass\+::draw\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-Draws an individual item. param cam Pointer to camera to be rendered param item Item to be rendered \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_ac3bfd0a3915cd8a8cd7e1bf81157f6ad}\label{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_ac3bfd0a3915cd8a8cd7e1bf81157f6ad}} 
+Draws an individual item. 
+\begin{DoxyParams}{Parameters}
+{\em cam} & Pointer to camera to be rendered \\
+\hline
+{\em item} & Item to be rendered \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_ac3bfd0a3915cd8a8cd7e1bf81157f6ad}\label{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_ac3bfd0a3915cd8a8cd7e1bf81157f6ad}} 
 \index{GeometryEngine::GeometryRenderStep::GeometryPass@{GeometryEngine::GeometryRenderStep::GeometryPass}!Render@{Render}}
 \index{Render@{Render}!GeometryEngine::GeometryRenderStep::GeometryPass@{GeometryEngine::GeometryRenderStep::GeometryPass}}
 \subsubsection{\texorpdfstring{Render()}{Render()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass\+::\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{lights = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Executes the render step param cam Pointer to camera to be rendered param items Set of items to be rendered param lights Set of lights in the scene. This lights will not be used in this step. 
+Executes the render step 
+\begin{DoxyParams}{Parameters}
+{\em cam} & Pointer to camera to be rendered \\
+\hline
+{\em items} & Set of items to be rendered \\
+\hline
+{\em lights} & Set of lights in the scene. This lights will not be used in this step. \\
+\hline
+\end{DoxyParams}
+
 
 Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a9b054ee8f38304319a9d03ba3e173dcd}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Render\+Step}}.
 
@@ -101,9 +144,20 @@ Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_r
 \index{GeometryEngine::GeometryRenderStep::GeometryPass@{GeometryEngine::GeometryRenderStep::GeometryPass}!renderGeometry@{renderGeometry}}
 \index{renderGeometry@{renderGeometry}!GeometryEngine::GeometryRenderStep::GeometryPass@{GeometryEngine::GeometryRenderStep::GeometryPass}}
 \subsubsection{\texorpdfstring{renderGeometry()}{renderGeometry()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass\+::render\+Geometry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass\+::render\+Geometry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Draws each item in the set using the camera transformation matrix param cam Pointer to camera to be rendered param items Set of items to be rendered 
+Draws each item in the set using the camera transformation matrix 
+\begin{DoxyParams}{Parameters}
+{\em cam} & Pointer to camera to be rendered \\
+\hline
+{\em items} & Set of items to be rendered \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a22bae026c0e006318d5ab21bdaeeb247}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Geometry\+Pass}}.
+
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

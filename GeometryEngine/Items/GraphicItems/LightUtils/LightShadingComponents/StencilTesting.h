@@ -16,19 +16,19 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor
-			/// param parent Pointer to the CustomShadingInterface that contains it 
-			/// param Value that indicates at which render stepthis shading technique will be used
+			/// \param parent Pointer to the CustomShadingInterface that contains it 
+			/// \param Value that indicates at which render stepthis shading technique will be used
 			StencilTesting(LightComponentManager* parent, LightShading step) : LightShadingComponent(parent, step) {};
 
 			/// Copy constructor
-			/// param ref Object to be copied.
+			/// \param ref Object to be copied.
 			StencilTesting(const LightShadingComponent& ref) { copy(ref); }
 
 			/// Destructor
 			virtual ~StencilTesting() {};
 
 			/// Abstract method. Factory method. Creates a copy of this object
-			/// return Pointer to a copy of this object
+			/// \return Pointer to a copy of this object
 			virtual StencilTesting* Clone(LightComponentManager* parent, LightShading step) const {
 				StencilTesting* cloned = new StencilTesting((*this));
 				cloned->AddToInterface(parent, step);
@@ -36,13 +36,13 @@ namespace GeometryEngine
 			}
 
 			/// Apply Shading step.
-			/// param vertexBuf Expected null as it isn't used
-			/// param indexBuffer Expected null as it isn't used
-			/// param projectionMatrix Projection matrix to be used 
-			/// param viewMatrix ViewMatrix to be used
-			/// param modelMatrix ModelMatrix of the object to be drawn or identity if it's not necessary
-			/// param totalVertexNum Expected 0 as it isn't used
-			/// param totalIndexNum Expected 0 as it isn't used
+			/// \param vertexBuf Expected null as it isn't used
+			/// \param indexBuffer Expected null as it isn't used
+			/// \param projectionMatrix Projection matrix to be used 
+			/// \param viewMatrix ViewMatrix to be used
+			/// \param modelMatrix ModelMatrix of the object to be drawn or identity if it's not necessary
+			/// \param totalVertexNum Expected 0 as it isn't used
+			/// \param totalIndexNum Expected 0 as it isn't used
 			virtual void Render(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix, const QMatrix4x4& modelMatrix,
 				unsigned int totalVertexNum, unsigned int totalIndexNum) override
 			{
@@ -69,9 +69,9 @@ namespace GeometryEngine
 			}
 
 			/// Sends parameters to the shader.
-			/// param projectionMatrix Projection matrix to be used 
-			/// param viewMatrix ViewMatrix to be used
-			/// param modelMatrix ModelMatrix of the object to be drawn or identity if it's not necessary
+			/// \param projectionMatrix Projection matrix to be used 
+			/// \param viewMatrix ViewMatrix to be used
+			/// \param modelMatrix ModelMatrix of the object to be drawn or identity if it's not necessary
 			virtual void setProgramParameters(const QMatrix4x4& projectionMatrix, const QMatrix4x4& viewMatrix, const QMatrix4x4& modelMatrix) override
 			{
 				assert(mpProgram != nullptr && "Stencil Test shadow map program not found");
@@ -82,10 +82,10 @@ namespace GeometryEngine
 			}
 
 			/// Binds shaders and draws.
-			/// param vertexBuf Vertex buffer
-			/// param indexBuf IndexBuffer
-			/// param totalVertexNum Number of vetices
-			/// param titalIndexNum Number of indices
+			/// \param vertexBuf Vertex buffer
+			/// \param indexBuf IndexBuffer
+			/// \param totalVertexNum Number of vetices
+			/// \param titalIndexNum Number of indices
 			virtual void applyShader(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber)
 			{
 				assert(mpProgram != nullptr && "Stencil Test Shadow Map --> Shader ShadowMap program Null");

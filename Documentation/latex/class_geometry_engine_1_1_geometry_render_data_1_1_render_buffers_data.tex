@@ -1,0 +1,59 @@
+\hypertarget{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data}{}\section{Geometry\+Engine\+::Geometry\+Render\+Data\+::Render\+Buffers\+Data Class Reference}
+\label{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data}\index{GeometryEngine::GeometryRenderData::RenderBuffersData@{GeometryEngine::GeometryRenderData::RenderBuffersData}}
+
+
+Class that stores the different render buffers to be used by the scene.  
+
+
+
+
+{\ttfamily \#include $<$Render\+Buffers\+Data.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_af2de15bcb8b807d83f31519057b8235b}\label{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_af2de15bcb8b807d83f31519057b8235b}} 
+{\bfseries Render\+Buffers\+Data} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} \&geometry\+Buffer, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer}{Geometry\+Buffer\+::\+Shading\+Buffer}} $\ast$const shading\+Buffer=nullptr)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_afcf51488122db96a8bd73069f38fa8d1}\label{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_afcf51488122db96a8bd73069f38fa8d1}} 
+{\bfseries Render\+Buffers\+Data} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data}{Render\+Buffers\+Data}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_a4cd5f3d26c9f1ccae37017226e9ff467}\label{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_a4cd5f3d26c9f1ccae37017226e9ff467}} 
+void {\bfseries Init} (unsigned int Max\+Window\+Width, unsigned int Max\+Window\+Height)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_a89090b9a90cdc4f15b2cadbd335f2e16}\label{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_a89090b9a90cdc4f15b2cadbd335f2e16}} 
+void {\bfseries Resize} (unsigned int Window\+Width, unsigned int Window\+Height)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_a6206f9d02543062c5f948c5c88af0cff}\label{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_a6206f9d02543062c5f948c5c88af0cff}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} $\ast$ {\bfseries Get\+Geometry\+Buffer} ()
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_ae79c9bba76b8817188d5181ff03d9faf}\label{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_ae79c9bba76b8817188d5181ff03d9faf}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer}{Geometry\+Buffer\+::\+Shading\+Buffer}} $\ast$ {\bfseries Get\+Shading\+Buffer} ()
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_a28dec8748bafb2812bcd65618b7a632b}\label{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_a28dec8748bafb2812bcd65618b7a632b}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data}{Render\+Buffers\+Data}} $\ast$ {\bfseries Clone} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_a2374fe2ef3836cf3820244132f9ddd2e}\label{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_a2374fe2ef3836cf3820244132f9ddd2e}} 
+void {\bfseries copy} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data}{Render\+Buffers\+Data}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_adc11f04ab04329903cd2016954812ab3}\label{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_adc11f04ab04329903cd2016954812ab3}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} $\ast$ {\bfseries mp\+Geometry\+Buffer}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_af9dd75456d15ee5f1bf3e14fd42463b9}\label{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data_af9dd75456d15ee5f1bf3e14fd42463b9}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer}{Geometry\+Buffer\+::\+Shading\+Buffer}} $\ast$ {\bfseries mp\+Shading\+Buffer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that stores the different render buffers to be used by the scene. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/Render\+Buffers\+Data.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/Render\+Buffers\+Data.\+cpp\end{DoxyCompactItemize}

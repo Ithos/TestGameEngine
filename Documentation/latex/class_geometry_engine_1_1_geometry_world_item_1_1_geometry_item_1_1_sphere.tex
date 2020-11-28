@@ -65,13 +65,37 @@ Geometry item that defines a visual sphere.
 \subsubsection{\texorpdfstring{Sphere()}{Sphere()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Sphere\+::\+Sphere (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} \&}]{mat,  }\item[{float}]{size = {\ttfamily 1.0f},  }\item[{int}]{vertical\+Resolution = {\ttfamily 6},  }\item[{int}]{horizontal\+Resolution = {\ttfamily 12},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
 
-Constructor param mat Material to be used for rendering param size Radius of the sphere param vertical\+Resolution number of horizontal cuts used to define the vertices of the sphere param horizontal resolution number of vertical cuts used to define the vertices of the sphere param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere_a65773e4801ab90a98d73a2905c785fd3}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere_a65773e4801ab90a98d73a2905c785fd3}} 
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Material to be used for rendering \\
+\hline
+{\em size} & Radius of the sphere \\
+\hline
+{\em vertical\+Resolution} & number of horizontal cuts used to define the vertices of the sphere \\
+\hline
+{\em horizontal} & resolution number of vertical cuts used to define the vertices of the sphere \\
+\hline
+{\em pos} & Initial position of the item \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em scale} & Initial scale to be applied to this item model \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere_a65773e4801ab90a98d73a2905c785fd3}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere_a65773e4801ab90a98d73a2905c785fd3}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryItem::Sphere@{GeometryEngine::GeometryWorldItem::GeometryItem::Sphere}!Sphere@{Sphere}}
 \index{Sphere@{Sphere}!GeometryEngine::GeometryWorldItem::GeometryItem::Sphere@{GeometryEngine::GeometryWorldItem::GeometryItem::Sphere}}
 \subsubsection{\texorpdfstring{Sphere()}{Sphere()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Sphere\+::\+Sphere (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere}{Sphere}} \&}]{ref }\end{DoxyParamCaption})}
 
-Copy constructor param ref Object to be copied 
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere_aaf5b7221c60ac1feefaacff14a20c1f3}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere_aaf5b7221c60ac1feefaacff14a20c1f3}} 
@@ -80,7 +104,10 @@ Copy constructor param ref Object to be copied
 \subsubsection{\texorpdfstring{Clone()}{Clone()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Sphere\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Factory method. Creates a copy of this object return Pointer to a copy of this object 
+Factory method. Creates a copy of this object \begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+
 
 Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_a1db8f97339ba49f746b3e0b4c4b02748}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}}.
 
@@ -90,7 +117,12 @@ Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_ge
 \subsubsection{\texorpdfstring{Copy()}{Copy()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Sphere\+::\+Copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere}{Sphere}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere}{Sphere}} into this object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere}{Sphere}} to be copied 
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere}{Sphere}} into this object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere}{Sphere}} to be copied \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

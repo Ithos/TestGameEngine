@@ -20,19 +20,19 @@ namespace TexturesFiles
 	class Textures
 	{
 	public:
-		///Returns the singleton instance if null the singleton has not been initialized
-		///return singleton instance
+		/// Returns the singleton instance if null the singleton has not been initialized
+		/// \return singleton instance
 		static Textures* GetActiveInstance() { return _mpInstance; }
 		///Initializes the singleton instance if it has not been initialized and returns the singleton instance
-		///param texFolder path to the textures folder
-		///param texConfFile name of the textures conf file
-		///return singleton instance
+		/// \param texFolder path to the textures folder
+		/// \param texConfFile name of the textures conf file
+		/// \return singleton instance
 		static Textures* InitInstance(const std::string& texFolder, const std::string& texConfFile);
 		///Destroys the singleton instance if it has been initialized
 		static void DestroyInstance();
 		///Gets the path to a loaded texture. If the texture key has not been defined an assert will trigger
-		///param key texture key
-		///return path to the texture
+		/// \param key texture key
+		/// \return path to the texture
 		const std::string& GetTextureDir(const std::string& key);
 
 	private:
@@ -48,8 +48,8 @@ namespace TexturesFiles
 		///Copy constructor. Declared private so it can't be used.
 		Textures(const Textures& ref){}
 		///Constructor. Calls init.
-		///param texFolder path to the textures folder
-		///param texConfFile name of the textures conf file
+		/// \param texFolder path to the textures folder
+		/// \param texConfFile name of the textures conf file
 		Textures(const std::string& texFolder, const std::string& texConfFile);
 		///Reads config files and fills the textures key value map
 		void init();

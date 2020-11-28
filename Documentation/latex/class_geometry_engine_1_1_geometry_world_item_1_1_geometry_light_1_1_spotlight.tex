@@ -18,7 +18,7 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+L
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_ad7bc16302cf245e1f71d8c9af23d3a20}{Spotlight}} (float max\+Light\+Angle, const Q\+Vector3D \&att\+Params, const Q\+Vector3D \&direction, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$bounding\+Box=nullptr, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&pos=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), World\+Item $\ast$parent=nullptr)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a421172550334c85b4a8c5b129578ea22}{Spotlight}} (float max\+Light\+Angle, const Q\+Vector3D \&att\+Params, const Q\+Vector3D \&direction, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$bounding\+Box=nullptr, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&pos=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Light\+Utils\+::\+Light\+Component\+Manager $\ast$const manager=nullptr, World\+Item $\ast$parent=nullptr)
 \item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a9d503c8da14980a0e7df3c9c0edde42c}{Spotlight}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight}{Spotlight}} \&ref)
 \item 
@@ -33,7 +33,7 @@ virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geome
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a3e9b0e3c458ea56708a16f8f988b01ce}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a3e9b0e3c458ea56708a16f8f988b01ce}} 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a3e9b0e3c458ea56708a16f8f988b01ce}{init\+Light\+Shaders}} ()
 \begin{DoxyCompactList}\small\item\em Sets the keys for the light shaders. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a89686934756cc47dd810cc43d8f5f88a}{set\+Program\+Parameters}} (const \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}} \&transform\+Data, const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info, const Q\+Vector3D \&view\+Pos)
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_aa84b616ae13b58f991e6b86311cd8e9a}{set\+Program\+Parameters}} (const \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}} \&transform\+Data, const \mbox{\hyperlink{class_geometry_engine_1_1_buffers_info}{Buffers\+Info}} \&buff\+Info, const Q\+Vector3D \&view\+Pos)
 \item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a6136ca2338a7b5f5be70ccab82fe655e}{calculate\+Contribution}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Num, unsigned int total\+Index\+Num)
 \item 
@@ -60,19 +60,51 @@ float {\bfseries m\+Max\+Light\+Angle}
 Loacal light that defines a direction, attenuation, and a max angle in which it will be applied. It\textquotesingle{}s normally used for spotlights and torches. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_ad7bc16302cf245e1f71d8c9af23d3a20}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_ad7bc16302cf245e1f71d8c9af23d3a20}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a421172550334c85b4a8c5b129578ea22}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a421172550334c85b4a8c5b129578ea22}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight@{GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight}!Spotlight@{Spotlight}}
 \index{Spotlight@{Spotlight}!GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight@{GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight}}
 \subsubsection{\texorpdfstring{Spotlight()}{Spotlight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Spotlight\+::\+Spotlight (\begin{DoxyParamCaption}\item[{float}]{max\+Light\+Angle,  }\item[{const Q\+Vector3D \&}]{att\+Params,  }\item[{const Q\+Vector3D \&}]{direction,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{bounding\+Box = {\ttfamily nullptr},  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Spotlight\+::\+Spotlight (\begin{DoxyParamCaption}\item[{float}]{max\+Light\+Angle,  }\item[{const Q\+Vector3D \&}]{att\+Params,  }\item[{const Q\+Vector3D \&}]{direction,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{bounding\+Box = {\ttfamily nullptr},  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Utils\+::\+Light\+Component\+Manager}} $\ast$const}]{manager = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
 
-Constructor param max\+Light\+Angle Max angle for the light. Attenuation will be applied based on angle deviation param att\+Params Attenuation polynomial for the light param direction Direction of the light. param bounding\+Box Geomtry used to render the light. \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} will be applied to every part of the scene that the geometry is drawn on top of. param diffuse Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 param ambient Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 param specular Specular component of the light. Each color goes from 0.\+0 to 1.\+0 param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a9d503c8da14980a0e7df3c9c0edde42c}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a9d503c8da14980a0e7df3c9c0edde42c}} 
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em max\+Light\+Angle} & Max angle for the light. Attenuation will be applied based on angle deviation \\
+\hline
+{\em att\+Params} & Attenuation polynomial for the light \\
+\hline
+{\em direction} & Direction of the light. \\
+\hline
+{\em bounding\+Box} & Geomtry used to render the light. \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} will be applied to every part of the scene that the geometry is drawn on top of. \\
+\hline
+{\em diffuse} & Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em ambient} & Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em pos} & Initial position of the item \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em scale} & Initial scale to be applied to this item model \\
+\hline
+{\em manager} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} functionalities manager, defaults to nullptr. \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a9d503c8da14980a0e7df3c9c0edde42c}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a9d503c8da14980a0e7df3c9c0edde42c}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight@{GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight}!Spotlight@{Spotlight}}
 \index{Spotlight@{Spotlight}!GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight@{GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight}}
 \subsubsection{\texorpdfstring{Spotlight()}{Spotlight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Spotlight\+::\+Spotlight (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight}{Spotlight}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight}{Spotlight}} to be copied 
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight}{Spotlight}} to be copied \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a6136ca2338a7b5f5be70ccab82fe655e}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a6136ca2338a7b5f5be70ccab82fe655e}} 
@@ -81,7 +113,18 @@ Copy constructor param ref Const reference to \mbox{\hyperlink{class_geometry_en
 \subsubsection{\texorpdfstring{calculateContribution()}{calculateContribution()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Spotlight\+::calculate\+Contribution (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Num,  }\item[{unsigned int}]{total\+Index\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Binds shaders and draws. param vertex\+Buf Vertex buffer param index\+Buf Index\+Buffer param total\+Vertex\+Num Number of vetices param tital\+Index\+Num Number of indices 
+Binds shaders and draws. 
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Buf} & Vertex buffer \\
+\hline
+{\em index\+Buf} & Index\+Buffer \\
+\hline
+{\em total\+Vertex\+Num} & Number of vetices \\
+\hline
+{\em tital\+Index\+Num} & Number of indices \\
+\hline
+\end{DoxyParams}
+
 
 Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a58aa2a3520f7aa2b03afcb4123e7530a}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}}.
 
@@ -91,7 +134,10 @@ Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_ge
 \subsubsection{\texorpdfstring{Clone()}{Clone()}}
 {\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight}{Spotlight}}$\ast$ Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Spotlight\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-Factory method. Returns a copy of this object. return A copy of this object. 
+Factory method. Returns a copy of this object. \begin{DoxyReturn}{Returns}
+A copy of this object. 
+\end{DoxyReturn}
+
 
 Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light_a6434a228dc64537ff9984c82eaf8ab07}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Stencil\+Test\+Light}}.
 
@@ -101,15 +147,29 @@ Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_ge
 \subsubsection{\texorpdfstring{copy()}{copy()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Spotlight\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight}{Spotlight}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight}{Spotlight}} into this object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight}{Spotlight}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a89686934756cc47dd810cc43d8f5f88a}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_a89686934756cc47dd810cc43d8f5f88a}} 
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight}{Spotlight}} into this object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight}{Spotlight}} to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_aa84b616ae13b58f991e6b86311cd8e9a}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight_aa84b616ae13b58f991e6b86311cd8e9a}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight@{GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight}!setProgramParameters@{setProgramParameters}}
 \index{setProgramParameters@{setProgramParameters}!GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight@{GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight}}
 \subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Spotlight\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}} \&}]{transform\+Data,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info,  }\item[{const Q\+Vector3D \&}]{view\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Spotlight\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}} \&}]{transform\+Data,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_buffers_info}{Buffers\+Info}} \&}]{buff\+Info,  }\item[{const Q\+Vector3D \&}]{view\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Sends parameters to the shaders. param transform\+Data Matrices of the light param \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} Data from the textures of the geometry buffer param view\+Pos Position of the camera 
+Sends parameters to the shaders. 
+\begin{DoxyParams}{Parameters}
+{\em transform\+Data} & Matrices of the light \\
+\hline
+{\em buff\+Info} & Data from the textures of the buffers \\
+\hline
+{\em view\+Pos} & Position of the camera \\
+\hline
+\end{DoxyParams}
 
-Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a366be5945389fe58df4bf5aa8c43138f}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}}.
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a108d5b6143e4c55113f7656224f9799f}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}}.
 
 
 

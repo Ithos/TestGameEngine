@@ -134,7 +134,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the singleton instance if null the singleton has not been initialized return singleton instance </p>
+<p>Returns the singleton instance if null the singleton has not been initialized </p><dl class="section return"><dt>Returns</dt><dd>singleton instance </dd></dl>
 
 </div>
 </div>
@@ -183,7 +183,16 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Initializes the singleton instance if it has not been initialized and returns the singleton instance param vertexFolder path of the folder that contains vertex shader files param fragmentFolder path of the folder that contains fragment shader files param vertexConf name of the vertex shader conf file in which the keys for the vertex shader files are defined param fragmentConf name of the fragment shader conf file in which the keys for the fragment shader files are defined return singleton instance </p>
+<p>Initializes the singleton instance if it has not been initialized and returns the singleton instance </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertexFolder</td><td>path of the folder that contains vertex shader files </td></tr>
+    <tr><td class="paramname">fragmentFolder</td><td>path of the folder that contains fragment shader files </td></tr>
+    <tr><td class="paramname">vertexConf</td><td>name of the vertex shader conf file in which the keys for the vertex shader files are defined </td></tr>
+    <tr><td class="paramname">fragmentConf</td><td>name of the fragment shader conf file in which the keys for the fragment shader files are defined </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>singleton instance </dd></dl>
 
 </div>
 </div>
@@ -202,7 +211,13 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Gets a shader loaded into the singleton map. An assert will be triggered if the shader key has not been loaded. param shader shader key return shader object </p>
+<p>Gets a shader loaded into the singleton map. An assert will be triggered if the shader key has not been loaded. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shader</td><td>shader key </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>shader object </dd></dl>
 
 </div>
 </div>
@@ -221,7 +236,13 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Gets the code of a shader already present in the singleton map. An assert will be triggered if the shader key has not been loaded. param shader shader key return shader code </p>
+<p>Gets the code of a shader already present in the singleton map. An assert will be triggered if the shader key has not been loaded. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shader</td><td>shader key </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>shader code </dd></dl>
 
 </div>
 </div>
@@ -240,7 +261,13 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Checks if a key has been loaded into the singleton map. It doesn't check if the key has beed defined or not. param shader shader key return true if the key has beed loaded into the map </p>
+<p>Checks if a key has been loaded into the singleton map. It doesn't check if the key has beed defined or not. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shader</td><td>shader key </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the key has beed loaded into the map </dd></dl>
 
 </div>
 </div>
@@ -259,7 +286,12 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Loads a shader from a shader key into the singleton map. An assert will be triggered if the shader has been added already or if the shader key has not been defined param shader shader key </p>
+<p>Loads a shader from a shader key into the singleton map. An assert will be triggered if the shader has been added already or if the shader key has not been defined </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shader</td><td>shader key </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -278,7 +310,12 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Removes a shader from the singleton map. an assert will be triggered if the shader has not been loaded previously. param shader shader key </p>
+<p>Removes a shader from the singleton map. an assert will be triggered if the shader has not been loaded previously. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shader</td><td>shader key </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

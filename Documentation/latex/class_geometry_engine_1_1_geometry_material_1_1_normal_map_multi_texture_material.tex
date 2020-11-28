@@ -46,13 +46,33 @@ virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_no
 \subsubsection{\texorpdfstring{NormalMapMultiTextureMaterial()}{NormalMapMultiTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Normal\+Map\+Multi\+Texture\+Material\+::\+Normal\+Map\+Multi\+Texture\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ambient\+Tex\+Dir,  }\item[{const std\+::string \&}]{diffuse\+Tex\+Dir,  }\item[{const std\+::string \&}]{specular\+Tex\+Dir,  }\item[{const std\+::string \&}]{emissive\+Tex\+Dir,  }\item[{const std\+::string \&}]{normal\+Map\+Tex\+Dir,  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})}
 
-Constructor param ambient\+Tex\+Dir Key to a texture that will be used as ambient color param diffuse\+Tex\+Dir Key to a texture that will be used as diffuse color param specular\+Tex\+Dir Key to a texture that will be used as specular color param emissive\+Tex\+Dir Key to a texture that will be used as emissive color param normal\+Map\+Tex\+Dir Key to a texture that contains the object normal map param shininess Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_normal_map_multi_texture_material_a4fbfa762312bb1ffdf00dd16262bb71c}\label{class_geometry_engine_1_1_geometry_material_1_1_normal_map_multi_texture_material_a4fbfa762312bb1ffdf00dd16262bb71c}} 
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em ambient\+Tex\+Dir} & Key to a texture that will be used as ambient color \\
+\hline
+{\em diffuse\+Tex\+Dir} & Key to a texture that will be used as diffuse color \\
+\hline
+{\em specular\+Tex\+Dir} & Key to a texture that will be used as specular color \\
+\hline
+{\em emissive\+Tex\+Dir} & Key to a texture that will be used as emissive color \\
+\hline
+{\em normal\+Map\+Tex\+Dir} & Key to a texture that contains the object normal map \\
+\hline
+{\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_normal_map_multi_texture_material_a4fbfa762312bb1ffdf00dd16262bb71c}\label{class_geometry_engine_1_1_geometry_material_1_1_normal_map_multi_texture_material_a4fbfa762312bb1ffdf00dd16262bb71c}} 
 \index{GeometryEngine::GeometryMaterial::NormalMapMultiTextureMaterial@{GeometryEngine::GeometryMaterial::NormalMapMultiTextureMaterial}!NormalMapMultiTextureMaterial@{NormalMapMultiTextureMaterial}}
 \index{NormalMapMultiTextureMaterial@{NormalMapMultiTextureMaterial}!GeometryEngine::GeometryMaterial::NormalMapMultiTextureMaterial@{GeometryEngine::GeometryMaterial::NormalMapMultiTextureMaterial}}
 \subsubsection{\texorpdfstring{NormalMapMultiTextureMaterial()}{NormalMapMultiTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Normal\+Map\+Multi\+Texture\+Material\+::\+Normal\+Map\+Multi\+Texture\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_normal_map_multi_texture_material}{Normal\+Map\+Multi\+Texture\+Material}} \&}]{mat }\end{DoxyParamCaption})}
 
-Copy constructor param ref Object to be copied. 
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_normal_map_multi_texture_material_a38df455f7369f68ea2fc6abf31488c40}\label{class_geometry_engine_1_1_geometry_material_1_1_normal_map_multi_texture_material_a38df455f7369f68ea2fc6abf31488c40}} 
@@ -61,7 +81,10 @@ Copy constructor param ref Object to be copied.
 \subsubsection{\texorpdfstring{Clone()}{Clone()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Material\+::\+Normal\+Map\+Multi\+Texture\+Material\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Factory method. Creates a copy of this object return Pointer to a copy of this object 
+Factory method. Creates a copy of this object \begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+
 
 Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_multi_texture_material_a66cef99b68270e1399830bc1b8bc8502}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Multi\+Texture\+Material}}.
 

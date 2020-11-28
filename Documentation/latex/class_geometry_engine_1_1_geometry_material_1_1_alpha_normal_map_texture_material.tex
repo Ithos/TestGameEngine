@@ -1,0 +1,158 @@
+\hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material}{}\section{Geometry\+Engine\+::Geometry\+Material\+::Alpha\+Normal\+Map\+Texture\+Material Class Reference}
+\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material}\index{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}}
+
+
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that loads a color texture that may contain transparencies and a normal map texture.  
+
+
+
+
+{\ttfamily \#include $<$Alpha\+Normal\+Map\+Texture\+Material.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Alpha\+Normal\+Map\+Texture\+Material\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_ae09aba3281b21c239ad7c7391859b510}{Alpha\+Normal\+Map\+Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$const custom\+Shading, const std\+::string \&tex\+Dir, const std\+::string \&normal\+Map\+Tex\+Dir, float threshold\+Value=0.\+0f, float global\+Alpha\+Value=1.\+0f, float shininess=10.\+0f, bool translucent=false)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_acc0c412a7f227444958bf1249eedb34d}{Alpha\+Normal\+Map\+Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material}{Alpha\+Normal\+Map\+Texture\+Material}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a2148df342bc4b1907ca404970d0593cd}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a2148df342bc4b1907ca404970d0593cd}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a2148df342bc4b1907ca404970d0593cd}{$\sim$\+Alpha\+Normal\+Map\+Texture\+Material}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material}{Alpha\+Normal\+Map\+Texture\+Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a4dff732a06c94a7761a054ca62dbd491}{Clone}} () const override
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a188ebcb934a89af6c130a0a787aa1c1e}{Set\+Normal\+Map\+Texture}} (const std\+::string \&normal\+Map\+Tex\+Dir)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a49dd763e0d239fed2ddaf389de36a692}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a49dd763e0d239fed2ddaf389de36a692}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a49dd763e0d239fed2ddaf389de36a692}{Bind\+Textures}} () override
+\begin{DoxyCompactList}\small\item\em Binds textures to specific texture units. Used before drawing the object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a9be3fea2b6e584b92934ffc396c6be8f}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a9be3fea2b6e584b92934ffc396c6be8f}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a9be3fea2b6e584b92934ffc396c6be8f}{Unbind\+Textures}} () override
+\begin{DoxyCompactList}\small\item\em Unbinds textures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_aeeed483e4828906e78b7436760b68cb2}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_aeeed483e4828906e78b7436760b68cb2}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_aeeed483e4828906e78b7436760b68cb2}{init\+Textures}} () override
+\begin{DoxyCompactList}\small\item\em Builds all the textures. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a5eedc8ad4d520fa3eecd7385b5b826cc}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a5eedc8ad4d520fa3eecd7385b5b826cc}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a5eedc8ad4d520fa3eecd7385b5b826cc}{init\+Shaders}} ()
+\begin{DoxyCompactList}\small\item\em Sets the shaders that should be loaded. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a237fc12dc3eda51d90c16e95e6b2042c}{set\+Program\+Parameters}} (const Q\+Matrix4x4 \&projection, const Q\+Matrix4x4 \&view, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&parent) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_acf15c4344df03bb0f4f8dbe64ab5b3a1}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material}{Alpha\+Normal\+Map\+Texture\+Material}} \&mat)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_ae183a6b80de0f75a39db8ea3a8ed2fed}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_ae183a6b80de0f75a39db8ea3a8ed2fed}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}} $\ast$ {\bfseries mp\+Normal\+Map\+Texture}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that loads a color texture that may contain transparencies and a normal map texture. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_ae09aba3281b21c239ad7c7391859b510}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_ae09aba3281b21c239ad7c7391859b510}} 
+\index{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}!AlphaNormalMapTextureMaterial@{AlphaNormalMapTextureMaterial}}
+\index{AlphaNormalMapTextureMaterial@{AlphaNormalMapTextureMaterial}!GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}}
+\subsubsection{\texorpdfstring{AlphaNormalMapTextureMaterial()}{AlphaNormalMapTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Normal\+Map\+Texture\+Material\+::\+Alpha\+Normal\+Map\+Texture\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$const}]{custom\+Shading,  }\item[{const std\+::string \&}]{tex\+Dir,  }\item[{const std\+::string \&}]{normal\+Map\+Tex\+Dir,  }\item[{float}]{threshold\+Value = {\ttfamily 0.0f},  }\item[{float}]{global\+Alpha\+Value = {\ttfamily 1.0f},  }\item[{float}]{shininess = {\ttfamily 10.0f},  }\item[{bool}]{translucent = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Constructor. Calls init material 
+\begin{DoxyParams}{Parameters}
+{\em custom\+Shading} & Interface to an object that implements custom shadow shading for this material. \\
+\hline
+{\em tex\+Dir} & Key of the texture to be loaded \\
+\hline
+{\em mormal\+Map\+Dir} & Key of the normal map texture to be used \\
+\hline
+{\em threshold\+Value} & Min alpha value below which the fragment is dropped completely. This value is clamped to the range \mbox{[}0, 1\mbox{]} \\
+\hline
+{\em global\+Alpha\+Value} & Main alpha value for the whole object, clamps to 0.\+0 to 1.\+0 range. This value gets multiplied to every fragment color alpha. \\
+\hline
+{\em shininess} & Shininess component. Has to be $>$ 0 if invalid takes the value 0.\+0001. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess\+If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_acc0c412a7f227444958bf1249eedb34d}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_acc0c412a7f227444958bf1249eedb34d}} 
+\index{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}!AlphaNormalMapTextureMaterial@{AlphaNormalMapTextureMaterial}}
+\index{AlphaNormalMapTextureMaterial@{AlphaNormalMapTextureMaterial}!GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}}
+\subsubsection{\texorpdfstring{AlphaNormalMapTextureMaterial()}{AlphaNormalMapTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Normal\+Map\+Texture\+Material\+::\+Alpha\+Normal\+Map\+Texture\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material}{Alpha\+Normal\+Map\+Texture\+Material}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a4dff732a06c94a7761a054ca62dbd491}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a4dff732a06c94a7761a054ca62dbd491}} 
+\index{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material}{Alpha\+Normal\+Map\+Texture\+Material}}$\ast$ Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Normal\+Map\+Texture\+Material\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Creates a copy of this object \begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_texture_material_a27375f0008fcdeaacb49fb4266f9f480}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Texture\+Material}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_acf15c4344df03bb0f4f8dbe64ab5b3a1}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_acf15c4344df03bb0f4f8dbe64ab5b3a1}} 
+\index{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Normal\+Map\+Texture\+Material\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material}{Alpha\+Normal\+Map\+Texture\+Material}} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} object to the current object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a188ebcb934a89af6c130a0a787aa1c1e}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a188ebcb934a89af6c130a0a787aa1c1e}} 
+\index{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}!SetNormalMapTexture@{SetNormalMapTexture}}
+\index{SetNormalMapTexture@{SetNormalMapTexture}!GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}}
+\subsubsection{\texorpdfstring{SetNormalMapTexture()}{SetNormalMapTexture()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Normal\+Map\+Texture\+Material\+::\+Set\+Normal\+Map\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{normal\+Map\+Tex\+Dir }\end{DoxyParamCaption})}
+
+Sets the emissive texture 
+\begin{DoxyParams}{Parameters}
+{\em emissive\+Tex\+Dir} & Key to a texture that will be used as emissive color \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a237fc12dc3eda51d90c16e95e6b2042c}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a237fc12dc3eda51d90c16e95e6b2042c}} 
+\index{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}!setProgramParameters@{setProgramParameters}}
+\index{setProgramParameters@{setProgramParameters}!GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}}
+\subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Normal\+Map\+Texture\+Material\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection,  }\item[{const Q\+Matrix4x4 \&}]{view,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sends parameters to the shaders. 
+\begin{DoxyParams}{Parameters}
+{\em projection} & Projection matrix \\
+\hline
+{\em view} & View matrix\\
+\hline
+{\em parent} & geometry item \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_texture_material_aba7adf21a4bc2bb34f8a16d0008ed64e}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Texture\+Material}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/\+Transparent\+Materials/Alpha\+Normal\+Map\+Texture\+Material.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Materials/\+Transparent\+Materials/Alpha\+Normal\+Map\+Texture\+Material.\+cpp\end{DoxyCompactItemize}

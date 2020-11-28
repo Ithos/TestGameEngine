@@ -106,13 +106,29 @@ Base class for every object that may be included in a scene.
 \subsubsection{\texorpdfstring{WorldItem()}{WorldItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+World\+Item (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
 
-Constructor. Calls init. param pos Initial position of the item param rot Initial rotaion of the item param scale Initial scale to be applied to this item model param parent Pointer to this items parent item, nullptr if none. \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a3d32026ae29b40588fb8497df126ce6d}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a3d32026ae29b40588fb8497df126ce6d}} 
+Constructor. Calls init. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Initial position of the item \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em scale} & Initial scale to be applied to this item model \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a3d32026ae29b40588fb8497df126ce6d}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a3d32026ae29b40588fb8497df126ce6d}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!WorldItem@{WorldItem}}
 \index{WorldItem@{WorldItem}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{WorldItem()}{WorldItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+World\+Item (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} \&}]{ref }\end{DoxyParamCaption})}
 
-Copy constructor param ref Object to be copied. 
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aa66f97360029dfc268a16a9f248be74a}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aa66f97360029dfc268a16a9f248be74a}} 
@@ -121,139 +137,278 @@ Copy constructor param ref Object to be copied.
 \subsubsection{\texorpdfstring{AddChild()}{AddChild()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{child }\end{DoxyParamCaption})}
 
-Sets a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} as a child of this param child Child \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} return true if children was added false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a15405881b3e3de9f417484160ab5c735}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a15405881b3e3de9f417484160ab5c735}} 
+Sets a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} as a child of this 
+\begin{DoxyParams}{Parameters}
+{\em child} & Child \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if children was added false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a15405881b3e3de9f417484160ab5c735}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a15405881b3e3de9f417484160ab5c735}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!CalculateModelMatrix@{CalculateModelMatrix}}
 \index{CalculateModelMatrix@{CalculateModelMatrix}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{CalculateModelMatrix()}{CalculateModelMatrix()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Calculate\+Model\+Matrix (\begin{DoxyParamCaption}\item[{bool}]{calculate\+Children = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Updates the model matrix param calculate\+Children true if children matrix should be updated \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aa7fdb225408eb03fcf542cbee76a435f}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aa7fdb225408eb03fcf542cbee76a435f}} 
+Updates the model matrix 
+\begin{DoxyParams}{Parameters}
+{\em calculate\+Children} & true if children matrix should be updated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aa7fdb225408eb03fcf542cbee76a435f}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aa7fdb225408eb03fcf542cbee76a435f}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!Copy@{Copy}}
 \index{Copy@{Copy}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{Copy()}{Copy()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} into this object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_adcdcc221a212ff59ca34c8c7c96e69c7}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_adcdcc221a212ff59ca34c8c7c96e69c7}} 
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} into this object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_adcdcc221a212ff59ca34c8c7c96e69c7}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_adcdcc221a212ff59ca34c8c7c96e69c7}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!FindChild@{FindChild}}
 \index{FindChild@{FindChild}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{FindChild()}{FindChild()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Find\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{child }\end{DoxyParamCaption}) const}
 
-Checks if a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} is a child of this param child World item to be checked return true if child was found false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a341eff00c85bddf6ced93102ddf18408}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a341eff00c85bddf6ced93102ddf18408}} 
+Checks if a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} is a child of this 
+\begin{DoxyParams}{Parameters}
+{\em child} & World item to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if child was found false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a341eff00c85bddf6ced93102ddf18408}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a341eff00c85bddf6ced93102ddf18408}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!GetModelMatrix@{GetModelMatrix}}
 \index{GetModelMatrix@{GetModelMatrix}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{GetModelMatrix()}{GetModelMatrix()}}
 {\footnotesize\ttfamily virtual const Q\+Matrix4x4\& Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Get\+Model\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-Gets the model matris for this \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} return Model\+Matrix \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a8b4ce24b3f39abee45d37e539ddb52c1}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a8b4ce24b3f39abee45d37e539ddb52c1}} 
+Gets the model matris for this \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} \begin{DoxyReturn}{Returns}
+Model\+Matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a8b4ce24b3f39abee45d37e539ddb52c1}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a8b4ce24b3f39abee45d37e539ddb52c1}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!GetParent@{GetParent}}
 \index{GetParent@{GetParent}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{GetParent()}{GetParent()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}}$\ast$ Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returs a pointer to the parent \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} return parent \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a363a9b807eee91c99264ba1fc9b0e83b}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a363a9b807eee91c99264ba1fc9b0e83b}} 
+Returs a pointer to the parent \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} \begin{DoxyReturn}{Returns}
+parent \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a363a9b807eee91c99264ba1fc9b0e83b}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a363a9b807eee91c99264ba1fc9b0e83b}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!GetPosition@{GetPosition}}
 \index{GetPosition@{GetPosition}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
 {\footnotesize\ttfamily Q\+Vector3D Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Returns the position of this modified by its parent position if it has one return position of this \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a34a387b75a951afaf8d73007a59bdf07}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a34a387b75a951afaf8d73007a59bdf07}} 
+Returns the position of this modified by its parent position if it has one \begin{DoxyReturn}{Returns}
+position of this \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a34a387b75a951afaf8d73007a59bdf07}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a34a387b75a951afaf8d73007a59bdf07}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!GetRotation@{GetRotation}}
 \index{GetRotation@{GetRotation}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{GetRotation()}{GetRotation()}}
 {\footnotesize\ttfamily const Q\+Quaternion\& Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the rotathion of this return the rotation of this \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a34e1c2617262114189597b1092a2d8ca}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a34e1c2617262114189597b1092a2d8ca}} 
+Returns the rotathion of this \begin{DoxyReturn}{Returns}
+the rotation of this \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a34e1c2617262114189597b1092a2d8ca}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a34e1c2617262114189597b1092a2d8ca}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!GetScale@{GetScale}}
 \index{GetScale@{GetScale}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{GetScale()}{GetScale()}}
 {\footnotesize\ttfamily const Q\+Vector3D\& Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the scale vector of this return scale vector for this \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_ae7921493ddc77cf794358ae41754a3e0}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_ae7921493ddc77cf794358ae41754a3e0}} 
+Returns the scale vector of this \begin{DoxyReturn}{Returns}
+scale vector for this \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_ae7921493ddc77cf794358ae41754a3e0}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_ae7921493ddc77cf794358ae41754a3e0}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!Move@{Move}}
 \index{Move@{Move}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{Move()}{Move()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Move (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{vector,  }\item[{bool}]{update\+Children = {\ttfamily true} }\end{DoxyParamCaption})}
 
-Moves the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} along a given vector param vector Vector of movement param update\+Children true if the children World\+Items should be updated false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a7d73575daa22395164123b26d514f42a}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a7d73575daa22395164123b26d514f42a}} 
+Moves the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} along a given vector 
+\begin{DoxyParams}{Parameters}
+{\em vector} & Vector of movement \\
+\hline
+{\em update\+Children} & true if the children World\+Items should be updated false otherwise \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a7d73575daa22395164123b26d514f42a}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a7d73575daa22395164123b26d514f42a}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!RemoveChild@{RemoveChild}}
 \index{RemoveChild@{RemoveChild}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{RemoveChild()}{RemoveChild()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Remove\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{child }\end{DoxyParamCaption})}
 
-The \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} stops being considered a child of this (if it was a child in the first place). Its movement and rotation are no longer linked. param child \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} to be removed return true if removed false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a3e77ca882db0fe70315921af492ebef8}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a3e77ca882db0fe70315921af492ebef8}} 
+The \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} stops being considered a child of this (if it was a child in the first place). Its movement and rotation are no longer linked. 
+\begin{DoxyParams}{Parameters}
+{\em child} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if removed false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a3e77ca882db0fe70315921af492ebef8}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a3e77ca882db0fe70315921af492ebef8}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!RemoveParent@{RemoveParent}}
 \index{RemoveParent@{RemoveParent}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{RemoveParent()}{RemoveParent()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Remove\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Removes this parent \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}}. This movement and rotation are no longer linked return true if succesful false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aee1168fdbce65dfac9d75dfe61015036}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aee1168fdbce65dfac9d75dfe61015036}} 
+Removes this parent \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}}. This movement and rotation are no longer linked \begin{DoxyReturn}{Returns}
+true if succesful false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aee1168fdbce65dfac9d75dfe61015036}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aee1168fdbce65dfac9d75dfe61015036}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!Rotate@{Rotate}}
 \index{Rotate@{Rotate}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{Rotate()}{Rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Rotate (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{rot,  }\item[{bool}]{update\+Children = {\ttfamily true} }\end{DoxyParamCaption})}
 
-Roatates the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} by a X\+YZ vector param rot X\+YZ rotaions in degrees param update\+Children true if the children World\+Items should be updated false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aabed6bd78138071c0c7fb50a415ff285}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aabed6bd78138071c0c7fb50a415ff285}} 
+Roatates the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} by a X\+YZ vector 
+\begin{DoxyParams}{Parameters}
+{\em rot} & X\+YZ rotaions in degrees \\
+\hline
+{\em update\+Children} & true if the children World\+Items should be updated false otherwise \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aabed6bd78138071c0c7fb50a415ff285}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aabed6bd78138071c0c7fb50a415ff285}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!Rotate@{Rotate}}
 \index{Rotate@{Rotate}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{Rotate()}{Rotate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Rotate (\begin{DoxyParamCaption}\item[{const Q\+Quaternion \&}]{rot,  }\item[{bool}]{update\+Children = {\ttfamily true} }\end{DoxyParamCaption})}
 
-Rotates the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} by a Quaternion param rot Rotation expressed as a quaternion param update\+Children true if the children World\+Items should be updated false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_ad6ca95d9209a5ab13975a3a7347b497d}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_ad6ca95d9209a5ab13975a3a7347b497d}} 
+Rotates the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} by a Quaternion 
+\begin{DoxyParams}{Parameters}
+{\em rot} & Rotation expressed as a quaternion \\
+\hline
+{\em update\+Children} & true if the children World\+Items should be updated false otherwise \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_ad6ca95d9209a5ab13975a3a7347b497d}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_ad6ca95d9209a5ab13975a3a7347b497d}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!Scale@{Scale}}
 \index{Scale@{Scale}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{Scale()}{Scale()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Scale (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{scale,  }\item[{bool}]{update\+Children = {\ttfamily true} }\end{DoxyParamCaption})}
 
-Multiplies each component of the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} scale vector by the correspondent component of the scalation vector param scale Scalation vector to be applied to the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} param update\+Children true if the children World\+Items should be updated false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_acb8c065c43621ce13f95205129a1d686}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_acb8c065c43621ce13f95205129a1d686}} 
+Multiplies each component of the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} scale vector by the correspondent component of the scalation vector 
+\begin{DoxyParams}{Parameters}
+{\em scale} & Scalation vector to be applied to the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} \\
+\hline
+{\em update\+Children} & true if the children World\+Items should be updated false otherwise \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_acb8c065c43621ce13f95205129a1d686}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_acb8c065c43621ce13f95205129a1d686}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!SetParent@{SetParent}}
 \index{SetParent@{SetParent}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{SetParent()}{SetParent()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent }\end{DoxyParamCaption})}
 
-Sets a Worl\+Item as a parent for this param parent Parent \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} return true if succesful false otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a81a1c5d0a550a56cc89d7e4e7f3c5c49}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a81a1c5d0a550a56cc89d7e4e7f3c5c49}} 
+Sets a Worl\+Item as a parent for this 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Parent \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if succesful false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a81a1c5d0a550a56cc89d7e4e7f3c5c49}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a81a1c5d0a550a56cc89d7e4e7f3c5c49}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!SetPosition@{SetPosition}}
 \index{SetPosition@{SetPosition}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{vector,  }\item[{bool}]{delay\+Update = {\ttfamily false} }\end{DoxyParamCaption})}
 
-Sets a new position to the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} param vector New position param delay\+Update false if the model should be updated inmediately \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_ae8280e3f99ade1719aadc25b7bc999e9}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_ae8280e3f99ade1719aadc25b7bc999e9}} 
+Sets a new position to the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} 
+\begin{DoxyParams}{Parameters}
+{\em vector} & New position \\
+\hline
+{\em delay\+Update} & false if the model should be updated inmediately \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_ae8280e3f99ade1719aadc25b7bc999e9}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_ae8280e3f99ade1719aadc25b7bc999e9}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!SetRotation@{SetRotation}}
 \index{SetRotation@{SetRotation}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{SetRotation()}{SetRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{const Q\+Quaternion \&}]{rot,  }\item[{bool}]{delay\+Update = {\ttfamily false} }\end{DoxyParamCaption})}
 
-Sets the rotation quaternion of the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} param rot New rotation quaternion param delay\+Update false if the model should be updated inmediately \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_afe2d2f6812d148817f73c12a14218941}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_afe2d2f6812d148817f73c12a14218941}} 
+Sets the rotation quaternion of the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} 
+\begin{DoxyParams}{Parameters}
+{\em rot} & New rotation quaternion \\
+\hline
+{\em delay\+Update} & false if the model should be updated inmediately \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_afe2d2f6812d148817f73c12a14218941}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_afe2d2f6812d148817f73c12a14218941}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!SetRotation@{SetRotation}}
 \index{SetRotation@{SetRotation}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{SetRotation()}{SetRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{rot,  }\item[{bool}]{delay\+Update = {\ttfamily false} }\end{DoxyParamCaption})}
 
-Sets the rotation of the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} by euler angles param rot Vector of Euler angles param delay\+Update false if the model should be updated inmediately \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a0c1d06ab783adb8fd8b574b428933aed}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a0c1d06ab783adb8fd8b574b428933aed}} 
+Sets the rotation of the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} by euler angles 
+\begin{DoxyParams}{Parameters}
+{\em rot} & Vector of Euler angles \\
+\hline
+{\em delay\+Update} & false if the model should be updated inmediately \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a0c1d06ab783adb8fd8b574b428933aed}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a0c1d06ab783adb8fd8b574b428933aed}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!SetScale@{SetScale}}
 \index{SetScale@{SetScale}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{SetScale()}{SetScale()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{scale,  }\item[{bool}]{delay\+Update = {\ttfamily false} }\end{DoxyParamCaption})}
 
-Stes the scalation vector for the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} param scale New scale vector param delay\+Update false if the model should be updated inmediately \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a8ec661078740d53d1912f68a5bdb84f3}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a8ec661078740d53d1912f68a5bdb84f3}} 
+Stes the scalation vector for the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} 
+\begin{DoxyParams}{Parameters}
+{\em scale} & New scale vector \\
+\hline
+{\em delay\+Update} & false if the model should be updated inmediately \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a8ec661078740d53d1912f68a5bdb84f3}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a8ec661078740d53d1912f68a5bdb84f3}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!ToGlobalCoordSystem@{ToGlobalCoordSystem}}
 \index{ToGlobalCoordSystem@{ToGlobalCoordSystem}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{ToGlobalCoordSystem()}{ToGlobalCoordSystem()}}
 {\footnotesize\ttfamily Q\+Vector3D Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+To\+Global\+Coord\+System (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Transforms a vector from global coordinate systema to model coordinate system param vector Vector to be transformed return Transformed vector \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a8391874ad6063fe8b09d7e6978dd0f20}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a8391874ad6063fe8b09d7e6978dd0f20}} 
+Transforms a vector from global coordinate systema to model coordinate system 
+\begin{DoxyParams}{Parameters}
+{\em vector} & Vector to be transformed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transformed vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a8391874ad6063fe8b09d7e6978dd0f20}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_a8391874ad6063fe8b09d7e6978dd0f20}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!ToModelCoordSystem@{ToModelCoordSystem}}
 \index{ToModelCoordSystem@{ToModelCoordSystem}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{ToModelCoordSystem()}{ToModelCoordSystem()}}
 {\footnotesize\ttfamily Q\+Vector3D Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+To\+Model\+Coord\+System (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Transforms a vector from global coordinate systema to model coordinate system param vector Vector to be transformed return Transformed vector \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aa6e82e5d95ae34d0addb991cd84aca6f}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aa6e82e5d95ae34d0addb991cd84aca6f}} 
+Transforms a vector from global coordinate systema to model coordinate system 
+\begin{DoxyParams}{Parameters}
+{\em vector} & Vector to be transformed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transformed vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aa6e82e5d95ae34d0addb991cd84aca6f}\label{class_geometry_engine_1_1_geometry_world_item_1_1_world_item_aa6e82e5d95ae34d0addb991cd84aca6f}} 
 \index{GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}!Update@{Update}}
 \index{Update@{Update}!GeometryEngine::GeometryWorldItem::WorldItem@{GeometryEngine::GeometryWorldItem::WorldItem}}
 \subsubsection{\texorpdfstring{Update()}{Update()}}
 {\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Update (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection,  }\item[{const Q\+Matrix4x4 \&}]{view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-Method to be implemented by child classes. It should update the visual model and redraw the item. param projection Projection matrix provided by the camera param view View matrix, provided by the camera 
+Method to be implemented by child classes. It should update the visual model and redraw the item. 
+\begin{DoxyParams}{Parameters}
+{\em projection} & Projection matrix provided by the camera \\
+\hline
+{\em view} & View matrix, provided by the camera \\
+\hline
+\end{DoxyParams}
+
 
 Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item_aa07c13861cf4aef269442071e4150389}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}}.
 
@@ -263,7 +418,12 @@ Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_
 \subsubsection{\texorpdfstring{UpdateModelMatrix()}{UpdateModelMatrix()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+World\+Item\+::\+Update\+Model\+Matrix (\begin{DoxyParamCaption}\item[{bool}]{update\+Children = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Updates the model matrix param calculate\+Children true if children matrix should be updated 
+Updates the model matrix 
+\begin{DoxyParams}{Parameters}
+{\em calculate\+Children} & true if children matrix should be updated \\
+\hline
+\end{DoxyParams}
+
 
 Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_afe7145a1edb13ce3a50c2964f5c865e9}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a0465932bd0494929e5daa10ce8b77aa6}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Shadow\+Map\+Light}}.
 

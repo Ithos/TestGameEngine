@@ -8,6 +8,16 @@ namespace for all materials
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_color_material}{Alpha\+Color\+Material}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that defines color by its ambient, diffuse specular and emissive components. Also defines a global alpha value to stablish the transparency of the material. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_multi_texture_material}{Alpha\+Multi\+Texture\+Material}}
+\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_multi_texture_material}{Alpha\+Normal\+Map\+Multi\+Texture\+Material}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} tha uses different textures that may contain transparencies for the different components of the light (ambient, diffuse, specular, emissive) and also stores a normal map texture. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material}{Alpha\+Normal\+Map\+Texture\+Material}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that loads a color texture that may contain transparencies and a normal map texture. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_texture_material}{Alpha\+Texture\+Material}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that loads a color texture and admits transparencies. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_color_material}{Color\+Material}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that defines color by its ambient, diffuse specular and emissive components. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}}
@@ -28,6 +38,8 @@ class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_m
 \item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_texture_parameters}{Texture\+Parameters}}
 \begin{DoxyCompactList}\small\item\em Class that holds texture data. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material}{Transparent\+Material}}
+\begin{DoxyCompactList}\small\item\em Class that represents a material that may contain transparencies. Implements Custom\+Shading\+Interface so child classes can implement their own shadow\+Map shaders. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_vertex_color_material}{Vertex\+Color\+Material}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that defines color by vertex. Only used in very simple objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 

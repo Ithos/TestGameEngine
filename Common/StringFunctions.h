@@ -10,9 +10,9 @@ namespace StringFunctions
 	{
 	public:
 		///Splits a string by a separator and returs the resulting strings in a list
-		///param source string to be split
-		///param separator char used as separator in the string
-		///param oVec string list where the result is returned
+		/// \param source string to be split
+		/// \param separator char used as separator in the string
+		/// \param oVec string list where the result is returned
 		static void splitString(const std::string & source, char separator, std::vector<std::string>& oVec)
 		{
 			std::string token;
@@ -25,8 +25,8 @@ namespace StringFunctions
 		}
 
 		///Eliminates empty spaces from the beginning and end of a string
-		///param str string to be trimmed
-		///return the result of the operation is returned in a different string
+		/// \param str string to be trimmed
+		/// \return the result of the operation is returned in a different string
 		static std::string trim(const std::string& str)
 		{
 			size_t first = str.find_first_not_of(' ');

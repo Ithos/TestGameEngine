@@ -12,7 +12,7 @@ namespace GeometryEngine
 	class GeometryEngine
 	{
 	public:
-		/// Returns the pointer to the singleton. It builds the object if the singleton hasn't been built before.
+		/// Returnss the pointer to the singleton. It builds the object if the singleton hasn't been built before.
 		static GeometryEngine* GetInstance();
 		/// Destroys the pointer to the singleton.
 		static void Release();

@@ -15,19 +15,19 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor
-			/// param parent Pointer to the CustomShadingInterface that contains it 
-			/// param Value that indicates at which render stepthis shading technique will be used
+			/// \param parent Pointer to the CustomShadingInterface that contains it 
+			/// \param Value that indicates at which render stepthis shading technique will be used
 			TextureColorMap(CustomShadingInterface* parent, CustomShadingSteps step) : CustomShadingStep(parent, step) {};
 
 			/// Copy constructor
-			/// param ref Object to be copied.
+			/// \param ref Object to be copied.
 			TextureColorMap(const CustomShadingStep& ref) { copy(ref); }
 
 			/// Destructor
 			virtual ~TextureColorMap() {};
 
 			/// Abstract method. Factory method. Creates a copy of this object
-			/// return Pointer to a copy of this object
+			/// \return Pointer to a copy of this object
 			virtual TextureColorMap* Clone(CustomShadingInterface* parent, CustomShadingSteps step) const {
 				TextureColorMap* cloned = new TextureColorMap((*this));
 				cloned->AddToInterface(parent, step);
@@ -42,9 +42,9 @@ namespace GeometryEngine
 			}
 
 			/// Abstract method. Sends parameters to the shaders.
-			/// param projection Projection matrix
-			/// param view View matrix			 
-			/// param geometry Geometry item to be drawn
+			/// \param projection Projection matrix
+			/// \param view View matrix			 
+			/// \param geometry Geometry item to be drawn
 			virtual void setProgramParameters(const QMatrix4x4& modelViewProjectionMatrix) override
 			{
 				assert(mpProgram != nullptr && "Shadow map program not found");
@@ -58,10 +58,10 @@ namespace GeometryEngine
 			}
 
 			/// Abstract method. Binds shaders and draws.
-			/// param vertexBuf Vertex buffer
-			/// param indexBuf IndexBuffer
-			/// param totalVertexNum Number of vetices
-			/// param titalIndexNum Number of indices
+			/// \param vertexBuf Vertex buffer
+			/// \param indexBuf IndexBuffer
+			/// \param totalVertexNum Number of vetices
+			/// \param titalIndexNum Number of indices
 			virtual void drawShader(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) override
 			{
 				// Tell OpenGL which VBOs to use

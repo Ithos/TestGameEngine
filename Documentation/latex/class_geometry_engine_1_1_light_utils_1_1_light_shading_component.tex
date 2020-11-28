@@ -1,0 +1,245 @@
+\hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{}\section{Geometry\+Engine\+::Light\+Utils\+::Light\+Shading\+Component Class Reference}
+\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}\index{GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}}
+
+
+Class that applies a shading step for the parent light.  
+
+
+
+
+{\ttfamily \#include $<$Light\+Shading\+Component.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Light\+Utils\+::Light\+Shading\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.772152cm]{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a70c7751d6162e5fe224079eb1c4337da}{Light\+Shading\+Component}} (\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}} step)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a7de2f38f87aca7cc7cca49a09009098b}{Light\+Shading\+Component}} (const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a42a9f0472172896d638fe5ca842bde10}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a42a9f0472172896d638fe5ca842bde10}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a42a9f0472172896d638fe5ca842bde10}{$\sim$\+Light\+Shading\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a481338e8a564f895b895b3234569df58}{Init\+Custom\+Shading}} (\mbox{\hyperlink{class_shader_files_1_1_shader_manager}{Shader\+Files\+::\+Shader\+Manager}} $\ast$shader\+Manager)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_aa2e50470089c2d17b76dd18bdf1a1a68}{Set\+Target\+Light}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$target)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_abc803db0e608a80310bd8dea92997e0f}{Render}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, const Q\+Matrix4x4 \&projection\+Matrix, const Q\+Matrix4x4 \&view\+Matrix, const Q\+Matrix4x4 \&model\+Matrix, unsigned int total\+Vertex\+Num, unsigned int total\+Index\+Num)
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a8f2107f451b130b6f4e7042cafbc8210}{Clone}} (\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}} step) const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_ae800a7d739ad8f447a89eb3741e2fabd}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_ae800a7d739ad8f447a89eb3741e2fabd}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_ae800a7d739ad8f447a89eb3741e2fabd}{init\+Shaders}} ()=0
+\begin{DoxyCompactList}\small\item\em Abstract method. Sets the shaders that should be loaded. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a8021b18502671a369ac6aa12ab48281d}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a8021b18502671a369ac6aa12ab48281d}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a8021b18502671a369ac6aa12ab48281d}{init\+Program}} ()
+\begin{DoxyCompactList}\small\item\em Loads and compiles material shader program. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a4317565f70bc527ae6de5f4c3a24aa15}{set\+Program\+Parameters}} (const Q\+Matrix4x4 \&projection\+Matrix, const Q\+Matrix4x4 \&view\+Matrix, const Q\+Matrix4x4 \&model\+Matrix)=0
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a6684875f549753d00b91adbf62c88789}{apply\+Shader}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Number, unsigned int total\+Index\+Number)=0
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a249c8d383bab7232cc0ad425c9249709}{Add\+To\+Interface}} (\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}} step)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a1789add4c40a4d059f54fb7a25122700}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a746ea226ebb1a7d4a11a01f9afcbde0a}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a746ea226ebb1a7d4a11a01f9afcbde0a}} 
+\mbox{\hyperlink{class_shader_files_1_1_shader_manager}{Shader\+Files\+::\+Shader\+Manager}} $\ast$ {\bfseries mp\+Shader\+Manager}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a6b9d0c75e229b81b6b783729f57e6cf3}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a6b9d0c75e229b81b6b783729f57e6cf3}} 
+Q\+Open\+G\+L\+Shader\+Program $\ast$ {\bfseries mp\+Program}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a84792e16450b96f124f8906c67342d32}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a84792e16450b96f124f8906c67342d32}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$ {\bfseries mp\+Parent\+Interface}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_aaac0d5985a88d7b519aca6fe7345e672}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_aaac0d5985a88d7b519aca6fe7345e672}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ {\bfseries mp\+Target\+Light}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_aea74b03bbad4a39b1ae38e8e1c31d087}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_aea74b03bbad4a39b1ae38e8e1c31d087}} 
+std\+::string {\bfseries m\+Vertex\+Shader\+Key}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a3bca960f8728878d636b393a034da1fe}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a3bca960f8728878d636b393a034da1fe}} 
+std\+::string {\bfseries m\+Fragment\+Shader\+Key}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that applies a shading step for the parent light. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a70c7751d6162e5fe224079eb1c4337da}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a70c7751d6162e5fe224079eb1c4337da}} 
+\index{GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}!LightShadingComponent@{LightShadingComponent}}
+\index{LightShadingComponent@{LightShadingComponent}!GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}}
+\subsubsection{\texorpdfstring{LightShadingComponent()}{LightShadingComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Shading\+Component\+::\+Light\+Shading\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}}}]{step }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} that contains it \\
+\hline
+{\em step} & indicates to which Light\+Shading key this class corresponds \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a7de2f38f87aca7cc7cca49a09009098b}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a7de2f38f87aca7cc7cca49a09009098b}} 
+\index{GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}!LightShadingComponent@{LightShadingComponent}}
+\index{LightShadingComponent@{LightShadingComponent}!GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}}
+\subsubsection{\texorpdfstring{LightShadingComponent()}{LightShadingComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Shading\+Component\+::\+Light\+Shading\+Component (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a249c8d383bab7232cc0ad425c9249709}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a249c8d383bab7232cc0ad425c9249709}} 
+\index{GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}!AddToInterface@{AddToInterface}}
+\index{AddToInterface@{AddToInterface}!GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}}
+\subsubsection{\texorpdfstring{AddToInterface()}{AddToInterface()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Shading\+Component\+::\+Add\+To\+Interface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}}}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sets a new parent interface and adds the step to that interface 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the Light\+Functionalities that contains it \\
+\hline
+{\em step} & indicates to which function this class corresponds \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a6684875f549753d00b91adbf62c88789}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a6684875f549753d00b91adbf62c88789}} 
+\index{GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}!applyShader@{applyShader}}
+\index{applyShader@{applyShader}!GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}}
+\subsubsection{\texorpdfstring{applyShader()}{applyShader()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Shading\+Component\+::apply\+Shader (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Number,  }\item[{unsigned int}]{total\+Index\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Abstract method. Binds shaders and draws. 
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Buf} & Vertex buffer \\
+\hline
+{\em index\+Buf} & Index\+Buffer \\
+\hline
+{\em total\+Vertex\+Num} & Number of vetices \\
+\hline
+{\em tital\+Index\+Num} & Number of indices \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_stencil_testing_a61aed251a91416f2e0ccf01be29c103f}{Geometry\+Engine\+::\+Light\+Utils\+::\+Stencil\+Testing$<$ T $>$}}, and \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_default_shadow_map_aa65ccc2e7a4f1dd7d5fd4ac6253f42dc}{Geometry\+Engine\+::\+Light\+Utils\+::\+Default\+Shadow\+Map$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a8f2107f451b130b6f4e7042cafbc8210}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a8f2107f451b130b6f4e7042cafbc8210}} 
+\index{GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}}$\ast$ Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Shading\+Component\+::\+Clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_a16eb370137c2fd151e6f8e1d07cd23e0}{Light\+Shading}}}]{step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract method. Factory method. Creates a copy of this object 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} that contains it \\
+\hline
+{\em step} & indicates to which Light\+Shading key this class corresponds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_default_shadow_map_aa13953acd90de9f9567cee0951c64684}{Geometry\+Engine\+::\+Light\+Utils\+::\+Default\+Shadow\+Map$<$ T $>$}}, and \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_stencil_testing_a213b9b0be58d6f4481465abfbcc15cfb}{Geometry\+Engine\+::\+Light\+Utils\+::\+Stencil\+Testing$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a1789add4c40a4d059f54fb7a25122700}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a1789add4c40a4d059f54fb7a25122700}} 
+\index{GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Shading\+Component\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_shading_component}{Light\+Shading\+Component}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a Custom\+Shading\+Step object to the current object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Custom\+Shading\+Step to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a481338e8a564f895b895b3234569df58}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a481338e8a564f895b895b3234569df58}} 
+\index{GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}!InitCustomShading@{InitCustomShading}}
+\index{InitCustomShading@{InitCustomShading}!GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}}
+\subsubsection{\texorpdfstring{InitCustomShading()}{InitCustomShading()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Shading\+Component\+::\+Init\+Custom\+Shading (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader_files_1_1_shader_manager}{Shader\+Files\+::\+Shader\+Manager}} $\ast$}]{shader\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Initializes the object 
+\begin{DoxyParams}{Parameters}
+{\em shader\+Manager} & pointer to shader manager singleton \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_abc803db0e608a80310bd8dea92997e0f}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_abc803db0e608a80310bd8dea92997e0f}} 
+\index{GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}!Render@{Render}}
+\index{Render@{Render}!GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}}
+\subsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Shading\+Component\+::\+Render (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{const Q\+Matrix4x4 \&}]{projection\+Matrix,  }\item[{const Q\+Matrix4x4 \&}]{view\+Matrix,  }\item[{const Q\+Matrix4x4 \&}]{model\+Matrix,  }\item[{unsigned int}]{total\+Vertex\+Num,  }\item[{unsigned int}]{total\+Index\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Apply Shading step. 
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Buf} & Pointer to the vertex buffer \\
+\hline
+{\em index\+Buffer} & Pointer to the index buffer \\
+\hline
+{\em projection\+Matrix} & Projection matrix to be used \\
+\hline
+{\em view\+Matrix} & View\+Matrix to be used \\
+\hline
+{\em model\+Matrix} & Model\+Matrix of the object to be drawn or identity if it\textquotesingle{}s not necessary \\
+\hline
+{\em total\+Vertex\+Num} & Total amount of vertices \\
+\hline
+{\em total\+Index\+Num} & Total amount of indices \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_stencil_testing_a5b6025533f2fa86ca69e8f91709ce418}{Geometry\+Engine\+::\+Light\+Utils\+::\+Stencil\+Testing$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a4317565f70bc527ae6de5f4c3a24aa15}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_a4317565f70bc527ae6de5f4c3a24aa15}} 
+\index{GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}!setProgramParameters@{setProgramParameters}}
+\index{setProgramParameters@{setProgramParameters}!GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}}
+\subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Shading\+Component\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection\+Matrix,  }\item[{const Q\+Matrix4x4 \&}]{view\+Matrix,  }\item[{const Q\+Matrix4x4 \&}]{model\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Abstract method. Sends parameters to the shaders. 
+\begin{DoxyParams}{Parameters}
+{\em projection\+Matrix} & Projection matrix to be used \\
+\hline
+{\em view\+Matrix} & View\+Matrix to be used \\
+\hline
+{\em model\+Matrix} & Model\+Matrix of the object to be drawn or identity if it\textquotesingle{}s not necessary \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_stencil_testing_a21337fa050ef990710dff816934bae96}{Geometry\+Engine\+::\+Light\+Utils\+::\+Stencil\+Testing$<$ T $>$}}, and \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_default_shadow_map_aabc10bddf31acc2e2e55588adca8bc90}{Geometry\+Engine\+::\+Light\+Utils\+::\+Default\+Shadow\+Map$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_aa2e50470089c2d17b76dd18bdf1a1a68}\label{class_geometry_engine_1_1_light_utils_1_1_light_shading_component_aa2e50470089c2d17b76dd18bdf1a1a68}} 
+\index{GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}!SetTargetLight@{SetTargetLight}}
+\index{SetTargetLight@{SetTargetLight}!GeometryEngine::LightUtils::LightShadingComponent@{GeometryEngine::LightUtils::LightShadingComponent}}
+\subsubsection{\texorpdfstring{SetTargetLight()}{SetTargetLight()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Shading\+Component\+::\+Set\+Target\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets the target for this function 
+\begin{DoxyParams}{Parameters}
+{\em target} & Light to be rendered \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Light\+Utils/Light\+Shading\+Component.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Light\+Utils/Light\+Shading\+Component.\+cpp\end{DoxyCompactItemize}

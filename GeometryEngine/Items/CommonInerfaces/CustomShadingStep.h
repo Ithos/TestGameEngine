@@ -34,12 +34,12 @@ namespace GeometryEngine
 		public:
 			
 			/// Constructor
-			/// param parent Pointer to the CustomShadingInterface that contains it 
-			/// param step that indicates at which render stepthis shading technique will be used
+			/// \param parent Pointer to the CustomShadingInterface that contains it 
+			/// \param step that indicates at which render stepthis shading technique will be used
 			CustomShadingStep(CustomShadingInterface* parent, CustomShadingSteps step);
 
 			/// Copy constructor
-			/// param ref Object to be copied.
+			/// \param ref Object to be copied.
 			CustomShadingStep(const CustomShadingStep& ref) { copy(ref); }
 
 			/// Destructor
@@ -48,24 +48,24 @@ namespace GeometryEngine
 			
 
 			/// Initializes the object
-			/// param shaderManager pointer to shader manager singleton
+			/// \param shaderManager pointer to shader manager singleton
 			virtual void initCustomShading(ShaderFiles::ShaderManager* shaderManager);
 
 			/// Sets the target for this shading step
-			/// param target Material to be rendered
+			/// \param target Material to be rendered
 			virtual void SetTargetMaterial(GeometryMaterial::Material* target) { mpTargetMaterial = target; }
 
 
 			/// Render shaders
-			/// param vertexBuf Pointer to the vertex buffer
-			/// param indexBuffer Pointer to the index buffer
-			/// param modelViewProjection combined matrices to be used 
-			/// param totalVertexNum Total amount of vertices
-			/// param totalIndexNum Total amount of indices
+			/// \param vertexBuf Pointer to the vertex buffer
+			/// \param indexBuffer Pointer to the index buffer
+			/// \param modelViewProjection combined matrices to be used 
+			/// \param totalVertexNum Total amount of vertices
+			/// \param totalIndexNum Total amount of indices
 			virtual void RenderShaders(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelViewProjection, unsigned int totalVertexNum, unsigned int totalIndexNum);
 
 			/// Abstract method. Factory method. Creates a copy of this object
-			/// return Pointer to a copy of this object
+			/// \return Pointer to a copy of this object
 			virtual CustomShadingStep* Clone(CustomShadingInterface* parent, CustomShadingSteps step) const = 0;
 
 		protected:
@@ -85,29 +85,29 @@ namespace GeometryEngine
 			virtual void initProgram();
 
 			/// Sets a new parent interface and adds the step to that interface
-			/// param parent Pointer to the CustomShadingInterface that contains it 
-			/// param step that indicates at which render stepthis shading technique will be used
+			/// \param parent Pointer to the CustomShadingInterface that contains it 
+			/// \param step that indicates at which render stepthis shading technique will be used
 			virtual void AddToInterface(CustomShadingInterface* parent, CustomShadingSteps step);
 
 			/// Abstract method. Sends parameters to the shaders.
-			/// param projection Projection matrix
-			/// param view View matrix			 
-			/// param geometry Geometry item to be drawn
+			/// \param projection Projection matrix
+			/// \param view View matrix			 
+			/// \param geometry Geometry item to be drawn
 			virtual void setProgramParameters(const QMatrix4x4& modelViewProjectionMatrix) = 0;
 			/// Abstract method. Binds shaders and draws.
-			/// param vertexBuf Vertex buffer
-			/// param indexBuf IndexBuffer
-			/// param totalVertexNum Number of vetices
-			/// param titalIndexNum Number of indices
+			/// \param vertexBuf Vertex buffer
+			/// \param indexBuf IndexBuffer
+			/// \param totalVertexNum Number of vetices
+			/// \param titalIndexNum Number of indices
 			virtual void drawShader(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) = 0;
 			/// Applies internal modifiers and calls renderShadowMap
-			/// param vertexBuf Vertex buffer
-			/// param indexBuf IndexBuffer
-			/// param totalVertexNum Number of vetices
-			/// param titalIndexNum Number of indices
+			/// \param vertexBuf Vertex buffer
+			/// \param indexBuf IndexBuffer
+			/// \param totalVertexNum Number of vetices
+			/// \param titalIndexNum Number of indices
 			virtual void modifyRenderShader(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum);
 			/// Copies the data of a CustomShadingStep object to the current object
-			/// param ref CustomShadingStep to be copied
+			/// \param ref CustomShadingStep to be copied
 			virtual void copy(const CustomShadingStep& ref);
 		};
 	}

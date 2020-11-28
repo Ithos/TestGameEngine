@@ -1,0 +1,164 @@
+\hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{}\section{Geometry\+Engine\+::Light\+Utils\+::Light\+Render\+Component Class Reference}
+\label{class_geometry_engine_1_1_light_utils_1_1_light_render_component}\index{GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}}
+
+
+Class that applies a render technique for the parent light.  
+
+
+
+
+{\ttfamily \#include $<$Light\+Render\+Component.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Light\+Utils\+::Light\+Render\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_geometry_engine_1_1_light_utils_1_1_light_render_component}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a21b64c341021e9573e3ca86e5c36de67}{Light\+Render\+Component}} (\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}} step)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component_ac118ddf14a5602d3342d1b498e38cdf6}{Light\+Render\+Component}} (const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a3ad6c125a9b2695140a3e0e1025809c1}\label{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a3ad6c125a9b2695140a3e0e1025809c1}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a3ad6c125a9b2695140a3e0e1025809c1}{$\sim$\+Light\+Render\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a025de8e4ec4345f0e7b303646a1d765b}{Render}} (const Q\+Matrix4x4 \&projection\+Matrix, const Q\+Matrix4x4 \&view\+Matrix, const \mbox{\hyperlink{class_geometry_engine_1_1_buffers_info}{Buffers\+Info}} \&buffers\+Info, const Q\+Vector3D \&view\+Pos)=0
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a8c1e3c8aa5d8761793a9f39a16fe2f0b}{Set\+Target\+Light}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$target)
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a0311667e3f6faa30c938303e8eaa9670}{Clone}} (\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}} step) const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component_af6701af8d0d34f987852ab0faebefa86}{Add\+To\+Interface}} (\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}} step)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a3a08d64bbf4aef1300b334dd0b21ed62}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_render_component_abdcf3fc1704784f213360da22a9c729d}\label{class_geometry_engine_1_1_light_utils_1_1_light_render_component_abdcf3fc1704784f213360da22a9c729d}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$ {\bfseries mp\+Parent\+Interface}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_render_component_adcc4f1c87114562bdc31a1bb9b5f964c}\label{class_geometry_engine_1_1_light_utils_1_1_light_render_component_adcc4f1c87114562bdc31a1bb9b5f964c}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ {\bfseries mp\+Target\+Light}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that applies a render technique for the parent light. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a21b64c341021e9573e3ca86e5c36de67}\label{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a21b64c341021e9573e3ca86e5c36de67}} 
+\index{GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}!LightRenderComponent@{LightRenderComponent}}
+\index{LightRenderComponent@{LightRenderComponent}!GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}}
+\subsubsection{\texorpdfstring{LightRenderComponent()}{LightRenderComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Render\+Component\+::\+Light\+Render\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}}}]{step }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the Light\+Functionalities that contains it \\
+\hline
+{\em step} & indicates to which Light\+Render key this object corresponds \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_render_component_ac118ddf14a5602d3342d1b498e38cdf6}\label{class_geometry_engine_1_1_light_utils_1_1_light_render_component_ac118ddf14a5602d3342d1b498e38cdf6}} 
+\index{GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}!LightRenderComponent@{LightRenderComponent}}
+\index{LightRenderComponent@{LightRenderComponent}!GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}}
+\subsubsection{\texorpdfstring{LightRenderComponent()}{LightRenderComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Render\+Component\+::\+Light\+Render\+Component (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_render_component_af6701af8d0d34f987852ab0faebefa86}\label{class_geometry_engine_1_1_light_utils_1_1_light_render_component_af6701af8d0d34f987852ab0faebefa86}} 
+\index{GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}!AddToInterface@{AddToInterface}}
+\index{AddToInterface@{AddToInterface}!GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}}
+\subsubsection{\texorpdfstring{AddToInterface()}{AddToInterface()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Render\+Component\+::\+Add\+To\+Interface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}}}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sets a new parent interface and adds the step to that interface 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} that contains it \\
+\hline
+{\em step} & indicates to which Light\+Render key this object corresponds \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a0311667e3f6faa30c938303e8eaa9670}\label{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a0311667e3f6faa30c938303e8eaa9670}} 
+\index{GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}}$\ast$ Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Render\+Component\+::\+Clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Component\+Manager}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils_ac3078de660742daceaa06bd9bc61d24a}{Light\+Render}}}]{step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract method. Factory method. Creates a copy of this object 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the Light\+Functionalities that contains it \\
+\hline
+{\em step} & indicates to which Light\+Render key this object corresponds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_af28cdecb60e4230898099d85245fb5c8}{Geometry\+Engine\+::\+Light\+Utils\+::\+Bounding\+Geometry\+Lighting$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a3a08d64bbf4aef1300b334dd0b21ed62}\label{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a3a08d64bbf4aef1300b334dd0b21ed62}} 
+\index{GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Render\+Component\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_render_component}{Light\+Render\+Component}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a Custom\+Shading\+Step object to the current object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Custom\+Shading\+Step to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a025de8e4ec4345f0e7b303646a1d765b}\label{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a025de8e4ec4345f0e7b303646a1d765b}} 
+\index{GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}!Render@{Render}}
+\index{Render@{Render}!GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}}
+\subsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Render\+Component\+::\+Render (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection\+Matrix,  }\item[{const Q\+Matrix4x4 \&}]{view\+Matrix,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_buffers_info}{Buffers\+Info}} \&}]{buffers\+Info,  }\item[{const Q\+Vector3D \&}]{view\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Apply light technique. Abstract method to be implemented by child classes. 
+\begin{DoxyParams}{Parameters}
+{\em projection\+Matrix} & Camera projection matrix \\
+\hline
+{\em view\+Matrix} & Camera view matrix \\
+\hline
+{\em g\+Buff\+Info} & Texture info from the camera buffers \\
+\hline
+{\em view\+Pos} & Position of the camera \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_bounding_geometry_lighting_a604f7fea25829abe9106f929eb2b142f}{Geometry\+Engine\+::\+Light\+Utils\+::\+Bounding\+Geometry\+Lighting$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a8c1e3c8aa5d8761793a9f39a16fe2f0b}\label{class_geometry_engine_1_1_light_utils_1_1_light_render_component_a8c1e3c8aa5d8761793a9f39a16fe2f0b}} 
+\index{GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}!SetTargetLight@{SetTargetLight}}
+\index{SetTargetLight@{SetTargetLight}!GeometryEngine::LightUtils::LightRenderComponent@{GeometryEngine::LightUtils::LightRenderComponent}}
+\subsubsection{\texorpdfstring{SetTargetLight()}{SetTargetLight()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Light\+Utils\+::\+Light\+Render\+Component\+::\+Set\+Target\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets the target for this technique 
+\begin{DoxyParams}{Parameters}
+{\em target} & Light to be rendered \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Light\+Utils/Light\+Render\+Component.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Light\+Utils/Light\+Render\+Component.\+cpp\end{DoxyCompactItemize}

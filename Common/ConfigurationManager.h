@@ -32,7 +32,7 @@ namespace Configuration
 	{
 	public:
 		///Initializes the singleton instance if it has not been initialized and returns the singleton instance
-		///return singleton instance
+		/// \return singleton instance
 		static ConfigurationManager* GetInstance();
 		///Destroys the singleton instance if it has been initialized
 		static void DestroyInstance();
@@ -66,7 +66,7 @@ namespace Configuration
 		///Fills the path map and calls readConfigFile
 		void init();
 		///Reads the configuration file and inserts the values into the path map
-		///param map path map where the config values will be returned
+		/// \param map path map where the config values will be returned
 		void readConfigFile(std::map <std::string, std::string* > & map);
 
 	};

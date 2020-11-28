@@ -103,9 +103,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html#ac12987f600cbb14ae0aefa0f18b9e190">StartSetup</a> ()=0</td></tr>
 <tr class="memdesc:ac12987f600cbb14ae0aefa0f18b9e190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure pipeline. <br /></td></tr>
 <tr class="separator:ac12987f600cbb14ae0aefa0f18b9e190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6233d780b8ba17d9fd26f2aef0df26aa"><td class="memItemLeft" align="right" valign="top"><a id="a6233d780b8ba17d9fd26f2aef0df26aa"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html#a6233d780b8ba17d9fd26f2aef0df26aa">FinishSetup</a> ()=0</td></tr>
-<tr class="memdesc:a6233d780b8ba17d9fd26f2aef0df26aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the pipeline to its initial state. <br /></td></tr>
+<tr class="memitem:a6233d780b8ba17d9fd26f2aef0df26aa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html#a6233d780b8ba17d9fd26f2aef0df26aa">FinishSetup</a> ()=0</td></tr>
 <tr class="separator:a6233d780b8ba17d9fd26f2aef0df26aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf97b18fd8af32c63a189983ab35d5ae"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html">GlSetup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html#adf97b18fd8af32c63a189983ab35d5ae">Clone</a> () const =0</td></tr>
 <tr class="separator:adf97b18fd8af32c63a189983ab35d5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,7 +143,12 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copy constructor param ref Constant reference to <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html">GlSetup</a> to be copied </p>
+<p>Copy constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td>Constant reference to <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html">GlSetup</a> to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -172,7 +175,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Factory method that creates a copy of the object return Pointer to a copy of the object </p>
+<p>Factory method that creates a copy of the object </p><dl class="section return"><dt>Returns</dt><dd>Pointer to a copy of the object </dd></dl>
 
 <p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html#ade45cd909edd6ff3cae7323d5e1c53d0">GeometryEngine::GeometryGlSetup::InitialSetup</a>.</p>
 
@@ -201,7 +204,40 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copies the values of a given <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html">GlSetup</a> into this object param ref <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html">GlSetup</a> to be copied </p>
+<p>Copies the values of a given <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html">GlSetup</a> into this object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td><a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html">GlSetup</a> to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6233d780b8ba17d9fd26f2aef0df26aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6233d780b8ba17d9fd26f2aef0df26aa">&#9670;&nbsp;</a></span>FinishSetup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GeometryEngine::GeometryGlSetup::GlSetup::FinishSetup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the pipeline to its initial state </dd></dl>
+
+<p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html#a4ba4e34bcc09a800ab98dbe3181f1263">GeometryEngine::GeometryGlSetup::InitialSetup</a>.</p>
 
 </div>
 </div>

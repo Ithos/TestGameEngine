@@ -44,24 +44,24 @@ namespace GeometryEngine
 		{
 		public:
 			/// Construct
-			/// param boundingGeometry The post process will be applied to every part of the screen where the bounding geometry is drawn. Usually it should be a rectangle directly in front of the camera.
+			/// \param boundingGeometry The post process will be applied to every part of the screen where the bounding geometry is drawn. Usually it should be a rectangle directly in front of the camera.
 			PostProcess(const GeometryWorldItem::GeometryItem::GeometryItem & boundingGeometry);
 			/// Copy constructor
-			/// param ref Const reference to PostProcess to be copied
+			/// \param ref Const reference to PostProcess to be copied
 			PostProcess(const PostProcess& ref);
 			/// Destructor
 			virtual ~PostProcess();
 			/// Applies the post process
-			/// param gBuffTexInfo Geometry buffer data
+			/// \param gBuffTexInfo Geometry buffer data
 			virtual void ApplyPostProcess(const GBufferTextureInfo& gBuffTexInfo); 
 			/// Applies the second step of the post process if it exists. This method should be reimplemented by this class's children
-			/// param gBuffTexInfo Geometry buffer data
-			/// return true if the second step was applied, false if there isn't  a second step
+			/// \param gBuffTexInfo Geometry buffer data
+			/// \return true if the second step was applied, false if there isn't  a second step
 			virtual bool ApplyPostProcessSecondStep(const GBufferTextureInfo& gBuffTexInfo) { return false; }
 			/// Returns a pointer to the geometry in which the post process will be applied
 			virtual GeometryWorldItem::GeometryItem::GeometryItem* const GetBoundingGeometry() { return mpBoundingGeometry; }
 			/// Abstract method. Factory method. Creates a copy of this object
-			/// return Pointer to a copy of this object
+			/// \return Pointer to a copy of this object
 			virtual PostProcess* Clone() const = 0;
 		protected:
 			GeometryWorldItem::GeometryItem::GeometryItem* mpBoundingGeometry;
@@ -82,7 +82,7 @@ namespace GeometryEngine
 			/// Abstract method. Renders the PostPRocess
 			virtual void applyFilter() = 0;
 			/// Copies the data of a PostProcess object to the current object
-			/// param ref PostProcess to be copied
+			/// \param ref PostProcess to be copied
 			virtual void copy(const PostProcess& ref);
 		};
 	}

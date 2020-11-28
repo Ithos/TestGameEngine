@@ -107,9 +107,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html#a304b9d9172d688a340175dfabb10e8e7">StartSetup</a> () override</td></tr>
 <tr class="memdesc:a304b9d9172d688a340175dfabb10e8e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the OpenGl pipeline. <br /></td></tr>
 <tr class="separator:a304b9d9172d688a340175dfabb10e8e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ba4e34bcc09a800ab98dbe3181f1263"><td class="memItemLeft" align="right" valign="top"><a id="a4ba4e34bcc09a800ab98dbe3181f1263"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html#a4ba4e34bcc09a800ab98dbe3181f1263">FinishSetup</a> () override</td></tr>
-<tr class="memdesc:a4ba4e34bcc09a800ab98dbe3181f1263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the OpenGl pipeline to its initial state. <br /></td></tr>
+<tr class="memitem:a4ba4e34bcc09a800ab98dbe3181f1263"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html#a4ba4e34bcc09a800ab98dbe3181f1263">FinishSetup</a> () override</td></tr>
 <tr class="separator:a4ba4e34bcc09a800ab98dbe3181f1263"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a403192af4493ada23671bf1d95f2da89"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html#a403192af4493ada23671bf1d95f2da89">SetColor</a> (const QVector4D &amp;color) override</td></tr>
 <tr class="separator:a403192af4493ada23671bf1d95f2da89"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,7 +165,12 @@ QVector4D&#160;</td><td class="memItemRight" valign="bottom"><b>mClearColor</b><
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copy Constructor param ref Const reference to <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html" title="Class that stablishes the initial state of the OpenGl pipeline.">InitialSetup</a> to be copied </p>
+<p>Copy Constructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td>Const reference to <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html" title="Class that stablishes the initial state of the OpenGl pipeline.">InitialSetup</a> to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -194,7 +197,7 @@ QVector4D&#160;</td><td class="memItemRight" valign="bottom"><b>mClearColor</b><
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Factory method. Creates a copy of this object return Pointer to a copy of this object </p>
+<p>Factory method. Creates a copy of this object </p><dl class="section return"><dt>Returns</dt><dd>Pointer to a copy of this object </dd></dl>
 
 <p>Implements <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html#adf97b18fd8af32c63a189983ab35d5ae">GeometryEngine::GeometryGlSetup::GlSetup</a>.</p>
 
@@ -223,7 +226,40 @@ QVector4D&#160;</td><td class="memItemRight" valign="bottom"><b>mClearColor</b><
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Copies the data of an <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html" title="Class that stablishes the initial state of the OpenGl pipeline.">InitialSetup</a> to the current object param ref <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html" title="Class that stablishes the initial state of the OpenGl pipeline.">InitialSetup</a> to be copied </p>
+<p>Copies the data of an <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html" title="Class that stablishes the initial state of the OpenGl pipeline.">InitialSetup</a> to the current object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref</td><td><a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html" title="Class that stablishes the initial state of the OpenGl pipeline.">InitialSetup</a> to be copied </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4ba4e34bcc09a800ab98dbe3181f1263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ba4e34bcc09a800ab98dbe3181f1263">&#9670;&nbsp;</a></span>FinishSetup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeometryEngine::GeometryGlSetup::InitialSetup::FinishSetup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the OpenGl pipeline to its initial state </dd></dl>
+
+<p>Implements <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html#a6233d780b8ba17d9fd26f2aef0df26aa">GeometryEngine::GeometryGlSetup::GlSetup</a>.</p>
 
 </div>
 </div>
@@ -250,7 +286,12 @@ QVector4D&#160;</td><td class="memItemRight" valign="bottom"><b>mClearColor</b><
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set the OpenGl clear color the will be used param color Qvector4D color+alpha in the form of a 4D vector </p>
+<p>Set the OpenGl clear color the will be used </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>Qvector4D color+alpha in the form of a 4D vector </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplemented from <a class="el" href="class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html#acd5b3b2525d11f103f1d3cf298d4af94">GeometryEngine::GeometryGlSetup::GlSetup</a>.</p>
 

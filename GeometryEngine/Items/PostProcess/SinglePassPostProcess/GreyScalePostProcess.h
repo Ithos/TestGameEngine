@@ -16,15 +16,15 @@ namespace GeometryEngine
 			{
 			public:
 				///Constructor
-				///param boundingGeometry
+				/// \param boundingGeometry
 				GreyScalePostProcess(const GeometryWorldItem::GeometryItem::GeometryItem& boundingGeometry);
 				///Copy constructor
-				///param ref Const reference to GreyScalePostProcess to be copied
+				/// \param ref Const reference to GreyScalePostProcess to be copied
 				GreyScalePostProcess(const GreyScalePostProcess& ref) : SinglePassPostProcess(ref) { copy(ref); }
 				///Destructor
 				virtual ~GreyScalePostProcess();
 				///Factory method. Creates a copy of this object
-				///return Pointer to a copy of this object
+				/// \return Pointer to a copy of this object
 				virtual PostProcess* Clone() const override { return new GreyScalePostProcess(*this); }
 			protected:
 				///Stablishes shaders keys.
@@ -34,7 +34,7 @@ namespace GeometryEngine
 				///Renders the filter
 				virtual void applyFilter() override;
 				/// Copies the data of a PostProcess object to the current object
-				/// param ref PostProcess to be copied
+				/// \param ref PostProcess to be copied
 				virtual void copy(const GreyScalePostProcess& ref);
 			};
 		}

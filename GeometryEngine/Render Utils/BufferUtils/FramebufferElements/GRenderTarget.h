@@ -19,19 +19,19 @@ namespace GeometryEngine
 			/// Default constructor
 			GRenderTarget();
 			/// Constructor. Creates a texture with white border color.
-			/// param textureSize Size of the texture to be created
+			/// \param textureSize Size of the texture to be created
 			GRenderTarget(const QVector2D& size);
 			/// Copy constructor
-			/// param ref Object to be copied
+			/// \param ref Object to be copied
 			GRenderTarget(const GRenderTarget& ref);
 			/// Abstract method. Resizes the render target
-			/// param size New size for the render target
+			/// \param size New size for the render target
 			virtual void Resize(const QVector2D& size) = 0;
 			/// Gets the OpenGl index for the element
-			/// return OpenGl index of this element
+			/// \return OpenGl index of this element
 			GLuint GetIndex() const { return mIndex; }
 			/// Gets the attachment index for the element
-			/// return attachment index of this element
+			/// \return attachment index of this element
 			GLint GetAttachment() const { return mAttachment; }
 			/// Sets the attachment for this element. The actual attachment is updated when Enable is called.
 			/// prameter attachmentIndex integer that represents the attachment, the specific attachment represented must be decided by the child class 
@@ -50,7 +50,7 @@ namespace GeometryEngine
 			/// Returns whether the target is enabled or not
 			virtual bool GetEnabled() const { return mEnabled; }
 			/// Factory method. Creates a copy of this object
-			/// return Pointer to a copy of this object
+			/// \return Pointer to a copy of this object
 			virtual GRenderTarget* Clone() const = 0;
 		protected:
 			QVector2D mSize;
@@ -59,7 +59,7 @@ namespace GeometryEngine
 			bool mEnabled;
 			const GFramebufferObject* mOwner;
 			/// Copies a data GRenderTarget to the current object
-			/// param ref GRenderTarget to be copied
+			/// \param ref GRenderTarget to be copied
 			virtual void copy(const GRenderTarget& ref);
 			/// If the render target has an owner returns whether it is bound
 			bool GetOwnerBound() const;

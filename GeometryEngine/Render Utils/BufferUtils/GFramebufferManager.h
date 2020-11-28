@@ -19,16 +19,16 @@ namespace GeometryEngine
 			/// Destroys the pointer to the singleton.
 			static void Release();
 			/// Adds a FBO to the manager. Does nothing if the FBO was already included. It isn't necessary to call this method outside the manager or the FBO itself.
-			/// param fbo Pointer to the framebuffer to add
+			/// \param fbo Pointer to the framebuffer to add
 			void AddFramebuffer(GFramebufferObject* fbo);
 			/// Deletes a framebuffer and removes it from the manager. The framebuffer standard destructor also removes it from the manager for safety.
-			/// param fbo Pointer to the fbo to be removed
+			/// \param fbo Pointer to the fbo to be removed
 			void DeleteFramebuffer(GFramebufferObject* fbo);
 			/// Sets a new active framebuffer and sets all other framebuffers as detached.
-			/// param fbo Pointer to the framebuffer to be set as active
+			/// \param fbo Pointer to the framebuffer to be set as active
 			void SetFramebufferActive(GFramebufferObject* fbo);
 			/// Factory method. Creates a new framebuffer
-			/// return pointer to a new framebuffer
+			/// \return pointer to a new framebuffer
 			GFramebufferObject* GetNewFramebuffer();
 		private:
 			GFramebufferManager();

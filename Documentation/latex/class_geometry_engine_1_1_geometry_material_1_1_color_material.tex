@@ -18,15 +18,41 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Color\+Materia
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_af445424ce4cb91403b9623cee72fdf92}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_af445424ce4cb91403b9623cee72fdf92}} 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_color_material_af445424ce4cb91403b9623cee72fdf92}{Color\+Material}} (const Q\+Vector3D \&ambient=Q\+Vector3D(0.\+0f, 0.\+0, 0.\+0f), const Q\+Vector3\+D \&diffuse=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&emissive=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), float shininess=10.\+0f)
-\begin{DoxyCompactList}\small\item\em Constructor. Calls init material. \end{DoxyCompactList}\item 
+\item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_color_material_a42495fe930beb678d0c31a93045572e3}{Color\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_color_material}{Color\+Material}} \&mat)
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_a7d7fcbb8896167b79be5e2e1938f963c}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_a7d7fcbb8896167b79be5e2e1938f963c}} 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_color_material_a7d7fcbb8896167b79be5e2e1938f963c}{$\sim$\+Color\+Material}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_color_material_a29dbf04e76b75fcc86f184d072bba0a5}{Clone}} () const override
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_a571c8da3087b608f6fda63958c1c9901}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_a571c8da3087b608f6fda63958c1c9901}} 
+const Q\+Vector3D \& {\bfseries Get\+Ambient} () const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_a24a6e72f950f482d1bcd4334c8268d6c}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_a24a6e72f950f482d1bcd4334c8268d6c}} 
+const Q\+Vector3D \& {\bfseries Get\+Diffuse} () const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_a17c1620e568d2e0c72f9944b08ca0bef}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_a17c1620e568d2e0c72f9944b08ca0bef}} 
+const Q\+Vector3D \& {\bfseries Get\+Specular} () const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_a29cb17c60cb89216b9dea335002ec268}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_a29cb17c60cb89216b9dea335002ec268}} 
+const Q\+Vector3D \& {\bfseries Get\+Emissive} () const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_a18c4775f7bed2395c903cbbbc25db7d7}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_a18c4775f7bed2395c903cbbbc25db7d7}} 
+float {\bfseries Get\+Shininess} () const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_a8b963330d76373f3e78f52c1a83ed65b}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_a8b963330d76373f3e78f52c1a83ed65b}} 
+void {\bfseries Set\+Ambient} (const Q\+Vector3D \&ambient)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_a7994a444bd40044db82c71f66f28206a}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_a7994a444bd40044db82c71f66f28206a}} 
+void {\bfseries Set\+Diffuse} (const Q\+Vector3D \&diffuse)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_afa7b84e90d68883cf9786eb9de65aa36}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_afa7b84e90d68883cf9786eb9de65aa36}} 
+void {\bfseries Set\+Specular} (const Q\+Vector3D \&specular)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_a0dd0930d6e8c66168eb88f61cd96f19b}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_a0dd0930d6e8c66168eb88f61cd96f19b}} 
+void {\bfseries Set\+Emissive} (const Q\+Vector3D \&emissive)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -40,20 +66,58 @@ virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_co
 \item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_color_material_a11ddb849641dc6216d7ded2331636d46}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_color_material}{Color\+Material}} \&mat)
 \end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_ac77fb2bf46f1645848fc9e201b6ce6dd}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_ac77fb2bf46f1645848fc9e201b6ce6dd}} 
+Q\+Vector3D {\bfseries m\+Ambient}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_ae66ee85dbfbb7a626fee1ea9062b2b64}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_ae66ee85dbfbb7a626fee1ea9062b2b64}} 
+Q\+Vector3D {\bfseries m\+Diffuse}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_aa998b9dc2235f028454ead10148c4d15}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_aa998b9dc2235f028454ead10148c4d15}} 
+Q\+Vector3D {\bfseries m\+Specular}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_a782f506d3c09af477a4cc9643dd57e6f}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_a782f506d3c09af477a4cc9643dd57e6f}} 
+Q\+Vector3D {\bfseries m\+Emissive}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that defines color by its ambient, diffuse specular and emissive components. 
 
 \subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_af445424ce4cb91403b9623cee72fdf92}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_af445424ce4cb91403b9623cee72fdf92}} 
+\index{GeometryEngine::GeometryMaterial::ColorMaterial@{GeometryEngine::GeometryMaterial::ColorMaterial}!ColorMaterial@{ColorMaterial}}
+\index{ColorMaterial@{ColorMaterial}!GeometryEngine::GeometryMaterial::ColorMaterial@{GeometryEngine::GeometryMaterial::ColorMaterial}}
+\subsubsection{\texorpdfstring{ColorMaterial()}{ColorMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Color\+Material\+::\+Color\+Material (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(0.0f,~0.0,~0.0f)},  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{emissive = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})}
+
+Constructor. Calls init material Constructor 
+\begin{DoxyParams}{Parameters}
+{\em ambient} & Ambient rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em diffuse} & Diffuse rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em emissive} & Emissive rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_a42495fe930beb678d0c31a93045572e3}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_a42495fe930beb678d0c31a93045572e3}} 
 \index{GeometryEngine::GeometryMaterial::ColorMaterial@{GeometryEngine::GeometryMaterial::ColorMaterial}!ColorMaterial@{ColorMaterial}}
 \index{ColorMaterial@{ColorMaterial}!GeometryEngine::GeometryMaterial::ColorMaterial@{GeometryEngine::GeometryMaterial::ColorMaterial}}
-\subsubsection{\texorpdfstring{ColorMaterial()}{ColorMaterial()}}
+\subsubsection{\texorpdfstring{ColorMaterial()}{ColorMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Color\+Material\+::\+Color\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_color_material}{Color\+Material}} \&}]{mat }\end{DoxyParamCaption})}
 
-Copy constructor param ref Object to be copied. 
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_a29dbf04e76b75fcc86f184d072bba0a5}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_a29dbf04e76b75fcc86f184d072bba0a5}} 
@@ -62,7 +126,10 @@ Copy constructor param ref Object to be copied.
 \subsubsection{\texorpdfstring{Clone()}{Clone()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Material\+::\+Color\+Material\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Factory method. Creates a copy of this object return Pointer to a copy of this object 
+Factory method. Creates a copy of this object \begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+
 
 Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_ae5513ff06d536365e18ddc5e07e79784}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
 
@@ -72,13 +139,29 @@ Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_mate
 \subsubsection{\texorpdfstring{copy()}{copy()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Color\+Material\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_color_material}{Color\+Material}} \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} object to the current object param ref \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} to be copied \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_abaf6f7ed79dad79253ea469c4c7460eb}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_abaf6f7ed79dad79253ea469c4c7460eb}} 
+Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} object to the current object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_color_material_abaf6f7ed79dad79253ea469c4c7460eb}\label{class_geometry_engine_1_1_geometry_material_1_1_color_material_abaf6f7ed79dad79253ea469c4c7460eb}} 
 \index{GeometryEngine::GeometryMaterial::ColorMaterial@{GeometryEngine::GeometryMaterial::ColorMaterial}!drawMaterial@{drawMaterial}}
 \index{drawMaterial@{drawMaterial}!GeometryEngine::GeometryMaterial::ColorMaterial@{GeometryEngine::GeometryMaterial::ColorMaterial}}
 \subsubsection{\texorpdfstring{drawMaterial()}{drawMaterial()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Color\+Material\+::draw\+Material (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{array\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Number,  }\item[{unsigned int}]{total\+Index\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Binds shaders and draws. param vertex\+Buf Vertex buffer param index\+Buf Index\+Buffer param total\+Vertex\+Num Number of vetices param tital\+Index\+Num Number of indices 
+Binds shaders and draws. 
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Buf} & Vertex buffer \\
+\hline
+{\em index\+Buf} & Index\+Buffer \\
+\hline
+{\em total\+Vertex\+Num} & Number of vetices \\
+\hline
+{\em tital\+Index\+Num} & Number of indices \\
+\hline
+\end{DoxyParams}
+
 
 Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a0070eab6e5fe86dc05dc69f2e37b9072}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
 
@@ -88,9 +171,16 @@ Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_mate
 \subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Material\+::\+Color\+Material\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{projection,  }\item[{const Q\+Matrix4x4 \&}]{view,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Sends parameters to the shaders. param projection Projection matrix param view View matrix
+Sends parameters to the shaders. 
+\begin{DoxyParams}{Parameters}
+{\em projection} & Projection matrix \\
+\hline
+{\em view} & View matrix\\
+\hline
+{\em parent} & geometry item \\
+\hline
+\end{DoxyParams}
 
-param parent geometry item 
 
 Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a68310797df53062f237d0005fbcfce7e}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}}.
 

@@ -1,0 +1,166 @@
+\hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass}{}\section{Geometry\+Engine\+::Geometry\+Render\+Step\+::Transparent\+Shadowed\+Lighting\+Pass Class Reference}
+\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass}\index{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}}
+
+
+Lighting pass that calculates transparent and translucent shadows.  
+
+
+
+
+{\ttfamily \#include $<$Transparent\+Shadowed\+Lighting\+Pass.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+Render\+Step\+::Transparent\+Shadowed\+Lighting\+Pass\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a12c23cc6f03bcf838c0941f9d1cb3c81}{Transparent\+Shadowed\+Lighting\+Pass}} (bool use\+Front\+Face\+Culling=true)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a5154522329ead1d111ebbcc34af4e662}{Transparent\+Shadowed\+Lighting\+Pass}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass}{Shadowed\+Lighting\+Pass}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a781a46fa53c307d68e7566951defdfa1}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a781a46fa53c307d68e7566951defdfa1}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a781a46fa53c307d68e7566951defdfa1}{$\sim$\+Transparent\+Shadowed\+Lighting\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a56d2ef131669ae3964a04cb54e6c3b0f}{Clone}} () const override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a651aad2a6704f45bc1562df549024178}{calculate\+Single\+Light\+Color\+Map}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$light, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$translucent\+Items)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a2b57824704b0e211133de03e788373a3}{calculate\+Single\+Light\+Translucent\+Shadow\+Map}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$light, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$translucent\+Items)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_ab88135daf4e0001a39ce4d9b4b7ff197}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass}{Shadowed\+Lighting\+Pass}} \&ref)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_ad366c618c891de5c541b6d75db6a9594}{Calculate\+Shadow\+Map}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$shadowed\+Lights, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_acc1bb4b92b2c46deefca7db48645d6ef}{calculate\+Item\+Translucent\+Shadowing}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$item, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$light)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Lighting pass that calculates transparent and translucent shadows. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a12c23cc6f03bcf838c0941f9d1cb3c81}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a12c23cc6f03bcf838c0941f9d1cb3c81}} 
+\index{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}!TransparentShadowedLightingPass@{TransparentShadowedLightingPass}}
+\index{TransparentShadowedLightingPass@{TransparentShadowedLightingPass}!GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}}
+\subsubsection{\texorpdfstring{TransparentShadowedLightingPass()}{TransparentShadowedLightingPass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Shadowed\+Lighting\+Pass\+::\+Transparent\+Shadowed\+Lighting\+Pass (\begin{DoxyParamCaption}\item[{bool}]{use\+Front\+Face\+Culling = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em use\+Front\+Face\+Culling} & Front face culling helps avoid Shadow acne. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a5154522329ead1d111ebbcc34af4e662}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a5154522329ead1d111ebbcc34af4e662}} 
+\index{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}!TransparentShadowedLightingPass@{TransparentShadowedLightingPass}}
+\index{TransparentShadowedLightingPass@{TransparentShadowedLightingPass}!GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}}
+\subsubsection{\texorpdfstring{TransparentShadowedLightingPass()}{TransparentShadowedLightingPass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Shadowed\+Lighting\+Pass\+::\+Transparent\+Shadowed\+Lighting\+Pass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass}{Shadowed\+Lighting\+Pass}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{Lighting\+Pass}} to be copied \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_acc1bb4b92b2c46deefca7db48645d6ef}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_acc1bb4b92b2c46deefca7db48645d6ef}} 
+\index{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}!calculateItemTranslucentShadowing@{calculateItemTranslucentShadowing}}
+\index{calculateItemTranslucentShadowing@{calculateItemTranslucentShadowing}!GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}}
+\subsubsection{\texorpdfstring{calculateItemTranslucentShadowing()}{calculateItemTranslucentShadowing()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Shadowed\+Lighting\+Pass\+::calculate\+Item\+Translucent\+Shadowing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{item,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{light }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Calculates the colormap contribution of the item 
+\begin{DoxyParams}{Parameters}
+{\em item} & Item to be rendered into the colormap \\
+\hline
+{\em light} & Light whose color map will be calculated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_ad366c618c891de5c541b6d75db6a9594}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_ad366c618c891de5c541b6d75db6a9594}} 
+\index{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}!CalculateShadowMap@{CalculateShadowMap}}
+\index{CalculateShadowMap@{CalculateShadowMap}!GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}}
+\subsubsection{\texorpdfstring{CalculateShadowMap()}{CalculateShadowMap()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Shadowed\+Lighting\+Pass\+::\+Calculate\+Shadow\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{shadowed\+Lights,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Calculates the shadowmap for every light and applies the light contribution 
+\begin{DoxyParams}{Parameters}
+{\em cam} & Pointer to camera to be rendered \\
+\hline
+{\em items} & Set of items to be rendered. Items will no be used in this step, we will use the information stored in the geometry buffer instead. \\
+\hline
+{\em shadowed\+Lights} & Set of shadow casting lights in the scene. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a6365f5d2036ee96eae06074917f691f3}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a651aad2a6704f45bc1562df549024178}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a651aad2a6704f45bc1562df549024178}} 
+\index{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}!calculateSingleLightColorMap@{calculateSingleLightColorMap}}
+\index{calculateSingleLightColorMap@{calculateSingleLightColorMap}!GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}}
+\subsubsection{\texorpdfstring{calculateSingleLightColorMap()}{calculateSingleLightColorMap()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Shadowed\+Lighting\+Pass\+::calculate\+Single\+Light\+Color\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{light,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{translucent\+Items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Calculates the translucent color map for a single light 
+\begin{DoxyParams}{Parameters}
+{\em light} & Light whose color map will be calculated \\
+\hline
+{\em items} & Set of items whose color map will be applied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a2b57824704b0e211133de03e788373a3}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a2b57824704b0e211133de03e788373a3}} 
+\index{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}!calculateSingleLightTranslucentShadowMap@{calculateSingleLightTranslucentShadowMap}}
+\index{calculateSingleLightTranslucentShadowMap@{calculateSingleLightTranslucentShadowMap}!GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}}
+\subsubsection{\texorpdfstring{calculateSingleLightTranslucentShadowMap()}{calculateSingleLightTranslucentShadowMap()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Shadowed\+Lighting\+Pass\+::calculate\+Single\+Light\+Translucent\+Shadow\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{light,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{translucent\+Items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Calculates the translucent items shadow map for a single light 
+\begin{DoxyParams}{Parameters}
+{\em light} & Light whose shadow map will be calculated \\
+\hline
+{\em translucent} & items Set of items whose shadows will be applied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a56d2ef131669ae3964a04cb54e6c3b0f}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a56d2ef131669ae3964a04cb54e6c3b0f}} 
+\index{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}}$\ast$ Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Shadowed\+Lighting\+Pass\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Returns a copy of this object. \begin{DoxyReturn}{Returns}
+A copy of this object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a73176d6860aee0903034eeaf93edb40d}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_ab88135daf4e0001a39ce4d9b4b7ff197}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_ab88135daf4e0001a39ce4d9b4b7ff197}} 
+\index{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass@{GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Shadowed\+Lighting\+Pass\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass}{Shadowed\+Lighting\+Pass}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{Lighting\+Pass}} into this object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass}{Lighting\+Pass}} to be copied \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_add7b889c49a68911f675ee44ab656699}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Render\+Steps/Transparent\+Shadowed\+Lighting\+Pass.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Render\+Steps/Transparent\+Shadowed\+Lighting\+Pass.\+cpp\end{DoxyCompactItemize}

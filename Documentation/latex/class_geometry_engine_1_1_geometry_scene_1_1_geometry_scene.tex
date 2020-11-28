@@ -7,7 +7,7 @@
 Inheritance diagram for Geometry\+Engine\+::Geometry\+Scene\+::Geometry\+Scene\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.063628cm]{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene}
+\includegraphics[height=0.750670cm]{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -90,7 +90,20 @@ Base class for more specific scenes. It can be used as a custom scene if you nee
 \subsubsection{\texorpdfstring{GeometryScene()}{GeometryScene()}}
 {\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::\+Geometry\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_scene_manager}{Scene\+Manager}} $\ast$}]{manager,  }\item[{G\+Ldouble}]{fovy = {\ttfamily 45.0},  }\item[{G\+Ldouble}]{z\+Near = {\ttfamily 0.1},  }\item[{G\+Ldouble}]{z\+Far = {\ttfamily 30.0},  }\item[{Q\+Vector4D}]{clear\+Color = {\ttfamily QVector4D(0.0f,~0.0f,~0.0f,~1.0f)} }\end{DoxyParamCaption})}
 
-Constructor. Here the scene adds itself to the scene manager. param manager Pointer to the scene manager param fovy Field of view angle param z\+Near Near plane z coordinate param z\+Far Far plane z coordinate param clear\+Color Clear color for the scene 
+Constructor. Here the scene adds itself to the scene manager. 
+\begin{DoxyParams}{Parameters}
+{\em manager} & Pointer to the scene manager \\
+\hline
+{\em fovy} & Field of view angle \\
+\hline
+{\em z\+Near} & Near plane z coordinate \\
+\hline
+{\em z\+Far} & Far plane z coordinate \\
+\hline
+{\em clear\+Color} & Clear color for the scene \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_af93678aaffba19dfb2302a9b2850ae59}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_af93678aaffba19dfb2302a9b2850ae59}} 
@@ -99,73 +112,170 @@ Constructor. Here the scene adds itself to the scene manager. param manager Poin
 \subsubsection{\texorpdfstring{AddCamera()}{AddCamera()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::\+Add\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Add camera to the scene param item Pointer to Camera return false if the scene already contained the camera true otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_a31a1d878b18e5e9fe4cc4aebeb3de415}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_a31a1d878b18e5e9fe4cc4aebeb3de415}} 
+Add camera to the scene 
+\begin{DoxyParams}{Parameters}
+{\em item} & Pointer to Camera \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the scene already contained the camera true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_a31a1d878b18e5e9fe4cc4aebeb3de415}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_a31a1d878b18e5e9fe4cc4aebeb3de415}} 
 \index{GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}!AddItem@{AddItem}}
 \index{AddItem@{AddItem}!GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}}
 \subsubsection{\texorpdfstring{AddItem()}{AddItem()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::\+Add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Add item to the scene param item Pointer to Geometry\+Item return false if the scene already contained the item true otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_adde250133889e145473064d276e96583}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_adde250133889e145473064d276e96583}} 
+Add item to the scene 
+\begin{DoxyParams}{Parameters}
+{\em item} & Pointer to Geometry\+Item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the scene already contained the item true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_adde250133889e145473064d276e96583}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_adde250133889e145473064d276e96583}} 
 \index{GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}!AddLight@{AddLight}}
 \index{AddLight@{AddLight}!GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}}
 \subsubsection{\texorpdfstring{AddLight()}{AddLight()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::\+Add\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Add light to the scene param item Pointer to Light return false if the scene already contained the light true otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ada6f2a88a6e7962200a12e5083f8c055}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ada6f2a88a6e7962200a12e5083f8c055}} 
+Add light to the scene 
+\begin{DoxyParams}{Parameters}
+{\em item} & Pointer to Light \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the scene already contained the light true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ada6f2a88a6e7962200a12e5083f8c055}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ada6f2a88a6e7962200a12e5083f8c055}} 
 \index{GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}!AddRenderStep@{AddRenderStep}}
 \index{AddRenderStep@{AddRenderStep}!GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}}
 \subsubsection{\texorpdfstring{AddRenderStep()}{AddRenderStep()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::\+Add\+Render\+Step (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Geometry\+Render\+Step\+::\+Render\+Step}} \&}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Add render step to the scene param step Constant reference to Render\+Step return false if the scene already contained the render step true otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_aed4a5446836e0430fb1a295f760062f6}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_aed4a5446836e0430fb1a295f760062f6}} 
+Add render step to the scene 
+\begin{DoxyParams}{Parameters}
+{\em step} & Constant reference to Render\+Step \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the scene already contained the render step true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_aed4a5446836e0430fb1a295f760062f6}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_aed4a5446836e0430fb1a295f760062f6}} 
 \index{GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}!InsertRenderStep@{InsertRenderStep}}
 \index{InsertRenderStep@{InsertRenderStep}!GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}}
 \subsubsection{\texorpdfstring{InsertRenderStep()}{InsertRenderStep()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::\+Insert\+Render\+Step (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Geometry\+Render\+Step\+::\+Render\+Step}} \&}]{step,  }\item[{unsigned int}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Insert a render step at a certain position on the render step list param step Constant reference to Render\+Step param pos Position on the list to insert the render step return false if the srender step list doesn\textquotesingle{}t contain the index true otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ae5607835364c78780386efb5dbde3fff}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ae5607835364c78780386efb5dbde3fff}} 
+Insert a render step at a certain position on the render step list 
+\begin{DoxyParams}{Parameters}
+{\em step} & Constant reference to Render\+Step \\
+\hline
+{\em pos} & Position on the list to insert the render step \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the srender step list doesn\textquotesingle{}t contain the index true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ae5607835364c78780386efb5dbde3fff}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ae5607835364c78780386efb5dbde3fff}} 
 \index{GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}!RemoveCamera@{RemoveCamera}}
 \index{RemoveCamera@{RemoveCamera}!GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}}
 \subsubsection{\texorpdfstring{RemoveCamera()}{RemoveCamera()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::\+Remove\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Remove camera from the scene param item Pointer to Camera return false if the scene doesn\textquotesingle{}t contain the camera true otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_afc7294415ed5013f22c4c8e587437019}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_afc7294415ed5013f22c4c8e587437019}} 
+Remove camera from the scene 
+\begin{DoxyParams}{Parameters}
+{\em item} & Pointer to Camera \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the scene doesn\textquotesingle{}t contain the camera true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_afc7294415ed5013f22c4c8e587437019}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_afc7294415ed5013f22c4c8e587437019}} 
 \index{GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}!RemoveItem@{RemoveItem}}
 \index{RemoveItem@{RemoveItem}!GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}}
 \subsubsection{\texorpdfstring{RemoveItem()}{RemoveItem()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::\+Remove\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Remove item from the scene param item Pointer to Geometry\+Item return false if the scene doesn\textquotesingle{}t contain the item true otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ab0217afe0c403087d3be028f012b1125}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ab0217afe0c403087d3be028f012b1125}} 
+Remove item from the scene 
+\begin{DoxyParams}{Parameters}
+{\em item} & Pointer to Geometry\+Item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the scene doesn\textquotesingle{}t contain the item true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ab0217afe0c403087d3be028f012b1125}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ab0217afe0c403087d3be028f012b1125}} 
 \index{GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}!RemoveLight@{RemoveLight}}
 \index{RemoveLight@{RemoveLight}!GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}}
 \subsubsection{\texorpdfstring{RemoveLight()}{RemoveLight()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::\+Remove\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Remove light from the scene param item Pointer to Light return false if the scene doesn\textquotesingle{}t contain the light true otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_a862a151509389f4f0c15e7ed4e3917c8}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_a862a151509389f4f0c15e7ed4e3917c8}} 
+Remove light from the scene 
+\begin{DoxyParams}{Parameters}
+{\em item} & Pointer to Light \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the scene doesn\textquotesingle{}t contain the light true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_a862a151509389f4f0c15e7ed4e3917c8}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_a862a151509389f4f0c15e7ed4e3917c8}} 
 \index{GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}!RemoveRenderStep@{RemoveRenderStep}}
 \index{RemoveRenderStep@{RemoveRenderStep}!GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}}
 \subsubsection{\texorpdfstring{RemoveRenderStep()}{RemoveRenderStep()}}
 {\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::\+Remove\+Render\+Step (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Remove render step at a certain position on the list from the scene param pos index of the render step on the list return false if the srender step list doesn\textquotesingle{}t contain the index true otherwise \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_aef0be95a28a24292c03bf1138e246439}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_aef0be95a28a24292c03bf1138e246439}} 
+Remove render step at a certain position on the list from the scene 
+\begin{DoxyParams}{Parameters}
+{\em pos} & index of the render step on the list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the srender step list doesn\textquotesingle{}t contain the index true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_aef0be95a28a24292c03bf1138e246439}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_aef0be95a28a24292c03bf1138e246439}} 
 \index{GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}!renderCamera@{renderCamera}}
 \index{renderCamera@{renderCamera}!GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}}
 \subsubsection{\texorpdfstring{renderCamera()}{renderCamera()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::render\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Geometry\+Render\+Step\+::\+Render\+Step}} $\ast$ $>$ \&}]{render\+Steps }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Render individual camera param cam Pointer to camera to be rendered param render\+Steps List of render steps to be performed \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ad4bc76248a37e0a16edff30fe52a29cc}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ad4bc76248a37e0a16edff30fe52a29cc}} 
+Render individual camera 
+\begin{DoxyParams}{Parameters}
+{\em cam} & Pointer to camera to be rendered \\
+\hline
+{\em render\+Steps} & List of render steps to be performed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ad4bc76248a37e0a16edff30fe52a29cc}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ad4bc76248a37e0a16edff30fe52a29cc}} 
 \index{GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}!ResizeScene@{ResizeScene}}
 \index{ResizeScene@{ResizeScene}!GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}}
 \subsubsection{\texorpdfstring{ResizeScene()}{ResizeScene()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::\+Resize\+Scene (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{int}]{formerW,  }\item[{int}]{formerH }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Scale the scene and the viewports for all cameras param w New scene width param h New scene height param formerW Previous scene width param formerH Previous scene height \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_aaef4d7c17ec0292604c3d0cbb861b980}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_aaef4d7c17ec0292604c3d0cbb861b980}} 
+Scale the scene and the viewports for all cameras 
+\begin{DoxyParams}{Parameters}
+{\em w} & New scene width \\
+\hline
+{\em h} & New scene height \\
+\hline
+{\em formerW} & Previous scene width \\
+\hline
+{\em formerH} & Previous scene height \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_aaef4d7c17ec0292604c3d0cbb861b980}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_aaef4d7c17ec0292604c3d0cbb861b980}} 
 \index{GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}!SetInitialSetup@{SetInitialSetup}}
 \index{SetInitialSetup@{SetInitialSetup}!GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}}
 \subsubsection{\texorpdfstring{SetInitialSetup()}{SetInitialSetup()}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::\+Set\+Initial\+Setup (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup}{Geometry\+Gl\+Setup\+::\+Gl\+Setup}} \&}]{setup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-Set the initla setup object for the scene param setup Constant reference to Gl\+Setup 
+Set the initla setup object for the scene 
+\begin{DoxyParams}{Parameters}
+{\em setup} & Constant reference to Gl\+Setup \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

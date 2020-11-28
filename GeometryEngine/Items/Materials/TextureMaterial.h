@@ -22,19 +22,19 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor
-			/// param texDir Key of the texture to be loaded
-			/// param shininess parameter. Equation: spec contribution = cos(alpha) ^ shininess. If shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
-			/// param getFromConf if false texDir is treated as a path to the texture if true its considered a key for the internal texture map
+			/// \param texDir Key of the texture to be loaded
+			/// \param shininess parameter. Equation: spec contribution = cos(alpha) ^ shininess. If shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
+			/// \param getFromConf if false texDir is treated as a path to the texture if true its considered a key for the internal texture map
 			TextureMaterial(const std::string& texDir, float shininess = 10.0f, bool getFromConf = true);
 			/// Constructor
-			/// param textureDirs List of textures to be loaded
-			/// param shininess parameter. Equation: spec contribution = cos(alpha) ^ shininess
+			/// \param textureDirs List of textures to be loaded
+			/// \param shininess parameter. Equation: spec contribution = cos(alpha) ^ shininess
 			TextureMaterial(const std::list< TextureParameters* > & textureDirs, float shininess = 10.0f);
 			/// Copy constructor
-			/// param ref Object to be copied.
+			/// \param ref Object to be copied.
 			TextureMaterial(const TextureMaterial& mat);
 			///Factory method. Creates a copy of this object
-			/// return Pointer to a copy of this object
+			/// \return Pointer to a copy of this object
 			virtual Material* Clone() const override;
 
 			/// Destructor
@@ -64,34 +64,34 @@ namespace GeometryEngine
 			TextureMaterial() {}
 
 			/// Copies the list of textures
-			/// param textureDirs list of pointers to texture data to be copied
+			/// \param textureDirs list of pointers to texture data to be copied
 			virtual void initTextures(const std::list<TextureParameters* > & textureDirs);
 			/// Inits the material and the textures and gets/initializes an instance of the texture manager
-			/// param textureDirs list of pointers to texture data to be copied
+			/// \param textureDirs list of pointers to texture data to be copied
  			virtual void initMaterial(const std::list<TextureParameters* >& textureDirs);
 			/// Sets the keys for the shaders to be used
 			virtual void initShaders() override;
 			/// Builds the textures
-			/// param textureDirs list of material textures to be built
+			/// \param textureDirs list of material textures to be built
 			virtual void buildTextures(const std::list<TextureParameters* >& textureDirs);
 
 			/// Sends parameters to the shaders.
-			/// param projection Projection matrix
-			/// param view View matrix			 
-			/// param parent geometry item
+			/// \param projection Projection matrix
+			/// \param view View matrix			 
+			/// \param parent geometry item
 			virtual void setProgramParameters(const QMatrix4x4& projection, const QMatrix4x4& view, const GeometryWorldItem::GeometryItem::GeometryItem& parent) override;
 			/// Binds shaders and draws.
-			/// param vertexBuf Vertex buffer
-			/// param indexBuf IndexBuffer
-			/// param totalVertexNum Number of vetices
-			/// param totalIndexNumber Number of indices
+			/// \param vertexBuf Vertex buffer
+			/// \param indexBuf IndexBuffer
+			/// \param totalVertexNum Number of vetices
+			/// \param totalIndexNumber Number of indices
 			virtual void drawMaterial(QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, unsigned int totalVertexNumber, unsigned int totalIndexNumber) override;
 			/// Binds textures to specific texture units. Used before drawing the object
 			virtual void bindTextures();
 			/// Unbinds textures.
 			virtual void unbindTextures();
 			/// Copies the data of a Material object to the current object
-			/// param ref Material to be copied
+			/// \param ref Material to be copied
 			virtual void copy(const TextureMaterial& mat);
 		};
 	}

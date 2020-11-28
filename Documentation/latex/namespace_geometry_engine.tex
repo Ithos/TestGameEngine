@@ -8,8 +8,10 @@ Main namespace it contains all \mbox{\hyperlink{namespace_geometry_engine}{Geome
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
+ \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading}{Custom\+Shading}}
+\begin{DoxyCompactList}\small\item\em Namespace for classes involved in custom material shading. \end{DoxyCompactList}\item 
  \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_buffer}{Geometry\+Buffer}}
-\begin{DoxyCompactList}\small\item\em namespace for geometry buffers \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em namespace for buffer clases \end{DoxyCompactList}\item 
  \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_gl_setup}{Geometry\+Gl\+Setup}}
 \begin{DoxyCompactList}\small\item\em namespace for Open\+Gl setups \end{DoxyCompactList}\item 
  \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_item_utils}{Geometry\+Item\+Utils}}
@@ -18,15 +20,21 @@ Main namespace it contains all \mbox{\hyperlink{namespace_geometry_engine}{Geome
 \begin{DoxyCompactList}\small\item\em namespace for all materials \end{DoxyCompactList}\item 
  \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_post_process}{Geometry\+Post\+Process}}
 \begin{DoxyCompactList}\small\item\em namespace for all post processes \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_render_data}{Geometry\+Render\+Data}}
+\begin{DoxyCompactList}\small\item\em Namespace for Render data classes. \end{DoxyCompactList}\item 
  \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_render_step}{Geometry\+Render\+Step}}
 \begin{DoxyCompactList}\small\item\em namespace for render steps \end{DoxyCompactList}\item 
  \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_scene}{Geometry\+Scene}}
 \begin{DoxyCompactList}\small\item\em Namespace for scenes. \end{DoxyCompactList}\item 
  \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item}{Geometry\+World\+Item}}
-\begin{DoxyCompactList}\small\item\em namespace that contains everething that have a position in the scene \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em namespace that contains everething that have a position in the scene \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespace_geometry_engine_1_1_light_utils}{Light\+Utils}}
+\begin{DoxyCompactList}\small\item\em Namespace for classes that define specific light components, functionalities and shading. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_buffers_info}{Buffers\+Info}}
+\begin{DoxyCompactList}\small\item\em Class that holds information about different buffers. This class is used to hold and pass information, it doesn´t own the info classes and it won´t destory them. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}}
 \begin{DoxyCompactList}\small\item\em Class that holds information about the geometry buffer textures to be passed to the shader. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine}{Geometry\+Engine}}
@@ -35,6 +43,8 @@ class \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{L
 \begin{DoxyCompactList}\small\item\em Class that holds inofrmation about the light to be passed to the shader. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_scene_manager}{Scene\+Manager}}
 \begin{DoxyCompactList}\small\item\em Class that contains all scenes in the engine and manages swaps between active scenes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_shading_buffer_texture_info}{Shading\+Buffer\+Texture\+Info}}
+\begin{DoxyCompactList}\small\item\em Class that holds information about the translucency buffer. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_geometry_engine_1_1_vertex_data}{Vertex\+Data}}
 \begin{DoxyCompactList}\small\item\em Struct that holds the vertex data to be passed to Open\+Gl and the memory offset for each varible. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
