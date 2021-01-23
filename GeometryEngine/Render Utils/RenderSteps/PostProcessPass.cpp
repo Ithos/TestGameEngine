@@ -20,7 +20,7 @@ void GeometryEngine::GeometryRenderStep::PostProcessPass::applyPostProcess(Geome
 	buf->FillGBufferInfo(gbuff);
 	buf->BindTexture(GeometryEngine::GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE_TEXCOORD);
 	buf->ClearColorTexture(GeometryEngine::GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE_TEXCOORD);
-	buf->BindFinalTexture(GeometryEngine::GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE_NORMAL, gbuff);
+	buf->BindFinalTexture(GeometryEngine::GeometryBuffer::GBuffer::GBUFFER_NUM_TEXTURES, gbuff);
 
 	glDisable(GL_DEPTH);
 	glDisable(GL_DEPTH_TEST);
@@ -31,10 +31,8 @@ void GeometryEngine::GeometryRenderStep::PostProcessPass::applyPostProcess(Geome
 		initPostProcessPass(buf);
 		postProcess->ApplyPostProcess(gbuff);
 		secondPostProcessPass(buf);
-		if(	!postProcess->ApplyPostProcessSecondStep(gbuff) )
-		{ 
-			finishPostProcesPass(buf);
-		}
+		postProcess->ApplyPostProcessSecondStep(gbuff);
+		finishPostProcesPass(buf);
 	}
 
 	glEnable(GL_DEPTH_TEST);

@@ -237,17 +237,6 @@ namespace Application
 		GeometryEngine::GeometryMaterial::AlphaColorMaterial mat(&alphaColorInterface, QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f), 0.1f, 0.7f, 100.0f); // QVector3D(1.0f, 0.4f, 0.3f)
 		GeometryEngine::GeometryMaterial::ColorMaterial floorMat(QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f));
 
-		std::list< GeometryEngine::GeometryMaterial::TextureParameters* > tmpList;
-
-		GeometryEngine::GeometryMaterial::TextureParameters left = GeometryEngine::GeometryMaterial::TextureParameters(GeometryEngine::GeometryMaterial::TextureConstant::TEST_RIGHT_TEXTURE, 4, true);
-		GeometryEngine::GeometryMaterial::TextureParameters back = GeometryEngine::GeometryMaterial::TextureParameters(GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE, 4, true);
-		GeometryEngine::GeometryMaterial::TextureParameters down = GeometryEngine::GeometryMaterial::TextureParameters(GeometryEngine::GeometryMaterial::TextureConstant::TEST_DOWN_TEXTURE, 4, true);
-		GeometryEngine::GeometryMaterial::TextureParameters front = GeometryEngine::GeometryMaterial::TextureParameters(GeometryEngine::GeometryMaterial::TextureConstant::TEST_FORWARD_TEXTURE, 4, true);
-		GeometryEngine::GeometryMaterial::TextureParameters right = GeometryEngine::GeometryMaterial::TextureParameters(GeometryEngine::GeometryMaterial::TextureConstant::TEST_LEFT_TEXTURE, 4, true);
-		GeometryEngine::GeometryMaterial::TextureParameters up = GeometryEngine::GeometryMaterial::TextureParameters(GeometryEngine::GeometryMaterial::TextureConstant::TEST_UP_TEXTURE, 4, true);
-
-		tmpList.push_back(&back); tmpList.push_back(&right); tmpList.push_back(&front); tmpList.push_back(&left); tmpList.push_back(&down); tmpList.push_back(&up);
-
 		GeometryEngine::GeometryMaterial::NormalMapMultiTextureMaterial tMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
 																				GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
 																				GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
@@ -271,8 +260,7 @@ namespace Application
 
 		GeometryEngine::GeometryMaterial::AlphaTextureMaterial grassMat( &alphaTextureInterface, GeometryEngine::GeometryMaterial::TextureConstant::TEST_GRASS_TEXTURE, 0.1f, 1.0f, 10.0f, true);
 		grassMat.SetDrawBacksideFaces(true);
-								
-		/// -- TODO -- Al dibujar una sombra después de dibujar un quad se queda con la sombra del quad //
+
 
 		GeometryEngine::GeometryMaterial::MultiTextureMaterial mtMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_RIGHT_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE,
 			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BACK_TEXTURE, GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE);

@@ -3,7 +3,7 @@
 bool Application::COpenGlQtApplication::QtOpenGlInit(int argc, char ** argv)
 {
 	mpApp = new QApplication(argc, argv);
-	mpApp->setApplicationName("cube");
+	mpApp->setApplicationName("TestGameEngine");
 	mpApp->setApplicationVersion("0.1");
 
 	mpSurface = new QSurfaceFormat();

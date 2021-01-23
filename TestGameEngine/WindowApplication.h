@@ -43,7 +43,7 @@ namespace GeometryEngine {
 namespace Application
 {
 
-	class  CWindowApplication : public QOpenGLWidget, protected QOpenGLFunctions
+	class CWindowApplication : public QOpenGLWidget, protected QOpenGLFunctions
 	{
 		Q_OBJECT
 	public:

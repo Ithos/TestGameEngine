@@ -38,6 +38,10 @@ namespace GeometryEngine
 				Spotlight(const Spotlight& ref) { copy(ref); initLight(); };
 				/// Destructor
 				~Spotlight();
+				///Sets the light direction. This direction is affected by the item rotation
+				void SetDirection(const QVector3D& dir) { mDirection = dir; }
+				///Returs the light direction
+				const QVector3D& GetDirection() { return mDirection; }
 				/// Factory method. Returns a copy of this object.
 				/// \return A copy of this object.
 				virtual Spotlight* Clone() const { return new Spotlight(*this); };

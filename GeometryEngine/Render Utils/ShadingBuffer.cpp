@@ -180,6 +180,7 @@ void GeometryEngine::GeometryBuffer::ShadingBuffer::BindTranslucentDepthMapRead(
 
 void GeometryEngine::GeometryBuffer::ShadingBuffer::ClearColorTexture(SHADINGBUFFER_TEXTURE_TYPE texture)
 {
+	mpFBO->Bind(GeometryBuffer::DRAW);
 	mpFBO->GetColorTarget((unsigned int)texture)->Clear();
 }
 

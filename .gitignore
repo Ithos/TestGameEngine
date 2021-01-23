@@ -8,6 +8,7 @@
 # Precompiled Headers
 *.gch
 *.pch
+*.ipch
 
 # Compiled Dynamic libraries
 *.so
@@ -28,6 +29,7 @@
 *.exe
 *.out
 *.app
+*.exp
 
 # VisualStudio files
 *.pdb
@@ -45,3 +47,7 @@
 
 # Qt Generated files
 moc_*
+
+#Output folders
+*Win32/*
+*x64/*

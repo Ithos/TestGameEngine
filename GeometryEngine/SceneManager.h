@@ -43,7 +43,7 @@ namespace GeometryEngine
 		bool RemoveScene(unsigned int sceneId);
 		/// Get the number of scenes in the manager
 		/// \return Amount of scenes in the manager scene list
-		int GetSceneCount() { return mSceneList.size(); }
+		size_t GetSceneCount() { return mSceneList.size(); }
 		/// Set the active scene
 		/// \param scene Pointer to the scene
 		/// \return false if the manager doesn't contain the scene true otherwise
