@@ -1,0 +1,141 @@
+\hypertarget{class_unit_test_1_1_c_base_geometry_test}{}\section{Unit\+Test\+::C\+Base\+Geometry\+Test Class Reference}
+\label{class_unit_test_1_1_c_base_geometry_test}\index{UnitTest::CBaseGeometryTest@{UnitTest::CBaseGeometryTest}}
+
+
+Base abstract class for geometry engine tests.  
+
+
+
+
+{\ttfamily \#include $<$Base\+Geometry\+Test.\+h$>$}
+
+Inheritance diagram for Unit\+Test\+::C\+Base\+Geometry\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.217391cm]{class_unit_test_1_1_c_base_geometry_test}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_aa7b577ed63697e34e70960658bab11e7}\label{class_unit_test_1_1_c_base_geometry_test_aa7b577ed63697e34e70960658bab11e7}} 
+\mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test_aa7b577ed63697e34e70960658bab11e7}{C\+Base\+Geometry\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_afbac87d191bc9212b6872124efd7622c}\label{class_unit_test_1_1_c_base_geometry_test_afbac87d191bc9212b6872124efd7622c}} 
+\mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test_afbac87d191bc9212b6872124efd7622c}{C\+Base\+Geometry\+Test}} (const \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test}{C\+Base\+Geometry\+Test}} \&ref)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_afb405c4d6976d32a580909ebaa602739}\label{class_unit_test_1_1_c_base_geometry_test_afb405c4d6976d32a580909ebaa602739}} 
+virtual \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test_afb405c4d6976d32a580909ebaa602739}{$\sim$\+C\+Base\+Geometry\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test_a16e5804e7f134ae519722c47e756e3b0}{Init\+Geometry}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine}{Geometry\+Engine\+::\+Geometry\+Engine}} $\ast$engine, int scene\+Width, int scene\+Height)=0
+\item 
+virtual void \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test_afe9560d667ef457f7a203453c10593fd}{Update\+Geometry}} (qint64 tick)=0
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_a8842760fc0c3523c870c27cf4da991d3}\label{class_unit_test_1_1_c_base_geometry_test_a8842760fc0c3523c870c27cf4da991d3}} 
+virtual \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test}{C\+Base\+Geometry\+Test}} $\ast$ \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test_a8842760fc0c3523c870c27cf4da991d3}{Clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Factory method. Creates a copy of this object. The copy is not initialized. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test_a83d1fcc53bda24eca6933acf5bd3162c}{Is\+Test\+Finished}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test_aa824a0d8affc72e8bc68616dc38f0961}{Is\+Test\+Successful}} ()
+\item 
+virtual void \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test_a394a19d424a416ade87e4d09978337bf}{Set\+Scene\+Painted}} (bool painted)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_aac5859499b4a35b9be7fa76d7b09eecc}\label{class_unit_test_1_1_c_base_geometry_test_aac5859499b4a35b9be7fa76d7b09eecc}} 
+virtual void \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test_aac5859499b4a35b9be7fa76d7b09eecc}{copy}} (const \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test}{C\+Base\+Geometry\+Test}} \&ref)
+\begin{DoxyCompactList}\small\item\em Copies the state of other object into this. The copy is not initialized. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_aa8b1294602af974787093218f1c00fa0}\label{class_unit_test_1_1_c_base_geometry_test_aa8b1294602af974787093218f1c00fa0}} 
+virtual void \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test_aa8b1294602af974787093218f1c00fa0}{evaluate}} ()=0
+\begin{DoxyCompactList}\small\item\em Executes and evaluates the result of the test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_a4c58e0bd06c8f9d6b0241de65185fc47}\label{class_unit_test_1_1_c_base_geometry_test_a4c58e0bd06c8f9d6b0241de65185fc47}} 
+bool {\bfseries m\+Test\+Finished}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_a7732a8d8ca5751fe3fe8236ba4434e89}\label{class_unit_test_1_1_c_base_geometry_test_a7732a8d8ca5751fe3fe8236ba4434e89}} 
+bool {\bfseries m\+Test\+Successful}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_ad8b568275b947b3674198220ee8399e2}\label{class_unit_test_1_1_c_base_geometry_test_ad8b568275b947b3674198220ee8399e2}} 
+bool {\bfseries m\+Scene\+Painted}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_a8766907f2f7aeeced4164749ad92b1f2}\label{class_unit_test_1_1_c_base_geometry_test_a8766907f2f7aeeced4164749ad92b1f2}} 
+int {\bfseries m\+Scene\+Width}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_a2ca0cc2fb2786ebd3c4038719429d849}\label{class_unit_test_1_1_c_base_geometry_test_a2ca0cc2fb2786ebd3c4038719429d849}} 
+int {\bfseries m\+Scene\+Heigth}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base abstract class for geometry engine tests. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_a16e5804e7f134ae519722c47e756e3b0}\label{class_unit_test_1_1_c_base_geometry_test_a16e5804e7f134ae519722c47e756e3b0}} 
+\index{UnitTest::CBaseGeometryTest@{UnitTest::CBaseGeometryTest}!InitGeometry@{InitGeometry}}
+\index{InitGeometry@{InitGeometry}!UnitTest::CBaseGeometryTest@{UnitTest::CBaseGeometryTest}}
+\subsubsection{\texorpdfstring{InitGeometry()}{InitGeometry()}}
+{\footnotesize\ttfamily virtual void Unit\+Test\+::\+C\+Base\+Geometry\+Test\+::\+Init\+Geometry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine}{Geometry\+Engine\+::\+Geometry\+Engine}} $\ast$}]{engine,  }\item[{int}]{scene\+Width,  }\item[{int}]{scene\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Init graphic geometry 
+\begin{DoxyParams}{Parameters}
+{\em engine} & Geometry engine to be tested \\
+\hline
+{\em scene\+Width} & viewport width \\
+\hline
+{\em scene\+Height} & viewport height \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_unit_test_1_1_c_shadow_scene_test_a39155841ac304757b41950c00cf712c7}{Unit\+Test\+::\+C\+Shadow\+Scene\+Test}}, \mbox{\hyperlink{class_unit_test_1_1_c_translucent_shadowing_test_a231fbde217715f805edd8afd71e46db4}{Unit\+Test\+::\+C\+Translucent\+Shadowing\+Test}}, \mbox{\hyperlink{class_unit_test_1_1_c_post_process_test_ab88ae9fbbdcee0f63328d73f9b5e499d}{Unit\+Test\+::\+C\+Post\+Process\+Test}}, and \mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test_a8e16c345a72dc092c15e7f848ea69867}{Unit\+Test\+::\+C\+Basic\+Scene\+Test}}.
+
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_a83d1fcc53bda24eca6933acf5bd3162c}\label{class_unit_test_1_1_c_base_geometry_test_a83d1fcc53bda24eca6933acf5bd3162c}} 
+\index{UnitTest::CBaseGeometryTest@{UnitTest::CBaseGeometryTest}!IsTestFinished@{IsTestFinished}}
+\index{IsTestFinished@{IsTestFinished}!UnitTest::CBaseGeometryTest@{UnitTest::CBaseGeometryTest}}
+\subsubsection{\texorpdfstring{IsTestFinished()}{IsTestFinished()}}
+{\footnotesize\ttfamily virtual bool Unit\+Test\+::\+C\+Base\+Geometry\+Test\+::\+Is\+Test\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns if the test has finished \begin{DoxyReturn}{Returns}
+Test finished 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_aa824a0d8affc72e8bc68616dc38f0961}\label{class_unit_test_1_1_c_base_geometry_test_aa824a0d8affc72e8bc68616dc38f0961}} 
+\index{UnitTest::CBaseGeometryTest@{UnitTest::CBaseGeometryTest}!IsTestSuccessful@{IsTestSuccessful}}
+\index{IsTestSuccessful@{IsTestSuccessful}!UnitTest::CBaseGeometryTest@{UnitTest::CBaseGeometryTest}}
+\subsubsection{\texorpdfstring{IsTestSuccessful()}{IsTestSuccessful()}}
+{\footnotesize\ttfamily virtual bool Unit\+Test\+::\+C\+Base\+Geometry\+Test\+::\+Is\+Test\+Successful (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returs if the test was successful \begin{DoxyReturn}{Returns}
+Test successful 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_a394a19d424a416ade87e4d09978337bf}\label{class_unit_test_1_1_c_base_geometry_test_a394a19d424a416ade87e4d09978337bf}} 
+\index{UnitTest::CBaseGeometryTest@{UnitTest::CBaseGeometryTest}!SetScenePainted@{SetScenePainted}}
+\index{SetScenePainted@{SetScenePainted}!UnitTest::CBaseGeometryTest@{UnitTest::CBaseGeometryTest}}
+\subsubsection{\texorpdfstring{SetScenePainted()}{SetScenePainted()}}
+{\footnotesize\ttfamily virtual void Unit\+Test\+::\+C\+Base\+Geometry\+Test\+::\+Set\+Scene\+Painted (\begin{DoxyParamCaption}\item[{bool}]{painted }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Set the state of the scene as painted. Most tests won\textquotesingle{}t start until the scene has been painted to the window. \begin{DoxyReturn}{Returns}
+painted 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_unit_test_1_1_c_base_geometry_test_afe9560d667ef457f7a203453c10593fd}\label{class_unit_test_1_1_c_base_geometry_test_afe9560d667ef457f7a203453c10593fd}} 
+\index{UnitTest::CBaseGeometryTest@{UnitTest::CBaseGeometryTest}!UpdateGeometry@{UpdateGeometry}}
+\index{UpdateGeometry@{UpdateGeometry}!UnitTest::CBaseGeometryTest@{UnitTest::CBaseGeometryTest}}
+\subsubsection{\texorpdfstring{UpdateGeometry()}{UpdateGeometry()}}
+{\footnotesize\ttfamily virtual void Unit\+Test\+::\+C\+Base\+Geometry\+Test\+::\+Update\+Geometry (\begin{DoxyParamCaption}\item[{qint64}]{tick }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Update graphic geometry 
+\begin{DoxyParams}{Parameters}
+{\em tick} & Elapsed time since last update in milliseconds \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_unit_test_1_1_c_shadow_scene_test_a5586404efaf70bc59cefd4616fe7f761}{Unit\+Test\+::\+C\+Shadow\+Scene\+Test}}, \mbox{\hyperlink{class_unit_test_1_1_c_translucent_shadowing_test_a6d0809018d48d6f3f9e80147b894da5d}{Unit\+Test\+::\+C\+Translucent\+Shadowing\+Test}}, \mbox{\hyperlink{class_unit_test_1_1_c_post_process_test_aa1da5079813a860b1cc8a3554bce6f04}{Unit\+Test\+::\+C\+Post\+Process\+Test}}, and \mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test_a670726a40875ee0981cca18a3ea7ad0b}{Unit\+Test\+::\+C\+Basic\+Scene\+Test}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Unit\+Test/\+Test\+Window/\+Test\+Implementations/Base\+Geometry\+Test.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,116 @@
+\hypertarget{class_unit_test_1_1_c_test_window}{}\section{Unit\+Test\+::C\+Test\+Window Class Reference}
+\label{class_unit_test_1_1_c_test_window}\index{UnitTest::CTestWindow@{UnitTest::CTestWindow}}
+
+
+Class that creates a window that contains the test Open\+GL environment.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Window.\+h$>$}
+
+Inheritance diagram for Unit\+Test\+::C\+Test\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_unit_test_1_1_c_test_window}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unit_test_1_1_c_test_window_a3ee8fe89bc10363e79083d9405fb9b8d}{C\+Test\+Window}} (const \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test}{C\+Base\+Geometry\+Test}} \&test\+Implementation, Q\+Widget $\ast$parent=nullptr)
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_test_window_a4491b31968f05e18ed630cd50777adde}\label{class_unit_test_1_1_c_test_window_a4491b31968f05e18ed630cd50777adde}} 
+virtual \mbox{\hyperlink{class_unit_test_1_1_c_test_window_a4491b31968f05e18ed630cd50777adde}{$\sim$\+C\+Test\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_unit_test_1_1_c_test_window_aa21e809e9efb68f68499e1c32e2df5d9}{timer\+Event}} (Q\+Timer\+Event $\ast$e) override
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_test_window_ab3ddc80fbc569917ce0e35b709eca3bd}\label{class_unit_test_1_1_c_test_window_ab3ddc80fbc569917ce0e35b709eca3bd}} 
+void \mbox{\hyperlink{class_unit_test_1_1_c_test_window_ab3ddc80fbc569917ce0e35b709eca3bd}{initialize\+GL}} () override
+\begin{DoxyCompactList}\small\item\em Callback that is executed after the Open\+Gl environment is initilized. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_unit_test_1_1_c_test_window_a2d6a01f4ad96cb0396797a7f2313a7b4}{resize\+GL}} (int w, int h) override
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_test_window_a5764e8b9af5f1935fc252ad336b2f28c}\label{class_unit_test_1_1_c_test_window_a5764e8b9af5f1935fc252ad336b2f28c}} 
+void \mbox{\hyperlink{class_unit_test_1_1_c_test_window_a5764e8b9af5f1935fc252ad336b2f28c}{paint\+GL}} () override
+\begin{DoxyCompactList}\small\item\em Callback that is called when the window updates, here the open\+Gl drawing should happen. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unit_test_1_1_c_test_window_a807ee479a1a6b5457482ff2b7b2c2af9}{Get\+Test\+Result}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_test_window_a1bb1b3a0f01d8bfc3a827bf5c7d9642f}\label{class_unit_test_1_1_c_test_window_a1bb1b3a0f01d8bfc3a827bf5c7d9642f}} 
+\mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test}{C\+Base\+Geometry\+Test}} $\ast$ {\bfseries mp\+Implementation}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_test_window_a332a37bbc82b087b8ab63f11bd7ef5c3}\label{class_unit_test_1_1_c_test_window_a332a37bbc82b087b8ab63f11bd7ef5c3}} 
+Q\+Elapsed\+Timer {\bfseries m\+Elapsed\+Timer}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_test_window_a6fca9db59d2655fae81fce0868dbec94}\label{class_unit_test_1_1_c_test_window_a6fca9db59d2655fae81fce0868dbec94}} 
+Q\+Basic\+Timer {\bfseries m\+Timer}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_test_window_a3e4a6a3be6d22f48dedcec379a912be6}\label{class_unit_test_1_1_c_test_window_a3e4a6a3be6d22f48dedcec379a912be6}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine}{Geometry\+Engine\+::\+Geometry\+Engine}} $\ast$ {\bfseries mp\+Geom\+Instance}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_test_window_ab4095ee640b1b394c94d4edafbd5db62}\label{class_unit_test_1_1_c_test_window_ab4095ee640b1b394c94d4edafbd5db62}} 
+Q\+Vector2D {\bfseries m\+Window\+Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that creates a window that contains the test Open\+GL environment. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_unit_test_1_1_c_test_window_a3ee8fe89bc10363e79083d9405fb9b8d}\label{class_unit_test_1_1_c_test_window_a3ee8fe89bc10363e79083d9405fb9b8d}} 
+\index{UnitTest::CTestWindow@{UnitTest::CTestWindow}!CTestWindow@{CTestWindow}}
+\index{CTestWindow@{CTestWindow}!UnitTest::CTestWindow@{UnitTest::CTestWindow}}
+\subsubsection{\texorpdfstring{CTestWindow()}{CTestWindow()}}
+{\footnotesize\ttfamily Unit\+Test\+::\+C\+Test\+Window\+::\+C\+Test\+Window (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test}{C\+Base\+Geometry\+Test}} \&}]{test\+Implementation,  }\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em test\+Implementation} & Test class to be executed \\
+\hline
+{\em parent} & Pointer to the parent widget, nullptr by default \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_unit_test_1_1_c_test_window_a807ee479a1a6b5457482ff2b7b2c2af9}\label{class_unit_test_1_1_c_test_window_a807ee479a1a6b5457482ff2b7b2c2af9}} 
+\index{UnitTest::CTestWindow@{UnitTest::CTestWindow}!GetTestResult@{GetTestResult}}
+\index{GetTestResult@{GetTestResult}!UnitTest::CTestWindow@{UnitTest::CTestWindow}}
+\subsubsection{\texorpdfstring{GetTestResult()}{GetTestResult()}}
+{\footnotesize\ttfamily bool Unit\+Test\+::\+C\+Test\+Window\+::\+Get\+Test\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the result of the test evaluation \begin{DoxyReturn}{Returns}
+The result of the test 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_unit_test_1_1_c_test_window_a2d6a01f4ad96cb0396797a7f2313a7b4}\label{class_unit_test_1_1_c_test_window_a2d6a01f4ad96cb0396797a7f2313a7b4}} 
+\index{UnitTest::CTestWindow@{UnitTest::CTestWindow}!resizeGL@{resizeGL}}
+\index{resizeGL@{resizeGL}!UnitTest::CTestWindow@{UnitTest::CTestWindow}}
+\subsubsection{\texorpdfstring{resizeGL()}{resizeGL()}}
+{\footnotesize\ttfamily void Unit\+Test\+::\+C\+Test\+Window\+::resize\+GL (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Callback that is executed after resizing the window 
+\begin{DoxyParams}{Parameters}
+{\em w} & New window width \\
+\hline
+{\em h} & New window height \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_unit_test_1_1_c_test_window_aa21e809e9efb68f68499e1c32e2df5d9}\label{class_unit_test_1_1_c_test_window_aa21e809e9efb68f68499e1c32e2df5d9}} 
+\index{UnitTest::CTestWindow@{UnitTest::CTestWindow}!timerEvent@{timerEvent}}
+\index{timerEvent@{timerEvent}!UnitTest::CTestWindow@{UnitTest::CTestWindow}}
+\subsubsection{\texorpdfstring{timerEvent()}{timerEvent()}}
+{\footnotesize\ttfamily void Unit\+Test\+::\+C\+Test\+Window\+::timer\+Event (\begin{DoxyParamCaption}\item[{Q\+Timer\+Event $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Method to be executed every timer interval 
+\begin{DoxyParams}{Parameters}
+{\em e} & Event sent by the timer \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Unit\+Test/\+Test\+Window/Test\+Window.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Unit\+Test/\+Test\+Window/Test\+Window.\+cpp\end{DoxyCompactItemize}

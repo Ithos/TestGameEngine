@@ -1,0 +1,149 @@
+\hypertarget{class_unit_test_1_1_c_basic_scene_test}{}\section{Unit\+Test\+::C\+Basic\+Scene\+Test Class Reference}
+\label{class_unit_test_1_1_c_basic_scene_test}\index{UnitTest::CBasicSceneTest@{UnitTest::CBasicSceneTest}}
+
+
+Test for basic representation, just a few geometries and no shadows.  
+
+
+
+
+{\ttfamily \#include $<$Basic\+Scene\+Test.\+h$>$}
+
+Inheritance diagram for Unit\+Test\+::C\+Basic\+Scene\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_unit_test_1_1_c_basic_scene_test}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_aa678d150b87cecef8f7f226bcf564180}\label{class_unit_test_1_1_c_basic_scene_test_aa678d150b87cecef8f7f226bcf564180}} 
+\mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test_aa678d150b87cecef8f7f226bcf564180}{C\+Basic\+Scene\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test_a95b3e53cda711c09c0abc6a286e55af2}{C\+Basic\+Scene\+Test}} (const \mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test}{C\+Basic\+Scene\+Test}} \&ref)
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_ad44e3698d8cee5ecee38e858339ff9ba}\label{class_unit_test_1_1_c_basic_scene_test_ad44e3698d8cee5ecee38e858339ff9ba}} 
+virtual \mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test_ad44e3698d8cee5ecee38e858339ff9ba}{$\sim$\+C\+Basic\+Scene\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test_a8e16c345a72dc092c15e7f848ea69867}{Init\+Geometry}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine}{Geometry\+Engine\+::\+Geometry\+Engine}} $\ast$engine, int scene\+Width, int scene\+Height)
+\item 
+virtual void \mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test_a670726a40875ee0981cca18a3ea7ad0b}{Update\+Geometry}} (qint64 tick)
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_af2c65f878256d70f33fd2da6a0037de6}\label{class_unit_test_1_1_c_basic_scene_test_af2c65f878256d70f33fd2da6a0037de6}} 
+virtual \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test}{C\+Base\+Geometry\+Test}} $\ast$ \mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test_af2c65f878256d70f33fd2da6a0037de6}{Clone}} () const override
+\begin{DoxyCompactList}\small\item\em Factory method. Creates a copy of this object. The copy is not initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a3749e2dfaa86372e98a9579de69fbcc1}\label{class_unit_test_1_1_c_basic_scene_test_a3749e2dfaa86372e98a9579de69fbcc1}} 
+virtual void \mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test_a3749e2dfaa86372e98a9579de69fbcc1}{copy}} (const \mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test}{C\+Basic\+Scene\+Test}} \&ref)
+\begin{DoxyCompactList}\small\item\em Copies the state of other object into this. The copy is not initialized. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a0cc9e28bca579f4cecbee142eb192085}\label{class_unit_test_1_1_c_basic_scene_test_a0cc9e28bca579f4cecbee142eb192085}} 
+virtual void \mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test_a0cc9e28bca579f4cecbee142eb192085}{evaluate}} () override
+\begin{DoxyCompactList}\small\item\em Executes and evaluates the result of the test. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_aefedf746ed79b85440f8d5c06b6690c9}\label{class_unit_test_1_1_c_basic_scene_test_aefedf746ed79b85440f8d5c06b6690c9}} 
+virtual void \mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test_aefedf746ed79b85440f8d5c06b6690c9}{destroy\+Geometry}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the geometry objects of the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a44843a5498db3432120a417bce70a739}\label{class_unit_test_1_1_c_basic_scene_test_a44843a5498db3432120a417bce70a739}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Sphere}} $\ast$ {\bfseries mp\+Sphere}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a03bbfd9b78499626dc533685c7659294}\label{class_unit_test_1_1_c_basic_scene_test_a03bbfd9b78499626dc533685c7659294}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Cube}} $\ast$ {\bfseries mp\+Cube}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a0ccaf1e60533cc17286df7069d5916db}\label{class_unit_test_1_1_c_basic_scene_test_a0ccaf1e60533cc17286df7069d5916db}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Cube}} $\ast$ {\bfseries mp\+Skybox\+Cube}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_ab0fa708c2601458e1bd735b712b062ec}\label{class_unit_test_1_1_c_basic_scene_test_ab0fa708c2601458e1bd735b712b062ec}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Cube}} $\ast$ {\bfseries mp\+Floor\+Cube}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a67307a0f022c48d713ede84c4421c8a9}\label{class_unit_test_1_1_c_basic_scene_test_a67307a0f022c48d713ede84c4421c8a9}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ {\bfseries mp\+Main\+Light}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a8e091f72b9e1f337fa5d07425d30c575}\label{class_unit_test_1_1_c_basic_scene_test_a8e091f72b9e1f337fa5d07425d30c575}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ {\bfseries mp\+Second\+Light}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a5058b4ea74870d7bb69cb38fe9427e4d}\label{class_unit_test_1_1_c_basic_scene_test_a5058b4ea74870d7bb69cb38fe9427e4d}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$ {\bfseries mp\+Cam}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a2b22f2923a353120b4ca5aa02a4c11b8}\label{class_unit_test_1_1_c_basic_scene_test_a2b22f2923a353120b4ca5aa02a4c11b8}} 
+static const float {\bfseries S\+E\+CS} = 50.\+0f
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a12ae681f7293ecfd5f7ccc670349dc79}\label{class_unit_test_1_1_c_basic_scene_test_a12ae681f7293ecfd5f7ccc670349dc79}} 
+static const Q\+Vector3D {\bfseries R\+O\+T\+A\+T\+I\+ON} = Q\+Vector3D(0.\+0f, 0.\+3f, 0.\+0f)
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_ae53cc2abb708148ee93194ada7b0db96}\label{class_unit_test_1_1_c_basic_scene_test_ae53cc2abb708148ee93194ada7b0db96}} 
+static const Q\+Vector3D {\bfseries M\+O\+V\+E\+M\+E\+NT} = Q\+Vector3D(0.\+1f, 0.\+0f, 0.\+1f)
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a58708d7aaa9ff202427ba0a2fc39b100}\label{class_unit_test_1_1_c_basic_scene_test_a58708d7aaa9ff202427ba0a2fc39b100}} 
+static const Q\+Vector3D {\bfseries P\+O\+I\+NT} = Q\+Vector3D(-\/5.\+0f, 0.\+0f, -\/15.\+0f)
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_ac76a84f1d8512f4ba952c8428192b900}\label{class_unit_test_1_1_c_basic_scene_test_ac76a84f1d8512f4ba952c8428192b900}} 
+static const Q\+Vector3D {\bfseries P\+O\+S\+\_\+\+L\+I\+G\+HT} = Q\+Vector3D(-\/5.\+0f, 10.\+0f, -\/15.\+0f)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Test for basic representation, just a few geometries and no shadows. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a95b3e53cda711c09c0abc6a286e55af2}\label{class_unit_test_1_1_c_basic_scene_test_a95b3e53cda711c09c0abc6a286e55af2}} 
+\index{UnitTest::CBasicSceneTest@{UnitTest::CBasicSceneTest}!CBasicSceneTest@{CBasicSceneTest}}
+\index{CBasicSceneTest@{CBasicSceneTest}!UnitTest::CBasicSceneTest@{UnitTest::CBasicSceneTest}}
+\subsubsection{\texorpdfstring{CBasicSceneTest()}{CBasicSceneTest()}}
+{\footnotesize\ttfamily Unit\+Test\+::\+C\+Basic\+Scene\+Test\+::\+C\+Basic\+Scene\+Test (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_unit_test_1_1_c_basic_scene_test}{C\+Basic\+Scene\+Test}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a8e16c345a72dc092c15e7f848ea69867}\label{class_unit_test_1_1_c_basic_scene_test_a8e16c345a72dc092c15e7f848ea69867}} 
+\index{UnitTest::CBasicSceneTest@{UnitTest::CBasicSceneTest}!InitGeometry@{InitGeometry}}
+\index{InitGeometry@{InitGeometry}!UnitTest::CBasicSceneTest@{UnitTest::CBasicSceneTest}}
+\subsubsection{\texorpdfstring{InitGeometry()}{InitGeometry()}}
+{\footnotesize\ttfamily void Unit\+Test\+::\+C\+Basic\+Scene\+Test\+::\+Init\+Geometry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine}{Geometry\+Engine\+::\+Geometry\+Engine}} $\ast$}]{engine,  }\item[{int}]{scene\+Width,  }\item[{int}]{scene\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Init graphic geometry 
+\begin{DoxyParams}{Parameters}
+{\em engine} & Geometry engine to be tested \\
+\hline
+{\em scene\+Width} & viewport width \\
+\hline
+{\em scene\+Height} & viewport height \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test_a16e5804e7f134ae519722c47e756e3b0}{Unit\+Test\+::\+C\+Base\+Geometry\+Test}}.
+
+\mbox{\Hypertarget{class_unit_test_1_1_c_basic_scene_test_a670726a40875ee0981cca18a3ea7ad0b}\label{class_unit_test_1_1_c_basic_scene_test_a670726a40875ee0981cca18a3ea7ad0b}} 
+\index{UnitTest::CBasicSceneTest@{UnitTest::CBasicSceneTest}!UpdateGeometry@{UpdateGeometry}}
+\index{UpdateGeometry@{UpdateGeometry}!UnitTest::CBasicSceneTest@{UnitTest::CBasicSceneTest}}
+\subsubsection{\texorpdfstring{UpdateGeometry()}{UpdateGeometry()}}
+{\footnotesize\ttfamily void Unit\+Test\+::\+C\+Basic\+Scene\+Test\+::\+Update\+Geometry (\begin{DoxyParamCaption}\item[{qint64}]{tick }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Update graphic geometry 
+\begin{DoxyParams}{Parameters}
+{\em tick} & Elapsed time since last update in milliseconds \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_unit_test_1_1_c_base_geometry_test_afe9560d667ef457f7a203453c10593fd}{Unit\+Test\+::\+C\+Base\+Geometry\+Test}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Unit\+Test/\+Test\+Window/\+Test\+Implementations/Basic\+Scene\+Test.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Unit\+Test/\+Test\+Window/\+Test\+Implementations/Basic\+Scene\+Test.\+cpp\end{DoxyCompactItemize}
