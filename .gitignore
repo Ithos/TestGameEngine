@@ -49,5 +49,5 @@
 moc_*
 
 #Output folders
-*Win32/*
-*x64/*
+**/Win32
+**/x64
