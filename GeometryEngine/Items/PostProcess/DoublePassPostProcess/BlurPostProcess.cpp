@@ -2,8 +2,9 @@
 #include "../../GeometryItem.h"
 #include "BlurPostProcess.h"
 
-GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess::BlurPostProcess( const GeometryWorldItem::GeometryItem::GeometryItem & boundingGeometry, bool isVertical) :
-	DoublePassPostProcess(boundingGeometry), mIsVertical(isVertical)
+GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess::BlurPostProcess( const GeometryWorldItem::GeometryItem::GeometryItem & boundingGeometry, 
+	const CustomShading::CustomPostProcessStepInterface* const componentManager, unsigned int iterations) :
+	DoublePassPostProcess(boundingGeometry, componentManager, iterations), mIsVertical(true)
 {
 	initPostProcess();
 }
@@ -16,6 +17,18 @@ GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess::Blu
 
 GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess::~BlurPostProcess()
 {
+}
+
+void GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess::ApplyPostProcess(const GBufferTextureInfo & gBuffTexInfo)
+{
+	SetFirstStepParameters();
+	DoublePassPostProcess::ApplyPostProcess(gBuffTexInfo);
+}
+
+void GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess::ApplyPostProcessSecondStep(const GBufferTextureInfo & gBuffTexInfo)
+{
+	SetSecondStepParameters();
+	DoublePassPostProcess::ApplyPostProcess(gBuffTexInfo);
 }
 
 void GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess::initPostProcessShaders()
@@ -72,7 +85,7 @@ void GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess
 
 void GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess::copy(const BlurPostProcess & ref)
 {
-	DoublePassPostProcess::copy(ref);
+	PostProcess::copy(ref);
 	mIsVertical = ref.mIsVertical;
 	mSwapOriginTexture = ref.mSwapOriginTexture;
 }

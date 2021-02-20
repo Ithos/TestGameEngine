@@ -55,6 +55,10 @@
 #include <Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.h>
 #include <Items\PostProcess\PostProcess.h>
 
+#include <Items\CommonInerfaces\CustomPostProcessStepInterface.h>
+#include <Items\CommonInerfaces\CustomPostProcessStep.h>
+#include <Items\CommonInerfaces\PostProcessSteps\CallSecondStep.h>
+
 namespace Application
 {
 	CWindowApplication::CWindowApplication(QWidget *parent) :
@@ -280,8 +284,12 @@ namespace Application
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Quad lightQuad(floorMat, 3.0f, 3.0f);
 		
+		GeometryEngine::CustomShading::CustomPostProcessStepInterface doublePassManager;
+		doublePassManager.AddNewPostProcessStep< GeometryEngine::CustomShading::CallSecondStep <GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess> >
+			(GeometryEngine::CustomShading::CustomPostProcessSteps::SECOND_STEP);
+
 		//cam->AddPostProcess(GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess(lightQuad));
-		//cam->AddPostProcess( GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess(lightQuad) );
+		//cam->AddPostProcess( GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess(lightQuad, &doublePassManager, 2) );
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere lightSphere(mat, 2.0f);
 

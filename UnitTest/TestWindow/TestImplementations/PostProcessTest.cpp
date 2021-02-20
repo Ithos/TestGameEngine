@@ -21,6 +21,9 @@
 
 #include <Items\PostProcess\DoublePassPostProcess\BlurPostProcess.h>
 #include <Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.h>
+#include <Items\CommonInerfaces\CustomPostProcessStepInterface.h>
+#include <Items\CommonInerfaces\CustomPostProcessStep.h>
+#include <Items\CommonInerfaces\PostProcessSteps\CallSecondStep.h>
 
 #include <Render Utils\RenderBuffersData.h>
 #include <Render Utils\Gbuffers\CompleteColorPostProcessBuffer.h>
@@ -109,8 +112,12 @@ void UnitTest::CPostProcessTest::InitGeometry(GeometryEngine::GeometryEngine * e
 		QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0, 0, 0));
 
 	// Add post processes to the camera
+	GeometryEngine::CustomShading::CustomPostProcessStepInterface doublePassManager;
+	doublePassManager.AddNewPostProcessStep< GeometryEngine::CustomShading::CallSecondStep <GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess> >
+		(GeometryEngine::CustomShading::CustomPostProcessSteps::SECOND_STEP);
+
 	mpCam->AddPostProcess( GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess(lightQuad) );
-	mpCam->AddPostProcess( GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess(lightQuad) );
+	mpCam->AddPostProcess( GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess(lightQuad, &doublePassManager));
 
 	// Add objects to the scene
 	scene->AddItem(mpSkyboxCube);

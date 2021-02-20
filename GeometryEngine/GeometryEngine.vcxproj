@@ -174,8 +174,11 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Items\CommonInerfaces\CustomPostProcessStep.h" />
+    <ClInclude Include="Items\CommonInerfaces\CustomPostProcessStepInterface.h" />
     <ClInclude Include="Items\CommonInerfaces\CustomShadingInterface.h" />
     <ClInclude Include="Items\CommonInerfaces\CustomShadingStep.h" />
+    <ClInclude Include="Items\CommonInerfaces\PostProcessSteps\CallSecondStep.h" />
     <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaColorShadowMap.h" />
     <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaMultiTextureShadowMap.h" />
     <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaTextureShadowMap.h" />
@@ -229,7 +232,6 @@
     <ClInclude Include="Items\PostProcess\DoublePassPostProcess\BlurPostProcess.h" />
     <ClInclude Include="Items\PostProcess\DoublePassPostProcess.h" />
     <ClInclude Include="Items\PostProcess\PostProcess.h" />
-    <ClInclude Include="Items\PostProcess\SinglePassPostProcess.h" />
     <ClInclude Include="Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.h" />
     <ClInclude Include="Items\WorldItem.h" />
     <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GFramebufferCommmons.h" />
@@ -264,6 +266,8 @@
     <ClInclude Include="Scenes\TransparentGeometryScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Items\CommonInerfaces\CustomPostProcessStep.cpp" />
+    <ClCompile Include="Items\CommonInerfaces\CustomPostProcessStepInterface.cpp" />
     <ClCompile Include="Items\CommonInerfaces\CustomShadingInterface.cpp" />
     <ClCompile Include="Items\CommonInerfaces\CustomShadingStep.cpp" />
     <ClCompile Include="Items\CommonItemParameters.cpp" />
@@ -308,9 +312,7 @@
     <ClCompile Include="Items\Materials\TransparentMaterials\AlphaTextureMaterial.cpp" />
     <ClCompile Include="Items\Materials\VertexColorMaterial.cpp" />
     <ClCompile Include="Items\PostProcess\DoublePassPostProcess\BlurPostProcess.cpp" />
-    <ClCompile Include="Items\PostProcess\DoublePassPostProcess.cpp" />
     <ClCompile Include="Items\PostProcess\PostProcess.cpp" />
-    <ClCompile Include="Items\PostProcess\SinglePassPostProcess.cpp" />
     <ClCompile Include="Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.cpp" />
     <ClCompile Include="Items\WorldItem.cpp" />
     <ClCompile Include="Render Utils\BufferUtils\FramebufferElements\GDepthStencilRenderBuffer.cpp" />

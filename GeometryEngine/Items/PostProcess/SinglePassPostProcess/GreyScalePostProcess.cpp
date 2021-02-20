@@ -2,8 +2,9 @@
 #include "../../GeometryItem.h"
 #include "GreyScalePostProcess.h"
 
-GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess::GreyScalePostProcess(const GeometryWorldItem::GeometryItem::GeometryItem & boundingGeometry) :
-	SinglePassPostProcess(boundingGeometry)
+GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess::GreyScalePostProcess(const GeometryWorldItem::GeometryItem::GeometryItem & boundingGeometry, 
+	const CustomShading::CustomPostProcessStepInterface* const componentManager, unsigned int iterations) :
+	PostProcess(boundingGeometry, componentManager, iterations)
 {
 	initPostProcess();
 }
@@ -46,6 +47,6 @@ void GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostPr
 
 void GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess::copy(const GreyScalePostProcess & ref)
 {
-	SinglePassPostProcess::copy(ref);
+	PostProcess::copy(ref);
 	initPostProcess();
 }

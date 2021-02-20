@@ -119,9 +119,6 @@
     <ClInclude Include="Items\CommonItemParameters.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="Items\PostProcess\SinglePassPostProcess.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="Items\PostProcess\DoublePassPostProcess.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -275,6 +272,15 @@
     <ClInclude Include="Items\CommonInerfaces\ShadingSteps\MultiTextureColorMap.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\CustomPostProcessStepInterface.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\CustomPostProcessStep.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\PostProcessSteps\CallSecondStep.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeometryEngine.cpp">
@@ -378,12 +384,6 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Items\CommonItemParameters.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Items\PostProcess\SinglePassPostProcess.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Items\PostProcess\DoublePassPostProcess.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.cpp">
@@ -507,6 +507,12 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Items\GraphicItems\LightUtils\LightRenderComponent.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\CommonInerfaces\CustomPostProcessStepInterface.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\CommonInerfaces\CustomPostProcessStep.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>

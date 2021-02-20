@@ -3,16 +3,23 @@
 #include <qopenglshaderprogram.h>
 #include "../CommonItemParameters.h"
 #include "../GeometryItem.h"
+#include "../CommonInerfaces/CustomPostProcessStepInterface.h"
 #include "PostProcess.h"
 
 const std::string GeometryEngine::GeometryPostProcess::PostProcessShaderConstants::POST_PROCESS_VERTEX_SHADER = "POST_PROCESS_VERTEX_SHADER";
 const std::string GeometryEngine::GeometryPostProcess::PostProcessShaderConstants::BLUR_POST_PROCESS_FRAGMENT_SHADER = "BLUR_POST_PROCESS_FRAGMENT_SHADER";
 const std::string GeometryEngine::GeometryPostProcess::PostProcessShaderConstants::GREY_SCALE_PROCESS_FRAGMENT_SHADER = "GREY_SCALE_PROCESS_FRAGMENT_SHADER";
 
-GeometryEngine::GeometryPostProcess::PostProcess::PostProcess(const GeometryWorldItem::GeometryItem::GeometryItem & boundingGeometry) : mpBoundingGeometry(nullptr),
-mpProgram(nullptr), mpConfInstance(nullptr), mpShaderManager(nullptr), mVertexShaderKey(""), mFragmentShaderKey("")
+GeometryEngine::GeometryPostProcess::PostProcess::PostProcess(const GeometryWorldItem::GeometryItem::GeometryItem & boundingGeometry, 
+	const CustomShading::CustomPostProcessStepInterface* const componentManager, unsigned int iterations) : mpBoundingGeometry(nullptr), mpProgram(nullptr), mpConfInstance(nullptr), mpShaderManager(nullptr),
+	mVertexShaderKey(""), mFragmentShaderKey(""), mpComponentManager(nullptr), mIterations(iterations)
 {
 	mpBoundingGeometry = boundingGeometry.Clone();
+	if (componentManager != nullptr)
+	{
+		mpComponentManager = componentManager->Clone();
+		mpComponentManager->SetTargetPostProcess(this);
+	}
 }
 
 GeometryEngine::GeometryPostProcess::PostProcess::PostProcess(const PostProcess & ref)
@@ -31,6 +38,12 @@ GeometryEngine::GeometryPostProcess::PostProcess::~PostProcess()
 	{
 		delete mpProgram;
 		mpProgram = nullptr;
+	}
+
+	if (mpComponentManager != nullptr)
+	{
+		delete mpComponentManager;
+		mpComponentManager = nullptr;
 	}
 }
 
@@ -109,4 +122,11 @@ void GeometryEngine::GeometryPostProcess::PostProcess::copy(const PostProcess & 
 	mpConfInstance = ref.mpConfInstance;
 	mpProgram = nullptr;
 	mpBoundingGeometry = (ref.mpBoundingGeometry != nullptr ? ref.mpBoundingGeometry->Clone() : nullptr);
+	mpComponentManager = nullptr;
+	if (ref.mpComponentManager != nullptr)
+	{
+		mpComponentManager = ref.mpComponentManager->Clone();
+		mpComponentManager->SetTargetPostProcess(this);
+	}
+	mIterations = ref.mIterations;
 }

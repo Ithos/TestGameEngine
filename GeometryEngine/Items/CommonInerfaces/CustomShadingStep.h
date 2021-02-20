@@ -25,10 +25,10 @@ namespace GeometryEngine
 		class Material;
 	}
 
-	/// Namespace for classes involved in custom material shading
+	/// Namespace for manager and component classes involved in custom shading
 	namespace CustomShading
 	{
-		/// Class that executes a shading operation on target material T
+		/// Component class that executes a shading operation on target material T
 		class CustomShadingStep
 		{
 		public:
@@ -45,8 +45,6 @@ namespace GeometryEngine
 			/// Destructor
 			virtual ~CustomShadingStep();
 
-			
-
 			/// Initializes the object
 			/// \param shaderManager pointer to shader manager singleton
 			virtual void initCustomShading(ShaderFiles::ShaderManager* shaderManager);
@@ -54,7 +52,6 @@ namespace GeometryEngine
 			/// Sets the target for this shading step
 			/// \param target Material to be rendered
 			virtual void SetTargetMaterial(GeometryMaterial::Material* target) { mpTargetMaterial = target; }
-
 
 			/// Render shaders
 			/// \param vertexBuf Pointer to the vertex buffer

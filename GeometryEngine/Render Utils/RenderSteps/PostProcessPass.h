@@ -7,6 +7,8 @@
 
 namespace GeometryEngine
 {
+	class GBufferTextureInfo;
+
 	namespace GeometryBuffer
 	{
 		class GBuffer;
@@ -53,6 +55,10 @@ namespace GeometryEngine
 			/// Blits the tmp texture into the final texture
 			/// \param buf Pointer to the geometry buffer
 			void finishPostProcesPass(GeometryBuffer::GBuffer* buf);
+			/// Applies additional steps for the post process
+			/// \param postProcess post processes to apply
+			/// \param gBuff Object that contains buffer data adapted to be passed to the shaders
+			void applyExtraSteps(GeometryPostProcess::PostProcess* postProcess, const GBufferTextureInfo& gBuff);
 			/// Copies the data from a DoublePostProcessPass into this object
 			/// \param ref DoublePostProcessPass to be copied
 			virtual void copy(const PostProcessPass& ref) { RenderStep::copy(ref); }

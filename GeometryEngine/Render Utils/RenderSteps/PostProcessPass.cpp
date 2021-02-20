@@ -3,6 +3,7 @@
 #include "Items\GraphicItems\Light.h"
 #include "Items\GeometryItem.h"
 #include "../Items/PostProcess/DoublePassPostProcess.h"
+#include "../Items/CommonInerfaces/CustomPostProcessStepInterface.h"
 #include"../GBuffer.h"
 #include "PostProcessPass.h"
 
@@ -28,11 +29,14 @@ void GeometryEngine::GeometryRenderStep::PostProcessPass::applyPostProcess(Geome
 	for (auto it = postProcess.begin(); it != postProcess.end(); ++it)
 	{
 		GeometryEngine::GeometryPostProcess::PostProcess* postProcess = (*it);
-		initPostProcessPass(buf);
-		postProcess->ApplyPostProcess(gbuff);
-		secondPostProcessPass(buf);
-		postProcess->ApplyPostProcessSecondStep(gbuff);
-		finishPostProcesPass(buf);
+		for (int i = 0; i < postProcess->GetIterations(); ++i)
+		{
+			initPostProcessPass(buf);
+			postProcess->ApplyPostProcess(gbuff);
+			secondPostProcessPass(buf);
+			applyExtraSteps(postProcess, gbuff);
+			finishPostProcesPass(buf);
+		}
 	}
 
 	glEnable(GL_DEPTH_TEST);
@@ -64,4 +68,13 @@ void GeometryEngine::GeometryRenderStep::PostProcessPass::finishPostProcesPass(G
 		GL_COLOR_BUFFER_BIT, GL_LINEAR
 	);
 
+}
+
+void GeometryEngine::GeometryRenderStep::PostProcessPass::applyExtraSteps(GeometryPostProcess::PostProcess * postProcess, const GBufferTextureInfo& gBuff)
+{
+	GeometryEngine::CustomShading::CustomPostProcessStepInterface* manager = postProcess->GetComponentManager();
+	if (manager != nullptr && manager->ContainsStep(GeometryEngine::CustomShading::CustomPostProcessSteps::SECOND_STEP))
+	{
+		manager->RenderStep(GeometryEngine::CustomShading::CustomPostProcessSteps::SECOND_STEP, gBuff);
+	}
 }
