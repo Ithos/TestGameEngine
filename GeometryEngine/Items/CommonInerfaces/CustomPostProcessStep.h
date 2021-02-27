@@ -24,7 +24,7 @@ namespace GeometryEngine
 		public:
 			/// Constructor
 			/// \param parent Pointer to the CustomShadingInterface that contains it 
-			/// \param step that indicates at which render stepthis shading technique will be used
+			/// \param step Value that indicates at which render stepthis shading technique will be used
 			CustomPostProcessStep(CustomPostProcessStepInterface* parent, CustomPostProcessSteps step);
 			/// Copy constructor
 			/// \param ref Object to be copied.
