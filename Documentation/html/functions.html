@@ -93,11 +93,17 @@ $(function() {
 <li>AddNewLightShadingComponent()
 : <a class="el" href="class_geometry_engine_1_1_light_utils_1_1_light_component_manager.html#a41569931e24cebf0285474c55f54164a">GeometryEngine::LightUtils::LightComponentManager</a>
 </li>
+<li>AddNewPostProcessStep()
+: <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface.html#ad32dfc1e22d7daebc55a8e070970b1b8">GeometryEngine::CustomShading::CustomPostProcessStepInterface</a>
+</li>
 <li>AddNewShadingStep()
 : <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface.html#add17f0c72329bd4c36c5eca34b68007b">GeometryEngine::CustomShading::CustomShadingInterface</a>
 </li>
 <li>AddPostProcess()
 : <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#aefeabe0fe7650e0b6236b59134058845">GeometryEngine::GeometryWorldItem::GeometryCamera::Camera</a>
+</li>
+<li>AddPostProcessStep()
+: <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface.html#a9505d08bc1653e9c08cdb5a06b75ffa3">GeometryEngine::CustomShading::CustomPostProcessStepInterface</a>
 </li>
 <li>AddRenderGroup()
 : <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a0a76192f4a629a8b6f7a1900078869de">GeometryEngine::GeometryWorldItem::GeometryCamera::Camera</a>
@@ -120,7 +126,8 @@ $(function() {
 : <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_texture_material.html#acd13e76d7d89fa8b1fb605b99333736c">GeometryEngine::GeometryMaterial::TextureMaterial</a>
 </li>
 <li>AddToInterface()
-: <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_custom_shading_step.html#a02cecdebc31b4f94406f7032ebbad5fc">GeometryEngine::CustomShading::CustomShadingStep</a>
+: <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step.html#a1b561f55754b9aec463b99763f25e57b">GeometryEngine::CustomShading::CustomPostProcessStep</a>
+, <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_custom_shading_step.html#a02cecdebc31b4f94406f7032ebbad5fc">GeometryEngine::CustomShading::CustomShadingStep</a>
 , <a class="el" href="class_geometry_engine_1_1_light_utils_1_1_light_render_component.html#af6701af8d0d34f987852ab0faebefa86">GeometryEngine::LightUtils::LightRenderComponent</a>
 , <a class="el" href="class_geometry_engine_1_1_light_utils_1_1_light_shading_component.html#a249c8d383bab7232cc0ad425c9249709">GeometryEngine::LightUtils::LightShadingComponent</a>
 </li>
@@ -131,7 +138,7 @@ $(function() {
 : <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_alpha_color_shadow_map.html#ab094e1fb0b3b299584d7f0ab1fc5b924">GeometryEngine::CustomShading::AlphaColorShadowMap&lt; T &gt;</a>
 </li>
 <li>AlphaMultiTextureMaterial()
-: <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_alpha_multi_texture_material.html#a1da236db5dcd0965111e3330fc276668">GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_alpha_multi_texture_material.html#a42d6e7532d3f628a7cb73dead01161b5">GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial</a>
 </li>
 <li>AlphaMultiTextureShadowMap()
 : <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_alpha_multi_texture_shadow_map.html#aa6616681ccdc61e9ad0e8996a80c0f1e">GeometryEngine::CustomShading::AlphaMultiTextureShadowMap&lt; T &gt;</a>
@@ -143,19 +150,24 @@ $(function() {
 : <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material.html#ae09aba3281b21c239ad7c7391859b510">GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial</a>
 </li>
 <li>AlphaTextureMaterial()
-: <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_alpha_texture_material.html#a13e251b89fd08e38647572695196c5b6">GeometryEngine::GeometryMaterial::AlphaTextureMaterial</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_alpha_texture_material.html#a3ba50a82f2bacaba7c0c66e032e9452b">GeometryEngine::GeometryMaterial::AlphaTextureMaterial</a>
 </li>
 <li>AlphaTextureShadowMap()
 : <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map.html#a16e60f631c844c7579e9f5070bfcb02f">GeometryEngine::CustomShading::AlphaTextureShadowMap&lt; T &gt;</a>
 </li>
 <li>AmbientLight()
-: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light.html#a7fd9257e58a7e3d41561f95f7bb383bf">GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_ambient_light.html#a650db3630a679fb479200fc881efe25e">GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight</a>
 </li>
 <li>ApplyCameraModelMatrix()
 : <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_viewport.html#a07cf94a940faa629e5e7a5f6d263c6cf">GeometryEngine::GeometryItemUtils::Viewport</a>
 </li>
+<li>applyExtraSteps()
+: <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#ad13ce012b043f2c7b9305d42d43ba9c8">GeometryEngine::GeometryRenderStep::PostProcessPass</a>
+</li>
 <li>applyFilter()
-: <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process.html#a7d5a7ae52ec45c080b136c9afd13fc3c">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess</a>
+: <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_call_second_step.html#a0c3cdda08caa73c82353e4a011676d6b">GeometryEngine::CustomShading::CallSecondStep&lt; T &gt;</a>
+, <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step.html#a8155e60bafb03b3e655be961b76f546f">GeometryEngine::CustomShading::CustomPostProcessStep</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process.html#a7d5a7ae52ec45c080b136c9afd13fc3c">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html#acbd697b4103a9e8c897b8c073350e5a2">GeometryEngine::GeometryPostProcess::PostProcess</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process.html#abfa5e2162bb4300ec4fea1b36873d786">GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess</a>
 </li>
@@ -169,15 +181,19 @@ $(function() {
 : <a class="el" href="class_geometry_engine_1_1_light_utils_1_1_light_component_manager.html#aea6e9aa3b5b26039fdaab99dc4e1af14">GeometryEngine::LightUtils::LightComponentManager</a>
 </li>
 <li>ApplyPostProcess()
-: <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process.html#a9d2674bc5b237ed2e494d1c88f63d29e">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process.html#a41f0c0b0fc02b05fccb8b765acd85ad0">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess</a>
 , <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html#a2dbb157265ebdeea658982673e757d46">GeometryEngine::GeometryPostProcess::PostProcess</a>
 </li>
 <li>applyPostProcess()
 : <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#ac0f109e5dc7fb598c2613daaff285526">GeometryEngine::GeometryRenderStep::PostProcessPass</a>
 </li>
 <li>ApplyPostProcessSecondStep()
-: <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process.html#a1caac8d2ec6f65de1bb98edd88ba14c6">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess</a>
-, <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html#a3657f263948ecee70314c859e15412e1">GeometryEngine::GeometryPostProcess::PostProcess</a>
+: <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process.html#abf5172d399252fcf42423548918e9433">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess</a>
+, <a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process.html#a2818082bfbcbacf9ccb0e1b2059c24e8">GeometryEngine::GeometryPostProcess::DoublePassPostProcess::DoublePassPostProcess</a>
+</li>
+<li>ApplyPostProcessStep()
+: <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_call_second_step.html#af671ca1fc8a0aa5e35309603ddb7da19">GeometryEngine::CustomShading::CallSecondStep&lt; T &gt;</a>
+, <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step.html#a7d3a13a14a98277673dc52c74e38f038">GeometryEngine::CustomShading::CustomPostProcessStep</a>
 </li>
 <li>applyShader()
 : <a class="el" href="class_geometry_engine_1_1_light_utils_1_1_default_shadow_map.html#aa65ccc2e7a4f1dd7d5fd4ac6253f42dc">GeometryEngine::LightUtils::DefaultShadowMap&lt; T &gt;</a>

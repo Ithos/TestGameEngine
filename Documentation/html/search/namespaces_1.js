@@ -15,6 +15,5 @@ var searchData=
   ['geometryrenderstep',['GeometryRenderStep',['../namespace_geometry_engine_1_1_geometry_render_step.html',1,'GeometryEngine']]],
   ['geometryscene',['GeometryScene',['../namespace_geometry_engine_1_1_geometry_scene.html',1,'GeometryEngine']]],
   ['geometryworlditem',['GeometryWorldItem',['../namespace_geometry_engine_1_1_geometry_world_item.html',1,'GeometryEngine']]],
-  ['lightutils',['LightUtils',['../namespace_geometry_engine_1_1_light_utils.html',1,'GeometryEngine']]],
-  ['singlepasspostprocess',['SinglePassPostProcess',['../namespace_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process.html',1,'GeometryEngine::GeometryPostProcess']]]
+  ['lightutils',['LightUtils',['../namespace_geometry_engine_1_1_light_utils.html',1,'GeometryEngine']]]
 ];

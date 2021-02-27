@@ -12,13 +12,13 @@ Translates color intensity of the scene to a greyscale.
 Inheritance diagram for Geometry\+Engine\+::Geometry\+Post\+Process\+::Single\+Pass\+Post\+Process\+::Grey\+Scale\+Post\+Process\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process}
+\includegraphics[height=2.000000cm]{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_a35ec195850992180bbf781faad7e4028}{Grey\+Scale\+Post\+Process}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&bounding\+Geometry)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_a1072395d3c80b7765ff98a2fdb211de1}{Grey\+Scale\+Post\+Process}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&bounding\+Geometry, const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface}{Custom\+Shading\+::\+Custom\+Post\+Process\+Step\+Interface}} $\ast$const component\+Manager=nullptr, unsigned int iterations=1)
 \item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_a3afc3201292b7456476355c821584c6a}{Grey\+Scale\+Post\+Process}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process}{Grey\+Scale\+Post\+Process}} \&ref)
 \item 
@@ -33,9 +33,8 @@ virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_pos
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_a17e5445c69b1e2f975603ba84d9b03b6}\label{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_a17e5445c69b1e2f975603ba84d9b03b6}} 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_a17e5445c69b1e2f975603ba84d9b03b6}{init\+Post\+Process\+Shaders}} () override
 \begin{DoxyCompactList}\small\item\em Stablishes shaders keys. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_ab60a2926e4d28cb0b808a3e01bbe85d3}\label{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_ab60a2926e4d28cb0b808a3e01bbe85d3}} 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_ab60a2926e4d28cb0b808a3e01bbe85d3}{set\+Program\+Parameters}} (const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info) override
-\begin{DoxyCompactList}\small\item\em Sends parameters to the shaders. \end{DoxyCompactList}\item 
+\item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_abfa5e2162bb4300ec4fea1b36873d786}\label{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_abfa5e2162bb4300ec4fea1b36873d786}} 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_abfa5e2162bb4300ec4fea1b36873d786}{apply\+Filter}} () override
 \begin{DoxyCompactList}\small\item\em Renders the filter. \end{DoxyCompactList}\item 
@@ -48,15 +47,21 @@ virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_
 Translates color intensity of the scene to a greyscale. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_a35ec195850992180bbf781faad7e4028}\label{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_a35ec195850992180bbf781faad7e4028}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_a1072395d3c80b7765ff98a2fdb211de1}\label{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_a1072395d3c80b7765ff98a2fdb211de1}} 
 \index{GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess@{GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess}!GreyScalePostProcess@{GreyScalePostProcess}}
 \index{GreyScalePostProcess@{GreyScalePostProcess}!GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess@{GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess}}
 \subsubsection{\texorpdfstring{GreyScalePostProcess()}{GreyScalePostProcess()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Single\+Pass\+Post\+Process\+::\+Grey\+Scale\+Post\+Process\+::\+Grey\+Scale\+Post\+Process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&}]{bounding\+Geometry }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Single\+Pass\+Post\+Process\+::\+Grey\+Scale\+Post\+Process\+::\+Grey\+Scale\+Post\+Process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&}]{bounding\+Geometry,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface}{Custom\+Shading\+::\+Custom\+Post\+Process\+Step\+Interface}} $\ast$const}]{component\+Manager = {\ttfamily nullptr},  }\item[{unsigned int}]{iterations = {\ttfamily 1} }\end{DoxyParamCaption})}
 
 Constructor 
 \begin{DoxyParams}{Parameters}
-{\em bounding\+Geometry} & \\
+{\em bounding\+Geometry} & The post process will be applied to every part of the screen where the bounding geometry is drawn. Usually it should be a rectangle directly in front of the camera. \\
+\hline
+{\em custom\+Shading} & Custom shading step manager. \\
+\hline
+{\em component\+Manager} & Object that manages and contains the custom components for this postprocess \\
+\hline
+{\em iterations} & Number of iterations that this posprocess should be executed \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_a3afc3201292b7456476355c821584c6a}\label{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_a3afc3201292b7456476355c821584c6a}} 
@@ -97,6 +102,21 @@ Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_pr
 {\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Post\+Process}} to be copied \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_ab60a2926e4d28cb0b808a3e01bbe85d3}\label{class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_grey_scale_post_process_ab60a2926e4d28cb0b808a3e01bbe85d3}} 
+\index{GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess@{GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess}!setProgramParameters@{setProgramParameters}}
+\index{setProgramParameters@{setProgramParameters}!GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess@{GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess}}
+\subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Single\+Pass\+Post\+Process\+::\+Grey\+Scale\+Post\+Process\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sends parameters to the shaders. 
+\begin{DoxyParams}{Parameters}
+{\em g\+Buff\+Tex\+Info} & geometry buffer data \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_ae4bd80f5d0f0768fd4e2141a95ff5bb0}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

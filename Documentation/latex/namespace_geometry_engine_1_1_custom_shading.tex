@@ -2,7 +2,7 @@
 \label{namespace_geometry_engine_1_1_custom_shading}\index{GeometryEngine::CustomShading@{GeometryEngine::CustomShading}}
 
 
-Namespace for classes involved in custom material shading.  
+Namespace for manager and component classes involved in custom shading.  
 
 
 \subsection*{Classes}
@@ -14,12 +14,18 @@ class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_multi_
 \begin{DoxyCompactList}\small\item\em Custom shadowmap calculation for alpha multi texture materials. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_texture_shadow_map}{Alpha\+Texture\+Shadow\+Map}}
 \begin{DoxyCompactList}\small\item\em Custom shadowmap calculation for alpha texture materials. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step}{Call\+Second\+Step}}
+\begin{DoxyCompactList}\small\item\em Calls the second step from the owner post process. The owner. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step}{Custom\+Post\+Process\+Step}}
+\begin{DoxyCompactList}\small\item\em Component class that executes a shading step for target post process T. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface}{Custom\+Post\+Process\+Step\+Interface}}
+\begin{DoxyCompactList}\small\item\em Interface and manager class for post processes that require multiple steps. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_geometry_engine_1_1_custom_shading_1_1_custom_shading_constants}{Custom\+Shading\+Constants}}
 \begin{DoxyCompactList}\small\item\em String constants that reference shader keys. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}}
 \begin{DoxyCompactList}\small\item\em Interface for objects that implement custom shadow map calculations. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_step}{Custom\+Shading\+Step}}
-\begin{DoxyCompactList}\small\item\em Class that executes a shading operation on target material T. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Component class that executes a shading operation on target material T. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_direct_color_map}{Direct\+Color\+Map}}
 \begin{DoxyCompactList}\small\item\em Custom color map calculation for alpha color materials. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_texture_color_map}{Multi\+Texture\+Color\+Map}}
@@ -29,6 +35,10 @@ class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_texture_colo
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{namespace_geometry_engine_1_1_custom_shading_a09e44ca81de5fe08c6d50271d680c4b1}\label{namespace_geometry_engine_1_1_custom_shading_a09e44ca81de5fe08c6d50271d680c4b1}} 
+enum \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a09e44ca81de5fe08c6d50271d680c4b1}{Custom\+Post\+Process\+Steps}} \{ {\bfseries S\+E\+C\+O\+N\+D\+\_\+\+S\+T\+EP}
+ \}
+\begin{DoxyCompactList}\small\item\em All posible post process steps to override. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{namespace_geometry_engine_1_1_custom_shading_a2dc236a5b567da5099069ce2b2be5609}\label{namespace_geometry_engine_1_1_custom_shading_a2dc236a5b567da5099069ce2b2be5609}} 
 enum \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a2dc236a5b567da5099069ce2b2be5609}{Custom\+Shading\+Steps}} \{ {\bfseries C\+U\+S\+T\+O\+M\+\_\+\+S\+H\+A\+D\+O\+W\+M\+AP}, 
 {\bfseries C\+U\+S\+T\+O\+M\+\_\+\+C\+O\+L\+O\+R\+M\+AP}
@@ -37,4 +47,4 @@ enum \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a2dc236a5b567
 
 
 \subsection{Detailed Description}
-Namespace for classes involved in custom material shading. 
+Namespace for manager and component classes involved in custom shading. 

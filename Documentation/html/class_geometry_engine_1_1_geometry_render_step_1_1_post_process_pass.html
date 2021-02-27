@@ -128,6 +128,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a3d555943a9bc2b3105e71b8984b1ce0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfc2e269aad1157916f6c3c72b570ae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#abfc2e269aad1157916f6c3c72b570ae9">finishPostProcesPass</a> (<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html">GeometryBuffer::GBuffer</a> *buf)</td></tr>
 <tr class="separator:abfc2e269aad1157916f6c3c72b570ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad13ce012b043f2c7b9305d42d43ba9c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#ad13ce012b043f2c7b9305d42d43ba9c8">applyExtraSteps</a> (<a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html">GeometryPostProcess::PostProcess</a> *postProcess, const <a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html">GBufferTextureInfo</a> &amp;gBuff)</td></tr>
+<tr class="separator:ad13ce012b043f2c7b9305d42d43ba9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5279399395c18ac4ef35fa3028aa4950"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#a5279399395c18ac4ef35fa3028aa4950">copy</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html">PostProcessPass</a> &amp;ref)</td></tr>
 <tr class="separator:a5279399395c18ac4ef35fa3028aa4950"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">GeometryEngine::GeometryRenderStep::RenderStep</a></td></tr>
@@ -170,6 +172,49 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad13ce012b043f2c7b9305d42d43ba9c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad13ce012b043f2c7b9305d42d43ba9c8">&#9670;&nbsp;</a></span>applyExtraSteps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeometryEngine::GeometryRenderStep::PostProcessPass::applyExtraSteps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html">GeometryPostProcess::PostProcess</a> *&#160;</td>
+          <td class="paramname"><em>postProcess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html">GBufferTextureInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>gBuff</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Applies additional steps for the post process </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">postProcess</td><td>post processes to apply </td></tr>
+    <tr><td class="paramname">gBuff</td><td>Object that contains buffer data adapted to be passed to the shaders </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac0f109e5dc7fb598c2613daaff285526"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac0f109e5dc7fb598c2613daaff285526">&#9670;&nbsp;</a></span>applyPostProcess()</h2>
 

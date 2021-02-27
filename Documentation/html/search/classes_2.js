@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['callsecondstep',['CallSecondStep',['../class_geometry_engine_1_1_custom_shading_1_1_call_second_step.html',1,'GeometryEngine::CustomShading']]],
   ['camera',['Camera',['../class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html',1,'GeometryEngine::GeometryWorldItem::GeometryCamera']]],
   ['cbaseapplication',['CBaseApplication',['../class_application_1_1_c_base_application.html',1,'Application']]],
   ['cbasegeometrytest',['CBaseGeometryTest',['../class_unit_test_1_1_c_base_geometry_test.html',1,'UnitTest']]],
@@ -17,6 +18,8 @@ var searchData=
   ['ctgeapplication',['CTGEApplication',['../class_application_1_1_c_t_g_e_application.html',1,'Application']]],
   ['ctranslucentshadowingtest',['CTranslucentShadowingTest',['../class_unit_test_1_1_c_translucent_shadowing_test.html',1,'UnitTest']]],
   ['cube',['Cube',['../class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html',1,'GeometryEngine::GeometryWorldItem::GeometryItem']]],
+  ['custompostprocessstep',['CustomPostProcessStep',['../class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step.html',1,'GeometryEngine::CustomShading']]],
+  ['custompostprocessstepinterface',['CustomPostProcessStepInterface',['../class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface.html',1,'GeometryEngine::CustomShading']]],
   ['customshadingconstants',['CustomShadingConstants',['../struct_geometry_engine_1_1_custom_shading_1_1_custom_shading_constants.html',1,'GeometryEngine::CustomShading']]],
   ['customshadinginterface',['CustomShadingInterface',['../class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface.html',1,'GeometryEngine::CustomShading']]],
   ['customshadingstep',['CustomShadingStep',['../class_geometry_engine_1_1_custom_shading_1_1_custom_shading_step.html',1,'GeometryEngine::CustomShading']]],

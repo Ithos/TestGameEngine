@@ -1,0 +1,135 @@
+\hypertarget{class_geometry_engine_1_1_custom_shading_1_1_call_second_step}{}\section{Geometry\+Engine\+::Custom\+Shading\+::Call\+Second\+Step$<$ T $>$ Class Template Reference}
+\label{class_geometry_engine_1_1_custom_shading_1_1_call_second_step}\index{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$@{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$}}
+
+
+Calls the second step from the owner post process. The owner.  
+
+
+
+
+{\ttfamily \#include $<$Call\+Second\+Step.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Custom\+Shading\+::Call\+Second\+Step$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_geometry_engine_1_1_custom_shading_1_1_call_second_step}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_af361c6d6557602e99d03ea7d2c7ea8e1}{Call\+Second\+Step}} (\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface}{Custom\+Post\+Process\+Step\+Interface}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a09e44ca81de5fe08c6d50271d680c4b1}{Custom\+Post\+Process\+Steps}} step)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a7ee78b6a2c0d3cf710ed6f136445eac8}{Call\+Second\+Step}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step}{Custom\+Post\+Process\+Step}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_ad8da5521ed66430acb866c7894b7817e}\label{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_ad8da5521ed66430acb866c7894b7817e}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_ad8da5521ed66430acb866c7894b7817e}{$\sim$\+Call\+Second\+Step}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step}{Call\+Second\+Step}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_ae8f56f4c458d1916198fe5c2cdd3b9e9}{Clone}} (\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface}{Custom\+Post\+Process\+Step\+Interface}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a09e44ca81de5fe08c6d50271d680c4b1}{Custom\+Post\+Process\+Steps}} step) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a1a61abc2a9169bf812695ee553fd4688}\label{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a1a61abc2a9169bf812695ee553fd4688}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a1a61abc2a9169bf812695ee553fd4688}{init\+Program}} () override
+\begin{DoxyCompactList}\small\item\em Loads and compiles material shader program. In this component this does nothing. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_af671ca1fc8a0aa5e35309603ddb7da19}{Apply\+Post\+Process\+Step}} (const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a7b6f5cb6484bcf6d82ab25495f84213a}\label{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a7b6f5cb6484bcf6d82ab25495f84213a}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a7b6f5cb6484bcf6d82ab25495f84213a}{init\+Shaders}} () override
+\begin{DoxyCompactList}\small\item\em Sets the shaders that should be loaded. No shaders are loaded in this component so keys . \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a31dfe9d64b6d938367f2adeecc1d37bb}{set\+Program\+Parameters}} (const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info) override
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a0c3cdda08caa73c82353e4a011676d6b}\label{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a0c3cdda08caa73c82353e4a011676d6b}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a0c3cdda08caa73c82353e4a011676d6b}{apply\+Filter}} () override
+\begin{DoxyCompactList}\small\item\em Renders the Post\+Process step. This step doesn\textquotesingle{}t apply the filter, the implementation is in the owner class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Geometry\+Engine\+::\+Custom\+Shading\+::\+Call\+Second\+Step$<$ T $>$}
+
+Calls the second step from the owner post process. The owner. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_af361c6d6557602e99d03ea7d2c7ea8e1}\label{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_af361c6d6557602e99d03ea7d2c7ea8e1}} 
+\index{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$@{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$}!CallSecondStep@{CallSecondStep}}
+\index{CallSecondStep@{CallSecondStep}!GeometryEngine::CustomShading::CallSecondStep$<$ T $>$@{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$}}
+\subsubsection{\texorpdfstring{CallSecondStep()}{CallSecondStep()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Call\+Second\+Step}}$<$ T $>$\+::\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step}{Call\+Second\+Step}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface}{Custom\+Post\+Process\+Step\+Interface}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a09e44ca81de5fe08c6d50271d680c4b1}{Custom\+Post\+Process\+Steps}}}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}} that contains it \\
+\hline
+{\em step} & Value that indicates at which render stepthis shading technique will be used \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a7ee78b6a2c0d3cf710ed6f136445eac8}\label{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a7ee78b6a2c0d3cf710ed6f136445eac8}} 
+\index{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$@{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$}!CallSecondStep@{CallSecondStep}}
+\index{CallSecondStep@{CallSecondStep}!GeometryEngine::CustomShading::CallSecondStep$<$ T $>$@{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$}}
+\subsubsection{\texorpdfstring{CallSecondStep()}{CallSecondStep()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Call\+Second\+Step}}$<$ T $>$\+::\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step}{Call\+Second\+Step}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step}{Custom\+Post\+Process\+Step}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_af671ca1fc8a0aa5e35309603ddb7da19}\label{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_af671ca1fc8a0aa5e35309603ddb7da19}} 
+\index{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$@{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$}!ApplyPostProcessStep@{ApplyPostProcessStep}}
+\index{ApplyPostProcessStep@{ApplyPostProcessStep}!GeometryEngine::CustomShading::CallSecondStep$<$ T $>$@{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$}}
+\subsubsection{\texorpdfstring{ApplyPostProcessStep()}{ApplyPostProcessStep()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Call\+Second\+Step}}$<$ T $>$\+::Apply\+Post\+Process\+Step (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Renders the post process step 
+\begin{DoxyParams}{Parameters}
+{\em g\+Buff\+Tex\+Info} & Geometry buffer data \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_a7d3a13a14a98277673dc52c74e38f038}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Custom\+Post\+Process\+Step}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_ae8f56f4c458d1916198fe5c2cdd3b9e9}\label{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_ae8f56f4c458d1916198fe5c2cdd3b9e9}} 
+\index{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$@{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::CustomShading::CallSecondStep$<$ T $>$@{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step}{Call\+Second\+Step}}$\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Call\+Second\+Step}}$<$ T $>$\+::Clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface}{Custom\+Post\+Process\+Step\+Interface}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a09e44ca81de5fe08c6d50271d680c4b1}{Custom\+Post\+Process\+Steps}}}]{step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Abstract method. Factory method. Creates a copy of this object \begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_af4f29e24fd6b7f13d211f3f3effe40eb}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Custom\+Post\+Process\+Step}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a31dfe9d64b6d938367f2adeecc1d37bb}\label{class_geometry_engine_1_1_custom_shading_1_1_call_second_step_a31dfe9d64b6d938367f2adeecc1d37bb}} 
+\index{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$@{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$}!setProgramParameters@{setProgramParameters}}
+\index{setProgramParameters@{setProgramParameters}!GeometryEngine::CustomShading::CallSecondStep$<$ T $>$@{GeometryEngine::CustomShading::CallSecondStep$<$ T $>$}}
+\subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_call_second_step}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Call\+Second\+Step}}$<$ T $>$\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sends parameters to the shaders. This component calls the Apply\+Post\+Process\+Second\+Step method in the owner class that sets parameters and implements the rendering. 
+\begin{DoxyParams}{Parameters}
+{\em g\+Buff\+Tex\+Info} & geometry buffer data \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_ac52997f5ddea3cd39f3a71b4d1ab7683}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Custom\+Post\+Process\+Step}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Common\+Inerfaces/\+Post\+Process\+Steps/Call\+Second\+Step.\+h\end{DoxyCompactItemize}

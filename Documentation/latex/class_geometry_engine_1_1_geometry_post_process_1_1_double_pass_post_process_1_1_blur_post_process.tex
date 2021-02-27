@@ -18,13 +18,17 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+Post\+Process\+::Double\+P
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a256525f871c7c9c05e04f9ea511afac3}{Blur\+Post\+Process}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&bounding\+Geometry, bool is\+Vertical=false)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_ab7110b606555e9a5a4b7b1cbbd93b6d1}{Blur\+Post\+Process}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&bounding\+Geometry, const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface}{Custom\+Shading\+::\+Custom\+Post\+Process\+Step\+Interface}} $\ast$const component\+Manager=nullptr, unsigned int iterations=1)
 \item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a5f65c74239f5bd31149d92a5f3617f32}{Blur\+Post\+Process}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process}{Blur\+Post\+Process}} \&ref)
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a0803bdceb234cf50cba7003528afecbc}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a0803bdceb234cf50cba7003528afecbc}} 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a0803bdceb234cf50cba7003528afecbc}{$\sim$\+Blur\+Post\+Process}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a41f0c0b0fc02b05fccb8b765acd85ad0}{Apply\+Post\+Process}} (const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_abf5172d399252fcf42423548918e9433}{Apply\+Post\+Process\+Second\+Step}} (const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info)
+\item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a9aae8307cd4d5d5305df8a99f93b2b5a}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a9aae8307cd4d5d5305df8a99f93b2b5a}} 
 bool {\bfseries Get\+Vertical} () const
 \item 
@@ -45,17 +49,16 @@ virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_pos
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a12fac4df2ff487e6696c08641008a3a0}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a12fac4df2ff487e6696c08641008a3a0}} 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a12fac4df2ff487e6696c08641008a3a0}{init\+Post\+Process\+Shaders}} () override
 \begin{DoxyCompactList}\small\item\em Stablishes shaders keys. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a280fb0972fb63b1d0f283604678a7404}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a280fb0972fb63b1d0f283604678a7404}} 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a280fb0972fb63b1d0f283604678a7404}{set\+Program\+Parameters}} (const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info) override
-\begin{DoxyCompactList}\small\item\em Sends parameters to the shaders. \end{DoxyCompactList}\item 
+\item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a7d5a7ae52ec45c080b136c9afd13fc3c}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a7d5a7ae52ec45c080b136c9afd13fc3c}} 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a7d5a7ae52ec45c080b136c9afd13fc3c}{apply\+Filter}} () override
 \begin{DoxyCompactList}\small\item\em Renders the filter. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a3dbccc65e95d3e0d169ca689ba0b6887}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a3dbccc65e95d3e0d169ca689ba0b6887}} 
-virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a3dbccc65e95d3e0d169ca689ba0b6887}{Set\+First\+Step\+Parameters}} () override
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a49cf9fb1a732737842373c50155d2a92}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a49cf9fb1a732737842373c50155d2a92}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a49cf9fb1a732737842373c50155d2a92}{Set\+First\+Step\+Parameters}} ()
 \begin{DoxyCompactList}\small\item\em Sets class members to be used during the first render step. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_ac95d9a55891c9ac1de4e409a50bdac7a}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_ac95d9a55891c9ac1de4e409a50bdac7a}} 
-virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_ac95d9a55891c9ac1de4e409a50bdac7a}{Set\+Second\+Step\+Parameters}} () override
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_ab63920f52916bd66cae59f9407957572}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_ab63920f52916bd66cae59f9407957572}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_ab63920f52916bd66cae59f9407957572}{Set\+Second\+Step\+Parameters}} ()
 \begin{DoxyCompactList}\small\item\em Sets class members to be used during the second render step. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_ab3239347164b5c0bbe1b603f4d085181}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process}{Blur\+Post\+Process}} \&ref)
 \end{DoxyCompactItemize}
@@ -74,17 +77,21 @@ bool {\bfseries m\+Swap\+Origin\+Texture}
 Adds gaussian blur to the image. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a256525f871c7c9c05e04f9ea511afac3}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a256525f871c7c9c05e04f9ea511afac3}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_ab7110b606555e9a5a4b7b1cbbd93b6d1}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_ab7110b606555e9a5a4b7b1cbbd93b6d1}} 
 \index{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess}!BlurPostProcess@{BlurPostProcess}}
 \index{BlurPostProcess@{BlurPostProcess}!GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess}}
 \subsubsection{\texorpdfstring{BlurPostProcess()}{BlurPostProcess()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Blur\+Post\+Process\+::\+Blur\+Post\+Process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&}]{bounding\+Geometry,  }\item[{bool}]{is\+Vertical = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Blur\+Post\+Process\+::\+Blur\+Post\+Process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} \&}]{bounding\+Geometry,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface}{Custom\+Shading\+::\+Custom\+Post\+Process\+Step\+Interface}} $\ast$const}]{component\+Manager = {\ttfamily nullptr},  }\item[{unsigned int}]{iterations = {\ttfamily 1} }\end{DoxyParamCaption})}
 
 Constructor 
 \begin{DoxyParams}{Parameters}
-{\em bounding\+Geometry} & \\
+{\em bounding\+Geometry} & The post process will be applied to every part of the screen where the bounding geometry is drawn. Usually it should be a rectangle directly in front of the camera. \\
 \hline
-{\em is\+Vertical} & indicates if the vertical or horizontal blur pass should be applied \\
+{\em custom\+Shading} & Custom shading step manager. \\
+\hline
+{\em component\+Manager} & Object that manages and contains the custom components for this postprocess \\
+\hline
+{\em iterations} & Number of iterations that this posprocess should be executed \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a5f65c74239f5bd31149d92a5f3617f32}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a5f65c74239f5bd31149d92a5f3617f32}} 
@@ -101,6 +108,36 @@ Copy constructor
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a41f0c0b0fc02b05fccb8b765acd85ad0}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a41f0c0b0fc02b05fccb8b765acd85ad0}} 
+\index{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess}!ApplyPostProcess@{ApplyPostProcess}}
+\index{ApplyPostProcess@{ApplyPostProcess}!GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess}}
+\subsubsection{\texorpdfstring{ApplyPostProcess()}{ApplyPostProcess()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Blur\+Post\+Process\+::\+Apply\+Post\+Process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Methods that applies the first render step of the post process 
+\begin{DoxyParams}{Parameters}
+{\em g\+Buff\+Tex\+Info} & geometry buffer data \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_a2dbb157265ebdeea658982673e757d46}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_abf5172d399252fcf42423548918e9433}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_abf5172d399252fcf42423548918e9433}} 
+\index{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess}!ApplyPostProcessSecondStep@{ApplyPostProcessSecondStep}}
+\index{ApplyPostProcessSecondStep@{ApplyPostProcessSecondStep}!GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess}}
+\subsubsection{\texorpdfstring{ApplyPostProcessSecondStep()}{ApplyPostProcessSecondStep()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Blur\+Post\+Process\+::\+Apply\+Post\+Process\+Second\+Step (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Method that applies the second render step of the post process 
+\begin{DoxyParams}{Parameters}
+{\em g\+Buff\+Tex\+Info} & geometry buffer data \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_double_pass_post_process_a2818082bfbcbacf9ccb0e1b2059c24e8}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Double\+Pass\+Post\+Process}}.
+
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a4399f435326724c64cf255a40479d330}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a4399f435326724c64cf255a40479d330}} 
 \index{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess}!Clone@{Clone}}
 \index{Clone@{Clone}!GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess}}
@@ -125,6 +162,21 @@ Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_pr
 {\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Post\+Process}} to be copied \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a280fb0972fb63b1d0f283604678a7404}\label{class_geometry_engine_1_1_geometry_post_process_1_1_double_pass_post_process_1_1_blur_post_process_a280fb0972fb63b1d0f283604678a7404}} 
+\index{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess}!setProgramParameters@{setProgramParameters}}
+\index{setProgramParameters@{setProgramParameters}!GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess@{GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess}}
+\subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Double\+Pass\+Post\+Process\+::\+Blur\+Post\+Process\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sends parameters to the shaders. 
+\begin{DoxyParams}{Parameters}
+{\em g\+Buff\+Tex\+Info} & geometry buffer data \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process_ae4bd80f5d0f0768fd4e2141a95ff5bb0}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

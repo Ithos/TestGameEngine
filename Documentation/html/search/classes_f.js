@@ -11,7 +11,6 @@ var searchData=
   ['shadowmaplight',['ShadowMapLight',['../class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light.html',1,'GeometryEngine::GeometryWorldItem::GeometryLight']]],
   ['shadowspotlight',['ShadowSpotlight',['../class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_spotlight.html',1,'GeometryEngine::GeometryWorldItem::GeometryLight']]],
   ['singlecolortextbuffer',['SingleColorTextBuffer',['../class_geometry_engine_1_1_geometry_buffer_1_1_single_color_text_buffer.html',1,'GeometryEngine::GeometryBuffer']]],
-  ['singlepasspostprocess',['SinglePassPostProcess',['../class_geometry_engine_1_1_geometry_post_process_1_1_single_pass_post_process_1_1_single_pass_post_process.html',1,'GeometryEngine::GeometryPostProcess::SinglePassPostProcess']]],
   ['skyboxmaterial',['SkyboxMaterial',['../class_geometry_engine_1_1_geometry_material_1_1_skybox_material.html',1,'GeometryEngine::GeometryMaterial']]],
   ['sphere',['Sphere',['../class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_sphere.html',1,'GeometryEngine::GeometryWorldItem::GeometryItem']]],
   ['spotlight',['Spotlight',['../class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_spotlight.html',1,'GeometryEngine::GeometryWorldItem::GeometryLight']]],

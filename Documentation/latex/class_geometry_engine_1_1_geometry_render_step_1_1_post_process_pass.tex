@@ -41,6 +41,8 @@ void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_pr
 \item 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_abfc2e269aad1157916f6c3c72b570ae9}{finish\+Post\+Proces\+Pass}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} $\ast$buf)
 \item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_ad13ce012b043f2c7b9305d42d43ba9c8}{apply\+Extra\+Steps}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Geometry\+Post\+Process\+::\+Post\+Process}} $\ast$post\+Process, const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff)
+\item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a5279399395c18ac4ef35fa3028aa4950}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass}{Post\+Process\+Pass}} \&ref)
 \end{DoxyCompactItemize}
 
@@ -63,6 +65,19 @@ Copy Constructor
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_ad13ce012b043f2c7b9305d42d43ba9c8}\label{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_ad13ce012b043f2c7b9305d42d43ba9c8}} 
+\index{GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}!applyExtraSteps@{applyExtraSteps}}
+\index{applyExtraSteps@{applyExtraSteps}!GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}}
+\subsubsection{\texorpdfstring{applyExtraSteps()}{applyExtraSteps()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Post\+Process\+Pass\+::apply\+Extra\+Steps (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Geometry\+Post\+Process\+::\+Post\+Process}} $\ast$}]{post\+Process,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Applies additional steps for the post process 
+\begin{DoxyParams}{Parameters}
+{\em post\+Process} & post processes to apply \\
+\hline
+{\em g\+Buff} & Object that contains buffer data adapted to be passed to the shaders \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_ac0f109e5dc7fb598c2613daaff285526}\label{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_ac0f109e5dc7fb598c2613daaff285526}} 
 \index{GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}!applyPostProcess@{applyPostProcess}}
 \index{applyPostProcess@{applyPostProcess}!GeometryEngine::GeometryRenderStep::PostProcessPass@{GeometryEngine::GeometryRenderStep::PostProcessPass}}
