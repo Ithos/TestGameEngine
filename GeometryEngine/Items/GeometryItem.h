@@ -70,7 +70,7 @@ namespace GeometryEngine
 				virtual unsigned int GetIndexNumber() { return mTotalIndexNumber; }
 				/// Sets the material of the item
 				/// \param mat new material for the item
-				virtual void SetMaterial(GeometryMaterial::Material* mat);
+				virtual void SetMaterial(const GeometryMaterial::Material& mat);
 				/// Copies the data from a GeometryItem into this object
 				/// \param ref GeometryItem to be copied
 				virtual void Copy(const GeometryItem& ref);
@@ -109,6 +109,7 @@ namespace GeometryEngine
 				virtual void initGeometry() = 0;
 				/// Gets managers and creates buffers
 				virtual void initItem();
+				
 
 				QOpenGLBuffer* mpArrayBuf;
 				QOpenGLBuffer* mpIndexBuf;
@@ -122,6 +123,11 @@ namespace GeometryEngine
 				unsigned int mTotalVertexNumber;
 				unsigned int mTotalIndexNumber;
 				std::unordered_set<int> mRenderGroups;
+
+			private:
+				/// Deletes the material pointer and sets it as null. This method should only be used when destroying the object or when swaping the object material.
+				void deleteMaterial();
+
 			};
 		}
 	}

@@ -4,25 +4,10 @@
 #include <GeometryScene.h>
 #include <SceneManager.h>
 
-#include <Items/Materials/ColorMaterial.h>
-#include <Items/Materials/NormalMapMultiTextureMaterial.h>
-#include <Items/Materials/SkyboxMaterial.h>
-#include <Items/Materials/TextureMaterialCommons.h>
+#include <GeometryFactory.h>
 
-#include <Items\Geometries\Quad.h>
-#include <Items\Geometries\Sphere.h>
-#include <Items\Geometries\Cube.h>
-
-#include <Items\GraphicItems\Lights\ShadowCastingLights\DirectionalShadowLight.h>
+#include <Items\GeometryItem.h>
 #include <Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.h>
-#include <Items\GraphicItems\Cameras\DeferredShadingCamera.h>
-
-#include <Items\Item Utils\Viewports\PerspectiveViewport.h>
-#include <Items\Item Utils\Viewports\OrtographicViewport.h>
-
-#include <Render Utils\RenderBuffersData.h>
-#include <Render Utils\Gbuffers\CompleteColorPostProcessBuffer.h>
-#include <Render Utils\ShadingBuffer.h>
 
 #include <Scenes/DynamicShadowsScene.h>
 
@@ -48,68 +33,45 @@ void UnitTest::CShadowSceneTest::InitGeometry(GeometryEngine::GeometryEngine * e
 	GeometryEngine::GeometryScene::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::GeometryScene::DynamicShadowsScene>();
 
 	// Create scene objects
-	GeometryEngine::GeometryMaterial::ColorMaterial sphereMat(QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f), 100.0f);
-	mpSphere = new GeometryEngine::GeometryWorldItem::GeometryItem::Sphere(sphereMat, 1.0f, 6, 12, QVector3D(5.0f, 0.0f, -15.0f));
+	mpSphere = GeometryEngine::GeometryFactory::CreateSphere(
+		GeometryEngine::GeometryFactory::CreateColorMaterial(QVector3D(1.0f, 0.0f, 0.0f), QVector3D(0.0f, 1.0f, 0.0f), QVector3D(0.0f, 0.0f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f), 100.0f),
+		1.0, QVector3D(5.0f, 0.0f, -15.0f)
+	);
 
-	GeometryEngine::GeometryMaterial::ColorMaterial floorMat(QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f));
-	mpFloorCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(floorMat, 1.0f, QVector3D(0.0f, -6.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(100.0f, 1.0f, 100.0f));
+	mpFloorCube = GeometryEngine::GeometryFactory::CreateCube(
+		GeometryEngine::GeometryFactory::CreateColorMaterial(QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f), QVector3D(0.9f, 0.9f, 0.9f)), 
+		GeometryEngine::TEXTURE_MODE::REPEAT, 1.0f, QVector3D(0.0f, -6.0f, 0.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(100.0f, 1.0f, 100.0f)
+	);
 
-	GeometryEngine::GeometryMaterial::NormalMapMultiTextureMaterial cubeMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
-		GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
-		GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
-		GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE,
-		GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP, 1000.0f);
-	mpCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(cubeMat, 4.0f, QVector3D(-5.0f, 0.0f, -15.0f), QVector3D(30.0f, -30.0f, 0.0f));
+	mpCube = GeometryEngine::GeometryFactory::CreateCube(
+		GeometryEngine::GeometryFactory::CreateTextureMaterial(
+			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
+			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
+			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLUE_CHIP_TEXTURE,
+			GeometryEngine::GeometryMaterial::TextureConstant::NORMALMAP_TEST_BLUE_CHIP,
+			GeometryEngine::GeometryMaterial::TextureConstant::TEST_BLACK_TEXTURE, 1000.0f),
+		GeometryEngine::TEXTURE_MODE::REPEAT, 4.0f, QVector3D(-5.0f, 0.0f, -15.0f), QVector3D(30.0f, -30.0f, 0.0f)
+	);
 
-
-	std::vector<QVector2D> texCoordArray;
-	// FRONT
-	texCoordArray.push_back(QVector2D(1.0f, 0.3333f)); texCoordArray.push_back(QVector2D(0.75f, 0.3333f));
-	texCoordArray.push_back(QVector2D(1.0f, 0.66666f)); texCoordArray.push_back(QVector2D(0.75f, 0.66666f));
-	// RIGHT
-	texCoordArray.push_back(QVector2D(0.75f, 0.3333f)); texCoordArray.push_back(QVector2D(0.5f, 0.3333f));
-	texCoordArray.push_back(QVector2D(0.75f, 0.6666f)); texCoordArray.push_back(QVector2D(0.5f, 0.6666f));
-	// BACK
-	texCoordArray.push_back(QVector2D(0.5f, 0.3333f)); texCoordArray.push_back(QVector2D(0.25f, 0.3333f));
-	texCoordArray.push_back(QVector2D(0.5f, 0.66666f)); texCoordArray.push_back(QVector2D(0.25f, 0.6666f));
-	// LEFT
-	texCoordArray.push_back(QVector2D(0.25f, 0.3333f)); texCoordArray.push_back(QVector2D(0.0f, 0.3333f));
-	texCoordArray.push_back(QVector2D(0.25f, 0.6666f)); texCoordArray.push_back(QVector2D(0.0f, 0.6666f));
-	// BOTTOM
-	texCoordArray.push_back(QVector2D(0.25f, 0.3333f)); texCoordArray.push_back(QVector2D(0.5f, 0.3333f));
-	texCoordArray.push_back(QVector2D(0.25f, 0.0f)); texCoordArray.push_back(QVector2D(0.5f, 0.0f));
-	// TOP
-	texCoordArray.push_back(QVector2D(0.25f, 1.0f)); texCoordArray.push_back(QVector2D(0.5f, 1.0f));
-	texCoordArray.push_back(QVector2D(0.25f, 0.6666f)); texCoordArray.push_back(QVector2D(0.5f, 0.66666f));
-
-	GeometryEngine::GeometryMaterial::SkyboxMaterial skyboxMat(GeometryEngine::GeometryMaterial::TextureConstant::TEST_SKYBOX_TEXTURE);
-	mpSkyboxCube = new GeometryEngine::GeometryWorldItem::GeometryItem::Cube(skyboxMat, 200.0f, QVector3D(.0f, .0f, .0f), QVector3D(.0f, .0f, .0f), QVector3D(1.0f, 1.0f, 1.0f), nullptr, &texCoordArray);
-	mpSkyboxCube->SetCastsShadows(false);
+	mpSkyboxCube = GeometryEngine::GeometryFactory::CreateSkyboxCube(GeometryEngine::GeometryMaterial::TextureConstant::TEST_SKYBOX_TEXTURE, 200.0f);
+	
 
 	// lights
+	mpSecondLight = GeometryEngine::GeometryFactory::CreateShadowSpotlight(QVector3D(-5.0f, 10.0f, -15.0f), QVector3D(0.0f, -1.0f, 0.0f), 
+		GeometryEngine::GeometryFactory::CreatePerspectiveViewport(QVector4D(0, 0, mSceneWidth, mSceneHeigth), 120.0f, 1.0f, 0.1f, 100.0f),
+		QVector3D(1.0f, 1.0f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(1.0f, 1.0f, 1.0f), 45.0f, QVector3D(0.1f, 0.1f, 0.01f), QVector3D(0.0f, 0.0f, 0.0f), 0.0003f);
 
-	GeometryEngine::GeometryItemUtils::PerspectiveViewport lightViewport(QVector4D(0, 0, mSceneWidth, mSceneHeigth), 120.0f, 1.0f, 0.1f, 100.0f);
-	GeometryEngine::GeometryItemUtils::OrtographicViewport lightViewportOrto(QVector4D(0, 0, mSceneWidth, mSceneHeigth), QRect(-mSceneWidth / 24, -mSceneHeigth / 24, 
-																				mSceneWidth / 12, mSceneHeigth / 12), 0.1f, 1000.0f);
-
-
-	GeometryEngine::GeometryWorldItem::GeometryItem::Sphere lightSphere(floorMat, 2.0f);
-	GeometryEngine::GeometryWorldItem::GeometryItem::Quad lightQuad(floorMat, 3.0f, 3.0f);
-
-	mpSecondLight = new GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight(45.0f, QVector3D(0.1f, 0.1f, 0.01f), lightViewport, QVector3D(0.0f, -1.0f, 0.0f), &lightSphere, QVector3D(1.0f, 1.0f, 1.0f),
-		QVector3D(0.0f, 0.0f, 0.0f), QVector3D(1.0f, 1.0f, 1.0f), POS_LIGHT, QVector3D(0.0f, 0.0f, 0.0f), 0.0003f, QVector3D(1.0f, 1.0f, 1.0f));
-
-	mpMainLight = new GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight(lightViewportOrto, QVector3D(0.0, -1.0, 0.0), &lightQuad, QVector3D(0.1f, 0.1f, 0.1f),
-		QVector3D(0.1f, 0.1f, 0.1f), QVector3D(0.1f, 0.1f, 0.1f), QVector3D(5.0f, 30.0f, -15.0f), QVector3D(0.0f, 0.0f, 0.0f), 0.001f, QVector3D(1.0f, 1.0f, 1.0f));
+	mpMainLight = GeometryEngine::GeometryFactory::CreateDirectionalShadowLight(QVector3D(5.0f, 30.0f, -15.0f), QVector3D(0.0, -1.0, 0.0), 
+		GeometryEngine::GeometryFactory::CreateOrtographicViewport(QVector4D(0, 0, mSceneWidth, mSceneHeigth), QRect(-mSceneWidth / 24, -mSceneHeigth / 24,
+			mSceneWidth / 12, mSceneHeigth / 12), 0.1f, 1000.0f),
+		QVector3D(0.1f, 0.1f, 0.1f),
+		QVector3D(0.1f, 0.1f, 0.1f), QVector3D(0.1f, 0.1f, 0.1f));
 
 	//camera
-
-	GeometryEngine::GeometryItemUtils::PerspectiveViewport viewport(QVector4D(0, 0, mSceneWidth, mSceneHeigth), 45.0f, 1.0f, 0.1f, 1000.0f);
-
-	mpCam = new GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera(
-		GeometryEngine::GeometryRenderData::RenderBuffersData(GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer(), &GeometryEngine::GeometryBuffer::ShadingBuffer()),
-		viewport, true,
-		QVector3D(0.0f, 0.0f, 0.0f), QVector3D(0, 0, 0));
+	mpCam = GeometryEngine::GeometryFactory::CreateDeferredShadingCamera(GeometryEngine::GeometryFactory::CreatePerspectiveViewport(
+		QVector4D(0, 0, mSceneWidth, mSceneHeigth), 45.0f, 1.0f, 0.1f, 1000.0f),
+		QVector3D(0.0f, 0.0f, 0.0f)
+	);
 
 	// Add objects to the scene
 	scene->AddItem(mpSkyboxCube);

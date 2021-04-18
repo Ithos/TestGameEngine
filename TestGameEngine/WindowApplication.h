@@ -22,6 +22,7 @@ namespace GeometryEngine {
 	{
 		namespace GeometryItem
 		{
+			class GeometryItem;
 			class Cube;
 			class Sphere;
 			class Quad;
@@ -69,14 +70,15 @@ namespace Application
 		QVector2D mWindowSize;
 
 		/// Items shouldnt be created here its just for testing purposes
-		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* testCube;
-		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* skyboxCube;
-		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere* testCube2;
+		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* testCube;
+		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* skyboxCube;
+		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* testCube2;
+		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* topSphere;
 		GeometryEngine::GeometryWorldItem::GeometryCamera::Camera* cam;
 		GeometryEngine::GeometryWorldItem::GeometryLight::Light* mainLight;
 		GeometryEngine::GeometryWorldItem::GeometryLight::Light* secondLight;
-		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* lightCube2;
-		GeometryEngine::GeometryWorldItem::GeometryItem::Quad* textureQuad;
+		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* lightCube2;
+		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* textureQuad;
 
 		bool* mpMovementArray;
 

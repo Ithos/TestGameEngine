@@ -56,7 +56,7 @@ namespace GeometryEngine
 			/// \param zFar Far plane z coordinate
 			/// \param clearColor Clear color for the scene
 			GeometryScene(SceneManager* manager, GLdouble fovy = 45.0, GLdouble zNear = 0.1, GLdouble zFar = 30.0, QVector4D clearColor = QVector4D(0.0f, 0.0f, 0.0f, 1.0f));
-			/// Destructor. Destroys all render stpeps and the initial setup.
+			/// Destructor. Destroys all render steps and the initial setup.
 			virtual ~GeometryScene();
 
 			/// Scale the scene and the viewports for all cameras

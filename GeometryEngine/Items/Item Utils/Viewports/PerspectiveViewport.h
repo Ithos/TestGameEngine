@@ -14,6 +14,8 @@ namespace GeometryEngine
 		public:
 			/// Constructor. 
 			/// \param viewportSize Size of the viewport. The values indicate in order x position, yposition, width, height.
+			/// \param fovy Angle that the perspective frustrum opens 
+			/// \param aspectRatio Relation between width and height of the image
 			/// \param zNear Nearest z coordinate to be rendered
 			/// \param zFar Farthest z coordinate to be rendered
 			PerspectiveViewport(const QVector4D& viewportSize, GLdouble fovy = 45.0, GLdouble aspectRatio = 1.0, GLdouble zNear = 0.1, GLdouble zFar = 30.0);

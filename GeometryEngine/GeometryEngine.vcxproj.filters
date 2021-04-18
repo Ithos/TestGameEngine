@@ -281,6 +281,9 @@
     <ClInclude Include="Items\CommonInerfaces\PostProcessSteps\CallSecondStep.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeometryFactory.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeometryEngine.cpp">
@@ -513,6 +516,9 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Items\CommonInerfaces\CustomPostProcessStep.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryFactory.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>

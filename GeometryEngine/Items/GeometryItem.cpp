@@ -29,11 +29,7 @@ GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::~GeometryItem()
 		mpIndexBuf = nullptr;
 	}
 
-	if (mpMaterial != nullptr)
-	{
-		delete(mpMaterial);
-		mpMaterial = nullptr;
-	}
+	deleteMaterial();
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::DrawItem(const QMatrix4x4& projection, const QMatrix4x4& view)
@@ -44,13 +40,10 @@ void GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::DrawItem(con
 	}
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::SetMaterial(GeometryMaterial::Material * mat)
+void GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::SetMaterial(const GeometryMaterial::Material& mat)
 {
-	if (mpMaterial != nullptr)
-	{
-		delete(mpMaterial);
-	}
-	mpMaterial = mat->Clone();
+	deleteMaterial();
+	mpMaterial = mat.Clone();
 }
 
 void GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::Copy(const GeometryItem & ref)
@@ -101,5 +94,14 @@ void GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::initItem()
 	mpIndexBuf->create();
 
 	this->initGeometry();
+}
+
+void GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem::deleteMaterial()
+{
+	if (mpMaterial != nullptr)
+	{
+		delete(mpMaterial);
+		mpMaterial = nullptr;
+	}
 }
 

@@ -13,9 +13,7 @@ namespace GeometryEngine
 	{
 		namespace GeometryItem
 		{
-			class Cube;
-			class Sphere;
-			class Quad;
+			class GeometryItem;
 		}
 
 		namespace GeometryCamera
@@ -75,6 +73,7 @@ namespace UnitTest
 
 		/// Executes and evaluates the result of the test
 		virtual void evaluate() = 0;
+		/// TODO -- compare full images -- ///
 	};
 }
 

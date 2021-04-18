@@ -45,6 +45,7 @@ namespace GeometryEngine
 			public:
 				/// Constructor.  FAQ: Scaling the camera scales the whole coordinate system, be careful with it
 				/// \param viewport Object that defines the view and projection matrices
+				/// \param autoResize If true the size of the viewport changes with the size of the window
 				/// \param pos Initial position of the item
 				/// \param rot Initial rotaion of the item
 				/// \param scale Initial scale to be applied to this item model

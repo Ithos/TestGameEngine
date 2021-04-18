@@ -51,3 +51,4 @@ moc_*
 #Output folders
 **/Win32
 **/x64
+**/.vs

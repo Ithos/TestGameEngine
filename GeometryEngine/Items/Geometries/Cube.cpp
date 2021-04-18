@@ -35,7 +35,6 @@ void GeometryEngine::GeometryWorldItem::GeometryItem::Cube::initGeometry()
 	// For cube we would need only 8 vertices but we have to
 	// duplicate vertex for each face because texture coordinate
 	// is different.
-	// TODO -- get texture coordinates as an array -- //
 	VertexData vertices[] = {
 		// Vertex data for face 0
 		{ QVector3D(-pos, -pos,  pos), QVector3D(1.0f, 0.0f,0.0f), mTextureCoordinateArray[0],  QVector3D(0.0f, 0.0f, 1.0f) },  // v0

@@ -19,10 +19,8 @@ namespace GeometryEngine
 			public:
 				/// Constructor. FAQ: Scaling the camera scales the whole coordinate system, be careful with it
 				/// \param gbuffer Geometry buffer to be copied into the camera
-				/// \param viewportSize Size of the viewport. The values indicate in order x position, yposition, width, height.
-				/// \param autoResize Indicates if the viewport should be resized when the window's size changes
-				/// \param zNear Nearest z coordinate to be rendered
-				/// \param zFar Farthest z coordinate to be rendered
+				/// \param viewport Viewport object to be copied into the camera
+				/// \param autoResize If true the size of the viewport changes with the size of the window
 				/// \param pos Initial position of the item
 				/// \param rot Initial rotaion of the item
 				/// \param scale Initial scale to be applied to this item model

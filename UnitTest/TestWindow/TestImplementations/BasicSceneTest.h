@@ -41,10 +41,10 @@ namespace UnitTest
 		static const QVector3D POINT;
 		static const QVector3D POS_LIGHT;
 
-		GeometryEngine::GeometryWorldItem::GeometryItem::Sphere* mpSphere;
-		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* mpCube;
-		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* mpSkyboxCube;
-		GeometryEngine::GeometryWorldItem::GeometryItem::Cube* mpFloorCube;
+		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* mpSphere;
+		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* mpCube;
+		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* mpSkyboxCube;
+		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* mpFloorCube;
 		GeometryEngine::GeometryWorldItem::GeometryLight::Light* mpMainLight;
 		GeometryEngine::GeometryWorldItem::GeometryLight::Light* mpSecondLight;
 		GeometryEngine::GeometryWorldItem::GeometryCamera::Camera* mpCam;
