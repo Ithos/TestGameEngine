@@ -39,6 +39,8 @@ class \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffe
 \begin{DoxyCompactList}\small\item\em Class that holds information about the geometry buffer textures to be passed to the shader. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine}{Geometry\+Engine}}
 \begin{DoxyCompactList}\small\item\em Singleton that gives acces to the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_engine}{Geometry\+Engine}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory}{Geometry\+Factory}}
+\begin{DoxyCompactList}\small\item\em Factory to simplify the creation of scene objects. The property of the objects created is delegated to the caller. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}}
 \begin{DoxyCompactList}\small\item\em Class that holds inofrmation about the light to be passed to the shader. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_scene_manager}{Scene\+Manager}}
@@ -47,7 +49,23 @@ class \mbox{\hyperlink{class_geometry_engine_1_1_shading_buffer_texture_info}{Sh
 \begin{DoxyCompactList}\small\item\em Class that holds information about the translucency buffer. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_geometry_engine_1_1_vertex_data}{Vertex\+Data}}
 \begin{DoxyCompactList}\small\item\em Struct that holds the vertex data to be passed to Open\+Gl and the memory offset for each varible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_geometry_engine_a8502c4e17f01f5fe92f879776759e572}{T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+O\+DE}} \{ {\bfseries R\+E\+P\+E\+AT}, 
+{\bfseries M\+AP}
+ \}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Main namespace it contains all \mbox{\hyperlink{namespace_geometry_engine}{Geometry\+Engine}} elements. 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_geometry_engine_a8502c4e17f01f5fe92f879776759e572}\label{namespace_geometry_engine_a8502c4e17f01f5fe92f879776759e572}} 
+\index{GeometryEngine@{GeometryEngine}!TEXTURE\_MODE@{TEXTURE\_MODE}}
+\index{TEXTURE\_MODE@{TEXTURE\_MODE}!GeometryEngine@{GeometryEngine}}
+\subsubsection{\texorpdfstring{TEXTURE\_MODE}{TEXTURE\_MODE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_geometry_engine_a8502c4e17f01f5fe92f879776759e572}{Geometry\+Engine\+::\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+O\+DE}}}
+
+Different modes of applying the texture R\+E\+P\+E\+AT -\/$>$ Replicates the texture on every face M\+AP -\/$>$ Maps the texture to cover all faces of the geometry 

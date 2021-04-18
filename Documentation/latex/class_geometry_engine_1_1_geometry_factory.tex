@@ -1,0 +1,750 @@
+\hypertarget{class_geometry_engine_1_1_geometry_factory}{}\section{Geometry\+Engine\+::Geometry\+Factory Class Reference}
+\label{class_geometry_engine_1_1_geometry_factory}\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+
+
+Factory to simplify the creation of scene objects. The property of the objects created is delegated to the caller.  
+
+
+
+
+{\ttfamily \#include $<$Geometry\+Factory.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_ab1a5eb77d7902674d9b904a86dfaa87d}{Create\+Skybox\+Cube}} (const std\+::string \&texture\+Key, float skybox\+Size)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a10dc01e3e7982de326110dd5c374f83a}{Create\+Sphere}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} \&mat, float size, const Q\+Vector3D \&pos, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a01e71a4889500fd941c2c48be6676108}{Create\+Sphere}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$mat, float size, const Q\+Vector3D \&pos, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a3fbd736e23c92820e2a9ef7462682ac7}{Create\+Cube}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} \&mat, \mbox{\hyperlink{namespace_geometry_engine_a8502c4e17f01f5fe92f879776759e572}{T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+O\+DE}} mode, float size, const Q\+Vector3D \&pos, const Q\+Vector3D \&rot=Q\+Vector3D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a63e36d406e73170b39a39e7bbec45231}{Create\+Cube}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$mat, \mbox{\hyperlink{namespace_geometry_engine_a8502c4e17f01f5fe92f879776759e572}{T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+O\+DE}} mode, float size, const Q\+Vector3D \&pos, const Q\+Vector3D \&rot=Q\+Vector3D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a8a198efff4ed85106a7bffb65274a5e5}{Create\+Quad}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} \&mat, float width, float height, const Q\+Vector3D \&pos, const Q\+Vector3D \&rot=Q\+Vector3D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a32b10346ae782021112612556d8afe05}{Create\+Quad}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$mat, float width, float height, const Q\+Vector3D \&pos, const Q\+Vector3D \&rot=Q\+Vector3D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a9f9054831c6e8043bf1ecb4337d06363}{Create\+Color\+Material}} (const Q\+Vector3D \&ambient, const Q\+Vector3D \&diffuse, const Q\+Vector3D \&specular, const Q\+Vector3D \&emissive=Q\+Vector3D(0.\+0f, 0.\+0f, 0.\+0f), float shininess=10.\+0f)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a3d37605b9cc44fd0b3a058f961b76a35}{Create\+Alpha\+Color\+Material}} (const Q\+Vector3D \&ambient, const Q\+Vector3D \&diffuse, const Q\+Vector3D \&specular, const Q\+Vector3D \&emissive, float=1.\+0f, bool translucent=false, float shininess=10.\+0f)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a5362b394e75092bc6bb825c3eb7255ce}{Create\+Texture\+Material}} (const std\+::string \&tex\+Dir, float shininess=10.\+0f)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_adae01f43608a0e55b1e9f831efed6940}{Create\+Alpha\+Texture\+Material}} (const std\+::string \&tex\+Dir, float alpha=1.\+0f, bool translucent=false, float shininess=10.\+0f)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a5f40952552368c0c0db6d07d42ef17c5}{Create\+Texture\+Material}} (const std\+::string \&tex\+Dir, const std\+::string \&normal\+Map\+Tex\+Dir, float shininess=10.\+0f)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a2b0e030c3c8c22b709f7a85934a3cdb4}{Create\+Alpha\+Texture\+Material}} (const std\+::string \&tex\+Dir, const std\+::string \&normal\+Map\+Tex\+Dir, float alpha=1.\+0f, bool translucent=false, float shininess=10.\+0f)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_adcb6d5a41689e574ef468a21ae4c7516}{Create\+Texture\+Material}} (const std\+::string \&ambient\+Tex\+Dir, const std\+::string \&diffuse\+Tex\+Dir, const std\+::string \&specular\+Tex\+Dir, const std\+::string \&emissive\+Tex\+Dir=Geometry\+Material\+::\+Texture\+Constant\+::\+T\+E\+S\+T\+\_\+\+B\+L\+A\+C\+K\+\_\+\+T\+E\+X\+T\+U\+RE, float shininess=10.\+0f)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a41814b5c1de6d781990e060037f3fc13}{Create\+Alpha\+Texture\+Material}} (const std\+::string \&ambient\+Tex\+Dir, const std\+::string \&diffuse\+Tex\+Dir, const std\+::string \&specular\+Tex\+Dir, const std\+::string \&emissive\+Tex\+Dir=Geometry\+Material\+::\+Texture\+Constant\+::\+T\+E\+S\+T\+\_\+\+B\+L\+A\+C\+K\+\_\+\+T\+E\+X\+T\+U\+RE, float alpha=1.\+0f, bool translucent=false, float shininess=10.\+0f)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a2bf6b7fbbb92985b920c470a0354c0cd}{Create\+Texture\+Material}} (const std\+::string \&ambient\+Tex\+Dir, const std\+::string \&diffuse\+Tex\+Dir, const std\+::string \&specular\+Tex\+Dir, const std\+::string \&normal\+Map\+Tex\+Dir, const std\+::string \&emissive\+Tex\+Dir=Geometry\+Material\+::\+Texture\+Constant\+::\+T\+E\+S\+T\+\_\+\+B\+L\+A\+C\+K\+\_\+\+T\+E\+X\+T\+U\+RE, float shininess=10.\+0f)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a7d1116b730798d68a9c03447750f402e}{Create\+Alpha\+Texture\+Material}} (const std\+::string \&ambient\+Tex\+Dir, const std\+::string \&diffuse\+Tex\+Dir, const std\+::string \&specular\+Tex\+Dir, const std\+::string \&normal\+Map\+Tex\+Dir, const std\+::string \&emissive\+Tex\+Dir=Geometry\+Material\+::\+Texture\+Constant\+::\+T\+E\+S\+T\+\_\+\+B\+L\+A\+C\+K\+\_\+\+T\+E\+X\+T\+U\+RE, float alpha=1.\+0f, bool translucent=false, float shininess=10.\+0f)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a166f4a7b9b070204650ab18a3cf1bf2b}{Create\+Spotlight}} (const Q\+Vector3D \&pos, const Q\+Vector3D \&direction, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), float max\+Light\+Angle=45.\+0f, const Q\+Vector3\+D \&att\+Params=\+Q\+Vector3\+D(0.\+1f, 0.\+1f, 0.\+01f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a6d12044e0bc41b8c2ed39d52e6ab2e95}{Create\+Ambient\+Light}} (const Q\+Vector3D \&pos, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), float light\+Viewport\+Size=3.\+0f, Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a045eed55a130fde5a5581e8ef4fd14e1}{Create\+Directional\+Light}} (const Q\+Vector3D \&pos, const Q\+Vector3D \&direction, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), float light\+Viewport\+Size=3.\+0f, Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a8edc2348bd6ece53626d80690b84b725}{Create\+Point\+Light}} (const Q\+Vector3D \&pos, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&att\+Params=\+Q\+Vector3\+D(0.\+1f, 0.\+1f, 0.\+01f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a32cea0a4ef0b019db75039d1b64372fd}{Create\+Shadow\+Spotlight}} (const Q\+Vector3D \&pos, const Q\+Vector3D \&direction, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&viewport, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), float max\+Light\+Angle=45.\+0f, const Q\+Vector3\+D \&att\+Params=\+Q\+Vector3\+D(0.\+1f, 0.\+1f, 0.\+01f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), float max\+Shadow\+Bias=0.\+001f, Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a11eb3aa78243fffeeb9673d73a37c73e}{Create\+Shadow\+Spotlight}} (const Q\+Vector3D \&pos, const Q\+Vector3D \&direction, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} $\ast$viewport, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), float max\+Light\+Angle=45.\+0f, const Q\+Vector3\+D \&att\+Params=\+Q\+Vector3\+D(0.\+1f, 0.\+1f, 0.\+01f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), float max\+Shadow\+Bias=0.\+001f, Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_ae663bbb598b21a847eae1b62a7547580}{Create\+Directional\+Shadow\+Light}} (const Q\+Vector3D \&pos, const Q\+Vector3D \&direction, const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&viewport, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), float max\+Shadow\+Bias=0.\+0f, float light\+Viewport\+Size=3.\+0f, Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_ab14ce0c00c6353be91a511572c89ae30}{Create\+Directional\+Shadow\+Light}} (const Q\+Vector3D \&pos, const Q\+Vector3D \&direction, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} $\ast$viewport, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), float max\+Shadow\+Bias=0.\+0f, float light\+Viewport\+Size=3.\+0f, Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a27855bee8a087a66034ee5001a023241}{Create\+Ortographic\+Viewport}} (const Q\+Vector4D \&viewport\+Size, const Q\+Rect \&ortho\+Size, G\+Ldouble z\+Near=0.\+1, G\+Ldouble z\+Far=30.\+0)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_ab29bf1ed42ffb4054a8d19c292bcbaea}{Create\+Perspective\+Viewport}} (const Q\+Vector4D \&viewport\+Size, G\+Ldouble fovy=45.\+0, G\+Ldouble aspect\+Ratio=1.\+0, G\+Ldouble z\+Near=0.\+1, G\+Ldouble z\+Far=30.\+0)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_aa86c9233dff0a18e99208de4de0153f3}{Create\+Deferred\+Shading\+Camera}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&viewport, const Q\+Vector3D \&pos, bool auto\+Resize=true, const Q\+Vector3D \&rot=Q\+Vector3D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_aead6db17ffba74414f9878636ba4f18a}{Create\+Deferred\+Shading\+Camera}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} $\ast$viewport, const Q\+Vector3D \&pos, bool auto\+Resize=true, const Q\+Vector3D \&rot=Q\+Vector3D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), Geometry\+World\+Item\+::\+World\+Item $\ast$parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Geometry\+Post\+Process\+::\+Post\+Process}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_ae22f129b89273bd47bbb9537901a818a}{Create\+Grey\+Scale\+Post\+Process}} (float viewport\+Size=3.\+0f)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Geometry\+Post\+Process\+::\+Post\+Process}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_afe48a638a03829d843c9ac22f4ba3606}{Create\+Blur\+Post\+Process}} (float viewport\+Size=3.\+0f)
+\item 
+static void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a50fd72b5c91709daea566d8f233abb23}{Add\+Tmp\+Post\+Process}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} \&cam, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Geometry\+Post\+Process\+::\+Post\+Process}} $\ast$proc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Factory to simplify the creation of scene objects. The property of the objects created is delegated to the caller. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a50fd72b5c91709daea566d8f233abb23}\label{class_geometry_engine_1_1_geometry_factory_a50fd72b5c91709daea566d8f233abb23}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!AddTmpPostProcess@{AddTmpPostProcess}}
+\index{AddTmpPostProcess@{AddTmpPostProcess}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{AddTmpPostProcess()}{AddTmpPostProcess()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Factory\+::\+Add\+Tmp\+Post\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} \&}]{cam,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Geometry\+Post\+Process\+::\+Post\+Process}} $\ast$}]{proc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convenience method that copies a post process to the camera and then deletes the received post process pointer 
+\begin{DoxyParams}{Parameters}
+{\em cam} & Camera where the post process will be added \\
+\hline
+{\em proc} & Temporary Post\+Process pointer to be copied into the camera. It will be deletad after it is copied. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a3d37605b9cc44fd0b3a058f961b76a35}\label{class_geometry_engine_1_1_geometry_factory_a3d37605b9cc44fd0b3a058f961b76a35}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateAlphaColorMaterial@{CreateAlphaColorMaterial}}
+\index{CreateAlphaColorMaterial@{CreateAlphaColorMaterial}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateAlphaColorMaterial()}{CreateAlphaColorMaterial()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Alpha\+Color\+Material (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{ambient,  }\item[{const Q\+Vector3D \&}]{diffuse,  }\item[{const Q\+Vector3D \&}]{specular,  }\item[{const Q\+Vector3D \&}]{emissive,  }\item[{float}]{alpha = {\ttfamily 1.0f},  }\item[{bool}]{translucent = {\ttfamily false},  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a transparent color material 
+\begin{DoxyParams}{Parameters}
+{\em ambient} & Ambient rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em diffuse} & Diffuse rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em emissive} & Emissive rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em alpha} & Main alpha value for the whole object, clamps to 0.\+0 to 1.\+0 range. This value gets multiplied to every fragment color alpha. \\
+\hline
+{\em translucent} & Indicates whether the material casts a translucent shadow or not \\
+\hline
+{\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_adae01f43608a0e55b1e9f831efed6940}\label{class_geometry_engine_1_1_geometry_factory_adae01f43608a0e55b1e9f831efed6940}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateAlphaTextureMaterial@{CreateAlphaTextureMaterial}}
+\index{CreateAlphaTextureMaterial@{CreateAlphaTextureMaterial}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateAlphaTextureMaterial()}{CreateAlphaTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Alpha\+Texture\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Dir,  }\item[{float}]{alpha = {\ttfamily 1.0f},  }\item[{bool}]{translucent = {\ttfamily false},  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a transparent texture material 
+\begin{DoxyParams}{Parameters}
+{\em tex\+Dir} & Key of the texture to be loaded \\
+\hline
+{\em alpha} & Main alpha value for the whole object, clamps to 0.\+0 to 1.\+0 range. This value gets multiplied to every fragment color alpha. \\
+\hline
+{\em translucent} & Indicates whether the material casts a translucent shadow or not \\
+\hline
+{\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a2b0e030c3c8c22b709f7a85934a3cdb4}\label{class_geometry_engine_1_1_geometry_factory_a2b0e030c3c8c22b709f7a85934a3cdb4}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateAlphaTextureMaterial@{CreateAlphaTextureMaterial}}
+\index{CreateAlphaTextureMaterial@{CreateAlphaTextureMaterial}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateAlphaTextureMaterial()}{CreateAlphaTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Alpha\+Texture\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Dir,  }\item[{const std\+::string \&}]{normal\+Map\+Tex\+Dir,  }\item[{float}]{alpha = {\ttfamily 1.0f},  }\item[{bool}]{translucent = {\ttfamily false},  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a transparent texture material with a normalmap 
+\begin{DoxyParams}{Parameters}
+{\em tex\+Dir} & Key of the texture to be loaded \\
+\hline
+{\em alpha} & Main alpha value for the whole object, clamps to 0.\+0 to 1.\+0 range. This value gets multiplied to every fragment color alpha. \\
+\hline
+{\em translucent} & Indicates whether the material casts a translucent shadow or not \\
+\hline
+{\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a41814b5c1de6d781990e060037f3fc13}\label{class_geometry_engine_1_1_geometry_factory_a41814b5c1de6d781990e060037f3fc13}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateAlphaTextureMaterial@{CreateAlphaTextureMaterial}}
+\index{CreateAlphaTextureMaterial@{CreateAlphaTextureMaterial}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateAlphaTextureMaterial()}{CreateAlphaTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Alpha\+Texture\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ambient\+Tex\+Dir,  }\item[{const std\+::string \&}]{diffuse\+Tex\+Dir,  }\item[{const std\+::string \&}]{specular\+Tex\+Dir,  }\item[{const std\+::string \&}]{emissive\+Tex\+Dir = {\ttfamily GeometryMaterial\+:\+:TextureConstant\+:\+:TEST\+\_\+BLACK\+\_\+TEXTURE},  }\item[{float}]{alpha = {\ttfamily 1.0f},  }\item[{bool}]{translucent = {\ttfamily false},  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a transparent multi texture material with a normalmap 
+\begin{DoxyParams}{Parameters}
+{\em ambient\+Tex\+Dir} & Key to a texture that will be used as ambient color \\
+\hline
+{\em diffuse\+Tex\+Dir} & Key to a texture that will be used as diffuse color \\
+\hline
+{\em specular\+Tex\+Dir} & Key to a texture that will be used as specular color \\
+\hline
+{\em emissive\+Tex\+Dir} & Key to a texture that will be used as emissive color \\
+\hline
+{\em alpha} & Main alpha value for the whole object, clamps to 0.\+0 to 1.\+0 range. This value gets multiplied to every fragment color alpha. \\
+\hline
+{\em translucent} & Indicates whether the material casts a translucent shadow or not \\
+\hline
+{\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a7d1116b730798d68a9c03447750f402e}\label{class_geometry_engine_1_1_geometry_factory_a7d1116b730798d68a9c03447750f402e}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateAlphaTextureMaterial@{CreateAlphaTextureMaterial}}
+\index{CreateAlphaTextureMaterial@{CreateAlphaTextureMaterial}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateAlphaTextureMaterial()}{CreateAlphaTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Alpha\+Texture\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ambient\+Tex\+Dir,  }\item[{const std\+::string \&}]{diffuse\+Tex\+Dir,  }\item[{const std\+::string \&}]{specular\+Tex\+Dir,  }\item[{const std\+::string \&}]{normal\+Map\+Tex\+Dir,  }\item[{const std\+::string \&}]{emissive\+Tex\+Dir = {\ttfamily GeometryMaterial\+:\+:TextureConstant\+:\+:TEST\+\_\+BLACK\+\_\+TEXTURE},  }\item[{float}]{alpha = {\ttfamily 1.0f},  }\item[{bool}]{translucent = {\ttfamily false},  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a transparent multi texture material with a normalmap 
+\begin{DoxyParams}{Parameters}
+{\em ambient\+Tex\+Dir} & Key to a texture that will be used as ambient color \\
+\hline
+{\em diffuse\+Tex\+Dir} & Key to a texture that will be used as diffuse color \\
+\hline
+{\em specular\+Tex\+Dir} & Key to a texture that will be used as specular color \\
+\hline
+{\em normal\+Map\+Tex\+Dir} & Key to a texture that contains the object normal map \\
+\hline
+{\em emissive\+Tex\+Dir} & Key to a texture that will be used as emissive color \\
+\hline
+{\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a6d12044e0bc41b8c2ed39d52e6ab2e95}\label{class_geometry_engine_1_1_geometry_factory_a6d12044e0bc41b8c2ed39d52e6ab2e95}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateAmbientLight@{CreateAmbientLight}}
+\index{CreateAmbientLight@{CreateAmbientLight}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateAmbientLight()}{CreateAmbientLight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Ambient\+Light (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{pos,  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{float}]{light\+Viewport\+Size = {\ttfamily 3.0f},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create an ambiental light 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Initial position of the item \\
+\hline
+{\em diffuse} & Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em ambient} & Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em light\+Viewport\+Size} & Size of the square shaped viewport used to render the light \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_afe48a638a03829d843c9ac22f4ba3606}\label{class_geometry_engine_1_1_geometry_factory_afe48a638a03829d843c9ac22f4ba3606}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateBlurPostProcess@{CreateBlurPostProcess}}
+\index{CreateBlurPostProcess@{CreateBlurPostProcess}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateBlurPostProcess()}{CreateBlurPostProcess()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Blur\+Post\+Process (\begin{DoxyParamCaption}\item[{float}]{viewport\+Size = {\ttfamily 3.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a blur post process 
+\begin{DoxyParams}{Parameters}
+{\em viewport\+Size} & Size of the quad used to render the post process. It should cover the viewport completely. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a9f9054831c6e8043bf1ecb4337d06363}\label{class_geometry_engine_1_1_geometry_factory_a9f9054831c6e8043bf1ecb4337d06363}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateColorMaterial@{CreateColorMaterial}}
+\index{CreateColorMaterial@{CreateColorMaterial}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateColorMaterial()}{CreateColorMaterial()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Color\+Material (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{ambient,  }\item[{const Q\+Vector3D \&}]{diffuse,  }\item[{const Q\+Vector3D \&}]{specular,  }\item[{const Q\+Vector3D \&}]{emissive = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a color material 
+\begin{DoxyParams}{Parameters}
+{\em ambient} & Ambient rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em diffuse} & Diffuse rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em emissive} & Emissive rgb color component of the material. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a3fbd736e23c92820e2a9ef7462682ac7}\label{class_geometry_engine_1_1_geometry_factory_a3fbd736e23c92820e2a9ef7462682ac7}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateCube@{CreateCube}}
+\index{CreateCube@{CreateCube}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateCube()}{CreateCube()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Cube (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} \&}]{mat,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_a8502c4e17f01f5fe92f879776759e572}{T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+O\+DE}}}]{mode,  }\item[{float}]{size,  }\item[{const Q\+Vector3D \&}]{pos,  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a cube 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Material to be used for rendering \\
+\hline
+{\em mode} & Mode of aplying the texture. In M\+AP mode vertex coordinates should be like the ones in the file skybox\+Texture in settings/textures \\
+\hline
+{\em size} & Side lenght for the cube \\
+\hline
+{\em pos} & Initial position of the item \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em scale} & Initial scale to be applied to this item model \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a63e36d406e73170b39a39e7bbec45231}\label{class_geometry_engine_1_1_geometry_factory_a63e36d406e73170b39a39e7bbec45231}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateCube@{CreateCube}}
+\index{CreateCube@{CreateCube}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateCube()}{CreateCube()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Cube (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$}]{mat,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_a8502c4e17f01f5fe92f879776759e572}{T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+O\+DE}}}]{mode,  }\item[{float}]{size,  }\item[{const Q\+Vector3D \&}]{pos,  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convenience method that overrides Create\+Cube to be called using a temporary material pointer. This method deletes the material pointer after creating the item. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Temporary material pointer to be used for rendering. The pointer will be deleted after creating the item. \\
+\hline
+{\em mode} & Mode of aplying the texture. In M\+AP mode vertex coordinates should be like the ones in the file skybox\+Texture in settings/textures \\
+\hline
+{\em size} & Side lenght for the cube \\
+\hline
+{\em pos} & Initial position of the item \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em scale} & Initial scale to be applied to this item model \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_aa86c9233dff0a18e99208de4de0153f3}\label{class_geometry_engine_1_1_geometry_factory_aa86c9233dff0a18e99208de4de0153f3}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateDeferredShadingCamera@{CreateDeferredShadingCamera}}
+\index{CreateDeferredShadingCamera@{CreateDeferredShadingCamera}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateDeferredShadingCamera()}{CreateDeferredShadingCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Deferred\+Shading\+Camera (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&}]{viewport,  }\item[{const Q\+Vector3D \&}]{pos,  }\item[{bool}]{auto\+Resize = {\ttfamily true},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a deferred shading camera 
+\begin{DoxyParams}{Parameters}
+{\em viewport} & Viewport object to be copied into the camera \\
+\hline
+{\em auto\+Resize} & If true the size of the viewport changes with the size of the window \\
+\hline
+{\em pos} & Initial position of the item \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em scale} & Initial scale to be applied to this item model \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_aead6db17ffba74414f9878636ba4f18a}\label{class_geometry_engine_1_1_geometry_factory_aead6db17ffba74414f9878636ba4f18a}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateDeferredShadingCamera@{CreateDeferredShadingCamera}}
+\index{CreateDeferredShadingCamera@{CreateDeferredShadingCamera}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateDeferredShadingCamera()}{CreateDeferredShadingCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Deferred\+Shading\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} $\ast$}]{viewport,  }\item[{const Q\+Vector3D \&}]{pos,  }\item[{bool}]{auto\+Resize = {\ttfamily true},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convenience method that overrides Create\+Deferred\+Shading\+Camera to be called using a temporary material pointer. This method deletes the viewport pointer after creating the item. 
+\begin{DoxyParams}{Parameters}
+{\em viewport} & Temporary viewport pointer to be copied into the camera. The pointer will be deleted after creating the camera. \\
+\hline
+{\em auto\+Resize} & If true the size of the viewport changes with the size of the window \\
+\hline
+{\em pos} & Initial position of the item \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em scale} & Initial scale to be applied to this item model \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a045eed55a130fde5a5581e8ef4fd14e1}\label{class_geometry_engine_1_1_geometry_factory_a045eed55a130fde5a5581e8ef4fd14e1}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateDirectionalLight@{CreateDirectionalLight}}
+\index{CreateDirectionalLight@{CreateDirectionalLight}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateDirectionalLight()}{CreateDirectionalLight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Directional\+Light (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{pos,  }\item[{const Q\+Vector3D \&}]{direction,  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{float}]{light\+Viewport\+Size = {\ttfamily 3.0f},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a directional light 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Initial position of the item \\
+\hline
+{\em direction} & Direction of the light. \\
+\hline
+{\em diffuse} & Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em ambient} & Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em light\+Viewport\+Size} & Size of the square shaped viewport used to render the light \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_ae663bbb598b21a847eae1b62a7547580}\label{class_geometry_engine_1_1_geometry_factory_ae663bbb598b21a847eae1b62a7547580}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateDirectionalShadowLight@{CreateDirectionalShadowLight}}
+\index{CreateDirectionalShadowLight@{CreateDirectionalShadowLight}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateDirectionalShadowLight()}{CreateDirectionalShadowLight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Directional\+Shadow\+Light (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{pos,  }\item[{const Q\+Vector3D \&}]{direction,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&}]{viewport,  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{float}]{max\+Shadow\+Bias = {\ttfamily 0.0f},  }\item[{float}]{light\+Viewport\+Size = {\ttfamily 3.0f},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create directional shadow light 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Initial position of the item \\
+\hline
+{\em direction} & light direction vector \\
+\hline
+{\em viewport} & Viewport that will be used for the shadowmap calculation. \\
+\hline
+{\em diffuse} & Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em ambient} & Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em m\+Max\+Shadow\+Bias} & Max shadow bias value allowed when calculating dynamic shadow bias. A greater value prevents shadow acne but may cause some shadows disappear suddenly. \\
+\hline
+{\em light\+Viewport\+Size} & Size of the square shaped viewport used to render the light \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_ab14ce0c00c6353be91a511572c89ae30}\label{class_geometry_engine_1_1_geometry_factory_ab14ce0c00c6353be91a511572c89ae30}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateDirectionalShadowLight@{CreateDirectionalShadowLight}}
+\index{CreateDirectionalShadowLight@{CreateDirectionalShadowLight}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateDirectionalShadowLight()}{CreateDirectionalShadowLight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Directional\+Shadow\+Light (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{pos,  }\item[{const Q\+Vector3D \&}]{direction,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} $\ast$}]{viewport,  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{float}]{max\+Shadow\+Bias = {\ttfamily 0.0f},  }\item[{float}]{light\+Viewport\+Size = {\ttfamily 3.0f},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convenience method that overrides Create\+Directional\+Shadow\+Light to be called using a temporary viewport pointer. This method deletes the viewport pointer after creating the item. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Initial position of the item \\
+\hline
+{\em direction} & light direction vector \\
+\hline
+{\em viewport} & Temporary viewport pointer to be used for rendering. The pointer will be deleted after creating the item. \\
+\hline
+{\em diffuse} & Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em ambient} & Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em m\+Max\+Shadow\+Bias} & Max shadow bias value allowed when calculating dynamic shadow bias. A greater value prevents shadow acne but may cause some shadows disappear suddenly. \\
+\hline
+{\em light\+Viewport\+Size} & Size of the square shaped viewport used to render the light \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_ae22f129b89273bd47bbb9537901a818a}\label{class_geometry_engine_1_1_geometry_factory_ae22f129b89273bd47bbb9537901a818a}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateGreyScalePostProcess@{CreateGreyScalePostProcess}}
+\index{CreateGreyScalePostProcess@{CreateGreyScalePostProcess}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateGreyScalePostProcess()}{CreateGreyScalePostProcess()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Geometry\+Engine\+::\+Geometry\+Post\+Process\+::\+Post\+Process}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Grey\+Scale\+Post\+Process (\begin{DoxyParamCaption}\item[{float}]{viewport\+Size = {\ttfamily 3.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a grey scale post process 
+\begin{DoxyParams}{Parameters}
+{\em viewport\+Size} & Size of the quad used to render the post process. It should cover the viewport completely. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a27855bee8a087a66034ee5001a023241}\label{class_geometry_engine_1_1_geometry_factory_a27855bee8a087a66034ee5001a023241}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateOrtographicViewport@{CreateOrtographicViewport}}
+\index{CreateOrtographicViewport@{CreateOrtographicViewport}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateOrtographicViewport()}{CreateOrtographicViewport()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Ortographic\+Viewport (\begin{DoxyParamCaption}\item[{const Q\+Vector4D \&}]{viewport\+Size,  }\item[{const Q\+Rect \&}]{ortho\+Size,  }\item[{G\+Ldouble}]{z\+Near = {\ttfamily 0.1},  }\item[{G\+Ldouble}]{z\+Far = {\ttfamily 30.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create an ortographic viewport 
+\begin{DoxyParams}{Parameters}
+{\em viewport\+Size} & Size of the viewport. The values indicate in order x position, yposition, width, height. \\
+\hline
+{\em fovy} & Angle that the perspective frustrum opens \\
+\hline
+{\em aspect\+Ratio} & Relation between width and height of the image \\
+\hline
+{\em z\+Near} & Nearest z coordinate to be rendered \\
+\hline
+{\em z\+Far} & Farthest z coordinate to be rendered \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_ab29bf1ed42ffb4054a8d19c292bcbaea}\label{class_geometry_engine_1_1_geometry_factory_ab29bf1ed42ffb4054a8d19c292bcbaea}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreatePerspectiveViewport@{CreatePerspectiveViewport}}
+\index{CreatePerspectiveViewport@{CreatePerspectiveViewport}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreatePerspectiveViewport()}{CreatePerspectiveViewport()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Engine\+::\+Geometry\+Item\+Utils\+::\+Viewport}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Perspective\+Viewport (\begin{DoxyParamCaption}\item[{const Q\+Vector4D \&}]{viewport\+Size,  }\item[{G\+Ldouble}]{fovy = {\ttfamily 45.0},  }\item[{G\+Ldouble}]{aspect\+Ratio = {\ttfamily 1.0},  }\item[{G\+Ldouble}]{z\+Near = {\ttfamily 0.1},  }\item[{G\+Ldouble}]{z\+Far = {\ttfamily 30.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a perspective viewport 
+\begin{DoxyParams}{Parameters}
+{\em viewport\+Size} & Size of the viewport. The values indicate in order x position, yposition, width, height. \\
+\hline
+{\em fovy} & Angle that the perspective frustrum opens \\
+\hline
+{\em aspect\+Ratio} & Relation between width and height of the image \\
+\hline
+{\em z\+Near} & Nearest z coordinate to be rendered \\
+\hline
+{\em z\+Far} & Farthest z coordinate to be rendered \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a8edc2348bd6ece53626d80690b84b725}\label{class_geometry_engine_1_1_geometry_factory_a8edc2348bd6ece53626d80690b84b725}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreatePointLight@{CreatePointLight}}
+\index{CreatePointLight@{CreatePointLight}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreatePointLight()}{CreatePointLight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Point\+Light (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{pos,  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{att\+Params = {\ttfamily QVector3D(0.1f,~0.1f,~0.01f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a point light 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Initial position of the item \\
+\hline
+{\em diffuse} & Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em ambient} & Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em att\+Params} & Attenuation polynomial for the light \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a8a198efff4ed85106a7bffb65274a5e5}\label{class_geometry_engine_1_1_geometry_factory_a8a198efff4ed85106a7bffb65274a5e5}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateQuad@{CreateQuad}}
+\index{CreateQuad@{CreateQuad}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateQuad()}{CreateQuad()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Quad (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} \&}]{mat,  }\item[{float}]{width,  }\item[{float}]{height,  }\item[{const Q\+Vector3D \&}]{pos,  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a 2D quad 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Material to be used for rendering \\
+\hline
+{\em width} & Quad Width \\
+\hline
+{\em size} & Quad height \\
+\hline
+{\em pos} & Initial position of the item \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em scale} & Initial scale to be applied to this item model \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a32b10346ae782021112612556d8afe05}\label{class_geometry_engine_1_1_geometry_factory_a32b10346ae782021112612556d8afe05}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateQuad@{CreateQuad}}
+\index{CreateQuad@{CreateQuad}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateQuad()}{CreateQuad()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Quad (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$}]{mat,  }\item[{float}]{width,  }\item[{float}]{height,  }\item[{const Q\+Vector3D \&}]{pos,  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convenience method that overrides Create\+Quad to be called using a temporary material pointer. This method deletes the material pointer after creating the item. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Temporary material pointer to be used for rendering. The pointer will be deleted after creating the item \\
+\hline
+{\em width} & Quad Width \\
+\hline
+{\em size} & Quad height \\
+\hline
+{\em pos} & Initial position of the item \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em scale} & Initial scale to be applied to this item model \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a32cea0a4ef0b019db75039d1b64372fd}\label{class_geometry_engine_1_1_geometry_factory_a32cea0a4ef0b019db75039d1b64372fd}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateShadowSpotlight@{CreateShadowSpotlight}}
+\index{CreateShadowSpotlight@{CreateShadowSpotlight}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateShadowSpotlight()}{CreateShadowSpotlight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Shadow\+Spotlight (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{pos,  }\item[{const Q\+Vector3D \&}]{direction,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&}]{viewport,  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{float}]{max\+Light\+Angle = {\ttfamily 45.0f},  }\item[{const Q\+Vector3D \&}]{att\+Params = {\ttfamily QVector3D(0.1f,~0.1f,~0.01f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{float}]{max\+Shadow\+Bias = {\ttfamily 0.001f},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a shadow spotlight 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Initial position of the item \\
+\hline
+{\em direction} & light direction vector \\
+\hline
+{\em viewport} & Viewport that will be used for the shadowmap calculation. \\
+\hline
+{\em diffuse} & Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em ambient} & Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em max\+Light\+Angle} & Max angle for the light. Attenuation will be applied based on angle deviation \\
+\hline
+{\em att\+Params} & Attenuation polynomial for the light \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em m\+Max\+Shadow\+Bias} & Max shadow bias value allowed when calculating dynamic shadow bias. A greater value prevents shadow acne but may cause some shadows disappear suddenly. \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a11eb3aa78243fffeeb9673d73a37c73e}\label{class_geometry_engine_1_1_geometry_factory_a11eb3aa78243fffeeb9673d73a37c73e}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateShadowSpotlight@{CreateShadowSpotlight}}
+\index{CreateShadowSpotlight@{CreateShadowSpotlight}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateShadowSpotlight()}{CreateShadowSpotlight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Shadow\+Spotlight (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{pos,  }\item[{const Q\+Vector3D \&}]{direction,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} $\ast$}]{viewport,  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{float}]{max\+Light\+Angle = {\ttfamily 45.0f},  }\item[{const Q\+Vector3D \&}]{att\+Params = {\ttfamily QVector3D(0.1f,~0.1f,~0.01f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{float}]{max\+Shadow\+Bias = {\ttfamily 0.001f},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convenience method that overrides Create\+Shadow\+Spotlight to be called using a temporary viewport pointer. This method deletes the viewport pointer after creating the item. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Initial position of the item \\
+\hline
+{\em direction} & light direction vector \\
+\hline
+{\em viewport} & Temporary viewport pointer to be used for rendering. The pointer will be deleted after creating the item. \\
+\hline
+{\em diffuse} & Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em ambient} & Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em max\+Light\+Angle} & Max angle for the light. Attenuation will be applied based on angle deviation \\
+\hline
+{\em att\+Params} & Attenuation polynomial for the light \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em m\+Max\+Shadow\+Bias} & Max shadow bias value allowed when calculating dynamic shadow bias. A greater value prevents shadow acne but may cause some shadows disappear suddenly. \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_ab1a5eb77d7902674d9b904a86dfaa87d}\label{class_geometry_engine_1_1_geometry_factory_ab1a5eb77d7902674d9b904a86dfaa87d}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateSkyboxCube@{CreateSkyboxCube}}
+\index{CreateSkyboxCube@{CreateSkyboxCube}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateSkyboxCube()}{CreateSkyboxCube()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Skybox\+Cube (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{texture\+Key,  }\item[{float}]{skybox\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a skybox 
+\begin{DoxyParams}{Parameters}
+{\em texture\+Key} & Key of the texture to be loaded \\
+\hline
+{\em skybox\+Size} & Size of the skybox cube \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a10dc01e3e7982de326110dd5c374f83a}\label{class_geometry_engine_1_1_geometry_factory_a10dc01e3e7982de326110dd5c374f83a}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateSphere@{CreateSphere}}
+\index{CreateSphere@{CreateSphere}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateSphere()}{CreateSphere()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Sphere (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} \&}]{mat,  }\item[{float}]{size,  }\item[{const Q\+Vector3D \&}]{pos,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a sphere 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Material to be used for rendering \\
+\hline
+{\em size} & Radius of the sphere \\
+\hline
+{\em pos} & Initial position of the sphere \\
+\hline
+{\em parent} & Pointer to the sphere parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a01e71a4889500fd941c2c48be6676108}\label{class_geometry_engine_1_1_geometry_factory_a01e71a4889500fd941c2c48be6676108}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateSphere@{CreateSphere}}
+\index{CreateSphere@{CreateSphere}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateSphere()}{CreateSphere()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Sphere (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$}]{mat,  }\item[{float}]{size,  }\item[{const Q\+Vector3D \&}]{pos,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convenience method that overrides Create\+Sphere to be called using a temporary material pointer. This method deletes the material pointer after creating the item. 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Temporary material pointer to be used for rendering. The pointer will be deleted after creating the item. \\
+\hline
+{\em size} & Radius of the sphere \\
+\hline
+{\em pos} & Initial position of the sphere \\
+\hline
+{\em parent} & Pointer to the sphere parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a166f4a7b9b070204650ab18a3cf1bf2b}\label{class_geometry_engine_1_1_geometry_factory_a166f4a7b9b070204650ab18a3cf1bf2b}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateSpotlight@{CreateSpotlight}}
+\index{CreateSpotlight@{CreateSpotlight}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateSpotlight()}{CreateSpotlight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Spotlight (\begin{DoxyParamCaption}\item[{const Q\+Vector3D \&}]{pos,  }\item[{const Q\+Vector3D \&}]{direction,  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{float}]{max\+Light\+Angle = {\ttfamily 45.0f},  }\item[{const Q\+Vector3D \&}]{att\+Params = {\ttfamily QVector3D(0.1f,~0.1f,~0.01f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{Geometry\+World\+Item\+::\+World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a spotlight 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Initial position of the item \\
+\hline
+{\em direction} & Direction of the light. \\
+\hline
+{\em diffuse} & Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em ambient} & Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em max\+Light\+Angle} & Max angle for the light. Attenuation will be applied based on angle deviation \\
+\hline
+{\em att\+Params} & Attenuation polynomial for the light \\
+\hline
+{\em bounding\+Box} & Geomtry used to render the light. Light will be applied to every part of the scene that the geometry is drawn on top of \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a5362b394e75092bc6bb825c3eb7255ce}\label{class_geometry_engine_1_1_geometry_factory_a5362b394e75092bc6bb825c3eb7255ce}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateTextureMaterial@{CreateTextureMaterial}}
+\index{CreateTextureMaterial@{CreateTextureMaterial}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateTextureMaterial()}{CreateTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Texture\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Dir,  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a texture material 
+\begin{DoxyParams}{Parameters}
+{\em tex\+Dir} & Key of the texture to be loaded \\
+\hline
+{\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a5f40952552368c0c0db6d07d42ef17c5}\label{class_geometry_engine_1_1_geometry_factory_a5f40952552368c0c0db6d07d42ef17c5}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateTextureMaterial@{CreateTextureMaterial}}
+\index{CreateTextureMaterial@{CreateTextureMaterial}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateTextureMaterial()}{CreateTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Texture\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tex\+Dir,  }\item[{const std\+::string \&}]{normal\+Map\+Tex\+Dir,  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a texture material with a normalmap 
+\begin{DoxyParams}{Parameters}
+{\em tex\+Dir} & Key of the texture to be loaded \\
+\hline
+{\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_adcb6d5a41689e574ef468a21ae4c7516}\label{class_geometry_engine_1_1_geometry_factory_adcb6d5a41689e574ef468a21ae4c7516}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateTextureMaterial@{CreateTextureMaterial}}
+\index{CreateTextureMaterial@{CreateTextureMaterial}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateTextureMaterial()}{CreateTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Texture\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ambient\+Tex\+Dir,  }\item[{const std\+::string \&}]{diffuse\+Tex\+Dir,  }\item[{const std\+::string \&}]{specular\+Tex\+Dir,  }\item[{const std\+::string \&}]{emissive\+Tex\+Dir = {\ttfamily GeometryMaterial\+:\+:TextureConstant\+:\+:TEST\+\_\+BLACK\+\_\+TEXTURE},  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a multi texture material 
+\begin{DoxyParams}{Parameters}
+{\em ambient\+Tex\+Dir} & Key to a texture that will be used as ambient color \\
+\hline
+{\em diffuse\+Tex\+Dir} & Key to a texture that will be used as diffuse color \\
+\hline
+{\em specular\+Tex\+Dir} & Key to a texture that will be used as specular color \\
+\hline
+{\em emissive\+Tex\+Dir} & Key to a texture that will be used as emissive color \\
+\hline
+{\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a2bf6b7fbbb92985b920c470a0354c0cd}\label{class_geometry_engine_1_1_geometry_factory_a2bf6b7fbbb92985b920c470a0354c0cd}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!CreateTextureMaterial@{CreateTextureMaterial}}
+\index{CreateTextureMaterial@{CreateTextureMaterial}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{CreateTextureMaterial()}{CreateTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Engine\+::\+Geometry\+Material\+::\+Material}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Create\+Texture\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ambient\+Tex\+Dir,  }\item[{const std\+::string \&}]{diffuse\+Tex\+Dir,  }\item[{const std\+::string \&}]{specular\+Tex\+Dir,  }\item[{const std\+::string \&}]{normal\+Map\+Tex\+Dir,  }\item[{const std\+::string \&}]{emissive\+Tex\+Dir = {\ttfamily GeometryMaterial\+:\+:TextureConstant\+:\+:TEST\+\_\+BLACK\+\_\+TEXTURE},  }\item[{float}]{shininess = {\ttfamily 10.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method to create a multi texture material with a normalmap 
+\begin{DoxyParams}{Parameters}
+{\em ambient\+Tex\+Dir} & Key to a texture that will be used as ambient color \\
+\hline
+{\em diffuse\+Tex\+Dir} & Key to a texture that will be used as diffuse color \\
+\hline
+{\em specular\+Tex\+Dir} & Key to a texture that will be used as specular color \\
+\hline
+{\em normal\+Map\+Tex\+Dir} & Key to a texture that contains the object normal map \\
+\hline
+{\em emissive\+Tex\+Dir} & Key to a texture that will be used as emissive color \\
+\hline
+{\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/Geometry\+Factory.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/Geometry\+Factory.\+cpp\end{DoxyCompactItemize}

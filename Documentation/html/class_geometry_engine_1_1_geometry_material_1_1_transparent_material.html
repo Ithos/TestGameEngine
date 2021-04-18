@@ -276,6 +276,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mFragmentShade
     <tr><td class="paramname">thresholdValue</td><td>Min alpha value below which the fragment is dropped completely. This value is clamped to the range [0, 1] </td></tr>
     <tr><td class="paramname">globalAlphaValue</td><td>Global alpha value to be applied to the whole model. This value is multiplied by other posible alphas. This value is clamped to the range [0, 1] </td></tr>
     <tr><td class="paramname">shininess</td><td>Shininess component. Equation: spec contribution = cos(alpha) ^ shininessIf shininess is &lt;= 0 it is set to 0.001 to avoid errors in the shaders. </td></tr>
+    <tr><td class="paramname">translucent</td><td>Indicates whether the material casts a translucent shadow or not </td></tr>
   </table>
   </dd>
 </dl>

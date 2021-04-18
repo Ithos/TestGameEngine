@@ -104,7 +104,9 @@ Constructor. Calls init material
 \hline
 {\em global\+Alpha\+Value} & Main alpha value for the whole object, clamps to 0.\+0 to 1.\+0 range. This value gets multiplied to every fragment color alpha. \\
 \hline
-{\em shininess} & Shininess component. Has to be $>$ 0 if invalid takes the value 0.\+0001. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess\+If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+{\em shininess} & Shininess component. Has to be $>$ 0 if invalid takes the value 0.\+0001. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
+\hline
+{\em translucent} & Indicates whether the material casts a translucent shadow or not \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_color_material_aa7ae35b575575646ddc88cb95dd4a8b4}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_color_material_aa7ae35b575575646ddc88cb95dd4a8b4}} 

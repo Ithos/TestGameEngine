@@ -388,6 +388,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
     <tr><td class="paramname">thresholdValue</td><td>Min alpha value below which the fragment is dropped completely. This value is clamped to the range [0, 1] </td></tr>
     <tr><td class="paramname">globalAlphaValue</td><td>Main alpha value for the whole object, clamps to 0.0 to 1.0 range. This value gets multiplied to every fragment color alpha. </td></tr>
     <tr><td class="paramname">shininess</td><td>Shininess component. Has to be &gt; 0 if invalid takes the value 0.0001. Equation: spec contribution = cos(alpha) ^ shininessIf shininess is &lt;= 0 it is set to 0.001 to avoid errors in the shaders. </td></tr>
+    <tr><td class="paramname">translucent</td><td>Indicates whether the material casts a translucent shadow or not </td></tr>
   </table>
   </dd>
 </dl>
