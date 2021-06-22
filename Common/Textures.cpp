@@ -33,8 +33,9 @@ TexturesFiles::Textures::Textures(const std::string& texFolder, const std::strin
 
 void TexturesFiles::Textures::init()
 {
-	assert(ConfigFileFunctions::ConfigFileFunctions::ReadConfigFileIntoStringMap(mTexFolder, mTexConf, TexturesFiles::TexturesFilesConstants::SEPARATOR, mTextures) == 
-		ConfigFileFunctions::ReadConfigErrorCodes::SUCCESS);
+	bool ok = ConfigFileFunctions::ConfigFileFunctions::ReadConfigFileIntoStringMap(mTexFolder, mTexConf, TexturesFiles::TexturesFilesConstants::SEPARATOR, mTextures) ==
+		ConfigFileFunctions::ReadConfigErrorCodes::SUCCESS;
+	assert(ok && "Error reading image configuration file");
 }
 
 TexturesFiles::Textures::~Textures()

@@ -3,10 +3,10 @@
 #ifndef GEOMETRYGBUFFER_H
 #define GEOMETRYGBUFFER_H
 
-#include <QOpenGLFunctions>
-#include <QOpenGLExtraFunctions>
 #include <qvector2d.h>
 #include <unordered_set>
+#include "BufferUtils\GFramebufferObject.h"
+#include "IBuffer.h"
 
 namespace GeometryEngine
 {
@@ -14,9 +14,8 @@ namespace GeometryEngine
 	///namespace for buffer clases
 	namespace GeometryBuffer
 	{
-		class GFramebufferObject;
 		/// Class that manages a framebuffer object for geometry, lighting and post process effects
-		class GBuffer : protected QOpenGLExtraFunctions
+		class GBuffer : public IBuffer
 		{
 		public:
 			/// Enum used to locate every texture used to store different information in the geometry buffer
@@ -81,17 +80,42 @@ namespace GeometryEngine
 			void UnbindBuffer();
 			/// Unbinds the final texture from its location
 			void UnbindFinalTexture();
+			/// Binds the buffer in read mode and sets the selected texture as read
+			/// \param texture index to be bound
+			virtual void BindTextureRead(unsigned int index) override;
+			/// Binds the buffer in draw mode and sets the selected texture as draw
+			/// \param texture index to be bound
+			virtual void BindTextureDraw(unsigned int index) override;
+			/// Binds the buffer in draw-read mode and sets the selected texture as draw-read
+			/// \param texture index to be bound
+			virtual void BindTextureDrawRead(unsigned int index) override;
+			/// Binds selected texture to its default texture unit
+			/// \param index texture index to bind
+			virtual void BindTexture(unsigned int index) override;
+			/// Binds selected texture to the selected texture unit
+			/// \param index texture index to bind
+			/// \param textureUnit texture unit to bind the texture to
+			virtual void BindTexture(unsigned int index, unsigned int textureUnit) override;
+			/// Unbinds texture from its default texture unit
+			/// \param index texture index to bind
+			virtual void UnbindTexture(unsigned int index) override;
+			/// Unbinds texture from the selected texture unit
+			/// \param index texture index to bind
+			/// \param textureUnit texture unit to bind the texture to
+			virtual void UnbindTexture(unsigned int index, unsigned int textureUnit) override;
 			/// Binds selected texture to its default texture unit
 			/// \param tex texture to bind
 			void BindTexture(GBUFFER_TEXTURE_TYPE tex);
 			/// Binds selected texture to the selected texture unit
 			/// \param tex texture to bind
+			/// \param textureUnit texture unit to bind the texture to
 			void BindTexture(GBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit);
 			/// Unbinds texture from its default texture unit
 			/// \param tex texture to unbind
 			void UnbindTexture(GBUFFER_TEXTURE_TYPE tex);
 			/// Unbinds texture from the selected texture unit
 			/// \param tex texture to unbind
+			/// \param textureUnit texture unit to bind the texture to
 			void UnbindTexture(GBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit);
 			/// Gets current texture size
 			/// \return Current texture size
@@ -123,6 +147,10 @@ namespace GeometryEngine
 			QVector2D mMaxTextureSize;
 			std::unordered_set<GBUFFER_TEXTURE_TYPE> mActiveTextures;
 			GFramebufferObject* mpFBO;
+			/// Binds the buffer in the selected mode and sets the selected texture
+			/// \param mode READ, WRITE or DRAW_READ
+			/// \param tex index to be bound
+			virtual void bindTextureMode(GeometryBuffer::G_FRAMEBUFFER_BINDS mode, unsigned int tex);
 			/// Copies a data GBuffer to the current object
 			/// \param ref GBuffer to be copied
 			virtual void copy(const GBuffer& ref);

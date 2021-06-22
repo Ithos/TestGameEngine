@@ -8,6 +8,8 @@
 
 #include <Items\GeometryItem.h>
 #include <Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.h>
+#include <Items\GraphicItems\Camera.h>
+#include <Items\GraphicItems\CameraUtils\ImgUtils.h>
 
 #include <Scenes/DynamicShadowsScene.h>
 
@@ -18,6 +20,9 @@ const QVector3D UnitTest::CShadowSceneTest::ROTATION = QVector3D(0.0f, 0.3f, 0.0
 const QVector3D UnitTest::CShadowSceneTest::MOVEMENT = QVector3D(0.1f, 0.0f, 0.1f);
 const QVector3D UnitTest::CShadowSceneTest::POINT = QVector3D(-5.0f, 0.0f, -15.0f);
 const QVector3D UnitTest::CShadowSceneTest::POS_LIGHT = QVector3D(-5.0f, 10.0f, -15.0f);
+
+const std::string UnitTest::CShadowSceneTest::SHADOW_SCENE_TEST_IMAGE = "SHADOW_SCENE_TEST_IMAGE";
+const std::string UnitTest::CShadowSceneTest::DEFAULT_LOG_IMAGE_NAME = "ShadowSceneTest";
 
 UnitTest::CShadowSceneTest::~CShadowSceneTest()
 {
@@ -123,63 +128,9 @@ void UnitTest::CShadowSceneTest::copy(const CShadowSceneTest & ref)
 void UnitTest::CShadowSceneTest::evaluate()
 {
 	if (!mScenePainted) return;
-
-	unsigned char pixel[4];
-
 	mTestFinished = true;
 	mTestSuccessful = true;
-
-	// Mid line check
-	glReadPixels((GLint)(mSceneWidth / 2), (GLint)(mSceneHeigth / 2), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 225 && pixel[1] == 121 && pixel[2] == 0 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth / 3), (GLint)(mSceneHeigth / 2), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 241 && pixel[1] == 127 && pixel[2] == 6 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth * 2 / 3), (GLint)(mSceneHeigth / 2), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 236 && pixel[1] == 133 && pixel[2] == 2 && pixel[3] == 204;
-
-	// Extra top line check
-	glReadPixels((GLint)(mSceneWidth / 2), (GLint)(mSceneHeigth * 3 / 4), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 233 && pixel[1] == 128 && pixel[2] == 0 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth / 3), (GLint)(mSceneHeigth * 3 / 4), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 236 && pixel[1] == 132 && pixel[2] == 0 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth * 2 / 3), (GLint)(mSceneHeigth * 3 / 4), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 247 && pixel[1] == 165 && pixel[2] == 1 && pixel[3] == 204;
-
-	// Down line checks
-
-	glReadPixels((GLint)(mSceneWidth / 2), (GLint)(mSceneHeigth / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 54 && pixel[1] == 54 && pixel[2] == 54 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth / 3), (GLint)(mSceneHeigth / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 54 && pixel[1] == 54 && pixel[2] == 54 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth * 2 / 3), (GLint)(mSceneHeigth / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 47 && pixel[1] == 47 && pixel[2] == 47 && pixel[3] == 204;
-
-	// Extra down line check
-	glReadPixels((GLint)(mSceneWidth / 5), (GLint)(mSceneHeigth / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 1 && pixel[1] == 21 && pixel[2] == 34 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth / 4), (GLint)(mSceneHeigth / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 3 && pixel[1] == 18 && pixel[2] == 29 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth * 0.72f), (GLint)(mSceneHeigth * 0.13f), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 87 && pixel[1] == 87 && pixel[2] == 87 && pixel[3] == 204;
-
-	// Top line checks
-
-	glReadPixels((GLint)(mSceneWidth / 2), (GLint)(mSceneHeigth * 2 / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 244 && pixel[1] == 139 && pixel[2] == 1 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth / 3), (GLint)(mSceneHeigth * 2 / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 226 && pixel[1] == 98 && pixel[2] == 1 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth * 2 / 3), (GLint)(mSceneHeigth * 2 / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 251 && pixel[1] == 182 && pixel[2] == 1 && pixel[3] == 204;
+	mTestSuccessful &= compareScreenImage( mpConfManager->GetTextureDir(SHADOW_SCENE_TEST_IMAGE), DEFAULT_LOG_IMAGE_NAME);
 }
 
 void UnitTest::CShadowSceneTest::destroyGeometry()

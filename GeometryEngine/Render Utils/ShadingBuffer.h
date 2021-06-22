@@ -3,9 +3,9 @@
 #ifndef GEOMETRYSHADINGBUFFER_H
 #define GEOMETRYSHADINGBUFFER_H
 
-#include <QOpenGLFunctions>
-#include <QOpenGLExtraFunctions>
 #include <qvector2d.h>
+#include "BufferUtils\GFramebufferObject.h"
+#include "IBuffer.h"
 
 namespace GeometryEngine
 {
@@ -13,9 +13,8 @@ namespace GeometryEngine
 	
 	namespace GeometryBuffer
 	{
-		class GFramebufferObject;
 		/// Class that manages framebuffer object for shading and color maps
-		class ShadingBuffer : protected QOpenGLExtraFunctions
+		class ShadingBuffer : public IBuffer
 		{
 		public:
 			/// Enum used to locate every texture used to store different information in the buffer
@@ -56,17 +55,42 @@ namespace GeometryEngine
 			void ResetBindings();
 			/// Unbind all buffer textures
 			void UnbindBuffer();
+			/// Binds the buffer in read mode and sets the selected texture as read
+			/// \param texture index to be bound
+			virtual void BindTextureRead(unsigned int index) override;
+			/// Binds the buffer in draw mode and sets the selected texture as draw
+			/// \param texture index to be bound
+			virtual void BindTextureDraw(unsigned int index) override;
+			/// Binds the buffer in draw-read mode and sets the selected texture as draw-read
+			/// \param texture index to be bound
+			virtual void BindTextureDrawRead(unsigned int index) override;
+			/// Binds selected texture to its default texture unit
+			/// \param index texture index to bind
+			virtual void BindTexture(unsigned int index) override;
+			/// Binds selected texture to the selected texture unit
+			/// \param index texture index to bind
+			/// \param textureUnit texture unit to bind the texture to
+			virtual void BindTexture(unsigned int index, unsigned int textureUnit) override;
+			/// Unbinds texture from its default texture unit
+			/// \param index texture index to bind
+			virtual void UnbindTexture(unsigned int index) override;
+			/// Unbinds texture from the selected texture unit
+			/// \param index texture index to bind
+			/// \param textureUnit texture unit to bind the texture to
+			virtual void UnbindTexture(unsigned int index, unsigned int textureUnit) override;
 			/// Binds selected texture to its default texture unit
 			/// \param tex texture to bind
 			void BindTexture(SHADINGBUFFER_TEXTURE_TYPE tex);
 			/// Binds selected texture to the selected texture unit
 			/// \param tex texture to bind
+			/// \param textureUnit texture unit to bind the texture to
 			void BindTexture(SHADINGBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit);
 			/// Unbinds texture from its default texture unit
 			/// \param tex texture to unbind
 			void UnbindTexture(SHADINGBUFFER_TEXTURE_TYPE tex);
 			/// Unbinds texture from the selected texture unit
 			/// \param tex texture to unbind
+			/// \param textureUnit texture unit to bind the texture to
 			void UnbindTexture(SHADINGBUFFER_TEXTURE_TYPE tex, unsigned int textureUnit);
 			/// Binds the buffer as Read/Write and the shadowMap texture for writing
 			void BindShadowMapTextureWrite();
@@ -100,6 +124,10 @@ namespace GeometryEngine
 			QVector2D mMaxTextureSize;
 			GFramebufferObject* mpFBO;
 			static const int mTextureUnits[SHADINGBUFFER_NUM_TEXTURES];
+			/// Binds the buffer in the selected mode and sets the selected texture
+			/// \param mode READ, WRITE or DRAW_READ
+			/// \param tex index to be bound
+			virtual void bindTextureMode(GeometryBuffer::G_FRAMEBUFFER_BINDS mode, unsigned int tex);
 			/// Copies a data ShadingBuffer to the current object
 			/// \param ref ShadingBuffer to be copied
 			virtual void copy(const ShadingBuffer& ref);

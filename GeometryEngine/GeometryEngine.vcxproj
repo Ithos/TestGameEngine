@@ -195,6 +195,7 @@
     <ClInclude Include="GeometryScene.h" />
     <ClInclude Include="Items\GraphicItems\Camera.h" />
     <ClInclude Include="Items\GraphicItems\Cameras\DeferredShadingCamera.h" />
+    <ClInclude Include="Items\GraphicItems\CameraUtils\ImgUtils.h" />
     <ClInclude Include="Items\GraphicItems\Light.h" />
     <ClInclude Include="Items\GraphicItems\Lights\AmbientLight.h" />
     <ClInclude Include="Items\GraphicItems\DeferredShadingLight.h" />
@@ -235,6 +236,7 @@
     <ClInclude Include="Items\PostProcess\PostProcess.h" />
     <ClInclude Include="Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.h" />
     <ClInclude Include="Items\WorldItem.h" />
+    <ClInclude Include="Render Utils\IBuffer.h" />
     <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GFramebufferCommmons.h" />
     <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GDepthStencilRenderBuffer.h" />
     <ClInclude Include="Render Utils\BufferUtils\FramebufferElements\GDepthStencilTexture.h" />
@@ -281,6 +283,7 @@
     <ClCompile Include="GeometryScene.cpp" />
     <ClCompile Include="Items\GraphicItems\Camera.cpp" />
     <ClCompile Include="Items\GraphicItems\Cameras\DeferredShadingCamera.cpp" />
+    <ClCompile Include="Items\GraphicItems\CameraUtils\ImgUtils.cpp" />
     <ClCompile Include="Items\GraphicItems\DeferredShadingLight.cpp" />
     <ClCompile Include="Items\GraphicItems\Light.cpp" />
     <ClCompile Include="Items\GraphicItems\Lights\AmbientLight.cpp" />

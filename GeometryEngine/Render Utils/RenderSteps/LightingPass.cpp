@@ -115,9 +115,6 @@ void GeometryEngine::GeometryRenderStep::LightingPass::prepareStencilPass(Geomet
 
 void GeometryEngine::GeometryRenderStep::LightingPass::stencilPass(GeometryWorldItem::GeometryLight::Light * light, GeometryWorldItem::GeometryCamera::Camera * cam)
 {
-	//assert(light->GetStencilTest() && "LightingPass --> No stencil test found during stencil pass");
-	//light->CalculateStencil(cam->GetProjectionMatrix(), cam->GetViewMatrix());
-
 	LightUtils::LightComponentManager* lightFuntionManager = light->GetLightFunctionalities();
 	assert(lightFuntionManager != nullptr && lightFuntionManager->ContainsLightShadingComponent(LightUtils::STENCIL_TESTING) && "Stencil testing light function not found");
 	{

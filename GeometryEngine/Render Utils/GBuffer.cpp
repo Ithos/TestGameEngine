@@ -2,6 +2,7 @@
 #include "BufferUtils\GFramebufferObject.h"
 #include "BufferUtils\FramebufferElements\GRenderTarget.h"
 #include "../Items/CommonItemParameters.h"
+#include <assert.h>
 #include "GBuffer.h"
 
 const int GeometryEngine::GeometryBuffer::GBuffer::mTextureUnits[GBUFFER_NUM_TEXTURES + 1] = { 0, 1, 2, 3, 4, 5, 6, 7 };
@@ -184,6 +185,47 @@ void GeometryEngine::GeometryBuffer::GBuffer::UnbindFinalTexture()
 	mFinalTextureLocation = 0;
 }
 
+void GeometryEngine::GeometryBuffer::GBuffer::BindTextureRead(unsigned int index)
+{
+	bindTextureMode(GeometryBuffer::READ, index);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::BindTextureDraw(unsigned int index)
+{
+	bindTextureMode(GeometryBuffer::DRAW, index);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::BindTextureDrawRead(unsigned int index)
+{
+	bindTextureMode(GeometryBuffer::DRAW_READ, index);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::BindTexture(unsigned int index)
+{
+	assert((index >= 0 || index <= GBUFFER_NUM_TEXTURES) && "index outside bounds");
+	BindTexture((GBUFFER_TEXTURE_TYPE)index);
+
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::BindTexture(unsigned int index, unsigned int textureUnit)
+{
+	assert((index >= 0 || index <= GBUFFER_NUM_TEXTURES) && "index outside bounds");
+	BindTexture((GBUFFER_TEXTURE_TYPE)index, textureUnit);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::UnbindTexture(unsigned int index)
+{
+	assert((index >= 0 || index <= GBUFFER_NUM_TEXTURES) && "index outside bounds");
+	UnbindTexture((GBUFFER_TEXTURE_TYPE)index);
+
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::UnbindTexture(unsigned int index, unsigned int textureUnit)
+{
+	assert((index >= 0 || index <= GBUFFER_NUM_TEXTURES) && "index outside bounds");
+	UnbindTexture((GBUFFER_TEXTURE_TYPE)index, textureUnit);
+}
+
 void GeometryEngine::GeometryBuffer::GBuffer::BindTexture(GBUFFER_TEXTURE_TYPE tex)
 {
 	BindTexture(tex, (unsigned int)tex);
@@ -204,6 +246,14 @@ void GeometryEngine::GeometryBuffer::GBuffer::UnbindTexture(GBUFFER_TEXTURE_TYPE
 {
 	glActiveTexture(GL_TEXTURE0 + mTextureUnits[textureUnit]);
 	mpFBO->GetColorTarget((unsigned int)tex)->Unbind();
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::bindTextureMode(GeometryBuffer::G_FRAMEBUFFER_BINDS mode, unsigned int tex)
+{
+	assert((tex >= 0 || tex <= GBUFFER_NUM_TEXTURES) && "index outside bounds");
+	mpFBO->Unbind();
+	mpFBO->Bind(mode);
+	mpFBO->Read(tex);
 }
 
 void GeometryEngine::GeometryBuffer::GBuffer::copy(const GBuffer & ref)

@@ -229,6 +229,8 @@ namespace Application
 		{
 			scene->Draw();
 		}
+
+		
 	}
 	void CWindowApplication::initGeometry(GeometryEngine::GeometryEngine* engine)
 	{

@@ -7,6 +7,8 @@
 
 #include <Items\GeometryItem.h>
 #include <Items\GraphicItems\Lights\Spotlight.h>
+#include <Items\GraphicItems\Camera.h>
+#include <Items\GraphicItems\CameraUtils\ImgUtils.h>
 
 #include <Scenes/PostProcessScene.h>
 
@@ -17,6 +19,9 @@ const QVector3D UnitTest::CPostProcessTest::ROTATION = QVector3D(0.0f, 0.3f, 0.0
 const QVector3D UnitTest::CPostProcessTest::MOVEMENT = QVector3D(0.1f, 0.0f, 0.1f);
 const QVector3D UnitTest::CPostProcessTest::POINT = QVector3D(-5.0f, 0.0f, -15.0f);
 const QVector3D UnitTest::CPostProcessTest::POS_LIGHT = QVector3D(-5.0f, 10.0f, -15.0f);
+
+const std::string UnitTest::CPostProcessTest::POST_PROCESS_TEST_IMAGE = "POST_PROCESS_TEST_IMAGE";
+const std::string UnitTest::CPostProcessTest::DEFAULT_LOG_IMAGE_NAME = "PostProcessTest";
 
 UnitTest::CPostProcessTest::~CPostProcessTest()
 {
@@ -121,44 +126,9 @@ void UnitTest::CPostProcessTest::copy(const CPostProcessTest & ref)
 void UnitTest::CPostProcessTest::evaluate()
 {
 	if (!mScenePainted) return;
-
-	unsigned char pixel[4];
-
 	mTestFinished = true;
 	mTestSuccessful = true;
-
-	// Mid line check
-	glReadPixels((GLint)(mSceneWidth / 2), (GLint)(mSceneHeigth / 2), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 128 && pixel[1] == 128 && pixel[2] == 128 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth / 3), (GLint)(mSceneHeigth / 2), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 135 && pixel[1] == 135 && pixel[2] == 135 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth * 2 / 3), (GLint)(mSceneHeigth / 2), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 144 && pixel[1] == 144 && pixel[2] == 144 && pixel[3] == 204;
-
-	// Down line checks
-
-	glReadPixels((GLint)(mSceneWidth / 2), (GLint)(mSceneHeigth / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 73 && pixel[1] == 73 && pixel[2] == 73 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth / 3), (GLint)(mSceneHeigth / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 69 && pixel[1] == 69 && pixel[2] == 69 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth * 2 / 3), (GLint)(mSceneHeigth / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 62 && pixel[1] == 62 && pixel[2] == 62 && pixel[3] == 204;
-
-	// Top line checks
-
-	glReadPixels((GLint)(mSceneWidth / 2), (GLint)(mSceneHeigth * 2 / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 150 && pixel[1] == 150 && pixel[2] == 150 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth / 3), (GLint)(mSceneHeigth * 2 / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 116 && pixel[1] == 116 && pixel[2] == 116 && pixel[3] == 204;
-
-	glReadPixels((GLint)(mSceneWidth * 2 / 3), (GLint)(mSceneHeigth * 2 / 3), 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-	mTestSuccessful &= pixel[0] == 176 && pixel[1] == 176 && pixel[2] == 176 && pixel[3] == 204;
-
+	mTestSuccessful &= compareScreenImage( mpConfManager->GetTextureDir(POST_PROCESS_TEST_IMAGE), DEFAULT_LOG_IMAGE_NAME );
 }
 
 void UnitTest::CPostProcessTest::destroyGeometry()

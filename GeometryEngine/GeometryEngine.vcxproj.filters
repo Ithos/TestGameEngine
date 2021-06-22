@@ -284,6 +284,12 @@
     <ClInclude Include="GeometryFactory.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="Render Utils\IBuffer.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\CameraUtils\ImgUtils.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeometryEngine.cpp">
@@ -519,6 +525,9 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="GeometryFactory.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\CameraUtils\ImgUtils.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>

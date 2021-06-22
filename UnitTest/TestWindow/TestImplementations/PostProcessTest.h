@@ -43,6 +43,9 @@ namespace UnitTest
 		static const QVector3D POINT;
 		static const QVector3D POS_LIGHT;
 
+		static const std::string POST_PROCESS_TEST_IMAGE;
+		static const std::string DEFAULT_LOG_IMAGE_NAME;
+
 		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* mpSphere;
 		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* mpCube;
 		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* mpSkyboxCube;

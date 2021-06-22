@@ -1,7 +1,7 @@
 #include "BufferUtils\GFramebufferManager.h"
-#include "BufferUtils\GFramebufferObject.h"
 #include "BufferUtils\FramebufferElements\GRenderTarget.h"
 #include "../Items/CommonItemParameters.h"
+#include <assert.h>
 #include "ShadingBuffer.h"
 
 const int GeometryEngine::GeometryBuffer::ShadingBuffer::mTextureUnits[SHADINGBUFFER_NUM_TEXTURES] = { 8, 9, 10, 11 };
@@ -127,6 +127,43 @@ void GeometryEngine::GeometryBuffer::ShadingBuffer::UnbindBuffer()
 	}
 }
 
+void GeometryEngine::GeometryBuffer::ShadingBuffer::BindTextureRead(unsigned int index)
+{
+	bindTextureMode(GeometryBuffer::READ, index);
+}
+
+void GeometryEngine::GeometryBuffer::ShadingBuffer::BindTextureDraw(unsigned int index)
+{
+	bindTextureMode(GeometryBuffer::DRAW, index);
+}
+
+void GeometryEngine::GeometryBuffer::ShadingBuffer::BindTextureDrawRead(unsigned int index)
+{
+	bindTextureMode(GeometryBuffer::DRAW_READ, index);
+}
+
+void GeometryEngine::GeometryBuffer::ShadingBuffer::BindTexture(unsigned int index)
+{
+	assert((index >= 0 || index <= SHADINGBUFFER_NUM_TEXTURES) && "index outside bounds");
+	BindTexture((SHADINGBUFFER_TEXTURE_TYPE)index);
+}
+
+void GeometryEngine::GeometryBuffer::ShadingBuffer::BindTexture(unsigned int index, unsigned int textureUnit)
+{
+	assert((index >= 0 || index <= SHADINGBUFFER_NUM_TEXTURES) && "index outside bounds");
+	BindTexture((SHADINGBUFFER_TEXTURE_TYPE)index, textureUnit);
+}
+
+void GeometryEngine::GeometryBuffer::ShadingBuffer::UnbindTexture(unsigned int index)
+{
+	assert((index >= 0 || index <= SHADINGBUFFER_NUM_TEXTURES) && "index outside bounds");
+	UnbindTexture((SHADINGBUFFER_TEXTURE_TYPE)index);
+}
+
+void GeometryEngine::GeometryBuffer::ShadingBuffer::UnbindTexture(unsigned int index, unsigned int textureUnit)
+{
+}
+
 void GeometryEngine::GeometryBuffer::ShadingBuffer::BindTexture(SHADINGBUFFER_TEXTURE_TYPE tex)
 {
 	BindTexture(tex, (unsigned int)tex);
@@ -203,6 +240,14 @@ void GeometryEngine::GeometryBuffer::ShadingBuffer::FillShadingBufferInfo(Shadin
 	bufferInfo.SpecularColorMapTexture = mTextureUnits[SHADINGBUFFER_TEXTURE_TYPE_SPECULAR_MAP];
 	bufferInfo.ShadowMapTexture = mTextureUnits[SHADINGBUFFER_TEXTURE_TYPE_SHADOW_MAP];
 	bufferInfo.TranslucentDepthMapTexture = mTextureUnits[SHADINGBUFFER_TEXTURE_TYPE_TRANSLUCENT_DEPTH_MAP];
+}
+
+void GeometryEngine::GeometryBuffer::ShadingBuffer::bindTextureMode(GeometryBuffer::G_FRAMEBUFFER_BINDS mode, unsigned int tex)
+{
+	assert((tex >= 0 || tex <= SHADINGBUFFER_NUM_TEXTURES) && "index outside bounds");
+	mpFBO->Unbind();
+	mpFBO->Bind(mode);
+	mpFBO->Read(tex);
 }
 
 void GeometryEngine::GeometryBuffer::ShadingBuffer::copy(const ShadingBuffer & ref)

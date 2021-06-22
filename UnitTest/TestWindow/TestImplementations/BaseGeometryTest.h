@@ -3,7 +3,7 @@
 #ifndef BASEGEOMETRYTEST_H
 #define BASEGEOMETRYTEST_H
 
-#include <qglobal.h>
+#include "../TestConfiguration/TestConfig.h"
 
 namespace GeometryEngine
 {
@@ -35,7 +35,10 @@ namespace UnitTest
 	{
 	public:
 		/// Constructor
-		CBaseGeometryTest() : mTestFinished(false), mTestSuccessful(false), mScenePainted(false), mSceneWidth(0), mSceneHeigth(0) {};
+		CBaseGeometryTest() : mTestFinished(false), mTestSuccessful(false), mScenePainted(false), mSceneWidth(0), mSceneHeigth(0), mpConfManager(nullptr)
+		{
+			mpConfManager = TestConfigurationManager::GetInstance();
+		};
 		/// Copy constructor
 		CBaseGeometryTest(const CBaseGeometryTest& ref) { copy(ref); }
 		/// Destructor
@@ -59,21 +62,21 @@ namespace UnitTest
 		/// Set the state of the scene as painted. Most tests won't start until the scene has been painted to the window.
 		/// \return painted 
 		virtual void SetScenePainted(bool painted) { mScenePainted = painted; }
+
+		/// Executes and evaluates the result of the test
+		virtual void evaluate() = 0;
+
 	protected:
 		bool mTestFinished, mTestSuccessful, mScenePainted;
 		int mSceneWidth;
 		int mSceneHeigth;
+		TestConfigurationManager* mpConfManager;
 
 		/// Copies the state of other object into this. The copy is not initialized.
-		virtual void copy(const CBaseGeometryTest& ref) 
-		{ 
-			this->mTestFinished = false; this->mTestSuccessful = false; this->mScenePainted = false; 
-			this->mSceneWidth = ref.mSceneWidth; this->mSceneHeigth = ref.mSceneHeigth; 
-		};
+		virtual void copy(const CBaseGeometryTest& ref);
+		
 
-		/// Executes and evaluates the result of the test
-		virtual void evaluate() = 0;
-		/// TODO -- compare full images -- ///
+		virtual bool compareScreenImage(const std::string& testImagePath, const std::string& className);
 	};
 }
 

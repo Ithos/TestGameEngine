@@ -45,6 +45,9 @@
     <ClInclude Include="TestWindow\TestImplementations\TranslucentShadowingTest.h">
       <Filter>TestWindow\TestImplementations</Filter>
     </ClInclude>
+    <ClInclude Include="TestConfiguration\TestConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -67,6 +70,12 @@
     </ClCompile>
     <ClCompile Include="TestWindow\TestImplementations\TranslucentShadowingTest.cpp">
       <Filter>TestWindow\TestImplementations</Filter>
+    </ClCompile>
+    <ClCompile Include="TestWindow\TestImplementations\BaseGeometryTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestConfiguration\TestConfig.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
