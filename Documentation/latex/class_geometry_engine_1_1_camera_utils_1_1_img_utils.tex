@@ -1,0 +1,152 @@
+\hypertarget{class_geometry_engine_1_1_camera_utils_1_1_img_utils}{}\section{Geometry\+Engine\+::Camera\+Utils\+::Img\+Utils Class Reference}
+\label{class_geometry_engine_1_1_camera_utils_1_1_img_utils}\index{GeometryEngine::CameraUtils::ImgUtils@{GeometryEngine::CameraUtils::ImgUtils}}
+
+
+Static singleton that contains utilities for exporting rendered images.  
+
+
+
+
+{\ttfamily \#include $<$Img\+Utils.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uchar $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_camera_utils_1_1_img_utils_aa8a0083c869377b3f1ab3f6e9c824f98}{Get\+Rendered\+Image}} (int width, int height)
+\item 
+static uchar $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_camera_utils_1_1_img_utils_a8561bc5cbacfb42698476894fa9d47d0}{Get\+Rendered\+Image}} (int width, int height, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer}{Geometry\+Buffer\+::\+I\+Buffer}} $\ast$buffer, int id\+Buffer\+Texture)
+\item 
+static void \mbox{\hyperlink{class_geometry_engine_1_1_camera_utils_1_1_img_utils_ad85642ff5fb226921696263e345ac687}{Export\+Rendered\+Image}} (const std\+::string \&path, const std\+::string \&filename, int width, int height)
+\item 
+static void \mbox{\hyperlink{class_geometry_engine_1_1_camera_utils_1_1_img_utils_af53a23abfa0e07de2a15666261facc6d}{Export\+Rendered\+Image}} (const std\+::string \&path, const std\+::string \&filename, int width, int height, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer}{Geometry\+Buffer\+::\+I\+Buffer}} $\ast$buffer, int id\+Buffer\+Texture)
+\item 
+static void \mbox{\hyperlink{class_geometry_engine_1_1_camera_utils_1_1_img_utils_a672f5fbd8053c1de7a2c90fccd88a225}{Export\+Image}} (uchar $\ast$img, const std\+::string \&path, const std\+::string \&filename, int width, int height, bool mirrored)
+\item 
+static void \mbox{\hyperlink{class_geometry_engine_1_1_camera_utils_1_1_img_utils_a7a0af40d6d8d34ccb4321166b7878d69}{Export\+Image}} (const Q\+Image \&img, const std\+::string \&path, const std\+::string \&filename, bool mirrored)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Static singleton that contains utilities for exporting rendered images. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_camera_utils_1_1_img_utils_a672f5fbd8053c1de7a2c90fccd88a225}\label{class_geometry_engine_1_1_camera_utils_1_1_img_utils_a672f5fbd8053c1de7a2c90fccd88a225}} 
+\index{GeometryEngine::CameraUtils::ImgUtils@{GeometryEngine::CameraUtils::ImgUtils}!ExportImage@{ExportImage}}
+\index{ExportImage@{ExportImage}!GeometryEngine::CameraUtils::ImgUtils@{GeometryEngine::CameraUtils::ImgUtils}}
+\subsubsection{\texorpdfstring{ExportImage()}{ExportImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Camera\+Utils\+::\+Img\+Utils\+::\+Export\+Image (\begin{DoxyParamCaption}\item[{uchar $\ast$}]{img,  }\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{filename,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{bool}]{mirrored }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Exports a image to the selected path as a png file 
+\begin{DoxyParams}{Parameters}
+{\em img} & Image to be exported \\
+\hline
+{\em path} & Path to save the image to \\
+\hline
+{\em filename} & Name of the image file \\
+\hline
+{\em width} & Image pixel width \\
+\hline
+{\em height} & Image pixel height \\
+\hline
+{\em mirrored} & Invert the image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_camera_utils_1_1_img_utils_a7a0af40d6d8d34ccb4321166b7878d69}\label{class_geometry_engine_1_1_camera_utils_1_1_img_utils_a7a0af40d6d8d34ccb4321166b7878d69}} 
+\index{GeometryEngine::CameraUtils::ImgUtils@{GeometryEngine::CameraUtils::ImgUtils}!ExportImage@{ExportImage}}
+\index{ExportImage@{ExportImage}!GeometryEngine::CameraUtils::ImgUtils@{GeometryEngine::CameraUtils::ImgUtils}}
+\subsubsection{\texorpdfstring{ExportImage()}{ExportImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Camera\+Utils\+::\+Img\+Utils\+::\+Export\+Image (\begin{DoxyParamCaption}\item[{const Q\+Image \&}]{img,  }\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{filename,  }\item[{bool}]{mirrored }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Exports a image to the selected path as a png file 
+\begin{DoxyParams}{Parameters}
+{\em img} & Image to be exported \\
+\hline
+{\em path} & Path to save the image to \\
+\hline
+{\em filename} & Name of the image file \\
+\hline
+{\em mirrored} & Invert the image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_camera_utils_1_1_img_utils_ad85642ff5fb226921696263e345ac687}\label{class_geometry_engine_1_1_camera_utils_1_1_img_utils_ad85642ff5fb226921696263e345ac687}} 
+\index{GeometryEngine::CameraUtils::ImgUtils@{GeometryEngine::CameraUtils::ImgUtils}!ExportRenderedImage@{ExportRenderedImage}}
+\index{ExportRenderedImage@{ExportRenderedImage}!GeometryEngine::CameraUtils::ImgUtils@{GeometryEngine::CameraUtils::ImgUtils}}
+\subsubsection{\texorpdfstring{ExportRenderedImage()}{ExportRenderedImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Camera\+Utils\+::\+Img\+Utils\+::\+Export\+Rendered\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{filename,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Exports the currently rendered image to the selected path as a png file 
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to save the image to \\
+\hline
+{\em filename} & Name of the image file \\
+\hline
+{\em width} & Image pixel width \\
+\hline
+{\em height} & Image pixel height \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_camera_utils_1_1_img_utils_af53a23abfa0e07de2a15666261facc6d}\label{class_geometry_engine_1_1_camera_utils_1_1_img_utils_af53a23abfa0e07de2a15666261facc6d}} 
+\index{GeometryEngine::CameraUtils::ImgUtils@{GeometryEngine::CameraUtils::ImgUtils}!ExportRenderedImage@{ExportRenderedImage}}
+\index{ExportRenderedImage@{ExportRenderedImage}!GeometryEngine::CameraUtils::ImgUtils@{GeometryEngine::CameraUtils::ImgUtils}}
+\subsubsection{\texorpdfstring{ExportRenderedImage()}{ExportRenderedImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Camera\+Utils\+::\+Img\+Utils\+::\+Export\+Rendered\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{filename,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer}{Geometry\+Buffer\+::\+I\+Buffer}} $\ast$}]{buffer,  }\item[{int}]{id\+Buffer\+Texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Exports the currently rendered image at the selected texture from the selected buffer to the selected path as a png file 
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to save the image to \\
+\hline
+{\em filename} & Name of the image file \\
+\hline
+{\em width} & Image pixel width \\
+\hline
+{\em height} & Image pixel height \\
+\hline
+{\em buffer} & Buffer to be read \\
+\hline
+{\em id\+Buffer\+Texture} & Buffer texture to be read \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_camera_utils_1_1_img_utils_aa8a0083c869377b3f1ab3f6e9c824f98}\label{class_geometry_engine_1_1_camera_utils_1_1_img_utils_aa8a0083c869377b3f1ab3f6e9c824f98}} 
+\index{GeometryEngine::CameraUtils::ImgUtils@{GeometryEngine::CameraUtils::ImgUtils}!GetRenderedImage@{GetRenderedImage}}
+\index{GetRenderedImage@{GetRenderedImage}!GeometryEngine::CameraUtils::ImgUtils@{GeometryEngine::CameraUtils::ImgUtils}}
+\subsubsection{\texorpdfstring{GetRenderedImage()}{GetRenderedImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uchar $\ast$ Geometry\+Engine\+::\+Camera\+Utils\+::\+Img\+Utils\+::\+Get\+Rendered\+Image (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the currently rendered image as a uchar array. The returned array must be destryed by the caller. 
+\begin{DoxyParams}{Parameters}
+{\em width} & Image pixel width \\
+\hline
+{\em height} & Image pixel height \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Image pixels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_camera_utils_1_1_img_utils_a8561bc5cbacfb42698476894fa9d47d0}\label{class_geometry_engine_1_1_camera_utils_1_1_img_utils_a8561bc5cbacfb42698476894fa9d47d0}} 
+\index{GeometryEngine::CameraUtils::ImgUtils@{GeometryEngine::CameraUtils::ImgUtils}!GetRenderedImage@{GetRenderedImage}}
+\index{GetRenderedImage@{GetRenderedImage}!GeometryEngine::CameraUtils::ImgUtils@{GeometryEngine::CameraUtils::ImgUtils}}
+\subsubsection{\texorpdfstring{GetRenderedImage()}{GetRenderedImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uchar $\ast$ Geometry\+Engine\+::\+Camera\+Utils\+::\+Img\+Utils\+::\+Get\+Rendered\+Image (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer}{Geometry\+Buffer\+::\+I\+Buffer}} $\ast$}]{buffer,  }\item[{int}]{id\+Buffer\+Texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the currently rendered image at the selected texture from the selected buffer as a uchar array. The returned array must be destryed by the caller. 
+\begin{DoxyParams}{Parameters}
+{\em img} & Output parameter where the image will be returned \\
+\hline
+{\em width} & Image pixel width \\
+\hline
+{\em height} & Image pixel height \\
+\hline
+{\em buffer} & Buffer to be read \\
+\hline
+{\em id\+Buffer\+Texture} & Buffer texture to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Image pixels 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Camera\+Utils/Img\+Utils.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Camera\+Utils/Img\+Utils.\+cpp\end{DoxyCompactItemize}

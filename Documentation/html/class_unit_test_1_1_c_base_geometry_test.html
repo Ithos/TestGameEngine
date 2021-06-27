@@ -122,17 +122,20 @@ virtual <a class="el" href="class_unit_test_1_1_c_base_geometry_test.html">CBase
 <tr class="separator:aa824a0d8affc72e8bc68616dc38f0961"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a394a19d424a416ade87e4d09978337bf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_test_1_1_c_base_geometry_test.html#a394a19d424a416ade87e4d09978337bf">SetScenePainted</a> (bool painted)</td></tr>
 <tr class="separator:a394a19d424a416ade87e4d09978337bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:aac5859499b4a35b9be7fa76d7b09eecc"><td class="memItemLeft" align="right" valign="top"><a id="aac5859499b4a35b9be7fa76d7b09eecc"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_test_1_1_c_base_geometry_test.html#aac5859499b4a35b9be7fa76d7b09eecc">copy</a> (const <a class="el" href="class_unit_test_1_1_c_base_geometry_test.html">CBaseGeometryTest</a> &amp;ref)</td></tr>
-<tr class="memdesc:aac5859499b4a35b9be7fa76d7b09eecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the state of other object into this. The copy is not initialized. <br /></td></tr>
-<tr class="separator:aac5859499b4a35b9be7fa76d7b09eecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8b1294602af974787093218f1c00fa0"><td class="memItemLeft" align="right" valign="top"><a id="aa8b1294602af974787093218f1c00fa0"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_test_1_1_c_base_geometry_test.html#aa8b1294602af974787093218f1c00fa0">evaluate</a> ()=0</td></tr>
 <tr class="memdesc:aa8b1294602af974787093218f1c00fa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes and evaluates the result of the test. <br /></td></tr>
 <tr class="separator:aa8b1294602af974787093218f1c00fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a6f63dbd1078673b0aef45573fbb01a81"><td class="memItemLeft" align="right" valign="top"><a id="a6f63dbd1078673b0aef45573fbb01a81"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_test_1_1_c_base_geometry_test.html#a6f63dbd1078673b0aef45573fbb01a81">copy</a> (const <a class="el" href="class_unit_test_1_1_c_base_geometry_test.html">CBaseGeometryTest</a> &amp;ref)</td></tr>
+<tr class="memdesc:a6f63dbd1078673b0aef45573fbb01a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the state of other object into this. The copy is not initialized. <br /></td></tr>
+<tr class="separator:a6f63dbd1078673b0aef45573fbb01a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af45fb93e1001f5537c7552796849a6bc"><td class="memItemLeft" align="right" valign="top"><a id="af45fb93e1001f5537c7552796849a6bc"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>compareScreenImage</b> (const std::string &amp;testImagePath, const std::string &amp;className)</td></tr>
+<tr class="separator:af45fb93e1001f5537c7552796849a6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -151,6 +154,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>mSceneWidth</b></td></
 <tr class="memitem:a2ca0cc2fb2786ebd3c4038719429d849"><td class="memItemLeft" align="right" valign="top"><a id="a2ca0cc2fb2786ebd3c4038719429d849"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>mSceneHeigth</b></td></tr>
 <tr class="separator:a2ca0cc2fb2786ebd3c4038719429d849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29e8c91b47e5251ee0086cd545d20469"><td class="memItemLeft" align="right" valign="top"><a id="a29e8c91b47e5251ee0086cd545d20469"></a>
+<a class="el" href="class_unit_test_1_1_test_configuration_manager.html">TestConfigurationManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mpConfManager</b></td></tr>
+<tr class="separator:a29e8c91b47e5251ee0086cd545d20469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base abstract class for geometry engine tests. </p>
@@ -320,8 +326,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>mSceneHeigth</b></td><
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>E:/CommonData/Repositories/TestGameEngine/UnitTest/TestWindow/TestImplementations/<a class="el" href="_base_geometry_test_8h_source.html">BaseGeometryTest.h</a></li>
+<li>E:/CommonData/Repositories/TestGameEngine/UnitTest/TestWindow/TestImplementations/BaseGeometryTest.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

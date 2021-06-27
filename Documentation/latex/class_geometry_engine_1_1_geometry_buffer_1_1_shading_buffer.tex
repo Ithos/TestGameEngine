@@ -12,7 +12,7 @@ Class that manages framebuffer object for shading and color maps.
 Inheritance diagram for Geometry\+Engine\+::Geometry\+Buffer\+::Shading\+Buffer\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer}
+\includegraphics[height=3.000000cm]{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer}
 \end{center}
 \end{figure}
 \subsection*{Public Types}
@@ -58,6 +58,20 @@ void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buff
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ab2cb00e9be3b5f1502f1db9fcab2e951}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ab2cb00e9be3b5f1502f1db9fcab2e951}} 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ab2cb00e9be3b5f1502f1db9fcab2e951}{Unbind\+Buffer}} ()
 \begin{DoxyCompactList}\small\item\em Unbind all buffer textures. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_afe933c5c15ed7e488f5094ef2ddf8c4b}{Bind\+Texture\+Read}} (unsigned int index) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ab7598c22cfdc926a5fea29734160c10b}{Bind\+Texture\+Draw}} (unsigned int index) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ad11150c070d2b598864a227d48919237}{Bind\+Texture\+Draw\+Read}} (unsigned int index) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_adaf685676711e22a36cd5d10b6fd7752}{Bind\+Texture}} (unsigned int index) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ad700e0216094073a3c441de7ed22b816}{Bind\+Texture}} (unsigned int index, unsigned int texture\+Unit) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a7c5594fbcc9e0cd43f4b6ebb8e9b9197}{Unbind\+Texture}} (unsigned int index) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_aa1731f2f7848509ac5c04fc417286454}{Unbind\+Texture}} (unsigned int index, unsigned int texture\+Unit) override
+\item 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a5c7fdd4a5e773750005956bdd923759e}{Bind\+Texture}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a8047a079ff9fb9fa3400651664c92ae9}{S\+H\+A\+D\+I\+N\+G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} tex)
 \item 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a1122ec03dd6ffcaf19ac4370b1ef5cb8}{Bind\+Texture}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a8047a079ff9fb9fa3400651664c92ae9}{S\+H\+A\+D\+I\+N\+G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}} tex, unsigned int texture\+Unit)
@@ -96,6 +110,8 @@ void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buff
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_af589a4ab3f3c3cd92c373dc026e731ae}{bind\+Texture\+Mode}} (Geometry\+Buffer\+::\+G\+\_\+\+F\+R\+A\+M\+E\+B\+U\+F\+F\+E\+R\+\_\+\+B\+I\+N\+DS mode, unsigned int tex)
 \item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ac729c279a19db3d12a5be39aff5e2df1}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer}{Shading\+Buffer}} \&ref)
 \end{DoxyCompactItemize}
@@ -137,10 +153,42 @@ Copy constructor
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_adaf685676711e22a36cd5d10b6fd7752}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_adaf685676711e22a36cd5d10b6fd7752}} 
+\index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!BindTexture@{BindTexture}}
+\index{BindTexture@{BindTexture}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
+\subsubsection{\texorpdfstring{BindTexture()}{BindTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Bind\+Texture (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Binds selected texture to its default texture unit 
+\begin{DoxyParams}{Parameters}
+{\em index} & texture index to bind \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer_a3fba26797c5d4033b559c01d6f62dab5}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+I\+Buffer}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ad700e0216094073a3c441de7ed22b816}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ad700e0216094073a3c441de7ed22b816}} 
+\index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!BindTexture@{BindTexture}}
+\index{BindTexture@{BindTexture}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
+\subsubsection{\texorpdfstring{BindTexture()}{BindTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Bind\+Texture (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{unsigned int}]{texture\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Binds selected texture to the selected texture unit 
+\begin{DoxyParams}{Parameters}
+{\em index} & texture index to bind \\
+\hline
+{\em texture\+Unit} & texture unit to bind the texture to \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer_a7fdf65d272575189e26ca13d169e8317}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+I\+Buffer}}.
+
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a5c7fdd4a5e773750005956bdd923759e}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a5c7fdd4a5e773750005956bdd923759e}} 
 \index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!BindTexture@{BindTexture}}
 \index{BindTexture@{BindTexture}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
-\subsubsection{\texorpdfstring{BindTexture()}{BindTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{BindTexture()}{BindTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Bind\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a8047a079ff9fb9fa3400651664c92ae9}{S\+H\+A\+D\+I\+N\+G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}}}]{tex }\end{DoxyParamCaption})}
 
 Binds selected texture to its default texture unit 
@@ -151,14 +199,74 @@ Binds selected texture to its default texture unit
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a1122ec03dd6ffcaf19ac4370b1ef5cb8}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a1122ec03dd6ffcaf19ac4370b1ef5cb8}} 
 \index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!BindTexture@{BindTexture}}
 \index{BindTexture@{BindTexture}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
-\subsubsection{\texorpdfstring{BindTexture()}{BindTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{BindTexture()}{BindTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Bind\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a8047a079ff9fb9fa3400651664c92ae9}{S\+H\+A\+D\+I\+N\+G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}}}]{tex,  }\item[{unsigned int}]{texture\+Unit }\end{DoxyParamCaption})}
 
 Binds selected texture to the selected texture unit 
 \begin{DoxyParams}{Parameters}
 {\em tex} & texture to bind \\
 \hline
+{\em texture\+Unit} & texture unit to bind the texture to \\
+\hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ab7598c22cfdc926a5fea29734160c10b}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ab7598c22cfdc926a5fea29734160c10b}} 
+\index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!BindTextureDraw@{BindTextureDraw}}
+\index{BindTextureDraw@{BindTextureDraw}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
+\subsubsection{\texorpdfstring{BindTextureDraw()}{BindTextureDraw()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Bind\+Texture\+Draw (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Binds the buffer in draw mode and sets the selected texture as draw 
+\begin{DoxyParams}{Parameters}
+{\em texture} & index to be bound \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer_ac5b3fcf3ea4dfc4e5530cb0f4a9005a6}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+I\+Buffer}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ad11150c070d2b598864a227d48919237}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ad11150c070d2b598864a227d48919237}} 
+\index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!BindTextureDrawRead@{BindTextureDrawRead}}
+\index{BindTextureDrawRead@{BindTextureDrawRead}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
+\subsubsection{\texorpdfstring{BindTextureDrawRead()}{BindTextureDrawRead()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Bind\+Texture\+Draw\+Read (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Binds the buffer in draw-\/read mode and sets the selected texture as draw-\/read 
+\begin{DoxyParams}{Parameters}
+{\em texture} & index to be bound \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer_a21843472d95d9c495a5df733ef2a64e3}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+I\+Buffer}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_af589a4ab3f3c3cd92c373dc026e731ae}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_af589a4ab3f3c3cd92c373dc026e731ae}} 
+\index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!bindTextureMode@{bindTextureMode}}
+\index{bindTextureMode@{bindTextureMode}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
+\subsubsection{\texorpdfstring{bindTextureMode()}{bindTextureMode()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::bind\+Texture\+Mode (\begin{DoxyParamCaption}\item[{Geometry\+Buffer\+::\+G\+\_\+\+F\+R\+A\+M\+E\+B\+U\+F\+F\+E\+R\+\_\+\+B\+I\+N\+DS}]{mode,  }\item[{unsigned int}]{tex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Binds the buffer in the selected mode and sets the selected texture 
+\begin{DoxyParams}{Parameters}
+{\em mode} & R\+E\+AD, W\+R\+I\+TE or D\+R\+A\+W\+\_\+\+R\+E\+AD \\
+\hline
+{\em tex} & index to be bound \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_afe933c5c15ed7e488f5094ef2ddf8c4b}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_afe933c5c15ed7e488f5094ef2ddf8c4b}} 
+\index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!BindTextureRead@{BindTextureRead}}
+\index{BindTextureRead@{BindTextureRead}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
+\subsubsection{\texorpdfstring{BindTextureRead()}{BindTextureRead()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Bind\+Texture\+Read (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Binds the buffer in read mode and sets the selected texture as read 
+\begin{DoxyParams}{Parameters}
+{\em texture} & index to be bound \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer_ab4c82eeb6d07ea902e0de3fad67c29f2}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+I\+Buffer}}.
+
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_aea07ae2845342993bc8949f7e52a4c90}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_aea07ae2845342993bc8949f7e52a4c90}} 
 \index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!ClearColorTexture@{ClearColorTexture}}
 \index{ClearColorTexture@{ClearColorTexture}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
@@ -179,6 +287,10 @@ Clears the color of one of the textures of the framebuffer
 Factory method. Creates a copy of this object \begin{DoxyReturn}{Returns}
 Pointer to a copy of this object 
 \end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer_a41cb28df27adaea0555afd41169aebd6}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+I\+Buffer}}.
+
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ac729c279a19db3d12a5be39aff5e2df1}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ac729c279a19db3d12a5be39aff5e2df1}} 
 \index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!copy@{copy}}
 \index{copy@{copy}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
@@ -205,25 +317,33 @@ Sets the data of a T\+Buffer\+Texture\+Info
 \index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!GetMaxTextureSize@{GetMaxTextureSize}}
 \index{GetMaxTextureSize@{GetMaxTextureSize}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
 \subsubsection{\texorpdfstring{GetMaxTextureSize()}{GetMaxTextureSize()}}
-{\footnotesize\ttfamily const Q\+Vector2D\& Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Get\+Max\+Texture\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const Q\+Vector2D\& Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Get\+Max\+Texture\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Gets the max texture size \begin{DoxyReturn}{Returns}
 Max texture siza 
 \end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer_a0fe7b527d30dc9c5437b8723de2c8746}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+I\+Buffer}}.
+
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_aae6f448abdadd4ef47b7b19984fc3831}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_aae6f448abdadd4ef47b7b19984fc3831}} 
 \index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!GetTextureSize@{GetTextureSize}}
 \index{GetTextureSize@{GetTextureSize}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
 \subsubsection{\texorpdfstring{GetTextureSize()}{GetTextureSize()}}
-{\footnotesize\ttfamily const Q\+Vector2D\& Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Get\+Texture\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const Q\+Vector2D\& Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Get\+Texture\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Gets current texture size \begin{DoxyReturn}{Returns}
 Current texture size 
 \end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer_af7546a1b668af70daa255747df92181d}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+I\+Buffer}}.
+
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_af1fdd3ca773dce41a4fbe4bec2df12fa}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_af1fdd3ca773dce41a4fbe4bec2df12fa}} 
 \index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!Init@{Init}}
 \index{Init@{Init}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
 \subsubsection{\texorpdfstring{Init()}{Init()}}
-{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Init (\begin{DoxyParamCaption}\item[{unsigned int}]{Max\+Window\+Width,  }\item[{unsigned int}]{Max\+Window\+Height }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Init (\begin{DoxyParamCaption}\item[{unsigned int}]{Max\+Window\+Width,  }\item[{unsigned int}]{Max\+Window\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Creates framebuffers and textures 
 \begin{DoxyParams}{Parameters}
@@ -235,11 +355,15 @@ Creates framebuffers and textures
 \begin{DoxyReturn}{Returns}
 true if ok false otherwise 
 \end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer_ace4f0f514bf5a96790fbfffe515dcc0b}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+I\+Buffer}}.
+
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a154d3f1ba318675149ebac34471e0aec}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a154d3f1ba318675149ebac34471e0aec}} 
 \index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!Resize@{Resize}}
 \index{Resize@{Resize}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
 \subsubsection{\texorpdfstring{Resize()}{Resize()}}
-{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Resize (\begin{DoxyParamCaption}\item[{unsigned int}]{Window\+Width,  }\item[{unsigned int}]{Window\+Height }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Resize (\begin{DoxyParamCaption}\item[{unsigned int}]{Window\+Width,  }\item[{unsigned int}]{Window\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Resizes textures 
 \begin{DoxyParams}{Parameters}
@@ -251,10 +375,46 @@ Resizes textures
 \begin{DoxyReturn}{Returns}
 true if ok false otherwise 
 \end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer_a3b764e340ccb06bee072d1bd95b007df}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+I\+Buffer}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a7c5594fbcc9e0cd43f4b6ebb8e9b9197}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a7c5594fbcc9e0cd43f4b6ebb8e9b9197}} 
+\index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!UnbindTexture@{UnbindTexture}}
+\index{UnbindTexture@{UnbindTexture}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
+\subsubsection{\texorpdfstring{UnbindTexture()}{UnbindTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Unbind\+Texture (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Unbinds texture from its default texture unit 
+\begin{DoxyParams}{Parameters}
+{\em index} & texture index to bind \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer_a6130240d58d277cb9e897dfd1924613e}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+I\+Buffer}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_aa1731f2f7848509ac5c04fc417286454}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_aa1731f2f7848509ac5c04fc417286454}} 
+\index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!UnbindTexture@{UnbindTexture}}
+\index{UnbindTexture@{UnbindTexture}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
+\subsubsection{\texorpdfstring{UnbindTexture()}{UnbindTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Unbind\+Texture (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{unsigned int}]{texture\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Unbinds texture from the selected texture unit 
+\begin{DoxyParams}{Parameters}
+{\em index} & texture index to bind \\
+\hline
+{\em texture\+Unit} & texture unit to bind the texture to \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_i_buffer_a1136bf19a08f111e08648e66a8518b09}{Geometry\+Engine\+::\+Geometry\+Buffer\+::\+I\+Buffer}}.
+
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_acd58b856df03ec7eec5313356c3f8c46}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_acd58b856df03ec7eec5313356c3f8c46}} 
 \index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!UnbindTexture@{UnbindTexture}}
 \index{UnbindTexture@{UnbindTexture}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
-\subsubsection{\texorpdfstring{UnbindTexture()}{UnbindTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{UnbindTexture()}{UnbindTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Unbind\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a8047a079ff9fb9fa3400651664c92ae9}{S\+H\+A\+D\+I\+N\+G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}}}]{tex }\end{DoxyParamCaption})}
 
 Unbinds texture from its default texture unit 
@@ -265,12 +425,14 @@ Unbinds texture from its default texture unit
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ad80b99462f09f88f2937542b72d909f9}\label{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_ad80b99462f09f88f2937542b72d909f9}} 
 \index{GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}!UnbindTexture@{UnbindTexture}}
 \index{UnbindTexture@{UnbindTexture}!GeometryEngine::GeometryBuffer::ShadingBuffer@{GeometryEngine::GeometryBuffer::ShadingBuffer}}
-\subsubsection{\texorpdfstring{UnbindTexture()}{UnbindTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{UnbindTexture()}{UnbindTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Buffer\+::\+Shading\+Buffer\+::\+Unbind\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_shading_buffer_a8047a079ff9fb9fa3400651664c92ae9}{S\+H\+A\+D\+I\+N\+G\+B\+U\+F\+F\+E\+R\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+T\+Y\+PE}}}]{tex,  }\item[{unsigned int}]{texture\+Unit }\end{DoxyParamCaption})}
 
 Unbinds texture from the selected texture unit 
 \begin{DoxyParams}{Parameters}
 {\em tex} & texture to unbind \\
+\hline
+{\em texture\+Unit} & texture unit to bind the texture to \\
 \hline
 \end{DoxyParams}
 

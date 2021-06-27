@@ -1,0 +1,81 @@
+\hypertarget{class_unit_test_1_1_test_configuration_manager}{}\section{Unit\+Test\+::Test\+Configuration\+Manager Class Reference}
+\label{class_unit_test_1_1_test_configuration_manager}\index{UnitTest::TestConfigurationManager@{UnitTest::TestConfigurationManager}}
+
+
+Singleton for reading the test configuration file.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Config.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{class_unit_test_1_1_test_configuration_manager_a246758c1638ac8a8966c7d0e8e02085b}{Get\+Test\+Image\+Folder}} ()
+\item 
+const std\+::string \& \mbox{\hyperlink{class_unit_test_1_1_test_configuration_manager_a68bc437de34df3e796fc6fde731c4803}{Get\+Test\+Image\+File}} ()
+\item 
+const std\+::string \& \mbox{\hyperlink{class_unit_test_1_1_test_configuration_manager_a9467f8835450de0622c9be41cf88ed79}{Get\+Texture\+Dir}} (const std\+::string \&key)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_unit_test_1_1_test_configuration_manager}{Test\+Configuration\+Manager}} $\ast$ \mbox{\hyperlink{class_unit_test_1_1_test_configuration_manager_a0d67d9b3fda9041d13927c6d2d42085b}{Get\+Instance}} ()
+\item 
+\mbox{\Hypertarget{class_unit_test_1_1_test_configuration_manager_a965b58cfa5a213da7a0f239f2b3f994f}\label{class_unit_test_1_1_test_configuration_manager_a965b58cfa5a213da7a0f239f2b3f994f}} 
+static void \mbox{\hyperlink{class_unit_test_1_1_test_configuration_manager_a965b58cfa5a213da7a0f239f2b3f994f}{Destroy\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the singleton instance if it has been initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Singleton for reading the test configuration file. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_unit_test_1_1_test_configuration_manager_a0d67d9b3fda9041d13927c6d2d42085b}\label{class_unit_test_1_1_test_configuration_manager_a0d67d9b3fda9041d13927c6d2d42085b}} 
+\index{UnitTest::TestConfigurationManager@{UnitTest::TestConfigurationManager}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!UnitTest::TestConfigurationManager@{UnitTest::TestConfigurationManager}}
+\subsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_test_1_1_test_configuration_manager}{Test\+Configuration\+Manager}} $\ast$ Unit\+Test\+::\+Test\+Configuration\+Manager\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes the singleton instance if it has not been initialized and returns the singleton instance \begin{DoxyReturn}{Returns}
+singleton instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_unit_test_1_1_test_configuration_manager_a68bc437de34df3e796fc6fde731c4803}\label{class_unit_test_1_1_test_configuration_manager_a68bc437de34df3e796fc6fde731c4803}} 
+\index{UnitTest::TestConfigurationManager@{UnitTest::TestConfigurationManager}!GetTestImageFile@{GetTestImageFile}}
+\index{GetTestImageFile@{GetTestImageFile}!UnitTest::TestConfigurationManager@{UnitTest::TestConfigurationManager}}
+\subsubsection{\texorpdfstring{GetTestImageFile()}{GetTestImageFile()}}
+{\footnotesize\ttfamily const std\+::string\& Unit\+Test\+::\+Test\+Configuration\+Manager\+::\+Get\+Test\+Image\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the configuration property that contains the name of the test image configuration file \begin{DoxyReturn}{Returns}
+Name of the image configuration file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_unit_test_1_1_test_configuration_manager_a246758c1638ac8a8966c7d0e8e02085b}\label{class_unit_test_1_1_test_configuration_manager_a246758c1638ac8a8966c7d0e8e02085b}} 
+\index{UnitTest::TestConfigurationManager@{UnitTest::TestConfigurationManager}!GetTestImageFolder@{GetTestImageFolder}}
+\index{GetTestImageFolder@{GetTestImageFolder}!UnitTest::TestConfigurationManager@{UnitTest::TestConfigurationManager}}
+\subsubsection{\texorpdfstring{GetTestImageFolder()}{GetTestImageFolder()}}
+{\footnotesize\ttfamily const std\+::string\& Unit\+Test\+::\+Test\+Configuration\+Manager\+::\+Get\+Test\+Image\+Folder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the configuration property that contains the relative path to the test image folder \begin{DoxyReturn}{Returns}
+Relative path to the test image folder 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_unit_test_1_1_test_configuration_manager_a9467f8835450de0622c9be41cf88ed79}\label{class_unit_test_1_1_test_configuration_manager_a9467f8835450de0622c9be41cf88ed79}} 
+\index{UnitTest::TestConfigurationManager@{UnitTest::TestConfigurationManager}!GetTextureDir@{GetTextureDir}}
+\index{GetTextureDir@{GetTextureDir}!UnitTest::TestConfigurationManager@{UnitTest::TestConfigurationManager}}
+\subsubsection{\texorpdfstring{GetTextureDir()}{GetTextureDir()}}
+{\footnotesize\ttfamily const std\+::string \& Unit\+Test\+::\+Test\+Configuration\+Manager\+::\+Get\+Texture\+Dir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+Gets the path to a loaded texture. If the texture key has not been defined an assert will trigger 
+\begin{DoxyParams}{Parameters}
+{\em key} & texture key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+path to the texture 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Unit\+Test/\+Test\+Configuration/Test\+Config.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Unit\+Test/\+Test\+Configuration/Test\+Config.\+cpp\end{DoxyCompactItemize}
