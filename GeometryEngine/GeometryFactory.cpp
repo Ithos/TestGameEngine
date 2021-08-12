@@ -252,16 +252,16 @@ GeometryEngine::GeometryItemUtils::Viewport * GeometryEngine::GeometryFactory::C
 	return new GeometryEngine::GeometryItemUtils::PerspectiveViewport(viewportSize, fovy, aspectRatio, zNear, zFar );
 }
 
-GeometryEngine::GeometryWorldItem::GeometryCamera::Camera * GeometryEngine::GeometryFactory::CreateDeferredShadingCamera(const GeometryItemUtils::Viewport & viewport, const QVector3D & pos, bool autoResize, const QVector3D & rot, const QVector3D & scale, GeometryWorldItem::WorldItem * parent)
+GeometryEngine::GeometryWorldItem::GeometryCamera::Camera * GeometryEngine::GeometryFactory::CreateDeferredShadingCamera(const GeometryItemUtils::Viewport & viewport, const QVector3D & pos, bool autoResize, const QVector3D & rot, const QVector3D & scale, const GeometryWorldItem::GeometryCamera::CameraTargets& target, GeometryWorldItem::WorldItem * parent)
 {
 	return new GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera(
 		GeometryEngine::GeometryRenderData::RenderBuffersData(GeometryEngine::GeometryBuffer::CompleteColorPostProcessBuffer(), &GeometryEngine::GeometryBuffer::ShadingBuffer()),
-		viewport, autoResize, pos, rot, QVector3D(1.0f, 1.0f, 1.0f), parent);
+		viewport, autoResize, pos, rot, QVector3D(1.0f, 1.0f, 1.0f), target, parent);
 }
 
-GeometryEngine::GeometryWorldItem::GeometryCamera::Camera * GeometryEngine::GeometryFactory::CreateDeferredShadingCamera(GeometryItemUtils::Viewport * viewport, const QVector3D & pos, bool autoResize, const QVector3D & rot, const QVector3D & scale, GeometryWorldItem::WorldItem * parent)
+GeometryEngine::GeometryWorldItem::GeometryCamera::Camera * GeometryEngine::GeometryFactory::CreateDeferredShadingCamera(GeometryItemUtils::Viewport * viewport, const QVector3D & pos, bool autoResize, const QVector3D & rot, const QVector3D & scale, const GeometryWorldItem::GeometryCamera::CameraTargets& target, GeometryWorldItem::WorldItem * parent)
 {
-	GeometryEngine::GeometryWorldItem::GeometryCamera::Camera* tmp = CreateDeferredShadingCamera(*viewport, pos, autoResize, rot, scale, parent);
+	GeometryEngine::GeometryWorldItem::GeometryCamera::Camera* tmp = CreateDeferredShadingCamera(*viewport, pos, autoResize, rot, scale, target, parent);
 	delete viewport;
 	return tmp;
 }

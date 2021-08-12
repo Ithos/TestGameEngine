@@ -9,6 +9,7 @@
 #include "TestWindow\TestImplementations\PostProcessTest.h"
 #include "TestWindow\TestImplementations\ShadowSceneTest.h"
 #include "TestWindow\TestImplementations\TranslucentShadowingTest.h"
+#include "TestWindow\TestImplementations\MultiViewportSceneTest.h"
 
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -64,6 +65,12 @@ namespace UnitTest
 		TEST_METHOD(TranslucentSceneTest)
 		{
 			executeSceneTest<CTranslucentShadowingTest>();
+		}
+
+		/// Test for a scene with multiple window viewports
+		TEST_METHOD(MultiViewportSceneTest)
+		{
+			executeSceneTest<CMultiViewportSceneTest>();
 		}
 
 	protected:

@@ -2,7 +2,7 @@
 #include "../Render Utils/RenderSteps/GeometryPass.h"
 #include "../Render Utils/RenderSteps/LightingPass.h"
 #include "../Render Utils//RenderSteps/EmissiveLightingPass.h"
-#include "../Render Utils/RenderSteps/FinalPass.h"
+#include "../Render Utils/RenderSteps/ScreenRenderPass.h"
 #include "../Render Utils/GlSetups/InitialSetup.h"
 
 #include "../Items/Materials/ColorMaterial.h"
@@ -22,5 +22,5 @@ GeometryEngine::GeometryScene::DeferredShadingScene::DeferredShadingScene(SceneM
 	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::EmissiveLightingPass(GeometryEngine::GeometryWorldItem::GeometryLight::EmissiveLighting(
 		&GeometryEngine::GeometryWorldItem::GeometryItem::Quad(GeometryEngine::GeometryMaterial::ColorMaterial(), 3.0f, 3.0f))));
 
-	mRenderSteps.push_back( new GeometryEngine::GeometryRenderStep::FinalPass() );
+	mRenderSteps.push_back( new GeometryEngine::GeometryRenderStep::ScreenRenderPass() );
 }

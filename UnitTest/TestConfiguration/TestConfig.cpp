@@ -12,6 +12,7 @@ namespace UnitTest
 
 	const std::string TestConfigurationConstants::TEST_CONFIG_FILE = "../settings/configTest";
 	const std::string TestConfigurationConstants::TEST_IMAGE_FOLDER = "TEST_IMAGES_FOLDER";
+	const std::string TestConfigurationConstants::TEST_DEBUG_FOLDER = "TEST_DEBUG_FOLDER";
 	const std::string TestConfigurationConstants::TEST_IMAGE_FILE = "TEST_IMAGE_FILE";
 	const char TestConfigurationConstants::SEPARATOR = '=';
 
@@ -52,6 +53,7 @@ TestConfigurationManager::~TestConfigurationManager()
 void TestConfigurationManager::init()
 {
 	_mConfigMap[TestConfigurationConstants::TEST_IMAGE_FOLDER] = &_mTestImageFolder;
+	_mConfigMap[TestConfigurationConstants::TEST_DEBUG_FOLDER] = &_mDebugImageFolder;
 	_mConfigMap[TestConfigurationConstants::TEST_IMAGE_FILE] = &_mTestImageConfigFile;
 	readConfigFile(_mConfigMap);
 

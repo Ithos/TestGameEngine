@@ -13,6 +13,7 @@ namespace UnitTest
 	{
 		static const std::string TEST_CONFIG_FILE;
 		static const std::string TEST_IMAGE_FOLDER;
+		static const std::string TEST_DEBUG_FOLDER;
 		static const std::string TEST_IMAGE_FILE;
 		static const char SEPARATOR;
 	};
@@ -30,6 +31,9 @@ namespace UnitTest
 		///Gets the configuration property that contains the relative path to the test image folder
 		/// \return Relative path to the test image folder
 		const std::string& GetTestImageFolder() { return _mTestImageFolder; }
+		///Gets the configuration property that contains the relative path to the debug image folder
+		/// \return Relative path to the debug image folder
+		const std::string& GetDebugImageFolder() { return _mDebugImageFolder; }
 		///Gets the configuration property that contains the name of the test image configuration file
 		/// \return Name of the image configuration file
 		const std::string& GetTestImageFile() { return _mTestImageConfigFile; }
@@ -43,6 +47,7 @@ namespace UnitTest
 		///Singleton instance
 		static TestConfigurationManager* _mpInstance;
 		std::string _mTestImageFolder;
+		std::string _mDebugImageFolder;
 		std::string _mTestImageConfigFile;
 
 		///Path map

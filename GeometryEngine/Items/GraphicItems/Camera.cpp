@@ -5,7 +5,8 @@
 #include "Camera.h"
 
 GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::Camera(const GeometryItemUtils::Viewport & viewport, bool autoResize, const QVector3D & pos, 
-	const QVector3D & rot, const QVector3D & scale, WorldItem * parent) : WorldItem(pos, rot, scale, parent), mAutoResize(autoResize), mpGBufferData(nullptr), mpViewport(nullptr)
+	const QVector3D & rot, const QVector3D & scale, const CameraTargets& target, WorldItem * parent) : WorldItem(pos, rot, scale, parent), 
+		mAutoResize(autoResize), mActive(true), mRenderTarget(target), mpGBufferData(nullptr), mpViewport(nullptr)
 {
 	mpViewport = viewport.Clone();
 	CalculateModelMatrix();

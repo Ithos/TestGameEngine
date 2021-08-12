@@ -83,9 +83,6 @@
     <ClInclude Include="Render Utils\RenderSteps\LightingPass.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="Render Utils\RenderSteps\FinalPass.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="Render Utils\GlSetup.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -290,6 +287,18 @@
     <ClInclude Include="Items\GraphicItems\CameraUtils\ImgUtils.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="Render Utils\RenderStepUtils\ScreenViewportLocations.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\CameraUtils\CameraCommons.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\MultiViewportScene.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\RenderSteps\ScreenRenderPass.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeometryEngine.cpp">
@@ -354,9 +363,6 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Render Utils\RenderSteps\LightingPass.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Render Utils\RenderSteps\FinalPass.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Render Utils\GlSetup.cpp">
@@ -528,6 +534,15 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Items\GraphicItems\CameraUtils\ImgUtils.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\RenderStepUtils\ScreenViewportLocations.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes\MultiViewportScene.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\RenderSteps\ScreenRenderPass.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>

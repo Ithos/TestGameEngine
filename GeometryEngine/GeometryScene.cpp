@@ -57,8 +57,11 @@ void GeometryEngine::GeometryScene::GeometryScene::Draw()
 	for (auto iter = mCameras.begin(); iter != mCameras.end(); ++iter)
 	{
 		GeometryWorldItem::GeometryCamera::Camera* cam = (*iter);
-		// If the camera has a custom render pipeline we go with that if it doesn't we use the scene pipeline
-		renderCamera(cam, cam->GetCustomRenderSteps().size() > 0 ? cam->GetCustomRenderSteps() : mRenderSteps);
+		if (cam->IsActive())
+		{
+			// If the camera has a custom render pipeline we go with that if it doesn't we use the scene pipeline
+			renderCamera(cam, cam->GetCustomRenderSteps().size() > 0 ? cam->GetCustomRenderSteps() : mRenderSteps);
+		}
 	}
 }
 

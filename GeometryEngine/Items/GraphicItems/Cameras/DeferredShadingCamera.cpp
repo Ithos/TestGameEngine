@@ -3,8 +3,8 @@
 #include "DeferredShadingCamera.h"
 
 GeometryEngine::GeometryWorldItem::GeometryCamera::DeferredShadingCamera::DeferredShadingCamera(const GeometryRenderData::RenderBuffersData& gbuffer, const GeometryItemUtils::Viewport& viewport,
-	bool autoResize, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, WorldItem * parent) :
-	Camera(viewport, autoResize, pos, rot, scale, parent)
+	bool autoResize, const QVector3D & pos, const QVector3D & rot, const QVector3D & scale, const CameraTargets& target, WorldItem * parent) :
+	Camera(viewport, autoResize, pos, rot, scale, target, parent)
 {
 	init(gbuffer);
 }

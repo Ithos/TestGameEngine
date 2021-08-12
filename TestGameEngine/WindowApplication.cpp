@@ -48,6 +48,7 @@
 #include <Scenes\PostProcessScene.h>
 #include <Scenes\DynamicShadowsScene.h>
 #include <Scenes\TransparentGeometryScene.h>
+#include <Scenes\MultiViewportScene.h>
 
 #include <Render Utils\Gbuffers\CompleteColorBuffer.h>
 #include <Render Utils\Gbuffers\SingleColorTextureBuffer.h>
@@ -234,7 +235,14 @@ namespace Application
 	}
 	void CWindowApplication::initGeometry(GeometryEngine::GeometryEngine* engine)
 	{
-		GeometryEngine::GeometryScene::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::GeometryScene::TransparentGeometryScene>();
+		//GeometryEngine::GeometryScene::GeometryScene* scene = engine->GetSceneManager()->CreateScene<GeometryEngine::GeometryScene::MultiViewportScene>();
+
+		std::map<GeometryEngine::GeometryWorldItem::GeometryCamera::CameraTargets, QVector4D> posMap;
+
+		posMap[GeometryEngine::GeometryWorldItem::GeometryCamera::CameraTargets::CAM1] = QVector4D(0.0f, 0.0f, 1.0f, 1.0f);
+		posMap[GeometryEngine::GeometryWorldItem::GeometryCamera::CameraTargets::CAM2] = QVector4D(0.75f, 0.75f, 0.24f, 0.24f);
+
+		GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::MultiViewportScene(engine->GetSceneManager(), posMap);
 
 		testCube = GeometryEngine::GeometryFactory::CreateCube(
 			GeometryEngine::GeometryFactory::CreateAlphaTextureMaterial(
@@ -262,6 +270,14 @@ namespace Application
 			QVector4D(0, 0, this->width(), this->height()), 45.0f, 1.0f, 0.1f, 1000.0f),
 			QVector3D(0.0f, 0.0f, 0.0f)
 		);
+
+		GeometryEngine::GeometryWorldItem::GeometryCamera::Camera* cam2 = GeometryEngine::GeometryFactory::CreateDeferredShadingCamera(GeometryEngine::GeometryFactory::CreatePerspectiveViewport(
+			QVector4D(0, 0, this->width(), this->height()), 45.0f, 1.0f, 0.1f, 1000.0f),
+			QVector3D(0.0f, 0.0f, 0.0f)
+		);
+
+		cam2->SetRenderTarget(GeometryEngine::GeometryWorldItem::GeometryCamera::CAM2);
+		//cam2->SetActive(false);
 
 		GeometryEngine::GeometryMaterial::Material* tmp =
 			GeometryEngine::GeometryFactory::CreateAlphaTextureMaterial(GeometryEngine::GeometryMaterial::TextureConstant::TEST_GRASS_TEXTURE, 1.0f);
@@ -308,7 +324,7 @@ namespace Application
 		scene->AddCamera(cam);
 		scene->AddLight(mainLight);
 		scene->AddLight(secondLight);
-		//scene->AddCamera(cam2);
+		scene->AddCamera(cam2);
 		scene->InitializeGL();
 		engine->GetSceneManager()->SetActiveScene(scene);
 	}

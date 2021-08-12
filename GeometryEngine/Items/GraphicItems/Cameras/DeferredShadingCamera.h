@@ -24,9 +24,10 @@ namespace GeometryEngine
 				/// \param pos Initial position of the item
 				/// \param rot Initial rotaion of the item
 				/// \param scale Initial scale to be applied to this item model
+				/// \param target Render target for the camera
 				/// \param parent Pointer to this items parent item, nullptr if none.
 				DeferredShadingCamera( const GeometryRenderData::RenderBuffersData& gbuffer, const GeometryItemUtils::Viewport& viewport, bool autoResize = true, const QVector3D& pos = QVector3D(0.0f, 0.0f, 0.0f),
-					const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), WorldItem* parent = nullptr);
+					const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), const CameraTargets& target = CameraTargets::CAM1, WorldItem* parent = nullptr);
 				/// Copy constructor
 				/// \param ref Object to be copied.
 				DeferredShadingCamera(const DeferredShadingCamera& ref);

@@ -195,6 +195,7 @@
     <ClInclude Include="GeometryScene.h" />
     <ClInclude Include="Items\GraphicItems\Camera.h" />
     <ClInclude Include="Items\GraphicItems\Cameras\DeferredShadingCamera.h" />
+    <ClInclude Include="Items\GraphicItems\CameraUtils\CameraCommons.h" />
     <ClInclude Include="Items\GraphicItems\CameraUtils\ImgUtils.h" />
     <ClInclude Include="Items\GraphicItems\Light.h" />
     <ClInclude Include="Items\GraphicItems\Lights\AmbientLight.h" />
@@ -255,16 +256,18 @@
     <ClInclude Include="Render Utils\RenderStep.h" />
     <ClInclude Include="Render Utils\RenderSteps\EmissiveLightingPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\PostProcessPass.h" />
-    <ClInclude Include="Render Utils\RenderSteps\FinalPass.h" />
+    <ClInclude Include="Render Utils\RenderSteps\ScreenRenderPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\GeometryPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\LightingPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\ShadowedLightingPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\TransparentGeometryPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\TransparentShadowedLightingPass.h" />
+    <ClInclude Include="Render Utils\RenderStepUtils\ScreenViewportLocations.h" />
     <ClInclude Include="Render Utils\ShadingBuffer.h" />
     <ClInclude Include="Scenes\DeferredShadingScene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Scenes\DynamicShadowsScene.h" />
+    <ClInclude Include="Scenes\MultiViewportScene.h" />
     <ClInclude Include="Scenes\PostProcessScene.h" />
     <ClInclude Include="Scenes\TransparentGeometryScene.h" />
   </ItemGroup>
@@ -337,16 +340,18 @@
     <ClCompile Include="Render Utils\RenderStep.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\EmissiveLightingPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\PostProcessPass.cpp" />
-    <ClCompile Include="Render Utils\RenderSteps\FinalPass.cpp" />
+    <ClCompile Include="Render Utils\RenderSteps\ScreenRenderPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\GeometryPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\LightingPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\ShadowedLightingPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\TransparentGeometryPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\TransparentShadowedLightingPass.cpp" />
+    <ClCompile Include="Render Utils\RenderStepUtils\ScreenViewportLocations.cpp" />
     <ClCompile Include="Render Utils\ShadingBuffer.cpp" />
     <ClCompile Include="Scenes\DeferredShadingScene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Scenes\DynamicShadowsScene.cpp" />
+    <ClCompile Include="Scenes\MultiViewportScene.cpp" />
     <ClCompile Include="Scenes\PostProcessScene.cpp" />
     <ClCompile Include="Scenes\TransparentGeometryScene.cpp" />
   </ItemGroup>

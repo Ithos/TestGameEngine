@@ -5,6 +5,7 @@
 #include <string>
 #include <qvector3d.h>
 #include "Items/Materials/TextureMaterialCommons.h"
+#include "Items/GraphicItems/CameraUtils/CameraCommons.h"
 
 namespace GeometryEngine
 {
@@ -355,9 +356,11 @@ namespace GeometryEngine
 		/// \param pos Initial position of the item
 		/// \param rot Initial rotaion of the item
 		/// \param scale Initial scale to be applied to this item model
+		/// \param target Render target for the camera
 		/// \param parent Pointer to this items parent item, nullptr if none.
 		static GeometryWorldItem::GeometryCamera::Camera* CreateDeferredShadingCamera(const GeometryItemUtils::Viewport& viewport, const QVector3D& pos, bool autoResize = true,
-			const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), GeometryWorldItem::WorldItem* parent = nullptr);
+			const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), 
+			const GeometryWorldItem::GeometryCamera::CameraTargets& target = GeometryWorldItem::GeometryCamera::CameraTargets::CAM1, GeometryWorldItem::WorldItem* parent = nullptr);
 
 		///Convenience method that overrides CreateDeferredShadingCamera to be called using a temporary material pointer. This method deletes the viewport pointer after creating the item.
 		/// \param viewport Temporary viewport pointer to be copied into the camera. The pointer will be deleted after creating the camera.
@@ -365,9 +368,11 @@ namespace GeometryEngine
 		/// \param pos Initial position of the item
 		/// \param rot Initial rotaion of the item
 		/// \param scale Initial scale to be applied to this item model
+		/// \param target Render target for the camera
 		/// \param parent Pointer to this items parent item, nullptr if none.
 		static GeometryWorldItem::GeometryCamera::Camera* CreateDeferredShadingCamera(GeometryItemUtils::Viewport* viewport, const QVector3D& pos, bool autoResize = true,
-			const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), GeometryWorldItem::WorldItem* parent = nullptr);
+			const QVector3D & rot = QVector3D(0.0f, 0.0f, 0.0f), const QVector3D & scale = QVector3D(1.0f, 1.0f, 1.0f), 
+			const GeometryWorldItem::GeometryCamera::CameraTargets& target = GeometryWorldItem::GeometryCamera::CameraTargets::CAM1, GeometryWorldItem::WorldItem* parent = nullptr);
 
 		///Helper method to create a grey scale post process
 		/// \param viewportSize Size of the quad used to render the post process. It should cover the viewport completely.

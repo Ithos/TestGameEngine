@@ -27,7 +27,7 @@ bool UnitTest::CBaseGeometryTest::compareScreenImage(const std::string & testIma
 	if (!result)
 	{
 		std::time_t t = std::time(nullptr);
-		GeometryEngine::CameraUtils::ImgUtils::ExportImage(screen, mpConfManager->GetTestImageFile(),
+		GeometryEngine::CameraUtils::ImgUtils::ExportImage(screen, mpConfManager->GetDebugImageFolder(),
 			std::string("debug_").append(className).append("_").append(std::to_string(t)), mSceneWidth, mSceneHeigth, true);
 	}
 

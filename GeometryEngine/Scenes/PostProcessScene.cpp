@@ -2,7 +2,7 @@
 #include "../Render Utils/RenderSteps/GeometryPass.h"
 #include "../Render Utils/RenderSteps/LightingPass.h"
 #include "../Render Utils//RenderSteps/EmissiveLightingPass.h"
-#include "../Render Utils/RenderSteps/FinalPass.h"
+#include "../Render Utils/RenderSteps/ScreenRenderPass.h"
 #include "../Render Utils/RenderSteps/PostProcessPass.h"
 #include "../Render Utils/GlSetups/InitialSetup.h"
 
@@ -24,5 +24,5 @@ GeometryEngine::GeometryScene::PostProcessScene::PostProcessScene(SceneManager *
 		&GeometryEngine::GeometryWorldItem::GeometryItem::Quad(GeometryEngine::GeometryMaterial::ColorMaterial(), 3.0f, 3.0f ) ) ) );
 
 	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::PostProcessPass());
-	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::FinalPass());
+	mRenderSteps.push_back(new GeometryEngine::GeometryRenderStep::ScreenRenderPass());
 }
