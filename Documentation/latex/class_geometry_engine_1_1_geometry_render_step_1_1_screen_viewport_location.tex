@@ -1,0 +1,246 @@
+\hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location}{}\section{Geometry\+Engine\+::Geometry\+Render\+Step\+::Screen\+Viewport\+Location Class Reference}
+\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location}\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+
+
+{\ttfamily \#include $<$Screen\+Viewport\+Locations.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a6a75c7e5bd03280a3d1841b0f0ded251}{Screen\+Viewport\+Location}} (int viewport\+Number)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a9864eb50caa425353d192061b5415922}{Screen\+Viewport\+Location}} (const std\+::map$<$ \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}}, Q\+Vector4D $>$ \&viewport\+Map)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a48164f2c04f800d345b9193c5f0f35da}{Screen\+Viewport\+Location}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location}{Screen\+Viewport\+Location}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_ac94a9d9ccdfe42629ab4a9109e01dd58}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_ac94a9d9ccdfe42629ab4a9109e01dd58}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_ac94a9d9ccdfe42629ab4a9109e01dd58}{$\sim$\+Screen\+Viewport\+Location}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const Q\+Vector4D \& \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a3bcef52c0565d793d2688cf19d2c6852}{Get\+Viewport\+Size}} (const \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}} \&target)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_ab0173ef8e36303f2d0c742373ff758e0}{Contains\+Viewport}} (const \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}} \&target)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_aafca840a5b85f1c8b3fd13603f610682}{Add\+Viewport}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}} target, Q\+Vector4D viewport\+Size)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_aa9a8f050c01fbc418281534b9c3dce61}{Modify\+Viewport}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}} target, Q\+Vector4D viewport\+Size)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a25556391a278bde524476a682772541e}{Remove\+Viewport}} (const \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}} \&target)
+\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location}{Screen\+Viewport\+Location}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a95ff121d95a2c4f20d0994aa7ccdab6a}{Clone}} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+Vector4D \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a2a958b2908d7e778f9e692cbe7dd9863}{Get\+Quad\+Vertex\+Positions}} (const Q\+Vector4D \&screen\+Size, const Q\+Vector4D \&viewport\+Size)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Vector4D \& \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_aca54be537a99da891061c74cb1573f07}{clamp\+Values}} (Q\+Vector4D \&vector)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a84ffff22eb9d9ec9caf22682b05150f4}{fill\+Viewport\+Map}} (const std\+::map$<$ \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}}, Q\+Vector4D $>$ \&viewport\+Map)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_ae4caebeff48aecdbd559be7ae3a3799d}{generate\+Viewport\+Sizes}} (int viewport\+Number, std\+::map$<$ \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}}, Q\+Vector4D $>$ \&viewport\+Map)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_ac84bf098c2402b2e920f7dcc798702dc}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location}{Screen\+Viewport\+Location}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a6d22feae7a79e194c6babc43945c79a2}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a6d22feae7a79e194c6babc43945c79a2}} 
+std\+::map$<$ \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}}, Q\+Vector4D $>$ {\bfseries m\+Viewport\+Size}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a2b84bf0360360b97ec485525631a939c}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a2b84bf0360360b97ec485525631a939c}} 
+Q\+Vector4D {\bfseries m\+Error\+Values}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that holds the locations and sizes for multiple screen viewports and their associated camera targets. Q\+Vector4D values must be in the \mbox{[}0;1\mbox{]} range, they indicate screen size percentages x,y -\/$>$ viewport screen position z,w -\/$>$ viewport width and height 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a6a75c7e5bd03280a3d1841b0f0ded251}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a6a75c7e5bd03280a3d1841b0f0ded251}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!ScreenViewportLocation@{ScreenViewportLocation}}
+\index{ScreenViewportLocation@{ScreenViewportLocation}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{ScreenViewportLocation()}{ScreenViewportLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::\+Screen\+Viewport\+Location (\begin{DoxyParamCaption}\item[{int}]{viewport\+Number }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em viewport\+Number} & Number of viewports in the screen \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a9864eb50caa425353d192061b5415922}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a9864eb50caa425353d192061b5415922}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!ScreenViewportLocation@{ScreenViewportLocation}}
+\index{ScreenViewportLocation@{ScreenViewportLocation}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{ScreenViewportLocation()}{ScreenViewportLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::\+Screen\+Viewport\+Location (\begin{DoxyParamCaption}\item[{const std\+::map$<$ \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}}, Q\+Vector4D $>$ \&}]{viewport\+Map }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em viewport\+Map} & Map of viewport sizes expressed as (position, size) in widow size percentages, values will be clamped to the \mbox{[}0,1\mbox{]} range \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a48164f2c04f800d345b9193c5f0f35da}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a48164f2c04f800d345b9193c5f0f35da}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!ScreenViewportLocation@{ScreenViewportLocation}}
+\index{ScreenViewportLocation@{ScreenViewportLocation}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{ScreenViewportLocation()}{ScreenViewportLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::\+Screen\+Viewport\+Location (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location}{Screen\+Viewport\+Location}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Reference to the object to be copied \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_aafca840a5b85f1c8b3fd13603f610682}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_aafca840a5b85f1c8b3fd13603f610682}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!AddViewport@{AddViewport}}
+\index{AddViewport@{AddViewport}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{AddViewport()}{AddViewport()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::\+Add\+Viewport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}}}]{target,  }\item[{Q\+Vector4D}]{viewport\+Size }\end{DoxyParamCaption})}
+
+Adds a new viewport size to the map 
+\begin{DoxyParams}{Parameters}
+{\em target} & New viewport key \\
+\hline
+{\em viewport\+Size} & Size of the new viewport \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the map didn\textquotesingle{}t contain the viewport key false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_aca54be537a99da891061c74cb1573f07}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_aca54be537a99da891061c74cb1573f07}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!clampValues@{clampValues}}
+\index{clampValues@{clampValues}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{clampValues()}{clampValues()}}
+{\footnotesize\ttfamily Q\+Vector4D \& Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::clamp\+Values (\begin{DoxyParamCaption}\item[{Q\+Vector4D \&}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Clamps vector values to the \mbox{[}0,1\mbox{]} range \begin{DoxyReturn}{Returns}
+Vector with values clamped to the \mbox{[}0,1\mbox{]} range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a95ff121d95a2c4f20d0994aa7ccdab6a}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a95ff121d95a2c4f20d0994aa7ccdab6a}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location}{Screen\+Viewport\+Location}}$\ast$ Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Factory method. Returns a copy of this object. \begin{DoxyReturn}{Returns}
+A copy of this object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_ab0173ef8e36303f2d0c742373ff758e0}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_ab0173ef8e36303f2d0c742373ff758e0}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!ContainsViewport@{ContainsViewport}}
+\index{ContainsViewport@{ContainsViewport}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{ContainsViewport()}{ContainsViewport()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::\+Contains\+Viewport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}} \&}]{target }\end{DoxyParamCaption})}
+
+Checks if the viewport key exists 
+\begin{DoxyParams}{Parameters}
+{\em target} & Selected viewport key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the map contains the key, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_ac84bf098c2402b2e920f7dcc798702dc}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_ac84bf098c2402b2e920f7dcc798702dc}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location}{Screen\+Viewport\+Location}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data from a Final\+Pass into this object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Final\+Pass to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a84ffff22eb9d9ec9caf22682b05150f4}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a84ffff22eb9d9ec9caf22682b05150f4}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!fillViewportMap@{fillViewportMap}}
+\index{fillViewportMap@{fillViewportMap}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{fillViewportMap()}{fillViewportMap()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::fill\+Viewport\+Map (\begin{DoxyParamCaption}\item[{const std\+::map$<$ \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}}, Q\+Vector4D $>$ \&}]{viewport\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Clears the map an then fills it with the values passed as parameters 
+\begin{DoxyParams}{Parameters}
+{\em viewport\+Map} & New values for the viewport map \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_ae4caebeff48aecdbd559be7ae3a3799d}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_ae4caebeff48aecdbd559be7ae3a3799d}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!generateViewportSizes@{generateViewportSizes}}
+\index{generateViewportSizes@{generateViewportSizes}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{generateViewportSizes()}{generateViewportSizes()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::generate\+Viewport\+Sizes (\begin{DoxyParamCaption}\item[{int}]{viewport\+Number,  }\item[{std\+::map$<$ \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}}, Q\+Vector4D $>$ \&}]{viewport\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Clears the map passed as a parameters, then generates the sizes for the selected number of viewports and populates the map with them. This method will try to adjust the viewports as close as posible to a square matrix, aditional viewports will be added as aditional columns at certain rows from bottom to top. All viewport sizes will be adjusted so the full screen is filled. 
+\begin{DoxyParams}{Parameters}
+{\em viewport\+Number} & Number of viewports in the screen \\
+\hline
+{\em viewport\+Map} & Viewport map to be cleared and filled usually this object viewport map \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a2a958b2908d7e778f9e692cbe7dd9863}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a2a958b2908d7e778f9e692cbe7dd9863}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!GetQuadVertexPositions@{GetQuadVertexPositions}}
+\index{GetQuadVertexPositions@{GetQuadVertexPositions}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{GetQuadVertexPositions()}{GetQuadVertexPositions()}}
+{\footnotesize\ttfamily Q\+Vector4D Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::\+Get\+Quad\+Vertex\+Positions (\begin{DoxyParamCaption}\item[{const Q\+Vector4D \&}]{screen\+Size,  }\item[{const Q\+Vector4D \&}]{viewport\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method that transforms the size vector to a Quad position vector that contains the position for the viewport verteces in window coordinates 
+\begin{DoxyParams}{Parameters}
+{\em screen\+Size} & Size of the screen as (position, size) \\
+\hline
+{\em viewport\+Size} & Size of the viewport as (position, size) expressed as percentages of the screen size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertex positions of the viewport 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a3bcef52c0565d793d2688cf19d2c6852}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a3bcef52c0565d793d2688cf19d2c6852}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!GetViewportSize@{GetViewportSize}}
+\index{GetViewportSize@{GetViewportSize}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{GetViewportSize()}{GetViewportSize()}}
+{\footnotesize\ttfamily const Q\+Vector4D \& Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::\+Get\+Viewport\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}} \&}]{target }\end{DoxyParamCaption})}
+
+Returns the size of the selected viewport 
+\begin{DoxyParams}{Parameters}
+{\em target} & Key of the selected viewport \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size of the selected viewport if it exists.\+If the viewport doesnt exist Q\+Vector4D(-\/1, -\/1, -\/1, -\/1) is return ed instead. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_aa9a8f050c01fbc418281534b9c3dce61}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_aa9a8f050c01fbc418281534b9c3dce61}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!ModifyViewport@{ModifyViewport}}
+\index{ModifyViewport@{ModifyViewport}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{ModifyViewport()}{ModifyViewport()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::\+Modify\+Viewport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}}}]{target,  }\item[{Q\+Vector4D}]{viewport\+Size }\end{DoxyParamCaption})}
+
+Modifies the size of an existing viewport 
+\begin{DoxyParams}{Parameters}
+{\em target} & Selected viewport key \\
+\hline
+{\em viewport\+Size} & New size of the viewport \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the map contains the viewport key false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a25556391a278bde524476a682772541e}\label{class_geometry_engine_1_1_geometry_render_step_1_1_screen_viewport_location_a25556391a278bde524476a682772541e}} 
+\index{GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}!RemoveViewport@{RemoveViewport}}
+\index{RemoveViewport@{RemoveViewport}!GeometryEngine::GeometryRenderStep::ScreenViewportLocation@{GeometryEngine::GeometryRenderStep::ScreenViewportLocation}}
+\subsubsection{\texorpdfstring{RemoveViewport()}{RemoveViewport()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Viewport\+Location\+::\+Remove\+Viewport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}} \&}]{target }\end{DoxyParamCaption})}
+
+Removes an existing viewport from the map 
+\begin{DoxyParams}{Parameters}
+{\em target} & Selected viewport key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the map contained the viewport key false otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Render\+Step\+Utils/Screen\+Viewport\+Locations.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Render Utils/\+Render\+Step\+Utils/Screen\+Viewport\+Locations.\+cpp\end{DoxyCompactItemize}

@@ -12,7 +12,36 @@ class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometr
 \begin{DoxyCompactList}\small\item\em Class that calculates projection matrices, and holds information for render steps, post processes and the geometry buffer. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_deferred_shading_camera}{Deferred\+Shading\+Camera}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Camera}} that stores a G\+Buffer to allow multiple step shading. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Camera\+Targets}} \{ \newline
+{\bfseries N\+O\+NE}, 
+{\bfseries T\+E\+X\+T\+U\+RE}, 
+{\bfseries C\+A\+M1}, 
+{\bfseries C\+A\+M2}, 
+\newline
+{\bfseries C\+A\+M3}, 
+{\bfseries C\+A\+M4}, 
+{\bfseries C\+A\+M5}, 
+{\bfseries C\+A\+M6}, 
+\newline
+{\bfseries C\+A\+M7}, 
+{\bfseries C\+A\+M8}, 
+{\bfseries C\+A\+M9}, 
+{\bfseries C\+A\+M10}
+ \}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 namespace for all cameras 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}\label{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera}!CameraTargets@{CameraTargets}}
+\index{CameraTargets@{CameraTargets}!GeometryEngine::GeometryWorldItem::GeometryCamera@{GeometryEngine::GeometryWorldItem::GeometryCamera}}
+\subsubsection{\texorpdfstring{CameraTargets}{CameraTargets}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+Targets}}}
+
+All posible camera render targets N\+O\+NE -\/$>$ The camera will not be rendered to any final location, all other intermediary calculations and renders will happen T\+E\+X\+T\+U\+RE -\/$>$ The camera will be rendered to a texture if a fitting material exists C\+A\+MX -\/$>$ The camera will be rendered to the screen at the C\+A\+MX viewport location if it exists 

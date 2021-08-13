@@ -94,8 +94,8 @@ Inheritance diagram for GeometryEngine::GeometryWorldItem::GeometryCamera::Camer
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a56a7538e5e5d2141832824bba448e271"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a56a7538e5e5d2141832824bba448e271">Camera</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_viewport.html">GeometryItemUtils::Viewport</a> &amp;viewport, bool autoResize=true, const QVector3D &amp;pos=QVector3D(0.0f, 0.0f, 0.0f), const QVector3D &amp;rot=QVector3D(0.0f, 0.0f, 0.0f), const QVector3D &amp;scale=QVector3D(1.0f, 1.0f, 1.0f), WorldItem *parent=nullptr)</td></tr>
-<tr class="separator:a56a7538e5e5d2141832824bba448e271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad83b44011bb54382c3d99b2d936a27f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#ad83b44011bb54382c3d99b2d936a27f9">Camera</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_item_utils_1_1_viewport.html">GeometryItemUtils::Viewport</a> &amp;viewport, bool autoResize=true, const QVector3D &amp;pos=QVector3D(0.0f, 0.0f, 0.0f), const QVector3D &amp;rot=QVector3D(0.0f, 0.0f, 0.0f), const QVector3D &amp;scale=QVector3D(1.0f, 1.0f, 1.0f), const CameraTargets &amp;target=CameraTargets::CAM1, WorldItem *parent=nullptr)</td></tr>
+<tr class="separator:ad83b44011bb54382c3d99b2d936a27f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afac761f35401ea99ef72dd2412b71cfc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#afac761f35401ea99ef72dd2412b71cfc">Camera</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">Camera</a> &amp;ref)</td></tr>
 <tr class="separator:afac761f35401ea99ef72dd2412b71cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9c09265af967800c32373f9c79d56c6"><td class="memItemLeft" align="right" valign="top"><a id="ae9c09265af967800c32373f9c79d56c6"></a>
@@ -116,10 +116,20 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="separator:afe7145a1edb13ce3a50c2964f5c865e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96954629a05eba955adc1dff2df1fbdb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a96954629a05eba955adc1dff2df1fbdb">SetViewportSize</a> (const QVector4D &amp;size)</td></tr>
 <tr class="separator:a96954629a05eba955adc1dff2df1fbdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf991463c9975a3b0dd047bb73a7dc95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#acf991463c9975a3b0dd047bb73a7dc95">SetBoundaries</a> (GLdouble zNear, GLdouble zFar)</td></tr>
+<tr class="memitem:acf991463c9975a3b0dd047bb73a7dc95"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#acf991463c9975a3b0dd047bb73a7dc95">SetBoundaries</a> (GLdouble zNear, GLdouble zFar)</td></tr>
 <tr class="separator:acf991463c9975a3b0dd047bb73a7dc95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51085794e61f854eba2ddc8fe9227f32"><td class="memItemLeft" align="right" valign="top"><a id="a51085794e61f854eba2ddc8fe9227f32"></a>
+virtual const <a class="el" href="namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera.html#a3766848bae97ff8203fa26907ac359ef">CameraTargets</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a51085794e61f854eba2ddc8fe9227f32">GetRenderTarget</a> ()</td></tr>
+<tr class="memdesc:a51085794e61f854eba2ddc8fe9227f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the camera render target. <br /></td></tr>
+<tr class="separator:a51085794e61f854eba2ddc8fe9227f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a36e63be866e42068e479bb8eb7c957"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a4a36e63be866e42068e479bb8eb7c957">SetRenderTarget</a> (const <a class="el" href="namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera.html#a3766848bae97ff8203fa26907ac359ef">CameraTargets</a> &amp;target)</td></tr>
+<tr class="separator:a4a36e63be866e42068e479bb8eb7c957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48e1e7bfc2aea19d21ecf5a311815740"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a48e1e7bfc2aea19d21ecf5a311815740">IsAutoResize</a> ()</td></tr>
 <tr class="separator:a48e1e7bfc2aea19d21ecf5a311815740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49c09449ffef91d95dea44061b3b4c21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a49c09449ffef91d95dea44061b3b4c21">SetActive</a> (bool active)</td></tr>
+<tr class="separator:a49c09449ffef91d95dea44061b3b4c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a045debd24966944cf641dcf8f0366c77"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a045debd24966944cf641dcf8f0366c77">IsActive</a> ()</td></tr>
+<tr class="separator:a045debd24966944cf641dcf8f0366c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23673bed2b417962168e0bc5b8b37eb3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html">GeometryBuffer::GBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a23673bed2b417962168e0bc5b8b37eb3">GetGBuffer</a> ()</td></tr>
 <tr class="separator:a23673bed2b417962168e0bc5b8b37eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a467c210c6d8cb819537b6a058bed649b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data.html">GeometryRenderData::RenderBuffersData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html#a467c210c6d8cb819537b6a058bed649b">GetRenderBufferData</a> ()</td></tr>
@@ -233,6 +243,12 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:aca8086ce2a9f8d830410695c98bdda27"><td class="memItemLeft" align="right" valign="top"><a id="aca8086ce2a9f8d830410695c98bdda27"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>mAutoResize</b></td></tr>
 <tr class="separator:aca8086ce2a9f8d830410695c98bdda27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93210ef150ee9ab5f880966e4a756c65"><td class="memItemLeft" align="right" valign="top"><a id="a93210ef150ee9ab5f880966e4a756c65"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>mActive</b></td></tr>
+<tr class="separator:a93210ef150ee9ab5f880966e4a756c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a130574e41ab5c5e4b9ed93d15ff467e7"><td class="memItemLeft" align="right" valign="top"><a id="a130574e41ab5c5e4b9ed93d15ff467e7"></a>
+<a class="el" href="namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera.html#a3766848bae97ff8203fa26907ac359ef">CameraTargets</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mRenderTarget</b></td></tr>
+<tr class="separator:a130574e41ab5c5e4b9ed93d15ff467e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affc440b1a52ac342e462290c7bccf369"><td class="memItemLeft" align="right" valign="top"><a id="affc440b1a52ac342e462290c7bccf369"></a>
 <a class="el" href="class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data.html">GeometryRenderData::RenderBuffersData</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mpGBufferData</b></td></tr>
 <tr class="separator:affc440b1a52ac342e462290c7bccf369"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -274,8 +290,8 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that calculates projection matrices, and holds information for render steps, post processes and the geometry buffer. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a56a7538e5e5d2141832824bba448e271"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56a7538e5e5d2141832824bba448e271">&#9670;&nbsp;</a></span>Camera() <span class="overload">[1/2]</span></h2>
+<a id="ad83b44011bb54382c3d99b2d936a27f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad83b44011bb54382c3d99b2d936a27f9">&#9670;&nbsp;</a></span>Camera() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -313,6 +329,12 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera.html#a3766848bae97ff8203fa26907ac359ef">CameraTargets</a> &amp;&#160;</td>
+          <td class="paramname"><em>target</em> = <code>CameraTargets::CAM1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_world_item.html">WorldItem</a> *&#160;</td>
           <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
         </tr>
@@ -330,6 +352,7 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
     <tr><td class="paramname">pos</td><td>Initial position of the item </td></tr>
     <tr><td class="paramname">rot</td><td>Initial rotaion of the item </td></tr>
     <tr><td class="paramname">scale</td><td>Initial scale to be applied to this item model </td></tr>
+    <tr><td class="paramname">target</td><td>Render target for the camera </td></tr>
     <tr><td class="paramname">parent</td><td>Pointer to this items parent item, nullptr if none. </td></tr>
   </table>
   </dd>
@@ -871,6 +894,32 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 
 </div>
 </div>
+<a id="a045debd24966944cf641dcf8f0366c77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a045debd24966944cf641dcf8f0366c77">&#9670;&nbsp;</a></span>IsActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::IsActive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns whether if the camera is active or not. All cameras are active by default. </p><dl class="section return"><dt>Returns</dt><dd>True if the camera is active false otherwise. </dd></dl>
+
+</div>
+</div>
 <a id="a48e1e7bfc2aea19d21ecf5a311815740"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a48e1e7bfc2aea19d21ecf5a311815740">&#9670;&nbsp;</a></span>IsAutoResize()</h2>
 
@@ -996,11 +1045,46 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 
 </div>
 </div>
+<a id="a49c09449ffef91d95dea44061b3b4c21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49c09449ffef91d95dea44061b3b4c21">&#9670;&nbsp;</a></span>SetActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::SetActive </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>active</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the camera as active or unactive. All cameras are active by default. Unactive cameras won't be rendered at all and no calculations involving the camera will take place. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">active</td><td>New state for the camera </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="acf991463c9975a3b0dd047bb73a7dc95"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acf991463c9975a3b0dd047bb73a7dc95">&#9670;&nbsp;</a></span>SetBoundaries()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::SetBoundaries </td>
@@ -1020,11 +1104,48 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Sets new values for the z coordinate limits, but does not update the projection matrix inmediately </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">zNear</td><td>Nearest z coordinate to be rendered </td></tr>
     <tr><td class="paramname">zFar</td><td>Farthest z coordinate to be rendered </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4a36e63be866e42068e479bb8eb7c957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a36e63be866e42068e479bb8eb7c957">&#9670;&nbsp;</a></span>SetRenderTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GeometryEngine::GeometryWorldItem::GeometryCamera::Camera::SetRenderTarget </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera.html#a3766848bae97ff8203fa26907ac359ef">CameraTargets</a> &amp;&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the camera render target </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>New render target for the camera </td></tr>
   </table>
   </dd>
 </dl>

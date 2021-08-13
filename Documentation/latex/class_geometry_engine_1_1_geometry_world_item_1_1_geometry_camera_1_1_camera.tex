@@ -18,7 +18,7 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+C
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a56a7538e5e5d2141832824bba448e271}{Camera}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&viewport, bool auto\+Resize=true, const Q\+Vector3D \&pos=Q\+Vector3D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), World\+Item $\ast$parent=nullptr)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_ad83b44011bb54382c3d99b2d936a27f9}{Camera}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&viewport, bool auto\+Resize=true, const Q\+Vector3D \&pos=Q\+Vector3D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Camera\+Targets \&target=\+Camera\+Targets\+::\+C\+A\+M1, World\+Item $\ast$parent=nullptr)
 \item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_afac761f35401ea99ef72dd2412b71cfc}{Camera}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Camera}} \&ref)
 \item 
@@ -39,9 +39,18 @@ virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_
 \item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a96954629a05eba955adc1dff2df1fbdb}{Set\+Viewport\+Size}} (const Q\+Vector4D \&size)
 \item 
-void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_acf991463c9975a3b0dd047bb73a7dc95}{Set\+Boundaries}} (G\+Ldouble z\+Near, G\+Ldouble z\+Far)
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_acf991463c9975a3b0dd047bb73a7dc95}{Set\+Boundaries}} (G\+Ldouble z\+Near, G\+Ldouble z\+Far)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a51085794e61f854eba2ddc8fe9227f32}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a51085794e61f854eba2ddc8fe9227f32}} 
+virtual const \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Camera\+Targets}} \& \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a51085794e61f854eba2ddc8fe9227f32}{Get\+Render\+Target}} ()
+\begin{DoxyCompactList}\small\item\em Gets the camera render target. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a4a36e63be866e42068e479bb8eb7c957}{Set\+Render\+Target}} (const \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Camera\+Targets}} \&target)
 \item 
 bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a48e1e7bfc2aea19d21ecf5a311815740}{Is\+Auto\+Resize}} ()
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a49c09449ffef91d95dea44061b3b4c21}{Set\+Active}} (bool active)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a045debd24966944cf641dcf8f0366c77}{Is\+Active}} ()
 \item 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer}{Geometry\+Buffer\+::\+G\+Buffer}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a23673bed2b417962168e0bc5b8b37eb3}{Get\+G\+Buffer}} ()
 \item 
@@ -97,6 +106,12 @@ virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_aca8086ce2a9f8d830410695c98bdda27}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_aca8086ce2a9f8d830410695c98bdda27}} 
 bool {\bfseries m\+Auto\+Resize}
 \item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a93210ef150ee9ab5f880966e4a756c65}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a93210ef150ee9ab5f880966e4a756c65}} 
+bool {\bfseries m\+Active}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a130574e41ab5c5e4b9ed93d15ff467e7}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a130574e41ab5c5e4b9ed93d15ff467e7}} 
+\mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Camera\+Targets}} {\bfseries m\+Render\+Target}
+\item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_affc440b1a52ac342e462290c7bccf369}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_affc440b1a52ac342e462290c7bccf369}} 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_data_1_1_render_buffers_data}{Geometry\+Render\+Data\+::\+Render\+Buffers\+Data}} $\ast$ {\bfseries mp\+G\+Buffer\+Data}
 \item 
@@ -115,11 +130,11 @@ std\+::unordered\+\_\+set$<$ int $>$ {\bfseries m\+Render\+Groups}
 Class that calculates projection matrices, and holds information for render steps, post processes and the geometry buffer. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a56a7538e5e5d2141832824bba448e271}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a56a7538e5e5d2141832824bba448e271}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_ad83b44011bb54382c3d99b2d936a27f9}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_ad83b44011bb54382c3d99b2d936a27f9}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera@{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera}!Camera@{Camera}}
 \index{Camera@{Camera}!GeometryEngine::GeometryWorldItem::GeometryCamera::Camera@{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera}}
 \subsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&}]{viewport,  }\item[{bool}]{auto\+Resize = {\ttfamily true},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&}]{viewport,  }\item[{bool}]{auto\+Resize = {\ttfamily true},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Camera\+Targets}} \&}]{target = {\ttfamily CameraTargets\+:\+:CAM1},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
 
 Constructor. F\+AQ\+: Scaling the camera scales the whole coordinate system, be careful with it 
 \begin{DoxyParams}{Parameters}
@@ -132,6 +147,8 @@ Constructor. F\+AQ\+: Scaling the camera scales the whole coordinate system, be 
 {\em rot} & Initial rotaion of the item \\
 \hline
 {\em scale} & Initial scale to be applied to this item model \\
+\hline
+{\em target} & Render target for the camera \\
 \hline
 {\em parent} & Pointer to this items parent item, nullptr if none. \\
 \hline
@@ -342,6 +359,15 @@ Inserts a post process into a certain position within the post process list. Pos
 \begin{DoxyReturn}{Returns}
 true if pos $<$ list.\+size false otherwise 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a045debd24966944cf641dcf8f0366c77}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a045debd24966944cf641dcf8f0366c77}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera@{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera}!IsActive@{IsActive}}
+\index{IsActive@{IsActive}!GeometryEngine::GeometryWorldItem::GeometryCamera::Camera@{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera}}
+\subsubsection{\texorpdfstring{IsActive()}{IsActive()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+::\+Is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether if the camera is active or not. All cameras are active by default. \begin{DoxyReturn}{Returns}
+True if the camera is active false otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a48e1e7bfc2aea19d21ecf5a311815740}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a48e1e7bfc2aea19d21ecf5a311815740}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera@{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera}!IsAutoResize@{IsAutoResize}}
 \index{IsAutoResize@{IsAutoResize}!GeometryEngine::GeometryWorldItem::GeometryCamera::Camera@{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera}}
@@ -393,17 +419,39 @@ Removes this camera from a render group. Cameras only render objects contained i
 \begin{DoxyReturn}{Returns}
 bool true if the object was contained in the render group 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a49c09449ffef91d95dea44061b3b4c21}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a49c09449ffef91d95dea44061b3b4c21}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera@{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera}!SetActive@{SetActive}}
+\index{SetActive@{SetActive}!GeometryEngine::GeometryWorldItem::GeometryCamera::Camera@{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera}}
+\subsubsection{\texorpdfstring{SetActive()}{SetActive()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+::\+Set\+Active (\begin{DoxyParamCaption}\item[{bool}]{active }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the camera as active or unactive. All cameras are active by default. Unactive cameras won\textquotesingle{}t be rendered at all and no calculations involving the camera will take place. 
+\begin{DoxyParams}{Parameters}
+{\em active} & New state for the camera \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_acf991463c9975a3b0dd047bb73a7dc95}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_acf991463c9975a3b0dd047bb73a7dc95}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera@{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera}!SetBoundaries@{SetBoundaries}}
 \index{SetBoundaries@{SetBoundaries}!GeometryEngine::GeometryWorldItem::GeometryCamera::Camera@{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera}}
 \subsubsection{\texorpdfstring{SetBoundaries()}{SetBoundaries()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+::\+Set\+Boundaries (\begin{DoxyParamCaption}\item[{G\+Ldouble}]{z\+Near,  }\item[{G\+Ldouble}]{z\+Far }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+::\+Set\+Boundaries (\begin{DoxyParamCaption}\item[{G\+Ldouble}]{z\+Near,  }\item[{G\+Ldouble}]{z\+Far }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Sets new values for the z coordinate limits, but does not update the projection matrix inmediately 
 \begin{DoxyParams}{Parameters}
 {\em z\+Near} & Nearest z coordinate to be rendered \\
 \hline
 {\em z\+Far} & Farthest z coordinate to be rendered \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a4a36e63be866e42068e479bb8eb7c957}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a4a36e63be866e42068e479bb8eb7c957}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera@{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera}!SetRenderTarget@{SetRenderTarget}}
+\index{SetRenderTarget@{SetRenderTarget}!GeometryEngine::GeometryWorldItem::GeometryCamera::Camera@{GeometryEngine::GeometryWorldItem::GeometryCamera::Camera}}
+\subsubsection{\texorpdfstring{SetRenderTarget()}{SetRenderTarget()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera\+::\+Set\+Render\+Target (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_a3766848bae97ff8203fa26907ac359ef}{Camera\+Targets}} \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets the camera render target 
+\begin{DoxyParams}{Parameters}
+{\em target} & New render target for the camera \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a96954629a05eba955adc1dff2df1fbdb}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera_a96954629a05eba955adc1dff2df1fbdb}} 
