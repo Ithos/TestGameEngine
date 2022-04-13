@@ -1,0 +1,62 @@
+\hypertarget{class_geometry_engine_1_1_stats_manager}{}\section{Geometry\+Engine\+::Stats\+Manager Class Reference}
+\label{class_geometry_engine_1_1_stats_manager}\index{GeometryEngine::StatsManager@{GeometryEngine::StatsManager}}
+
+
+Singleton that manages staticstics of the engine.  
+
+
+
+
+{\ttfamily \#include $<$Stats\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_stats_manager_a7cafa3df522a5e8d3fa7cfce8d4a7e1e}\label{class_geometry_engine_1_1_stats_manager_a7cafa3df522a5e8d3fa7cfce8d4a7e1e}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_stats_manager_a7cafa3df522a5e8d3fa7cfce8d4a7e1e}{On\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em Method that updates the statistics that depend on the graphic tick. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_stats_manager_ade8036883452fb26f29602899ad6f221}\label{class_geometry_engine_1_1_stats_manager_ade8036883452fb26f29602899ad6f221}} 
+double \mbox{\hyperlink{class_geometry_engine_1_1_stats_manager_ade8036883452fb26f29602899ad6f221}{Get\+F\+PS}} ()
+\begin{DoxyCompactList}\small\item\em Returns the last measured number of F\+PS. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_stats_manager_a58da2b7e3a2520e954ccb48e840edd92}\label{class_geometry_engine_1_1_stats_manager_a58da2b7e3a2520e954ccb48e840edd92}} 
+double \mbox{\hyperlink{class_geometry_engine_1_1_stats_manager_a58da2b7e3a2520e954ccb48e840edd92}{Get\+Frame\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Read the last measured frame time in milliseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_stats_manager_a86502469855289c2792d328a76e31e59}\label{class_geometry_engine_1_1_stats_manager_a86502469855289c2792d328a76e31e59}} 
+static \mbox{\hyperlink{class_geometry_engine_1_1_stats_manager}{Stats\+Manager}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_stats_manager_a86502469855289c2792d328a76e31e59}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Returns the pointer to the singleton. It builds the object if the singleton hasn\textquotesingle{}t been built before. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_stats_manager_ac26db54497418525b18a687aab37596a}\label{class_geometry_engine_1_1_stats_manager_ac26db54497418525b18a687aab37596a}} 
+static void \mbox{\hyperlink{class_geometry_engine_1_1_stats_manager_ac26db54497418525b18a687aab37596a}{Release}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the pointer to the singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_stats_manager_a9f4a73fc373b43709b7fd9f39e5fd244}\label{class_geometry_engine_1_1_stats_manager_a9f4a73fc373b43709b7fd9f39e5fd244}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_stats_manager_a9f4a73fc373b43709b7fd9f39e5fd244}{Stats\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_stats_manager_acf87c19aa2cf11abf017ff807872f139}\label{class_geometry_engine_1_1_stats_manager_acf87c19aa2cf11abf017ff807872f139}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_stats_manager_acf87c19aa2cf11abf017ff807872f139}{$\sim$\+Stats\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_stats_manager_aee8d5fa0c0086e34da22581d51e6ad50}\label{class_geometry_engine_1_1_stats_manager_aee8d5fa0c0086e34da22581d51e6ad50}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure}{Geometry\+Statistics\+::\+F\+P\+S\+Measure}} $\ast$ {\bfseries mp\+F\+P\+S\+Measure}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_stats_manager_afe8def61bb479e7b17cba99f5fdd5b3f}\label{class_geometry_engine_1_1_stats_manager_afe8def61bb479e7b17cba99f5fdd5b3f}} 
+static \mbox{\hyperlink{class_geometry_engine_1_1_stats_manager}{Stats\+Manager}} $\ast$ {\bfseries mp\+Instance} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Singleton that manages staticstics of the engine. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/Stats\+Manager.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/Stats\+Manager.\+cpp\end{DoxyCompactItemize}

@@ -15,6 +15,7 @@ var searchData=
   ['geometryrenderdata',['GeometryRenderData',['../namespace_geometry_engine_1_1_geometry_render_data.html',1,'GeometryEngine']]],
   ['geometryrenderstep',['GeometryRenderStep',['../namespace_geometry_engine_1_1_geometry_render_step.html',1,'GeometryEngine']]],
   ['geometryscene',['GeometryScene',['../namespace_geometry_engine_1_1_geometry_scene.html',1,'GeometryEngine']]],
+  ['geometrystatistics',['GeometryStatistics',['../namespace_geometry_engine_1_1_geometry_statistics.html',1,'GeometryEngine']]],
   ['geometryworlditem',['GeometryWorldItem',['../namespace_geometry_engine_1_1_geometry_world_item.html',1,'GeometryEngine']]],
   ['lightutils',['LightUtils',['../namespace_geometry_engine_1_1_light_utils.html',1,'GeometryEngine']]]
 ];

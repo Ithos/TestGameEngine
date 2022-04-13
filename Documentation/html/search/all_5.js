@@ -10,5 +10,6 @@ var searchData=
   ['finishsetup',['FinishSetup',['../class_geometry_engine_1_1_geometry_gl_setup_1_1_gl_setup.html#a6233d780b8ba17d9fd26f2aef0df26aa',1,'GeometryEngine::GeometryGlSetup::GlSetup::FinishSetup()'],['../class_geometry_engine_1_1_geometry_gl_setup_1_1_initial_setup.html#a4ba4e34bcc09a800ab98dbe3181f1263',1,'GeometryEngine::GeometryGlSetup::InitialSetup::FinishSetup()']]],
   ['finishshadowstep',['finishShadowStep',['../class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#aeedeb98164bebcb7c1cef69e529835e4',1,'GeometryEngine::GeometryRenderStep::ShadowedLightingPass']]],
   ['finishstencilpass',['finishStencilPass',['../class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#aa809dc069c363993224df44cf44842bb',1,'GeometryEngine::GeometryRenderStep::LightingPass']]],
-  ['finishstep',['finishStep',['../class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a980473c9d2e2e77ebdce9e56454f3d3f',1,'GeometryEngine::GeometryRenderStep::LightingPass']]]
+  ['finishstep',['finishStep',['../class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a980473c9d2e2e77ebdce9e56454f3d3f',1,'GeometryEngine::GeometryRenderStep::LightingPass']]],
+  ['fpsmeasure',['FPSMeasure',['../class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure.html',1,'GeometryEngine::GeometryStatistics::FPSMeasure'],['../class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure.html#ab64a1b8dda77ae59c26500a206e537c8',1,'GeometryEngine::GeometryStatistics::FPSMeasure::FPSMeasure()']]]
 ];

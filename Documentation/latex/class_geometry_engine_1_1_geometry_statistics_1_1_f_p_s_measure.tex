@@ -1,0 +1,53 @@
+\hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure}{}\section{Geometry\+Engine\+::Geometry\+Statistics\+::F\+P\+S\+Measure Class Reference}
+\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure}\index{GeometryEngine::GeometryStatistics::FPSMeasure@{GeometryEngine::GeometryStatistics::FPSMeasure}}
+
+
+Class that measures the F\+PS at which the engine is running.  
+
+
+
+
+{\ttfamily \#include $<$F\+P\+S\+Measure.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ab64a1b8dda77ae59c26500a206e537c8}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ab64a1b8dda77ae59c26500a206e537c8}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ab64a1b8dda77ae59c26500a206e537c8}{F\+P\+S\+Measure}} (\mbox{\hyperlink{class_geometry_engine_1_1_stats_manager}{Geometry\+Engine\+::\+Stats\+Manager}} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ad090bb89ad6735357cb6afd26bdf9b67}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ad090bb89ad6735357cb6afd26bdf9b67}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ad090bb89ad6735357cb6afd26bdf9b67}{$\sim$\+F\+P\+S\+Measure}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_af37048cac708cc417dd42a8641b90d6e}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_af37048cac708cc417dd42a8641b90d6e}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_af37048cac708cc417dd42a8641b90d6e}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Update the F\+PS measure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ac645a9506a11f939a81009adbf86d9ec}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ac645a9506a11f939a81009adbf86d9ec}} 
+double \mbox{\hyperlink{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ac645a9506a11f939a81009adbf86d9ec}{Get\+Frame\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Read the last measured frame time in milliseconds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a9d94c3f7eac40f099794933e2785e440}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a9d94c3f7eac40f099794933e2785e440}} 
+double \mbox{\hyperlink{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a9d94c3f7eac40f099794933e2785e440}{Get\+F\+PS}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the F\+PS value from the last measured frame time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a63a8ef87b100ab333a6e9a88d174d54c}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a63a8ef87b100ab333a6e9a88d174d54c}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_stats_manager}{Geometry\+Engine\+::\+Stats\+Manager}} $\ast$ {\bfseries mp\+Parent}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a041e1ca2802c707e4ab86eb6661bea48}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a041e1ca2802c707e4ab86eb6661bea48}} 
+int {\bfseries m\+Num\+Frames}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a9a1a2c6ed96cf48368eaa386257037ea}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a9a1a2c6ed96cf48368eaa386257037ea}} 
+Q\+Time $\ast$ {\bfseries m\+Timer}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a3b8bfcb47b470184e4aa4d4d78ea6f40}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a3b8bfcb47b470184e4aa4d4d78ea6f40}} 
+double {\bfseries m\+Frame\+Time}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that measures the F\+PS at which the engine is running. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Statistics/F\+P\+S\+Measure.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Statistics/F\+P\+S\+Measure.\+cpp\end{DoxyCompactItemize}
