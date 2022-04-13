@@ -270,6 +270,8 @@
     <ClInclude Include="Scenes\MultiViewportScene.h" />
     <ClInclude Include="Scenes\PostProcessScene.h" />
     <ClInclude Include="Scenes\TransparentGeometryScene.h" />
+    <ClInclude Include="Statistics\FPSMeasure.h" />
+    <ClInclude Include="StatsManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeometryFactory.cpp" />
@@ -354,6 +356,8 @@
     <ClCompile Include="Scenes\MultiViewportScene.cpp" />
     <ClCompile Include="Scenes\PostProcessScene.cpp" />
     <ClCompile Include="Scenes\TransparentGeometryScene.cpp" />
+    <ClCompile Include="Statistics\FPSMeasure.cpp" />
+    <ClCompile Include="StatsManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.vcxproj">

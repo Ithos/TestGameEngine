@@ -4,6 +4,7 @@
 #include <GeometryEngine.h>
 #include <GeometryScene.h>
 #include <SceneManager.h>
+#include <StatsManager.h>
 
 #include <GeometryFactory.h>
 
@@ -178,6 +179,9 @@ namespace Application
 
 	void CWindowApplication::paintGL()
 	{
+
+		mpGeomInstance->GetStatsManager()->OnTick();
+
 		// Draw cube geometry
 		GeometryEngine::GeometryScene::GeometryScene * scene = mpGeomInstance->GetSceneManager()->GetActiveScene();
 
@@ -242,7 +246,9 @@ namespace Application
 		posMap[GeometryEngine::GeometryWorldItem::GeometryCamera::CameraTargets::CAM1] = QVector4D(0.0f, 0.0f, 1.0f, 1.0f);
 		posMap[GeometryEngine::GeometryWorldItem::GeometryCamera::CameraTargets::CAM2] = QVector4D(0.75f, 0.75f, 0.24f, 0.24f);
 
-		GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::MultiViewportScene(engine->GetSceneManager(), posMap);
+		//GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::MultiViewportScene(engine->GetSceneManager(), posMap);
+
+		GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::TransparentGeometryScene(engine->GetSceneManager());
 
 		testCube = GeometryEngine::GeometryFactory::CreateCube(
 			GeometryEngine::GeometryFactory::CreateAlphaTextureMaterial(

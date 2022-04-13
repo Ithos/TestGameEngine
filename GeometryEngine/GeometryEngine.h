@@ -8,16 +8,20 @@
 namespace GeometryEngine
 {
 	class SceneManager;
+	class StatsManager;
+
 	/// Singleton that gives acces to the GeometryEngine
 	class GeometryEngine
 	{
 	public:
-		/// Returnss the pointer to the singleton. It builds the object if the singleton hasn't been built before.
+		/// Returns the pointer to the singleton. It builds the object if the singleton hasn't been built before.
 		static GeometryEngine* GetInstance();
 		/// Destroys the pointer to the singleton.
 		static void Release();
 		/// Returns a pointer to the scene manager.
 		SceneManager* GetSceneManager() { return mpSceneManager; }
+		/// Returns a pointer to the stats manager.
+		StatsManager* GetStatsManager() { return mpStatsManager; }
 
 	protected:
 		/// Constructor. Calls init()
@@ -31,6 +35,7 @@ namespace GeometryEngine
 
 		static GeometryEngine* mpInstance;
 		SceneManager* mpSceneManager;
+		StatsManager* mpStatsManager;
 	};
 }
 

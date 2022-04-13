@@ -1,4 +1,5 @@
 #include "SceneManager.h"
+#include "StatsManager.h"
 #include "GeometryEngine.h"
 
 GeometryEngine::GeometryEngine* GeometryEngine::GeometryEngine::mpInstance = nullptr;
@@ -35,9 +36,11 @@ GeometryEngine::GeometryEngine::~GeometryEngine()
 
 void GeometryEngine::GeometryEngine::close()
 {
+	mpStatsManager->Release();
 }
 
 void GeometryEngine::GeometryEngine::init()
 {
 	mpSceneManager = new SceneManager();
+	mpStatsManager = StatsManager::GetInstance();
 }
