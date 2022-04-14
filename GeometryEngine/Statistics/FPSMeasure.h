@@ -17,7 +17,7 @@ namespace GeometryEngine
 			/// Constructor
 			FPSMeasure(GeometryEngine::StatsManager* parent);
 			/// Update the FPS measure
-			/// param tick Time since last frame in seconds
+			/// \param tick Time since last frame in seconds
 			void Update(double tick);
 			/// Read the last measured frame time in milliseconds
 			double GetFrameTime() { return mFrameTime; }

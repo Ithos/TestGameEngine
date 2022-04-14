@@ -12,9 +12,8 @@ Singleton that manages staticstics of the engine.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_geometry_engine_1_1_stats_manager_a7cafa3df522a5e8d3fa7cfce8d4a7e1e}\label{class_geometry_engine_1_1_stats_manager_a7cafa3df522a5e8d3fa7cfce8d4a7e1e}} 
-void \mbox{\hyperlink{class_geometry_engine_1_1_stats_manager_a7cafa3df522a5e8d3fa7cfce8d4a7e1e}{On\+Tick}} ()
-\begin{DoxyCompactList}\small\item\em Method that updates the statistics that depend on the graphic tick. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_stats_manager_a6a890829fb4b7d459b3a4d9e03864dd9}{On\+Tick}} (double tick)
+\item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_stats_manager_ade8036883452fb26f29602899ad6f221}\label{class_geometry_engine_1_1_stats_manager_ade8036883452fb26f29602899ad6f221}} 
 double \mbox{\hyperlink{class_geometry_engine_1_1_stats_manager_ade8036883452fb26f29602899ad6f221}{Get\+F\+PS}} ()
 \begin{DoxyCompactList}\small\item\em Returns the last measured number of F\+PS. \end{DoxyCompactList}\item 
@@ -55,6 +54,20 @@ static \mbox{\hyperlink{class_geometry_engine_1_1_stats_manager}{Stats\+Manager}
 
 \subsection{Detailed Description}
 Singleton that manages staticstics of the engine. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_stats_manager_a6a890829fb4b7d459b3a4d9e03864dd9}\label{class_geometry_engine_1_1_stats_manager_a6a890829fb4b7d459b3a4d9e03864dd9}} 
+\index{GeometryEngine::StatsManager@{GeometryEngine::StatsManager}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!GeometryEngine::StatsManager@{GeometryEngine::StatsManager}}
+\subsubsection{\texorpdfstring{OnTick()}{OnTick()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Stats\+Manager\+::\+On\+Tick (\begin{DoxyParamCaption}\item[{double}]{tick }\end{DoxyParamCaption})}
+
+Method that updates the statistics that depend on the graphic tick 
+\begin{DoxyParams}{Parameters}
+{\em tick} & Time since last frame in seconds \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

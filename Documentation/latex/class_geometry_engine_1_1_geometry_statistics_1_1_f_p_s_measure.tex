@@ -15,12 +15,8 @@ Class that measures the F\+PS at which the engine is running.
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ab64a1b8dda77ae59c26500a206e537c8}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ab64a1b8dda77ae59c26500a206e537c8}} 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ab64a1b8dda77ae59c26500a206e537c8}{F\+P\+S\+Measure}} (\mbox{\hyperlink{class_geometry_engine_1_1_stats_manager}{Geometry\+Engine\+::\+Stats\+Manager}} $\ast$parent)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ad090bb89ad6735357cb6afd26bdf9b67}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ad090bb89ad6735357cb6afd26bdf9b67}} 
-virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ad090bb89ad6735357cb6afd26bdf9b67}{$\sim$\+F\+P\+S\+Measure}} ()
-\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_af37048cac708cc417dd42a8641b90d6e}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_af37048cac708cc417dd42a8641b90d6e}} 
-void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_af37048cac708cc417dd42a8641b90d6e}{Update}} ()
-\begin{DoxyCompactList}\small\item\em Update the F\+PS measure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_af6a9254c6b4b0fdf327b716d490a8d67}{Update}} (double tick)
+\item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ac645a9506a11f939a81009adbf86d9ec}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ac645a9506a11f939a81009adbf86d9ec}} 
 double \mbox{\hyperlink{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ac645a9506a11f939a81009adbf86d9ec}{Get\+Frame\+Time}} ()
 \begin{DoxyCompactList}\small\item\em Read the last measured frame time in milliseconds. \end{DoxyCompactList}\item 
@@ -36,8 +32,8 @@ double \mbox{\hyperlink{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a041e1ca2802c707e4ab86eb6661bea48}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a041e1ca2802c707e4ab86eb6661bea48}} 
 int {\bfseries m\+Num\+Frames}
 \item 
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a9a1a2c6ed96cf48368eaa386257037ea}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a9a1a2c6ed96cf48368eaa386257037ea}} 
-Q\+Time $\ast$ {\bfseries m\+Timer}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ac0cf5348a916096260708a5adf420d43}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_ac0cf5348a916096260708a5adf420d43}} 
+double {\bfseries m\+Time}
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a3b8bfcb47b470184e4aa4d4d78ea6f40}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_a3b8bfcb47b470184e4aa4d4d78ea6f40}} 
 double {\bfseries m\+Frame\+Time}
@@ -46,6 +42,20 @@ double {\bfseries m\+Frame\+Time}
 
 \subsection{Detailed Description}
 Class that measures the F\+PS at which the engine is running. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_af6a9254c6b4b0fdf327b716d490a8d67}\label{class_geometry_engine_1_1_geometry_statistics_1_1_f_p_s_measure_af6a9254c6b4b0fdf327b716d490a8d67}} 
+\index{GeometryEngine::GeometryStatistics::FPSMeasure@{GeometryEngine::GeometryStatistics::FPSMeasure}!Update@{Update}}
+\index{Update@{Update}!GeometryEngine::GeometryStatistics::FPSMeasure@{GeometryEngine::GeometryStatistics::FPSMeasure}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Statistics\+::\+F\+P\+S\+Measure\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{tick }\end{DoxyParamCaption})}
+
+Update the F\+PS measure 
+\begin{DoxyParams}{Parameters}
+{\em tick} & Time since last frame in seconds \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
