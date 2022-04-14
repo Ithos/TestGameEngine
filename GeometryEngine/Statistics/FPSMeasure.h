@@ -3,8 +3,6 @@
 #ifndef FPSMEASURE_H
 #define FPSMEASURE_H
 
-#include <QTime>
-
 namespace GeometryEngine
 {
 	class StatsManager;
@@ -18,10 +16,9 @@ namespace GeometryEngine
 		public:
 			/// Constructor
 			FPSMeasure(GeometryEngine::StatsManager* parent);
-			/// Destructor
-			virtual ~FPSMeasure();
 			/// Update the FPS measure
-			void Update();
+			/// param tick Time since last frame in seconds
+			void Update(double tick);
 			/// Read the last measured frame time in milliseconds
 			double GetFrameTime() { return mFrameTime; }
 			/// Calculates the FPS value from the last measured frame time
@@ -30,7 +27,7 @@ namespace GeometryEngine
 		protected:
 			GeometryEngine::StatsManager* mpParent;
 			int mNumFrames;
-			QTime* mTimer;
+			double mTime;
 			double mFrameTime;
 
 		};

@@ -22,9 +22,9 @@ void GeometryEngine::StatsManager::Release()
 	}
 }
 
-void GeometryEngine::StatsManager::OnTick()
+void GeometryEngine::StatsManager::OnTick(double tick)
 {
-	mpFPSMeasure->Update();
+	mpFPSMeasure->Update(tick);
 }
 
 double GeometryEngine::StatsManager::GetFPS()

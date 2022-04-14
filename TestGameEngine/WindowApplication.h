@@ -10,6 +10,7 @@
 #include <QQuaternion>
 #include <QVector2D>
 #include <QBasicTimer>
+#include <QTime>
 #include <QOpenGLShaderProgram>
 #include <GeometryEngine.h>
 #include <qmouseevent.h>
@@ -65,7 +66,8 @@ namespace Application
 
 		void initGeometry(GeometryEngine::GeometryEngine* engine);
 
-		QBasicTimer timer;
+		QBasicTimer* mClock;
+		QTime* mTimer;
 		GeometryEngine::GeometryEngine *mpGeomInstance;
 		QVector2D mWindowSize;
 

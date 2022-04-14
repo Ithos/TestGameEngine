@@ -72,6 +72,8 @@ namespace Application
 	{
 		mWindowSize = QVector2D(this->width(), this->height());
 		mpMovementArray = new bool[6]{ false, false, false, false, false, false };
+		mClock = new QBasicTimer();
+		mTimer = new QTime();
 	}
 
 	CWindowApplication::~CWindowApplication()
@@ -81,6 +83,9 @@ namespace Application
 		makeCurrent();
 		GeometryEngine::GeometryEngine::Release();
 		doneCurrent();
+
+		delete mClock;
+		delete mTimer;
 	}
 
 	void CWindowApplication::mousePressEvent(QMouseEvent * e)
@@ -153,8 +158,6 @@ namespace Application
 
 	void CWindowApplication::timerEvent(QTimerEvent * e)
 	{
-		/// TODO -- send tick  -- ///
-
 		update();
 	}
 
@@ -162,8 +165,8 @@ namespace Application
 	{
 		mpGeomInstance = GeometryEngine::GeometryEngine::GetInstance();
 		initGeometry(mpGeomInstance);
-		// Use QBasicTimer because its faster than QTimer
-		timer.start(12, this);
+		mClock->start(0, this);
+		mTimer->start();
 	}
 
 	void CWindowApplication::resizeGL(int w, int h)
@@ -179,13 +182,15 @@ namespace Application
 
 	void CWindowApplication::paintGL()
 	{
+		double tick = mTimer->elapsed() /1000.0;
+		mTimer->restart();
 
-		mpGeomInstance->GetStatsManager()->OnTick();
+		mpGeomInstance->GetStatsManager()->OnTick(tick);
 
 		// Draw cube geometry
 		GeometryEngine::GeometryScene::GeometryScene * scene = mpGeomInstance->GetSceneManager()->GetActiveScene();
 
-		QVector3D rotation = QVector3D(0.0f, 0.3f, 0.0f);
+		QVector3D rotation = QVector3D(0.0f, 15.0f, 0.0f) * tick;
 
 		testCube->Rotate(testCube->ToModelCoordSystem(rotation));
 		testCube2->Rotate(testCube2->ToModelCoordSystem(rotation));
@@ -193,38 +198,38 @@ namespace Application
 
 		if (mpMovementArray[0])
 		{
-			cam->Move(cam->ToModelCoordSystem(QVector3D(0.0, 0.0, -0.2)));
+			cam->Move(cam->ToModelCoordSystem(QVector3D(0.0, 0.0, -13.3) * tick));
 		}
 		if (mpMovementArray[1])
 		{
-			cam->Move(cam->ToModelCoordSystem(QVector3D(0.0, 0.0, 0.2)));
+			cam->Move(cam->ToModelCoordSystem(QVector3D(0.0, 0.0, 13.3) * tick));
 		}
 		if (mpMovementArray[2])
 		{
-			cam->Move(cam->ToModelCoordSystem(QVector3D(-0.2, 0.0, 0.0)));
+			cam->Move(cam->ToModelCoordSystem(QVector3D(-13.3, 0.0, 0.0) * tick));
 		}
 		if (mpMovementArray[3])
 		{
-			cam->Move(cam->ToModelCoordSystem(QVector3D(0.2, 0.0, 0.0)));
+			cam->Move(cam->ToModelCoordSystem(QVector3D(13.3, 0.0, 0.0) * tick));
 		}
 		if (mpMovementArray[4])
 		{
-			cam->Rotate(cam->ToModelCoordSystem(QVector3D(0.0, -0.6, 0.0)));
+			cam->Rotate(cam->ToModelCoordSystem(QVector3D(0.0, -40.0, 0.0) * tick));
 		}
 		if (mpMovementArray[5])
 		{
-			cam->Rotate(cam->ToModelCoordSystem(QVector3D(0.0, 0.6, 0.0)));
+			cam->Rotate(cam->ToModelCoordSystem(QVector3D(0.0, 40.0, 0.0) * tick));
 		}
 
 		//cam->Rotate(rotation);
 		//mainLight->Rotate(mainLight->ToModelCoordSystem(QVector3D(0.3f, 0.0f, 0.0f)));
 
-		static QVector3D mov(0.1f, 0.0f, 0.1f);
-		if (secondLight->GetPosition().z() < -65 || secondLight->GetPosition().x() < -40) mov = QVector3D(0.1f, 0.0f, 0.1f);
-		if (secondLight->GetPosition().z() > 35 || secondLight->GetPosition().x() > 30) mov = QVector3D(-0.1f, 0.0f, -0.1f);
+		static QVector3D mov(5.0f, 0.0f, 5.0f);
+		if (secondLight->GetPosition().z() < -65 || secondLight->GetPosition().x() < -40) mov = QVector3D(5.0f, 0.0f, 5.0f);
+		if (secondLight->GetPosition().z() > 35 || secondLight->GetPosition().x() > 30) mov = QVector3D(-5.0f, 0.0f, -5.0f);
 
-		secondLight->Move(secondLight->ToModelCoordSystem(mov) );
-		lightCube2->Move(lightCube2->ToModelCoordSystem(mov));
+		secondLight->Move(secondLight->ToModelCoordSystem(mov * tick) );
+		lightCube2->Move(lightCube2->ToModelCoordSystem(mov * tick));
 
 		QVector3D nDir(QVector3D(-5.0f, 0.0f, -15.0f) - secondLight->GetPosition());
 		nDir.normalize();
@@ -246,9 +251,9 @@ namespace Application
 		posMap[GeometryEngine::GeometryWorldItem::GeometryCamera::CameraTargets::CAM1] = QVector4D(0.0f, 0.0f, 1.0f, 1.0f);
 		posMap[GeometryEngine::GeometryWorldItem::GeometryCamera::CameraTargets::CAM2] = QVector4D(0.75f, 0.75f, 0.24f, 0.24f);
 
-		//GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::MultiViewportScene(engine->GetSceneManager(), posMap);
+		GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::MultiViewportScene(engine->GetSceneManager(), posMap);
 
-		GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::TransparentGeometryScene(engine->GetSceneManager());
+		//GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::TransparentGeometryScene(engine->GetSceneManager());
 
 		testCube = GeometryEngine::GeometryFactory::CreateCube(
 			GeometryEngine::GeometryFactory::CreateAlphaTextureMaterial(

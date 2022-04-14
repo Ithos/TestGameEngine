@@ -19,7 +19,8 @@ namespace GeometryEngine
 		/// Destroys the pointer to the singleton.
 		static void Release();
 		/// Method that updates the statistics that depend on the graphic tick
-		void OnTick();
+		/// param tick Time since last frame in seconds
+		void OnTick(double tick);
 		/// Returns the last measured number of FPS
 		double GetFPS();
 		/// Read the last measured frame time in milliseconds
