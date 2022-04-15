@@ -64,6 +64,8 @@ namespace GeometryEngine
 				virtual void UpdateModelMatrix(bool updateChildren = false) override;
 
 				///  Resizes the viewport used to calculate the shadowmap
+				/// \param screenWidth New width of the screen in pixels
+				/// \param screenHeight New Height of the screen in pixels
 				virtual void ResizeElements(int screenWidth, int screenHeight) override;
 				///Sets the light direction. This direction is affected by the item rotation
 				void SetDirection(const QVector3D& dir) { mDirection = dir; }

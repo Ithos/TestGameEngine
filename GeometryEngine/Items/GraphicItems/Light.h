@@ -95,7 +95,9 @@ namespace GeometryEngine
 				/// \return Pointer to the light functionalities manager
 				virtual LightUtils::LightComponentManager* GetLightFunctionalities() { return mpFunctionalitiesManager; }
 
-				/// Method to be implemented by child classes. Updates elements when the screen is resized.
+				/// Method called when the viewport is resized to be implemented by child classes. Updates textures used to calculate the lighting.
+				/// \param screenWidth New width of the screen in pixels
+				/// \param screenHeight New Height of the screen in pixels
 				virtual void ResizeElements(int screenWidth, int screenHeight) {}
 				/// Method to obtain light transformation matrices by name
 				/// \return LightingTransformationData pointer, null if the transformation does not exist
