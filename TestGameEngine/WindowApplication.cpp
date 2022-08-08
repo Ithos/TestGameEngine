@@ -154,10 +154,43 @@ namespace Application
 		{
 			mpMovementArray[5] = false;
 		}
+		if (e->key() == Qt::Key_Escape)
+		{
+			this->close();
+		}
+		// Window state tests
+		if (e->key() == Qt::Key_F1)
+		{
+			// NOTE: Full Screen bugs out when set before the first draw
+			if (windowState() != Qt::WindowFullScreen) setWindowState(Qt::WindowFullScreen);
+		}
+		if (e->key() == Qt::Key_F2)
+		{
+			if ( !windowFlags().testFlag(Qt::FramelessWindowHint) )
+			{
+				setWindowFlags(Qt::FramelessWindowHint);
+				setWindowState(Qt::WindowMaximized);
+				// It's necessary to restart the window
+				close();
+				show();
+			}
+		}
+		if (e->key() == Qt::Key_F3)
+		{
+			if (windowState() != Qt::WindowNoState)
+			{
+				setWindowFlags(Qt::Window);
+				setWindowState(Qt::WindowNoState);
+				// It's necessary to restart the window 
+				close();
+				show();
+			}
+		}
 	}
 
 	void CWindowApplication::timerEvent(QTimerEvent * e)
 	{
+		
 		update();
 	}
 
@@ -251,9 +284,9 @@ namespace Application
 		posMap[GeometryEngine::GeometryWorldItem::GeometryCamera::CameraTargets::CAM1] = QVector4D(0.0f, 0.0f, 1.0f, 1.0f);
 		posMap[GeometryEngine::GeometryWorldItem::GeometryCamera::CameraTargets::CAM2] = QVector4D(0.75f, 0.75f, 0.24f, 0.24f);
 
-		GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::MultiViewportScene(engine->GetSceneManager(), posMap);
+		//GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::MultiViewportScene(engine->GetSceneManager(), posMap);
 
-		//GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::TransparentGeometryScene(engine->GetSceneManager());
+		GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::TransparentGeometryScene(engine->GetSceneManager());
 
 		testCube = GeometryEngine::GeometryFactory::CreateCube(
 			GeometryEngine::GeometryFactory::CreateAlphaTextureMaterial(
