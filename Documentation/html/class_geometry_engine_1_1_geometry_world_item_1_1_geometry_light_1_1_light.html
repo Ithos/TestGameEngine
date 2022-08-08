@@ -115,9 +115,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="separator:abffc2b2ce5240b3c21b51020488dba10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a019f1a8457a883454d9c9d4272f7a1d5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_geometry_engine_1_1_light_utils_1_1_light_component_manager.html">LightUtils::LightComponentManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#a019f1a8457a883454d9c9d4272f7a1d5">GetLightFunctionalities</a> ()</td></tr>
 <tr class="separator:a019f1a8457a883454d9c9d4272f7a1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18009ba6ef9c788f3d33d1ebd78a2140"><td class="memItemLeft" align="right" valign="top"><a id="a18009ba6ef9c788f3d33d1ebd78a2140"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#a18009ba6ef9c788f3d33d1ebd78a2140">ResizeElements</a> (int screenWidth, int screenHeight)</td></tr>
-<tr class="memdesc:a18009ba6ef9c788f3d33d1ebd78a2140"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to be implemented by child classes. Updates elements when the screen is resized. <br /></td></tr>
+<tr class="memitem:a18009ba6ef9c788f3d33d1ebd78a2140"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#a18009ba6ef9c788f3d33d1ebd78a2140">ResizeElements</a> (int screenWidth, int screenHeight)</td></tr>
 <tr class="separator:a18009ba6ef9c788f3d33d1ebd78a2140"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a332c999d4f704855683e079d99b563b2"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="class_geometry_engine_1_1_lighting_transformation_data.html">LightingTransformationData</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html#a332c999d4f704855683e079d99b563b2">GetLightTransformationMatrices</a> (LightTransformationMatrices transformation)</td></tr>
 <tr class="separator:a332c999d4f704855683e079d99b563b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -625,6 +623,51 @@ QMatrix4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 </table>
 </div><div class="memdoc">
 <p>Method to obtain light transformation matrices by name </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_geometry_engine_1_1_lighting_transformation_data.html" title="Class that holds inofrmation about the light to be passed to the shader.">LightingTransformationData</a> pointer, null if the transformation does not exist </dd></dl>
+
+</div>
+</div>
+<a id="a18009ba6ef9c788f3d33d1ebd78a2140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18009ba6ef9c788f3d33d1ebd78a2140">&#9670;&nbsp;</a></span>ResizeElements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GeometryEngine::GeometryWorldItem::GeometryLight::Light::ResizeElements </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>screenWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>screenHeight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Method called when the viewport is resized to be implemented by child classes. Updates textures used to calculate the lighting. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">screenWidth</td><td>New width of the screen in pixels </td></tr>
+    <tr><td class="paramname">screenHeight</td><td>New Height of the screen in pixels </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light.html#a3166b61bf08297eddf8b9e867c6d044a">GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight</a>.</p>
 
 </div>
 </div>

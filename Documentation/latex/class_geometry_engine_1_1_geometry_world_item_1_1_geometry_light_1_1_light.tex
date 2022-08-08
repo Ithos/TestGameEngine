@@ -29,9 +29,8 @@ virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_
 \item 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Utils\+::\+Light\+Component\+Manager}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a019f1a8457a883454d9c9d4272f7a1d5}{Get\+Light\+Functionalities}} ()
 \item 
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a18009ba6ef9c788f3d33d1ebd78a2140}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a18009ba6ef9c788f3d33d1ebd78a2140}} 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a18009ba6ef9c788f3d33d1ebd78a2140}{Resize\+Elements}} (int screen\+Width, int screen\+Height)
-\begin{DoxyCompactList}\small\item\em Method to be implemented by child classes. Updates elements when the screen is resized. \end{DoxyCompactList}\item 
+\item 
 virtual const \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}} $\ast$const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a332c999d4f704855683e079d99b563b2}{Get\+Light\+Transformation\+Matrices}} (Light\+Transformation\+Matrices transformation)
 \item 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_af367fa7201ad377a45fdc13e2002c518}{Clone}} () const =0
@@ -221,6 +220,23 @@ Pointer to the light functionalities manager
 Method to obtain light transformation matrices by name \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}} pointer, null if the transformation does not exist 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a18009ba6ef9c788f3d33d1ebd78a2140}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a18009ba6ef9c788f3d33d1ebd78a2140}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::Light@{GeometryEngine::GeometryWorldItem::GeometryLight::Light}!ResizeElements@{ResizeElements}}
+\index{ResizeElements@{ResizeElements}!GeometryEngine::GeometryWorldItem::GeometryLight::Light@{GeometryEngine::GeometryWorldItem::GeometryLight::Light}}
+\subsubsection{\texorpdfstring{ResizeElements()}{ResizeElements()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light\+::\+Resize\+Elements (\begin{DoxyParamCaption}\item[{int}]{screen\+Width,  }\item[{int}]{screen\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Method called when the viewport is resized to be implemented by child classes. Updates textures used to calculate the lighting. 
+\begin{DoxyParams}{Parameters}
+{\em screen\+Width} & New width of the screen in pixels \\
+\hline
+{\em screen\+Height} & New Height of the screen in pixels \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a3166b61bf08297eddf8b9e867c6d044a}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Shadow\+Map\+Light}}.
+
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a108d5b6143e4c55113f7656224f9799f}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a108d5b6143e4c55113f7656224f9799f}} 
 \index{GeometryEngine::GeometryWorldItem::GeometryLight::Light@{GeometryEngine::GeometryWorldItem::GeometryLight::Light}!setProgramParameters@{setProgramParameters}}
 \index{setProgramParameters@{setProgramParameters}!GeometryEngine::GeometryWorldItem::GeometryLight::Light@{GeometryEngine::GeometryWorldItem::GeometryLight::Light}}

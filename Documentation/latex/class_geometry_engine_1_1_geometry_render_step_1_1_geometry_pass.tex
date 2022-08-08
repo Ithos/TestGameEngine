@@ -38,6 +38,8 @@ void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometr
 \begin{DoxyCompactList}\small\item\em Initializes the Open\+Gl pipeline. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a2929c4675eb93efd992739baac565425}{render\+Geometry}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items)
 \item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a7ffab46f648d6a501218086039bb0ab4}{order\+Geometry}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items, std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ \&ordered\+Items)
+\item 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a0e3189d5f441ada51ef31e09f100e270}{draw\+Item}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$item)
 \item 
 bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_af37e4ae472e97482eed93fc443438b2e}{check\+Render\+Groups}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$item)
@@ -119,6 +121,21 @@ Draws an individual item.
 {\em cam} & Pointer to camera to be rendered \\
 \hline
 {\em item} & Item to be rendered \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a7ffab46f648d6a501218086039bb0ab4}\label{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a7ffab46f648d6a501218086039bb0ab4}} 
+\index{GeometryEngine::GeometryRenderStep::GeometryPass@{GeometryEngine::GeometryRenderStep::GeometryPass}!orderGeometry@{orderGeometry}}
+\index{orderGeometry@{orderGeometry}!GeometryEngine::GeometryRenderStep::GeometryPass@{GeometryEngine::GeometryRenderStep::GeometryPass}}
+\subsubsection{\texorpdfstring{orderGeometry()}{orderGeometry()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass\+::order\+Geometry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items,  }\item[{std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ \&}]{ordered\+Items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Orders the geometry items from closest to farthest to the camera to optimize occlusion checks 
+\begin{DoxyParams}{Parameters}
+{\em cam} & Pointer to camera to be rendered \\
+\hline
+{\em items} & Set of items to be ordered \\
+\hline
+{\em orderd\+Items} & Structure where the ordered items will be returned \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_ac3bfd0a3915cd8a8cd7e1bf81157f6ad}\label{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_ac3bfd0a3915cd8a8cd7e1bf81157f6ad}} 
