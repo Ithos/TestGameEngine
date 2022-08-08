@@ -10,29 +10,31 @@ void GeometryEngine::GeometryRenderStep::TransparentGeometryPass::renderGeometry
 {
 	assert(cam->GetGBuffer() != nullptr && "GeometryPass --> No geometry buffer found");
 
-	std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> sortedTransparentItems;
-
 	cam->GetGBuffer()->StartFrame();
 	cam->GetGBuffer()->BindForGeomPass(); // Bind GBuffer
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clear GBuffer
+
+	std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> orderedItems;
+	orderGeometry(cam, items, orderedItems);
+
+	std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> sortedTransparentItems;
 
 	QVector4D viewport = cam->GetViewportSize();
 	if (viewport.z() > 0 && viewport.w())
 	{
 		cam->GetViewport()->CalculateProjectionMatrix();
 
-		for (auto it = items->begin(); it != items->end(); ++it)
+		for (auto it = orderedItems.rbegin(); it != orderedItems.rend(); ++it)
 		{
-			if (!(*it)->GetMaterialPtr()->IsTransparent())
+			GeometryWorldItem::GeometryItem::GeometryItem* item = (*it).second;
+
+			if (!item->GetMaterialPtr()->IsTransparent())
 			{
-				if ((*it)->IsVisible() && checkRenderGroups(cam, (*it))) drawItem(cam, (*it));
+				if (item->IsVisible() && checkRenderGroups(cam, item)) drawItem(cam, item);
 			}
 			else
 			{
-				float distance = (*it)->GetPosition().distanceToPoint(cam->GetPosition());
-				// We don't want to miss items because several sit at the same distance from the camera so we add a little differentiator
-				while (sortedTransparentItems[distance] != nullptr) { distance += 1E-5f; }
-				sortedTransparentItems[distance] = (*it);
+				sortedTransparentItems[(*it).first] = item;
 			}
 		}
 
