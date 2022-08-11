@@ -42,29 +42,14 @@ void main() {
     vec3 WorldPos = texture(mPositionMap, TexCoord).xyz;
     vec3 Normal = texture(mNormalMap, TexCoord).xyz; // Get data from the textures 
 
-    vec3 DiffuseColor = vec3(0.0, 0.0, 0.0);
-
-    if(mUseDiffuse)
-    {
-        DiffuseColor = texture(mDiffuseColorMap, TexCoord).xyz;
-    }
+    vec3 DiffuseColor = mUseDiffuse ? texture(mDiffuseColorMap, TexCoord).xyz : vec3(0.0, 0.0, 0.0);
 
     // Diffuse is the default color any other has to be especific
-    vec3 AmbientColor = DiffuseColor;
-    vec3 ReflectiveColor = DiffuseColor;
-
-    if(mUseAmbient)
-    {
-        AmbientColor = texture(mAmbientColorMap, TexCoord).xyz;
-    }
-
-    if(mUseReflective)
-    {
-        ReflectiveColor = texture(mReflectiveColorMap, TexCoord).xyz;
-    }
+    vec3 AmbientColor = mUseAmbient ? texture(mAmbientColorMap, TexCoord).xyz : DiffuseColor;
+    vec3 ReflectiveColor = mUseReflective ? texture(mReflectiveColorMap, TexCoord).xyz : DiffuseColor;
 
     // Fun with vectors
-    Normal = normalize(Normal);
+    vec3 normNormal = normalize(Normal);
     vec3 lightDir = normalize(mLight.position - WorldPos);
     vec3 viewDir = normalize(mViewPos - WorldPos);
     vec3 halfwayDir = normalize(lightDir + viewDir); 
@@ -75,20 +60,10 @@ void main() {
     float lightAtt = 1.0/( mLight.attenuation.constant + mLight.attenuation.linear * distance + mLight.attenuation.quadratic * distance * distance);
 
     // ambient
+    bool thetaCheck = theta > cos(radians(mLight.maxAngle));
     vec3 ambient = mLight.ambient;
-    vec3 diffuse = vec3(0.0, 0.0, 0.0);
-    vec3 specular = vec3(0.0, 0.0, 0.0);
-
-    if(theta > cos(radians(mLight.maxAngle)))
-    {
-        // diffuse 
-        float diff = max(dot(Normal, lightDir), 0.0);
-        diffuse = mLight.diffuse * diff;
-        
-        // specular
-        float spec = max(dot(Normal, halfwayDir), 0.0);
-        specular = mLight.specular * spec;  
-    }
+    vec3 diffuse = thetaCheck ? mLight.diffuse * max(dot(normNormal, lightDir), 0.0) : vec3(0.0, 0.0, 0.0);
+    vec3 specular = thetaCheck ? mLight.specular * max(dot(normNormal, halfwayDir), 0.0) : vec3(0.0, 0.0, 0.0);
         
     vec3 result = (AmbientColor * ambient) + (DiffuseColor * diffuse) + (ReflectiveColor * specular);
     FragColor = vec4( (result * lightAtt), 1.0);

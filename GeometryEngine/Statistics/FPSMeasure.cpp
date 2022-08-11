@@ -16,7 +16,7 @@ void GeometryEngine::GeometryStatistics::FPSMeasure::Update(double tick)
 		mFrameTime = mTime * 1000.0 / double(mNumFrames);
 		mNumFrames = 0;
 		mTime = 0.0;
-#ifdef _DEBUG
+#if defined( _DEBUG)
 		printf("%f ms/frame\n", mFrameTime);
 #endif // _DEBUG
 
