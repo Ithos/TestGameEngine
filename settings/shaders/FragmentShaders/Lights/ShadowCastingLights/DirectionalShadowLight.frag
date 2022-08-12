@@ -60,6 +60,8 @@ void main() {
     // calculate shadow
     /////////////////////////////////////////////////////////////////
 
+    vec4 fragLightPos = mLightSpaceMatrix * vec4(WorldPos, 1.0);
+
     // perform perspective divide
     vec3 projCoords = fragLightPos.xyz / fragLightPos.w;
 
