@@ -18,6 +18,7 @@ var searchData=
   ['ctestwindow',['CTestWindow',['../class_unit_test_1_1_c_test_window.html',1,'UnitTest']]],
   ['ctgeapplication',['CTGEApplication',['../class_application_1_1_c_t_g_e_application.html',1,'Application']]],
   ['ctranslucentshadowingtest',['CTranslucentShadowingTest',['../class_unit_test_1_1_c_translucent_shadowing_test.html',1,'UnitTest']]],
+  ['ctranslucentshadowsscenetest',['CTranslucentShadowsSceneTest',['../class_unit_test_1_1_c_translucent_shadows_scene_test.html',1,'UnitTest']]],
   ['cube',['Cube',['../class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_cube.html',1,'GeometryEngine::GeometryWorldItem::GeometryItem']]],
   ['custompostprocessstep',['CustomPostProcessStep',['../class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step.html',1,'GeometryEngine::CustomShading']]],
   ['custompostprocessstepinterface',['CustomPostProcessStepInterface',['../class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface.html',1,'GeometryEngine::CustomShading']]],

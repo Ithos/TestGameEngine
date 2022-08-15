@@ -190,7 +190,9 @@ boxfont setfont
 (GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight) cw
 (GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight) cw
 (GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight) cw
+(GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight) cw
 (GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight) cw
+(GeometryEngine::GeometryWorldItem::GeometryLight::TranslucentSpotlight) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
 /yspacing boxheight disty add def
@@ -218,8 +220,10 @@ boundx scalefactor div boundy scalefactor div scale
  (GeometryEngine::GeometryWorldItem::GeometryLight::PointLight) 4.500000 1.000000 box
  (GeometryEngine::GeometryWorldItem::GeometryLight::ShadowMapLight) 5.500000 1.000000 box
  (GeometryEngine::GeometryWorldItem::GeometryLight::Spotlight) 6.500000 1.000000 box
- (GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight) 5.000000 0.000000 box
+ (GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight) 4.000000 0.000000 box
+ (GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight) 5.000000 0.000000 box
  (GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight) 6.000000 0.000000 box
+ (GeometryEngine::GeometryWorldItem::GeometryLight::TranslucentSpotlight) 7.000000 0.000000 box
 
 % ----- relations -----
 
@@ -274,10 +278,14 @@ solid
 solid
 1 5.500000 0.250000 out
 solid
-5.000000 6.000000 1.000000 conn
+4.000000 7.000000 1.000000 conn
 solid
 0 6.500000 1.750000 in
+solid
+0 4.000000 0.750000 in
 solid
 0 5.000000 0.750000 in
 solid
 0 6.000000 0.750000 in
+solid
+0 7.000000 0.750000 in

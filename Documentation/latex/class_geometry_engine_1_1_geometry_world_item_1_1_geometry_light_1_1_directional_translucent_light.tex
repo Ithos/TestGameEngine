@@ -1,0 +1,171 @@
+\hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light}{}\section{Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Light\+::Directional\+Translucent\+Light Class Reference}
+\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light}\index{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight}}
+
+
+Class that defines a directional light that casts dynamic shadows and translucent effects.  
+
+
+
+
+{\ttfamily \#include $<$Directional\+Translucent\+Light.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Geometry\+World\+Item\+::Geometry\+Light\+::Directional\+Translucent\+Light\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a4367b3ef7b69f251dbb702f06e693a94}{Directional\+Translucent\+Light}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&viewport, const Q\+Vector3D \&direction, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$bounding\+Box=nullptr, const Q\+Vector3D \&diffuse=Q\+Vector3D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&ambient=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&specular=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Q\+Vector3\+D \&pos=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), const Q\+Vector3\+D \&rot=\+Q\+Vector3\+D(0.\+0f, 0.\+0f, 0.\+0f), float max\+Shadow\+Bias=0.\+0f, const Q\+Vector3\+D \&scale=\+Q\+Vector3\+D(1.\+0f, 1.\+0f, 1.\+0f), const Light\+Utils\+::\+Light\+Component\+Manager $\ast$const manager=nullptr, World\+Item $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a47fb6ff0f8184afb4eb99b8210f43bce}{Directional\+Translucent\+Light}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light}{Directional\+Translucent\+Light}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a586e52483c53a4fa90cb26dc1f89909b}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a586e52483c53a4fa90cb26dc1f89909b}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a586e52483c53a4fa90cb26dc1f89909b}{$\sim$\+Directional\+Translucent\+Light}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light}{Directional\+Translucent\+Light}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_aca2d4b89caa4a3059922f49ecf81c8d5}{Clone}} () const override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a1814d77e9a240ad3492212f7397ebec2}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a1814d77e9a240ad3492212f7397ebec2}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a1814d77e9a240ad3492212f7397ebec2}{Directional\+Translucent\+Light}} ()
+\begin{DoxyCompactList}\small\item\em Private constructor for object copies. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a0d5d778cb172daa3adae24578b626d5d}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a0d5d778cb172daa3adae24578b626d5d}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a0d5d778cb172daa3adae24578b626d5d}{check\+Stencyl\+Test\+Functionality}} () override
+\begin{DoxyCompactList}\small\item\em Checks if the stencil test functionality exists and removes it from the manager if it does. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_ae22f4e4c731ef204b7319fb9d2254df4}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_ae22f4e4c731ef204b7319fb9d2254df4}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_ae22f4e4c731ef204b7319fb9d2254df4}{init\+Light\+Shaders}} ()
+\begin{DoxyCompactList}\small\item\em Sets the keys for the light shaders. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a3736cc700d4de793b45fe3e05c922bd1}{set\+Program\+Parameters}} (const \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}} \&transform\+Data, const \mbox{\hyperlink{class_geometry_engine_1_1_buffers_info}{Buffers\+Info}} \&buff\+Info, const Q\+Vector3D \&view\+Pos)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a3e178fedac23b432dbcdc03115abec09}{calculate\+Contribution}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Num, unsigned int total\+Index\+Num)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_aec73b781ada9048d5fcd5775c91eaa3e}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light}{Directional\+Translucent\+Light}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class that defines a directional light that casts dynamic shadows and translucent effects. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a4367b3ef7b69f251dbb702f06e693a94}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a4367b3ef7b69f251dbb702f06e693a94}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight}!DirectionalTranslucentLight@{DirectionalTranslucentLight}}
+\index{DirectionalTranslucentLight@{DirectionalTranslucentLight}!GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight}}
+\subsubsection{\texorpdfstring{DirectionalTranslucentLight()}{DirectionalTranslucentLight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Translucent\+Light\+::\+Directional\+Translucent\+Light (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_item_utils_1_1_viewport}{Geometry\+Item\+Utils\+::\+Viewport}} \&}]{viewport,  }\item[{const Q\+Vector3D \&}]{direction,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{bounding\+Box = {\ttfamily nullptr},  }\item[{const Q\+Vector3D \&}]{diffuse = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{ambient = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{specular = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const Q\+Vector3D \&}]{pos = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{const Q\+Vector3D \&}]{rot = {\ttfamily QVector3D(0.0f,~0.0f,~0.0f)},  }\item[{float}]{max\+Shadow\+Bias = {\ttfamily 0.0f},  }\item[{const Q\+Vector3D \&}]{scale = {\ttfamily QVector3D(1.0f,~1.0f,~1.0f)},  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_light_utils_1_1_light_component_manager}{Light\+Utils\+::\+Light\+Component\+Manager}} $\ast$const}]{manager = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_world_item}{World\+Item}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em viewport} & Viewport that will be used for the shadowmap calculation. \\
+\hline
+{\em direction} & light direction vector \\
+\hline
+{\em bounding\+Box} & Geomtry used to render the light. \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} will be applied to every part of the scene that the geometry is drawn on top of. This class expects a 2D bounding geometry that will be rendered in front of the camera, applying the light like a filter. \\
+\hline
+{\em diffuse} & Diffuse component of the light as an rgb vector. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em ambient} & Ambient component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em specular} & Specular component of the light. Each color goes from 0.\+0 to 1.\+0 \\
+\hline
+{\em pos} & Initial position of the item \\
+\hline
+{\em rot} & Initial rotaion of the item \\
+\hline
+{\em m\+Max\+Shadow\+Bias} & Max shadow bias value allowed when calculating dynamic shadow bias. A greater value prevents shadow acne but may cause some shadows disappear suddenly. \\
+\hline
+{\em scale} & Initial scale to be applied to this item model \\
+\hline
+{\em manager} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Light}} functionalities manager, defaults to nullptr. \\
+\hline
+{\em parent} & Pointer to this items parent item, nullptr if none. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a47fb6ff0f8184afb4eb99b8210f43bce}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a47fb6ff0f8184afb4eb99b8210f43bce}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight}!DirectionalTranslucentLight@{DirectionalTranslucentLight}}
+\index{DirectionalTranslucentLight@{DirectionalTranslucentLight}!GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight}}
+\subsubsection{\texorpdfstring{DirectionalTranslucentLight()}{DirectionalTranslucentLight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Translucent\+Light\+::\+Directional\+Translucent\+Light (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light}{Directional\+Translucent\+Light}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Const reference to \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_stencil_test_light}{Stencil\+Test\+Light}} to be copied \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a3e178fedac23b432dbcdc03115abec09}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a3e178fedac23b432dbcdc03115abec09}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight}!calculateContribution@{calculateContribution}}
+\index{calculateContribution@{calculateContribution}!GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight}}
+\subsubsection{\texorpdfstring{calculateContribution()}{calculateContribution()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Translucent\+Light\+::calculate\+Contribution (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Num,  }\item[{unsigned int}]{total\+Index\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Binds shaders and draws. 
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Buf} & Array buffer \\
+\hline
+{\em index\+Buf} & Index\+Buffer \\
+\hline
+{\em total\+Vertex\+Num} & Number of vetices \\
+\hline
+{\em tital\+Index\+Num} & Number of indices \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a58aa2a3520f7aa2b03afcb4123e7530a}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_aca2d4b89caa4a3059922f49ecf81c8d5}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_aca2d4b89caa4a3059922f49ecf81c8d5}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light}{Directional\+Translucent\+Light}}$\ast$ Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Translucent\+Light\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Factory method. Returns a copy of this object. \begin{DoxyReturn}{Returns}
+A copy of this object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light_a48eb6af2e6bb8487568ee4265fbc49ee}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Shadow\+Map\+Light}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_aec73b781ada9048d5fcd5775c91eaa3e}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_aec73b781ada9048d5fcd5775c91eaa3e}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Translucent\+Light\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light}{Directional\+Translucent\+Light}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light}{Shadow\+Map\+Light}} into this object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_shadow_map_light}{Shadow\+Map\+Light}} to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a3736cc700d4de793b45fe3e05c922bd1}\label{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_directional_translucent_light_a3736cc700d4de793b45fe3e05c922bd1}} 
+\index{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight}!setProgramParameters@{setProgramParameters}}
+\index{setProgramParameters@{setProgramParameters}!GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight@{GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight}}
+\subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Directional\+Translucent\+Light\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_lighting_transformation_data}{Lighting\+Transformation\+Data}} \&}]{transform\+Data,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_buffers_info}{Buffers\+Info}} \&}]{buff\+Info,  }\item[{const Q\+Vector3D \&}]{view\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sends parameters to the shaders. 
+\begin{DoxyParams}{Parameters}
+{\em transform\+Data} & Matrices of the light \\
+\hline
+{\em buff\+Info} & Data from the textures of the buffers \\
+\hline
+{\em view\+Pos} & Position of the camera \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light_a108d5b6143e4c55113f7656224f9799f}{Geometry\+Engine\+::\+Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Lights/\+Shadow\+Casting\+Lights/\+Translucent\+Effect\+Lights/Directional\+Translucent\+Light.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Graphic\+Items/\+Lights/\+Shadow\+Casting\+Lights/\+Translucent\+Effect\+Lights/Directional\+Translucent\+Light.\+cpp\end{DoxyCompactItemize}
