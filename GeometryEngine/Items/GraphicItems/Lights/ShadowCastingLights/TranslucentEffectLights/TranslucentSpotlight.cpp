@@ -1,28 +1,27 @@
-#include "../../../CommonItemParameters.h"
-#include "../../../Item Utils/Viewport.h"
-#include "../../../GeometryItem.h"
-#include "ShadowSpotlight.h"
+#include "../../../../CommonItemParameters.h"
+#include "../../../../Item Utils/Viewport.h"
+#include "../../../../GeometryItem.h"
+#include "TranslucentSpotlight.h"
 
-GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::ShadowSpotlight(float maxLightAngle, const QVector3D & attParams, 
-	const GeometryItemUtils::Viewport & viewport, const QVector3D & direction, GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, 
-	const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, float maxShadowBias, const QVector3D & scale, 
-	const LightUtils::LightComponentManager* const manager, WorldItem * parent) :
+GeometryEngine::GeometryWorldItem::GeometryLight::TranslucentSpotlight::TranslucentSpotlight(float maxLightAngle, const QVector3D & attParams, const GeometryItemUtils::Viewport & viewport, 
+	const QVector3D & direction, GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, 
+	const QVector3D & rot, float maxShadowBias, const QVector3D & scale, const LightUtils::LightComponentManager * const manager, WorldItem * parent) : 
 	mAttenuationParameters(attParams), mMaxLightAngle(maxLightAngle), ShadowMapLight(viewport, direction, boundingBox, diffuse, ambient, specular, pos, rot, maxShadowBias, scale, manager, parent)
 {
 	initLight();
 }
 
-GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::~ShadowSpotlight()
+GeometryEngine::GeometryWorldItem::GeometryLight::TranslucentSpotlight::~TranslucentSpotlight()
 {
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::initLightShaders()
+void GeometryEngine::GeometryWorldItem::GeometryLight::TranslucentSpotlight::initLightShaders()
 {
 	mVertexShaderKey = ShadowMapConstants::SPOTLIGHT_SHADOW_LIGHT_VERTEX_SHADER;
-	mFragmentShaderKey = ShadowMapConstants::SPOTLIGHT_SHADOW_LIGHT_FRAGMENT_SHADER;
+	mFragmentShaderKey = ShadowMapConstants::SPOTLIGHT_TRANSLUCENT_SHADOW_LIGHT_FRAGMENT_SHADER;
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::setProgramParameters(const LightingTransformationData & transformData, const BuffersInfo& buffInfo, const QVector3D & viewPos)
+void GeometryEngine::GeometryWorldItem::GeometryLight::TranslucentSpotlight::setProgramParameters(const LightingTransformationData & transformData, const BuffersInfo & buffInfo, const QVector3D & viewPos)
 {
 	assert(mpProgram != nullptr && "Shading program not found");
 	{
@@ -43,6 +42,10 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::setProgr
 		mpProgram->setUniformValue("mReflectiveColorMap", gBuffTexInfo.ReflectiveTexture);
 		mpProgram->setUniformValue("mNormalMap", gBuffTexInfo.NormalTexture);
 		mpProgram->setUniformValue("mShadowMap", tBufferTexInfo.ShadowMapTexture);
+
+		mpProgram->setUniformValue("mSpecularTranslucentMap", tBufferTexInfo.SpecularColorMapTexture);
+		mpProgram->setUniformValue("mDiffuseTranslucentMap", tBufferTexInfo.DiffuseColorMapTexture);
+		mpProgram->setUniformValue("mTranslucentShadowMap", tBufferTexInfo.TranslucentDepthMapTexture);
 
 		mpProgram->setUniformValue("mTextureSize", gBuffTexInfo.TextureSize);
 
@@ -65,7 +68,7 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::setProgr
 	}
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::calculateContribution(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
+void GeometryEngine::GeometryWorldItem::GeometryLight::TranslucentSpotlight::calculateContribution(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	// Tell OpenGL which VBOs to use
 	vertexBuf->bind();
@@ -80,7 +83,7 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::calculat
 	glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::initLight()
+void GeometryEngine::GeometryWorldItem::GeometryLight::TranslucentSpotlight::initLight()
 {
 	GeometryWorldItem::GeometryLight::ShadowMapLight::initLight();
 	if (mpBoundingBox != nullptr)
@@ -91,7 +94,7 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::initLigh
 	}
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::ShadowSpotlight::copy(const ShadowSpotlight & ref)
+void GeometryEngine::GeometryWorldItem::GeometryLight::TranslucentSpotlight::copy(const TranslucentSpotlight & ref)
 {
 	ShadowMapLight::copy(ref);
 	this->mAttenuationParameters = ref.mAttenuationParameters;

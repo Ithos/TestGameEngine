@@ -239,6 +239,7 @@
     <ClInclude Include="TestWindow\TestImplementations\PostProcessTest.h" />
     <ClInclude Include="TestWindow\TestImplementations\ShadowSceneTest.h" />
     <ClInclude Include="TestWindow\TestImplementations\TranslucentShadowingTest.h" />
+    <ClInclude Include="TestWindow\TestImplementations\TranslucentShadowsTest.h" />
     <ClInclude Include="TestWindow\TestWindow.h" />
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +257,7 @@
     <ClCompile Include="TestWindow\TestImplementations\PostProcessTest.cpp" />
     <ClCompile Include="TestWindow\TestImplementations\ShadowSceneTest.cpp" />
     <ClCompile Include="TestWindow\TestImplementations\TranslucentShadowingTest.cpp" />
+    <ClCompile Include="TestWindow\TestImplementations\TranslucentShadowsTest.cpp" />
     <ClCompile Include="TestWindow\TestWindow.cpp" />
   </ItemGroup>
   <ItemGroup>

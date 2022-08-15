@@ -47,10 +47,12 @@ namespace GeometryEngine
 				virtual DirectionalShadowLight* Clone() const override { return new DirectionalShadowLight((*this)); }
 
 			protected:
-				/// Checks if the stencil test funcyionality exists and removes it from the manager if it does
+				/// Private constructor for object copies
+				DirectionalShadowLight() {}
+				/// Checks if the stencil test functionality exists and removes it from the manager if it does
 				virtual void checkStencylTestFunctionality() override;
 				/// Sets the keys for the light shaders
-				virtual void initLightShaders();
+				virtual void initLightShaders() override;
 				/// Sends parameters to the shaders.
 				/// \param transformData Matrices of the light
 				/// \param buffInfo Data from the textures of the buffers

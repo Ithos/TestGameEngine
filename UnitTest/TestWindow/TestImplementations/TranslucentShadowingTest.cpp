@@ -66,11 +66,11 @@ void UnitTest::CTranslucentShadowingTest::InitGeometry(GeometryEngine::GeometryE
 	mpSkyboxCube = GeometryEngine::GeometryFactory::CreateSkyboxCube(GeometryEngine::GeometryMaterial::TextureConstant::TEST_SKYBOX_TEXTURE, 200.0f);
 
 	// lights
-	mpSecondLight = GeometryEngine::GeometryFactory::CreateShadowSpotlight(QVector3D(-5.0f, 10.0f, -15.0f), QVector3D(0.0f, -1.0f, 0.0f),
+	mpSecondLight = GeometryEngine::GeometryFactory::CreateTranslucentSpotlight(QVector3D(-5.0f, 10.0f, -15.0f), QVector3D(0.0f, -1.0f, 0.0f),
 		GeometryEngine::GeometryFactory::CreatePerspectiveViewport(QVector4D(0, 0, mSceneWidth, mSceneHeigth), 120.0f, 1.0f, 0.1f, 100.0f),
 		QVector3D(1.0f, 1.0f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(1.0f, 1.0f, 1.0f), 45.0f, QVector3D(0.1f, 0.1f, 0.01f), QVector3D(0.0f, 0.0f, 0.0f), 0.0003f);
 
-	mpMainLight = GeometryEngine::GeometryFactory::CreateDirectionalShadowLight(QVector3D(5.0f, 30.0f, -15.0f), QVector3D(0.0, -1.0, 0.0),
+	mpMainLight = GeometryEngine::GeometryFactory::CreateDirectionalTranslucentLight(QVector3D(5.0f, 30.0f, -15.0f), QVector3D(0.0, -1.0, 0.0),
 		GeometryEngine::GeometryFactory::CreateOrtographicViewport(QVector4D(0, 0, mSceneWidth, mSceneHeigth), QRect(-mSceneWidth / 24, -mSceneHeigth / 24,
 			mSceneWidth / 12, mSceneHeigth / 12), 0.1f, 1000.0f),
 		QVector3D(0.1f, 0.1f, 0.1f),

@@ -11,14 +11,14 @@
       <Extensions>moc;h;cpp</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Statistics">
+      <UniqueIdentifier>{a62c7a30-70d5-4ae0-85ea-a2f124731e35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{1bd13793-6d4b-4f40-ad47-fb9378c21074}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GeometryEngine.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeometryScene.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="Items\Geometries\Cube.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -27,9 +27,6 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="Items\GraphicItems\Camera.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="Items\GraphicItems\Light.h">
@@ -278,9 +275,6 @@
     <ClInclude Include="Items\CommonInerfaces\PostProcessSteps\CallSecondStep.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeometryFactory.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="Render Utils\IBuffer.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -299,20 +293,22 @@
     <ClInclude Include="Render Utils\RenderSteps\ScreenRenderPass.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="StatsManager.h">
+    <ClInclude Include="GeometryEngine.h" />
+    <ClInclude Include="GeometryFactory.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="GeometryScene.h" />
+    <ClInclude Include="StatsManager.h" />
+    <ClInclude Include="Statistics\FPSMeasure.h">
+      <Filter>Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\TranslucentEffectLights\DirectionalTranslucentLight.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="Statistics\FPSMeasure.h">
+    <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\TranslucentEffectLights\TranslucentSpotlight.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GeometryEngine.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeometryScene.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
     <ClCompile Include="Items\GeometryItem.cpp" />
     <ClCompile Include="Items\WorldItem.cpp">
       <Filter>Generated Files</Filter>
@@ -321,9 +317,6 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Items\Geometries\Cube.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Items\GraphicItems\Light.cpp">
@@ -536,9 +529,6 @@
     <ClCompile Include="Items\CommonInerfaces\CustomPostProcessStep.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeometryFactory.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
     <ClCompile Include="Items\GraphicItems\CameraUtils\ImgUtils.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
@@ -551,10 +541,18 @@
     <ClCompile Include="Render Utils\RenderSteps\ScreenRenderPass.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="StatsManager.cpp">
+    <ClCompile Include="GeometryEngine.cpp" />
+    <ClCompile Include="GeometryFactory.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="GeometryScene.cpp" />
+    <ClCompile Include="StatsManager.cpp" />
+    <ClCompile Include="Statistics\FPSMeasure.cpp">
+      <Filter>Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\TranslucentEffectLights\DirectionalTranslucentLight.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="Statistics\FPSMeasure.cpp">
+    <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\TranslucentEffectLights\TranslucentSpotlight.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>

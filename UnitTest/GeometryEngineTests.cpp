@@ -8,6 +8,7 @@
 #include "TestWindow/TestImplementations/BasicSceneTest.h"
 #include "TestWindow\TestImplementations\PostProcessTest.h"
 #include "TestWindow\TestImplementations\ShadowSceneTest.h"
+#include "TestWindow\TestImplementations\TranslucentShadowsTest.h"
 #include "TestWindow\TestImplementations\TranslucentShadowingTest.h"
 #include "TestWindow\TestImplementations\MultiViewportSceneTest.h"
 
@@ -59,6 +60,12 @@ namespace UnitTest
 		TEST_METHOD(ShadowSceneTest)
 		{
 			executeSceneTest<CShadowSceneTest>();
+		}
+
+		/// Test for a scene with dynamic shadows
+		TEST_METHOD(TranslucentShadowsSceneTest)
+		{
+			executeSceneTest<CTranslucentShadowsSceneTest>();
 		}
 
 		/// Test for a scene with dynamic translucent illumination and transparencies

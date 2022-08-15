@@ -337,12 +337,12 @@ namespace Application
 		doublePassManager.AddNewPostProcessStep< GeometryEngine::CustomShading::CallSecondStep <GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess> >
 			(GeometryEngine::CustomShading::CustomPostProcessSteps::SECOND_STEP);
 
-		secondLight = GeometryEngine::GeometryFactory::CreateShadowSpotlight(QVector3D(-5.0f, 10.0f, -15.0f), QVector3D(0.0f, -1.0f, 0.0f),
+		secondLight = GeometryEngine::GeometryFactory::CreateTranslucentSpotlight(QVector3D(-5.0f, 10.0f, -15.0f), QVector3D(0.0f, -1.0f, 0.0f),
 			GeometryEngine::GeometryFactory::CreatePerspectiveViewport(QVector4D(0, 0, this->width(), this->height()), 120.0f, 1.0f, 0.1f, 100.0f),
 			QVector3D(1.0f, 1.0f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f), QVector3D(1.0f, 1.0f, 1.0f), 45.0f, QVector3D(0.1f, 0.1f, 0.01f), QVector3D(0.0f, 0.0f, 0.0f), 0.0003f);
 
 
-		mainLight = GeometryEngine::GeometryFactory::CreateDirectionalShadowLight(QVector3D(5.0f, 30.0f, -15.0f), QVector3D(0.0, -1.0, 0.0),
+		mainLight = GeometryEngine::GeometryFactory::CreateDirectionalTranslucentLight(QVector3D(5.0f, 30.0f, -15.0f), QVector3D(0.0, -1.0, 0.0),
 			GeometryEngine::GeometryFactory::CreateOrtographicViewport(QVector4D(0, 0, this->width(), this->height()), QRect(-this->width() / 24, -this->height() / 24,
 				this->width() / 12, this->height() / 12), 0.1f, 1000.0f),
 			QVector3D(0.1f, 0.1f, 0.1f),

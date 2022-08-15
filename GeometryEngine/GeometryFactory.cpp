@@ -29,6 +29,8 @@
 #include "Items\GraphicItems\Lights\Spotlight.h"
 #include "Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.h"
 #include "Items\GraphicItems\Lights\ShadowCastingLights\DirectionalShadowLight.h"
+#include "Items\GraphicItems\Lights\ShadowCastingLights\TranslucentEffectLights\TranslucentSpotlight.h"
+#include "Items\GraphicItems\Lights\ShadowCastingLights\TranslucentEffectLights\DirectionalTranslucentLight.h"
 #include "Items\Item Utils\Viewports\OrtographicViewport.h"
 #include "Items\Item Utils\Viewports\PerspectiveViewport.h"
 #include "Items\GraphicItems\Cameras\DeferredShadingCamera.h"
@@ -223,7 +225,22 @@ GeometryEngine::GeometryWorldItem::GeometryLight::Light * GeometryEngine::Geomet
 	return tmp;
 }
 
-GeometryEngine::GeometryWorldItem::GeometryLight::Light * GeometryEngine::GeometryFactory::CreateDirectionalShadowLight(const QVector3D & pos, const QVector3D & direction, 
+GeometryEngine::GeometryWorldItem::GeometryLight::Light * GeometryEngine::GeometryFactory::CreateTranslucentSpotlight(const QVector3D & pos, const QVector3D & direction, const GeometryItemUtils::Viewport & viewport, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, float maxLightAngle, const QVector3D & attParams, const QVector3D & rot, float maxShadowBias, GeometryWorldItem::WorldItem * parent)
+{
+	return new GeometryEngine::GeometryWorldItem::GeometryLight::TranslucentSpotlight(maxLightAngle, attParams, viewport, direction,
+		&GeometryEngine::GeometryWorldItem::GeometryItem::Sphere(GeometryMaterial::ColorMaterial()), diffuse, ambient, specular, pos, rot, maxShadowBias,
+		QVector3D(1.0f, 1.0f, 1.0f), nullptr, parent);
+}
+
+GeometryEngine::GeometryWorldItem::GeometryLight::Light * GeometryEngine::GeometryFactory::CreateTranslucentSpotlight(const QVector3D & pos, const QVector3D & direction, GeometryItemUtils::Viewport * viewport, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, float maxLightAngle, const QVector3D & attParams, const QVector3D & rot, float maxShadowBias, GeometryWorldItem::WorldItem * parent)
+{
+	GeometryEngine::GeometryWorldItem::GeometryLight::Light* tmp = CreateTranslucentSpotlight(pos, direction, *viewport, diffuse, ambient, specular, maxLightAngle,
+		attParams, rot, maxShadowBias, parent);
+	delete viewport;
+	return tmp;
+}
+
+GeometryEngine::GeometryWorldItem::GeometryLight::Light * GeometryEngine::GeometryFactory::CreateDirectionalShadowLight(const QVector3D & pos, const QVector3D & direction,
 	const GeometryEngine::GeometryItemUtils::Viewport & viewport, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, 
 	const QVector3D & rot, float maxShadowBias, float lightViewportSize, GeometryWorldItem::WorldItem * parent)
 {
@@ -237,6 +254,21 @@ GeometryEngine::GeometryWorldItem::GeometryLight::Light * GeometryEngine::Geomet
 	GeometryWorldItem::WorldItem * parent)
 {
 	GeometryEngine::GeometryWorldItem::GeometryLight::Light* tmp = CreateDirectionalShadowLight(pos, direction, *viewport, diffuse, ambient, specular, rot,
+		maxShadowBias, lightViewportSize, parent);
+	delete viewport;
+	return tmp;
+}
+
+GeometryEngine::GeometryWorldItem::GeometryLight::Light * GeometryEngine::GeometryFactory::CreateDirectionalTranslucentLight(const QVector3D & pos, const QVector3D & direction, const GeometryItemUtils::Viewport & viewport, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & rot, float maxShadowBias, float lightViewportSize, GeometryWorldItem::WorldItem * parent)
+{
+	GeometryEngine::GeometryWorldItem::GeometryItem::Quad lightQuad(GeometryMaterial::ColorMaterial(), lightViewportSize, lightViewportSize);
+	return new GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight(viewport, direction, &lightQuad, diffuse, ambient, specular, pos, rot,
+		maxShadowBias, QVector3D(1.0f, 1.0f, 1.0f), nullptr, parent);
+}
+
+GeometryEngine::GeometryWorldItem::GeometryLight::Light * GeometryEngine::GeometryFactory::CreateDirectionalTranslucentLight(const QVector3D & pos, const QVector3D & direction, GeometryItemUtils::Viewport * viewport, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & rot, float maxShadowBias, float lightViewportSize, GeometryWorldItem::WorldItem * parent)
+{
+	GeometryEngine::GeometryWorldItem::GeometryLight::Light* tmp = CreateDirectionalTranslucentLight(pos, direction, *viewport, diffuse, ambient, specular, rot,
 		maxShadowBias, lightViewportSize, parent);
 	delete viewport;
 	return tmp;

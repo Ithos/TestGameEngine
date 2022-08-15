@@ -1,22 +1,22 @@
-#include "../../../CommonItemParameters.h"
-#include "../../../Item Utils/Viewport.h"
-#include "../../../GeometryItem.h"
-#include "../../LightUtils/LightComponentManager.h"
-#include "DirectionalShadowLight.h"
+#include "../../../../CommonItemParameters.h"
+#include "../../../../Item Utils/Viewport.h"
+#include "../../../../GeometryItem.h"
+#include "../../../LightUtils/LightComponentManager.h"
+#include "DirectionalTranslucentLight.h"
 
-GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::DirectionalShadowLight(const GeometryItemUtils::Viewport& viewport, const QVector3D & direction, 
-	GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, 
-	const QVector3D & rot, float maxShadowBias, const QVector3D & scale, const LightUtils::LightComponentManager* const manager, WorldItem * parent) :
+GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight::DirectionalTranslucentLight(const GeometryItemUtils::Viewport & viewport, const QVector3D & direction, 
+	GeometryItem::GeometryItem * boundingBox, const QVector3D & diffuse, const QVector3D & ambient, const QVector3D & specular, const QVector3D & pos, const QVector3D & rot, 
+	float maxShadowBias, const QVector3D & scale, const LightUtils::LightComponentManager * const manager, WorldItem * parent) :
 	ShadowMapLight(viewport, direction, boundingBox, diffuse, ambient, specular, pos, rot, maxShadowBias, scale, manager, parent)
 {
 	initLight();
 }
 
-GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::~DirectionalShadowLight()
+GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight::~DirectionalTranslucentLight()
 {
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::checkStencylTestFunctionality()
+void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight::checkStencylTestFunctionality()
 {
 	if (mpFunctionalitiesManager != nullptr && mpFunctionalitiesManager->ContainsLightShadingComponent(LightUtils::STENCIL_TESTING))
 	{
@@ -24,14 +24,13 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::c
 	}
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::initLightShaders()
+void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight::initLightShaders()
 {
 	mVertexShaderKey = ShadowMapConstants::DIRECTIONAL_SHADOW_LIGHT_VERTEX_SHADER;
-	mFragmentShaderKey = ShadowMapConstants::DIRECTIONAL_SHADOW_LIGHT_FRAGMENT_SHADER;
+	mFragmentShaderKey = ShadowMapConstants::DIRECTIONAL_TRANSLUCENT_SHADOW_LIGHT_FRAGMENT_SHADER;
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::setProgramParameters(const LightingTransformationData & transformData, 
-	const BuffersInfo& buffInfo, const QVector3D & viewPos)
+void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight::setProgramParameters(const LightingTransformationData & transformData, const BuffersInfo & buffInfo, const QVector3D & viewPos)
 {
 	assert(mpProgram != nullptr && "Shading program not found");
 	{
@@ -52,6 +51,10 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::s
 		mpProgram->setUniformValue("mNormalMap", gBuffTexInfo.NormalTexture);
 		mpProgram->setUniformValue("mShadowMap", tBufferTexInfo.ShadowMapTexture);
 
+		mpProgram->setUniformValue("mSpecularTranslucentMap", tBufferTexInfo.SpecularColorMapTexture);
+		mpProgram->setUniformValue("mDiffuseTranslucentMap", tBufferTexInfo.DiffuseColorMapTexture);
+		mpProgram->setUniformValue("mTranslucentShadowMap", tBufferTexInfo.TranslucentDepthMapTexture);
+
 		mpProgram->setUniformValue("mTextureSize", gBuffTexInfo.TextureSize);
 
 		//Set light properties
@@ -67,8 +70,7 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::s
 	}
 }
 
-void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::calculateContribution(QOpenGLBuffer * vertexBuf, 
-	QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
+void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalTranslucentLight::calculateContribution(QOpenGLBuffer * vertexBuf, QOpenGLBuffer * indexBuf, unsigned int totalVertexNum, unsigned int totalIndexNum)
 {
 	// Tell OpenGL which VBOs to use
 	vertexBuf->bind();

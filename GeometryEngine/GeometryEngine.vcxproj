@@ -206,6 +206,8 @@
     <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\DirectionalShadowLight.h" />
     <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowMapLight.h" />
     <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.h" />
+    <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\TranslucentEffectLights\DirectionalTranslucentLight.h" />
+    <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\TranslucentEffectLights\TranslucentSpotlight.h" />
     <ClInclude Include="Items\GraphicItems\Lights\Spotlight.h" />
     <ClInclude Include="Items\GraphicItems\LightUtils\LightShadingComponent.h" />
     <ClInclude Include="Items\GraphicItems\LightUtils\LightComponentManager.h" />
@@ -298,6 +300,8 @@
     <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\DirectionalShadowLight.cpp" />
     <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowMapLight.cpp" />
     <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\ShadowSpotlight.cpp" />
+    <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\TranslucentEffectLights\DirectionalTranslucentLight.cpp" />
+    <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\TranslucentEffectLights\TranslucentSpotlight.cpp" />
     <ClCompile Include="Items\GraphicItems\Lights\Spotlight.cpp" />
     <ClCompile Include="Items\GraphicItems\LightUtils\LightShadingComponent.cpp" />
     <ClCompile Include="Items\GraphicItems\LightUtils\LightComponentManager.cpp" />

@@ -1,9 +1,11 @@
 #pragma once
 
-#ifndef GEOMETRYSHADOWSPOTLIGHT_H
-#define GEOMETRYSHADOWSPOTLIGHT_H
+#pragma once
 
-#include "ShadowMapLight.h"
+#ifndef GEOMETRYTRANSPOTLIGHT_H
+#define GEOMETRYTRANSPOTLIGHT_H
+
+#include "../ShadowMapLight.h"
 
 namespace GeometryEngine
 {
@@ -11,8 +13,8 @@ namespace GeometryEngine
 	{
 		namespace GeometryLight
 		{
-			///Class that defines a spotlight that casts dynamic shadows
-			class ShadowSpotlight : public ShadowMapLight
+			///Class that defines a spotlight that casts dynamic shadows and translucent effects
+			class TranslucentSpotlight : public ShadowMapLight
 			{
 			public:
 				/// Constructor
@@ -31,7 +33,7 @@ namespace GeometryEngine
 				/// \param scale Initial scale to be applied to this item model
 				/// \param manager Light functionalities manager, defaults to nullptr.
 				/// \param parent Pointer to this items parent item, nullptr if none.
-				ShadowSpotlight(float maxLightAngle, const QVector3D& attParams, const GeometryItemUtils::Viewport& viewport, 
+				TranslucentSpotlight(float maxLightAngle, const QVector3D& attParams, const GeometryItemUtils::Viewport& viewport,
 					const QVector3D& direction, GeometryItem::GeometryItem* boundingBox = nullptr,
 					const QVector3D& diffuse = QVector3D(1.0f, 1.0f, 1.0f), const QVector3D& ambient = QVector3D(1.0f, 1.0f, 1.0f),
 					const QVector3D& specular = QVector3D(1.0f, 1.0f, 1.0f),
@@ -40,19 +42,19 @@ namespace GeometryEngine
 
 				/// Copy constructor
 				/// \param ref Const reference to StencilTestLight to be copied
-				ShadowSpotlight(const ShadowSpotlight& ref) { copy(ref); initLight(); };
+				TranslucentSpotlight(const TranslucentSpotlight& ref) { copy(ref); initLight(); };
 
 				/// Destructor
-				virtual ~ShadowSpotlight();
+				virtual ~TranslucentSpotlight();
 
 				/// Factory method. Returns a copy of this object.
 				/// \return A copy of this object.
-				virtual ShadowSpotlight* Clone() const override { return new ShadowSpotlight((*this)); }
+				virtual TranslucentSpotlight* Clone() const override { return new TranslucentSpotlight((*this)); }
 			protected:
 				QVector3D mAttenuationParameters;
 				float mMaxLightAngle;
 				/// Private constructor for object copies
-				ShadowSpotlight() {}
+				TranslucentSpotlight() {}
 				/// Sets the keys for the light shaders
 				virtual void initLightShaders() override;
 				/// Sends parameters to the shaders.
@@ -70,7 +72,7 @@ namespace GeometryEngine
 				virtual void initLight() override;
 				/// Copies the data from a ShadowMapLight into this object
 				/// \param ref ShadowMapLight to be copied
-				virtual void copy(const ShadowSpotlight& ref);
+				virtual void copy(const TranslucentSpotlight& ref);
 			};
 		}
 	}
