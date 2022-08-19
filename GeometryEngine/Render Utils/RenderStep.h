@@ -53,6 +53,11 @@ namespace GeometryEngine
 			/// \return Pointer to a copy of the object
 			virtual RenderStep* Clone() const = 0;
 		protected:
+			/// Method that checks if the item and the camera are in the same render group. Used to decide if an item should be rendered
+			/// \param cam Pointer to camera to be rendered
+			/// \param item Item to be rendered
+			/// \return true if both are in the same render group false otherwise
+			bool checkRenderGroups(GeometryWorldItem::GeometryCamera::Camera* cam, GeometryWorldItem::GeometryItem::GeometryItem* item);
 			/// Copies the values of a RenderStep to this object
 			/// \param ref Constant reference to a RenderStep whose values should be copied
 			virtual void copy(const RenderStep& ref) {}

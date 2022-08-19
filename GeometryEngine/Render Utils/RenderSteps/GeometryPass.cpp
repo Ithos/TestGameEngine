@@ -52,17 +52,3 @@ void GeometryEngine::GeometryRenderStep::GeometryPass::drawItem(GeometryWorldIte
 	assert(item != nullptr && "GeometryPass --> item null");
 	item->DrawItem(cam->GetProjectionMatrix(), cam->GetViewMatrix());
 }
-
-bool GeometryEngine::GeometryRenderStep::GeometryPass::checkRenderGroups(GeometryWorldItem::GeometryCamera::Camera * cam, GeometryWorldItem::GeometryItem::GeometryItem * item)
-{
-	if (cam->GetRenderGroups().empty() && item->GetRenderGroups().empty())
-		return true;
-
-	for (auto itCam = cam->GetRenderGroups().begin(); itCam != cam->GetRenderGroups().end(); ++itCam)
-	{
-		if (item->GetRenderGroups().find((*itCam)) != item->GetRenderGroups().end())
-			return true;
-	}
-
-	return false;
-}

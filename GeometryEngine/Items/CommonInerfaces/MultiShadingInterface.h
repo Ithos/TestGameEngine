@@ -16,8 +16,11 @@ namespace GeometryEngine
 		{
 			SHADING_LIST,
 			PRE_PROCESS_STEP_LIST,
+			SECOND_PRE_PROCESS_STEP_LIST,
 			POST_PROCESS_STEP_LIST,
-			SHADOW_POST_PROCESS_STEP_LIST
+			SECOND_POST_PROCESS_STEP_LIST,
+			SHADOW_POST_PROCESS_STEP_LIST,
+			SECOND_SHADOW_POST_PROCESS_STEP_LIST
 		};
 
 		/// Interface and manager class for material post processes maps

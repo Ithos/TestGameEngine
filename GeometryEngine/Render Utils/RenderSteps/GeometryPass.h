@@ -23,7 +23,7 @@ namespace GeometryEngine
 
 			/// Executes the render step
 			/// \param cam Pointer to camera to be rendered
-			/// \param items Set of items to be rendered
+			/// \param orderedItems Set of items to be rendered ordered by distance to the camera
 			/// \param lights Set of lights in the scene. This lights will not be used in this step.
 			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems = nullptr,
 				std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights = nullptr) override;
@@ -42,11 +42,6 @@ namespace GeometryEngine
 			/// \param cam Pointer to camera to be rendered
 			/// \param item Item to be rendered
 			void drawItem(GeometryWorldItem::GeometryCamera::Camera* cam, GeometryWorldItem::GeometryItem::GeometryItem* item);
-			/// Method that checks if the item and the camera are in the same render group. Used to decide if an item should be rendered
-			/// \param cam Pointer to camera to be rendered
-			/// \param item Item to be rendered
-			/// \return true if both are in the same render group false otherwise
-			bool checkRenderGroups(GeometryWorldItem::GeometryCamera::Camera* cam, GeometryWorldItem::GeometryItem::GeometryItem* item);
 			/// Copies the data from a GeometryPass into this object
 			/// \param ref GeometryPass to be copied
 			virtual void copy(const GeometryPass& ref) { RenderStep::copy(ref); }
