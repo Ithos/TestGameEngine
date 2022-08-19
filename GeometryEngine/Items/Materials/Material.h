@@ -13,6 +13,7 @@
 #include <ShaderManager.h>
 
 #include "Items\CommonInerfaces\CustomShadingInterface.h"
+#include "Items\CommonInerfaces\MultiShadingInterface.h"
 
 namespace GeometryEngine
 {
@@ -63,8 +64,8 @@ namespace GeometryEngine
 		public:
 			/// Constructor 
 			/// \param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininess. If shininess is <= 0 it is set to 0.001 to avoid errors in the shaders. 
-			/// \param customShading Interface to an object that implements custom shadow shading for this material.
-			Material(float shininess = 10.0f, const CustomShading::CustomShadingInterface* const customShading = nullptr);
+			/// \param multiPostProcess Interface to an object that implements custom shading for this material.
+			Material(float shininess = 10.0f, const CustomShading::MultiShadingInterface* const multiShadingInterface = nullptr);
 
 			/// Copy constructor
 			/// \param ref Object to be copied.
@@ -98,8 +99,8 @@ namespace GeometryEngine
 			void SetDrawBacksideFaces(bool drawBackside) { mDrawBothFaces = drawBackside; }
 			/// Returns if backside faces will be drawn
 			bool GetDrawBacksideFaces() { return mDrawBothFaces; }
-			/// Returns the material's custom shading object
-			CustomShading::CustomShadingInterface* GetCustomShaders() { return mpCustomShading; }
+			/// Returns the material's custom shading lists
+			CustomShading::MultiShadingInterface* GetShadingInterface() { return mpShadingInterface; }
 
 		protected:
 			float mShininess;
@@ -109,7 +110,7 @@ namespace GeometryEngine
 			ShaderFiles::ShaderManager* mpShaderManager;
 			Configuration::ConfigurationManager* mpConfInstance;
 
-			CustomShading::CustomShadingInterface* mpCustomShading;
+			CustomShading::MultiShadingInterface* mpShadingInterface;
 
 			std::string mVertexShaderKey;
 			std::string mFragmentShaderKey;

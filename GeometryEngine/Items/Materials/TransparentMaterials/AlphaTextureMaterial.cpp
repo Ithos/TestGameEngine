@@ -3,9 +3,9 @@
 #include "../../GeometryItem.h"
 #include "AlphaTextureMaterial.h"
 
-GeometryEngine::GeometryMaterial::AlphaTextureMaterial::AlphaTextureMaterial(const CustomShading::CustomShadingInterface* const customShading, const std::string & texDir, 
+GeometryEngine::GeometryMaterial::AlphaTextureMaterial::AlphaTextureMaterial(const CustomShading::MultiShadingInterface* const multiShadingInterface, const std::string & texDir,
 	float thresholdValue, float globalAlphaValue, float shininess, bool translucent):
-	TransparentMaterial(customShading, thresholdValue, globalAlphaValue, shininess, translucent), mpTexture(nullptr)
+	TransparentMaterial(multiShadingInterface, thresholdValue, globalAlphaValue, shininess, translucent), mpTexture(nullptr)
 {
 	mpTexture = new TextureParameters(texDir, -1, true);
 	initMaterial();

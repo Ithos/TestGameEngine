@@ -17,14 +17,14 @@ GeometryEngine::CustomShading::CustomPostProcessStepInterface::~CustomPostProces
 	}
 }
 
-bool GeometryEngine::CustomShading::CustomPostProcessStepInterface::AddPostProcessStep(CustomPostProcessStep * value, CustomPostProcessSteps key)
+bool GeometryEngine::CustomShading::CustomPostProcessStepInterface::AddPostProcessStep(CustomPostProcessStep * value, const CustomPostProcessSteps& key)
 {
 	if (ContainsStep(key)) return false;
 	mStepMap[key] = value;
 	return true;
 }
 
-bool GeometryEngine::CustomShading::CustomPostProcessStepInterface::RemovePostProcessStep(CustomPostProcessSteps key)
+bool GeometryEngine::CustomShading::CustomPostProcessStepInterface::RemovePostProcessStep(const CustomPostProcessSteps& key)
 {
 	if (!ContainsStep(key)) return false;
 	delete mStepMap[key];
@@ -40,7 +40,7 @@ void GeometryEngine::CustomShading::CustomPostProcessStepInterface::SetTargetPos
 	}
 }
 
-bool GeometryEngine::CustomShading::CustomPostProcessStepInterface::RenderStep(CustomPostProcessSteps step, const GBufferTextureInfo & gBuffTexInfo)
+bool GeometryEngine::CustomShading::CustomPostProcessStepInterface::RenderStep(const CustomPostProcessSteps& step, const GBufferTextureInfo & gBuffTexInfo)
 {
 	if (!ContainsStep(step)) return false;
 
@@ -59,7 +59,7 @@ void GeometryEngine::CustomShading::CustomPostProcessStepInterface::InitCustomSt
 	}
 }
 
-bool GeometryEngine::CustomShading::CustomPostProcessStepInterface::InitCustomStep(CustomPostProcessSteps key)
+bool GeometryEngine::CustomShading::CustomPostProcessStepInterface::InitCustomStep(const CustomPostProcessSteps& key)
 {
 	if (!ContainsStep(key)) return false;
 	mStepMap[key]->initCustomShading(mpShaderManager);

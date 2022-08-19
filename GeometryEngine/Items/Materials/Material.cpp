@@ -31,14 +31,14 @@ const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_TEX
 const std::string GeometryEngine::GeometryMaterial::MaterialConstants::ALPHA_MULTI_TEXTURE_SHADOWMAP = "ALPHA_MULTI_TEXTURE_SHADOWMAP";
 
 
-GeometryEngine::GeometryMaterial::Material::Material(float shininess, const CustomShading::CustomShadingInterface* const customShading) : mpProgram(nullptr), mpShaderManager(nullptr), mpConfInstance(nullptr),
-												mShininess(shininess), mDrawBothFaces(false), mpCustomShading(nullptr)
+GeometryEngine::GeometryMaterial::Material::Material(float shininess, const CustomShading::MultiShadingInterface* const multiShadingInterface) : mpProgram(nullptr), mpShaderManager(nullptr),
+														mpConfInstance(nullptr), mShininess(shininess), mDrawBothFaces(false), mpShadingInterface(nullptr)
 {
 	mShininess = checkShininessValue(mShininess);
-	if (customShading != nullptr) 
+	if (multiShadingInterface != nullptr)
 	{
-		mpCustomShading = customShading->Clone();
-		mpCustomShading->SetTargetMaterial(this);
+		mpShadingInterface = multiShadingInterface->Clone();
+		mpShadingInterface->SetTargetMaterial(this);
 	}
 }
 
@@ -55,10 +55,10 @@ GeometryEngine::GeometryMaterial::Material::~Material()
 		mpProgram = nullptr;
 	}
 
-	if (mpCustomShading != nullptr)
+	if (mpShadingInterface != nullptr)
 	{
-		delete mpCustomShading;
-		mpCustomShading = nullptr;
+		delete mpShadingInterface;
+		mpShadingInterface = nullptr;
 	}
 }
 
@@ -148,10 +148,10 @@ void GeometryEngine::GeometryMaterial::Material::copy(const Material & mat)
 	this->mVertexShaderKey = mat.mVertexShaderKey;
 	this->mShininess = mat.mShininess;
 	this->mDrawBothFaces = mat.mDrawBothFaces;
-	if (mat.mpCustomShading != nullptr)
+	if (mat.mpShadingInterface != nullptr)
 	{
-		this->mpCustomShading = mat.mpCustomShading->Clone();
-		this->mpCustomShading->SetTargetMaterial(this);
+		this->mpShadingInterface = mat.mpShadingInterface->Clone();
+		this->mpShadingInterface->SetTargetMaterial(this);
 	}
-	else this->mpCustomShading = nullptr;
+	else this->mpShadingInterface = nullptr;
 }

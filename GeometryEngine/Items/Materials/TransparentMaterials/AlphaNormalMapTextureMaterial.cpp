@@ -1,9 +1,9 @@
 #include "../TextureMaterialCommons.h"
 #include "AlphaNormalMapTextureMaterial.h"
 
-GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial::AlphaNormalMapTextureMaterial(const CustomShading::CustomShadingInterface* const customShading, const std::string & texDir, 
+GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial::AlphaNormalMapTextureMaterial(const CustomShading::MultiShadingInterface* const multiShadingInterface, const std::string & texDir,
 	const std::string & normalMapTexDir, float thresholdValue, float globalAlphaValue, float shininess, bool translucent): 
-	AlphaTextureMaterial(customShading, texDir, thresholdValue, globalAlphaValue, shininess, translucent), mpNormalMapTexture(nullptr)
+	AlphaTextureMaterial(multiShadingInterface, texDir, thresholdValue, globalAlphaValue, shininess, translucent), mpNormalMapTexture(nullptr)
 {
 	mpNormalMapTexture = new TextureParameters(normalMapTexDir, -1, true);
 }

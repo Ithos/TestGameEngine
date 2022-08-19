@@ -109,18 +109,24 @@ void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::bindRenderTexture
 
 void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::calculateItemShadowMap(GeometryWorldItem::GeometryItem::GeometryItem * item, GeometryWorldItem::GeometryLight::Light* light)
 {
-	const GeometryEngine::LightingTransformationData* transf = light->GetLightTransformationMatrices(GeometryEngine::GeometryWorldItem::GeometryLight::LightTransformationMatrices::LIGHTSPACE_TRANSFORMATION_MATRICES);
-	if (transf != nullptr && item->GetMaterialPtr()->GetCustomShaders() != nullptr && item->GetMaterialPtr()->GetCustomShaders()->ContainsStep(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP))
+	const GeometryEngine::LightingTransformationData* transf = 
+		light->GetLightTransformationMatrices(GeometryEngine::GeometryWorldItem::GeometryLight::LightTransformationMatrices::LIGHTSPACE_TRANSFORMATION_MATRICES);
+
+	CustomShading::MultiShadingInterface* sdInterf = item->GetMaterialPtr()->GetShadingInterface();
+	CustomShading::CustomShadingInterface* customSd = (sdInterf != nullptr && sdInterf->ContainsList(CustomShading::ShadingLists::SHADING_LIST) ) ? 
+		sdInterf->GetList(CustomShading::ShadingLists::SHADING_LIST) : nullptr;
+
+	if (transf != nullptr && customSd != nullptr && customSd->ContainsStep(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP))
 	{
-		item->GetMaterialPtr()->GetCustomShaders()->RenderStep(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP, item->GetArrayBuffer(),
+		customSd->RenderStep(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP, item->GetArrayBuffer(),
 			item->GetIndexBuffer(), transf->ProjectionMatrix * transf->ViewMatrix * item->GetModelMatrix(), item->GetVertexNumber(), item->GetIndexNumber());
 	}
 	else
 	{
-		LightUtils::LightComponentManager* lightFuntionManager = light->GetLightFunctionalities();
-		assert(lightFuntionManager != nullptr && lightFuntionManager->ContainsLightShadingComponent(LightUtils::DEFAULT_SHADOWMAP) && "Default shadow map not found");
+		LightUtils::LightComponentManager* lightFunctionManager = light->GetLightFunctionalities();
+		assert(lightFunctionManager != nullptr && lightFunctionManager->ContainsLightShadingComponent(LightUtils::DEFAULT_SHADOWMAP) && "Default shadow map not found");
 		{
-			lightFuntionManager->ApplyLightShading(LightUtils::DEFAULT_SHADOWMAP, item->GetArrayBuffer(), item->GetIndexBuffer(), 
+			lightFunctionManager->ApplyLightShading(LightUtils::DEFAULT_SHADOWMAP, item->GetArrayBuffer(), item->GetIndexBuffer(),
 				QMatrix4x4(), QMatrix4x4(), item->GetModelMatrix(), item->GetVertexNumber(), item->GetIndexNumber());
 		}
 

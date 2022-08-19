@@ -3,10 +3,10 @@
 #include "../../GeometryItem.h"
 #include "AlphaMultiTextureMaterial.h"
 
-GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::AlphaMultiTextureMaterial(const CustomShading::CustomShadingInterface* const customShading, 
+GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::AlphaMultiTextureMaterial(const CustomShading::MultiShadingInterface* const multiShadingInterface,
 	const std::string & ambientTexDir, const std::string & diffuseTexDir,
 	const std::string & specularTexDir, const std::string & emissiveTexDir, float thresholdValue, float globalAlphaValue, float shininess, bool translucent) : 
-	TransparentMaterial(customShading, thresholdValue, globalAlphaValue, shininess, translucent),
+	TransparentMaterial(multiShadingInterface, thresholdValue, globalAlphaValue, shininess, translucent),
 	mpTexDirManager(nullptr), mpAmbientTexture(nullptr), mpDiffuseTexture(nullptr), mpSpecularTexture(nullptr), mpEmissiveTexture(nullptr)
 {
 	mpAmbientTexture = new TextureParameters(ambientTexDir, -1, true);

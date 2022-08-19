@@ -14,12 +14,12 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor 
-			/// \param customShading Interface to an object that implements custom shadow shading for this material
+			/// \param multiShadingInterface Interface to an object that implements custom shading for this material
 			/// \param thresholdValue Min alpha value below which the fragment is dropped completely. This value is clamped to the range [0, 1]
 			/// \param globalAlphaValue Global alpha value to be applied to the whole model. This value is multiplied by other posible alphas. This value is clamped to the range [0, 1]
 			/// \param shininess Shininess component. Equation: spec contribution = cos(alpha) ^ shininessIf shininess is <= 0 it is set to 0.001 to avoid errors in the shaders.
 			/// \param translucent Indicates whether the material casts a translucent shadow or not
-			TransparentMaterial(const CustomShading::CustomShadingInterface* const customShading, float thresholdValue = 0.0f, float globalAlphaValue = 1.0f, 
+			TransparentMaterial(const CustomShading::MultiShadingInterface* const multiShadingInterface, float thresholdValue = 0.0f, float globalAlphaValue = 1.0f,
 				float shininess = 10.0f, bool translucent = false);
 			/// Copy constructor
 			/// \param ref Object to be copied.

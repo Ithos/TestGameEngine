@@ -1,9 +1,9 @@
 #include "../../GeometryItem.h"
 #include "AlphaColorMaterial.h"
 
-GeometryEngine::GeometryMaterial::AlphaColorMaterial::AlphaColorMaterial(const CustomShading::CustomShadingInterface* const customShading, const QVector3D & ambient, const QVector3D & diffuse, 
+GeometryEngine::GeometryMaterial::AlphaColorMaterial::AlphaColorMaterial(const CustomShading::MultiShadingInterface* const multiShadingInterface, const QVector3D & ambient, const QVector3D & diffuse,
 	const QVector3D & specular, const QVector3D & emissive, float thresholdValue, float globalAlphaValue, float shininess, bool translucent) : 
-	TransparentMaterial(customShading, thresholdValue, globalAlphaValue, shininess, translucent), mAmbient(ambient), mDiffuse(diffuse), mSpecular(specular), mEmissive(emissive)
+	TransparentMaterial(multiShadingInterface, thresholdValue, globalAlphaValue, shininess, translucent), mAmbient(ambient), mDiffuse(diffuse), mSpecular(specular), mEmissive(emissive)
 {
 	initMaterial();
 }

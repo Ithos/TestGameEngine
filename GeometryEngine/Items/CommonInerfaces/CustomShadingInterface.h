@@ -4,6 +4,7 @@
 #define GEOMETRYCUSTOMSHADINGINTERFACE_H
 
 #include <map>
+#include <qmatrix4x4.h>
 
 #include <QOpenGLBuffer>
 
@@ -69,11 +70,9 @@ namespace GeometryEngine
 			/// Checks if the manager contains a custom step key
 			/// \param step Key to check
 			bool ContainsStep(CustomShadingSteps step) { return mStepMap.find(step) != mStepMap.end(); }
-
 			/// Sets the target for every shading step in this interface
 			/// \param target Material to be rendered
 			void SetTargetMaterial(GeometryMaterial::Material* target);
-
 			/// Render step
 			/// \param step Step to be rendered
 			/// \param vertexBuf Pointer to the vertex buffer
@@ -81,7 +80,7 @@ namespace GeometryEngine
 			/// \param modelMatrix model matrix of the item to be added to the shadow map
 			/// \param totalVertexNum Total amount of vertices
 			/// \param totalIndexNum Total amount of indices
-			virtual bool RenderStep(CustomShadingSteps step, QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelViewProjection, 
+			virtual bool RenderStep(CustomShadingSteps step, QOpenGLBuffer* vertexBuf, QOpenGLBuffer* indexBuf, const QMatrix4x4& modelViewProjection,
 				unsigned int totalVertexNum, unsigned int totalIndexNum);
 			/// Calls init on all the shading steps in the map. This method should be called before trying to use any shading step.
 			void InitCustomSteps();

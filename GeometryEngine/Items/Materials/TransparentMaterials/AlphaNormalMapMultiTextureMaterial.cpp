@@ -1,10 +1,10 @@
 #include "../TextureMaterialCommons.h"
 #include "AlphaNormalmapMultiTextureMaterial.h"
 
-GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::AlphaNormalMapMultiTextureMaterial(const CustomShading::CustomShadingInterface* const customShading, 
+GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial::AlphaNormalMapMultiTextureMaterial(const CustomShading::MultiShadingInterface* const multiShadingInterface,
 	const std::string & ambientTexDir, const std::string & diffuseTexDir,
 	const std::string & specularTexDir, const std::string & emissiveTexDir, const std::string & normalMapTexDir, float thresholdValue, float globalAlphaValue, float shininess, 
-	bool translucent): AlphaMultiTextureMaterial(customShading, ambientTexDir, diffuseTexDir, specularTexDir, emissiveTexDir, thresholdValue, globalAlphaValue, shininess, translucent), 
+	bool translucent): AlphaMultiTextureMaterial(multiShadingInterface, ambientTexDir, diffuseTexDir, specularTexDir, emissiveTexDir, thresholdValue, globalAlphaValue, shininess, translucent),
 	mpNormalMapTexture(nullptr)
 {
 		mpNormalMapTexture = new TextureParameters(normalMapTexDir, -1, true);

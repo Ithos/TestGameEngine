@@ -307,6 +307,9 @@
     <ClInclude Include="Items\GraphicItems\Lights\ShadowCastingLights\TranslucentEffectLights\TranslucentSpotlight.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\MultiShadingInterface.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Items\GeometryItem.cpp" />
@@ -553,6 +556,9 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Items\GraphicItems\Lights\ShadowCastingLights\TranslucentEffectLights\TranslucentSpotlight.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\CommonInerfaces\MultiShadingInterface.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>

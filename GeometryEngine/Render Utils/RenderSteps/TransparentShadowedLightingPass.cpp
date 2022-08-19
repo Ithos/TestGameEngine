@@ -99,10 +99,15 @@ void GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass::Calcul
 
 void GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass::calculateItemTranslucentShadowing(GeometryWorldItem::GeometryItem::GeometryItem * item, GeometryWorldItem::GeometryLight::Light * light)
 {
-	const GeometryEngine::LightingTransformationData* transf = light->GetLightTransformationMatrices(GeometryEngine::GeometryWorldItem::GeometryLight::LightTransformationMatrices::LIGHTSPACE_TRANSFORMATION_MATRICES);
-	if (transf != nullptr && item->GetMaterialPtr()->GetCustomShaders() != nullptr && item->GetMaterialPtr()->GetCustomShaders()->ContainsStep(GeometryEngine::CustomShading::CUSTOM_COLORMAP))
+	const GeometryEngine::LightingTransformationData* transf = 
+		light->GetLightTransformationMatrices(GeometryEngine::GeometryWorldItem::GeometryLight::LightTransformationMatrices::LIGHTSPACE_TRANSFORMATION_MATRICES);
+	CustomShading::MultiShadingInterface* sdInterf = item->GetMaterialPtr()->GetShadingInterface();
+	CustomShading::CustomShadingInterface* customSd = (sdInterf != nullptr && sdInterf->ContainsList(CustomShading::ShadingLists::SHADING_LIST)) ?
+		sdInterf->GetList(CustomShading::ShadingLists::SHADING_LIST) : nullptr;
+
+	if (transf != nullptr && customSd != nullptr && customSd->ContainsStep(GeometryEngine::CustomShading::CUSTOM_COLORMAP))
 	{
-		item->GetMaterialPtr()->GetCustomShaders()->RenderStep(GeometryEngine::CustomShading::CUSTOM_COLORMAP, item->GetArrayBuffer(),
+		customSd->RenderStep(GeometryEngine::CustomShading::CUSTOM_COLORMAP, item->GetArrayBuffer(),
 			item->GetIndexBuffer(), transf->ProjectionMatrix * transf->ViewMatrix * item->GetModelMatrix(), item->GetVertexNumber(), item->GetIndexNumber());
 	}
 }

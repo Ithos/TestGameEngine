@@ -1,7 +1,8 @@
 #include "TransparentMaterial.h"
 
-GeometryEngine::GeometryMaterial::TransparentMaterial::TransparentMaterial(const CustomShading::CustomShadingInterface* const customShading, float thresholdValue, float globalAlphaValue, 
-	float shininess, bool translucent): Material(shininess, customShading), mGlobalAlphaValue(globalAlphaValue), mThresholdValue(thresholdValue), mIsTranslucent(translucent)
+GeometryEngine::GeometryMaterial::TransparentMaterial::TransparentMaterial(const CustomShading::MultiShadingInterface* const multiShadingInterface, float thresholdValue, float globalAlphaValue,
+	float shininess, bool translucent): 
+	Material(shininess, multiShadingInterface), mGlobalAlphaValue(globalAlphaValue), mThresholdValue(thresholdValue), mIsTranslucent(translucent)
 {
 	mGlobalAlphaValue = checkAlphaValue(mGlobalAlphaValue);
 	mThresholdValue = checkAlphaValue(mThresholdValue);
