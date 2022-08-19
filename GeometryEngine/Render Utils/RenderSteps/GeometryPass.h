@@ -25,7 +25,7 @@ namespace GeometryEngine
 			/// \param cam Pointer to camera to be rendered
 			/// \param items Set of items to be rendered
 			/// \param lights Set of lights in the scene. This lights will not be used in this step.
-			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*> * items = nullptr, 
+			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems = nullptr,
 				std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights = nullptr) override;
 			/// Factory method. Returns a copy of this object.
 			/// \return Acopy of this object.
@@ -36,13 +36,8 @@ namespace GeometryEngine
 			void initStep();
 			/// Draws each item in the set using the camera transformation matrix
 			/// \param cam Pointer to camera to be rendered
-			/// \param items Set of items to be rendered
-			virtual void renderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items);
-			/// Orders the geometry items from closest to farthest to the camera to optimize occlusion checks
-			/// \param cam Pointer to camera to be rendered
-			/// \param items Set of items to be ordered
-			/// \param orderdItems Structure where the ordered items will be returned
-			virtual void orderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*>& orderedItems);
+			/// \param orderedItems Set of items to be rendered ordered by distance to the camera
+			virtual void renderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems);
 			/// Draws an individual item.
 			/// \param cam Pointer to camera to be rendered
 			/// \param item Item to be rendered

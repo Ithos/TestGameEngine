@@ -25,9 +25,9 @@ namespace GeometryEngine
 
 			/// Executes the render step
 			/// \param cam Pointer to camera to be rendered
-			/// \param items Set of items to be rendered. Items will no be used in this step, we will use the information stored in the geometry buffer instead.
+			/// \param orderedItems Set of items to be rendered ordered by distance to the camera. Items will no be used in this step, we will use the information stored in the geometry buffer instead.
 			/// \param lights Set of lights in the scene.
-			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*> * items = nullptr, 
+			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems = nullptr,
 				std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights = nullptr) override;
 			/// Factory method. Returns a copy of this object.
 			/// \return A copy of this object.

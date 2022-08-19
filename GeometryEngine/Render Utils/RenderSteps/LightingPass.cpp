@@ -7,7 +7,7 @@
 #include "Items\GraphicItems\LightUtils\LightComponentManager.h"
 #include "LightingPass.h"
 
-void GeometryEngine::GeometryRenderStep::LightingPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, 
+void GeometryEngine::GeometryRenderStep::LightingPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems,
 	std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)
 {
 	assert(cam != nullptr && "LightingPass --> No camera found");

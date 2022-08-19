@@ -125,6 +125,11 @@ namespace GeometryEngine
 			/// \param cam Pointer to camera to be rendered
 			/// \param renderSteps List of render steps to be performed
 			virtual void renderCamera(GeometryWorldItem::GeometryCamera::Camera * cam, const std::list<GeometryRenderStep::RenderStep * >& renderSteps);
+			/// Orders the geometry items from closest to farthest to the camera to optimize occlusion checks
+			/// \param cam Pointer to camera to be rendered
+			/// \param items Set of items to be ordered
+			/// \param orderdItems Structure where the ordered items will be returned
+			virtual void orderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*>& orderedItems);
 		};
 	}
 }

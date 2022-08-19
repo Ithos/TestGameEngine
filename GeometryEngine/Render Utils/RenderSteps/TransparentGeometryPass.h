@@ -26,8 +26,8 @@ namespace GeometryEngine
 		protected:
 			/// Draws each item in the set using the camera transformation matrix
 			/// \param cam Pointer to camera to be rendered
-			/// \param items Set of items to be rendered
-			void renderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items) override;
+			/// \param orderedItems Set of items to be rendered ordered by distance to the camera
+			void renderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems) override;
 			/// Copies the data from a GeometryPass into this object
 			/// \param ref GeometryPass to be copied
 			virtual void copy(const TransparentGeometryPass& ref) { GeometryPass::copy(ref); }

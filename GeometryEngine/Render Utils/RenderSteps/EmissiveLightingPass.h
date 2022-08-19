@@ -21,9 +21,9 @@ namespace GeometryEngine
 			virtual ~EmissiveLightingPass();
 			/// Executes the render step
 			/// \param cam Pointer to camera to be rendered
-			/// \param items Set of items to be rendered
+			/// \param orderedItems Set of items to be rendered ordered by distance to the camera
 			/// \param lights Set of lights in the scene. This lights will not be used in this step.
-			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*> * items = nullptr,
+			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems = nullptr,
 				std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights = nullptr) override;
 			/// Factory method. Returns a copy of this object.
 			/// \return A copy of this object.

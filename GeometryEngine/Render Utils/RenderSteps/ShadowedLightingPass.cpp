@@ -10,19 +10,19 @@
 #include "../RenderBuffersData.h"
 #include "ShadowedLightingPass.h"
 
-void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)
+void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)
 {
 	assert(cam != nullptr && "ShadowedLightningPass --> No camera found");
 	assert(lights != nullptr && "ShadowedLightningPass --> No lights list found");
-	assert(items != nullptr && "ShadowedLightningPass --> No itmes list found");
+	assert(orderedItems != nullptr && "ShadowedLightningPass --> No itmes list found");
 
 	//Apply shadowed lights
-	CalculateShadowMap(cam, lights, items);
+	CalculateShadowMap(cam, lights, orderedItems);
 }
 
 void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::CalculateShadowMap(GeometryWorldItem::GeometryCamera::Camera * cam, 
 	std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* shadowedLights,
-	std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items)
+	std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems)
 {
 	GeometryEngine::GeometryBuffer::GBuffer* geomBuffer = cam->GetGBuffer();
 	GeometryEngine::GeometryBuffer::ShadingBuffer* trBuffer = cam->GetRenderBufferData()->GetShadingBuffer();
@@ -47,7 +47,7 @@ void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::CalculateShadowMa
 		{
 			//Calculate shadow map
 			initShadowStep(trBuffer);
-			calculateSingleLightShadowMap(shadowLight, items);
+			calculateSingleLightShadowMap(shadowLight, orderedItems);
 			finishShadowStep(trBuffer);
 		}
 
@@ -62,11 +62,11 @@ void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::CalculateShadowMa
 	geomBuffer->UnbindBuffer();
 }
 
-void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::calculateSingleLightShadowMap(GeometryWorldItem::GeometryLight::Light * light, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items)
+void GeometryEngine::GeometryRenderStep::ShadowedLightingPass::calculateSingleLightShadowMap(GeometryWorldItem::GeometryLight::Light * light, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems)
 {
-	for (auto it = items->begin(); it != items->end(); ++it)
+	for (auto it = orderedItems->rbegin(); it != orderedItems->rend(); ++it)
 	{
-		GeometryWorldItem::GeometryItem::GeometryItem* item = (*it);
+		GeometryWorldItem::GeometryItem::GeometryItem* item = (*it).second;
 		if (item->CastsShadows())calculateItemShadowMap(item, light);
 	}
 }

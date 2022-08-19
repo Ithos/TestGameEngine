@@ -45,9 +45,9 @@ namespace GeometryEngine
 			virtual ~RenderStep() {};
 			/// Executes the render step operations
 			/// \param cam Pointer to the camera is being rendered
-			/// \param items Set of items to be rendered
+			/// \param orderedItems Set of items to be rendered ordered by distance to the camera
 			/// \param lights Set of lights to be rendered
-			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*> * items = nullptr, 
+			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems = nullptr,
 				std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights = nullptr) = 0;
 			/// Factory method that creates a copy of the object
 			/// \return Pointer to a copy of the object

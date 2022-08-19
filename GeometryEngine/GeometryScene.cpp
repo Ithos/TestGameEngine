@@ -163,7 +163,22 @@ void GeometryEngine::GeometryScene::GeometryScene::renderCamera(GeometryWorldIte
 	for (auto it = renderSteps.begin(); it != renderSteps.end(); ++it)
 	{
 		GeometryRenderStep::RenderStep* current = (*it);
-		current->Render(cam, &mItemList, &mLights);
+		
+		std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> orderedItems;
+		orderGeometry(cam, &mItemList, orderedItems);
+
+		current->Render(cam, &orderedItems, &mLights);
+	}
+}
+
+void GeometryEngine::GeometryScene::GeometryScene::orderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*>& orderedItems)
+{
+	for (auto it = items->begin(); it != items->end(); ++it)
+	{
+		float distance = (*it)->GetPosition().distanceToPoint(cam->GetPosition());
+		// We don't want to miss items because several sit at the same distance from the camera so we add a little differentiator
+		while (orderedItems[distance] != nullptr) { distance += 1E-5f; }
+		orderedItems[distance] = (*it);
 	}
 }
 

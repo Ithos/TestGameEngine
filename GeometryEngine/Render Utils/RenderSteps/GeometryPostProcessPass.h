@@ -1,7 +1,7 @@
 #pragma once
-
-#ifndef DOUBLEPOSTPROCESSPASS_H
-#define DOUBLEPOSTPROCESPASS_H
+/*
+#ifndef GEOMETRYPOSTPROCESSPASS_H
+#define GEOMETRYPOSTPROCESSPASS_H
 
 #include "../RenderStep.h"
 
@@ -21,27 +21,44 @@ namespace GeometryEngine
 
 	namespace GeometryRenderStep
 	{
-		/// Applies a double step post process to the whole scene
-		class PostProcessPass : public RenderStep
+		/// Applies a double step post process to the individual scene objects
+		class GeometryPostProcessPass : public RenderStep
 		{
 		public:
 			/// Constructor
-			PostProcessPass() : RenderStep() {}
+			GeometryPostProcessPass() : RenderStep() {}
 			/// Copy Constructor
 			/// \param ref Const reference to DoublePostProcessPass to be copied
-			PostProcessPass(const PostProcessPass& ref) { copy(ref); }
+			GeometryPostProcessPass(const GeometryPostProcessPass& ref) { copy(ref); }
 			/// Destructor
-			virtual ~PostProcessPass() {}
+			virtual ~GeometryPostProcessPass() {}
 			/// Executes the render step
 			/// \param cam Pointer to camera to be rendered. We only need the information of the camera and the geometry buffer.
-			/// \param orderedItems Set of items to be rendered ordered by distance to the camera. Not used.
+			/// \param items Set of items to be rendered. Not used.
 			/// \param lights Set of lights in the scene. Not used.
-			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems = nullptr,
+			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*> * items = nullptr,
 				std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights = nullptr) override;
 			/// Factory method. Returns a copy of this object.
 			/// \return A copy of this object.
-			virtual RenderStep* Clone() const override { return new PostProcessPass(*this); }
+			virtual RenderStep* Clone() const override { return new GeometryPostProcessPass(*this); }
 		protected:
+			/// Initializes the OpenGl pipeline
+			void initStep();
+			/// Resets the state of the OpenGl pipeline
+			void endStep();
+			/// Draws each item in the set using the camera transformation matrix
+			/// \param cam Pointer to camera to be rendered
+			/// \param items Set of items to be rendered
+			virtual void renderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items);
+			/// Draws an individual item.
+			/// \param cam Pointer to camera to be rendered
+			/// \param item Item to be rendered
+			void drawItem(GeometryWorldItem::GeometryCamera::Camera* cam, GeometryWorldItem::GeometryItem::GeometryItem* item);
+			/// Method that checks if the item and the camera are in the same render group. Used to decide if an item should be rendered
+			/// \param cam Pointer to camera to be rendered
+			/// \param item Item to be rendered
+			/// \return true if both are in the same render group false otherwise
+			bool checkRenderGroups(GeometryWorldItem::GeometryCamera::Camera* cam, GeometryWorldItem::GeometryItem::GeometryItem* item);
 			/// Initializes the OpenGl pipeline and applies every single pass post process in the list
 			/// \param buf Pointer to the geometry buffer
 			/// \param list of post processes to apply
@@ -61,9 +78,11 @@ namespace GeometryEngine
 			void applyExtraSteps(GeometryPostProcess::PostProcess* postProcess, const GBufferTextureInfo& gBuff);
 			/// Copies the data from a DoublePostProcessPass into this object
 			/// \param ref DoublePostProcessPass to be copied
-			virtual void copy(const PostProcessPass& ref) { RenderStep::copy(ref); }
+			virtual void copy(const GeometryPostProcessPass& ref) { RenderStep::copy(ref); }
+
 		};
 	}
 }
 
-#endif
+#endif //GEOMETRYPOSTPROCESSPASS_H
+*/

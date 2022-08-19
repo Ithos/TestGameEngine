@@ -6,16 +6,13 @@
 #include <map>
 #include "TransparentGeometryPass.h"
 
-void GeometryEngine::GeometryRenderStep::TransparentGeometryPass::renderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items)
+void GeometryEngine::GeometryRenderStep::TransparentGeometryPass::renderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems)
 {
 	assert(cam->GetGBuffer() != nullptr && "GeometryPass --> No geometry buffer found");
 
 	cam->GetGBuffer()->StartFrame();
 	cam->GetGBuffer()->BindForGeomPass(); // Bind GBuffer
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clear GBuffer
-
-	std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> orderedItems;
-	orderGeometry(cam, items, orderedItems);
 
 	std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> sortedTransparentItems;
 
@@ -24,7 +21,7 @@ void GeometryEngine::GeometryRenderStep::TransparentGeometryPass::renderGeometry
 	{
 		cam->GetViewport()->CalculateProjectionMatrix();
 
-		for (auto it = orderedItems.rbegin(); it != orderedItems.rend(); ++it)
+		for (auto it = orderedItems->rbegin(); it != orderedItems->rend(); ++it)
 		{
 			GeometryWorldItem::GeometryItem::GeometryItem* item = (*it).second;
 

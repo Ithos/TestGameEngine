@@ -7,7 +7,8 @@
 #include"../GBuffer.h"
 #include "PostProcessPass.h"
 
-void GeometryEngine::GeometryRenderStep::PostProcessPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)
+void GeometryEngine::GeometryRenderStep::PostProcessPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems, 
+	std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)
 {
 	assert(cam != nullptr && "DoublePostProcessPass -> Camera not found");
 

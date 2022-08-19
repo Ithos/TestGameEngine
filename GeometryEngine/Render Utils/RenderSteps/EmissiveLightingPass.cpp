@@ -17,7 +17,7 @@ GeometryEngine::GeometryRenderStep::EmissiveLightingPass::~EmissiveLightingPass(
 	mEmissiveLights.clear();
 }
 
-void GeometryEngine::GeometryRenderStep::EmissiveLightingPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)
+void GeometryEngine::GeometryRenderStep::EmissiveLightingPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems, std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)
 {
 	assert(cam != nullptr && "LightingPass --> No camera found");
 	initStep();

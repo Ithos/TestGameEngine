@@ -32,7 +32,7 @@ GeometryEngine::GeometryRenderStep::ScreenRenderPass::~ScreenRenderPass()
 	delete mViewportLocations;
 }
 
-void GeometryEngine::GeometryRenderStep::ScreenRenderPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items,
+void GeometryEngine::GeometryRenderStep::ScreenRenderPass::Render(GeometryWorldItem::GeometryCamera::Camera * cam, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems,
 	std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* lights)
 {
 	assert(cam != nullptr && "ScreenRenderPass -> Camera not found");

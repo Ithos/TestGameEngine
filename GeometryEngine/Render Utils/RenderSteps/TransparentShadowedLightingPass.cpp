@@ -9,23 +9,21 @@
 #include "Items\GraphicItems\LightUtils\LightComponentManager.h"
 #include "TransparentShadowedLightingPass.h"
 
-//#include <Items/Geometries/Cube.h>
 
-
-void GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass::calculateSingleLightColorMap(GeometryWorldItem::GeometryLight::Light * light, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* translucentItems)
+void GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass::calculateSingleLightColorMap(GeometryWorldItem::GeometryLight::Light * light, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * translucentItems)
 {
 	for (auto it = translucentItems->begin(); it != translucentItems->end(); ++it)
 	{
-		GeometryWorldItem::GeometryItem::GeometryItem* item = (*it);
+		GeometryWorldItem::GeometryItem::GeometryItem* item = (*it).second;
 		calculateItemTranslucentShadowing(item, light);
 	}
 }
 
-void GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass::calculateSingleLightTranslucentShadowMap(GeometryWorldItem::GeometryLight::Light * light, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* translucentItems)
+void GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass::calculateSingleLightTranslucentShadowMap(GeometryWorldItem::GeometryLight::Light * light, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * translucentItems)
 {
 	for (auto it = translucentItems->begin(); it != translucentItems->end(); ++it)
 	{
-		GeometryWorldItem::GeometryItem::GeometryItem* item = (*it);
+		GeometryWorldItem::GeometryItem::GeometryItem* item = (*it).second;
 		if (item->CastsShadows())
 		{
 			calculateItemShadowMap(item, light);
@@ -34,10 +32,10 @@ void GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass::calcul
 }
 
 void GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass::CalculateShadowMap(GeometryWorldItem::GeometryCamera::Camera * cam, 
-	std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* shadowedLights, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items)
+	std::unordered_set<GeometryWorldItem::GeometryLight::Light*>* shadowedLights, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems)
 {
-	std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem* > opaqueItems;
-	std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem* > translucentItems;
+	std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> opaqueItems;
+	std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> translucentItems;
 
 	GeometryEngine::GeometryBuffer::GBuffer* geomBuffer = cam->GetGBuffer();
 	GeometryEngine::GeometryBuffer::ShadingBuffer* trBuffer = cam->GetRenderBufferData()->GetShadingBuffer();
@@ -55,12 +53,12 @@ void GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass::Calcul
 	buff.ShadingBufferInfo = &tbuff;
 
 	
-	for (auto it = items->begin(); it != items->end(); ++it)
+	for (auto it = orderedItems->rbegin(); it != orderedItems->rend(); ++it)
 	{
-		if ((*it)->GetMaterialPtr()->IsTranslucent()) translucentItems.insert((*it));
+		if ((*it).second->GetMaterialPtr()->IsTranslucent()) translucentItems[(*it).first] = (*it).second;
 		//if ((*it)->GetMaterialPtr()->IsTransparent()) translucentItems.insert((*it));
 		//if(dynamic_cast<GeometryEngine::GeometryWorldItem::GeometryItem::Cube*>((*it)) != nullptr )translucentItems.insert((*it));
-		else opaqueItems.insert((*it));
+		else opaqueItems[(*it).first] = (*it).second;
 	}
 
 
