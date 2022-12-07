@@ -31,7 +31,7 @@ virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_tran
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a22bae026c0e006318d5ab21bdaeeb247}{render\+Geometry}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items) override
+void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a05b2c129cdefb4d5b4d140b683f63f99}{render\+Geometry}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$ordered\+Items) override
 \item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a4f8821d67b06746fa1c1aba1f70e1b83}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass}{Transparent\+Geometry\+Pass}} \&ref)
 \end{DoxyCompactItemize}
@@ -79,22 +79,22 @@ Copies the data from a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_rende
 {\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass}{Geometry\+Pass}} to be copied \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a22bae026c0e006318d5ab21bdaeeb247}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a22bae026c0e006318d5ab21bdaeeb247}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a05b2c129cdefb4d5b4d140b683f63f99}\label{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a05b2c129cdefb4d5b4d140b683f63f99}} 
 \index{GeometryEngine::GeometryRenderStep::TransparentGeometryPass@{GeometryEngine::GeometryRenderStep::TransparentGeometryPass}!renderGeometry@{renderGeometry}}
 \index{renderGeometry@{renderGeometry}!GeometryEngine::GeometryRenderStep::TransparentGeometryPass@{GeometryEngine::GeometryRenderStep::TransparentGeometryPass}}
 \subsubsection{\texorpdfstring{renderGeometry()}{renderGeometry()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Geometry\+Pass\+::render\+Geometry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Geometry\+Pass\+::render\+Geometry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{ordered\+Items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 Draws each item in the set using the camera transformation matrix 
 \begin{DoxyParams}{Parameters}
 {\em cam} & Pointer to camera to be rendered \\
 \hline
-{\em items} & Set of items to be rendered \\
+{\em ordered\+Items} & Set of items to be rendered ordered by distance to the camera \\
 \hline
 \end{DoxyParams}
 
 
-Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a2929c4675eb93efd992739baac565425}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass}}.
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_ac84ca025bf90afc42acade7b15b40cf2}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass}}.
 
 
 

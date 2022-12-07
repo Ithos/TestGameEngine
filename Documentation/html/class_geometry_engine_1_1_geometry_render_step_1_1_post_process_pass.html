@@ -102,8 +102,8 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#a638c1407f0a547b7b8c3b44914a7d6f7">~PostProcessPass</a> ()</td></tr>
 <tr class="memdesc:a638c1407f0a547b7b8c3b44914a7d6f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
 <tr class="separator:a638c1407f0a547b7b8c3b44914a7d6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ebe2a0b940e47ccd10e649bff77138d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#a2ebe2a0b940e47ccd10e649bff77138d">Render</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam=nullptr, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *items=nullptr, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> * &gt; *lights=nullptr) override</td></tr>
-<tr class="separator:a2ebe2a0b940e47ccd10e649bff77138d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d41ac05dcf1533296a7fbda443f38fb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#a4d41ac05dcf1533296a7fbda443f38fb">Render</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam=nullptr, std::map&lt; float, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *orderedItems=nullptr, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> * &gt; *lights=nullptr) override</td></tr>
+<tr class="separator:a4d41ac05dcf1533296a7fbda443f38fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcf20dc0a20cf1e0fb730c7b56071c26"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">RenderStep</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#afcf20dc0a20cf1e0fb730c7b56071c26">Clone</a> () const override</td></tr>
 <tr class="separator:afcf20dc0a20cf1e0fb730c7b56071c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">GeometryEngine::GeometryRenderStep::RenderStep</a></td></tr>
@@ -128,11 +128,13 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a3d555943a9bc2b3105e71b8984b1ce0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfc2e269aad1157916f6c3c72b570ae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#abfc2e269aad1157916f6c3c72b570ae9">finishPostProcesPass</a> (<a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html">GeometryBuffer::GBuffer</a> *buf)</td></tr>
 <tr class="separator:abfc2e269aad1157916f6c3c72b570ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad13ce012b043f2c7b9305d42d43ba9c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#ad13ce012b043f2c7b9305d42d43ba9c8">applyExtraSteps</a> (<a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html">GeometryPostProcess::PostProcess</a> *postProcess, const <a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html">GBufferTextureInfo</a> &amp;gBuff)</td></tr>
-<tr class="separator:ad13ce012b043f2c7b9305d42d43ba9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac476adc4f25eb910c2980de4561a65da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#ac476adc4f25eb910c2980de4561a65da">applyExtraSteps</a> (<a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html">GeometryPostProcess::PostProcess</a> *postProcess, <a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html">GeometryBuffer::GBuffer</a> *buf, const <a class="el" href="class_geometry_engine_1_1_g_buffer_texture_info.html">GBufferTextureInfo</a> &amp;gBuff)</td></tr>
+<tr class="separator:ac476adc4f25eb910c2980de4561a65da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5279399395c18ac4ef35fa3028aa4950"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#a5279399395c18ac4ef35fa3028aa4950">copy</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html">PostProcessPass</a> &amp;ref)</td></tr>
 <tr class="separator:a5279399395c18ac4ef35fa3028aa4950"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">GeometryEngine::GeometryRenderStep::RenderStep</a></td></tr>
+<tr class="memitem:ad5895ae71a3b7ff4c0ec10cb07ea0195 inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#ad5895ae71a3b7ff4c0ec10cb07ea0195">checkRenderGroups</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> *item)</td></tr>
+<tr class="separator:ad5895ae71a3b7ff4c0ec10cb07ea0195 inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe0321446beeb4093dba701424ec1e8c inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#afe0321446beeb4093dba701424ec1e8c">copy</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">RenderStep</a> &amp;ref)</td></tr>
 <tr class="separator:afe0321446beeb4093dba701424ec1e8c inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -172,8 +174,8 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad13ce012b043f2c7b9305d42d43ba9c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad13ce012b043f2c7b9305d42d43ba9c8">&#9670;&nbsp;</a></span>applyExtraSteps()</h2>
+<a id="ac476adc4f25eb910c2980de4561a65da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac476adc4f25eb910c2980de4561a65da">&#9670;&nbsp;</a></span>applyExtraSteps()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,10 +184,16 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GeometryEngine::GeometryRenderStep::PostProcessPass::applyExtraSteps </td>
+          <td class="memname">bool GeometryEngine::GeometryRenderStep::PostProcessPass::applyExtraSteps </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_post_process_1_1_post_process.html">GeometryPostProcess::PostProcess</a> *&#160;</td>
           <td class="paramname"><em>postProcess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_buffer_1_1_g_buffer.html">GeometryBuffer::GBuffer</a> *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -208,10 +216,12 @@ Protected Member Functions</h2></td></tr>
 <p>Applies additional steps for the post process </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">postProcess</td><td>post processes to apply </td></tr>
+    <tr><td class="paramname">buf</td><td>Pointer to the geometry buffer </td></tr>
     <tr><td class="paramname">gBuff</td><td>Object that contains buffer data adapted to be passed to the shaders </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the second step was applied </dd></dl>
 
 </div>
 </div>
@@ -382,8 +392,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2ebe2a0b940e47ccd10e649bff77138d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ebe2a0b940e47ccd10e649bff77138d">&#9670;&nbsp;</a></span>Render()</h2>
+<a id="a4d41ac05dcf1533296a7fbda443f38fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d41ac05dcf1533296a7fbda443f38fb">&#9670;&nbsp;</a></span>Render()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -400,8 +410,8 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *&#160;</td>
-          <td class="paramname"><em>items</em> = <code>nullptr</code>, </td>
+          <td class="paramtype">std::map&lt; float, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>orderedItems</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -424,13 +434,13 @@ Protected Member Functions</h2></td></tr>
 <p>Executes the render step </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cam</td><td>Pointer to camera to be rendered. We only need the information of the camera and the geometry buffer. </td></tr>
-    <tr><td class="paramname">items</td><td>Set of items to be rendered. Not used. </td></tr>
+    <tr><td class="paramname">orderedItems</td><td>Set of items to be rendered ordered by distance to the camera. Not used. </td></tr>
     <tr><td class="paramname">lights</td><td>Set of lights in the scene. Not used. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#a9b054ee8f38304319a9d03ba3e173dcd">GeometryEngine::GeometryRenderStep::RenderStep</a>.</p>
+<p>Implements <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#a78676ad0b7b3fdfad5d1869f28426a83">GeometryEngine::GeometryRenderStep::RenderStep</a>.</p>
 
 </div>
 </div>

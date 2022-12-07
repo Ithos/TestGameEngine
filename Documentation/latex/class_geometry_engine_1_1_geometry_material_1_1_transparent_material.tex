@@ -18,7 +18,7 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Transparent\+M
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_abbc191aa9453c1279319e53766fd5dc4}{Transparent\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$const custom\+Shading, float threshold\+Value=0.\+0f, float global\+Alpha\+Value=1.\+0f, float shininess=10.\+0f, bool translucent=false)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_af6792dc3a5911bdb3ee803d5a129088a}{Transparent\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Custom\+Shading\+::\+Multi\+Shading\+Interface}} $\ast$const multi\+Shading\+Interface, float threshold\+Value=0.\+0f, float global\+Alpha\+Value=1.\+0f, float shininess=10.\+0f, bool translucent=false)
 \item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_a1687629a2e24bc6b2ef6971723111eee}{Transparent\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_transparent_material}{Transparent\+Material}} \&ref)
 \item 
@@ -71,15 +71,15 @@ bool {\bfseries m\+Is\+Translucent}
 Class that represents a material that may contain transparencies. Implements Custom\+Shading\+Interface so child classes can implement their own shadow\+Map shaders. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_abbc191aa9453c1279319e53766fd5dc4}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_abbc191aa9453c1279319e53766fd5dc4}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_af6792dc3a5911bdb3ee803d5a129088a}\label{class_geometry_engine_1_1_geometry_material_1_1_transparent_material_af6792dc3a5911bdb3ee803d5a129088a}} 
 \index{GeometryEngine::GeometryMaterial::TransparentMaterial@{GeometryEngine::GeometryMaterial::TransparentMaterial}!TransparentMaterial@{TransparentMaterial}}
 \index{TransparentMaterial@{TransparentMaterial}!GeometryEngine::GeometryMaterial::TransparentMaterial@{GeometryEngine::GeometryMaterial::TransparentMaterial}}
 \subsubsection{\texorpdfstring{TransparentMaterial()}{TransparentMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Transparent\+Material\+::\+Transparent\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$const}]{custom\+Shading,  }\item[{float}]{threshold\+Value = {\ttfamily 0.0f},  }\item[{float}]{global\+Alpha\+Value = {\ttfamily 1.0f},  }\item[{float}]{shininess = {\ttfamily 10.0f},  }\item[{bool}]{translucent = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Transparent\+Material\+::\+Transparent\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Custom\+Shading\+::\+Multi\+Shading\+Interface}} $\ast$const}]{multi\+Shading\+Interface,  }\item[{float}]{threshold\+Value = {\ttfamily 0.0f},  }\item[{float}]{global\+Alpha\+Value = {\ttfamily 1.0f},  }\item[{float}]{shininess = {\ttfamily 10.0f},  }\item[{bool}]{translucent = {\ttfamily false} }\end{DoxyParamCaption})}
 
 Constructor 
 \begin{DoxyParams}{Parameters}
-{\em custom\+Shading} & Interface to an object that implements custom shadow shading for this material \\
+{\em multi\+Shading\+Interface} & Interface to an object that implements custom shading for this material \\
 \hline
 {\em threshold\+Value} & Min alpha value below which the fragment is dropped completely. This value is clamped to the range \mbox{[}0, 1\mbox{]} \\
 \hline

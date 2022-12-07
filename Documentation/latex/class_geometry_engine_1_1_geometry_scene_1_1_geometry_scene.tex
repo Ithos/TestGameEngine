@@ -7,7 +7,7 @@
 Inheritance diagram for Geometry\+Engine\+::Geometry\+Scene\+::Geometry\+Scene\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=0.600536cm]{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene}
+\includegraphics[height=0.497778cm]{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -53,6 +53,8 @@ virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_scene_1_1_geome
 \begin{DoxyCompactItemize}
 \item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_aef0be95a28a24292c03bf1138e246439}{render\+Camera}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, const std\+::list$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Geometry\+Render\+Step\+::\+Render\+Step}} $\ast$ $>$ \&render\+Steps)
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_a5143674c1e124659699710f29d9465ef}{order\+Geometry}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items, std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ \&ordered\+Items)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -178,6 +180,21 @@ Insert a render step at a certain position on the render step list
 \begin{DoxyReturn}{Returns}
 false if the srender step list doesn\textquotesingle{}t contain the index true otherwise 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_a5143674c1e124659699710f29d9465ef}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_a5143674c1e124659699710f29d9465ef}} 
+\index{GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}!orderGeometry@{orderGeometry}}
+\index{orderGeometry@{orderGeometry}!GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}}
+\subsubsection{\texorpdfstring{orderGeometry()}{orderGeometry()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Scene\+::\+Geometry\+Scene\+::order\+Geometry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items,  }\item[{std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ \&}]{ordered\+Items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Orders the geometry items from closest to farthest to the camera to optimize occlusion checks 
+\begin{DoxyParams}{Parameters}
+{\em cam} & Pointer to camera to be rendered \\
+\hline
+{\em items} & Set of items to be ordered \\
+\hline
+{\em orderd\+Items} & Structure where the ordered items will be returned \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ae5607835364c78780386efb5dbde3fff}\label{class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene_ae5607835364c78780386efb5dbde3fff}} 
 \index{GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}!RemoveCamera@{RemoveCamera}}
 \index{RemoveCamera@{RemoveCamera}!GeometryEngine::GeometryScene::GeometryScene@{GeometryEngine::GeometryScene::GeometryScene}}

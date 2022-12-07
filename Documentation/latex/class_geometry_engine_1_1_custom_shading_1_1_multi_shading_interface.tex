@@ -1,0 +1,173 @@
+\hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{}\section{Geometry\+Engine\+::Custom\+Shading\+::Multi\+Shading\+Interface Class Reference}
+\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}\index{GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}}
+
+
+Interface and manager class for material post processes maps.  
+
+
+
+
+{\ttfamily \#include $<$Multi\+Shading\+Interface.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_ad88c08f72de5e3c452d520499daa9fa2}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_ad88c08f72de5e3c452d520499daa9fa2}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_ad88c08f72de5e3c452d520499daa9fa2}{Multi\+Shading\+Interface}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a911665122727c6c53433d00b2d303cd1}{Multi\+Shading\+Interface}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Multi\+Shading\+Interface}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a47a20c3b45d5db3a3eb5b61faceaf549}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a47a20c3b45d5db3a3eb5b61faceaf549}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a47a20c3b45d5db3a3eb5b61faceaf549}{$\sim$\+Multi\+Shading\+Interface}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Multi\+Shading\+Interface}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a955a95997739744dc1f4553e018c5675}{Clone}} () const
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a1e317840a077aaead889e5f7d129cbc1}{Add\+New\+List}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}{Shading\+Lists}} key)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_ad9ff25635eb9eb23229027e988a99a4f}{Remove\+List}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}{Shading\+Lists}} key)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_afee05bccc3a80cd62df3f71c119bc074}{Contains\+List}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}{Shading\+Lists}} key)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Material\+Post\+Process\+Interface}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a37238d79bf72705b03e46899c6e4cf2f}{Get\+List}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}{Shading\+Lists}} key)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a01ed5b783765986ca3f7557ae884cf68}{Set\+Target\+Material}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$target)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_aefbcc8169d1ab2ee6804c606234013d7}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_aefbcc8169d1ab2ee6804c606234013d7}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_aefbcc8169d1ab2ee6804c606234013d7}{Init\+Lists}} ()
+\begin{DoxyCompactList}\small\item\em Calls init on all the shading steps in the map. This method should be called before trying to use any shading step. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_ae608b1dd5b126bc76538c85df1a66674}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_ae608b1dd5b126bc76538c85df1a66674}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_ae608b1dd5b126bc76538c85df1a66674}{Set\+Shading\+Interface}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}} $\ast$const shading\+Interface)
+\begin{DoxyCompactList}\small\item\em Sets the shding interface to be used. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a21461546d936b94641926f0a1ed73557}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a21461546d936b94641926f0a1ed73557}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a21461546d936b94641926f0a1ed73557}{Get\+Shading\+Interface}} ()
+\begin{DoxyCompactList}\small\item\em Returns the stablished shading interface. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a02c2c4218c5f38fb4b41f3defa4ee71c}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a02c2c4218c5f38fb4b41f3defa4ee71c}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a02c2c4218c5f38fb4b41f3defa4ee71c}{Init\+Shading\+Interface}} ()
+\begin{DoxyCompactList}\small\item\em Calls init on the shading interface. This method should be called before trying to use any shading step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_aa2346483f10349ed95ff036013cc866b}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Multi\+Shading\+Interface}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a2b96814185e200e1e55b678fdadfa179}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a2b96814185e200e1e55b678fdadfa179}} 
+std\+::map$<$ \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}{Shading\+Lists}}, \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Material\+Post\+Process\+Interface}} $\ast$ $>$ {\bfseries m\+Lists\+Map}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a7db9625fc2f308016121f99252bb7654}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a7db9625fc2f308016121f99252bb7654}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}} $\ast$ {\bfseries m\+Shading\+Interface}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface and manager class for material post processes maps. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a911665122727c6c53433d00b2d303cd1}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a911665122727c6c53433d00b2d303cd1}} 
+\index{GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}!MultiShadingInterface@{MultiShadingInterface}}
+\index{MultiShadingInterface@{MultiShadingInterface}!GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}}
+\subsubsection{\texorpdfstring{MultiShadingInterface()}{MultiShadingInterface()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Custom\+Shading\+::\+Multi\+Shading\+Interface\+::\+Multi\+Shading\+Interface (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Multi\+Shading\+Interface}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor. Automatiaclly initializes the shading steps after copying them. 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a1e317840a077aaead889e5f7d129cbc1}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a1e317840a077aaead889e5f7d129cbc1}} 
+\index{GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}!AddNewList@{AddNewList}}
+\index{AddNewList@{AddNewList}!GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}}
+\subsubsection{\texorpdfstring{AddNewList()}{AddNewList()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Custom\+Shading\+::\+Multi\+Shading\+Interface\+::\+Add\+New\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}{Shading\+Lists}}}]{key }\end{DoxyParamCaption})}
+
+Creates a new \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface}{Custom\+Post\+Process\+Step\+Interface}} and adds it with the selected key if the key does not exist in the map 
+\begin{DoxyParams}{Parameters}
+{\em key} & Key that the new list will have in the map \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the new list was added false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a955a95997739744dc1f4553e018c5675}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a955a95997739744dc1f4553e018c5675}} 
+\index{GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Multi\+Shading\+Interface}}$\ast$ Geometry\+Engine\+::\+Custom\+Shading\+::\+Multi\+Shading\+Interface\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Abstract method. Factory method. Creates a copy of this object \begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_afee05bccc3a80cd62df3f71c119bc074}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_afee05bccc3a80cd62df3f71c119bc074}} 
+\index{GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}!ContainsList@{ContainsList}}
+\index{ContainsList@{ContainsList}!GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}}
+\subsubsection{\texorpdfstring{ContainsList()}{ContainsList()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Custom\+Shading\+::\+Multi\+Shading\+Interface\+::\+Contains\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}{Shading\+Lists}}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if the map contains a list step key 
+\begin{DoxyParams}{Parameters}
+{\em key} & Key to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the key exists false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_aa2346483f10349ed95ff036013cc866b}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_aa2346483f10349ed95ff036013cc866b}} 
+\index{GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Custom\+Shading\+::\+Multi\+Shading\+Interface\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Multi\+Shading\+Interface}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_post_process_step_interface}{Custom\+Post\+Process\+Step\+Interface}} object to the current object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Material to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a37238d79bf72705b03e46899c6e4cf2f}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a37238d79bf72705b03e46899c6e4cf2f}} 
+\index{GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}!GetList@{GetList}}
+\index{GetList@{GetList}!GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}}
+\subsubsection{\texorpdfstring{GetList()}{GetList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Interface}} $\ast$ Geometry\+Engine\+::\+Custom\+Shading\+::\+Multi\+Shading\+Interface\+::\+Get\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}{Shading\+Lists}}}]{key }\end{DoxyParamCaption})}
+
+Returns the selected list if exists, returns null otherwise 
+\begin{DoxyParams}{Parameters}
+{\em key} & Key to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the key exists false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_ad9ff25635eb9eb23229027e988a99a4f}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_ad9ff25635eb9eb23229027e988a99a4f}} 
+\index{GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}!RemoveList@{RemoveList}}
+\index{RemoveList@{RemoveList}!GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}}
+\subsubsection{\texorpdfstring{RemoveList()}{RemoveList()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Custom\+Shading\+::\+Multi\+Shading\+Interface\+::\+Remove\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}{Shading\+Lists}}}]{key }\end{DoxyParamCaption})}
+
+Removes list from the map 
+\begin{DoxyParams}{Parameters}
+{\em key} & List key to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the key was removed false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a01ed5b783765986ca3f7557ae884cf68}\label{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface_a01ed5b783765986ca3f7557ae884cf68}} 
+\index{GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}!SetTargetMaterial@{SetTargetMaterial}}
+\index{SetTargetMaterial@{SetTargetMaterial}!GeometryEngine::CustomShading::MultiShadingInterface@{GeometryEngine::CustomShading::MultiShadingInterface}}
+\subsubsection{\texorpdfstring{SetTargetMaterial()}{SetTargetMaterial()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Custom\+Shading\+::\+Multi\+Shading\+Interface\+::\+Set\+Target\+Material (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$}]{target }\end{DoxyParamCaption})}
+
+Sets the target for every list in this interface 
+\begin{DoxyParams}{Parameters}
+{\em target} & Material to be rendered \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Common\+Inerfaces/Multi\+Shading\+Interface.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Common\+Inerfaces/Multi\+Shading\+Interface.\+cpp\end{DoxyCompactItemize}

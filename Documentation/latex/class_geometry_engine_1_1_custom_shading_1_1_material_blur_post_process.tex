@@ -1,0 +1,178 @@
+\hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process}{}\section{Geometry\+Engine\+::Custom\+Shading\+::Material\+Blur\+Post\+Process Class Reference}
+\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process}\index{GeometryEngine::CustomShading::MaterialBlurPostProcess@{GeometryEngine::CustomShading::MaterialBlurPostProcess}}
+
+
+Standard blur post process that is applied only to objects that contain the parent material.  
+
+
+
+
+{\ttfamily \#include $<$Material\+Blur\+Post\+Process.\+h$>$}
+
+Inheritance diagram for Geometry\+Engine\+::Custom\+Shading\+::Material\+Blur\+Post\+Process\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a1353d7855dd43ab08d3f68ab40e36dc0}{Material\+Blur\+Post\+Process}} (\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Material\+Post\+Process\+Interface}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}} step)
+\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a5af24d3d39bcd22f85230471678faeaa}{Material\+Blur\+Post\+Process}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process}{Material\+Blur\+Post\+Process}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a88cf7f5ef14c103f453ea98aeb6bf4b4}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a88cf7f5ef14c103f453ea98aeb6bf4b4}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a88cf7f5ef14c103f453ea98aeb6bf4b4}{$\sim$\+Material\+Blur\+Post\+Process}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process}{Material\+Blur\+Post\+Process}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_ac0e7b317fc9e8e8da8f66eb295adad87}{Clone}} (\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Material\+Post\+Process\+Interface}} $\ast$parent, \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}} step) const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a9dcabc350a2c5d15dbff06be8290c420}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a9dcabc350a2c5d15dbff06be8290c420}} 
+bool {\bfseries Get\+Vertical} () const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a84bba7893bb534b0774daeab88a3b881}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a84bba7893bb534b0774daeab88a3b881}} 
+void {\bfseries Set\+Vertical} (bool Is\+Vertical)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_add8a8716b5090ab65edcd2ea71044af5}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_add8a8716b5090ab65edcd2ea71044af5}} 
+bool {\bfseries Get\+Origin} () const
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a478a6abb6706ec1363f93cc80b9e3cc7}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a478a6abb6706ec1363f93cc80b9e3cc7}} 
+void {\bfseries Set\+Origin} (bool swap\+Origin)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a836d795705a688df65c0379734e64562}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a836d795705a688df65c0379734e64562}} 
+void {\bfseries Set\+Second\+Step\+Parameters} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_abd9b42b73c7c76188353eb390b33bf13}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_abd9b42b73c7c76188353eb390b33bf13}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_abd9b42b73c7c76188353eb390b33bf13}{init\+Shaders}} () override
+\begin{DoxyCompactList}\small\item\em Sets the shaders that should be loaded. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a4f97b4db8405802c8330428685895fa4}{set\+Program\+Parameters}} (const Q\+Matrix4x4 \&model\+View\+Projection\+Matrix, const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a5a6c1101b5ea4b96601db86ea36059de}{apply\+Post\+Process}} (Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, unsigned int total\+Vertex\+Number, unsigned int total\+Index\+Number, const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info) override
+\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_ab9890776a7a11b969f7139a6d7eba2df}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step}{Material\+Post\+Process\+Step}} \&ref) override
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a99c1938ff035151fbc7464cfe168cf74}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a99c1938ff035151fbc7464cfe168cf74}} 
+bool {\bfseries m\+Is\+Vertical}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a06a24ce359388a538f9715dd20e597ae}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a06a24ce359388a538f9715dd20e597ae}} 
+bool {\bfseries m\+Swap\+Origin\+Texture}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Standard blur post process that is applied only to objects that contain the parent material. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a1353d7855dd43ab08d3f68ab40e36dc0}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a1353d7855dd43ab08d3f68ab40e36dc0}} 
+\index{GeometryEngine::CustomShading::MaterialBlurPostProcess@{GeometryEngine::CustomShading::MaterialBlurPostProcess}!MaterialBlurPostProcess@{MaterialBlurPostProcess}}
+\index{MaterialBlurPostProcess@{MaterialBlurPostProcess}!GeometryEngine::CustomShading::MaterialBlurPostProcess@{GeometryEngine::CustomShading::MaterialBlurPostProcess}}
+\subsubsection{\texorpdfstring{MaterialBlurPostProcess()}{MaterialBlurPostProcess()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Blur\+Post\+Process\+::\+Material\+Blur\+Post\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Material\+Post\+Process\+Interface}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}}}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}} that contains it \\
+\hline
+{\em step} & Value that indicates at which render stepthis shading technique will be used \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a5af24d3d39bcd22f85230471678faeaa}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a5af24d3d39bcd22f85230471678faeaa}} 
+\index{GeometryEngine::CustomShading::MaterialBlurPostProcess@{GeometryEngine::CustomShading::MaterialBlurPostProcess}!MaterialBlurPostProcess@{MaterialBlurPostProcess}}
+\index{MaterialBlurPostProcess@{MaterialBlurPostProcess}!GeometryEngine::CustomShading::MaterialBlurPostProcess@{GeometryEngine::CustomShading::MaterialBlurPostProcess}}
+\subsubsection{\texorpdfstring{MaterialBlurPostProcess()}{MaterialBlurPostProcess()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Blur\+Post\+Process\+::\+Material\+Blur\+Post\+Process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process}{Material\+Blur\+Post\+Process}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a5a6c1101b5ea4b96601db86ea36059de}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a5a6c1101b5ea4b96601db86ea36059de}} 
+\index{GeometryEngine::CustomShading::MaterialBlurPostProcess@{GeometryEngine::CustomShading::MaterialBlurPostProcess}!applyPostProcess@{applyPostProcess}}
+\index{applyPostProcess@{applyPostProcess}!GeometryEngine::CustomShading::MaterialBlurPostProcess@{GeometryEngine::CustomShading::MaterialBlurPostProcess}}
+\subsubsection{\texorpdfstring{applyPostProcess()}{applyPostProcess()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Blur\+Post\+Process\+::apply\+Post\+Process (\begin{DoxyParamCaption}\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{unsigned int}]{total\+Vertex\+Number,  }\item[{unsigned int}]{total\+Index\+Number,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Abstract method. Binds shaders and draws. 
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Buf} & Vertex buffer \\
+\hline
+{\em index\+Buf} & Index\+Buffer \\
+\hline
+{\em total\+Vertex\+Num} & Number of vetices \\
+\hline
+{\em t0tal\+Index\+Num} & Number of indices \\
+\hline
+{\em g\+Buff\+Tex\+Info} & geometry buffer data \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step_aff4e07a7a77113c487b52bc93c2be0fa}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Step}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_ac0e7b317fc9e8e8da8f66eb295adad87}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_ac0e7b317fc9e8e8da8f66eb295adad87}} 
+\index{GeometryEngine::CustomShading::MaterialBlurPostProcess@{GeometryEngine::CustomShading::MaterialBlurPostProcess}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::CustomShading::MaterialBlurPostProcess@{GeometryEngine::CustomShading::MaterialBlurPostProcess}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process}{Material\+Blur\+Post\+Process}}$\ast$ Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Blur\+Post\+Process\+::\+Clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Material\+Post\+Process\+Interface}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}}}]{step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Abstract method. Factory method. Creates a copy of this object 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}} that contains it \\
+\hline
+{\em step} & Value that indicates at which render stepthis shading technique will be used \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step_a5fd4c17faac4fea71831868027d5a516}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Step}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_ab9890776a7a11b969f7139a6d7eba2df}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_ab9890776a7a11b969f7139a6d7eba2df}} 
+\index{GeometryEngine::CustomShading::MaterialBlurPostProcess@{GeometryEngine::CustomShading::MaterialBlurPostProcess}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::CustomShading::MaterialBlurPostProcess@{GeometryEngine::CustomShading::MaterialBlurPostProcess}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Blur\+Post\+Process\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step}{Material\+Post\+Process\+Step}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process}{Material\+Blur\+Post\+Process}} object to the current object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process}{Material\+Blur\+Post\+Process}} to be copied \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step_aed622b637ae01f6a3cfa5d7f60c63ac6}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Step}}.
+
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a4f97b4db8405802c8330428685895fa4}\label{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process_a4f97b4db8405802c8330428685895fa4}} 
+\index{GeometryEngine::CustomShading::MaterialBlurPostProcess@{GeometryEngine::CustomShading::MaterialBlurPostProcess}!setProgramParameters@{setProgramParameters}}
+\index{setProgramParameters@{setProgramParameters}!GeometryEngine::CustomShading::MaterialBlurPostProcess@{GeometryEngine::CustomShading::MaterialBlurPostProcess}}
+\subsubsection{\texorpdfstring{setProgramParameters()}{setProgramParameters()}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Blur\+Post\+Process\+::set\+Program\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Matrix4x4 \&}]{model\+View\+Projection\+Matrix,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Sends parameters to the shaders. 
+\begin{DoxyParams}{Parameters}
+{\em model\+View\+Projection\+Matrix} & Projection matrix \\
+\hline
+{\em g\+Buff\+Tex\+Info} & geometry buffer data \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step_ac4b9fa8b3d4fb80b82a9bd43add77f1e}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Step}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Common\+Inerfaces/\+Material\+Post\+Process/Material\+Blur\+Post\+Process.\+h\end{DoxyCompactItemize}

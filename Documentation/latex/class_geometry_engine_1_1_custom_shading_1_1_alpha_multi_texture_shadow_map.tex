@@ -83,7 +83,14 @@ Copy constructor
 {\footnotesize\ttfamily template$<$class T $>$ \\
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_multi_texture_shadow_map}{Alpha\+Multi\+Texture\+Shadow\+Map}}$\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_alpha_multi_texture_shadow_map}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Alpha\+Multi\+Texture\+Shadow\+Map}}$<$ T $>$\+::Clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}} $\ast$}]{parent,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a2dc236a5b567da5099069ce2b2be5609}{Custom\+Shading\+Steps}}}]{step }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-Abstract method. Factory method. Creates a copy of this object \begin{DoxyReturn}{Returns}
+Abstract method. Factory method. Creates a copy of this object 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+Interface}} that contains it \\
+\hline
+{\em step} & Value that indicates at which render stepthis shading technique will be used \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
 Pointer to a copy of this object 
 \end{DoxyReturn}
 

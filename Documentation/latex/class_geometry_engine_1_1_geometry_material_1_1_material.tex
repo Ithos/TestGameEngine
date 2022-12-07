@@ -18,7 +18,7 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Material\+:\be
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a9d60d29295dd7dd26158dce1a90cf838}{Material}} (float shininess=10.\+0f, const Custom\+Shading\+::\+Custom\+Shading\+Interface $\ast$const custom\+Shading=nullptr)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_acd2eb27d61c59aa8811a0536cc882dc5}{Material}} (float shininess=10.\+0f, const Custom\+Shading\+::\+Multi\+Shading\+Interface $\ast$const multi\+Shading\+Interface=nullptr)
 \item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a18c3bbd40d6c410c9c8ca9dfc36f15ee}{Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} \&mat)
 \item 
@@ -43,9 +43,9 @@ void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a85013da84d4416af919d1755706aeb13}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a85013da84d4416af919d1755706aeb13}} 
 bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a85013da84d4416af919d1755706aeb13}{Get\+Draw\+Backside\+Faces}} ()
 \begin{DoxyCompactList}\small\item\em Returns if backside faces will be drawn. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a3c2292d28141f329c0c7befb12de07ac}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a3c2292d28141f329c0c7befb12de07ac}} 
-\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_a3c2292d28141f329c0c7befb12de07ac}{Get\+Custom\+Shaders}} ()
-\begin{DoxyCompactList}\small\item\em Returns the material\textquotesingle{}s custom shading object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_ad6521f7fa23dff7348f6cee0e4a0d372}\label{class_geometry_engine_1_1_geometry_material_1_1_material_ad6521f7fa23dff7348f6cee0e4a0d372}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Custom\+Shading\+::\+Multi\+Shading\+Interface}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material_ad6521f7fa23dff7348f6cee0e4a0d372}{Get\+Shading\+Interface}} ()
+\begin{DoxyCompactList}\small\item\em Returns the material\textquotesingle{}s custom shading lists. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -84,8 +84,8 @@ Q\+Open\+G\+L\+Shader\+Program $\ast$ {\bfseries mp\+Program}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a734ca9fb3bd1d82c54d1475c7ea43c11}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a734ca9fb3bd1d82c54d1475c7ea43c11}} 
 \mbox{\hyperlink{class_configuration_1_1_configuration_manager}{Configuration\+::\+Configuration\+Manager}} $\ast$ {\bfseries mp\+Conf\+Instance}
 \item 
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a2d8a177f3e738634bc4036722a2c1870}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a2d8a177f3e738634bc4036722a2c1870}} 
-\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$ {\bfseries mp\+Custom\+Shading}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a9ce167bd4ff8bc38d869dc0ccb16a0a3}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a9ce167bd4ff8bc38d869dc0ccb16a0a3}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Custom\+Shading\+::\+Multi\+Shading\+Interface}} $\ast$ {\bfseries mp\+Shading\+Interface}
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a648069f204424e495149dbfadf4ede40}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a648069f204424e495149dbfadf4ede40}} 
 std\+::string {\bfseries m\+Vertex\+Shader\+Key}
@@ -99,17 +99,17 @@ std\+::string {\bfseries m\+Fragment\+Shader\+Key}
 Base class for all materials for world objects. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a9d60d29295dd7dd26158dce1a90cf838}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a9d60d29295dd7dd26158dce1a90cf838}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_acd2eb27d61c59aa8811a0536cc882dc5}\label{class_geometry_engine_1_1_geometry_material_1_1_material_acd2eb27d61c59aa8811a0536cc882dc5}} 
 \index{GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}!Material@{Material}}
 \index{Material@{Material}!GeometryEngine::GeometryMaterial::Material@{GeometryEngine::GeometryMaterial::Material}}
 \subsubsection{\texorpdfstring{Material()}{Material()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Material\+::\+Material (\begin{DoxyParamCaption}\item[{float}]{shininess = {\ttfamily 10.0f},  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$const}]{custom\+Shading = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Material\+::\+Material (\begin{DoxyParamCaption}\item[{float}]{shininess = {\ttfamily 10.0f},  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Custom\+Shading\+::\+Multi\+Shading\+Interface}} $\ast$const}]{multi\+Shading\+Interface = {\ttfamily nullptr} }\end{DoxyParamCaption})}
 
 Constructor 
 \begin{DoxyParams}{Parameters}
 {\em shininess} & Shininess component. Equation\+: spec contribution = cos(alpha) $^\wedge$ shininess. If shininess is $<$= 0 it is set to 0.\+001 to avoid errors in the shaders. \\
 \hline
-{\em custom\+Shading} & Interface to an object that implements custom shadow shading for this material. \\
+{\em multi\+Post\+Process} & Interface to an object that implements custom shading for this material. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_material_a18c3bbd40d6c410c9c8ca9dfc36f15ee}\label{class_geometry_engine_1_1_geometry_material_1_1_material_a18c3bbd40d6c410c9c8ca9dfc36f15ee}} 

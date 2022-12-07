@@ -283,7 +283,14 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Abstract method. Factory method. Creates a copy of this object </p><dl class="section return"><dt>Returns</dt><dd>Pointer to a copy of this object </dd></dl>
+<p>Abstract method. Factory method. Creates a copy of this object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Pointer to the <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface.html" title="Interface for objects that implement custom shadow map calculations.">CustomShadingInterface</a> that contains it </td></tr>
+    <tr><td class="paramname">step</td><td>Value that indicates at which render stepthis shading technique will be used </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to a copy of this object </dd></dl>
 
 <p>Implements <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_custom_shading_step.html#aa9279c195d3a8f294860a431508675c3">GeometryEngine::CustomShading::CustomShadingStep</a>.</p>
 

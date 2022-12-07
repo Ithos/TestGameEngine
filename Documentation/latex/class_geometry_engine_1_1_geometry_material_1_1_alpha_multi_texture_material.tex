@@ -9,7 +9,7 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Alpha\+Multi\+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_multi_texture_material_a42d6e7532d3f628a7cb73dead01161b5}{Alpha\+Multi\+Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$const custom\+Shading, const std\+::string \&ambient\+Tex\+Dir, const std\+::string \&diffuse\+Tex\+Dir, const std\+::string \&specular\+Tex\+Dir, const std\+::string \&emissive\+Tex\+Dir, float threshold\+Value=0.\+0f, float global\+Alpha\+Value=1.\+0f, float shininess=10.\+0f, bool translucent=false)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_multi_texture_material_afbe5ecfee4a6078c9c6f1a92e430e27e}{Alpha\+Multi\+Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Custom\+Shading\+::\+Multi\+Shading\+Interface}} $\ast$const multi\+Shading\+Interface, const std\+::string \&ambient\+Tex\+Dir, const std\+::string \&diffuse\+Tex\+Dir, const std\+::string \&specular\+Tex\+Dir, const std\+::string \&emissive\+Tex\+Dir, float threshold\+Value=0.\+0f, float global\+Alpha\+Value=1.\+0f, float shininess=10.\+0f, bool translucent=false)
 \item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_multi_texture_material_a1da236db5dcd0965111e3330fc276668}{Alpha\+Multi\+Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_multi_texture_material}{Alpha\+Multi\+Texture\+Material}} \&ref)
 \item 
@@ -82,15 +82,15 @@ static const int \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_multi_texture_material_a42d6e7532d3f628a7cb73dead01161b5}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_multi_texture_material_a42d6e7532d3f628a7cb73dead01161b5}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_multi_texture_material_afbe5ecfee4a6078c9c6f1a92e430e27e}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_multi_texture_material_afbe5ecfee4a6078c9c6f1a92e430e27e}} 
 \index{GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial}!AlphaMultiTextureMaterial@{AlphaMultiTextureMaterial}}
 \index{AlphaMultiTextureMaterial@{AlphaMultiTextureMaterial}!GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial}}
 \subsubsection{\texorpdfstring{AlphaMultiTextureMaterial()}{AlphaMultiTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Multi\+Texture\+Material\+::\+Alpha\+Multi\+Texture\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$const}]{custom\+Shading,  }\item[{const std\+::string \&}]{ambient\+Tex\+Dir,  }\item[{const std\+::string \&}]{diffuse\+Tex\+Dir,  }\item[{const std\+::string \&}]{specular\+Tex\+Dir,  }\item[{const std\+::string \&}]{emissive\+Tex\+Dir,  }\item[{float}]{threshold\+Value = {\ttfamily 0.0f},  }\item[{float}]{global\+Alpha\+Value = {\ttfamily 1.0f},  }\item[{float}]{shininess = {\ttfamily 10.0f},  }\item[{bool}]{translucent = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Multi\+Texture\+Material\+::\+Alpha\+Multi\+Texture\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Custom\+Shading\+::\+Multi\+Shading\+Interface}} $\ast$const}]{multi\+Shading\+Interface,  }\item[{const std\+::string \&}]{ambient\+Tex\+Dir,  }\item[{const std\+::string \&}]{diffuse\+Tex\+Dir,  }\item[{const std\+::string \&}]{specular\+Tex\+Dir,  }\item[{const std\+::string \&}]{emissive\+Tex\+Dir,  }\item[{float}]{threshold\+Value = {\ttfamily 0.0f},  }\item[{float}]{global\+Alpha\+Value = {\ttfamily 1.0f},  }\item[{float}]{shininess = {\ttfamily 10.0f},  }\item[{bool}]{translucent = {\ttfamily false} }\end{DoxyParamCaption})}
 
 Constructor. Calls init material 
 \begin{DoxyParams}{Parameters}
-{\em custom\+Shading} & Interface to an object that implements custom shadow shading for this material \\
+{\em multi\+Shading\+Interface} & Interface to an object that implements custom shading for this material \\
 \hline
 {\em ambient\+Tex\+Dir} & Key to a texture that will be used as ambient color \\
 \hline

@@ -83,6 +83,12 @@ static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post
 static \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Geometry\+Post\+Process\+::\+Post\+Process}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_afe48a638a03829d843c9ac22f4ba3606}{Create\+Blur\+Post\+Process}} (float viewport\+Size=3.\+0f)
 \item 
 static void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a50fd72b5c91709daea566d8f233abb23}{Add\+Tmp\+Post\+Process}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} \&cam, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_post_process_1_1_post_process}{Geometry\+Post\+Process\+::\+Post\+Process}} $\ast$proc)
+\item 
+static \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Custom\+Shading\+::\+Material\+Post\+Process\+Interface}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a720e4765b1b51527a9f51dfdd76f741e}{Get\+Or\+Add\+Shading\+List}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$mat, const \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}{Custom\+Shading\+::\+Shading\+Lists}} \&list)
+\item 
+static void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a021fcafcfa0fdd154a9112fa340162a9}{Add\+Material\+Blur\+Post\+Process}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$mat, const \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Custom\+Shading\+::\+Material\+Post\+Process\+Steps}} \&step)
+\item 
+static void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a59a8934b2f66247a7edda001316cc7b1}{Add\+Material\+Grey\+Scale\+Post\+Process}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$mat, const \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Custom\+Shading\+::\+Material\+Post\+Process\+Steps}} \&step)
 \end{DoxyCompactItemize}
 
 
@@ -90,6 +96,32 @@ static void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_factory_a50fd72b
 Factory to simplify the creation of scene objects. The property of the objects created is delegated to the caller. 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a021fcafcfa0fdd154a9112fa340162a9}\label{class_geometry_engine_1_1_geometry_factory_a021fcafcfa0fdd154a9112fa340162a9}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!AddMaterialBlurPostProcess@{AddMaterialBlurPostProcess}}
+\index{AddMaterialBlurPostProcess@{AddMaterialBlurPostProcess}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{AddMaterialBlurPostProcess()}{AddMaterialBlurPostProcess()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Factory\+::\+Add\+Material\+Blur\+Post\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$}]{mat,  }\item[{const \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Custom\+Shading\+::\+Material\+Post\+Process\+Steps}} \&}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method that adds a blur post process step to the material at the selected step location in the post process and second post process lists 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Material where the post process will be added \\
+\hline
+{\em step} & Step location where the post process will be added, if there is another post process in this location it will be deleted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a59a8934b2f66247a7edda001316cc7b1}\label{class_geometry_engine_1_1_geometry_factory_a59a8934b2f66247a7edda001316cc7b1}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!AddMaterialGreyScalePostProcess@{AddMaterialGreyScalePostProcess}}
+\index{AddMaterialGreyScalePostProcess@{AddMaterialGreyScalePostProcess}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{AddMaterialGreyScalePostProcess()}{AddMaterialGreyScalePostProcess()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Factory\+::\+Add\+Material\+Grey\+Scale\+Post\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$}]{mat,  }\item[{const \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Custom\+Shading\+::\+Material\+Post\+Process\+Steps}} \&}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper method that adds a grey scale post process step to the material at the selected step location in the post process list 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Material where the post process will be added \\
+\hline
+{\em step} & Step location where the post process will be added, if there is another post process in this location it will be deleted \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a50fd72b5c91709daea566d8f233abb23}\label{class_geometry_engine_1_1_geometry_factory_a50fd72b5c91709daea566d8f233abb23}} 
 \index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!AddTmpPostProcess@{AddTmpPostProcess}}
 \index{AddTmpPostProcess@{AddTmpPostProcess}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
@@ -874,6 +906,22 @@ Convenience method that overrides Create\+Translucent\+Spotlight to be called us
 {\em parent} & Pointer to this items parent item, nullptr if none. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_factory_a720e4765b1b51527a9f51dfdd76f741e}\label{class_geometry_engine_1_1_geometry_factory_a720e4765b1b51527a9f51dfdd76f741e}} 
+\index{GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}!GetOrAddShadingList@{GetOrAddShadingList}}
+\index{GetOrAddShadingList@{GetOrAddShadingList}!GeometryEngine::GeometryFactory@{GeometryEngine::GeometryFactory}}
+\subsubsection{\texorpdfstring{GetOrAddShadingList()}{GetOrAddShadingList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Interface}} $\ast$ Geometry\+Engine\+::\+Geometry\+Factory\+::\+Get\+Or\+Add\+Shading\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$}]{mat,  }\item[{const \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}{Custom\+Shading\+::\+Shading\+Lists}} \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convenience method to add a shading list if it doesnt exist to a material 
+\begin{DoxyParams}{Parameters}
+{\em mat} & Material where the list will be added or returned \\
+\hline
+{\em list} & Type of list to be added or returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New or existing shading list of the selected type 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

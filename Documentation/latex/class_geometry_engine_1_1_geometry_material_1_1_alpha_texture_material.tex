@@ -18,7 +18,7 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Alpha\+Texture
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_texture_material_a13e251b89fd08e38647572695196c5b6}{Alpha\+Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$const custom\+Shading, const std\+::string \&tex\+Dir, float threshold\+Value=0.\+0f, float global\+Alpha\+Value=1.\+0f, float shininess=10.\+0f, bool translucent=false)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_texture_material_a7ab1f51006d0b2613ef4be29c6e07c2c}{Alpha\+Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Custom\+Shading\+::\+Multi\+Shading\+Interface}} $\ast$const multi\+Shading\+Interface, const std\+::string \&tex\+Dir, float threshold\+Value=0.\+0f, float global\+Alpha\+Value=1.\+0f, float shininess=10.\+0f, bool translucent=false)
 \item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_texture_material_a3ba50a82f2bacaba7c0c66e032e9452b}{Alpha\+Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_texture_material}{Alpha\+Texture\+Material}} \&ref)
 \item 
@@ -79,15 +79,15 @@ static const int \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that loads a color texture and admits transparencies. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_texture_material_a13e251b89fd08e38647572695196c5b6}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_texture_material_a13e251b89fd08e38647572695196c5b6}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_texture_material_a7ab1f51006d0b2613ef4be29c6e07c2c}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_texture_material_a7ab1f51006d0b2613ef4be29c6e07c2c}} 
 \index{GeometryEngine::GeometryMaterial::AlphaTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaTextureMaterial}!AlphaTextureMaterial@{AlphaTextureMaterial}}
 \index{AlphaTextureMaterial@{AlphaTextureMaterial}!GeometryEngine::GeometryMaterial::AlphaTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaTextureMaterial}}
 \subsubsection{\texorpdfstring{AlphaTextureMaterial()}{AlphaTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Texture\+Material\+::\+Alpha\+Texture\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$const}]{custom\+Shading,  }\item[{const std\+::string \&}]{tex\+Dir,  }\item[{float}]{threshold\+Value = {\ttfamily 0.0f},  }\item[{float}]{global\+Alpha\+Value = {\ttfamily 1.0f},  }\item[{float}]{shininess = {\ttfamily 10.0f},  }\item[{bool}]{translucent = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Texture\+Material\+::\+Alpha\+Texture\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Custom\+Shading\+::\+Multi\+Shading\+Interface}} $\ast$const}]{multi\+Shading\+Interface,  }\item[{const std\+::string \&}]{tex\+Dir,  }\item[{float}]{threshold\+Value = {\ttfamily 0.0f},  }\item[{float}]{global\+Alpha\+Value = {\ttfamily 1.0f},  }\item[{float}]{shininess = {\ttfamily 10.0f},  }\item[{bool}]{translucent = {\ttfamily false} }\end{DoxyParamCaption})}
 
 Constructor. Calls init material 
 \begin{DoxyParams}{Parameters}
-{\em custom\+Shading} & Interface to an object that implements custom shadow shading for this material. \\
+{\em multi\+Shading\+Interface} & Interface to an object that implements custom shading for this material. \\
 \hline
 {\em tex\+Dir} & Key of the texture to be loaded \\
 \hline

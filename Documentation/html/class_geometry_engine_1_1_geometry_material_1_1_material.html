@@ -105,8 +105,8 @@ Inheritance diagram for GeometryEngine::GeometryMaterial::Material:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9d60d29295dd7dd26158dce1a90cf838"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html#a9d60d29295dd7dd26158dce1a90cf838">Material</a> (float shininess=10.0f, const CustomShading::CustomShadingInterface *const customShading=nullptr)</td></tr>
-<tr class="separator:a9d60d29295dd7dd26158dce1a90cf838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd2eb27d61c59aa8811a0536cc882dc5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html#acd2eb27d61c59aa8811a0536cc882dc5">Material</a> (float shininess=10.0f, const CustomShading::MultiShadingInterface *const multiShadingInterface=nullptr)</td></tr>
+<tr class="separator:acd2eb27d61c59aa8811a0536cc882dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18c3bbd40d6c410c9c8ca9dfc36f15ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html#a18c3bbd40d6c410c9c8ca9dfc36f15ee">Material</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html">Material</a> &amp;mat)</td></tr>
 <tr class="separator:a18c3bbd40d6c410c9c8ca9dfc36f15ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55a707060a08e18b45c7ea3f0ec64704"><td class="memItemLeft" align="right" valign="top"><a id="a55a707060a08e18b45c7ea3f0ec64704"></a>
@@ -134,10 +134,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html#a85013da84d4416af919d1755706aeb13">GetDrawBacksideFaces</a> ()</td></tr>
 <tr class="memdesc:a85013da84d4416af919d1755706aeb13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if backside faces will be drawn. <br /></td></tr>
 <tr class="separator:a85013da84d4416af919d1755706aeb13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c2292d28141f329c0c7befb12de07ac"><td class="memItemLeft" align="right" valign="top"><a id="a3c2292d28141f329c0c7befb12de07ac"></a>
-<a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface.html">CustomShading::CustomShadingInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html#a3c2292d28141f329c0c7befb12de07ac">GetCustomShaders</a> ()</td></tr>
-<tr class="memdesc:a3c2292d28141f329c0c7befb12de07ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the material's custom shading object. <br /></td></tr>
-<tr class="separator:a3c2292d28141f329c0c7befb12de07ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6521f7fa23dff7348f6cee0e4a0d372"><td class="memItemLeft" align="right" valign="top"><a id="ad6521f7fa23dff7348f6cee0e4a0d372"></a>
+<a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface.html">CustomShading::MultiShadingInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_material_1_1_material.html#ad6521f7fa23dff7348f6cee0e4a0d372">GetShadingInterface</a> ()</td></tr>
+<tr class="memdesc:ad6521f7fa23dff7348f6cee0e4a0d372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the material's custom shading lists. <br /></td></tr>
+<tr class="separator:ad6521f7fa23dff7348f6cee0e4a0d372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -179,9 +179,9 @@ QOpenGLShaderProgram *&#160;</td><td class="memItemRight" valign="bottom"><b>mpP
 <tr class="memitem:a734ca9fb3bd1d82c54d1475c7ea43c11"><td class="memItemLeft" align="right" valign="top"><a id="a734ca9fb3bd1d82c54d1475c7ea43c11"></a>
 <a class="el" href="class_configuration_1_1_configuration_manager.html">Configuration::ConfigurationManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mpConfInstance</b></td></tr>
 <tr class="separator:a734ca9fb3bd1d82c54d1475c7ea43c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d8a177f3e738634bc4036722a2c1870"><td class="memItemLeft" align="right" valign="top"><a id="a2d8a177f3e738634bc4036722a2c1870"></a>
-<a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface.html">CustomShading::CustomShadingInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mpCustomShading</b></td></tr>
-<tr class="separator:a2d8a177f3e738634bc4036722a2c1870"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce167bd4ff8bc38d869dc0ccb16a0a3"><td class="memItemLeft" align="right" valign="top"><a id="a9ce167bd4ff8bc38d869dc0ccb16a0a3"></a>
+<a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface.html">CustomShading::MultiShadingInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mpShadingInterface</b></td></tr>
+<tr class="separator:a9ce167bd4ff8bc38d869dc0ccb16a0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a648069f204424e495149dbfadf4ede40"><td class="memItemLeft" align="right" valign="top"><a id="a648069f204424e495149dbfadf4ede40"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mVertexShaderKey</b></td></tr>
 <tr class="separator:a648069f204424e495149dbfadf4ede40"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,8 +192,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mFragmentShade
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all materials for world objects. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9d60d29295dd7dd26158dce1a90cf838"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d60d29295dd7dd26158dce1a90cf838">&#9670;&nbsp;</a></span>Material() <span class="overload">[1/2]</span></h2>
+<a id="acd2eb27d61c59aa8811a0536cc882dc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd2eb27d61c59aa8811a0536cc882dc5">&#9670;&nbsp;</a></span>Material() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,8 +207,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mFragmentShade
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface.html">CustomShading::CustomShadingInterface</a> *const&#160;</td>
-          <td class="paramname"><em>customShading</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface.html">CustomShading::MultiShadingInterface</a> *const&#160;</td>
+          <td class="paramname"><em>multiShadingInterface</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -220,7 +220,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>mFragmentShade
 <p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">shininess</td><td>Shininess component. Equation: spec contribution = cos(alpha) ^ shininess. If shininess is &lt;= 0 it is set to 0.001 to avoid errors in the shaders. </td></tr>
-    <tr><td class="paramname">customShading</td><td>Interface to an object that implements custom shadow shading for this material. </td></tr>
+    <tr><td class="paramname">multiPostProcess</td><td>Interface to an object that implements custom shading for this material. </td></tr>
   </table>
   </dd>
 </dl>

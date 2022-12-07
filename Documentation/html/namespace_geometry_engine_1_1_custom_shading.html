@@ -110,6 +110,24 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_direct_color_map.html">DirectColorMap</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom color map calculation for alpha color materials.  <a href="class_geometry_engine_1_1_custom_shading_1_1_direct_color_map.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process.html">MaterialBlurPostProcess</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard blur post process that is applied only to objects that contain the parent material.  <a href="class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_material_grey_scale.html">MaterialGreyScale</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard blur post process that is applied only to objects that contain the parent material.  <a href="class_geometry_engine_1_1_custom_shading_1_1_material_grey_scale.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_geometry_engine_1_1_custom_shading_1_1_material_post_process_constants.html">MaterialPostProcessConstants</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">String constants that reference shader keys.  <a href="struct_geometry_engine_1_1_custom_shading_1_1_material_post_process_constants.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface.html">MaterialPostProcessInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for objects that implement custom shadow map calculations.  <a href="class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step.html">MaterialPostProcessStep</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Component class that executes a post process operation on target material T.  <a href="class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface.html">MultiShadingInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface and manager class for material post processes maps.  <a href="class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_custom_shading_1_1_multi_texture_color_map.html">MultiTextureColorMap</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom color map calculation for alpha multi texture materials.  <a href="class_geometry_engine_1_1_custom_shading_1_1_multi_texture_color_map.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,6 +146,35 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a2dc236a5b567da5099069ce2b2be5609"><td class="mdescLeft">&#160;</td><td class="mdescRight">All posible shading steps to override. <br /></td></tr>
 <tr class="separator:a2dc236a5b567da5099069ce2b2be5609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b09b91ca7086f4f67a5d4181f35e58"><td class="memItemLeft" align="right" valign="top"><a id="af8b09b91ca7086f4f67a5d4181f35e58"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_geometry_engine_1_1_custom_shading.html#af8b09b91ca7086f4f67a5d4181f35e58">MaterialPostProcessSteps</a> { <br />
+&#160;&#160;<b>FIRST_POST_PROCESS</b>, 
+<b>SECOND_POST_PROCESS</b>, 
+<b>THIRD_POST_PROCESS</b>, 
+<b>FOURTH_POST_PROCESS</b>, 
+<br />
+&#160;&#160;<b>FIFTH_POST_PROCESS</b>, 
+<b>SIXTH_POST_PROCESS</b>, 
+<b>SEVENTH_POST_PROCESS</b>, 
+<b>EIGTH_POST_PROCESS</b>, 
+<br />
+&#160;&#160;<b>NINTH_POST_PROCESS</b>, 
+<b>TENTH_POST_PROCESS</b>
+<br />
+ }</td></tr>
+<tr class="memdesc:af8b09b91ca7086f4f67a5d4181f35e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constants to order the material post process steps. <br /></td></tr>
+<tr class="separator:af8b09b91ca7086f4f67a5d4181f35e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bfcbfb6d734e4d6fb8e2c661b987db6"><td class="memItemLeft" align="right" valign="top"><a id="a9bfcbfb6d734e4d6fb8e2c661b987db6"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_geometry_engine_1_1_custom_shading.html#a9bfcbfb6d734e4d6fb8e2c661b987db6">ShadingLists</a> { <br />
+&#160;&#160;<b>PRE_PROCESS_STEP_LIST</b>, 
+<b>SECOND_PRE_PROCESS_STEP_LIST</b>, 
+<b>POST_PROCESS_STEP_LIST</b>, 
+<b>SECOND_POST_PROCESS_STEP_LIST</b>, 
+<br />
+&#160;&#160;<b>SHADOW_POST_PROCESS_STEP_LIST</b>, 
+<b>SECOND_SHADOW_POST_PROCESS_STEP_LIST</b>
+<br />
+ }</td></tr>
+<tr class="memdesc:a9bfcbfb6d734e4d6fb8e2c661b987db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">All posible post process lists. <br /></td></tr>
+<tr class="separator:a9bfcbfb6d734e4d6fb8e2c661b987db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Namespace for manager and component classes involved in custom shading. </p>

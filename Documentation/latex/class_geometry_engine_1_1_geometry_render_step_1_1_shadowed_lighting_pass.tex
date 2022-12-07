@@ -25,7 +25,7 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+Render\+Step\+::Shadowed\+
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a023b4f4a44fd25c1e0f6695a604b1f72}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a023b4f4a44fd25c1e0f6695a604b1f72}} 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a023b4f4a44fd25c1e0f6695a604b1f72}{$\sim$\+Shadowed\+Lighting\+Pass}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_af52807435083cd96125e6ef6d7453027}{Render}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$lights=nullptr) override
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_ad188a4d3f33fb153459cf3483ff3df23}{Render}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam=nullptr, std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$ordered\+Items=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$lights=nullptr) override
 \item 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a73176d6860aee0903034eeaf93edb40d}{Clone}} () const override
 \end{DoxyCompactItemize}
@@ -34,9 +34,9 @@ virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_rend
 \item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_add7b889c49a68911f675ee44ab656699}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass}{Shadowed\+Lighting\+Pass}} \&ref)
 \item 
-virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a6365f5d2036ee96eae06074917f691f3}{Calculate\+Shadow\+Map}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$shadowed\+Lights, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items)
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a334def4e89daed915b4dae14eda7bad7}{Calculate\+Shadow\+Map}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$shadowed\+Lights, std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$ordered\+Items)
 \item 
-virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_ae4697bc2c2f0e29af5bdceec94354541}{calculate\+Single\+Light\+Shadow\+Map}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$light, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items)
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a320f70c119cf553c2ce4f1ed44671a1c}{calculate\+Single\+Light\+Shadow\+Map}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$light, std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$ordered\+Items)
 \item 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_af8c4ac2fc09992fc55abd37ede6bef7b}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_af8c4ac2fc09992fc55abd37ede6bef7b}} 
 void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_af8c4ac2fc09992fc55abd37ede6bef7b}{calculate\+Item\+Shadow\+Map}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$item, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$light)
@@ -97,11 +97,11 @@ Binds textures before rendering the light
 {\em shading\+Buff} & Shading\+Buffer that stores the shadow map \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a6365f5d2036ee96eae06074917f691f3}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a6365f5d2036ee96eae06074917f691f3}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a334def4e89daed915b4dae14eda7bad7}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a334def4e89daed915b4dae14eda7bad7}} 
 \index{GeometryEngine::GeometryRenderStep::ShadowedLightingPass@{GeometryEngine::GeometryRenderStep::ShadowedLightingPass}!CalculateShadowMap@{CalculateShadowMap}}
 \index{CalculateShadowMap@{CalculateShadowMap}!GeometryEngine::GeometryRenderStep::ShadowedLightingPass@{GeometryEngine::GeometryRenderStep::ShadowedLightingPass}}
 \subsubsection{\texorpdfstring{CalculateShadowMap()}{CalculateShadowMap()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass\+::\+Calculate\+Shadow\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{shadowed\+Lights,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass\+::\+Calculate\+Shadow\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{shadowed\+Lights,  }\item[{std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{ordered\+Items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 Calculates the shadowmap for every light and applies the light contribution 
 \begin{DoxyParams}{Parameters}
@@ -114,13 +114,13 @@ Calculates the shadowmap for every light and applies the light contribution
 \end{DoxyParams}
 
 
-Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_ad366c618c891de5c541b6d75db6a9594}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Shadowed\+Lighting\+Pass}}.
+Reimplemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_aab1aa8b25cbd61171470065af2b8c370}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Shadowed\+Lighting\+Pass}}.
 
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_ae4697bc2c2f0e29af5bdceec94354541}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_ae4697bc2c2f0e29af5bdceec94354541}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a320f70c119cf553c2ce4f1ed44671a1c}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a320f70c119cf553c2ce4f1ed44671a1c}} 
 \index{GeometryEngine::GeometryRenderStep::ShadowedLightingPass@{GeometryEngine::GeometryRenderStep::ShadowedLightingPass}!calculateSingleLightShadowMap@{calculateSingleLightShadowMap}}
 \index{calculateSingleLightShadowMap@{calculateSingleLightShadowMap}!GeometryEngine::GeometryRenderStep::ShadowedLightingPass@{GeometryEngine::GeometryRenderStep::ShadowedLightingPass}}
 \subsubsection{\texorpdfstring{calculateSingleLightShadowMap()}{calculateSingleLightShadowMap()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass\+::calculate\+Single\+Light\+Shadow\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{light,  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass\+::calculate\+Single\+Light\+Shadow\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$}]{light,  }\item[{std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{ordered\+Items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 Calculates the shadow map for a single light 
 \begin{DoxyParams}{Parameters}
@@ -183,24 +183,24 @@ Initializes the Open\+Gl pipeline for the shadow calculation sets cull face to f
 {\em buf} & Shading\+Buffer that stores the shadow map \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_af52807435083cd96125e6ef6d7453027}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_af52807435083cd96125e6ef6d7453027}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_ad188a4d3f33fb153459cf3483ff3df23}\label{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_ad188a4d3f33fb153459cf3483ff3df23}} 
 \index{GeometryEngine::GeometryRenderStep::ShadowedLightingPass@{GeometryEngine::GeometryRenderStep::ShadowedLightingPass}!Render@{Render}}
 \index{Render@{Render}!GeometryEngine::GeometryRenderStep::ShadowedLightingPass@{GeometryEngine::GeometryRenderStep::ShadowedLightingPass}}
 \subsubsection{\texorpdfstring{Render()}{Render()}}
-{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass\+::\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{lights = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass\+::\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam = {\ttfamily nullptr},  }\item[{std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{ordered\+Items = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{lights = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 Executes the render step 
 \begin{DoxyParams}{Parameters}
 {\em cam} & Pointer to camera to be rendered \\
 \hline
-{\em items} & Set of items to be rendered. Items will no be used in this step, we will use the information stored in the geometry buffer instead. \\
+{\em ordered\+Items} & Set of items to be rendered ordered by distance to the camera. Items will no be used in this step, we will use the information stored in the geometry buffer instead. \\
 \hline
 {\em lights} & Set of lights in the scene. \\
 \hline
 \end{DoxyParams}
 
 
-Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_ae6d9fa99f67e659839ca310947787f52}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass}}.
+Reimplemented from \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a3f8631da2e61e9a9092a53395b320ecb}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass}}.
 
 
 

@@ -176,6 +176,7 @@ boxfont setfont
 (GeometryEngine::GeometryRenderStep::RenderStep) cw
 (QOpenGLExtraFunctions) cw
 (GeometryEngine::GeometryRenderStep::GeometryPass) cw
+(GeometryEngine::GeometryRenderStep::GeometryPostProcessPass) cw
 (GeometryEngine::GeometryRenderStep::LightingPass) cw
 (GeometryEngine::GeometryRenderStep::PostProcessPass) cw
 (GeometryEngine::GeometryRenderStep::ScreenRenderPass) cw
@@ -197,13 +198,14 @@ boundx scalefactor div boundy scalefactor div scale
  (GeometryEngine::GeometryRenderStep::RenderStep) 2.000000 3.000000 box
  (QOpenGLExtraFunctions) 2.000000 4.000000 box
  (GeometryEngine::GeometryRenderStep::GeometryPass) 0.000000 2.000000 box
- (GeometryEngine::GeometryRenderStep::LightingPass) 1.500000 2.000000 box
- (GeometryEngine::GeometryRenderStep::PostProcessPass) 2.500000 2.000000 box
- (GeometryEngine::GeometryRenderStep::ScreenRenderPass) 3.500000 2.000000 box
+ (GeometryEngine::GeometryRenderStep::GeometryPostProcessPass) 1.000000 2.000000 box
+ (GeometryEngine::GeometryRenderStep::LightingPass) 2.000000 2.000000 box
+ (GeometryEngine::GeometryRenderStep::PostProcessPass) 3.000000 2.000000 box
+ (GeometryEngine::GeometryRenderStep::ScreenRenderPass) 4.000000 2.000000 box
  (GeometryEngine::GeometryRenderStep::TransparentGeometryPass) 0.000000 1.000000 box
- (GeometryEngine::GeometryRenderStep::EmissiveLightingPass) 1.000000 1.000000 box
- (GeometryEngine::GeometryRenderStep::ShadowedLightingPass) 2.000000 1.000000 box
- (GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass) 2.000000 0.000000 box
+ (GeometryEngine::GeometryRenderStep::EmissiveLightingPass) 1.500000 1.000000 box
+ (GeometryEngine::GeometryRenderStep::ShadowedLightingPass) 2.500000 1.000000 box
+ (GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass) 2.500000 0.000000 box
 
 % ----- relations -----
 
@@ -214,28 +216,30 @@ dashed
 solid
 1 2.000000 2.250000 out
 solid
-0.000000 3.500000 3.000000 conn
+0.000000 4.000000 3.000000 conn
 solid
 0 0.000000 2.750000 in
 solid
 1 0.000000 1.250000 out
 solid
-0 1.500000 2.750000 in
+0 1.000000 2.750000 in
 solid
-1 1.500000 1.250000 out
+0 2.000000 2.750000 in
 solid
-1.000000 2.000000 2.000000 conn
+1 2.000000 1.250000 out
 solid
-0 2.500000 2.750000 in
+1.500000 2.500000 2.000000 conn
 solid
-0 3.500000 2.750000 in
+0 3.000000 2.750000 in
+solid
+0 4.000000 2.750000 in
 solid
 0 0.000000 1.750000 in
 solid
-0 1.000000 1.750000 in
+0 1.500000 1.750000 in
 solid
-0 2.000000 1.750000 in
+0 2.500000 1.750000 in
 solid
-1 2.000000 0.250000 out
+1 2.500000 0.250000 out
 solid
-0 2.000000 0.750000 in
+0 2.500000 0.750000 in

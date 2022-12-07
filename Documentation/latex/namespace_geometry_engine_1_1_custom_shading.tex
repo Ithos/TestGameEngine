@@ -28,6 +28,18 @@ class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shadi
 \begin{DoxyCompactList}\small\item\em Component class that executes a shading operation on target material T. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_direct_color_map}{Direct\+Color\+Map}}
 \begin{DoxyCompactList}\small\item\em Custom color map calculation for alpha color materials. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_blur_post_process}{Material\+Blur\+Post\+Process}}
+\begin{DoxyCompactList}\small\item\em Standard blur post process that is applied only to objects that contain the parent material. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_grey_scale}{Material\+Grey\+Scale}}
+\begin{DoxyCompactList}\small\item\em Standard blur post process that is applied only to objects that contain the parent material. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_geometry_engine_1_1_custom_shading_1_1_material_post_process_constants}{Material\+Post\+Process\+Constants}}
+\begin{DoxyCompactList}\small\item\em String constants that reference shader keys. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Material\+Post\+Process\+Interface}}
+\begin{DoxyCompactList}\small\item\em Interface for objects that implement custom shadow map calculations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step}{Material\+Post\+Process\+Step}}
+\begin{DoxyCompactList}\small\item\em Component class that executes a post process operation on target material T. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Multi\+Shading\+Interface}}
+\begin{DoxyCompactList}\small\item\em Interface and manager class for material post processes maps. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_texture_color_map}{Multi\+Texture\+Color\+Map}}
 \begin{DoxyCompactList}\small\item\em Custom color map calculation for alpha multi texture materials. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_texture_color_map}{Texture\+Color\+Map}}
@@ -43,7 +55,34 @@ enum \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a09e44ca81de5
 enum \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a2dc236a5b567da5099069ce2b2be5609}{Custom\+Shading\+Steps}} \{ {\bfseries C\+U\+S\+T\+O\+M\+\_\+\+S\+H\+A\+D\+O\+W\+M\+AP}, 
 {\bfseries C\+U\+S\+T\+O\+M\+\_\+\+C\+O\+L\+O\+R\+M\+AP}
  \}
-\begin{DoxyCompactList}\small\item\em All posible shading steps to override. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em All posible shading steps to override. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}\label{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}} 
+enum \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}} \{ \newline
+{\bfseries F\+I\+R\+S\+T\+\_\+\+P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+SS}, 
+{\bfseries S\+E\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+SS}, 
+{\bfseries T\+H\+I\+R\+D\+\_\+\+P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+SS}, 
+{\bfseries F\+O\+U\+R\+T\+H\+\_\+\+P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+SS}, 
+\newline
+{\bfseries F\+I\+F\+T\+H\+\_\+\+P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+SS}, 
+{\bfseries S\+I\+X\+T\+H\+\_\+\+P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+SS}, 
+{\bfseries S\+E\+V\+E\+N\+T\+H\+\_\+\+P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+SS}, 
+{\bfseries E\+I\+G\+T\+H\+\_\+\+P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+SS}, 
+\newline
+{\bfseries N\+I\+N\+T\+H\+\_\+\+P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+SS}, 
+{\bfseries T\+E\+N\+T\+H\+\_\+\+P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+SS}
+ \}
+\begin{DoxyCompactList}\small\item\em Constants to order the material post process steps. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}\label{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}} 
+enum \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_a9bfcbfb6d734e4d6fb8e2c661b987db6}{Shading\+Lists}} \{ \newline
+{\bfseries P\+R\+E\+\_\+\+P\+R\+O\+C\+E\+S\+S\+\_\+\+S\+T\+E\+P\+\_\+\+L\+I\+ST}, 
+{\bfseries S\+E\+C\+O\+N\+D\+\_\+\+P\+R\+E\+\_\+\+P\+R\+O\+C\+E\+S\+S\+\_\+\+S\+T\+E\+P\+\_\+\+L\+I\+ST}, 
+{\bfseries P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+\_\+\+S\+T\+E\+P\+\_\+\+L\+I\+ST}, 
+{\bfseries S\+E\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+\_\+\+S\+T\+E\+P\+\_\+\+L\+I\+ST}, 
+\newline
+{\bfseries S\+H\+A\+D\+O\+W\+\_\+\+P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+\_\+\+S\+T\+E\+P\+\_\+\+L\+I\+ST}, 
+{\bfseries S\+E\+C\+O\+N\+D\+\_\+\+S\+H\+A\+D\+O\+W\+\_\+\+P\+O\+S\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+\_\+\+S\+T\+E\+P\+\_\+\+L\+I\+ST}
+ \}
+\begin{DoxyCompactList}\small\item\em All posible post process lists. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

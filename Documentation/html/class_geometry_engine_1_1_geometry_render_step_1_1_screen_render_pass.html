@@ -109,8 +109,8 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass.html#a28917fa043e46ff21802488269304c9f">~ScreenRenderPass</a> ()</td></tr>
 <tr class="memdesc:a28917fa043e46ff21802488269304c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
 <tr class="separator:a28917fa043e46ff21802488269304c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53ab5f8ea2c7ed3c116474731ff41815"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass.html#a53ab5f8ea2c7ed3c116474731ff41815">Render</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam=nullptr, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *items=nullptr, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> * &gt; *lights=nullptr) override</td></tr>
-<tr class="separator:a53ab5f8ea2c7ed3c116474731ff41815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24f21e3a457408b2163bc51c2ebb8f2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass.html#ac24f21e3a457408b2163bc51c2ebb8f2">Render</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam=nullptr, std::map&lt; float, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *orderedItems=nullptr, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> * &gt; *lights=nullptr) override</td></tr>
+<tr class="separator:ac24f21e3a457408b2163bc51c2ebb8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a125bea5e92ff920b57012f9b0b177a1e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">RenderStep</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass.html#a125bea5e92ff920b57012f9b0b177a1e">Clone</a> () const override</td></tr>
 <tr class="separator:a125bea5e92ff920b57012f9b0b177a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">GeometryEngine::GeometryRenderStep::RenderStep</a></td></tr>
@@ -132,6 +132,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a38fa6de5c3c8a46b365b59d3e29267b7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass.html#a38fa6de5c3c8a46b365b59d3e29267b7">copy</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass.html">ScreenRenderPass</a> &amp;ref)</td></tr>
 <tr class="separator:a38fa6de5c3c8a46b365b59d3e29267b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">GeometryEngine::GeometryRenderStep::RenderStep</a></td></tr>
+<tr class="memitem:ad5895ae71a3b7ff4c0ec10cb07ea0195 inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#ad5895ae71a3b7ff4c0ec10cb07ea0195">checkRenderGroups</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> *item)</td></tr>
+<tr class="separator:ad5895ae71a3b7ff4c0ec10cb07ea0195 inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe0321446beeb4093dba701424ec1e8c inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#afe0321446beeb4093dba701424ec1e8c">copy</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">RenderStep</a> &amp;ref)</td></tr>
 <tr class="separator:afe0321446beeb4093dba701424ec1e8c inherit pro_methods_class_geometry_engine_1_1_geometry_render_step_1_1_render_step"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -309,8 +311,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a53ab5f8ea2c7ed3c116474731ff41815"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53ab5f8ea2c7ed3c116474731ff41815">&#9670;&nbsp;</a></span>Render()</h2>
+<a id="ac24f21e3a457408b2163bc51c2ebb8f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac24f21e3a457408b2163bc51c2ebb8f2">&#9670;&nbsp;</a></span>Render()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -327,8 +329,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *&#160;</td>
-          <td class="paramname"><em>items</em> = <code>nullptr</code>, </td>
+          <td class="paramtype">std::map&lt; float, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>orderedItems</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -351,13 +353,13 @@ Protected Attributes</h2></td></tr>
 <p>Executes the render step </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cam</td><td>Pointer to camera to be rendered. We only need the information of the camera and the geometry buffer. </td></tr>
-    <tr><td class="paramname">items</td><td>Set of items to be rendered. Not used. </td></tr>
+    <tr><td class="paramname">orderedItems</td><td>Set of items to be rendered ordered by distance to the camera. Not used. </td></tr>
     <tr><td class="paramname">lights</td><td>Set of lights in the scene. Not used. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#a9b054ee8f38304319a9d03ba3e173dcd">GeometryEngine::GeometryRenderStep::RenderStep</a>.</p>
+<p>Implements <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#a78676ad0b7b3fdfad5d1869f28426a83">GeometryEngine::GeometryRenderStep::RenderStep</a>.</p>
 
 </div>
 </div>

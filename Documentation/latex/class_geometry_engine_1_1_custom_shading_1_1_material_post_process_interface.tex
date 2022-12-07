@@ -1,0 +1,205 @@
+\hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{}\section{Geometry\+Engine\+::Custom\+Shading\+::Material\+Post\+Process\+Interface Class Reference}
+\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}\index{GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}}
+
+
+Interface for objects that implement custom shadow map calculations.  
+
+
+
+
+{\ttfamily \#include $<$Material\+Post\+Process\+Interface.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a2f0e83fa3f0b8a1382703dce1c385e69}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a2f0e83fa3f0b8a1382703dce1c385e69}} 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a2f0e83fa3f0b8a1382703dce1c385e69}{Material\+Post\+Process\+Interface}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a7fc2078ff407e798f0f86834b1e71ced}{Material\+Post\+Process\+Interface}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Material\+Post\+Process\+Interface}} \&ref)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_ac933602c755f15c10dcdf75e8f0b5770}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_ac933602c755f15c10dcdf75e8f0b5770}} 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_ac933602c755f15c10dcdf75e8f0b5770}{$\sim$\+Material\+Post\+Process\+Interface}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Material\+Post\+Process\+Interface}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_ad153baf46cac36c9af3c265c7348fd94}{Clone}} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step}{Material\+Post\+Process\+Step}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a85b59bfa41fa228f5b319f91f6645a6a}{Add\+New\+Post\+Process\+Step}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}} step)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a541da18512f4dd5fcc34ab221029e080}{Add\+Post\+Process\+Step}} (\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step}{Material\+Post\+Process\+Step}} $\ast$value, \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}} key)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a8cf7682e78a9a2db70b1204e620e0623}{Remove\+Post\+Process\+Step}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}} key)
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a5c57e0728a681c3007fdc2b0359aca70}{Contains\+Step}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}} step)
+\item 
+int \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_aea6152ec8a2a50e20d9045840cc6bce2}{Get\+Step\+Iterations}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}} step)
+\item 
+void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a6e7643df80126a6b40e47bd4c79bf54f}{Set\+Target\+Material}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$target)
+\item 
+virtual bool \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a02fb160f9c92665cf2f644fbb65c5c71}{Render\+Step}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}} step, Q\+Open\+G\+L\+Buffer $\ast$vertex\+Buf, Q\+Open\+G\+L\+Buffer $\ast$index\+Buf, const Q\+Matrix4x4 \&model\+View\+Projection, unsigned int total\+Vertex\+Num, unsigned int total\+Index\+Num, const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&g\+Buff\+Tex\+Info)
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_ac58496e874964aa65d6484b37fc44fcd}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_ac58496e874964aa65d6484b37fc44fcd}} 
+void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_ac58496e874964aa65d6484b37fc44fcd}{Init\+Post\+Process\+Steps}} ()
+\begin{DoxyCompactList}\small\item\em Calls init on all the shading steps in the map. This method should be called before trying to use any shading step. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a54c049658eb7e38b980f943c193ba408}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a54c049658eb7e38b980f943c193ba408}} 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a54c049658eb7e38b980f943c193ba408}{Init\+Post\+Process\+Step}} (\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}} key)
+\begin{DoxyCompactList}\small\item\em Calls init on the selected shading step. Steps should be initialited before trying to use them. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a08b1e05de35b0b05579ac7f437f80cf8}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a08b1e05de35b0b05579ac7f437f80cf8}} 
+const std\+::map$<$ \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}}, \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step}{Material\+Post\+Process\+Step}} $\ast$ $>$ \& \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a08b1e05de35b0b05579ac7f437f80cf8}{Get\+Steps}} ()
+\begin{DoxyCompactList}\small\item\em Returns all steps ordered by their key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a8987634f73ace6670cf77390ca6ae71f}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a8987634f73ace6670cf77390ca6ae71f}} 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a8987634f73ace6670cf77390ca6ae71f}{get\+Managers}} ()
+\begin{DoxyCompactList}\small\item\em Initializes managers and shaders. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a64c1c173ff46d30bd3beddc4081b3c57}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Material\+Post\+Process\+Interface}} \&ref)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a2e00306c95044891875c7570c26c4f15}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a2e00306c95044891875c7570c26c4f15}} 
+\mbox{\hyperlink{class_shader_files_1_1_shader_manager}{Shader\+Files\+::\+Shader\+Manager}} $\ast$ {\bfseries mp\+Shader\+Manager}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a28a1b787bd3c5d06c6057232ba24805f}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a28a1b787bd3c5d06c6057232ba24805f}} 
+\mbox{\hyperlink{class_configuration_1_1_configuration_manager}{Configuration\+::\+Configuration\+Manager}} $\ast$ {\bfseries mp\+Conf\+Instance}
+\item 
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_ac7c0fdb3268b697795f20a4e0307b09c}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_ac7c0fdb3268b697795f20a4e0307b09c}} 
+std\+::map$<$ \mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}}, \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step}{Material\+Post\+Process\+Step}} $\ast$ $>$ {\bfseries m\+Step\+Map}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface for objects that implement custom shadow map calculations. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a7fc2078ff407e798f0f86834b1e71ced}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a7fc2078ff407e798f0f86834b1e71ced}} 
+\index{GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}!MaterialPostProcessInterface@{MaterialPostProcessInterface}}
+\index{MaterialPostProcessInterface@{MaterialPostProcessInterface}!GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}}
+\subsubsection{\texorpdfstring{MaterialPostProcessInterface()}{MaterialPostProcessInterface()}}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Interface\+::\+Material\+Post\+Process\+Interface (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Material\+Post\+Process\+Interface}} \&}]{ref }\end{DoxyParamCaption})}
+
+Copy constructor. Automatiaclly initializes the shading steps after copying them. 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a85b59bfa41fa228f5b319f91f6645a6a}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a85b59bfa41fa228f5b319f91f6645a6a}} 
+\index{GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}!AddNewPostProcessStep@{AddNewPostProcessStep}}
+\index{AddNewPostProcessStep@{AddNewPostProcessStep}!GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}}
+\subsubsection{\texorpdfstring{AddNewPostProcessStep()}{AddNewPostProcessStep()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step}{Material\+Post\+Process\+Step}}$\ast$ Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Interface\+::\+Add\+New\+Post\+Process\+Step (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}}}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a new \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step}{Material\+Post\+Process\+Step}} T on the selected step slot 
+\begin{DoxyParams}{Parameters}
+{\em step} & Step key where the Material\+Post\+Process\+Steps object will be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a541da18512f4dd5fcc34ab221029e080}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a541da18512f4dd5fcc34ab221029e080}} 
+\index{GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}!AddPostProcessStep@{AddPostProcessStep}}
+\index{AddPostProcessStep@{AddPostProcessStep}!GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}}
+\subsubsection{\texorpdfstring{AddPostProcessStep()}{AddPostProcessStep()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Interface\+::\+Add\+Post\+Process\+Step (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step}{Material\+Post\+Process\+Step}} $\ast$}]{value,  }\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}}}]{key }\end{DoxyParamCaption})}
+
+Adds a new \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step}{Material\+Post\+Process\+Step}} on the selected function slot 
+\begin{DoxyParams}{Parameters}
+{\em value} & \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_step}{Material\+Post\+Process\+Step}} to be added to the manager \\
+\hline
+{\em key} & Step key where the Material\+Post\+Process\+Steps object will be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_ad153baf46cac36c9af3c265c7348fd94}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_ad153baf46cac36c9af3c265c7348fd94}} 
+\index{GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}!Clone@{Clone}}
+\index{Clone@{Clone}!GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}}
+\subsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Material\+Post\+Process\+Interface}}$\ast$ Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Interface\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Abstract method. Factory method. Creates a copy of this object \begin{DoxyReturn}{Returns}
+Pointer to a copy of this object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a5c57e0728a681c3007fdc2b0359aca70}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a5c57e0728a681c3007fdc2b0359aca70}} 
+\index{GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}!ContainsStep@{ContainsStep}}
+\index{ContainsStep@{ContainsStep}!GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}}
+\subsubsection{\texorpdfstring{ContainsStep()}{ContainsStep()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Interface\+::\+Contains\+Step (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}}}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if the manager contains a custom step key 
+\begin{DoxyParams}{Parameters}
+{\em step} & Key to check \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a64c1c173ff46d30bd3beddc4081b3c57}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a64c1c173ff46d30bd3beddc4081b3c57}} 
+\index{GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}!copy@{copy}}
+\index{copy@{copy}!GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Interface\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface}{Material\+Post\+Process\+Interface}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Copies the data of a Material object to the current object 
+\begin{DoxyParams}{Parameters}
+{\em ref} & Material to be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_aea6152ec8a2a50e20d9045840cc6bce2}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_aea6152ec8a2a50e20d9045840cc6bce2}} 
+\index{GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}!GetStepIterations@{GetStepIterations}}
+\index{GetStepIterations@{GetStepIterations}!GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}}
+\subsubsection{\texorpdfstring{GetStepIterations()}{GetStepIterations()}}
+{\footnotesize\ttfamily int Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Interface\+::\+Get\+Step\+Iterations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}}}]{step }\end{DoxyParamCaption})}
+
+Returns the number of times that this post process must beexecuted 
+\begin{DoxyParams}{Parameters}
+{\em step} & Post process key \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a8cf7682e78a9a2db70b1204e620e0623}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a8cf7682e78a9a2db70b1204e620e0623}} 
+\index{GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}!RemovePostProcessStep@{RemovePostProcessStep}}
+\index{RemovePostProcessStep@{RemovePostProcessStep}!GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}}
+\subsubsection{\texorpdfstring{RemovePostProcessStep()}{RemovePostProcessStep()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Interface\+::\+Remove\+Post\+Process\+Step (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}}}]{key }\end{DoxyParamCaption})}
+
+Removes custom step from the manager 
+\begin{DoxyParams}{Parameters}
+{\em key} & Custom step key to be removed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a02fb160f9c92665cf2f644fbb65c5c71}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a02fb160f9c92665cf2f644fbb65c5c71}} 
+\index{GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}!RenderStep@{RenderStep}}
+\index{RenderStep@{RenderStep}!GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}}
+\subsubsection{\texorpdfstring{RenderStep()}{RenderStep()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Interface\+::\+Render\+Step (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_geometry_engine_1_1_custom_shading_af8b09b91ca7086f4f67a5d4181f35e58}{Material\+Post\+Process\+Steps}}}]{step,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{vertex\+Buf,  }\item[{Q\+Open\+G\+L\+Buffer $\ast$}]{index\+Buf,  }\item[{const Q\+Matrix4x4 \&}]{model\+View\+Projection,  }\item[{unsigned int}]{total\+Vertex\+Num,  }\item[{unsigned int}]{total\+Index\+Num,  }\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_g_buffer_texture_info}{G\+Buffer\+Texture\+Info}} \&}]{g\+Buff\+Tex\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Render step 
+\begin{DoxyParams}{Parameters}
+{\em step} & Step to be rendered \\
+\hline
+{\em vertex\+Buf} & Pointer to the vertex buffer \\
+\hline
+{\em index\+Buffer} & Pointer to the index buffer \\
+\hline
+{\em model\+Matrix} & model matrix of the item to be added to the shadow map \\
+\hline
+{\em total\+Vertex\+Num} & Total amount of vertices \\
+\hline
+{\em total\+Index\+Num} & Total amount of indices \\
+\hline
+{\em g\+Buff\+Tex\+Info} & geometry buffer data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a6e7643df80126a6b40e47bd4c79bf54f}\label{class_geometry_engine_1_1_custom_shading_1_1_material_post_process_interface_a6e7643df80126a6b40e47bd4c79bf54f}} 
+\index{GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}!SetTargetMaterial@{SetTargetMaterial}}
+\index{SetTargetMaterial@{SetTargetMaterial}!GeometryEngine::CustomShading::MaterialPostProcessInterface@{GeometryEngine::CustomShading::MaterialPostProcessInterface}}
+\subsubsection{\texorpdfstring{SetTargetMaterial()}{SetTargetMaterial()}}
+{\footnotesize\ttfamily void Geometry\+Engine\+::\+Custom\+Shading\+::\+Material\+Post\+Process\+Interface\+::\+Set\+Target\+Material (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Geometry\+Material\+::\+Material}} $\ast$}]{target }\end{DoxyParamCaption})}
+
+Sets the target for every shading step in this interface 
+\begin{DoxyParams}{Parameters}
+{\em target} & Material to be rendered \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Common\+Inerfaces/Material\+Post\+Process\+Interface.\+h\item 
+E\+:/\+Common\+Data/\+Repositories/\+Test\+Game\+Engine/\+Geometry\+Engine/\+Items/\+Common\+Inerfaces/Material\+Post\+Process\+Interface.\+cpp\end{DoxyCompactItemize}

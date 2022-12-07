@@ -18,7 +18,7 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+Material\+::Alpha\+Normal\
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_ae09aba3281b21c239ad7c7391859b510}{Alpha\+Normal\+Map\+Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$const custom\+Shading, const std\+::string \&tex\+Dir, const std\+::string \&normal\+Map\+Tex\+Dir, float threshold\+Value=0.\+0f, float global\+Alpha\+Value=1.\+0f, float shininess=10.\+0f, bool translucent=false)
+\mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a0826154e4032d64ed979176f9a6c6ddf}{Alpha\+Normal\+Map\+Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Custom\+Shading\+::\+Multi\+Shading\+Interface}} $\ast$const multi\+Shading\+Interface, const std\+::string \&tex\+Dir, const std\+::string \&normal\+Map\+Tex\+Dir, float threshold\+Value=0.\+0f, float global\+Alpha\+Value=1.\+0f, float shininess=10.\+0f, bool translucent=false)
 \item 
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_acc0c412a7f227444958bf1249eedb34d}{Alpha\+Normal\+Map\+Texture\+Material}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material}{Alpha\+Normal\+Map\+Texture\+Material}} \&ref)
 \item 
@@ -61,15 +61,15 @@ virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_al
 \mbox{\hyperlink{class_geometry_engine_1_1_geometry_material_1_1_material}{Material}} that loads a color texture that may contain transparencies and a normal map texture. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_ae09aba3281b21c239ad7c7391859b510}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_ae09aba3281b21c239ad7c7391859b510}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a0826154e4032d64ed979176f9a6c6ddf}\label{class_geometry_engine_1_1_geometry_material_1_1_alpha_normal_map_texture_material_a0826154e4032d64ed979176f9a6c6ddf}} 
 \index{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}!AlphaNormalMapTextureMaterial@{AlphaNormalMapTextureMaterial}}
 \index{AlphaNormalMapTextureMaterial@{AlphaNormalMapTextureMaterial}!GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial@{GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial}}
 \subsubsection{\texorpdfstring{AlphaNormalMapTextureMaterial()}{AlphaNormalMapTextureMaterial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Normal\+Map\+Texture\+Material\+::\+Alpha\+Normal\+Map\+Texture\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_custom_shading_interface}{Custom\+Shading\+::\+Custom\+Shading\+Interface}} $\ast$const}]{custom\+Shading,  }\item[{const std\+::string \&}]{tex\+Dir,  }\item[{const std\+::string \&}]{normal\+Map\+Tex\+Dir,  }\item[{float}]{threshold\+Value = {\ttfamily 0.0f},  }\item[{float}]{global\+Alpha\+Value = {\ttfamily 1.0f},  }\item[{float}]{shininess = {\ttfamily 10.0f},  }\item[{bool}]{translucent = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Geometry\+Engine\+::\+Geometry\+Material\+::\+Alpha\+Normal\+Map\+Texture\+Material\+::\+Alpha\+Normal\+Map\+Texture\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_geometry_engine_1_1_custom_shading_1_1_multi_shading_interface}{Custom\+Shading\+::\+Multi\+Shading\+Interface}} $\ast$const}]{multi\+Shading\+Interface,  }\item[{const std\+::string \&}]{tex\+Dir,  }\item[{const std\+::string \&}]{normal\+Map\+Tex\+Dir,  }\item[{float}]{threshold\+Value = {\ttfamily 0.0f},  }\item[{float}]{global\+Alpha\+Value = {\ttfamily 1.0f},  }\item[{float}]{shininess = {\ttfamily 10.0f},  }\item[{bool}]{translucent = {\ttfamily false} }\end{DoxyParamCaption})}
 
 Constructor. Calls init material 
 \begin{DoxyParams}{Parameters}
-{\em custom\+Shading} & Interface to an object that implements custom shadow shading for this material. \\
+{\em multi\+Shading\+Interface} & Interface to an object that implements custom shading for this material. \\
 \hline
 {\em tex\+Dir} & Key of the texture to be loaded \\
 \hline

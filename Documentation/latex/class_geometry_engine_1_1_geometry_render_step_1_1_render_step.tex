@@ -21,12 +21,14 @@ Inheritance diagram for Geometry\+Engine\+::Geometry\+Render\+Step\+::Render\+St
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a3dcb308f27e22b11e3145d61d24676b3}\label{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a3dcb308f27e22b11e3145d61d24676b3}} 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a3dcb308f27e22b11e3145d61d24676b3}{$\sim$\+Render\+Step}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a9b054ee8f38304319a9d03ba3e173dcd}{Render}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$items=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$lights=nullptr)=0
+virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a78676ad0b7b3fdfad5d1869f28426a83}{Render}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam=nullptr, std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$ordered\+Items=nullptr, std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$lights=nullptr)=0
 \item 
 virtual \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} $\ast$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe33ea9d82c5be11f55af7d39691d44b}{Clone}} () const =0
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_ad5895ae71a3b7ff4c0ec10cb07ea0195}{check\+Render\+Groups}} (\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$cam, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$item)
 \item 
 virtual void \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe0321446beeb4093dba701424ec1e8c}{copy}} (const \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} \&ref)
 \end{DoxyCompactItemize}
@@ -45,6 +47,22 @@ Abstract class that acts as an interface for all Render\+Steps. Each render step
 Copy Constructor \textbackslash{}parameter ref Constant reference to the \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} to be copied 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_ad5895ae71a3b7ff4c0ec10cb07ea0195}\label{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_ad5895ae71a3b7ff4c0ec10cb07ea0195}} 
+\index{GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}!checkRenderGroups@{checkRenderGroups}}
+\index{checkRenderGroups@{checkRenderGroups}!GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}}
+\subsubsection{\texorpdfstring{checkRenderGroups()}{checkRenderGroups()}}
+{\footnotesize\ttfamily bool Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Render\+Step\+::check\+Render\+Groups (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam,  }\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Method that checks if the item and the camera are in the same render group. Used to decide if an item should be rendered 
+\begin{DoxyParams}{Parameters}
+{\em cam} & Pointer to camera to be rendered \\
+\hline
+{\em item} & Item to be rendered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if both are in the same render group false otherwise 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe33ea9d82c5be11f55af7d39691d44b}\label{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe33ea9d82c5be11f55af7d39691d44b}} 
 \index{GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}!Clone@{Clone}}
 \index{Clone@{Clone}!GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}}
@@ -56,7 +74,7 @@ Pointer to a copy of the object
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_afcf20dc0a20cf1e0fb730c7b56071c26}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Post\+Process\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass_a125bea5e92ff920b57012f9b0b177a1e}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Render\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a73176d6860aee0903034eeaf93edb40d}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4f1cb36c7bf6a90d0aa3b8e8feba5e5e}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a12e85a0169cb7b92cb8bd7b7fe100b33}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a56d2ef131669ae3964a04cb54e6c3b0f}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Shadowed\+Lighting\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a5a46d5e73fe672e09584a2e6e8bfa5e8}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Emissive\+Lighting\+Pass}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a6bfc83f45b84112bbf1beda1ed8e5466}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Geometry\+Pass}}.
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_afcf20dc0a20cf1e0fb730c7b56071c26}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Post\+Process\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass_a125bea5e92ff920b57012f9b0b177a1e}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Render\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_a73176d6860aee0903034eeaf93edb40d}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_post_process_pass_ab9eab79bba7251936921032596be21fe}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Post\+Process\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a4f1cb36c7bf6a90d0aa3b8e8feba5e5e}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a12e85a0169cb7b92cb8bd7b7fe100b33}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass_a56d2ef131669ae3964a04cb54e6c3b0f}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Shadowed\+Lighting\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a5a46d5e73fe672e09584a2e6e8bfa5e8}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Emissive\+Lighting\+Pass}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass_a6bfc83f45b84112bbf1beda1ed8e5466}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Transparent\+Geometry\+Pass}}.
 
 \mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe0321446beeb4093dba701424ec1e8c}\label{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_afe0321446beeb4093dba701424ec1e8c}} 
 \index{GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}!copy@{copy}}
@@ -69,24 +87,24 @@ Copies the values of a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_rende
 {\em ref} & Constant reference to a \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_render_step}{Render\+Step}} whose values should be copied \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a9b054ee8f38304319a9d03ba3e173dcd}\label{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a9b054ee8f38304319a9d03ba3e173dcd}} 
+\mbox{\Hypertarget{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a78676ad0b7b3fdfad5d1869f28426a83}\label{class_geometry_engine_1_1_geometry_render_step_1_1_render_step_a78676ad0b7b3fdfad5d1869f28426a83}} 
 \index{GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}!Render@{Render}}
 \index{Render@{Render}!GeometryEngine::GeometryRenderStep::RenderStep@{GeometryEngine::GeometryRenderStep::RenderStep}}
 \subsubsection{\texorpdfstring{Render()}{Render()}}
-{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Render\+Step\+::\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{items = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{lights = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Render\+Step\+::\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera}{Geometry\+World\+Item\+::\+Geometry\+Camera\+::\+Camera}} $\ast$}]{cam = {\ttfamily nullptr},  }\item[{std\+::map$<$ float, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item}{Geometry\+World\+Item\+::\+Geometry\+Item\+::\+Geometry\+Item}} $\ast$ $>$ $\ast$}]{ordered\+Items = {\ttfamily nullptr},  }\item[{std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light}{Geometry\+World\+Item\+::\+Geometry\+Light\+::\+Light}} $\ast$ $>$ $\ast$}]{lights = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Executes the render step operations 
 \begin{DoxyParams}{Parameters}
 {\em cam} & Pointer to the camera is being rendered \\
 \hline
-{\em items} & Set of items to be rendered \\
+{\em ordered\+Items} & Set of items to be rendered ordered by distance to the camera \\
 \hline
 {\em lights} & Set of lights to be rendered \\
 \hline
 \end{DoxyParams}
 
 
-Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a2ebe2a0b940e47ccd10e649bff77138d}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Post\+Process\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass_a53ab5f8ea2c7ed3c116474731ff41815}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Render\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_af52807435083cd96125e6ef6d7453027}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_ae6d9fa99f67e659839ca310947787f52}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_ac3bfd0a3915cd8a8cd7e1bf81157f6ad}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_adffe18f64968290aedda426bc4450414}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Emissive\+Lighting\+Pass}}.
+Implemented in \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass_a4d41ac05dcf1533296a7fbda443f38fb}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Post\+Process\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass_ac24f21e3a457408b2163bc51c2ebb8f2}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Screen\+Render\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass_ad188a4d3f33fb153459cf3483ff3df23}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Shadowed\+Lighting\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_post_process_pass_ae359def8e0ef34a78454307b078352b6}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Post\+Process\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass_a3f8631da2e61e9a9092a53395b320ecb}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Lighting\+Pass}}, \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass_a8c508e9f74abd051a8908bb1a568ea50}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Geometry\+Pass}}, and \mbox{\hyperlink{class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass_a03eb4da70618421703fc71d61669321d}{Geometry\+Engine\+::\+Geometry\+Render\+Step\+::\+Emissive\+Lighting\+Pass}}.
 
 
 

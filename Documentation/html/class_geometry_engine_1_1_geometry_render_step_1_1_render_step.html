@@ -84,13 +84,14 @@ Inheritance diagram for GeometryEngine::GeometryRenderStep::RenderStep:</div>
   <img src="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.png" usemap="#GeometryEngine::GeometryRenderStep::RenderStep_map" alt=""/>
   <map id="GeometryEngine::GeometryRenderStep::RenderStep_map" name="GeometryEngine::GeometryRenderStep::RenderStep_map">
 <area href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html" title="Renders geometry without illumination." alt="GeometryEngine::GeometryRenderStep::GeometryPass" shape="rect" coords="0,112,435,136"/>
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry." alt="GeometryEngine::GeometryRenderStep::LightingPass" shape="rect" coords="667,112,1102,136"/>
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html" title="Applies a double step post process to the whole scene." alt="GeometryEngine::GeometryRenderStep::PostProcessPass" shape="rect" coords="1112,112,1547,136"/>
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass.html" title="Renders the final texture to the screen." alt="GeometryEngine::GeometryRenderStep::ScreenRenderPass" shape="rect" coords="1557,112,1992,136"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_post_process_pass.html" title="Applies a double step post process to the individual scene objects." alt="GeometryEngine::GeometryRenderStep::GeometryPostProcessPass" shape="rect" coords="445,112,880,136"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html" title="Appplies lighting to already rendered geometry." alt="GeometryEngine::GeometryRenderStep::LightingPass" shape="rect" coords="890,112,1325,136"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html" title="Applies a double step post process to the whole scene." alt="GeometryEngine::GeometryRenderStep::PostProcessPass" shape="rect" coords="1335,112,1770,136"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass.html" title="Renders the final texture to the screen." alt="GeometryEngine::GeometryRenderStep::ScreenRenderPass" shape="rect" coords="1780,112,2215,136"/>
 <area href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass.html" title="Render step that renders geometry without illumination and separates the rendering of transparent and..." alt="GeometryEngine::GeometryRenderStep::TransparentGeometryPass" shape="rect" coords="0,168,435,192"/>
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html" title="Renders emissive colors and textures." alt="GeometryEngine::GeometryRenderStep::EmissiveLightingPass" shape="rect" coords="445,168,880,192"/>
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html" title="Lighting pass that calculates solid shadows." alt="GeometryEngine::GeometryRenderStep::ShadowedLightingPass" shape="rect" coords="890,168,1325,192"/>
-<area href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass.html" title="Lighting pass that calculates transparent and translucent shadows." alt="GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass" shape="rect" coords="890,224,1325,248"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html" title="Renders emissive colors and textures." alt="GeometryEngine::GeometryRenderStep::EmissiveLightingPass" shape="rect" coords="667,168,1102,192"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html" title="Lighting pass that calculates solid shadows." alt="GeometryEngine::GeometryRenderStep::ShadowedLightingPass" shape="rect" coords="1112,168,1547,192"/>
+<area href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass.html" title="Lighting pass that calculates transparent and translucent shadows." alt="GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass" shape="rect" coords="1112,224,1547,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -106,13 +107,15 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#a3dcb308f27e22b11e3145d61d24676b3">~RenderStep</a> ()</td></tr>
 <tr class="memdesc:a3dcb308f27e22b11e3145d61d24676b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
 <tr class="separator:a3dcb308f27e22b11e3145d61d24676b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b054ee8f38304319a9d03ba3e173dcd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#a9b054ee8f38304319a9d03ba3e173dcd">Render</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam=nullptr, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *items=nullptr, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> * &gt; *lights=nullptr)=0</td></tr>
-<tr class="separator:a9b054ee8f38304319a9d03ba3e173dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78676ad0b7b3fdfad5d1869f28426a83"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#a78676ad0b7b3fdfad5d1869f28426a83">Render</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam=nullptr, std::map&lt; float, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *orderedItems=nullptr, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_light_1_1_light.html">GeometryWorldItem::GeometryLight::Light</a> * &gt; *lights=nullptr)=0</td></tr>
+<tr class="separator:a78676ad0b7b3fdfad5d1869f28426a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe33ea9d82c5be11f55af7d39691d44b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">RenderStep</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#afe33ea9d82c5be11f55af7d39691d44b">Clone</a> () const =0</td></tr>
 <tr class="separator:afe33ea9d82c5be11f55af7d39691d44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:ad5895ae71a3b7ff4c0ec10cb07ea0195"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#ad5895ae71a3b7ff4c0ec10cb07ea0195">checkRenderGroups</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> *item)</td></tr>
+<tr class="separator:ad5895ae71a3b7ff4c0ec10cb07ea0195"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe0321446beeb4093dba701424ec1e8c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html#afe0321446beeb4093dba701424ec1e8c">copy</a> (const <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">RenderStep</a> &amp;ref)</td></tr>
 <tr class="separator:afe0321446beeb4093dba701424ec1e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -147,6 +150,50 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad5895ae71a3b7ff4c0ec10cb07ea0195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5895ae71a3b7ff4c0ec10cb07ea0195">&#9670;&nbsp;</a></span>checkRenderGroups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GeometryEngine::GeometryRenderStep::RenderStep::checkRenderGroups </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *&#160;</td>
+          <td class="paramname"><em>cam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> *&#160;</td>
+          <td class="paramname"><em>item</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Method that checks if the item and the camera are in the same render group. Used to decide if an item should be rendered </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam</td><td>Pointer to camera to be rendered </td></tr>
+    <tr><td class="paramname">item</td><td>Item to be rendered </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if both are in the same render group false otherwise </dd></dl>
+
+</div>
+</div>
 <a id="afe33ea9d82c5be11f55af7d39691d44b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe33ea9d82c5be11f55af7d39691d44b">&#9670;&nbsp;</a></span>Clone()</h2>
 
@@ -171,7 +218,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Factory method that creates a copy of the object </p><dl class="section return"><dt>Returns</dt><dd>Pointer to a copy of the object </dd></dl>
 
-<p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#afcf20dc0a20cf1e0fb730c7b56071c26">GeometryEngine::GeometryRenderStep::PostProcessPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass.html#a125bea5e92ff920b57012f9b0b177a1e">GeometryEngine::GeometryRenderStep::ScreenRenderPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#a73176d6860aee0903034eeaf93edb40d">GeometryEngine::GeometryRenderStep::ShadowedLightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a4f1cb36c7bf6a90d0aa3b8e8feba5e5e">GeometryEngine::GeometryRenderStep::LightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#a12e85a0169cb7b92cb8bd7b7fe100b33">GeometryEngine::GeometryRenderStep::GeometryPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass.html#a56d2ef131669ae3964a04cb54e6c3b0f">GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html#a5a46d5e73fe672e09584a2e6e8bfa5e8">GeometryEngine::GeometryRenderStep::EmissiveLightingPass</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass.html#a6bfc83f45b84112bbf1beda1ed8e5466">GeometryEngine::GeometryRenderStep::TransparentGeometryPass</a>.</p>
+<p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#afcf20dc0a20cf1e0fb730c7b56071c26">GeometryEngine::GeometryRenderStep::PostProcessPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass.html#a125bea5e92ff920b57012f9b0b177a1e">GeometryEngine::GeometryRenderStep::ScreenRenderPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#a73176d6860aee0903034eeaf93edb40d">GeometryEngine::GeometryRenderStep::ShadowedLightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_post_process_pass.html#ab9eab79bba7251936921032596be21fe">GeometryEngine::GeometryRenderStep::GeometryPostProcessPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a4f1cb36c7bf6a90d0aa3b8e8feba5e5e">GeometryEngine::GeometryRenderStep::LightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#a12e85a0169cb7b92cb8bd7b7fe100b33">GeometryEngine::GeometryRenderStep::GeometryPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_shadowed_lighting_pass.html#a56d2ef131669ae3964a04cb54e6c3b0f">GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html#a5a46d5e73fe672e09584a2e6e8bfa5e8">GeometryEngine::GeometryRenderStep::EmissiveLightingPass</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_transparent_geometry_pass.html#a6bfc83f45b84112bbf1beda1ed8e5466">GeometryEngine::GeometryRenderStep::TransparentGeometryPass</a>.</p>
 
 </div>
 </div>
@@ -207,8 +254,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9b054ee8f38304319a9d03ba3e173dcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b054ee8f38304319a9d03ba3e173dcd">&#9670;&nbsp;</a></span>Render()</h2>
+<a id="a78676ad0b7b3fdfad5d1869f28426a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78676ad0b7b3fdfad5d1869f28426a83">&#9670;&nbsp;</a></span>Render()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,8 +272,8 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *&#160;</td>
-          <td class="paramname"><em>items</em> = <code>nullptr</code>, </td>
+          <td class="paramtype">std::map&lt; float, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>orderedItems</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -249,13 +296,13 @@ Protected Member Functions</h2></td></tr>
 <p>Executes the render step operations </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cam</td><td>Pointer to the camera is being rendered </td></tr>
-    <tr><td class="paramname">items</td><td>Set of items to be rendered </td></tr>
+    <tr><td class="paramname">orderedItems</td><td>Set of items to be rendered ordered by distance to the camera </td></tr>
     <tr><td class="paramname">lights</td><td>Set of lights to be rendered </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#a2ebe2a0b940e47ccd10e649bff77138d">GeometryEngine::GeometryRenderStep::PostProcessPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass.html#a53ab5f8ea2c7ed3c116474731ff41815">GeometryEngine::GeometryRenderStep::ScreenRenderPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#af52807435083cd96125e6ef6d7453027">GeometryEngine::GeometryRenderStep::ShadowedLightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#ae6d9fa99f67e659839ca310947787f52">GeometryEngine::GeometryRenderStep::LightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#ac3bfd0a3915cd8a8cd7e1bf81157f6ad">GeometryEngine::GeometryRenderStep::GeometryPass</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html#adffe18f64968290aedda426bc4450414">GeometryEngine::GeometryRenderStep::EmissiveLightingPass</a>.</p>
+<p>Implemented in <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_post_process_pass.html#a4d41ac05dcf1533296a7fbda443f38fb">GeometryEngine::GeometryRenderStep::PostProcessPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_screen_render_pass.html#ac24f21e3a457408b2163bc51c2ebb8f2">GeometryEngine::GeometryRenderStep::ScreenRenderPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_shadowed_lighting_pass.html#ad188a4d3f33fb153459cf3483ff3df23">GeometryEngine::GeometryRenderStep::ShadowedLightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_post_process_pass.html#ae359def8e0ef34a78454307b078352b6">GeometryEngine::GeometryRenderStep::GeometryPostProcessPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_lighting_pass.html#a3f8631da2e61e9a9092a53395b320ecb">GeometryEngine::GeometryRenderStep::LightingPass</a>, <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_geometry_pass.html#a8c508e9f74abd051a8908bb1a568ea50">GeometryEngine::GeometryRenderStep::GeometryPass</a>, and <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_emissive_lighting_pass.html#a03eb4da70618421703fc71d61669321d">GeometryEngine::GeometryRenderStep::EmissiveLightingPass</a>.</p>
 
 </div>
 </div>

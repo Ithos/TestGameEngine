@@ -84,11 +84,12 @@ Inheritance diagram for GeometryEngine::GeometryScene::GeometryScene:</div>
  <div class="center">
   <img src="class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene.png" usemap="#GeometryEngine::GeometryScene::GeometryScene_map" alt=""/>
   <map id="GeometryEngine::GeometryScene::GeometryScene_map" name="GeometryEngine::GeometryScene::GeometryScene_map">
-<area href="class_geometry_engine_1_1_geometry_scene_1_1_deferred_shading_scene.html" title="Scene that includes geometry rendering and deferred shading lighting." alt="GeometryEngine::GeometryScene::DeferredShadingScene" shape="rect" coords="0,56,365,80"/>
-<area href="class_geometry_engine_1_1_geometry_scene_1_1_dynamic_shadows_scene.html" title="Scene that includes geometry rendering, deferred shading lighting and scene wide image postprocessing..." alt="GeometryEngine::GeometryScene::DynamicShadowsScene" shape="rect" coords="375,56,740,80"/>
-<area href="class_geometry_engine_1_1_geometry_scene_1_1_multi_viewport_scene.html" title="Scene that has multiple viewports for different main cameras." alt="GeometryEngine::GeometryScene::MultiViewportScene" shape="rect" coords="750,56,1115,80"/>
-<area href="class_geometry_engine_1_1_geometry_scene_1_1_post_process_scene.html" title="Scene that includes geometry rendering, deferred shading lighting and scene wide image postprocessing..." alt="GeometryEngine::GeometryScene::PostProcessScene" shape="rect" coords="1125,56,1490,80"/>
-<area href="class_geometry_engine_1_1_geometry_scene_1_1_transparent_geometry_scene.html" alt="GeometryEngine::GeometryScene::TransparentGeometryScene" shape="rect" coords="1500,56,1865,80"/>
+<area href="class_geometry_engine_1_1_geometry_scene_1_1_deferred_shading_scene.html" title="Scene that includes geometry rendering and deferred shading lighting." alt="GeometryEngine::GeometryScene::DeferredShadingScene" shape="rect" coords="0,56,367,80"/>
+<area href="class_geometry_engine_1_1_geometry_scene_1_1_dynamic_shadows_scene.html" title="Scene that includes geometry rendering, deferred shading lighting and scene wide image postprocessing..." alt="GeometryEngine::GeometryScene::DynamicShadowsScene" shape="rect" coords="377,56,744,80"/>
+<area href="class_geometry_engine_1_1_geometry_scene_1_1_geometry_post_process_scene.html" alt="GeometryEngine::GeometryScene::GeometryPostProcessScene" shape="rect" coords="754,56,1121,80"/>
+<area href="class_geometry_engine_1_1_geometry_scene_1_1_multi_viewport_scene.html" title="Scene that has multiple viewports for different main cameras." alt="GeometryEngine::GeometryScene::MultiViewportScene" shape="rect" coords="1131,56,1498,80"/>
+<area href="class_geometry_engine_1_1_geometry_scene_1_1_post_process_scene.html" title="Scene that includes geometry rendering, deferred shading lighting and scene wide image postprocessing..." alt="GeometryEngine::GeometryScene::PostProcessScene" shape="rect" coords="1508,56,1875,80"/>
+<area href="class_geometry_engine_1_1_geometry_scene_1_1_transparent_geometry_scene.html" alt="GeometryEngine::GeometryScene::TransparentGeometryScene" shape="rect" coords="1885,56,2252,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -139,6 +140,8 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:aef0be95a28a24292c03bf1138e246439"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene.html#aef0be95a28a24292c03bf1138e246439">renderCamera</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, const std::list&lt; <a class="el" href="class_geometry_engine_1_1_geometry_render_step_1_1_render_step.html">GeometryRenderStep::RenderStep</a> * &gt; &amp;renderSteps)</td></tr>
 <tr class="separator:aef0be95a28a24292c03bf1138e246439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5143674c1e124659699710f29d9465ef"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometry_engine_1_1_geometry_scene_1_1_geometry_scene.html#a5143674c1e124659699710f29d9465ef">orderGeometry</a> (<a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *cam, std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *items, std::map&lt; float, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; &amp;orderedItems)</td></tr>
+<tr class="separator:a5143674c1e124659699710f29d9465ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -397,6 +400,56 @@ std::list&lt; <a class="el" href="class_geometry_engine_1_1_geometry_render_step
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>false if the srender step list doesn't contain the index true otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a5143674c1e124659699710f29d9465ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5143674c1e124659699710f29d9465ef">&#9670;&nbsp;</a></span>orderGeometry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeometryEngine::GeometryScene::GeometryScene::orderGeometry </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_camera_1_1_camera.html">GeometryWorldItem::GeometryCamera::Camera</a> *&#160;</td>
+          <td class="paramname"><em>cam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unordered_set&lt; <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::map&lt; float, <a class="el" href="class_geometry_engine_1_1_geometry_world_item_1_1_geometry_item_1_1_geometry_item.html">GeometryWorldItem::GeometryItem::GeometryItem</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>orderedItems</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Orders the geometry items from closest to farthest to the camera to optimize occlusion checks </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cam</td><td>Pointer to camera to be rendered </td></tr>
+    <tr><td class="paramname">items</td><td>Set of items to be ordered </td></tr>
+    <tr><td class="paramname">orderdItems</td><td>Structure where the ordered items will be returned </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
