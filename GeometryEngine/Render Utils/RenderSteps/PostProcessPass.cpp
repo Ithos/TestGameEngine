@@ -35,8 +35,7 @@ void GeometryEngine::GeometryRenderStep::PostProcessPass::applyPostProcess(Geome
 			initPostProcessPass(buf);
 			postProcess->ApplyPostProcess(gbuff);
 			secondPostProcessPass(buf);
-			applyExtraSteps(postProcess, gbuff);
-			finishPostProcesPass(buf);
+			if(!applyExtraSteps(postProcess, buf, gbuff)) finishPostProcesPass(buf);
 		}
 	}
 
@@ -71,11 +70,18 @@ void GeometryEngine::GeometryRenderStep::PostProcessPass::finishPostProcesPass(G
 
 }
 
-void GeometryEngine::GeometryRenderStep::PostProcessPass::applyExtraSteps(GeometryPostProcess::PostProcess * postProcess, const GBufferTextureInfo& gBuff)
+bool GeometryEngine::GeometryRenderStep::PostProcessPass::applyExtraSteps(GeometryPostProcess::PostProcess * postProcess, GeometryBuffer::GBuffer * buf, const GBufferTextureInfo& gBuff)
 {
 	GeometryEngine::CustomShading::CustomPostProcessStepInterface* manager = postProcess->GetComponentManager();
 	if (manager != nullptr && manager->ContainsStep(GeometryEngine::CustomShading::CustomPostProcessSteps::SECOND_STEP))
 	{
+		buf->UnbindTexture(GeometryEngine::GeometryBuffer::GBuffer::GBUFFER_NUM_TEXTURES);
+		buf->BindTexture(GeometryEngine::GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE_TEXCOORD);
 		manager->RenderStep(GeometryEngine::CustomShading::CustomPostProcessSteps::SECOND_STEP, gBuff);
+		buf->UnbindTexture(GeometryEngine::GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE_TEXCOORD);
+		buf->BindTexture(GeometryEngine::GeometryBuffer::GBuffer::GBUFFER_NUM_TEXTURES);
+		return true;
 	}
+
+	return false;
 }

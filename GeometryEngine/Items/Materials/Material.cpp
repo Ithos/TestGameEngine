@@ -40,6 +40,11 @@ GeometryEngine::GeometryMaterial::Material::Material(float shininess, const Cust
 		mpShadingInterface = multiShadingInterface->Clone();
 		mpShadingInterface->SetTargetMaterial(this);
 	}
+	else
+	{
+		mpShadingInterface = new CustomShading::MultiShadingInterface();
+		mpShadingInterface->SetTargetMaterial(this);
+	}
 }
 
 GeometryEngine::GeometryMaterial::Material::Material(const Material & mat)

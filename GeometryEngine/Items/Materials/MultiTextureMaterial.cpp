@@ -156,6 +156,10 @@ void GeometryEngine::GeometryMaterial::MultiTextureMaterial::drawMaterial(QOpenG
 
 		unbindTextures();
 
+		mpProgram->disableAttributeArray(vertexLocation);
+		mpProgram->disableAttributeArray(textureCoordinate);
+		mpProgram->disableAttributeArray(normalVector);
+
 		vertexBuf->release();
 		indexBuf->release();
 		

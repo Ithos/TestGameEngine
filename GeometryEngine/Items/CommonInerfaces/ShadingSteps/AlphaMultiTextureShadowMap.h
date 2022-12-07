@@ -26,6 +26,8 @@ namespace GeometryEngine
 			virtual ~AlphaMultiTextureShadowMap() {};
 
 			/// Abstract method. Factory method. Creates a copy of this object
+			/// \param parent Pointer to the CustomShadingInterface that contains it 
+			/// \param step Value that indicates at which render stepthis shading technique will be used
 			/// \return Pointer to a copy of this object
 			virtual AlphaMultiTextureShadowMap* Clone(CustomShadingInterface* parent, CustomShadingSteps step) const {
 				AlphaMultiTextureShadowMap* cloned = new AlphaMultiTextureShadowMap((*this));
@@ -91,6 +93,9 @@ namespace GeometryEngine
 					glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
 
 					((T*)mpTargetMaterial)->UnbindTextures();
+
+					mpProgram->disableAttributeArray(vertexLocation);
+					mpProgram->disableAttributeArray(textureCoordinate);
 
 					vertexBuf->release();
 					indexBuf->release();

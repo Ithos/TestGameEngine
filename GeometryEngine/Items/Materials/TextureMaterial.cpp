@@ -141,6 +141,10 @@ void GeometryEngine::GeometryMaterial::TextureMaterial::drawMaterial(QOpenGLBuff
 			vertexCount += (*it)->VertexNumber;
 		}
 
+		mpProgram->disableAttributeArray(vertexLocation);
+		mpProgram->disableAttributeArray(textureCoordinate);
+		mpProgram->disableAttributeArray(normalVector);
+
 		vertexBuf->release();
 		indexBuf->release();
 	}

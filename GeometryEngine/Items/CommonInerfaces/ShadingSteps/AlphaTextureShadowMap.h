@@ -91,6 +91,9 @@ namespace GeometryEngine
 
 					((T*)mpTargetMaterial)->UnbindTextures();
 
+					mpProgram->disableAttributeArray(vertexLocation);
+					mpProgram->disableAttributeArray(textureCoordinate);
+
 					vertexBuf->release();
 					indexBuf->release();
 				}

@@ -24,7 +24,7 @@ namespace GeometryEngine
 		enum CustomShadingSteps
 		{
 			CUSTOM_SHADOWMAP,
-			CUSTOM_COLORMAP
+			CUSTOM_COLORMAP, 
 		};
 
 		class CustomShadingStep;
@@ -70,6 +70,8 @@ namespace GeometryEngine
 			/// Checks if the manager contains a custom step key
 			/// \param step Key to check
 			bool ContainsStep(CustomShadingSteps step) { return mStepMap.find(step) != mStepMap.end(); }
+			/// Returns the step map
+			const std::map<CustomShadingSteps, CustomShadingStep*>& GetSteps() { return mStepMap; }
 			/// Sets the target for every shading step in this interface
 			/// \param target Material to be rendered
 			void SetTargetMaterial(GeometryMaterial::Material* target);

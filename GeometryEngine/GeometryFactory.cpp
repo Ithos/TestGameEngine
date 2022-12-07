@@ -42,6 +42,10 @@
 #include <Items\CommonInerfaces\CustomPostProcessStepInterface.h>
 #include <Items\CommonInerfaces\CustomPostProcessStep.h>
 #include <Items\CommonInerfaces\PostProcessSteps\CallSecondStep.h>
+#include <Items\CommonInerfaces\MaterialPostProcessInterface.h>
+#include <Items/CommonInerfaces\MultiShadingInterface.h>
+#include <Items\CommonInerfaces\MaterialPostProcess\MaterialBlurPostProcess.h>
+#include <Items\CommonInerfaces\MaterialPostProcess\MaterialGreyScale.h>
 #include "GeometryFactory.h"
 
 GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem * GeometryEngine::GeometryFactory::CreateSkyboxCube(const std::string & textureKey, float skyboxSize)
@@ -121,8 +125,8 @@ GeometryEngine::GeometryMaterial::Material * GeometryEngine::GeometryFactory::Cr
 GeometryEngine::GeometryMaterial::Material * GeometryEngine::GeometryFactory::CreateAlphaColorMaterial(const QVector3D & ambient, const QVector3D & diffuse, const QVector3D & specular, const QVector3D & emissive, float alpha, bool translucent, float shininess)
 {
 	GeometryEngine::CustomShading::MultiShadingInterface trMultiAlphaColorInterface;
-	trMultiAlphaColorInterface.AddNewList(GeometryEngine::CustomShading::ShadingLists::SHADING_LIST);
-	GeometryEngine::CustomShading::CustomShadingInterface* trAlphaColorInterface = trMultiAlphaColorInterface.GetList(GeometryEngine::CustomShading::ShadingLists::SHADING_LIST);
+	trMultiAlphaColorInterface.SetShadingInterface(&GeometryEngine::CustomShading::CustomShadingInterface());
+	GeometryEngine::CustomShading::CustomShadingInterface* trAlphaColorInterface = trMultiAlphaColorInterface.GetShadingInterface();
 	trAlphaColorInterface->AddNewShadingStep< GeometryEngine::CustomShading::AlphaColorShadowMap<GeometryEngine::GeometryMaterial::AlphaColorMaterial> >(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP);
 	if (translucent) trAlphaColorInterface->AddNewShadingStep< GeometryEngine::CustomShading::DirectColorMap<GeometryEngine::GeometryMaterial::AlphaColorMaterial> >(GeometryEngine::CustomShading::CUSTOM_COLORMAP);
 	return new GeometryEngine::GeometryMaterial::AlphaColorMaterial(&trMultiAlphaColorInterface, ambient, diffuse, specular, emissive, 0.1f, alpha, shininess, translucent);
@@ -136,8 +140,8 @@ GeometryEngine::GeometryMaterial::Material * GeometryEngine::GeometryFactory::Cr
 GeometryEngine::GeometryMaterial::Material * GeometryEngine::GeometryFactory::CreateAlphaTextureMaterial(const std::string & texDir, float alpha, bool translucent, float shininess)
 {
 	GeometryEngine::CustomShading::MultiShadingInterface trMultiAlphaColorInterface;
-	trMultiAlphaColorInterface.AddNewList(GeometryEngine::CustomShading::ShadingLists::SHADING_LIST);
-	GeometryEngine::CustomShading::CustomShadingInterface* trAlphaColorInterface = trMultiAlphaColorInterface.GetList(GeometryEngine::CustomShading::ShadingLists::SHADING_LIST);
+	trMultiAlphaColorInterface.SetShadingInterface(&GeometryEngine::CustomShading::CustomShadingInterface());
+	GeometryEngine::CustomShading::CustomShadingInterface* trAlphaColorInterface = trMultiAlphaColorInterface.GetShadingInterface();
 	trAlphaColorInterface->AddNewShadingStep< GeometryEngine::CustomShading::AlphaTextureShadowMap<GeometryEngine::GeometryMaterial::AlphaTextureMaterial> >(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP);
 	if (translucent) trAlphaColorInterface->AddNewShadingStep< GeometryEngine::CustomShading::TextureColorMap<GeometryEngine::GeometryMaterial::AlphaTextureMaterial> >(GeometryEngine::CustomShading::CUSTOM_COLORMAP);
 	return new GeometryEngine::GeometryMaterial::AlphaTextureMaterial(&trMultiAlphaColorInterface, texDir, 0.1f, alpha, shininess, translucent);
@@ -151,8 +155,8 @@ GeometryEngine::GeometryMaterial::Material * GeometryEngine::GeometryFactory::Cr
 GeometryEngine::GeometryMaterial::Material * GeometryEngine::GeometryFactory::CreateAlphaTextureMaterial(const std::string & texDir, const std::string & normalMapTexDir, float alpha, bool translucent, float shininess)
 {
 	GeometryEngine::CustomShading::MultiShadingInterface trMultiAlphaColorInterface;
-	trMultiAlphaColorInterface.AddNewList(GeometryEngine::CustomShading::ShadingLists::SHADING_LIST);
-	GeometryEngine::CustomShading::CustomShadingInterface* trAlphaColorInterface = trMultiAlphaColorInterface.GetList(GeometryEngine::CustomShading::ShadingLists::SHADING_LIST);
+	trMultiAlphaColorInterface.SetShadingInterface(&GeometryEngine::CustomShading::CustomShadingInterface());
+	GeometryEngine::CustomShading::CustomShadingInterface* trAlphaColorInterface = trMultiAlphaColorInterface.GetShadingInterface();
 	trAlphaColorInterface->AddNewShadingStep< GeometryEngine::CustomShading::AlphaTextureShadowMap<GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial> >(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP);
 	if (translucent) trAlphaColorInterface->AddNewShadingStep< GeometryEngine::CustomShading::TextureColorMap<GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial> >(GeometryEngine::CustomShading::CUSTOM_COLORMAP);
 	return new GeometryEngine::GeometryMaterial::AlphaNormalMapTextureMaterial(&trMultiAlphaColorInterface,texDir, normalMapTexDir, 0.1, alpha, shininess, translucent);
@@ -166,8 +170,8 @@ GeometryEngine::GeometryMaterial::Material * GeometryEngine::GeometryFactory::Cr
 GeometryEngine::GeometryMaterial::Material * GeometryEngine::GeometryFactory::CreateAlphaTextureMaterial(const std::string & ambientTexDir, const std::string & diffuseTexDir, const std::string & specularTexDir, const std::string & emissiveTexDir, float alpha, bool translucent, float shininess)
 {
 	GeometryEngine::CustomShading::MultiShadingInterface trMultiAlphaColorInterface;
-	trMultiAlphaColorInterface.AddNewList(GeometryEngine::CustomShading::ShadingLists::SHADING_LIST);
-	GeometryEngine::CustomShading::CustomShadingInterface* trAlphaColorInterface = trMultiAlphaColorInterface.GetList(GeometryEngine::CustomShading::ShadingLists::SHADING_LIST);
+	trMultiAlphaColorInterface.SetShadingInterface(&GeometryEngine::CustomShading::CustomShadingInterface());
+	GeometryEngine::CustomShading::CustomShadingInterface* trAlphaColorInterface = trMultiAlphaColorInterface.GetShadingInterface();
 	trAlphaColorInterface->AddNewShadingStep< GeometryEngine::CustomShading::AlphaMultiTextureShadowMap<GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial> >(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP);
 	if (translucent) trAlphaColorInterface->AddNewShadingStep< GeometryEngine::CustomShading::MultiTextureColorMap<GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial> >(GeometryEngine::CustomShading::CUSTOM_COLORMAP);
 	return new GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial(&trMultiAlphaColorInterface, ambientTexDir, diffuseTexDir, specularTexDir, emissiveTexDir, 0.1, alpha, shininess, translucent);
@@ -181,8 +185,8 @@ GeometryEngine::GeometryMaterial::Material * GeometryEngine::GeometryFactory::Cr
 GeometryEngine::GeometryMaterial::Material * GeometryEngine::GeometryFactory::CreateAlphaTextureMaterial(const std::string & ambientTexDir, const std::string & diffuseTexDir, const std::string & specularTexDir, const std::string & normalMapTexDir, const std::string & emissiveTexDir, float alpha, bool translucent, float shininess)
 {
 	GeometryEngine::CustomShading::MultiShadingInterface trMultiAlphaColorInterface;
-	trMultiAlphaColorInterface.AddNewList(GeometryEngine::CustomShading::ShadingLists::SHADING_LIST);
-	GeometryEngine::CustomShading::CustomShadingInterface* trAlphaColorInterface = trMultiAlphaColorInterface.GetList(GeometryEngine::CustomShading::ShadingLists::SHADING_LIST);
+	trMultiAlphaColorInterface.SetShadingInterface(&GeometryEngine::CustomShading::CustomShadingInterface());
+	GeometryEngine::CustomShading::CustomShadingInterface* trAlphaColorInterface = trMultiAlphaColorInterface.GetShadingInterface();
 	trAlphaColorInterface->AddNewShadingStep< GeometryEngine::CustomShading::AlphaMultiTextureShadowMap<GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial> >(GeometryEngine::CustomShading::CUSTOM_SHADOWMAP);
 	if (translucent) trAlphaColorInterface->AddNewShadingStep< GeometryEngine::CustomShading::MultiTextureColorMap<GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial> >(GeometryEngine::CustomShading::CUSTOM_COLORMAP);
 	return new GeometryEngine::GeometryMaterial::AlphaNormalMapMultiTextureMaterial(&trMultiAlphaColorInterface, ambientTexDir, diffuseTexDir, specularTexDir, emissiveTexDir, normalMapTexDir, 0.1, alpha, shininess, translucent);
@@ -328,4 +332,35 @@ void GeometryEngine::GeometryFactory::AddTmpPostProcess(GeometryWorldItem::Geome
 {
 	cam.AddPostProcess(*proc);
 	delete proc;
+}
+
+GeometryEngine::CustomShading::MaterialPostProcessInterface * GeometryEngine::GeometryFactory::GetOrAddShadingList(GeometryMaterial::Material * mat, 
+	const GeometryEngine::CustomShading::ShadingLists & list)
+{
+	if (!mat->GetShadingInterface()->ContainsList(list)) mat->GetShadingInterface()->AddNewList(list);
+	return mat->GetShadingInterface()->GetList(list);
+}
+
+void GeometryEngine::GeometryFactory::AddMaterialBlurPostProcess(GeometryMaterial::Material * mat, const GeometryEngine::CustomShading::MaterialPostProcessSteps & step)
+{
+	GeometryEngine::CustomShading::MaterialPostProcessInterface* postprocessList = GetOrAddShadingList(mat, GeometryEngine::CustomShading::ShadingLists::POST_PROCESS_STEP_LIST);
+
+	if (postprocessList->ContainsStep(step)) postprocessList->RemovePostProcessStep(step);
+	postprocessList->AddNewPostProcessStep< GeometryEngine::CustomShading::MaterialBlurPostProcess> (step);
+
+	GeometryEngine::CustomShading::MaterialPostProcessInterface* secondPostprocessList = GetOrAddShadingList(mat, GeometryEngine::CustomShading::ShadingLists::SECOND_POST_PROCESS_STEP_LIST);
+
+	if (secondPostprocessList->ContainsStep(step)) secondPostprocessList->RemovePostProcessStep(step);
+	GeometryEngine::CustomShading::MaterialBlurPostProcess* secondPosProcess =
+		new GeometryEngine::CustomShading::MaterialBlurPostProcess(secondPostprocessList, step);
+
+	secondPosProcess->SetVertical(true); secondPosProcess->SetOrigin(true);
+	secondPostprocessList->AddPostProcessStep(secondPosProcess, step);
+}
+
+void GeometryEngine::GeometryFactory::AddMaterialGreyScalePostProcess(GeometryMaterial::Material * mat, const GeometryEngine::CustomShading::MaterialPostProcessSteps & step)
+{
+	GeometryEngine::CustomShading::MaterialPostProcessInterface* postprocessList = GetOrAddShadingList(mat, GeometryEngine::CustomShading::ShadingLists::POST_PROCESS_STEP_LIST);
+	if (postprocessList->ContainsStep(step)) postprocessList->RemovePostProcessStep(step);
+	postprocessList->AddNewPostProcessStep< GeometryEngine::CustomShading::MaterialGreyScale >(step);
 }

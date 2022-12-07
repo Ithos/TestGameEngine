@@ -179,6 +179,10 @@
     <ClInclude Include="Items\CommonInerfaces\CustomPostProcessStepInterface.h" />
     <ClInclude Include="Items\CommonInerfaces\CustomShadingInterface.h" />
     <ClInclude Include="Items\CommonInerfaces\CustomShadingStep.h" />
+    <ClInclude Include="Items\CommonInerfaces\MaterialPostProcessInterface.h" />
+    <ClInclude Include="Items\CommonInerfaces\MaterialPostProcessStep.h" />
+    <ClInclude Include="Items\CommonInerfaces\MaterialPostProcess\MaterialBlurPostProcess.h" />
+    <ClInclude Include="Items\CommonInerfaces\MaterialPostProcess\MaterialGreyScale.h" />
     <ClInclude Include="Items\CommonInerfaces\MultiShadingInterface.h" />
     <ClInclude Include="Items\CommonInerfaces\PostProcessSteps\CallSecondStep.h" />
     <ClInclude Include="Items\CommonInerfaces\ShadingSteps\AlphaColorShadowMap.h" />
@@ -258,6 +262,7 @@
     <ClInclude Include="Render Utils\RenderBuffersData.h" />
     <ClInclude Include="Render Utils\RenderStep.h" />
     <ClInclude Include="Render Utils\RenderSteps\EmissiveLightingPass.h" />
+    <ClInclude Include="Render Utils\RenderSteps\GeometryPostProcessPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\PostProcessPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\ScreenRenderPass.h" />
     <ClInclude Include="Render Utils\RenderSteps\GeometryPass.h" />
@@ -270,6 +275,7 @@
     <ClInclude Include="Scenes\DeferredShadingScene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Scenes\DynamicShadowsScene.h" />
+    <ClInclude Include="Scenes\GeometryPostProcessScene.h" />
     <ClInclude Include="Scenes\MultiViewportScene.h" />
     <ClInclude Include="Scenes\PostProcessScene.h" />
     <ClInclude Include="Scenes\TransparentGeometryScene.h" />
@@ -282,6 +288,8 @@
     <ClCompile Include="Items\CommonInerfaces\CustomPostProcessStepInterface.cpp" />
     <ClCompile Include="Items\CommonInerfaces\CustomShadingInterface.cpp" />
     <ClCompile Include="Items\CommonInerfaces\CustomShadingStep.cpp" />
+    <ClCompile Include="Items\CommonInerfaces\MaterialPostProcessInterface.cpp" />
+    <ClCompile Include="Items\CommonInerfaces\MaterialPostProcessStep.cpp" />
     <ClCompile Include="Items\CommonInerfaces\MultiShadingInterface.cpp" />
     <ClCompile Include="Items\CommonItemParameters.cpp" />
     <ClCompile Include="Items\Geometries\Cube.cpp" />
@@ -347,6 +355,7 @@
     <ClCompile Include="Render Utils\RenderBuffersData.cpp" />
     <ClCompile Include="Render Utils\RenderStep.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\EmissiveLightingPass.cpp" />
+    <ClCompile Include="Render Utils\RenderSteps\GeometryPostProcessPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\PostProcessPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\ScreenRenderPass.cpp" />
     <ClCompile Include="Render Utils\RenderSteps\GeometryPass.cpp" />
@@ -359,6 +368,7 @@
     <ClCompile Include="Scenes\DeferredShadingScene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Scenes\DynamicShadowsScene.cpp" />
+    <ClCompile Include="Scenes\GeometryPostProcessScene.cpp" />
     <ClCompile Include="Scenes\MultiViewportScene.cpp" />
     <ClCompile Include="Scenes\PostProcessScene.cpp" />
     <ClCompile Include="Scenes\TransparentGeometryScene.cpp" />

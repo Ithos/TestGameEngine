@@ -84,6 +84,11 @@ namespace GeometryEngine
 
 					// Draw light
 					glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
+
+					mpProgram->disableAttributeArray(vertexLocation);
+
+					vertexBuf->release();
+					indexBuf->release();
 				}
 			}
 

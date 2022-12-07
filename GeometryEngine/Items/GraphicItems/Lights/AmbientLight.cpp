@@ -64,4 +64,9 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::AmbientLight::calculateCo
 
 	// Draw cube geometry using indices from VBO 1
 	glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);
+
+	mpProgram->disableAttributeArray(vertexLocation);
+
+	vertexBuf->release();
+	indexBuf->release();
 }

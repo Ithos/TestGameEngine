@@ -57,8 +57,10 @@ namespace GeometryEngine
 			void finishPostProcesPass(GeometryBuffer::GBuffer* buf);
 			/// Applies additional steps for the post process
 			/// \param postProcess post processes to apply
+			/// \param buf Pointer to the geometry buffer
 			/// \param gBuff Object that contains buffer data adapted to be passed to the shaders
-			void applyExtraSteps(GeometryPostProcess::PostProcess* postProcess, const GBufferTextureInfo& gBuff);
+			/// \return True if the second step was applied
+			bool applyExtraSteps(GeometryPostProcess::PostProcess* postProcess, GeometryBuffer::GBuffer * buf, const GBufferTextureInfo& gBuff);
 			/// Copies the data from a DoublePostProcessPass into this object
 			/// \param ref DoublePostProcessPass to be copied
 			virtual void copy(const PostProcessPass& ref) { RenderStep::copy(ref); }

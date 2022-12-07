@@ -310,6 +310,24 @@
     <ClInclude Include="Items\CommonInerfaces\MultiShadingInterface.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\MaterialPostProcessStep.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\MaterialPostProcessInterface.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\MaterialPostProcess\MaterialBlurPostProcess.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Items\CommonInerfaces\MaterialPostProcess\MaterialGreyScale.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render Utils\RenderSteps\GeometryPostProcessPass.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\GeometryPostProcessScene.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Items\GeometryItem.cpp" />
@@ -559,6 +577,18 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Items\CommonInerfaces\MultiShadingInterface.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\CommonInerfaces\MaterialPostProcessStep.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Items\CommonInerfaces\MaterialPostProcessInterface.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render Utils\RenderSteps\GeometryPostProcessPass.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes\GeometryPostProcessScene.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>

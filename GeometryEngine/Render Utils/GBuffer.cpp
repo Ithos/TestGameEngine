@@ -135,6 +135,20 @@ void GeometryEngine::GeometryBuffer::GBuffer::FinishPostProcessBinding()
 	mpFBO->Draw(GBUFFER_NUM_TEXTURES);
 }
 
+void GeometryEngine::GeometryBuffer::GBuffer::BindTextureForMaterialPostProcess(GBUFFER_TEXTURE_TYPE location)
+{
+	mpFBO->Bind(GeometryBuffer::DRAW_READ);
+	mpFBO->Read(location);
+	mpFBO->Draw(GBUFFER_TEXTURE_TYPE_TEXCOORD);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::FinishMaterialPostProcess(GBUFFER_TEXTURE_TYPE location)
+{
+	mpFBO->Bind(GeometryBuffer::DRAW_READ);
+	mpFBO->Read(GBUFFER_TEXTURE_TYPE_TEXCOORD);
+	mpFBO->Draw(location);
+}
+
 void GeometryEngine::GeometryBuffer::GBuffer::BindTmpTextureWrite()
 {
 	mpFBO->Bind(GeometryBuffer::DRAW_READ);
@@ -309,4 +323,9 @@ void GeometryEngine::GeometryBuffer::GBuffer::FillGBufferInfo(GBufferTextureInfo
 	bufferInfo.UsePositionTexture = this->IsTextureActive(GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_POSITION);
 	bufferInfo.UseNormalTexture = this->IsTextureActive(GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_NORMAL);
 	bufferInfo.UseTmpTexture = this->IsTextureActive(GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE::GBUFFER_TEXTURE_TYPE_TEXCOORD);
+}
+
+void GeometryEngine::GeometryBuffer::GBuffer::SetOriginTexture(GBufferTextureInfo & bufferInfo, const GBUFFER_TEXTURE_TYPE & originTexture)
+{
+	bufferInfo.OriginTexture = mTextureUnits[(unsigned int)originTexture];
 }

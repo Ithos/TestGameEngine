@@ -1,18 +1,14 @@
 #pragma once
-/*
+
 #ifndef GEOMETRYPOSTPROCESSPASS_H
 #define GEOMETRYPOSTPROCESSPASS_H
 
 #include "../RenderStep.h"
+#include "../GBuffer.h"
 
 namespace GeometryEngine
 {
 	class GBufferTextureInfo;
-
-	namespace GeometryBuffer
-	{
-		class GBuffer;
-	}
 
 	namespace GeometryPostProcess
 	{
@@ -34,9 +30,9 @@ namespace GeometryEngine
 			virtual ~GeometryPostProcessPass() {}
 			/// Executes the render step
 			/// \param cam Pointer to camera to be rendered. We only need the information of the camera and the geometry buffer.
-			/// \param items Set of items to be rendered. Not used.
+			/// \param orderedItems Set of items to be rendered ordered by distance to the camera.
 			/// \param lights Set of lights in the scene. Not used.
-			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*> * items = nullptr,
+			virtual void Render(GeometryWorldItem::GeometryCamera::Camera* cam = nullptr, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * orderedItems = nullptr,
 				std::unordered_set<GeometryWorldItem::GeometryLight::Light*> * lights = nullptr) override;
 			/// Factory method. Returns a copy of this object.
 			/// \return A copy of this object.
@@ -49,40 +45,31 @@ namespace GeometryEngine
 			/// Draws each item in the set using the camera transformation matrix
 			/// \param cam Pointer to camera to be rendered
 			/// \param items Set of items to be rendered
-			virtual void renderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::unordered_set<GeometryWorldItem::GeometryItem::GeometryItem*>* items);
+			virtual void renderGeometry(GeometryWorldItem::GeometryCamera::Camera * cam, std::map<float, GeometryWorldItem::GeometryItem::GeometryItem*> * items);
 			/// Draws an individual item.
 			/// \param cam Pointer to camera to be rendered
+			/// \param buf Pointer to the camera geometry buffer
+			/// \param gbuff Reference to the gbuffer texture information structure
 			/// \param item Item to be rendered
-			void drawItem(GeometryWorldItem::GeometryCamera::Camera* cam, GeometryWorldItem::GeometryItem::GeometryItem* item);
-			/// Method that checks if the item and the camera are in the same render group. Used to decide if an item should be rendered
-			/// \param cam Pointer to camera to be rendered
-			/// \param item Item to be rendered
-			/// \return true if both are in the same render group false otherwise
-			bool checkRenderGroups(GeometryWorldItem::GeometryCamera::Camera* cam, GeometryWorldItem::GeometryItem::GeometryItem* item);
-			/// Initializes the OpenGl pipeline and applies every single pass post process in the list
-			/// \param buf Pointer to the geometry buffer
-			/// \param list of post processes to apply
-			void applyPostProcess(GeometryBuffer::GBuffer* buf, const std::list< GeometryPostProcess::PostProcess*>& postProcess);
+			/// \param texture location of the texture where the post process will be applied
+			void drawItem(GeometryWorldItem::GeometryCamera::Camera* cam, GeometryBuffer::GBuffer* buf, const GBufferTextureInfo& gbuff, GeometryWorldItem::GeometryItem::GeometryItem* item,
+				const GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE & texture);
 			/// Prepares the OpenGl pipeline for the first pass post process 
 			/// \param buf Pointer to the geometry buffer
-			void initPostProcessPass(GeometryBuffer::GBuffer* buf);
+			/// \param texture location of the texture where the post process will be applied
+			void initPostProcessPass(GeometryBuffer::GBuffer* buf, const GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE & texture);
 			/// Prepares the OpenGl pipeline for the second pass post process 
 			/// \param buf Pointer to the geometry buffer
-			void secondPostProcessPass(GeometryBuffer::GBuffer* buf);
-			/// Blits the tmp texture into the final texture
+			/// \param texture location of the texture where the post process will be applied
+			void secondPostProcessPass(GeometryBuffer::GBuffer* buf, const GeometryBuffer::GBuffer::GBUFFER_TEXTURE_TYPE & texture);
+			/// Blits the tmp texture into the binded texture
 			/// \param buf Pointer to the geometry buffer
-			void finishPostProcesPass(GeometryBuffer::GBuffer* buf);
-			/// Applies additional steps for the post process
-			/// \param postProcess post processes to apply
-			/// \param gBuff Object that contains buffer data adapted to be passed to the shaders
-			void applyExtraSteps(GeometryPostProcess::PostProcess* postProcess, const GBufferTextureInfo& gBuff);
+			void copyBuffer(GeometryBuffer::GBuffer* buf);
 			/// Copies the data from a DoublePostProcessPass into this object
 			/// \param ref DoublePostProcessPass to be copied
 			virtual void copy(const GeometryPostProcessPass& ref) { RenderStep::copy(ref); }
-
 		};
 	}
 }
 
 #endif //GEOMETRYPOSTPROCESSPASS_H
-*/

@@ -7,14 +7,19 @@
 
 namespace GeometryEngine
 {
+	namespace GeometryMaterial
+	{
+		class Material;
+	}
+
 	namespace CustomShading
 	{
 		class CustomShadingInterface;
+		class MaterialPostProcessInterface;
 
 		/// All posible post process lists
 		enum ShadingLists
 		{
-			SHADING_LIST,
 			PRE_PROCESS_STEP_LIST,
 			SECOND_PRE_PROCESS_STEP_LIST,
 			POST_PROCESS_STEP_LIST,
@@ -28,7 +33,7 @@ namespace GeometryEngine
 		{
 		public:
 			/// Constructor
-			MultiShadingInterface() {}
+			MultiShadingInterface() : mShadingInterface(nullptr) {}
 			/// Copy constructor. Automatiaclly initializes the shading steps after copying them.
 			/// \param ref Object to be copied.
 			MultiShadingInterface(const MultiShadingInterface& ref);
@@ -52,15 +57,22 @@ namespace GeometryEngine
 			/// Returns the selected list if exists, returns null otherwise
 			/// \param key Key to check
 			/// \return true if the key exists false otherwise
-			CustomShadingInterface* GetList(ShadingLists key);
+			MaterialPostProcessInterface* GetList(ShadingLists key);
 			/// Sets the target for every list in this interface
 			/// \param target Material to be rendered
 			void SetTargetMaterial(GeometryMaterial::Material* target);
 			/// Calls init on all the shading steps in the map. This method should be called before trying to use any shading step.
 			void InitLists();
+			/// Sets the shding interface to be used
+			void SetShadingInterface(const CustomShadingInterface* const shadingInterface);
+			/// Returns the stablished shading interface
+			CustomShadingInterface* GetShadingInterface() { return mShadingInterface; }
+			/// Calls init on the shading interface. This method should be called before trying to use any shading step.
+			void InitShadingInterface();
 
 		protected:
-			std::map<ShadingLists, CustomShadingInterface*> mListsMap;
+			std::map<ShadingLists, MaterialPostProcessInterface*> mListsMap;
+			CustomShadingInterface* mShadingInterface;
 
 			/// Copies the data of a CustomPostProcessStepInterface object to the current object
 			/// \param ref Material to be copied

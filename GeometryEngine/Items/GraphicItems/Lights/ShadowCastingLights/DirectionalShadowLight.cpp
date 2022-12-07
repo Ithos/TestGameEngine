@@ -81,4 +81,9 @@ void GeometryEngine::GeometryWorldItem::GeometryLight::DirectionalShadowLight::c
 
 	// Draw light
 	glDrawElements(GL_TRIANGLE_STRIP, totalIndexNum, GL_UNSIGNED_SHORT, 0);
+
+	mpProgram->disableAttributeArray(vertexLocation);
+
+	vertexBuf->release();
+	indexBuf->release();
 }

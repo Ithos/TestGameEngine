@@ -34,6 +34,7 @@ namespace GeometryEngine
 		unsigned int NormalTexture;
 		unsigned int FinalTexture;
 		unsigned int TmpTexture;
+		unsigned int OriginTexture;
 		bool UseAmbientTexture;
 		bool UseDiffuseTexture;
 		bool UseReflectiveTexture;
@@ -49,13 +50,13 @@ namespace GeometryEngine
 			AmbientTexture(ambColorTexture), DiffuseTexture(diffColorTexture), ReflectiveTexture(refColorTexture), EmissiveTexture(emiColorTexture),
 			PositionTexture(posTexture), NormalTexture(normalTexture), TmpTexture(tmpTexture), FinalTexture(finalTexture), UseAmbientTexture(useAmb),
 			UseDiffuseTexture(useDiff), UseReflectiveTexture(useRef), UseEmissiveTexture(useEmi), UsePositionTexture(usePos), UseNormalTexture(useNormal), 
-			UseTmpTexture(useTmpTex), TextureSize(texSize) {}
+			UseTmpTexture(useTmpTex), TextureSize(texSize), OriginTexture(0){}
 
 		GBufferTextureInfo(const QVector2D& texSize) :
 			AmbientTexture(0), DiffuseTexture(0), ReflectiveTexture(0), EmissiveTexture(0),
 			PositionTexture(0), NormalTexture(0), TmpTexture(0), FinalTexture(0), UseAmbientTexture(false),
 			UseDiffuseTexture(false), UseReflectiveTexture(false), UseEmissiveTexture(false), UsePositionTexture(false), UseNormalTexture(false),
-			UseTmpTexture(false), TextureSize(texSize) {}
+			UseTmpTexture(false), TextureSize(texSize), OriginTexture(0) {}
 
 
 	};

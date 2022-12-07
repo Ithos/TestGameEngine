@@ -49,6 +49,7 @@
 #include <Scenes\PostProcessScene.h>
 #include <Scenes\DynamicShadowsScene.h>
 #include <Scenes\TransparentGeometryScene.h>
+#include <Scenes\GeometryPostProcessScene.h>
 #include <Scenes\MultiViewportScene.h>
 
 #include <Render Utils\Gbuffers\CompleteColorBuffer.h>
@@ -60,6 +61,7 @@
 #include <Items\PostProcess\SinglePassPostProcess\GreyScalePostProcess.h>
 #include <Items\PostProcess\PostProcess.h>
 
+#include <Items\CommonInerfaces\MaterialPostProcessInterface.h>
 #include <Items\CommonInerfaces\CustomPostProcessStepInterface.h>
 #include <Items\CommonInerfaces\CustomPostProcessStep.h>
 #include <Items\CommonInerfaces\PostProcessSteps\CallSecondStep.h>
@@ -286,7 +288,7 @@ namespace Application
 
 		//GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::MultiViewportScene(engine->GetSceneManager(), posMap);
 
-		GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::TransparentGeometryScene(engine->GetSceneManager());
+		GeometryEngine::GeometryScene::GeometryScene* scene = new GeometryEngine::GeometryScene::GeometryPostProcessScene(engine->GetSceneManager());
 
 		testCube = GeometryEngine::GeometryFactory::CreateCube(
 			GeometryEngine::GeometryFactory::CreateAlphaTextureMaterial(
@@ -323,9 +325,10 @@ namespace Application
 		cam2->SetRenderTarget(GeometryEngine::GeometryWorldItem::GeometryCamera::CAM2);
 		//cam2->SetActive(false);
 
-		GeometryEngine::GeometryMaterial::Material* tmp =
+		GeometryEngine::GeometryMaterial::Material* tmp = 
 			GeometryEngine::GeometryFactory::CreateAlphaTextureMaterial(GeometryEngine::GeometryMaterial::TextureConstant::TEST_GRASS_TEXTURE, 1.0f);
 		tmp->SetDrawBacksideFaces(true);
+		GeometryEngine::GeometryFactory::AddMaterialBlurPostProcess(tmp, GeometryEngine::CustomShading::MaterialPostProcessSteps::FIRST_POST_PROCESS);
 		textureQuad = GeometryEngine::GeometryFactory::CreateQuad( tmp, 1.0f, 1.0f, QVector3D(0.0f, 0.0f, -15.0f), QVector3D(0.0f, 45.0f, 0.0f));
 
 		GeometryEngine::GeometryWorldItem::GeometryItem::GeometryItem* floor = GeometryEngine::GeometryFactory::CreateCube(

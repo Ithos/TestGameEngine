@@ -63,6 +63,10 @@ namespace GeometryEngine
 			void BindTexturesForPostProcess();
 			/// Binds tmpTexture texture for reading and final for writing
 			void FinishPostProcessBinding();
+			/// Binds the selected texture as source and tmpTexture as destination
+			void BindTextureForMaterialPostProcess(GBUFFER_TEXTURE_TYPE location);
+			/// Binds the selected texture as destination and tmpTexture as source
+			void FinishMaterialPostProcess(GBUFFER_TEXTURE_TYPE location);
 			/// Binds final texture for reading and tmpTexture for writing
 			void BindTmpTextureWrite();
 			/// Binds all textures
@@ -140,6 +144,9 @@ namespace GeometryEngine
 			/// Sets the data of a GBufferTextureInfo
 			/// \param bufferInfo GBufferTextureInfo to be updated
 			void FillGBufferInfo(GBufferTextureInfo& bufferInfo);
+			/// Sets the index for the selected origin texture
+			/// \param bufferInfo GBufferTextureInfo to be updated
+			void SetOriginTexture(GBufferTextureInfo& bufferInfo, const GBUFFER_TEXTURE_TYPE& originTexture);
 
 		protected:
 			unsigned int mFinalTextureLocation;

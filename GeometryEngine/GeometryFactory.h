@@ -50,6 +50,14 @@ namespace GeometryEngine
 		class Viewport;
 	}
 
+	namespace CustomShading
+	{
+		class MaterialPostProcessStep;
+		class MaterialPostProcessInterface;
+		enum MaterialPostProcessSteps;
+		enum ShadingLists;
+	}
+
 	/// Different modes of applying the texture
 	/// REPEAT -> Replicates the texture on every face
 	/// MAP -> Maps the texture to cover all faces of the geometry
@@ -451,6 +459,22 @@ namespace GeometryEngine
 		/// \param cam Camera where the post process will be added
 		/// \param proc Temporary PostProcess pointer to be copied into the camera. It will be deletad after it is copied.
 		static void AddTmpPostProcess(GeometryWorldItem::GeometryCamera::Camera& cam, GeometryPostProcess::PostProcess* proc);
+
+		///Convenience method to add a shading list if it doesnt exist to a material
+		/// \param mat Material where the list will be added or returned
+		/// \param list Type of list to be added or returned
+		/// \return New or existing shading list of the selected type
+		static CustomShading::MaterialPostProcessInterface* GetOrAddShadingList(GeometryMaterial::Material * mat, const CustomShading::ShadingLists & list);
+
+		///Helper method that adds a blur post process step to the material at the selected step location in the post process and second post process lists
+		/// \param mat Material where the post process will be added
+		/// \param step Step location where the post process will be added, if there is another post process in this location it will be deleted
+		static void AddMaterialBlurPostProcess(GeometryMaterial::Material* mat, const CustomShading::MaterialPostProcessSteps & step);
+
+		///Helper method that adds a grey scale post process step to the material at the selected step location in the post process list
+		/// \param mat Material where the post process will be added
+		/// \param step Step location where the post process will be added, if there is another post process in this location it will be deleted
+		static void AddMaterialGreyScalePostProcess(GeometryMaterial::Material* mat, const CustomShading::MaterialPostProcessSteps & step);
 
 
 	private:

@@ -100,8 +100,7 @@ void GeometryEngine::GeometryRenderStep::TransparentShadowedLightingPass::calcul
 	const GeometryEngine::LightingTransformationData* transf = 
 		light->GetLightTransformationMatrices(GeometryEngine::GeometryWorldItem::GeometryLight::LightTransformationMatrices::LIGHTSPACE_TRANSFORMATION_MATRICES);
 	CustomShading::MultiShadingInterface* sdInterf = item->GetMaterialPtr()->GetShadingInterface();
-	CustomShading::CustomShadingInterface* customSd = (sdInterf != nullptr && sdInterf->ContainsList(CustomShading::ShadingLists::SHADING_LIST)) ?
-		sdInterf->GetList(CustomShading::ShadingLists::SHADING_LIST) : nullptr;
+	CustomShading::CustomShadingInterface* customSd = (sdInterf != nullptr && sdInterf->GetShadingInterface() != nullptr) ? sdInterf->GetShadingInterface() : nullptr;
 
 	if (transf != nullptr && customSd != nullptr && customSd->ContainsStep(GeometryEngine::CustomShading::CUSTOM_COLORMAP))
 	{

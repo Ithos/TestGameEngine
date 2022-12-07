@@ -72,6 +72,10 @@ void GeometryEngine::GeometryMaterial::ColorMaterial::drawMaterial(QOpenGLBuffer
 		// Draw cube geometry using indices from VBO 1
 		glDrawElements(GL_TRIANGLE_STRIP, totalIndexNumber, GL_UNSIGNED_SHORT, 0);
 
+		mpProgram->disableAttributeArray(vertexLocation);
+		mpProgram->disableAttributeArray(textureCoordinate);
+		mpProgram->disableAttributeArray(normalVector);
+
 		arrayBuf->release();
 		indexBuf->release();
 	}

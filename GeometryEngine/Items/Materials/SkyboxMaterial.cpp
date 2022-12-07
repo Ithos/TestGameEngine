@@ -130,6 +130,10 @@ void GeometryEngine::GeometryMaterial::SkyboxMaterial::drawMaterial(QOpenGLBuffe
 
 		unbindTextures();
 
+		mpProgram->disableAttributeArray(vertexLocation);
+		mpProgram->disableAttributeArray(textureCoordinate);
+		mpProgram->disableAttributeArray(normalVector);
+
 		vertexBuf->release();
 		indexBuf->release();
 

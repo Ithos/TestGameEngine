@@ -43,6 +43,11 @@ void GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostPr
 
 	// Draw cube geometry using indices from VBO 1
 	glDrawElements(GL_TRIANGLE_STRIP, mpBoundingGeometry->GetIndexNumber(), GL_UNSIGNED_SHORT, 0);
+
+	mpProgram->disableAttributeArray(vertexLocation);
+
+	mpBoundingGeometry->GetArrayBuffer()->release();
+	mpBoundingGeometry->GetIndexBuffer()->release();
 }
 
 void GeometryEngine::GeometryPostProcess::SinglePassPostProcess::GreyScalePostProcess::copy(const GreyScalePostProcess & ref)

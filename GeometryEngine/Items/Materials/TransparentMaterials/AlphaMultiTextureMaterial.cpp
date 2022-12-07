@@ -162,6 +162,10 @@ void GeometryEngine::GeometryMaterial::AlphaMultiTextureMaterial::drawMaterial(Q
 
 		UnbindTextures();
 
+		mpProgram->disableAttributeArray(vertexLocation);
+		mpProgram->disableAttributeArray(textureCoordinate);
+		mpProgram->disableAttributeArray(normalVector);
+
 		vertexBuf->release();
 		indexBuf->release();
 	}

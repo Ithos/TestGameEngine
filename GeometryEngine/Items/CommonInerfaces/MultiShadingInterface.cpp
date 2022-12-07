@@ -1,3 +1,4 @@
+#include "MaterialPostProcessInterface.h"
 #include "CustomShadingInterface.h"
 #include "MultiShadingInterface.h"
 
@@ -13,11 +14,14 @@ GeometryEngine::CustomShading::MultiShadingInterface::~MultiShadingInterface()
 		delete (*it).second;
 		(*it).second = nullptr;
 	}
+
+	delete mShadingInterface;
+	mShadingInterface = nullptr;
 }
 
 bool GeometryEngine::CustomShading::MultiShadingInterface::AddNewList(ShadingLists key)
 {
-	if (!ContainsList(key)) mListsMap[key] = new CustomShadingInterface();
+	if (!ContainsList(key)) mListsMap[key] = new MaterialPostProcessInterface();
 	else return false;
 	return true;
 }
@@ -32,7 +36,7 @@ bool GeometryEngine::CustomShading::MultiShadingInterface::RemoveList(ShadingLis
 	return false;
 }
 
-GeometryEngine::CustomShading::CustomShadingInterface * GeometryEngine::CustomShading::MultiShadingInterface::GetList(ShadingLists key)
+GeometryEngine::CustomShading::MaterialPostProcessInterface * GeometryEngine::CustomShading::MultiShadingInterface::GetList(ShadingLists key)
 {
 	if (ContainsList(key)) return mListsMap[key];
 	return nullptr;
@@ -41,11 +45,22 @@ GeometryEngine::CustomShading::CustomShadingInterface * GeometryEngine::CustomSh
 void GeometryEngine::CustomShading::MultiShadingInterface::SetTargetMaterial(GeometryMaterial::Material * target)
 {
 	for (auto it = mListsMap.begin(); it != mListsMap.end(); ++it) (*it).second->SetTargetMaterial(target);
+	if (mShadingInterface != nullptr) mShadingInterface->SetTargetMaterial(target);
 }
 
 void GeometryEngine::CustomShading::MultiShadingInterface::InitLists()
 {
-	for (auto it = mListsMap.begin(); it != mListsMap.end(); ++it) (*it).second->InitCustomSteps();
+	for (auto it = mListsMap.begin(); it != mListsMap.end(); ++it) (*it).second->InitPostProcessSteps();
+}
+
+void GeometryEngine::CustomShading::MultiShadingInterface::SetShadingInterface(const CustomShadingInterface * const shadingInterface)
+{
+	mShadingInterface = shadingInterface->Clone();
+}
+
+void GeometryEngine::CustomShading::MultiShadingInterface::InitShadingInterface()
+{
+	if (mShadingInterface != nullptr) mShadingInterface->InitCustomSteps();
 }
 
 void GeometryEngine::CustomShading::MultiShadingInterface::copy(const MultiShadingInterface & ref)
@@ -54,4 +69,7 @@ void GeometryEngine::CustomShading::MultiShadingInterface::copy(const MultiShadi
 	{
 		this->mListsMap[(*it).first] = (*it).second->Clone();
 	}
+
+	if(ref.mShadingInterface != nullptr)this->mShadingInterface = ref.mShadingInterface->Clone();
+	else this->mShadingInterface = nullptr;
 }

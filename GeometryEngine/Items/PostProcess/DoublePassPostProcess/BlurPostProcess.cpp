@@ -4,7 +4,7 @@
 
 GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess::BlurPostProcess( const GeometryWorldItem::GeometryItem::GeometryItem & boundingGeometry, 
 	const CustomShading::CustomPostProcessStepInterface* const componentManager, unsigned int iterations) :
-	DoublePassPostProcess(boundingGeometry, componentManager, iterations), mIsVertical(true)
+	DoublePassPostProcess(boundingGeometry, componentManager, iterations), mIsVertical(false), mSwapOriginTexture(false)
 {
 	initPostProcess();
 }
@@ -68,6 +68,9 @@ void GeometryEngine::GeometryPostProcess::DoublePassPostProcess::BlurPostProcess
 		glDrawElements(GL_TRIANGLE_STRIP, mpBoundingGeometry->GetIndexNumber(), GL_UNSIGNED_SHORT, 0);
 
 		mpProgram->disableAttributeArray(vertexLocation);
+
+		mpBoundingGeometry->GetArrayBuffer()->release();
+		mpBoundingGeometry->GetIndexBuffer()->release();
 	}
 }
 
