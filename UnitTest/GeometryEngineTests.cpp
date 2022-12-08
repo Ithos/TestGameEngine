@@ -11,6 +11,7 @@
 #include "TestWindow\TestImplementations\TranslucentShadowsTest.h"
 #include "TestWindow\TestImplementations\TranslucentShadowingTest.h"
 #include "TestWindow\TestImplementations\MultiViewportSceneTest.h"
+#include "TestWindow\TestImplementations\GeometryPostProcessTest.h"
 
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -78,6 +79,12 @@ namespace UnitTest
 		TEST_METHOD(MultiViewportSceneTest)
 		{
 			executeSceneTest<CMultiViewportSceneTest>();
+		}
+
+		/// Test for a scene that implements item post processes
+		TEST_METHOD(GeometryPostProcessTest)
+		{
+			executeSceneTest<CGeometryPostProcessTest>();
 		}
 
 	protected:

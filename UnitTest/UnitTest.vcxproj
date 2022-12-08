@@ -235,6 +235,7 @@
     <ClInclude Include="TestConfiguration\TestConfig.h" />
     <ClInclude Include="TestWindow\TestImplementations\BaseGeometryTest.h" />
     <ClInclude Include="TestWindow\TestImplementations\BasicSceneTest.h" />
+    <ClInclude Include="TestWindow\TestImplementations\GeometryPostProcessTest.h" />
     <ClInclude Include="TestWindow\TestImplementations\MultiViewportSceneTest.h" />
     <ClInclude Include="TestWindow\TestImplementations\PostProcessTest.h" />
     <ClInclude Include="TestWindow\TestImplementations\ShadowSceneTest.h" />
@@ -253,6 +254,7 @@
     <ClCompile Include="TestConfiguration\TestConfig.cpp" />
     <ClCompile Include="TestWindow\TestImplementations\BaseGeometryTest.cpp" />
     <ClCompile Include="TestWindow\TestImplementations\BasicSceneTest.cpp" />
+    <ClCompile Include="TestWindow\TestImplementations\GeometryPostProcessTest.cpp" />
     <ClCompile Include="TestWindow\TestImplementations\MultiViewportSceneTest.cpp" />
     <ClCompile Include="TestWindow\TestImplementations\PostProcessTest.cpp" />
     <ClCompile Include="TestWindow\TestImplementations\ShadowSceneTest.cpp" />

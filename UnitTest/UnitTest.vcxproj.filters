@@ -54,6 +54,9 @@
     <ClInclude Include="TestWindow\TestImplementations\TranslucentShadowsTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TestWindow\TestImplementations\GeometryPostProcessTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -87,6 +90,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TestWindow\TestImplementations\TranslucentShadowsTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestWindow\TestImplementations\GeometryPostProcessTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
